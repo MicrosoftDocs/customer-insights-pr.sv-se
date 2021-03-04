@@ -1,20 +1,20 @@
 ---
 title: Ansluta till ett Azure Data Lake Storage Gen 2-konto med ett huvudkonto för tjänsten
-description: använd ett huvudkonto för Azure-tjänsten för målgruppsinsikter för att ansluta till din egen datasjö när de bifogas till målgruppsinsikter.
-ms.date: 11/24/2020
+description: Använd ett huvudkonto för Azure-tjänsten för målgruppsinsikter för att ansluta till din egen datasjö när de bifogas till målgruppsinsikter.
+ms.date: 02/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c2fae278d34fa02b9168ac70dfa8dd351653245e
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: eebbac1370a847869d98beaf70db49b809d762e7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644110"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267744"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Anslut till ett Azure Data Lake Storage Gen2-konto med ett huvudkonto för Azure-tjänsten för målgruppsinsikter
 
@@ -22,7 +22,9 @@ Automatiserade verktyg som använder Azure-tjänster bör alltid ha begränsade 
 
 Du kan använda tjänstens huvudkonto för att säkert [lägga till eller redigera en Common Data Model-mapp som en datakälla](connect-common-data-model.md) eller [skapa en ny eller uppdatera en befintlig miljö](manage-environments.md#create-an-environment-in-an-existing-organization).
 
-Du måste ha administratörsbehörighet för din Azure-prenumeration för att skapa huvudkontot för tjänsten.
+> [!IMPORTANT]
+> - Lagringskontot Azure Data Lake Gen2 som ska använda huvudkontot för tjänsten måste ha [Hierarkiskt namnområde (HNS) aktiverat](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+> - Du måste ha administratörsbehörighet för din Azure-prenumeration för att skapa huvudkontot för tjänsten.
 
 ## <a name="create-azure-service-principal-for-audience-insights"></a>Skapa Azure-tjänstens huvudkonto för målgruppsinsikter
 
@@ -83,7 +85,7 @@ Bifoga ett Azure Data Lake-lagringskonto i målgruppsinsikter för att [lagra ut
 
 Följ stegen nedan för att ange den information som krävs för den valda metoden.
 
-### <a name="resounce-based-storage-account-connection"></a>Resursbaserad anslutning till lagringskonto
+### <a name="resource-based-storage-account-connection"></a>Resursbaserad anslutning till lagringskonto
 
 1. Gå till [Azure admin-portalen](https://portal.azure.com), logga in till din prenumeration och öppna lagringskontot.
 
@@ -108,7 +110,8 @@ Följ stegen nedan för att ange den information som krävs för den valda metod
 1. Granska **Prenumeration**, **Resursgrupp** och **Namn** på lagringskontot för att se till att du väljer rätt värden i målgruppsinsikter.
 
 1. I målgruppsinsikter väljer du värdena eller för motsvarande fält när du ansluter lagringskontot.
-
-   :::image type="content" source="media/ADLS-SP-SubscriptionConnection.png" alt-text="Ange resurs-ID för lagringskonto.":::
    
 1. Fortsätt med de återstående stegen i målgruppsinsikter för att bifoga lagringskontot.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

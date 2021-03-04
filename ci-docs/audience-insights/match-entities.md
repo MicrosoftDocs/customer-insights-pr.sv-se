@@ -4,17 +4,17 @@ description: Matcha entiteter för att skapa enhetliga kundprofiler.
 ms.date: 10/14/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 78549037f9c9e59329f5423c36eeb058128802c0
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 05afd17b7f1b34f7f24a8fa8cb2dc32c1649d40f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407102"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267500"
 ---
 # <a name="match-entities"></a>Matcha entiteter
 
@@ -22,7 +22,7 @@ När du har slutfört mappningsfasen är du klar att matcha entiteterna. Matchni
 
 ## <a name="specify-the-match-order"></a>Ange matchningsordningen
 
-Gå till **förena** > **matchning** och välj **ange ordning** för att starta matchningsfasen.
+Gå till **Data** > **Förena** > **Matcha** och välj **Ange ordning** för att starta matchningsfasen.
 
 Varje matchning förenar två eller fler entiteter till en enda entitet och behåller varje unik kundpost. I följande exempel valde vi tre entiteter: **ContactCSV: TestData** som **primär** entitet, **WebAccountCSV: TestData** som **entitet 2** och **CallRecordSmall: TestData** som **entitet 3**. Diagrammet ovanför valen illustrerar hur matchningsordningen ska köras.
 
@@ -136,7 +136,7 @@ När en deduplicerad post har identifierats kommer den posten att användas i de
 
 1. Att köra matchningsprocessen grupperar nu posterna baserat på de villkor som definierats i dedupliceringsreglerna. Efter att ha grupperat posterna tillämpas sammanslagningsprincipen för att identifiera vinnarposten.
 
-1. Denna vinnarpost förs sedan vidare till den entitetsöverskridande matchningen.
+1. Denna vinnarpost förs sedan vidare till den entitetsöverskridande matchningen, tillsammans med icke-vinnande poster (till exempel alternativa ID) för att förbättra matchningskvaliteten.
 
 1. Eventuella anpassade matchningsregler som definierats för matchar alltid och matchar aldrig åsidosätter dedupliceringsregler. Om en dedupliceringsregel identifierar matchande poster och en anpassad matchningsregel är inställd på att aldrig matcha dessa poster, matchas inte dessa två poster.
 
@@ -157,6 +157,17 @@ Den första matchningsprocessen resulterar i att en enhetlig huvudentitet skapas
 
 > [!TIP]
 > Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
+
+## <a name="deduplication-output-as-an-entity"></a>Dedupliceringsutdata som en entitet
+Förutom den enhetliga huvudentiteten som skapas som en del av den entitetsöverskridande matchningen skapas även en ny entitet för varje entitet från matchningsordningen för att identifiera de deduplicerade posterna. Dessa entiteter finns tillsammans med **ConflationMatchPairs:CustomerInsights** i avsnittet **System** på sidan **Entiteter**, med namnet **Deduplication_Datasource_Entity**.
+
+En utdataenhet för deduplicering innehåller följande information:
+- ID/Nycklar
+  - Primärnyckelfält och dess alternativa ID-fält. Fältet Alternativa ID består av alla alternativa ID som identifieras för en post.
+  - Deduplication_GroupId visar gruppen eller klustret som identifieras i en entitet som grupperar alla liknande poster utifrån de angivna dedupliceringsfälten. Den används för systembearbetning. Om det inte finns några manuella dedupliceringsregler som anges och systemdefinierade dedupliceringsregler gäller kanske inte det här fältet finns i entiteten för dedupliceringsutdata.
+  - Deduplication_WinnerId: Det här fältet innehåller vinnande ID från de identifierade grupperna eller klustren. Om Deduplication_WinnerId är samma värde som primärnyckeln för en post innebär det att posten är vinnarposten.
+- Fält som används för att definiera dedupliceringsreglerna.
+- Regel- och poängfält som anger vilka av dedupliceringsregler som tillämpats och poängen som returneras av den matchande algoritmen.
 
 ## <a name="review-and-validate-your-matches"></a>Granska och verifiera dina matchningar
 
@@ -200,6 +211,11 @@ Utvärdera kvaliteten för dina matchningspar och omdefiniera den:
   > [!div class="mx-imgBorder"]
   > ![Dubblera en regel](media/configure-data-duplicate-rule.png "Dubblera en regel")
 
+- **Inaktivera en regel** om du vill behålla en matchningsregel och utesluta den från matchningsprocessen.
+
+  > [!div class="mx-imgBorder"]
+  > ![Inaktivera en regel](media/configure-data-deactivate-rule.png "Inaktivera en regel")
+
 - **Redigera reglerna** genom att välja symbolen **redigering**. Du kan tillämpas göra följande ändringar:
 
   - Ändra attribut för ett villkor: Välj nya attribut inom den angivna villkorsraden.
@@ -229,10 +245,12 @@ Du kan ange villkor för att vissa poster alltid ska matcha eller aldrig matcha.
     - Enhetsnyckel2: 34567
 
    Samma mallfil kan ange anpassade matchningsposter från flera entiteter.
+   
+   Om du vill ange anpassad matchning för deduplicering för en entitet anger du samma entitet som både Entitet 1 och Entitet 2 och anger de olika primärnyckelvärdena.
 
 5. När du har lagt till alla åsidosättningar som du vill använda sparar du mallfilen.
 
-6.Gå till **Data** > **Datakällor** och mata in mallfilerna som nya entiteter. När du har hämtat den kan du använda dem för att ange matchningskonfigurationen.
+6. Gå till **Data** > **Datakällor** och matar in mallfilerna som nya entiteter. När du har hämtat den kan du använda dem för att ange matchningskonfigurationen.
 
 7. När du har överfört filerna och entiteterna tillgängliga väljer du alternativet för **anpassad matchning**. Du kommer att se alternativen för att ange vilka entiteter du vill ta med. Välj den erforderliga entiteten i listrutan.
 
@@ -250,3 +268,6 @@ Du kan ange villkor för att vissa poster alltid ska matcha eller aldrig matcha.
 ## <a name="next-step"></a>Nästa steg
 
 När matchningsprocessen för minst ett matchningspar har slutförts kan du åtgärda eventuella motstridiga data genom att gå igenom ämnet [**sammanslå**](merge-entities.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

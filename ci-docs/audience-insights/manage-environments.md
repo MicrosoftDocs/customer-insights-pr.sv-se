@@ -1,20 +1,20 @@
 ---
 title: Skapa och hantera miljöer
 description: Läs om hur du registrerar dig för tjänsten och hur du hanterar miljöer.
-ms.date: 11/10/2020
+ms.date: 02/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: nimagen
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 010336445d0825a7ff82d1b7a65702fc12245788
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 744f0bcbf5d2700363180f44e38d6dee9bf5df63
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644155"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270134"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
 
@@ -46,9 +46,9 @@ En ny miljö kan skapas på två olika sätt. Du kan antingen ange en helt ny ko
 
 För att skapa en miljö i:
 
-1. Välj symbolen **inställningar** i programmets huvud.
+1. Välj **Miljö**-väljaren i apphuvudet.
 
-1. Välj **Ny miljö**.
+1. Välj **Nytt**.
 
    > [!div class="mx-imgBorder"]
    > ![Miljöinställningar](media/environment-settings-dialog.png)
@@ -75,7 +75,14 @@ För att skapa en miljö i:
 
    - För alternativet Azure Data Lake Storage Gen2 kan du välja mellan ett resursbaserat alternativ och ett prenumerationsbaserat alternativ för autentisering. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Namnet på **behållare** går inte att ändra, utan kommer att vara "customerinsights".
    
-   - Om du vill använda [förutsägelser](predictions.md) anger du Common Data Service-instansens URL i fältet **Serveradress** under **Använd förutsägelser**.
+   - Om du vill använda [förutsägelser](predictions.md) eller konfigurera datadelning med program och lösningar baserat på Microsoft Dataverse, tillhandahåller du Microsoft Dataverse-miljöns URL under **Konfigurera datadelning med Microsoft Dataverse och aktivera ytterligare funktioner**. Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Microsoft Dataverse-hanterad Data Lake.
+
+     > [!NOTE]
+     > - Datadelning med Microsoft Dataverse-hanterad Data Lake stöds för närvarande inte när du sparar alla data i din egen Azure Data Lake Storage.
+     > - [Förutsägelse av saknade värden i en entitet](predictions.md) stöds för närvarande inte när du aktiverar datadelning med Microsoft Dataverse-hanterad Data Lake.
+
+     > [!div class="mx-imgBorder"]
+     > ![Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse](media/Datasharing-with-DataverseMDL.png)
 
    När du kör processer, till exempel datainmatning eller skapande av segment, kommer motsvarande mappar att skapas i det lagringskonto du angav ovan. Datafiler och model.json-filer skapas och läggs till i motsvarande undermappar baserat på den process du kör.
 
@@ -86,7 +93,7 @@ För att skapa en miljö i:
 Följande konfigurationsinställningar kan kopieras:
 
 - Funktionskonfigurationer
-- Insamlade/importerade datakällor
+- Inmatade/importerade datakällor
 - Dataföreningskonfiguration (mappning, matchning, sammanslagning)
 - Segments
 - Mått
@@ -120,11 +127,11 @@ När dataföreningen är klar, gå till **Mått** och **Segment** för att uppda
 
 Du kan redigera vissa av detaljerna i befintliga miljöer.
 
-1. Gå till **Admin** > **System** > **Om**.
+1.  Välj **Miljö**-väljaren i apphuvudet.
 
-2. Välj **Redigera**.
+2.  Välj ikonen **Redigera**.
 
-3. Du kan uppdatera miljöns **Visningsnamn**, men du kan inte ändra **Region** eller **Typ**.
+3. I rutan **Redigera miljö** kan du uppdatera miljöns **visningsnamn**, men du kan inte ändra **Region** eller **Typ**.
 
 4. Om en miljö är konfigurerad att lagra data i Azure Data Lake Storage Gen2 kan du uppdatera **kontonyckeln**. Du kan emellertid inte ändra **Kontonam** eller namnet för **Behållare**.
 
@@ -132,19 +139,27 @@ Du kan redigera vissa av detaljerna i befintliga miljöer.
 
 ## <a name="reset-an-existing-environment"></a>Återställa en befintlig miljö
 
-Du kan återställa en miljö till ett tomt tillstånd om du vill ta bort alla konfigurationer och ta bort de inmatade data.
+Som en administratör kan du återställa en miljö till ett tomt tillstånd om du vill ta bort alla konfigurationer och ta bort de inmatade data.
 
-1.  Gå till **Admin** > **System** > **Om**.
+1.  Välj **Miljö**-väljaren i apphuvudet. 
 
-2.  Välj **Återställ**. 
+2.  Välj den miljö du vill återställa och välj ellipsen **...**. 
 
-3.  Bekräfta borttagningen genom att ange miljönamnet och välj **Återställ**.
+3. Välj alternativet **Återställ**. 
+
+4.  Bekräfta borttagningen genom att ange miljönamnet och välj **Återställ**.
+
+## <a name="delete-an-existing-environment-available-only-for-admins"></a>Ta bort en befintlig miljö (finns endast för administratörer)
+
+Som en administratör kan du ta bort en miljö som du administrerar.
+
+1.  Välj **Miljö**-väljaren i apphuvudet.
+
+2.  Välj den miljö du vill återställa och välj ellipsen **...**. 
+
+3. Välj alternativet **Ta bort**. 
+
+4.  Bekräfta borttagningen genom att ange miljö namnet och välja **ta bort**.
 
 
-## <a name="delete-an-existing-environment"></a>Ta bort en befintlig miljö
-
-1. Gå till **Admin** > **System** > **Om**.
-
-1. Välj **Ta bort**.
-
-1. Bekräfta borttagningen genom att ange miljö namnet och välja **ta bort**.
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

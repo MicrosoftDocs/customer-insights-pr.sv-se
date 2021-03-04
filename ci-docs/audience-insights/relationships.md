@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 295c372bb452e7c40aa950506dc494d4a2de1108
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 292da986faa7f62d8aa73ed7214075612178e2e1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407107"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269903"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellan entiteter
 
@@ -28,8 +28,8 @@ Under matchnings- och sammanslagningsprocesserna skapas systemrelationer i bakgr
 > ![Skapar relation](media/relationships-entities-merge.png "Skapar relation")
 
 - ***CustomerToContact* relationen** skapades mellan entiteten kund och entiteten kontakt. Entiteten Kund hämtar nyckelfält **Contact_contactId** som relaterar till nyckelfältet kontaktentitet **contactId**.
-- **_CustomerToAccount_ relationen** skapades mellan entiteten kund och entiteten konto. Entiteten Kund hämtar nyckelfält **Account_accountId** som relaterar till nyckelfältet kontoentitet **accountId**.
-- **_CustomerToWebAccount_ relationen** skapades mellan entiteten kund och entiteten WebAccount. Entiteten Kund hämtar nyckelfält **WebAccount_webaccountId** som relaterar till nyckelfältet WebAccount-entitet **webaccountId**.
+- ***CustomerToAccount* relationen** skapades mellan entiteten kund och entiteten konto. Entiteten Kund hämtar nyckelfält **Account_accountId** som relaterar till nyckelfältet kontoentitet **accountId**.
+- ***CustomerToWebAccount* relationen** skapades mellan entiteten kund och entiteten WebAccount. Entiteten Kund hämtar nyckelfält **WebAccount_webaccountId** som relaterar till nyckelfältet WebAccount-entitet **webaccountId**.
 
 ## <a name="create-a-relationship"></a>Skapa en relation
 
@@ -69,3 +69,6 @@ Definiera anpassade relationer på sidan **Relationer**. Varje relation består 
 ## <a name="next-step"></a>Nästa steg
 
 System och anpassade relationer används för att skapa segment utifrån flera datakällor som inte längre är silor. Mer information finns [Segment](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

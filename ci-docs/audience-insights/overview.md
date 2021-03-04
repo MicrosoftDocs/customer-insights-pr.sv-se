@@ -1,30 +1,26 @@
 ---
-title: Funktionen målgruppsinsikter
-description: Översikt över funktionen målgruppsinsikter i Dynamics 365 Customer Insights.
-ms.date: 02/05/2020
+title: Målgruppsinsikter för översikt över Dynamics 365 Customer Insights
+description: Översikt över målgruppsinsikter för Dynamics 365 Customer Insights.
+ms.date: 01/18/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 82763b294484cca4a3982f4ebef6f914a02f5cca
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407095"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477017"
 ---
-# <a name="dynamics-365-customer-insights-audience-insights-capability"></a>Funktionen målgruppsinsikter i Dynamics 365 Customer Insights
+# <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Målgruppsinsikter för översikt över Dynamics 365 Customer Insights
 
-Kundupplevelsen är den allra viktigaste i alla organisationens ambitions för digitala transformeringar. För att kunna konkurrera på marknaden i dag måste organisationer bygga upp meningsfulla relationer med kunderna på en personlig nivå. Effektiv anpassning på skalan krävs en komplett, enhetlig vy över kunderna.
+Målgruppsinsikter hjälper dig att bygga en djupare förståelse för dina kunder. Anslut data från olika transaktions-, beteende- och observationskällor om du vill skapa en 360-graders kundvy. Använd dessa insikter för att driva kundinriktade upplevelser och processer. Förena och förstå kunddata och utnyttja dem för intelligenta insikter och åtgärder.
 
-Målgruppsinsikter hjälper dig att bygga en djupare förståelse för dina kunder. Anslut data från olika transaktions-, beteende- och observationskällor om du vill skapa en 360-graders kundvy. Använd dessa insikter för att driva kundinriktade upplevelser och processer.
-
-**Förena och förstå kunddata och utnyttja dem för intelligenta insikter och åtgärder.**
-
-Med målgruppsinsikter kan organisationer:  
+## <a name="main-benefits"></a>Huvudsakliga fördelar 
 
 - **Eliminera datasilor och förena kunddata**
 
@@ -33,15 +29,15 @@ Med målgruppsinsikter kan organisationer:
 
 - **Utöka med publikinformation som finns i Microsoft Graph**
 
-  - Skapa rikare kundprofiler genom att inkludera publikinformation som finns i Microsoft Graph.  
+  - Skapa rikare kundprofiler genom att [inkludera målgruppsintelligens som finns i Microsoft Graph](enrichment-microsoft-graph.md).  
 
 - **Arbeta med dina affärsprocesser och anpassa kundupplevelsen**
 
   - Skapa personligt engagemang över kanaler - stärka marknadsförings-, försäljnings- och servicepersonal med färdig, kontextuell Customer Insights och skräddarsydda kundprofilkort infunderade i de affärsprogram som de redan använder varje dag
   - Automatisera kundinriktade upplevelser och processer utifrån anpassningsbara profiler, affärsmått och segment.
-  - Aktivera och utöka branschspecifika funktioner som byggs på Microsoft Power Platform. Snabbt bygga program med inbäddade insikter med hjälp av ett kraftfullt tillvägagångssätt med låg kod från PowerApps.  
+  - Aktivera och utöka branschspecifika funktioner som bygger på [Microsoft Power Platform](https://powerplatform.microsoft.com/). Snabbt bygga program med inbäddade insikter med hjälp av ett kraftfullt tillvägagångssätt med låg kod från PowerApps.  
 
-Målgruppsinsikter innefattar funktioner för följande nyckelanvändare:
+## <a name="key-audiences"></a>Viktiga målgrupper
 
 - **Dataanalytiker/administratörer:**
 
@@ -58,5 +54,8 @@ Målgruppsinsikter innefattar funktioner för följande nyckelanvändare:
 
 - **Affärsanalytiker:**
 
-  - Skapa anpassningsbara profiler, definiera mått och skapa segment för att visa en 360 – vy av kunden, specifikt för din organisation.  
-  - Använd medföljande anslutningsprogram för PowerApps eller Microsoft Power BI eller API:er för att visa upp insikter i dina affärsprogram eller BI-lösningar.  
+  - Skapa anpassningsbara profiler, definiera mått, skapa segment och dra nytta av förutsägelseanalyser för att visa en heltäckande vy av kunden, specifikt för din organisation.  
+  - Använd färdiga anslutningsprogram för flera program eller API:er från Microsoft och tredje parter för att behandla insikterna ytterligare.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

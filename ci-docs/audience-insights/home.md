@@ -1,7 +1,7 @@
 ---
 title: Startsida i målgruppsinsikter
 description: Börja utforska appen på startsidan.
-ms.date: 09/30/2020
+ms.date: 01/07/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: bd16966eabb126d9c9945ededc53273df02c3369
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 7cc767f5d80b213a4c1bb5b2e8062bd44c15279b
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407091"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477063"
 ---
 # <a name="create-a-new-environment"></a>Skapa en ny miljö
 
@@ -29,6 +29,8 @@ Du kan registrera dig för en utvärderingsversion på [sidan för registrering 
 
 1. Ange din e-postadress för arbetet eller skolan, berätta mer om dig själv och välj **Nästa**.
 
+   :::image type="content" source="media/trial-signup-dialog.png" alt-text="Dialogruta för att registrera sig för en utvärderingsinstans":::
+
 1. Ange ett **namn** för den nya miljön. 
 
 1. Välj utvärderingstyp.
@@ -41,34 +43,34 @@ Du kan registrera dig för en utvärderingsversion på [sidan för registrering 
 
 När miljön skapades ser du **Demo**-miljön som gör att du kan utforska appen med fiktiva data. Du kan ändra exempeldata så att de överensstämmer med din bransch. Välj ikonen **Inställningar** i rubriken och välj **Demoinställningar**. Dessutom kan du ändra det visuella temat. 
 
-Du [växlar till den miljö](#change-between-environments) du skapade under registreringsprocessen för att arbeta med dina egna data.
+Du [växlar till den miljö](#switch-environments) du skapade under registreringsprocessen för att arbeta med dina egna data.
 
 ## <a name="create-a-new-production-or-sandbox-environment"></a>Skapa en ny produktions- eller sandbox-miljö
 
-I din miljö, väljer du ikonen **Inställningar** i rubriken och välj **Ny miljö**.
+I din miljö väljer du **Miljö**-väljare i apphuvudet och välj **Ny**.
 
-Följ anvisningarna på samma sätt som om du [skapar en utvärderingsmiljö](#create-a-trial-environment). Du kan välja ett annat alternativ när du väljer **Avancerade inställningar** för att lagra dina data i din egen Azure Data Lake. Ange kontonamn och kontonyckel för att upprätta en anslutning till din Azure Data Lake. Som standard lagras data i Customer Insights-hanterad datasjö.
+Följ anvisningarna på samma sätt som om du [skapar en utvärderingsmiljö](#create-a-trial-environment). Som standard lagras data i Customer Insights-hanterad datasjö. Du kan välja ett annat alternativ när du väljer **Avancerade inställningar** för att lagra dina data i din egen Azure Data Lake. Ange kontonamn och kontonyckel för att upprätta en anslutning till din Azure Data Lake. 
 
 > [!IMPORTANT]
 > Genom att spara data i Azure Data Lake Storage godkänner du att data överförs till och lagras på rätt geografiska plats för Azure Storage-kontot, som kan skilja sig från varifrån data lagras i Dynamics 365 Customer Insights. [Läs mer i Microsoft Trust Center.](https://www.microsoft.com/trust-center)
 
 ## <a name="explore-the-home-page"></a>Utforska startsidan
 
-Du kan [komma åt din Customer Insights-miljö](https://home.ci.ai.dynamics.com/) på följande webbadress: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
-Sidan **Start** visar en översikt över din kundbas och viktiga mätvärden för att spåra ditt företags hälsa.
+Du kan [få tillgång till målgruppsinsikter från Dynamics 365 Customer Insights](https://home.ci.ai.dynamics.com/) på följande URL: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
+**Start** sidan visar en översikt över segment, mått och berikningsdata (om konfigurerat) efter slutförandet av faserna [mappa](map-entities.md), [matcha](match-entities.md) och [sammanslå](merge-entities.md).
 
 > [!div class="mx-imgBorder"] 
 > ![Insikter på startsidan](media/home-page-insights.png "Insikter på startsidan")
 
-Under **senaste segment** visas grupper med kunder utifrån demografiska, beteende- eller transaktionella attribut som du har definierat. [Genom att skapa segment](segments.md) blir det lättare att rikta in sig på sina affärsaktiviteter.
+Under **senaste segment** visas grupper med kunder utifrån demografiska, beteende- eller transaktionella attribut som du har definierat. [Genom att skapa segment](segments.md) kan du gruppera din kundbas och rikta dina affärsaktiviteter på ett bättre sätt.
 
-**Senaste mått** visar paneler med [mått](measures.md). Mått är KPI:er som du har definierat. Det kan till exempel vara sannolikheten kundomsättning eller genomsnittligt antal online-utgifter per kund.
+**Senaste åtgärder** visar paneler med [nyckeltal (KPI:er)](measures.md) som du har definierats. Till exempel genomsnittlig sannolikhet för kundomsättning eller genomsnittlig omsättning online per kund.
 
-I avsnittet **Senast använda** visas resultaten av de nya anriknings körningarna som har slutförts nyligen. Omfattande lägg till information om kundbasen. Du kan till exempel förstå de intressen och märken som de har tillhörighet för. Denna information kan låsas upp med hjälp av [beriknings](enrichment-microsoft-graph.md)funktionerna efter det att du har slutfört faserna [mappning](map-entities.md), [matchning](match-entities.md) och [sammanslagning](merge-entities.md).
+I avsnittet **Senast använda** visas resultaten av de nya anriknings körningarna som har slutförts nyligen. [Berikningar](enrichment-hub.md) lägger till information om kundbasen. Du kan till exempel förstå de intressen och märken som de har tillhörighet för.
 
-## <a name="change-between-environments"></a>Växla mellan miljöer
+## <a name="switch-environments"></a>Växla miljö
 
-När du har konfigurerat dina [datakällor](data-sources.md) bör du växla från en demomiljö till en verklig miljö. Genom att använda produktions miljön kan du arbeta med dina egna kunddata. Välj kontrollen **miljö** i det övre högra hörnet av sidan om du vill ändra miljöer.
+Välj kontrollen **miljö** i det övre högra hörnet av sidan om du vill ändra miljöer.
 
 > [!div class="mx-imgBorder"] 
 > ![Växla miljö](media/home-page-environment-switcher.png "Växla miljö")
@@ -78,3 +80,6 @@ Administratörer kan skapa och hantera [flera miljöer](manage-environments.md).
 ## <a name="next-step"></a>Nästa steg
 
 Om du vill visa dina egna insikter på startsidan måste du först [lägga till datakällor](data-sources.md) och [förena](data-unification.md) dina data för att skapa kundprofiler.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

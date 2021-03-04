@@ -3,26 +3,34 @@ title: Produktöversikt
 author: m-hartmann
 description: Få en översikt för Dynamics 365 Customer Insights och dess möjligheter.
 ms.author: mhart
-ms.date: 10/16/2020
+ms.date: 02/16/2021
 ms.service: customer-insights
-ms.topic: conceptual
-ms.openlocfilehash: e0b46652a087f9d16d9f2f5c6e955761be8da208
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.topic: overview
+ms.manager: shellyha
+ms.openlocfilehash: 815220b7dd2fcd4df31c0cff8f6b55eb3a055669
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407115"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5476971"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Produktöversikt för Dynamics 365 Customer Insights
 
-Dynamics 365 Customer Insights är en del av Microsofts kunddataplattform (CDP) som hjälper till att leverera personliga kundupplevelser. Förena kunddata över hela utbudet av källor för att få en enda vy av kunder. 
+Dynamics 365 Customer Insights är en del av Microsofts kunddataplattform (CDP) som hjälper till att leverera personliga kundupplevelser. Plattformens funktioner ger insikter om vilka dina kunder är och hur de interagerar med din plattform. Förena kunddata över flera källor för att få en enda vy av kunder.
 
-Förvandlas till en kundcentrerad organisation där marknadsföring, försäljning och servicepersonal har de insikter de behöver för att personanpassa upplevelser. Bygg upp en djupare förståelse för dina kunder. Anslut data från olika transaktions-, beteende- och observationskällor om du vill skapa en 360-graders kundvy. Se resultat snabbare med en CDP utformad för att leverera insikter som du kan agera utefter. 
 
-Få insikter direkt med snabbstartsmallar. Bygg, testa och distribuera snabbt anpassade AI/ML-modeller med hjälp av analyslösningar i stor skala. Aktivera insikter i realtid för att driva åtgärder. Behåll full kontroll över dina kunddata för att säkerställa högsta nivå av datastyrning och efterlevnad. 
+- [Målgruppsinsikter](audience-insights/overview.md) hjälper dig att omvandla verksamheten till en kundfokuserad organisation. Marknadsförings-, försäljnings- och servicepersonal har de insikter de behöver för att anpassa erfarenheter. Koppla data från transaktions-, beteende- och observationskällor och skapa en 360-graders kundvy. Se resultat snabbare med en CDP utformad för att leverera insikter som du kan agera utefter. 
 
-Det finns två huvudsakliga möjligheter: 
-
-- [Publikinsikter](audience-insights/overview.md)
-- [Engagemangsinsikter (förhandsversion)](engagement-insights/index.yml)
+- [Engagemangsinsikter (förhandsversion)](engagement-insights/index.yml) gör att du kan förstå interaktivt hur dina kunder använder tjänsterna och produkterna – både enskilt och sammantaget – på webbplatser, mobilappar och tillhörande produkter. Kombinera beteendeanalyser med transaktionsdata, demografisk data, undersökningsdata och andra datatyper från Microsoft Dynamics 365 Customer Insights. Behåll full kontroll över dina kunddata för att säkerställa högsta nivå av datastyrning och efterlevnad.
  
+## <a name="choose-a-capability"></a>Välj en funktion
+
+:::image type="content" source="engagement-insights/media/choose_focus.png" alt-text="Sidan Kundinsikter där du kan navigera till målgruppsinsikter eller engagemangsinsikter.":::
+
+Välja en funktion
+
+1. I navigeringsrutan väljer du **Alla appar** för att öppna fönstret **Välj fokus**.
+1. Välj **Kör nu** för att navigera till funktionen för ditt val.
+
+
+[!INCLUDE[footer-include](includes/footer-banner.md)]

@@ -5,16 +5,16 @@ ms.date: 11/12/2020
 ms.reviewer: zacook
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f3cbbf99a6cecba2aab2cf85428d53e5df8346e4
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: af461d290c69687fb47bacfcff446a0c62978383
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644425"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268340"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Förutsägelse av transaktionell omsättning (förhandsversion)
 
@@ -96,6 +96,8 @@ Förutsägelse av transaktionell omsättning hjälper till att förutsäga om en
 1. Alternativt kan du välja **Lägg till data** för **Kundaktiviteter**. Välj den entitet som tillhandahåller information om kundaktivitet enligt beskrivningen i kraven.
 
 1. Mappa de semantiska fälten till attribut i entiteten för kundaktivitet och välj **Nästa**. För beskrivningar av fälten, läs igenom [kraven](#prerequisites).
+
+   :::image type="content" source="media/map-transaction-data-fields.png" alt-text="Mappa kundfält för transaktionsdata.":::
 
 1. Välj en aktivitetstyp som överensstämmer med den typ av kundaktivitet som du konfigurerar. Välj **Skapa ny** och välj en tillgänglig aktivitetstyp eller skapa en ny typ.
 
@@ -185,3 +187,6 @@ Om du tar bort en förutsägelse tas även dess utdataentitet bort.
 1. Markera de lodräta punkterna bredvid den förutsägelse du vill ta bort.
 
 1. Välj **Ta bort**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

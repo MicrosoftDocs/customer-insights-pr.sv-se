@@ -1,20 +1,20 @@
 ---
 title: Power Automate anslutningsprogram | Microsoft Docs
 description: Skapa flöden i Microsoft Power Automate från Dynamics 365 Customer Insights.
-ms.date: 08/03/2020
+ms.date: 01/20/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: philk
 manager: shellyha
-ms.openlocfilehash: ffe92414365b0b777691a4a2d585100e4fbea591
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: fb1df4e9ab1f78300b8ec1f8dfdfbfbac0e71447
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407061"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268846"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate anslutningsprogram (förhandsversion)
 
@@ -22,7 +22,7 @@ Utlös specifika händelser automatiskt när data ändras och hantera mer kompli
 
 ## <a name="power-automate-triggers"></a>Power Automate-utlösare
 
-Du kan använda en mängd olika utlösare som gör det möjligt att skapa flöden för att automatisera återkommande uppgifter, till exempel aviseringar eller mer avancerade åtgärder. 
+Med utlösare kan du skapa molnflöden och automatisera repetitiva uppgifter, till exempel meddelanden eller mer avancerade åtgärder. 
 
 - Utlöses när en uppdatering av en datakälla misslyckas. 
 - Utlöses när en uppdatering av en datakälla lyckas.
@@ -36,14 +36,20 @@ Du kan använda en mängd olika utlösare som gör det möjligt att skapa flöde
 ## <a name="power-automate-actions"></a>Power Automate-åtgärder
 Power Automate-anslutaren tillhandahåller andra åtgärder än de tillgängliga utlösarna. Mer information finns i [Dynamics 365 Customer Insights Connector](https://docs.microsoft.com/connectors/customerinsights/).
 
-## <a name="create-a-power-automate-flow-in-audience-insights"></a>Skapa ett Power Automate-flöde i målgruppsinsikter
+## <a name="create-a-power-automate-flow"></a>Skapa ett Power Automate-flöde
 
-1. I målgruppsinsikter går du till **Admin** > **System**.
+1. I målgruppsinsikter går du till **Admin** > **Exportdestinationer**.
 
-1. På sidan **System**, välj fliken **Status**.
+1. I panelen **Power Automate**, välj **Konfigurera**.
 
-1. I avsnittet **Datakällor**, välj **Flöden** och välj **Skapa ett flöde** i den nedrullningsbara listan.
-   > [!div class="mx-imgBorder"]
-   > ![Power Automate anslutningsprogram med skapa en flödesåtgärd](media/power-automate-connector-create-flow.png "Power Automate anslutningsprogram med skapa en flödesåtgärd")
+1. Customer Insights-anslutningsprogrammet (förhandsversion) i Power Automate öppnas. **Logga in på** till Power Automate.
 
-1. I Power Automate väljer du en av de tillgängliga utlösarna för att skapa det önskade flödet. Om du skapar ditt första flöde måste du först autentisera med Power Automate-anslutningen.
+1. Välj en av de tillgängliga utlösarna och lägg till fler steg i det nya flödet. Mer information finns i [Skapa ett molnflöde i Power Automate](https://docs.microsoft.com/power-automate/get-started-logic-flow).
+
+Exempel på hur flöden används: 
+- Publicera ett meddelande till en Microsoft Teams-kanal om en datakälla inte går att uppdatera. 
+- Skicka ett e-postmeddelande till dataägarna när en tröskel för ett segment överskrids.
+
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

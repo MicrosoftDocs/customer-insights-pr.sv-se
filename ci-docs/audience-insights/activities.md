@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1c95cba333266a73959de0a3afe1c8677130a3ec
-ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
+ms.openlocfilehash: dcef8f0547009e1488f1abe91423fa0bf5b061de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4667251"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267454"
 ---
 # <a name="customer-activities"></a>Kundaktiviteter
 
@@ -44,13 +44,13 @@ Dina datakällor innehåller entiteter med transaktions- och aktivitetsdata frå
 
 1. I avsnittet **Konfigurera relation** konfigurerar du detaljerna för att koppla dina aktivitets data till den motsvarande kunden.
 
-   > [!div class="mx-imgBorder"]
-   > ![Definiera entitetsrelation](media/activities-entities-define.png "Definiera entitetsrelation")
-
     - **Fältet aktivitetsentitet**: Välj det fält i aktivitetsentiteten som ska användas för att skapa en relation med en annan entitet.
     - **Kundentitet**: Välj den motsvarande källkundentitet som du vill att aktivitetsentiteten ska finnas i relation till. Du kan bara relatera till de kundentiteter för kunder som används i föreningsprocessen för data.
     - **Fältet kundentitet**: i det här fältet visas primärnyckeln för källkundentiteten enligt vad som valts i mappningsprocessen. Det här primära nyckelfältet i entiteten för källkund används för att upprätta en relation med entiteten aktivitet.
     - **Namn**: om det redan finns en relation mellan den här aktivitetsentiteten och den valda källkundentiteten är relationsnamnet i skrivskyddat läge. Om det inte finns någon sådan relation skapas en ny relation med det namn som visas här.
+   
+   > [!div class="mx-imgBorder"]
+   > ![Definiera entitetsrelation](media/activities-entities-define.png "Definiera entitetsrelation")
 
 1. Välj **Spara** för att införa ändringarna.
 
@@ -82,3 +82,6 @@ Dina datakällor innehåller entiteter med transaktions- och aktivitetsdata frå
 3. Välj ikonen **Ta bort**.
 
 4. Bekräfta borttagningen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

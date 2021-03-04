@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f276a73feca52023391ad92fbc84359921b85328
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: ed9aa09fba938606611c6ce86c2b250c5e19c606
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407092"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268708"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Registrerades begäran (DSR) under GDPR
 
@@ -75,3 +75,6 @@ Klientorganisationens administratör följer de här stegen för att exportera d
 1. Skicka ett e-postmeddelande till D365CI@microsoft.com för att ange användarens e-postadress i förfrågan. Customer Insights-teamet skickar ett e-postmeddelande till den registrerade administratörens e-postadress och ber om bekräftelse för att exportera data.
 2. Bekräfta bekräftelsen av att exportera data för den begärda användaren.
 3. Ta emot exporterade data via e-postadressen för innehavaradministration.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

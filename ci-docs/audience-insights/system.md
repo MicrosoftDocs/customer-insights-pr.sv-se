@@ -1,7 +1,7 @@
 ---
 title: Systemkonfiguration i målgruppsinsikter
 description: Läs om systeminställningar för funktionen målgruppsinsikter i Dynamics 365 Customer Insights.
-ms.date: 06/02/2020
+ms.date: 02/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,25 +9,30 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: nimagen
 manager: shellyha
-ms.openlocfilehash: 7dd72e6512cd87ac70235d21667399298408db21
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: a9c9e258da49b8f452550794539962d48b856829
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407105"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267362"
 ---
 # <a name="system-configuration"></a>Systemkonfiguration
 
-På sidan **System** finn fyra flikar: **Status**, **Schema**, **Om** och **Allmänt**.
+På sidan **System** finns följande flikar:
+- [Status](#status-tab)
+- [Schemalägg](#schedule-tab)
+- [API-användning](#api-usage-tab)
+- [Om](#about-tab)
+- [Allmänt](#general-tab)
 
 > [!div class="mx-imgBorder"]
 > ![Systemsida](media/system-tabs.png "Systemsida")
 
 ## <a name="status-tab"></a>Fliken status
 
-På fliken **Status** kan du spåra förlopp för datainmatning, dataexporter samt flera andra viktiga produktprocesser. Granska informationen på den här fliken för att säkerställa fullständigheten av aktiva processer.
+Under **fliken Status** kan du spåra förloppet för datainmatning, dataexport och många andra viktiga produktprocesser. Granska informationen på den här fliken för att säkerställa fullständigheten av aktiva processer.
 
-På den här fliken finns statustabeller för **datakällor**, **systemprocesser** och **dataförberedelse**. I varje tabell spåras **namnet** på uppgiften och tillhörande entitet, **statusen** för dess senaste körning och när den **senast uppdaterades**.
+Den här fliken innehåller tabeller med status och bearbetningsinformation för olika processer. I varje tabell spåras **namnet** på uppgiften och tillhörande entitet, **statusen** för dess senaste körning och när den **senast uppdaterades**.
 
 Visa information om de senaste körningarna av en uppgift genom att välja dess namn.
 
@@ -40,7 +45,7 @@ Det finns sex typer av status för uppgifter. Följande statustyper visas även 
 - **Hoppades över:** Uppgiften hoppades över. En eller flera processer längre fram som denna uppgift är beroende av fallerar eller hoppas över.
 - **Fel:** Det gick inte att bearbeta uppgiften.
 - **Avbruten:** bearbetningen avbröts av användaren innan den avslutades.
-- **Köad:** bearbetningen är satt i kö och startas när alla efterföljande aktiviteter har slutförts. Mer information finns i [uppdatera principer](#refresh-policies).
+- **Köad**: Bearbetningen köas och startar när alla överordnade uppgifter har slutförts. Mer information finns i [uppdatera principer](#refresh-policies).
 
 ### <a name="refresh-policies"></a>Uppdateringsprinciper
 
@@ -89,4 +94,17 @@ Välj **Spara** och bekräfta dina val.
 
 ## <a name="api-usage-tab"></a>Fliken API-användning
 
-Hitta information om API-användning i realtid och se vilka händelser som har ägt rum inom ett visst tidsintervall. Mer information finns i [Datainmatning i realtid](real-time-data-ingestion.md).
+Hitta information om API-användningen i realtid och se vilka händelser som har inträffat i en viss tidsram. Du väljer tidsram i listrutan **Välj en tidsram**. 
+
+**API-användningen** innehåller tre avsnitt: 
+- **API-anrop** – ett diagram som visualiserar det sammanlagda antalet anrop till API:et inom den valda tidsramen.
+
+- **Dataöverföring** – ett diagram som visar mängden data som överfördes via API:et i den valda tidsramen.
+
+-  **Åtgärder** – en tabell med rader för varje tillgänglig API-åtgärd och information om hur åtgärderna används. Du kan välja ett åtgärdsnamn för att gå till [API-referensen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
+
+   Åtgärder som använder [datainmatning i realtid](real-time-data-ingestion.md) innehåller en knapp med en kikarsymbol för att visa API-användning i realtid. Välj knappen för att öppna en sidoruta som innehåller användningsdetaljer för API-användningen i realtid i den aktuella miljön.   
+   Använd rutan **Gruppera efter** i fönstret **API-användning i realtid** för att välja hur realtidsinteraktioner bäst ska presenteras. Du kan gruppera data efter API-metod, kvalificerade namn för entiteter (upptagen entitet), skapade av (händelsens källa), resultat (lyckade eller misslyckade) eller felkoder. Informationen är tillgänglig som ett historikdiagram och som en tabell.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 9032d99357db86e66588eda544211a5f8eb2f23b
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 63caa2ebdd7d637d14ac9c9cc7972095803aee2f
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643885"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477155"
 ---
-# <a name="export-destinations-preview"></a>Exportmål (förhandsversion)
+# <a name="export-destinations-preview-overview"></a>Översikt över exportmål (förhandsversion)
 
 På sidan **exportera destinationer** visas alla platser som du har konfigurerat för att exportera data till. Du kan också lägga till nya destinationer för export. Dessutom visas exportalternativ som är tillgängliga för tillfället. Få en snabb översikt, beskrivning och ta reda på vad du kan göra med de olika utökningsalternativen. Exportera enhetliga profiler, mått och segment till program som stöds och som är relevanta för ditt företag.
 
@@ -27,10 +27,13 @@ Gå till **administration** > **exportdestinationer** för att hitta följande u
 - [Power Automate anslutningsprogram](export-power-automate.md)
 - [Power Apps anslutningsprogram](export-power-apps.md)
 - [Power BI anslutningsprogram](export-power-bi.md)
+- [Autopilot](export-autopilot.md)
 - [DotDigital](export-dotdigital.md)
 - [Dynamics 365 Sales](export-dynamics365-sales.md)
 - [Dynamics 365 Marketing](export-dynamics365-marketing.md)
 - [Azure Blob Storage](export-azure-blob-storage.md)
+- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
+- [SendGrid](export-sendgrid.md)
 - [LiveRamp&reg; anslutning](export-liveramp.md)
 - [Robot för Microsoft Teams](export-teams-bot.md)
 - [Mailchimp](export-mailchimp.md)
@@ -95,3 +98,6 @@ Om du vill ta bort ett exportmål går du till sidan **exportmål**.
 2. Välj **Ta bort** från listrutan.
 
 3. Bekräfta borttagningen genom att välja **ta bort** på bekräftelseskärmen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

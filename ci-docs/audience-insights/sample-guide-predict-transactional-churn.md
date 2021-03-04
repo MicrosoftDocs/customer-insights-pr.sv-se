@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 055708ed3f9f468cad83ecf976a460814bf05199
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 81540ad2f490cf566f031233543b3cb6aa838033
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643615"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269812"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse om transaktionell omsättning (förhandsversion)
 
@@ -49,7 +49,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    [!div class="mx-imgBorder"]
    ![Transformera födelsedatum till datum](media/ecommerce-dob-date.PNG "transformera födelsedatum till datum")
 
-1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **eCommerceContacts**
+1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **eCommerceContacts**
 
 1. Spara datakällan.
 
@@ -66,7 +66,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **PurchasedOn**: Datum/tid
    - **TotalPrice**: Valuta
    
-1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **eCommercePurchases**.
+1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **eCommercePurchases**.
 
 1. Spara datakällan.
 
@@ -84,7 +84,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **RewardsPoints**: Heltal
    - **CreatedOn**: Datum/Tid
 
-1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **loyCustomers**.
+1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **loyCustomers**.
 
 1. Spara datakällan.
 
@@ -166,7 +166,7 @@ Med de enhetliga kundprofilerna på plats kan vi nu köra förutsägelsen om pre
 
      :::image type="content" source="media/model-levers.PNG" alt-text="Välj modellens förutsägelsefönster och omsättningsdefinition.":::
 
-1. Välj **Inköpshistorik (obligatoriskt)** och välj **Lägg till data** för prenumerationshistorik.
+1. Välj **Inköpshistorik (obligatoriskt)** och välj **Lägg till data** för inköpshistorik.
 
 1. Lägg till entiteten **eCommercePurchases: e-handel** och mappa fälten från e-handel till motsvarande fält som krävs av modellen.
 
@@ -204,3 +204,6 @@ Du kan skapa ett nytt segment baserat på entiteten som skapats av modellen.
 Du har nu ett segment som uppdateras dynamiskt som identifierar kunder med hög omsättningsrisk för den här prenumerationsverksamheten.
 
 Mer information finns i [Skapa och hantera segment](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

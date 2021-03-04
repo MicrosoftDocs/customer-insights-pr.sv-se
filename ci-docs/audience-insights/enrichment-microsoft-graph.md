@@ -1,20 +1,20 @@
 ---
 title: Berika kundprofiler med Microsoft Graph
 description: Använd patentskyddade data från Microsoft Graph för att utöka dina kunddata med varumärkes- och intressetillhörigheter .
-ms.date: 09/28/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 4f93a2337815f76b98185ecb3755e08443031748
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 2c95369c778f592bc1460799aca0fa8cff813d68
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407073"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269352"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Utöka kundprofiler med varumärkes- och intressetillhörighet (förhandsversion)
 
@@ -35,16 +35,21 @@ Vi använder online-sökdata från Microsoft Graph för att hitta tillhörighete
 
 [Läs mer om Microsoft Graph](https://docs.microsoft.com/graph/overview).
 
-## <a name="affinity-score-and-confidence"></a>Tillhörighetspoäng och förtroende
+## <a name="affinity-level-and-score"></a>Tillhörighetsnivå och poäng
 
-**Tillhörighetspoängen** beräknas på en skala på 100 punkter med 100 som representerar det segment som har den högsta tillhörigheten för ett varumärke eller intresse.
+I varje berikad kundprofil tillhandahåller vi två relaterade värden – tillhörighetsnivå och tillhörighetspoäng. Dessa värden hjälper dig att avgöra hur starkt tillhörigheten är för den profilens demografiska segment, för ett varumärke eller intresse, jämfört med andra demografiska segment.
 
-**Tillhörighetsförtroendet** beräknas också på en 100-punkts skala. Den anger systemets konfidensnivå som ett segment har en tillhörighetsnivå för varumärket eller räntan. Konfidensnivå bygger på storleken på segmentet och i segmentets granularitet. Segmentstorleken bestäms av mängden data som det aktuella segmentet har. Segmentgranularitet bestäms av hur många attribut (ålder, kön, plats) som är tillgängliga i en profil.
+*Tillhörighetsnivå* består av fyra nivåer och *tillhörighetspoäng* beräknas på en skala med 100 poäng som mappas till tillhörighetsnivåerna.
 
-Vi normaliserar inte poängen för datauppsättning. Därför kanske du inte ser alla möjliga tillhörighetsvärden för datauppsättning. Det kan till exempel finnas ingen berikad kundprofil med tillhörighet 100 i dina data. Det är möjligt om det inte finns några kunder i det demografiska segmentet som gav resultatet 100 för ett visst varumärke eller en viss ränta.
 
-> [!TIP]
-> När [skapar segment](segments.md) med tillhörighetspoäng granskar du fördelningen av tillhörighetsresultat för datauppsättning innan du bestämmer dig för lämpliga poängtröskelvärden. Ett tillhörighetspoäng på 10 kan till exempel betraktas som signifikant i ett datauppsättning som har högst 25 poäng för ett visst varumärke eller intresse.
+|Tillhörighetsnivå |Tillhörighetspoäng  |
+|---------|---------|
+|Mycket högt     | 85–100       |
+|Högt     | 70–84        |
+|Medium     | 35–69        |
+|Lågt     | 1–34        |
+
+Beroende på vilken granularitet du vill använda för att mäta tillhörigheten kan du använda antingen tillhörighetsnivå eller poäng. Med tillhörighetspoäng får du mer exakt kontroll.
 
 ## <a name="supported-countriesregions"></a>Länder/regioner som stöds
 
@@ -54,17 +59,13 @@ Om du vill välja ett land öppnar du **varumärken** eller **intressen** och v�
 
 ### <a name="implications-related-to-country-selection"></a>Effekter relaterade till val av land
 
-- När du [väljer egna varumärken](#define-your-brands-or-interests) ger vi förslag utifrån det valda landet/den regionen.
+- När [du väljer dina ega märken](#define-your-brands-or-interests) ger systemet förslag utifrån valt land eller vald region.
 
-- När [du väljer en bransch](#define-your-brands-or-interests) kommer vi att identifiera de mest relevanta varumärken eller intressen som baseras på det valda landet/regionen.
+- När [du väljer en bransch](#define-your-brands-or-interests) får du de mest relevanta märkena eller intressena utifrån valt land eller vald region.
 
-- När du [mappar fälten](#map-your-fields) och fältet land inte är mappat används Microsoft Graph-data från det valda landet för att utöka dina kundprofiler. Vi använder också den här markeringen för att utöka dina kundprofiler som inte har tillgängliga lands- eller regionsdata.
-
-- När [du utökar profiler](#refresh-enrichment) utökas alla kundprofiler som vi har Microsoft Graph-data för och som är tillgängliga för valda varumärken och intressen, inklusive profiler som inte finns i det valda landet/regionen. Om du till exempel valde Tyskland utökas profiler som finns i USA om Microsoft Graph-data är tillgängliga för de valda varumärkena och intressena i USA.
+- När [du berikar profiler](#refresh-enrichment) berikar vi alla kundprofiler som vi får data för för de valda märkena och intressena. Inklusive profiler som inte finns i det valda landet eller den valda regionen. Om du till exempel valde Tyskland utökas profiler som finns i USA om Microsoft Graph-data är tillgängliga för de valda varumärkena och intressena i USA.
 
 ## <a name="configure-enrichment"></a>Konfigurera berikning
-
-Att konfigurera berikning av varumärken eller intressen består av två steg:
 
 ### <a name="define-your-brands-or-interests"></a>Definiera dina varumärken eller intressen
 
@@ -75,9 +76,19 @@ Välj ett av följande alternativ:
 
 Om du vill lägga till ett varumärke eller ett intresse anger du det i inmatningsområdet för att få förslag utifrån matchande termer. Om vi inte visar ett varumärke eller intresse som du letar efter kan du skicka feedback med hjälp av **föreslå** länk.
 
+### <a name="review-enrichment-preferences"></a>Granska inställningar för berikning
+
+Gå igenom standardinställningarna för berikning och uppdatera dem efter behov.
+
+:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Skärmbild av fönstret med inställningar för berikning.":::
+
+### <a name="select-entity-to-enrich"></a>Välj en entitet att berika
+
+Välj **Berikad entitet** och välj den datauppsättning som du vill berika med företagsdata från Microsoft Graph. Du kan välja entiteten Kund för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
+
 ### <a name="map-your-fields"></a>Mappa dina fält
 
-Mappa fält från entiteten enhetlig kund till minst två attribut för att definiera det demografiska segment som du vill att vi ska använda för att utöka kunddata. Välj **redigera** om du vill definiera mappningen av fälten och välj **Tillämpa** när du är klar. Välj **Spara** för att slutföra fältmappningen.
+Mappa fält från en enhetlig kundentitet och definiera det demografiska segment som du vill att systemet ska använda för att berika kunddata. Mappa land/region och åtminstone attributen Födelsedatum eller Kön. Du måste också mappa minst en av Ort (och Region) eller Postnummer. Välj **redigera** om du vill definiera mappningen av fälten och välj **Tillämpa** när du är klar. Välj **Spara** för att slutföra fältmappningen.
 
 Följande format och värden stöds är värden inte skiftlägeskänsliga:
 
@@ -120,3 +131,6 @@ Varumärkes- och räntetillhörigheter kan också visas på enskilda kundkort. G
 ## <a name="next-steps"></a>Nästa steg
 
 Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](measures.md)och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

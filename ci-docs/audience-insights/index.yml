@@ -6,16 +6,16 @@ metadata:
   description: Hjälphubb med viktiga länkar för målgruppsinsikter.
   ms.service: customer-insights
   ms.subservice: audience-insights
-  ms.topic: landing-page
+  ms.topic: hub-page
   author: m-hartmann
   ms.author: mhart
   ms.date: 10/16/2020
-  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
-  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.openlocfilehash: ba5229067c7c338b4f8d0503aaf80f25b6c4002c
+  ms.sourcegitcommit: a8f7d5d0008b2d7d0ff0daeb746126abfc82c253
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/03/2020
-  ms.locfileid: "4407097"
+  ms.lasthandoff: 12/17/2020
+  ms.locfileid: "4745743"
 landingContent:
 - title: Om målgruppsinsikter
   linkLists:
@@ -27,36 +27,36 @@ landingContent:
       url: whats-new-audience-insights.md
     - text: Community-plats
       url: https://go.microsoft.com/fwlink/?linkid=2073991
-- title: Mata in datakällor
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Lägg till datakällor
-      url: data-sources.md
-    - text: Stegvis uppdatering
-      url: incremental-refresh-data-sources.md
-    - text: Förstå entiteter
-      url: entities.md
 - title: Förena data
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Mappa
-      url: map-entities.md
-    - text: Matchning
-      url: match-entities.md
-    - text: Slå ihop
-      url: merge-entities.md
-- title: Förfina kundprofiler
+    - text: Översikt över datakällor
+      url: data-sources.md
+    - text: Översikt över förening
+      url: data-unification.md
+    - text: Förstå entiteter
+      url: entities.md
+- title: Berika och förfina data
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Berika kundprofiler
+      url: enrichment-hub.md
     - text: Konfigurera relationer
       url: relationships.md
     - text: Ange kundaktiviteter
       url: activities.md
-    - text: Ta med egna maskininlärningsmodeller
-      url: custom-models.md
+- title: Skaffa insikter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Skapa segment
+      url: segments.md
+    - text: Skapa mått
+      url: measures.md
+    - text: Fullständiga data med förutsägelser
+      url: predictions.md
 - title: Exportera kunddata
   linkLists:
   - linkListType: how-to-guide

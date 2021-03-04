@@ -4,17 +4,17 @@ description: Importera data från en Common Data Service hanterad datasjö.
 ms.date: 09/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
 ms.reviewer: adkuppa
-ms.openlocfilehash: 029857e2bbb5f6357a5c01138ceaad78887b7518
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 18b6cd3fdaf5b738877a73b520b91dbc6ded40de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643420"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267836"
 ---
 # <a name="connect-to-data-in-a-common-data-service-managed-data-lake"></a>Anslut till data i en Common Data Service hanterad datasjö
 
@@ -34,7 +34,10 @@ Data som lagras i en onlinetjänster, t.ex. Azure Data Lake Storage kan lagras p
 
 3. Välj **Anslut till Common Data Service** och välj **Nästa**.
 
-4. Ange ett **namn** för datakällan och välj sedan **Nästa**.
+4. Ange ett **namn** för datakällan och välj sedan **Nästa**. Namnge riktlinjer: 
+   - Inled med en bokstav.
+   - Använd endast bokstäver och siffror. Specialtecken och blanksteg är inte tillåtna.
+   - Använd mellan 3 och 64 tecken.
 
 5. Ange **Serveradressen** för din Common Data Service organisation och välj **Logga in**.
 
@@ -65,3 +68,6 @@ För att ansluta till en annan Common Data Service, [skapa en ny datakälla](#co
 3. Välj alternativet **Redigera** från listan.
 
 4. Välj ytterligare entiteter från listan med tillgängliga entiteter och välj **Spara**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

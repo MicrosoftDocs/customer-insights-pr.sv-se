@@ -5,16 +5,16 @@ ms.date: 06/05/2020
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8260e3b5e529f3d54678d9d6e11aebb2795e27fd
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: c839f9dc7e403412c0e3d936392d45a43bc63545
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643705"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269996"
 ---
 # <a name="connector-for-facebook-ads-manager-preview"></a>Koppling för Facebook Ads Manager (förhandsgranskning)
 
@@ -62,7 +62,16 @@ Exportera segment med enhetliga kundprofiler till Facebook Ads Manager för att 
 
 Du kan [Exportera data på begäran](export-destinations.md). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md#schedule-tab).
 
+## <a name="known-limitations"></a>Kända begränsningar
+
+- Upp till 10 miljoner kundprofiler per export till annonshanteraren för Facebook 
+- Export till annonshanteraren för Facebook är begränsad till segment
+- Det kan ta upp till 90 minuter att exportera segment med totalt 10 miljoner profiler
+
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till Facebook Ads Manager tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att Facebook Ads uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
 Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

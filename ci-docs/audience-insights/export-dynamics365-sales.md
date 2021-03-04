@@ -1,20 +1,20 @@
 ---
 title: Exportera Customer Insights-data till Dynamics 365 Sales
 description: Lär dig hur du konfigurerar anslutningen till Dynamics 365 Sales.
-ms.date: 08/21/2020
+ms.date: 02/01/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: af0824e69dfdf620a0ac756e32a9bd3dd85e5151
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 0013c4e6a96401d6cdbea55ed38f85f5e10dcc56
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643840"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269030"
 ---
 # <a name="connector-for-dynamics-365-sales-preview"></a>Koppling för Dynamics 365 Sales (förhandsversion)
 
@@ -24,7 +24,10 @@ Använd dina kunddata för att skapa marknadsföringslistor, följa upp arbetsfl
 
 ## <a name="prerequisite"></a>Förutsättningar
 
-Kontaktposter [från Dynamics 365 Sales matade in med Common Data Service](connect-power-query.md).
+1. Kontaktposter måste finnas i Dynamics 365 Sales innan du kan exportera ett segment från Customer Insights till Sales. Läs mer om hur du matar in kontakter i [Dynamics 365 Sales med Common Data Services](connect-power-query.md).
+
+   > [!NOTE]
+   > Om du exporterar segment från målgruppsinsikter till Sales skapas inte nya kontaktposter i Sales-instanserna. Kontaktposterna från Sales måste matas in i målgruppsinsikter och användas som en datakälla. De måste också finnas med i den enhetliga entiteten Kund för att mappa kund-ID till kontakt-ID innan segment kan exporteras.
 
 ## <a name="configure-the-connector-for-sales"></a>Konfigurera koppling för Sales
 
@@ -49,3 +52,6 @@ Kontaktposter [från Dynamics 365 Sales matade in med Common Data Service](conne
 ## <a name="export-the-data"></a>Exportera data
 
 Du kan [Exportera data på begäran](export-destinations.md). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md#schedule-tab).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

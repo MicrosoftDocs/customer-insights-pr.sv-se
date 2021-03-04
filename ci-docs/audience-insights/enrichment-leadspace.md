@@ -5,16 +5,16 @@ ms.date: 11/24/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1b5c6e46e8e424df83e855d81fc4dd7ecb394e3c
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 12eed91a7ca4ef7fde0d53cca4a1dfd398b4634f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668745"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269444"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Berikning av företagsprofiler med Leadspace (förhandsversion)
 
@@ -38,7 +38,11 @@ Följande krav måste vara uppfyllda för att du ska kunna konfigurera Leadspace
 
 1. Välj **Kom igång** och ange sedan ett aktivt **Leadspace-token** (evig nyckel). Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**. Bekräfta båda indata genom att välja **Anslut till Leadspace**.
 
-1. Välj **Mappa data** och definiera vilka fält från dina enhetliga profiler som ska användas för att söka efter matchande företagsdata från Leadspace. Fältet **Företagets namn** är obligatoriskt. För högre matchningsnoggrannhet kan upp till två ytterligare fält, **Företagets webbplats** och **Företagets plats**, läggas till.
+1. Välj **Mappa data** och välj den datauppsättning som du vill berika med företagsdata från Leadspace. Du kan välja entiteten *Kund* för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
+
+   :::image type="content" source="media/enrichment-leadspace-select-segment.png" alt-text="Välj mellan kundprofil och segmentberikning.":::
+
+1. Klicka på **Nästa** och definiera vilka fält från dina enhetliga profiler som ska användas för att söka efter matchande företagsdata från Leadspace. Fältet **Företagets namn** är obligatoriskt. För högre matchningsnoggrannhet kan upp till två ytterligare fält, **Företagets webbplats** och **Företagets plats**, läggas till.
 
    :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Fältmappningsfönstret för Leadspace.":::
    
@@ -62,3 +66,6 @@ Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](meas
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till Leadspace tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att Leadspace uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -5,16 +5,16 @@ ms.date: 09/29/2020
 ms.reviewer: adkuppa
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8a170cc5b64b4b383501021232c83948e838a0e2
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407085"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267797"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Ansluta till en Power Query-datakälla
 
@@ -28,7 +28,10 @@ Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta
 
 1. Välj metoden **Importera data** och välj **Nästa**.
 
-1. Ange ett **namn** på datakälla och välj **nästa** om du vill skapa datakälla.
+1. Ange ett **namn** på datakälla och välj **nästa** om du vill skapa datakälla. Namnge riktlinjer: 
+   - Inled med en bokstav.
+   - Använd endast bokstäver och siffror. Specialtecken och blanksteg är inte tillåtna.
+   - Använd mellan 3 och 64 tecken.
 
 1. Välj ett av [tillgängliga anslutningsprogram](#available-power-query-data-sources). I det här exemplet väljer du anslutningen **Text/CSV**.
 
@@ -77,3 +80,6 @@ Anslutningar med en bockmarkering i kolumnen **Customer Insights (dataflöden)**
 3. Tillämpa ändringarna och omvandlingarna i dialogrutan **Power Query - redigera frågor** som beskrivs i avsnittet [Skapa en ny datakälla](#create-a-new-data-source).
 
 4. Välj **Spara** i Power Query när du har slutfört redigeringarna och vill spara ändringarna.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

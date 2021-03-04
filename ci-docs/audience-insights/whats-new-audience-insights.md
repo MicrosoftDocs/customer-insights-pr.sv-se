@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 11/02/2020
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 07b4bee0445f9cd7d53a37cd405af839feb07ae3
-ms.sourcegitcommit: 4004eadac7a65e50e0a409cb925958523c2b6348
+ms.openlocfilehash: 9183c8af4fb9f9f08ac63d8d0cd37c6868bba310
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "4650026"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270454"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -30,6 +30,77 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="january-2021-updates"></a>Uppdateringar januari 2021
+
+Uppdateringarna i januari 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+#### <a name="extensibility"></a>Utbyggbar
+
+- **Utökade funktioner och förbättrade prestanda för SFTP-export** Du kan nu exportera alla utdataentiteter från Customer Insights till en SFTP-värd. Tidigare begränsades exporten till segmententiteter. Dessutom tillåter prestanda för SFTP-export mer datavolym på kortare tid, beroende på prestanda för din SFTP-värd.    
+  Mer information finns i [Anslutningsprogram för SFTP (förhandsversion)](export-sftp.md).  
+
+#### <a name="segments"></a>Segment
+
+- **Segment som föreslås genom maskininlärning för att förbättra mått** Det finns ett nytt sätt att identifiera och skapa segment. Systemet använder en AI-modell för att föreslå segment som kan hjälpa till att förbättra KPI:et (måttet) som du redan spårar. Vi visar i vilken utsträckning attribut som du väljer för ett mått eller ett annat primärt attribut. Med hjälp av den här informationen kan du hitta potentiella affärsmöjligheter.    
+  Mer information finns i [Föreslagna segment (förhandsversion)](suggested-segments.md).
+
+#### <a name="data-unification"></a>Dataförening
+
+- **Förbättrad matchningsupplevelse** I dataföreningsområdet uppdaterades matchningsupplevelsen. Du kan konfigurera och visa matchningsreglerna, inklusive detaljerad information om hur matchning fungerar. Det finns alternativ för att inaktivera en matchningsregel så att den inte längre är aktiv samtidigt som du behåller konfigurationen, drar och släpper matchningsregler med mera.
+  För mer information se [Matcha entiteter](match-entities.md).
+
+- **Dedupliceringsutdata från matchningsprocessen är tillgänglig som en entitet** Utdata från dedupliceringsprocessen från matchningsprocessen skrivs nu i en separat entitet för vidare analys. Entiteten består av fälten som används i dedupliceringsprocessen och den vinnande posten och motsvarande alternativa poster som slås samman med den vinnande posten.
+  Mer information finns i [Dedupliceringsutdata som en entitet](match-entities.md#deduplication-output-as-an-entity).
+
+#### <a name="system-administration"></a>Systemadministration
+
+- **Dela data sömlöst till Microsoft Dataverse** Du kan nu dela Customer Insights-utdata med Microsoft Dataverse-program med hjälp av Microsoft Dataverse-hanterad Data Lake. När du har kopplat en Dataverse-miljö till Customer Insights har du möjlighet att aktivera datadelning.
+  Mer information finns i [Hantera miljöer](manage-environments.md).
+
+
+## <a name="december-2020-updates"></a>Uppdateringar i december 2020
+
+Uppdateringarna i december 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="new-and-updated-features-in-december-2020"></a>Nya och uppdaterade funktioner i december 2020
+
+#### <a name="data-enrichment"></a>Databerikande
+
+- **Förbättrade berikningar av varumärke och intressesamhörighet**
+  
+  Vi har förenklat våra tillhörighetspoäng så att de blir lättare att förstå och använda. Nu kan du snabbt identifiera kunder baserat på hur mycket tillhörighet de har för ett visst varumärke eller intresse.
+
+  Dessutom har vi lagt till nya konfigurationsalternativ för att bättre styra hur du vill att dina kundprofiler ska berikas. 
+
+  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md).
+
+- **Kontrollera vilka profiler som ska berikas**
+
+  Nu kan du endast berika en deluppsättning av kundprofilerna med alternativet att välja en segmententitet i stället för standardkundentiteten. Skapa ett segment med de kundprofiler som du vill berika och välj det i berikningskonfigurationen för kunddatauppsättningen.
+  Den här funktionen är för närvarande endast tillgänglig för berikningar som tillhandahålls av Experian och HERE Technologies. Vi kommer snart att aktivera den här möjligheten för fler berikningar.
+
+  Mer information finns i [Berika kundprofiler med demografi från Experian](enrichment-experian.md) eller [Berika kundprofiler med HERE Technologies](enrichment-here.md).
+
+#### <a name="extensibility"></a>Utbyggbar
+
+- **Aktivera dina segment via Autopilot**
+
+  Exportera segment till Autopilot och använd dem i marknadsföringssyfte. Mer information finns i [Anslutningsprogram för Autopilot (förhandsversion)](export-autopilot.md).
+
+- **Aktivera dina segment via SendGrid**
+
+  Exportera segment till SendGrid och använd dem i marknadsföringssyfte. Mer information finns i [Anslutningsprogram för SendGrid](export-sendgrid.md).
+
+#### <a name="system-administration"></a>Systemadministration
+
+- **Uppdaterad miljöhanteringsupplevelse**
+  
+  Nu kan du skapa, redigera, ta bort och återställa miljöer direkt från miljöväljaren i apphuvudet. 
+  
+  Dessutom fästs miljön du använder högst upp i miljöpanelen så att du inte behöver söka efter den.
+
+  Mer information finns i [Hantera miljöer](manage-environments.md).
 
 ## <a name="november-2020-updates"></a>Uppdateringar i november 2020
 
@@ -165,7 +236,7 @@ Mer information finns i [utöka kundprofiler med demografisk information från E
 Med fönstret uppgiftsinformations kan du visa information om uppgifter som systemet kör. Det är ett praktiskt sätt att identifiera problem med konfigurations- och söklösningar.
 Läs om hur du åtgärdar potentiella problem i felmeddelandena.
  
-- **Bearbeta information som lagts till ytterligare sidor**
+- **Bearbetningsinformation läggs till på fler sidor**
 
 Den här förbättringen lägger till information om status för entiteterna på sidan **entiteter** och **kunder**.
  
@@ -202,9 +273,9 @@ Uppdateringarna i augusti 2020 innehåller flera funktioner, prestandauppgraderi
 
 #### <a name="enrichment"></a>Berikning
 
-- **Intressetillhörigheter som är tillgängliga på ytterligare marknader**
+- **Berikning av intressesamhörighet är tillgänglig på fler marknader**
 
-  Vi utökar tillgängligheten av intressetillhörigheter bortom USA och fem ytterligare marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du utöka dina kunddata med ytterligare intressen som gäller för dessa marknader. Vi ska också berika dina kundprofiler som finns på dessa marknader med hjälp av lokala patentskyddade data från Microsoft Graph.
+  Vi utökar tillgängligheten för berikning av intressesamhörighet utanför USA till fem andra marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du berika dina kunddata med fler intressen för dessa marknader. Vi ska också berika dina kundprofiler som finns på dessa marknader med hjälp av lokala patentskyddade data från Microsoft Graph.
   Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md)
 
 
@@ -221,11 +292,11 @@ Uppdateringarna i juli 2020 innehåller flera funktioner, prestandauppgraderinga
   Vi har utökat våra utlösare för Power Automate och du kan skapa ett meddelande eller en åtgärd när en uppdatering av föreningsprocessen (mappa, matcha, slå samman) har slutförts.    
   Mer information finns i [Power Automate anslutningsprogram](export-power-automate.md)
 
-#### <a name="enrichment"></a>Berikande
+#### <a name="enrichment"></a>Berikning
 
-- **Berikning av samhörigheter med varumärke som är tillgängliga på ytterligare marknader**
+- **Berikning av varumärkessamhörighet är tillgänglig på fler marknader**
 
-  Vi utvidgar tillgängligheten av samhörigheter med varumärke bortom USA och ytterligare fem marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du utöka dina kunddata med lokala varumärken på dessa marknader. Vi ska också berika dina kundprofiler som finns på dessa marknader med hjälp av lokala patentskyddade data från Microsoft Graph.
+  Vi utökar tillgängligheten för berikning av varumärkessamhörighet utanför USA till fem andra marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du utöka dina kunddata med lokala varumärken på dessa marknader. Vi ska också berika dina kundprofiler som finns på dessa marknader med hjälp av lokala patentskyddade data från Microsoft Graph.
   Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md)
 
 ## <a name="june-2020-updates"></a>Uppdatering i juni 2020
@@ -238,7 +309,7 @@ Uppdateringarna i juni 2020 innehåller flera funktioner, prestandauppgraderinga
 
 - **Berikning av företagsdata från Leadspace**
   
-  Definiera fält i enhetliga kundprofiler som används för att slå upp relaterade företagsdata från Leadspace. När du har kört berikningsprocessen har B2B-profiler ökats med ytterligare attribut, bland annat företagsstorlek, plats, bransch och mycket mer.    
+  Definiera fält i enhetliga kundprofiler som används för att slå upp relaterade företagsdata från Leadspace. När du har kört berikningsprocessen berikas B2B-profiler med fler attribut, till exempel företagsstorlek, plats, bransch med mera.    
   Det här samarbetet gör det möjligt att förbättra kvaliteten på dina data med indata från tjänster från tredje part. Om du vill använda denna berikning måste du ha en licens från Leadspace för att få tillgång till B2B-företagsdata. Systemet kommer att använda den licensen så att dina data berikas kontinuerligt.    
   Mer information finns i [Berika företagsprofiler med Leadspace](enrichment-leadspace.md).
 
@@ -264,7 +335,7 @@ Uppdateringarna i juni 2020 innehåller flera funktioner, prestandauppgraderinga
   Med en ny kontroll på kundkortstillägget för Dynamics 365 kan du visa dina kontakters berikningar av varumärke och intresse i appar för kundengagemang i Dynamics 365.    
   Mer information finns i [Tillägg för kundkort](customer-card-add-in.md).
 
-- **Ytterligare Power Automate utlösare**
+- **Fler Power Automate-utlösare**
 
   Vi har utökat våra utlösare för Power Automate och lagt till följande utlösare:
   - Hämta ett meddelande eller utföra en åtgärd när en automatisk fullständig uppdatering (datakällor, sammanslagning, segment, mått, export) har slutförts
@@ -295,12 +366,12 @@ Uppdateringarna i juni 2020 innehåller flera funktioner, prestandauppgraderinga
   
   Hitta liknande kunder i kundbasen med hjälp av artificiell intelligens. En maskininlärningsmodell för binär klassificering tilldelar en likhetspoäng för kunderna i det expanderade segmentet. Poängen baseras på likheten med kunder i källsegmentet. Beroende på likhetspoängen läggs kundprofilerna till i ett nyskapat segment.
 
-  I vissa fall kallas för den för dubbelgångarmodell i digital marknadsföring, en AI-modell som hjälper dig att hitta kunder som liknar ett annat segment av dina kunder genom att använda ytterligare attribut. Du kan inte bara välja attributen, men du kan också ange det maximala antalet kunder som ska finnas i det nya segmentet. AI-modellen beräknar sedan likhetspoäng för varje kund utifrån de valda attributen och söker efter kunder med det övre medelvärdet för likhetspoäng. Det resulterande segmentet omfattar kunder som ser ut ungefär som kunden i det ursprungliga segmentet.    
+  Kallas ibland för lookalikmodellering inom digital marknadsföring, och använder en AI-modell för att hitta kunder som liknar ett annat segment av dina kunder genom att räkna in fler attribut. Du kan inte bara välja attributen, men du kan också ange det maximala antalet kunder som ska finnas i det nya segmentet. AI-modellen beräknar sedan likhetspoäng för varje kund utifrån de valda attributen och söker efter kunder med det övre medelvärdet för likhetspoäng. Det resulterande segmentet omfattar kunder som ser ut ungefär som kunden i det ursprungliga segmentet.    
   Mer information finns i [Liknande kunder](find-similar-customer-segments.md).
 
 - **Överlappningar och differentieringar av segment**
 
-  Med överlappning kan du se hur många och vilka kunder som är gemensamma för två eller flera segment. Exempelvis överlappar ett högt utgiftssegment med ett segment av hög tillfredsställelse eller hur ett överlappande kundsegment överlappar ett segment med kunder som inte är speciellt nöjda. Dessutom kan du analysera hur överlappningen ändras utifrån ett ytterligare attribut som du väljer.
+  Med överlappning kan du se hur många och vilka kunder som är gemensamma för två eller flera segment. Exempelvis överlappar ett högt utgiftssegment med ett segment av hög tillfredsställelse eller hur ett överlappande kundsegment överlappar ett segment med kunder som inte är speciellt nöjda. Dessutom kan du analysera hur överlappande ändringar baseras på ett extra attribut som du väljer.
 
   Segmentdifferentieringar avslöjar vad som skiljer ett segment från övriga kunder eller från ett annat segment. Allt du behöver göra är att identifiera ett segment och systemet identifierar profilmappar och mått som särskiljer segmentet i form av en rangordnad lista med differentieringar, från den starkaste differentieringen till den svagaste.    
   Mer information finns i [Segmentinsikter (förhandsversion)](segment-insights.md).
@@ -333,7 +404,7 @@ Uppdateringarna i maj 2020 innehåller flera funktioner, prestandauppgraderingar
 
 - **Tidslinje och sidbrytning har uppdaterats i tillägget för kundkortet**
 
-  Tidslinjen för tilläggslösningen Customer Card matchar aktivitetens tidslinje. Sidnumreringen förbättras och visar upp till 50 aktiviteter på samma gång. Det går också att läsa in ytterligare aktiviteter på tidslinjen.    
+  Tidslinjen för tilläggslösningen Customer Card matchar aktivitetens tidslinje. Sidnumreringen förbättras och visar upp till 50 aktiviteter på samma gång. Det tillåter också inläsning av fler aktiviteter i tidslinjen.    
   Mer information finns i [Tillägg för kundkort](customer-card-add-in.md).
 
 - **Power Automate utlösare för segmentändringar**
@@ -412,7 +483,7 @@ Uppdateringarna i april 2020 innehåller flera funktioner, prestandauppgradering
 
 - **Exportera till LiveRamp**
 
-  Aktivera dina data i LiveRamp® om du vill ansluta med över 500 plattformar över digitala, sociala och TV-ekosystem. Använd dina data i LiveRamp för att rikta, utelämna och anpassa annonskampanjer.    
+  Aktivera dina data i LiveRamp® om du vill ansluta med över 500 plattformar över digitala, sociala och TV-ekosystem. Använd dina data i LiveRamp för att rikta, undertrycka och anpassa annonskampanjer.    
   Mer information finns i [LiveRamp&reg; anslutningsprogram](export-liveramp.md).
 
 - **Tillägget Customer Insights Teams**
@@ -431,9 +502,9 @@ Uppdateringarna i april 2020 innehåller flera funktioner, prestandauppgradering
   
   Användare kan skapa, redigera och ta bort mått som bygger på andra mått. Till exempel ett mått som är konstruerat på ett annat mått och byggts på ett tredje mått.
 
-#### <a name="segments"></a>Segments
+#### <a name="segments"></a>Segment
 
-- **Ytterligare operator**
+- **En annan operator**
   
   Den infällda operatorn gör det möjligt att segmentera för kunder efter flera möjliga strängvärden. Innan operatorn lades till var du tvungen att konstruera sådana segment med flera OR-villkor. Med den infällda operatorn kan du göra det med ett enda villkor.    
   Mer information finns i [Skapa och hantera segment](segments.md).
@@ -444,3 +515,6 @@ Uppdateringarna i april 2020 innehåller flera funktioner, prestandauppgradering
   
   Kopiera konfigurationen från en miljö till en annan. När du skapar en ny miljö kan du välja en befintlig miljö som du vill kopiera konfigurationen från. Vi stöder för närvarande datakällor, dataförening, relationer, mått och segment som ska kopieras. Datakälla autentiseringsuppgifter och verkliga data kopieras inte.    
   Mer information finns i [Hantera miljöer](manage-environments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

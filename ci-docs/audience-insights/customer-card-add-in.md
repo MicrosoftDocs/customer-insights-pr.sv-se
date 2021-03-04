@@ -1,7 +1,7 @@
 ---
 title: Installera och konfigurera Tillägget för kundkort
 description: Installera och konfigurera tillägget kundkort för Dynamics 365 Customer Insights.
-ms.date: 08/04/2020
+ms.date: 01/20/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: aab5deaf89b4b019f6688a1bca950ec2277ad5fb
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a6d5b49380ed129cf147698a16f5f3f597bf7fbc
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644065"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268066"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
 
@@ -28,7 +28,7 @@ Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Visa tidsli
 - Kundprofiler som [matats in från Dynamics 365-appen med Common Data Service](connect-power-query.md).
 - Användare av tillägget Kundkort måste [läggas till som användare](permissions.md) i målgruppsinsikter.
 - [Konfigurerade sök- och filterfunktioner](search-filter-index.md).
-- Demografisk kontroll: Demografiska fält, till exempel ålder eller kön är tillgängliga i den enhetliga kundprofilen.
+- Demografisk kontroll: Demografiska fält (till exempel ålder eller kön) är tillgängliga i den enhetliga kundprofilen.
 - Berikningskontroll: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler.
 - Intelligenskontroll: Kräver data som genererats med Azure Machine Learning ([prediktionsmodeller](predictions.md) eller [anpassade modeller](custom-models.md))
 - Måttkontroll: Kräver [konfigurerade åtgärder](measures.md).
@@ -92,10 +92,26 @@ Det kan ta en stund innan lösningen har installerats i din miljö.
 
 1. I dialogrutan **Fältegenskaper** avmarkera kryssrutan **Visa etiketten i formuläret**.
 
-1. Välj alternativet **webb** för kontrollen. För berikningskontrollen väljer du vilken typ av berikning du vill visa genom att konfigurera fältet **enrichmentType**. Du måste lägga till en separat berikningskontroll för varje typ av berikning.
+1. Välj alternativet **webb** för kontrollen. För berikningskontrollen väljer du vilken typ av berikning du vill visa genom att konfigurera fältet **enrichmentType**. Lägg till en separat berikningskontroll för varje berikningstyp.
 
 1. Klicka på **Spara** och **Publicera** om du vill publicera det uppdaterade kontaktformuläret.
 
 1. Gå till det publicerade kontaktformuläret. Den nyligen tillagda kontrollen visas. Du kan behöva logga in första gången du använder den.
 
 1. Du kan anpassa vad som ska visas på den anpassade kontrollen genom att klicka på knappen Redigera i det övre högra hörnet.
+
+## <a name="upgrade-customer-card-add-in"></a>Uppgradera tillägget för kundkort
+Kundkortstillägget uppgraderas inte automatiskt. Uppgradera till den senaste versionen genom att följa stegen i appen Dynamics 365 som har tillägget installerat.
+
+1. I appen Dynamics 365 går du till **Inställningar** > **Anpassning** och väljer **Lösningar**.
+
+1. I tabellen med tillägg söker du efter **CustomerInsightsCustomerCard** och väljer raden.
+
+1. Välj **Tillämpa lösningsuppgradering** i åtgärdsfältet.
+
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Uppgradera lösningen i området Anpassning i Dynamics 365-appar":::
+
+1. När du har startat uppgraderingsprocessen visas en inläsningssymbol tills uppgraderingen är klar. Om det inte finns någon senare version visas ett felmeddelande för uppgraderingen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

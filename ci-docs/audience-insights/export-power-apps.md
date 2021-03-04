@@ -1,20 +1,20 @@
 ---
 title: Anslutningsapp för Power Apps
 description: Anslut med Power Apps och Power Automate.
-ms.date: 08/21/2020
+ms.date: 01/19/2021
 ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b6ec103e29e218b2f27bfc1193300ea793a6b30b
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5a8bbb9a09218d54228589d43c21c8894680b56e
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407063"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268938"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps anslutningsprogram (förhandsversion)
 
@@ -31,7 +31,7 @@ Se Power Apps-dokumentationen om hur du [lägger till en dataanslutning i en app
 När du har lagt till Customer Insights som en dataanslutning kan du välja följande entiteter i Power Apps:
 
 - Kund: om du vill använda data från den [enhetliga kundprofilen](customer-profiles.md).
-- Enhetlig kundaktivitet: så här visar du den [enhetliga tidslinjen](activities.md) i appen.
+- Enhetlig aktivitet: så här visar du [aktivitetstidslinje](activities.md) i appen.
 
 ## <a name="limitations"></a>Begränsningar
 
@@ -72,3 +72,6 @@ Du lägger till exempel till kundprofiler i en [gallerikontroll](https://docs.mi
 1. Om du vill visa den enhetliga tidslinjen för en kund lägger du till ett gallerielement och lägger till egenskapen för Objekt: **Filter('UnifiedActivity', CustomerId = {Customer_Id})**
 
     Exempel: Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

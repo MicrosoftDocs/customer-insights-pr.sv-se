@@ -1,7 +1,7 @@
 ---
-title: Skapa och redigera åtgärder
-description: Definiera kundrelaterade åtgärder för att analysera och avspegla resultat för vissa affärsområden.
-ms.date: 10/15/2020
+title: Skapa och hantera mått
+description: Definiera mått som ska analyseras och reflektera företagets resultat.
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,105 +9,111 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: wameng
 manager: shellyha
-ms.openlocfilehash: 0e214a6eb66abd27f7292db3ce2c2a6e16a8ff33
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407104"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269950"
 ---
 # <a name="define-and-manage-measures"></a>Definiera och hantera mått
 
-**Mått** representerar KPI:er som avspeglar prestanda och hälsa för specifika affärsområden. Målgruppsinsikter ger en intuitiv upplevelse för att bygga olika typer av åtgärder, med hjälp av en frågebyggare som inte kräver att du kodar eller validerar dina åtgärder manuellt. **Du kan spåra dina affärsmått på startsidan**, visa mått för specifika kunder på **kundkortet** och använda mått för att definiera kundsegment på sidan **segment**.
+Med hjälp av mått kan du få en bättre förståelse för kundbeteenden och affärsresultat genom att hämta relevanta värden från [enhetliga profiler](data-unification.md). Ett företag vill till exempel se den *totala kostnaden per kund* för att förstå enskilda kunders köphistorik. Eller mäta *total försäljning för företaget* för att förstå den aggregerade nivån av intäkt i hela verksamheten.  
+
+Mått skapas med måttverktyget, en datafrågeställningsplattform med olika operatörer och enkla mappningsalternativ. Du kan filtrera data, gruppera resultat, identifiera [entitetsrelationssökvägar](relationships.md) och förhandsgranska utdata.
+
+Använd måttverktyget om du vill planera affärsaktiviteter genom att fråga efter kunddata och extrahera insikter. Om du till exempel skapar ett mått på *totalsumma per kund* och *total intäkt per kund* kan du identifiera en grupp av kunder som spenderar mycket men ger höga intäkter. Du kan [skapa ett segment](segments.md) för att driva på nästa bästa åtgärd. 
 
 ## <a name="create-a-measure"></a>Skapa ett mått
 
-Det här avsnittet innehåller stegvisa anvisningar om hur du skapar ett mått från grunden. Du kan skapa mått med data från flera datakällor som är anslutna via entiteten kund. Vissa [servicegränser](service-limits.md) gäller.
+Det här avsnittet innehåller information om hur du skapar ett nytt mått från grunden. Du kan skapa ett mått med dataattribut från dataentiteter som har en relation som är konfigurerad för att ansluta till entiteten Kund. 
 
 1. I målgruppsinsikter går du till **Åtgärder**.
 
-2. Välj **nytt mått**.
+1. Välj **Nytt**.
 
-3. Välj en mått **typ**:
-
-   - **Kundattribut**: ett enskilt fält per kund som visar poäng, värde eller tillstånd för kunden. Kundattribut skapas som attribut i en ny systemgenererad entitet som kallas **Customer_Measure**.
-
-   - **Kundmått**: insikt för kundbeteende med uppdelning efter valda dimensioner. En ny entitet skapas för varje mått, eventuellt med flera poster per kund.
-
-   - **Affärsmått**: spårar företagets affärsprestanda och hälsa. Affärsmått kan ha två olika utgångar: ett numeriskt resultat som visas på **startsidan** eller en ny entitet som du hittar på sidan **entiteter**.
-
-4. Ange ett **namn** och ett valfritt **visningsnamn** och välj sedan **nästa**.
-
-5. I avsnittet **Entiteter**, markera den första entiteten från listrutan. I det här skedet bör du bestämma om ytterligare entiteter behövs som en del av måttdefinitionen.
-
-   > [!div class="mx-imgBorder"]
-   > ![Måttdefinition](media/measure-definition.png "Måttdefinition")
-
-   Om du vill lägga till fler entiteter väljer du **Lägg till entitet** och markerar de entiteter du vill använda för måttet.
-
+1. Välj **Redigera namn** och tillhandahåll ett **namn** för måttet. 
    > [!NOTE]
-   > Du kan bara välja entiteter som har förhållanden till din utgångsenhet. För mer information om hur du definierar relationer, se [relationer](relationships.md).
+   > Om den nya måttkonfigurationen endast har två fält, till exempel Kund-ID och en beräkning, läggs utdatan till som en ny kolumn i den systemgenererade entiteten Kundmått. Dessutom kan du se måttens värde i den enhetliga kundprofilen. Andra mått genererar egna entiteter.
 
-6. Du kan även konfigurera variabler. I avsnittet **Variabler**, välj **Ny variabel**.
+1. I konfigurationsområdet väljer du sammansättningsfunktionen från listrutan **Välj funktion**. Sammansättningsfunktioner omfattar: 
+   - **Sum**
+   - **Medel**
+   - **Antal**
+   - **Antal unika**
+   - **Max**
+   - **Min**
+   - **Först**: tar det första värdet i dataposten
+   - **Sist:** tar det sista värdet som lades till i dataposten
 
-   Variabler är beräkningar som görs för varje markerad post. Exempel: summering av kassa (POS) och försäljning online för varje kunds post.
+   :::image type="content" source="media/measure-operators.png" alt-text="Operatörer för måttberäkningar.":::
 
-7. Ange ett **Namn** för variabeln.
+1. Välj **Lägg till attribut** för att välja de data du behöver för att skapa måttet.
+   
+   1. Välj fliken **Attribut**. 
+   1. Dataentitet: Välj den entitet som innehåller attributet du vill mäta. 
+   1. Dataattribut: Välj det attribut som du vill använda i sammansättningsfunktionen för att beräkna måttet. Du kan bara välja ett attribut åt gången.
+   1. Du kan också välja ett dataattribut från ett befintligt mått genom att välja fliken **Mått**. Du kan också söka efter ett entitets- eller måttnamn. 
+   1. Välj **Lägg till** för att lägga till det valda attributet till måttet.
 
-8. I området **Uttryck** area, välj ett fält att börja din beräkning med.
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Välj ett attribut som ska användas i beräkningarna.":::
 
-9. Skriv ett uttryck i området **uttryck** och välj fler fält som ska ingå i beräkningen.
+1. Om du vill skapa mer komplexa mått kan du lägga till fler attribut eller använda olika operatörer i måttfunktionen.
 
-   > [!NOTE]
-   > För närvarande stöds endast aritmetiska uttryck. Variabla beräkningar stöds inte för entiteter från olika [entitetssökvägar](relationships.md).
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Skapa ett komplext mått med matematikoperatörer.":::
 
-10. Markera **Klart**.
+1. Om du vill lägga till filter väljer du **Filter** i konfigurationsområdet. 
+  
+   1. I avsnittet **Lägg till attribut** i rutan **Filter** väljer du det attribut som du vill använda för att skapa filter.
+   1. Ange filteroperatörerna så att filtret definieras för varje markerat attribut.
+   1. Välj **Tillämpa** för att lägga till filtren till måttet.
 
-11. I avsnittet **måttdefinition** anger du hur valda entiteter och beräknade variabler ska slås samman i en ny måttentitet eller ett nytt attribut.
+1. Om du vill lägga till dimensioner väljer du **Dimension** i konfigurationsområdet. Dimensioner visas som kolumner i måttutdataentiteten.
+   1. Välj **Redigera dimensioner** för att lägga till dataattribut som du vill gruppera måttvärdena efter. Till exempel ort eller kön. Som standard väljs dimensionen *Kund-ID* för att skapa *mått på kundnivå*. Du kan ta bort standarddimensionen om du vill skapa *mått på företagsnivå*.
+   1. Välj **Klart** för att lägga till dimensionerna till måttet.
 
-12. Välj **Ny dimension**. Du kan betrakta som en dimension som en funktion *gruppera efter*. Utdata för måttenheten eller attributet grupperas efter alla definierade dimensioner.
+1. Om det finns flera sökvägar mellan den dataentitet du mappade och entiteten Kund måste du välja någon av de identifierade [entitetsrelationssökvägarna](relationships.md). Resultaten av måtten kan variera beroende på den valda sökvägen.
+   1. Välj **Datainställningar** och välj den entitetssökväg som ska användas för att identifiera måttet.
+   1. Välj **Klart** för att tillämpa dina val. 
 
-    > [!div class="mx-imgBorder"]
-    > ![Välj aggregeringscykel](media/measures-businessreport-measure-definition2.png "Välj aggregeringscykel")
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Välj entitetssökvägen för måttet.":::
 
-    Välj eller ange följande information som en del av dimensionens definition:
+1. Om du vill lägga till fler beräkningar för måttet väljer du **Ny beräkning**. Du kan endast använda entiteter på samma entitetssökväg för nya beräkningar. Fler beräkningar visas som nya kolumner i måttutdataentiteten.
 
-    - **Entitet**: om du definierar en måttentitet ska den innehålla minst ett attribut. Om du definierar ett måttattribut tas endast ett attribut med som standard. Det här alternativet är att välja entiteten som innehåller attributet.
-    - **Fält**: Välj det specifika attribut som ska ingå antingen i måttentiteten eller attributet.
-    - **Bucket**: Välj om du vill samla in data per dag, månad eller år. Det är endast ett obligatoriskt val om du har valt attribut av datumtyp.
-    - **Som**: anger namnet på det nya fältet.
-    - **Visningsnamn**: definierar fältets visningsnamn.
+1. Välj **...** i beräkningen för att **duplicera**, **byta namn på** eller **ta bort** en beräkning från ett mått.
 
-    > [!NOTE]
-    > Ditt affärsmått sparas som en entitet med en siffra och visas på **Startsidan** såvida du inte lägger till fler dimensioner i ditt mått. När du har lagt till fler dimensioner visas *inte* måttet på **Startsidan**.
+1. I området **Förhandsgranskning** ser du dataschemat för måttutdataentiteten, inklusive filter och dimensioner. Förhandsgranskningen reagerar dynamiskt på ändringar i konfigurationen.
 
-13. Alternativt kan du lägga till aggregeringsfunktioner. En aggregering som du skapar resulterar i ett nytt värde inom måttentiteten eller attributet. Aggregeringsfunktioner som stöds är: **Min**, **Max**, **Genomsnitt**, **Median**, **Summa**, **Antal unika**, **Först** (tar den första posten i ett dimensionsvärde) och **Sista** (tar den sista posten till ett dimensionsvärde).
+1. Välj **Kör** för att beräkna resultaten för det konfigurerade måttet. Välj **Spara och stäng** om du vill behålla den aktuella konfigurationen och köra måttet senare.
 
-14. Välj **Spara** för att spara ändringarna till måttet.
+1. Gå till **Mått** för att se det nyskapade måttet i listan.
 
 ## <a name="manage-your-measures"></a>Hantera dina mått
 
-När du har skapat minst en åtgärd visas en lista med åtgärder på sidan **Åtgärder**.
+När du har [skapat ett mått](#create-a-measure) visas en lista med mått på sidan **Mått**.
 
-Du hittar information om måttypen, skaparen, datumet och tiden för att skapa datum och tid, senast redigerad, status (om måttet är aktivt, inaktivt eller misslyckat) och datum och tid för senaste uppdatering. När du väljer ett mått i listan kan du visa en förhandsgranskning av resultatet.
+Här finns information om måttypen, den som skapade den, datumet då den skapades, statusen och tillståndet. När du väljer ett mått i listan kan du förhandsgranska utdata och hämta en .CSV-fil.
 
 Om du vill uppdatera alla dina åtgärder samtidigt markerar du **Uppdatera allt** utan att välja ett specifikt mått.
 
 > [!div class="mx-imgBorder"]
 > ![Åtgärder för att hantera enskilda mått](media/measure-actions.png "Åtgärder för att hantera enskilda mått")
 
-Du kan också välja ett mått i listan och utföra någon av följande åtgärder:
+Välj ett mått i listan för följande alternativ:
 
 - Markera måttets namn om du vill se detaljerna.
 - **Redigera** måttets konfiguration.
+- **Uppdatera** måttet baserat på senaste data.
 - **Byt namn** på mått.
 - **Ta bort** måttet.
-- Välj tre punkter (...) och sedan **uppdatera** för att starta uppdateringsprocessen för måttet.
-- Välj tre punkter (...) och **Hämta** för att hämta en .CSV-fil av måttet.
+- **Aktivera** eller **Inaktivera**. Inaktiva mått uppdateras inte vid en [schemalagd uppdatering](system.md#schedule-tab).
 
 > [!TIP]
 > Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
 
 ## <a name="next-step"></a>Nästa steg
 
-Du använder befintliga mått för att skapa ditt första kundsegment på sidan **segment**. Mer information finns [Segment](segments.md).
+Du kan använda befintliga mått för att skapa [ett kundsegment](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

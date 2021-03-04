@@ -1,20 +1,20 @@
 ---
 title: Exportera Customer Insights-data till Dynamics 365 Marketing
 description: Lär dig hur du konfigurerar anslutningen till Dynamics 365 Marketing.
-ms.date: 08/21/2020
+ms.date: 02/01/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 163387779b64bd78ef08e2d96a5f1c9615062f28
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a06920b8ff25d7102ccd14ae68cf42fe91fa1ee6
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643795"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269076"
 ---
 # <a name="connector-for-dynamics-365-marketing-preview"></a>Koppling för Dynamics 365 Marketing (förhandsversion)
 
@@ -24,7 +24,10 @@ Använd [segment](segments.md) för att generera kampanjer och kontakta specifik
 
 ## <a name="prerequisite"></a>Förutsättningar
 
-Kontaktposter [från Dynamics 365 Marketing matade in Common Data Service](connect-power-query.md).
+- Kontaktposter måste finnas i Dynamics 365 Marketing innan du kan exportera ett segment från Customer Insights till Marketing. Läs mer om hur du matar in kontakter i [Dynamics 365 Marketing med Common Data Services](connect-power-query.md).
+
+  > [!NOTE]
+  > Om du exporterar segment från målgruppsinsikter till Marketing skapas inte nya kontaktposter i Marketing-instanserna. Kontaktposterna från Marketing måste matas in i målgruppsinsikter och användas som en datakälla. De måste också finnas med i den enhetliga entiteten Kund för att mappa kund-ID till kontakt-ID innan segment kan exporteras.
 
 ## <a name="configure-the-connector-for-marketing"></a>Konfigurera koppling för marknadsföring
 
@@ -49,3 +52,6 @@ Kontaktposter [från Dynamics 365 Marketing matade in Common Data Service](conne
 ## <a name="export-the-data"></a>Exportera data
 
 Du kan [Exportera data på begäran](export-destinations.md). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md#schedule-tab).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

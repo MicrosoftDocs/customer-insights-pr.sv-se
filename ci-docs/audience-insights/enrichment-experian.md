@@ -1,20 +1,20 @@
 ---
 title: Berikning med tredjepartsberikningen Experian
 description: Allmän information om tredjepartsberikningen Experian.
-ms.date: 09/17/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 60fc49734e54740e83b47a7028be216a0eb81e49
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: baf3cc58a233b70c48fb94ac4a543d162f91bdd1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668835"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269582"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Berika kundprofiler med demografisk information från Experian (förhandsversion)
 
@@ -41,7 +41,9 @@ För att konfigurera Experian måste följande villkor vara uppfyllda:
 
 ## <a name="map-your-fields"></a>Mappa dina fält
 
-1. Välj **Lägg till data** och välj dina nyckelidentifierare från **namn och adress**, **e-post** eller **telefon** för att skicka till Experian för identitetsmatchning.
+1.  Välj **Lägg till data** och välj den **kunddatauppsättning** du vill berika med demografidata från Experian. Du kan välja entiteten **Kund** för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
+
+1. Välj nyckelidentifierare från **Namn och adress**, **E-post** eller **Telefon** att skicka till Experian för identitetslösning.
 
    > [!TIP]
    > Fler nyckel-ID-attribut som skickas till Experian ger troligen en högre matchningsfrekvens.
@@ -52,8 +54,8 @@ För att konfigurera Experian måste följande villkor vara uppfyllda:
 
 1.  Välj **Spara** för att slutföra fältmappningen.
 
-   > [!div class="mx-imgBorder"]
-   > ![Experian fältmappning](media/experian-field-mapping.png "Experian fältmappning")
+    > [!div class="mx-imgBorder"]
+    > ![Experian fältmappning](media/experian-field-mapping.png "Experian fältmappning")
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 
@@ -71,3 +73,6 @@ Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](meas
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till Experian tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data i din instruktion, men du ansvarar för att Experian uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

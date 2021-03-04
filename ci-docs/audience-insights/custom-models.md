@@ -4,16 +4,16 @@ description: Arbeta med anpassade modeller från Azure Machine Learning i Dynami
 ms.date: 11/19/2020
 ms.reviewer: zacook
 ms.service: dynamics-365-ai
-ms.topic: article
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: ef248086b30b870359970529a7bfb37792be62d5
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668925"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267256"
 ---
 # <a name="custom-machine-learning-models"></a>Anpassade maskininlärningsmodeller
 
@@ -46,15 +46,15 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 
 1. Välj den Machine Learning Studio-webbtjänst (klassisk) eller Azure Machine Learning-pipeline i listrutan **Webbtjänst som innehåller din modell**. Välj sedan **Nästa**.
    - Läs mer om att [publicera en webbtjänst i Machine Learning Studio (klassisk)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Läs mer om att [publicera en pipeline i Azure Machine Learning med designern](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). 
-     > [!NOTE]
-     > Din pipeline måste publiceras under en [pipelineslutpunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Läs mer om att [publicera en pipeline i Azure Machine Learning med designern](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline måste publiceras under en [pipelineslutpunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. För varje **indata till webbtjänst** väljer du matchande **entitet** från målgruppsinsikter och väljer **Nästa**.
+   > [!NOTE]
+   > Arbetsflödet med en anpassad modell används för att mappa webbtjänstens indatafält till entitetsattributen utifrån fältets namn och datatyp. Ett felmeddelande visas om ett webbtjänstfält inte kan mappas till en entitet.
 
    > [!div class="mx-imgBorder"]
    > ![Konfigurera ett arbetsflöde](media/intelligence-screen2-updated.png "Konfigurera ett arbetsflöde")
-
+   
 1. I steget **Parametrar för modellens utdata** anger du följande egenskaper:
    - Machine Learning Studio (klassisk)
       1. Ange utdata **Entitetens namn** som du vill att utdataresultat för webbtjänsten ska flöda in i.
@@ -112,3 +112,6 @@ Arbetsflödet körs också automatiskt tillsammans med alla schemalagda uppdater
 1. Välj **Ta bort** och bekräfta borttagningen.
 
 Arbetsflödet tas bort. [Entiteten](entities.md) som skapades när du skapade arbetsflödet kvarstår och kan visas från sidan **Entiteter**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

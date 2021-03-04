@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
-ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
+ms.openlocfilehash: 3f1019ace424f89320c5a0d5058e928f4cbc7e62
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "4654002"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269872"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse om prenumerationsomsättning (förhandsversion)
 
@@ -46,10 +46,9 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **DateOfBirth**: Datum
    - **CreatedOn**: Datum/Tid/Zon
 
-   [!div class="mx-imgBorder"]
-   ![Transformera födelsedatum till datum](media/ecommerce-dob-date.PNG "transformera födelsedatum till datum")
+   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Transformera födelsedatum till datum.":::
 
-1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **eCommerceContacts**
+1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **eCommerceContacts**
 
 1. Spara datakällan.
 
@@ -67,7 +66,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **RewardsPoints**: Heltal
    - **CreatedOn**: Datum/Tid
 
-1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **loyCustomers**.
+1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **loyCustomers**.
 
 1. Spara datakällan.
 
@@ -90,7 +89,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **Is_auto_renew**: Sant/falskt
    - **RecurringFrequencyInMonths**: Hela numret
 
-1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **SubscriptionHistory**.
+1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **SubscriptionHistory**.
 
 1. Spara datakällan.
 
@@ -230,3 +229,6 @@ Du kan skapa ett nytt segment baserat på entiteten som skapats av modellen.
 Du har nu ett segment som uppdateras dynamiskt som identifierar kunder med hög omsättningsrisk för den här prenumerationsverksamheten.
 
 Mer information finns i [Skapa och hantera segment](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,20 +1,20 @@
 ---
 title: Berikning med tredjepartsberikningen HERE Technologies
 description: Allmän information om tredjepartsberikningen HERE Technologies.
-ms.date: 10/27/2020
+ms.date: 12/10/2020
 ms.reviewer: jodahl
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 7082fcfec099c3c9436b233c193be23625f6691a
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 258e37de9d9685d9ebc30b3c6b8d238d583431b4
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668700"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269536"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Berikning av kundprofiler med HERE Technologies (förhandsversion)
 
@@ -43,7 +43,11 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera H
 
 1. Bekräfta båda indata genom att välja **Anslut till HERE**.
 
-1. Välj **Lägg till data** och välj om du vill mappa fält till den primära och/eller sekundära adressen. Du kan ange en fältmappning för båda adresserna (t.ex. hem- och affärsadress) och berika profilerna för båda adresserna separat. Välj **Nästa**.
+1.  Välj **Lägg till data** och välj den **kunddatauppsättning** du vill berika med platsdata från HERE Technologies. Du kan välja entiteten **Kund** för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
+
+    :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Bild när du väljer kunddatauppsättningen.":::
+
+1. Välj om du vill mappa fält till den primära och/eller sekundära adressen. Du kan ange en fältmappning för båda adresserna (t.ex. hem- och affärsadress) och berika profilerna för båda adresserna separat. Välj **Nästa**.
 
 1. Definiera vilka fält från dina enhetliga profiler som ska användas för att söka efter matchande platsdata från HERE Technologies. Fälten **Gata 1** och **Postnummer** är obligatoriska för den valda primära och/eller sekundära adressen. För en högre matchningsnoggrannhet kan fler fält läggas till.
 
@@ -68,3 +72,6 @@ Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](meas
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till HERE Technologies tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data på din instruktion, men du ansvarar för att HERE Technologies uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

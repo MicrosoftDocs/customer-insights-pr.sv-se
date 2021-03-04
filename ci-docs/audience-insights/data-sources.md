@@ -9,14 +9,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: a720641f7499fc71ff5bceeba48d296c51f77242
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 68aa1b56fb634da80a0c64db72f778d57507104d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643975"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269720"
 ---
-# <a name="overview-about-data-sources"></a>Översikt över datakällor
+# <a name="data-sources-overview"></a>Översikt över datakällor
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
@@ -49,7 +49,7 @@ Du ser namnet på varje inmatad datakälla, dess status och sista gången data u
 |Uppdaterar    |Datainmatning pågår. Du kan avbryta åtgärden genom att välja **Avbryt uppdatering** i kolumnen **åtgärder**. Om du stoppar uppdateringen av en datakälla återställs den till dess senaste uppdateringstillstånd.       |
 |Misslyckad     |Datahämtning har stött på fel.         |
 
-Välj **Uppdatera status** för att se mer information om uppdateringsstatusen, inklusive information om fel och uppdateringar om processer nedströms.
+Välj värdet i kolumnen **Status** för en datakälla för att se mer information. I rutan **Förloppsinformation** visar du **Datakällor**. Välj **Se information** för mer information om uppdateringsstatusen, inklusive felinformation och uppdateringar om nedströmsprocesser.
 
 Inläsning av data kan ta en stund. Efter en lyckad uppdatering kan hämtade data granskas från sidan **entiteter**. Mer information finns i [Entiteter](entities.md).
 
@@ -76,3 +76,6 @@ Uppdatera en datakälla på begäran så här:
 2. Markera den lodräta ellipsen bredvid datakällan du vill ta bort och välj **ta bort** i den nedrullningsbara menyn.
 
 3. Bekräfta borttagningen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
