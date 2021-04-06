@@ -2,19 +2,19 @@
 title: Målgruppsinsikter för översikt över Dynamics 365 Customer Insights
 description: Översikt över målgruppsinsikter för Dynamics 365 Customer Insights.
 ms.date: 01/18/2021
-ms.reviewer: nimagen
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: overview
-author: m-hartmann
-ms.author: mhart
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5477017"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598652"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Målgruppsinsikter för översikt över Dynamics 365 Customer Insights
 
@@ -25,7 +25,7 @@ Målgruppsinsikter hjälper dig att bygga en djupare förståelse för dina kund
 - **Eliminera datasilor och förena kunddata**
 
   - Anslut och förena dina data med lätthet, hämta transaktions-, observations- och beteendedata från populära [datakällor genom att använda förbyggda anslutningsprogram](data-sources.md).
-  - Omvandla kunddata på ett intelligent sätt – bygga enhetliga kundprofiler som överensstämmer [Common Data Model](https://docs.microsoft.com/common-data-model/). Lösa kundidentiteter med AI/ML-drivna rekommendationer.
+  - Omvandla kunddata på ett intelligent sätt – bygga enhetliga kundprofiler som överensstämmer [Common Data Model](/common-data-model/). Lösa kundidentiteter med AI/ML-drivna rekommendationer.
 
 - **Utöka med publikinformation som finns i Microsoft Graph**
 
@@ -42,7 +42,7 @@ Målgruppsinsikter hjälper dig att bygga en djupare förståelse för dina kund
 - **Dataanalytiker/administratörer:**
 
   - Få tillgång till en stor samling med anslutningsprogram för att mata in all kundinformation.
-  - Möjlighet att förena kunddata och omvandla det till ett [Common Data Model](https://docs.microsoft.com/common-data-model/)-format.
+  - Möjlighet att förena kunddata och omvandla det till ett [Common Data Model](/common-data-model/)-format.
   - Du kan utöka kundinformationen med hjälp av publik information i Microsoft Graph, t.ex. varumärkes tillhörighet och intressen.
   - "Klick inte kod"-konfiguration och felsökningsfunktioner som gör det enklare att konfigurera målgruppsinsikter och identifiera potentiella problem.
   - Rengöra och standardisera kunddata över olika källor med AI-baserade rekommendationer.  

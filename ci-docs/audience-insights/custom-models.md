@@ -1,19 +1,20 @@
 ---
 title: Anpassade maskininlärningsmodeller | Microsoft Docs
 description: Arbeta med anpassade modeller från Azure Machine Learning i Dynamics 365 Customer Insights.
-ms.date: 11/19/2020
-ms.reviewer: zacook
-ms.service: dynamics-365-ai
+ms.date: 03/22/2021
+ms.reviewer: mhart
+ms.service: customer-insights
+ms.subservice: audience-insights
 ms.topic: tutorial
-author: m-hartmann
-ms.author: mhart
+author: zacookmsft
+ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
+ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267256"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "5700690"
 ---
 # <a name="custom-machine-learning-models"></a>Anpassade maskininlärningsmodeller
 
@@ -21,13 +22,18 @@ Med **Intelligens** > **Anpassade modeller** kan du hantera arbetsflöden basera
 
 ## <a name="responsible-ai"></a>Ansvarsfull AI
 
-Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, förbättra affärsfunktioner och intäktsströmmar. Vi rekommenderar starkt att du balanserar värdet på din förutsägelse mot den inverkan den har och fördomar som kan införas på ett etiskt sätt. Läs mer om hur Microsoft hanterar [ansvarsfull AI](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan också lära dig om [tekniker och processer för ansvarsfull maskininlärning](https://docs.microsoft.com/azure/machine-learning/concept-responsible-ml) som är specifik för Azure Machine Learning.
+Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, förbättra affärsfunktioner och intäktsströmmar. Vi rekommenderar starkt att du balanserar värdet på din förutsägelse mot den inverkan den har och fördomar som kan införas på ett etiskt sätt. Läs mer om hur Microsoft hanterar [ansvarsfull AI](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan också lära dig om [tekniker och processer för ansvarsfull maskininlärning](/azure/machine-learning/concept-responsible-ml) som är specifik för Azure Machine Learning.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-- För närvarande stöder den här funktionen webbtjänster som publicerats via [Machine Learning Studio (klassisk)](https://studio.azureml.net) och [Azure Machine Learning-batchpipelines](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines).
+- För närvarande stöder den här funktionen webbtjänster som publicerats via [Machine Learning Studio (klassisk)](https://studio.azureml.net) och [Azure Machine Learning-batchpipelines](/azure/machine-learning/concept-ml-pipelines).
 
-- Du behöver ett Azure Data Lake Gen2-lagringskonto som är associerat med din Azure Studio-instans för att kunna använda den här funktionen. Mer information finns i [skapa ett Azure Data Lake Storage Gen2 Storage-konto](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-account)
+- Du behöver ett Azure Data Lake Gen2-lagringskonto som är associerat med din Azure Studio-instans för att kunna använda den här funktionen. Mer information finns i [Skapa ett Azure Data Lake Storage Gen2 Storage-konto](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
+
+- För Azure Machine Learning-arbetsytor med pipelines behöver du administratörsbehörighet som ägare eller användare till Azure Machine Learning-arbetsytan.
+
+   > [!NOTE]
+   > Data överförs mellan dina Customer Insights-instanser och valda Azure-webbtjänster eller -pipelines i arbetsflödet. När du överför data till en Azure-tjänst måste du se till att tjänsten är konfigurerad för att bearbeta data på det sätt och den plats som krävs för att uppfylla alla juridiska eller nödvändiga krav för att hantera dessa data för din organisation.
 
 ## <a name="add-a-new-workflow"></a>Lägg till ett nytt arbetsflöde
 
@@ -45,8 +51,8 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 1. Välj de **arbetsytor** som är kopplade till din webbtjänst. Det finns två avsnitt som anges, ett för Azure Machine Learning v1 (Machine Learning Studio (klassisk)) och Azure Machine Learning v2 (Azure Machine Learning). Om du är osäker på vilken arbetsyta som är den rätta för din Machine Learning Studio-webbtjänst (klassisk) väljer du **Valfri**.
 
 1. Välj den Machine Learning Studio-webbtjänst (klassisk) eller Azure Machine Learning-pipeline i listrutan **Webbtjänst som innehåller din modell**. Välj sedan **Nästa**.
-   - Läs mer om att [publicera en webbtjänst i Machine Learning Studio (klassisk)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Läs mer om att [publicera en pipeline i Azure Machine Learning med designern](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline måste publiceras under en [pipelineslutpunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Läs mer om att [publicera en webbtjänst i Machine Learning Studio (klassisk)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
+   - Läs mer om att [publicera en pipeline i Azure Machine Learning med designern](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline måste publiceras under en [pipelineslutpunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. För varje **indata till webbtjänst** väljer du matchande **entitet** från målgruppsinsikter och väljer **Nästa**.
    > [!NOTE]
@@ -54,7 +60,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 
    > [!div class="mx-imgBorder"]
    > ![Konfigurera ett arbetsflöde](media/intelligence-screen2-updated.png "Konfigurera ett arbetsflöde")
-   
+
 1. I steget **Parametrar för modellens utdata** anger du följande egenskaper:
    - Machine Learning Studio (klassisk)
       1. Ange utdata **Entitetens namn** som du vill att utdataresultat för webbtjänsten ska flöda in i.
@@ -62,12 +68,12 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
       1. Ange utdata **Entitetens namn** som du vill att utdataresultat för pipelinen ska flöda in i.
       1. Välj **Namn på parametern för utdata för datalager** på din batch-pipeline från listrutan.
       1. Välj **Namn på parametern för utdata för sökväg** på din batch-pipeline från listrutan.
-      
+
       > [!div class="mx-imgBorder"]
       > ![Fönster för parameter för modellens utdata](media/intelligence-screen3-outputparameters.png "Fönster för parameter för modellens utdata")
 
 1. Välj det matchande attributet från listrutan **Kund-ID i resultat** som identifierar kunder och välj **Spara**.
-   
+
    > [!div class="mx-imgBorder"]
    > ![Relatera resultat till fönstret Kunddata](media/intelligence-screen4-relatetocustomer.png "Relatera resultat till fönstret Kunddata")
 
@@ -95,7 +101,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
       1. Välj **namnet på parametern för utdata till sökväg** för din testpipeline.
 
 1. Välj det matchande attributet från listrutan **Kund-ID i resultat** som identifierar kunder och välj **Spara**.
-   Du behöver välja ett attribut från inferensutdata med värden som liknar kolumnen Kund-ID i kundentiteten. Om du inte har en sådan kolumn i din datauppsättning väljer du ett attribut som identifierar raden unikt.
+   Välj ett attribut från inferensutdata med värden som liknar kolumnen Kund-ID i kundentiteten. Om du inte har en sådan kolumn i din datauppsättning väljer du ett attribut som identifierar raden unikt.
 
 ## <a name="run-a-workflow"></a>Köra ett arbetsflöde
 
@@ -113,5 +119,28 @@ Arbetsflödet körs också automatiskt tillsammans med alla schemalagda uppdater
 
 Arbetsflödet tas bort. [Entiteten](entities.md) som skapades när du skapade arbetsflödet kvarstår och kan visas från sidan **Entiteter**.
 
+## <a name="results"></a>Resultat
+
+Resultat från ett arbetsflöde lagras i entiteten som konfigureras under fasen Modellutdataparameter. Du kan få åtkomst till dessa data från [entitetssidan](entities.md) eller med [API-åtkomst](apis.md).
+
+### <a name="api-access"></a>API-åtkomst
+
+Använd följande format om du vill hämta data från en anpassad modellentitet för den specifika OData-frågan:
+
+`https://api.ci.ai.dynamics.com/v1/instances/<your instance id>/data/<custom model output entity name>%3Ffilter%3DCustomerId%20eq%20'<guid value>'`
+
+1. Ersätt `<your instance id>` med ID för Customer Insights-miljön, som du hittar i adressfältet i webbläsaren när du öppnar Customer Insights.
+
+1. Ersätt `<custom model output entity>` med entitetsnamnet du angav under steget Parametrar för modellens utdata i konfigurationen av en anpassad modell.
+
+1. Ersätt `<guid value>` med kund-ID för den kund som du vill använda posten för. Vanligtvis hittar du detta ID på [sidan med kundprofiler](customer-profiles.md) i fältet Kund-ID.
+
+## <a name="frequently-asked-questions"></a>Vanliga frågor och svar
+
+- Varför visas inte min pipeline när jag anger ett arbetsflöde för en anpassad modell?    
+  Det här problemet beror ofta på ett konfigurationsproblem i pipelinen. Kontrollera att [indataparametern har konfigurerats](azure-machine-learning-experiments.md#dataset-configuration) och att [parametrarna för utdatalagring och sökväg](azure-machine-learning-experiments.md#import-pipeline-data-into-customer-insights) också har konfigurerats.
+
+- Vad betyder felmeddelandet "Kunde inte spara ett intelligent arbetsflöde"?    
+  Användarna ser vanligtvis det här felmeddelandet om de inte har administratörsprivilegier som ägare eller användare av arbetsytan. Användaren behöver en högre behörighetsnivå för att Customer Insights ska kunna bearbeta arbetsflödet som en tjänst i stället för att använda autentiseringsuppgifterna för efterföljande körningar av arbetsflödet.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -2,19 +2,19 @@
 title: Anslutningsapp för Power Apps
 description: Anslut med Power Apps och Power Automate.
 ms.date: 01/19/2021
-ms.reviewer: nikeller
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 5a8bbb9a09218d54228589d43c21c8894680b56e
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3fa91553fd50a22ab62b5a2b1e3f13b9483776a8
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268938"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598177"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps anslutningsprogram (förhandsversion)
 
@@ -22,9 +22,9 @@ Få enhetliga kundprofiler i dina anpassade appar med Power Apps.
 
 ## <a name="connect-power-apps-and-dynamics-365-customer-insights"></a>Ansluta till Power Apps och Dynamics 365 Customer Insights
 
-Customer Insights är en av de många [tillgängliga källorna för data i Power Apps](https://docs.microsoft.com/powerapps/maker/canvas-apps/working-with-data-sources).
+Customer Insights är en av de många [tillgängliga källorna för data i Power Apps](/powerapps/maker/canvas-apps/working-with-data-sources).
 
-Se Power Apps-dokumentationen om hur du [lägger till en dataanslutning i en app](https://docs.microsoft.com/powerapps/maker/canvas-apps/add-data-connection). Vi rekommenderar att du även granskar [hur Power Apps använder delegering för att hantera stora data mängder i arbetsyteappar](https://docs.microsoft.com/powerapps/maker/canvas-apps/delegation-overview).
+Se Power Apps-dokumentationen om hur du [lägger till en dataanslutning i en app](/powerapps/maker/canvas-apps/add-data-connection). Vi rekommenderar att du även granskar [hur Power Apps använder delegering för att hantera stora data mängder i arbetsyteappar](/powerapps/maker/canvas-apps/delegation-overview).
 
 ## <a name="available-entities"></a>Tillgängliga entiteter
 
@@ -47,11 +47,11 @@ Delegering fungerar för entiteten kund och UnifiedActivity.
 
 - Delegering för **UnifiedActivity**: delegering för den här entiteten fungerar endast för fälten **ActivityId** och **CustomerId**.  
 
-- Mer information om delegering finns i [Power Apps delegerbara funktioner och åtgärder](https://docs.microsoft.com/connectors/commondataservice/#power-apps-delegable-functions-and-operations-for-the-cds-for-apps). 
+- Mer information om delegering finns i [Power Apps delegerbara funktioner och åtgärder](/connectors/commondataservice/#power-apps-delegable-functions-and-operations-for-the-cds-for-apps). 
 
 ## <a name="example-gallery-control"></a>Kontroll i exempelgalleri
 
-Du lägger till exempel till kundprofiler i en [gallerikontroll](https://docs.microsoft.com/powerapps/maker/canvas-apps/add-gallery).
+Du lägger till exempel till kundprofiler i en [gallerikontroll](/powerapps/maker/canvas-apps/add-gallery).
 
 1. Lägg till en **Galleri**-kontroll i en app som du bygger.
 

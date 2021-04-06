@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: wameng
+ms.author: wameng
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 202ea22d290be04e54ce9676b6b693162354607f
+ms.sourcegitcommit: d3eb07dcc72624a2d5cfc95c7ea9faaa2c1b6001
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269950"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "5654754"
 ---
 # <a name="define-and-manage-measures"></a>Definiera och hantera mått
 
@@ -72,8 +72,8 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
    1. Välj **Redigera dimensioner** för att lägga till dataattribut som du vill gruppera måttvärdena efter. Till exempel ort eller kön. Som standard väljs dimensionen *Kund-ID* för att skapa *mått på kundnivå*. Du kan ta bort standarddimensionen om du vill skapa *mått på företagsnivå*.
    1. Välj **Klart** för att lägga till dimensionerna till måttet.
 
-1. Om det finns flera sökvägar mellan den dataentitet du mappade och entiteten Kund måste du välja någon av de identifierade [entitetsrelationssökvägarna](relationships.md). Resultaten av måtten kan variera beroende på den valda sökvägen.
-   1. Välj **Datainställningar** och välj den entitetssökväg som ska användas för att identifiera måttet.
+1. Om det finns flera sökvägar mellan den dataentitet du mappade och entiteten *Kund* måste du välja någon av de identifierade [entitetsrelationssökvägarna](relationships.md). Resultaten av måtten kan variera beroende på den valda sökvägen. 
+   1. Välj **Datainställningar** och välj den entitetssökväg som ska användas för att identifiera måttet. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
    1. Välj **Klart** för att tillämpa dina val. 
 
    :::image type="content" source="media/measures-data-preferences.png" alt-text="Välj entitetssökvägen för måttet.":::

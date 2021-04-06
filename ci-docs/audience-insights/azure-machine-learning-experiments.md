@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
-ms.author: mhart
-ms.reviewer: m-hartmann
+ms.author: naravill
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c166015b92596da0c6097e3d25e89579a5186ce0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267928"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597441"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Använd Azure Machine Learning-baserade modeller
 
@@ -29,9 +29,9 @@ Enhetliga data i Dynamics 365 Customer Insights är en källa för maskininlärn
 
 ## <a name="set-up-azure-machine-learning-workspace"></a>Konfigurera arbetsytan Azure Machine Learning
 
-1. Se [skapa en Azure Machine Learning-arbetsyta](https://docs.microsoft.com/azure/machine-learning/concept-workspace#-create-a-workspace) för olika alternativ för att skapa arbetsytan. För bästa prestanda skapar du arbetsytan i en Azure-region som är geografiskt närmast din Customer Insights-miljö.
+1. Se [skapa en Azure Machine Learning-arbetsyta](/azure/machine-learning/concept-workspace#-create-a-workspace) för olika alternativ för att skapa arbetsytan. För bästa prestanda skapar du arbetsytan i en Azure-region som är geografiskt närmast din Customer Insights-miljö.
 
-1. Få åtkomst till din arbetsyta via [Azure Machine Learning Studio](https://ml.azure.com/). Du kan [interagera med arbetsytan](https://docs.microsoft.com/azure/machine-learning/concept-workspace#tools-for-workspace-interaction) på flera olika sätt.
+1. Få åtkomst till din arbetsyta via [Azure Machine Learning Studio](https://ml.azure.com/). Du kan [interagera med arbetsytan](/azure/machine-learning/concept-workspace#tools-for-workspace-interaction) på flera olika sätt.
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Arbeta med Azure Machine Learning-designer
 
@@ -39,13 +39,13 @@ Azure Machine Learning-designern tillhandahåller en visuell arbetsyta där du k
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Arbeta med Azure Machine Learning SDK
 
-Dataforskare och AI-utvecklare använder [Azure Machine Learning SDK](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true) för att bygga maskininlärningsarbetsflöden. För närvarande kan modeller som utbildats med hjälp av SDK inte integreras direkt med Customer Insights. En batchinferenspipeline som förbrukar den modellen krävs för integration med Customer Insights.
+Dataforskare och AI-utvecklare använder [Azure Machine Learning SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py) för att bygga maskininlärningsarbetsflöden. För närvarande kan modeller som utbildats med hjälp av SDK inte integreras direkt med Customer Insights. En batchinferenspipeline som förbrukar den modellen krävs för integration med Customer Insights.
 
 ## <a name="batch-pipeline-requirements-to-integrate-with-customer-insights"></a>Krav på batch-pipeline för att integrera med Customer Insights
 
 ### <a name="dataset-configuration"></a>Konfiguration av datauppsättning
 
-Du behöver skapa datauppsättningar för att använda entitetsdata från Customer Insights till din batchinferenspipeline. Dessa datauppsättningar behöver registreras på arbetsytan. För närvarande stöder vi bara [tabelldatauppsättningar](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets#tabulardataset) i .csv-format. Datauppsättningarna som motsvarar entitetsdata behöver parameteriseras som en pipeline-parameter.
+Du behöver skapa datauppsättningar för att använda entitetsdata från Customer Insights till din batchinferenspipeline. Dessa datauppsättningar behöver registreras på arbetsytan. För närvarande stöder vi bara [tabelldatauppsättningar](/azure/machine-learning/how-to-create-register-datasets#tabulardataset) i .csv-format. Datauppsättningarna som motsvarar entitetsdata behöver parameteriseras som en pipeline-parameter.
    
 * Datauppsättningsparametrar i Designer
    
@@ -76,7 +76,7 @@ Du behöver skapa datauppsättningar för att använda entitetsdata från Custom
 
 ### <a name="import-pipeline-data-into-customer-insights"></a>Importera pipelinedata till Customer Insights
 
-* Designern tillhandahåller [modulen Exportera data](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/export-data) som gör att utdata från en pipeline kan exporteras till Azure Storage. För närvarande måste modulen använda datalagringstypen **Azure Blob Storage** and parameterisera **Datalagring** och relativ **Sökväg**. Customer Insights åsidosätter båda dessa parametrar under pipelinekörning med en datalagring och sökväg som är åtkomlig för produkten.
+* Designern tillhandahåller [modulen Exportera data](/azure/machine-learning/algorithm-module-reference/export-data) som gör att utdata från en pipeline kan exporteras till Azure Storage. För närvarande måste modulen använda datalagringstypen **Azure Blob Storage** and parameterisera **Datalagring** och relativ **Sökväg**. Customer Insights åsidosätter båda dessa parametrar under pipelinekörning med en datalagring och sökväg som är åtkomlig för produkten.
    > [!div class="mx-imgBorder"]
    > ![Exportera datamodulskonfiguration](media/intelligence-designer-importdata.png "Exportera datamodulskonfiguration")
    

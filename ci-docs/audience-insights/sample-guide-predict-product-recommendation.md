@@ -2,19 +2,19 @@
 title: Exempelguide för förutsägelse av produktrekommendationer
 description: Använd exempelguiden för att prova den medföljande modellen för förutsägelse om produktrekommendation.
 ms.date: 02/10/2021
-ms.reviewer: digranad
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: m-hartmann
-ms.author: mhart
+author: diegogranados117
+ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 0ee873d9b7caa5f891cb2d5b8c665dec90ad0e59
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 20072d14b160e54f5ad044adc1de6c079bf790e4
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270538"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595295"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse av produktrekommendationer (förhandsversion)
 

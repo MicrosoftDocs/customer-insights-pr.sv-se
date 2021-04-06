@@ -2,19 +2,19 @@
 title: Förutsägelse av kundens livstidsvärde
 description: Förutse potentiell intäkt för aktiva kunder i framtiden.
 ms.date: 02/05/2021
-ms.reviewer: wameng
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
-ms.author: mhart
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 363a46c81b5bb737d274998f9a699dc662e38d7c
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268616"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595831"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Förutsägelse av kundens livstidsvärde (förhandsversion)
 
@@ -194,11 +194,11 @@ Det finns tre primära dataområden på resultatsidan.
   
   - **Andel lyckade försök med att förutse kunder med högt värde**
 
-  Se skillnaden mellan att förutse kunder med högt värde med AI-modellen jämfört med grundmodellen. En framgångsfrekvens på 84 % innebär till exempel att av alla kunder med högt värde i utbildningsdata kunde AI-modellen samla in 84 %. Sedan jämför vi den här framgångsfrekvensen med grundmodellens framgångsfrekvens och rapporterar den relativa förändringen. Det här värdet används för att tilldela modellen ett betyg.
+    Se skillnaden mellan att förutse kunder med högt värde med AI-modellen jämfört med grundmodellen. En framgångsfrekvens på 84 % innebär till exempel att av alla kunder med högt värde i utbildningsdata kunde AI-modellen samla in 84 %. Sedan jämför vi den här framgångsfrekvensen med grundmodellens framgångsfrekvens och rapporterar den relativa förändringen. Det här värdet används för att tilldela modellen ett betyg.
 
   - **Felmått**
     
-  Ett annat mått gör att du kan granska modellens övergripande prestanda när det gäller fel vid förutsägelse av framtida värden. Vi använder det övergripande RMSE-måttet (Root Mean Squared Error) för att utvärdera felet. RMSE är ett standardiserat sätt att mäta fel i en modell när det gäller att förutse kvantitativa data. AI-modellens RMSE jämförs med RMSE för grundmodellen och den relativa skillnaden rapporteras.
+    Ett annat mått gör att du kan granska modellens övergripande prestanda när det gäller fel vid förutsägelse av framtida värden. Vi använder det övergripande RMSE-måttet (Root Mean Squared Error) för att utvärdera felet. RMSE är ett standardiserat sätt att mäta fel i en modell när det gäller att förutse kvantitativa data. AI-modellens RMSE jämförs med RMSE för grundmodellen och den relativa skillnaden rapporteras.
 
   AI-modellen prioriterar korrekt rangordning av kunder enligt det värde de ger verksamheten. Endast framgångsfrekvensen för förutsägelse av kunder med högt värde används för att få det slutliga modellbetyget. RMSE-måttet är känsligt för extremvärden. Om det finns en mindre procentandel kunder med extremt stora köpvärden kanske det övergripande RMSE-måttet inte ger en fullständig bild av modellens prestanda.   
 

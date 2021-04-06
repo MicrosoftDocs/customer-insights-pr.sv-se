@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: ameetj
+ms.author: ameetj
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8a861d62bdfee6a3a82468fe1ab4a3fbbdad43d4
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270226"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598361"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Använd modeller baserade på Azure Machine Learning Studio (klassisk)
 
@@ -37,7 +37,7 @@ I ett första steg måste vi skapa en arbetsyta för och öppna Machine Learning
 
 1. Sök **Machine Learning Studio-arbetsyta** och välj **Skapa**.
 
-1. Ange de uppgifter som krävs för att [skapa arbetsytan](https://docs.microsoft.com/azure/machine-learning/studio/create-workspace). Välj **prisnivå för webbtjänstplanen** baserat på den mängd data du planerar att importera. Bästa prestanda uppnår du genom att välja den **plats** som är geografiskt närmast dig.
+1. Ange de uppgifter som krävs för att [skapa arbetsytan](/azure/machine-learning/studio/create-workspace). Välj **prisnivå för webbtjänstplanen** baserat på den mängd data du planerar att importera. Bästa prestanda uppnår du genom att välja den **plats** som är geografiskt närmast dig.
 
 1. När du har skapat resursen visas instrumentpanelen för Machine Learning Studio-arbetsytan. Välj **Starta Machine Learning Studio**.
 
@@ -65,7 +65,7 @@ Nu kan du skapa ett nytt experiment eller importera en befintlig mall från exem
 
    ![Konfigurera en prediktiv webbtjänst](media/predictive-webservice-control.png)
 
-1. När experimentet för prediktiv webbtjänst fungerar kan du distribuera det för automatisk schemaläggning. Om du vill att webbtjänsten ska fungera med Customer Insights väljer du **distribuera webbtjänst** > **förhandsversion av distribuera webbtjänst [ny]**. [Läs mer om distribuera en webbtjänst](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service)
+1. När experimentet för prediktiv webbtjänst fungerar kan du distribuera det för automatisk schemaläggning. Om du vill att webbtjänsten ska fungera med Customer Insights väljer du **distribuera webbtjänst** > **förhandsversion av distribuera webbtjänst [ny]**. [Läs mer om distribuera en webbtjänst](/azure/machine-learning/studio/deploy-a-machine-learning-web-service)
 
    ![Distribuera en prediktiv webbtjänst](media/predictive-webservice-deploy.png)
 
@@ -116,7 +116,7 @@ I följande bild visas modellutbildning och utvärderingsförlopp från Azure Ma
 
 ![Omsättningsmodell i Azure Machine Learning Studio](media/azure-machine-learning-model.png)
 
-Vi kan också använda en metod med namnet **permutationsfunktionens prioritet**, en viktig aspekt av modelloptimeringen. De inbyggda modellerna har liten eller ingen insikt i effekten av någon särskild funktion på den slutliga prediktionen. I kalkylatorn för funktionsprioritet används en anpassad algoritm för att beräkna hur enskilda funktioner påverkas av resultatet för en viss modell. Funktionens prioritet är normaliserad mellan +1 och -1. En negativ inverkan betyder att motsvarande funktion har ett kontraintuitivt inflytande på resultatet och bör tas bort från modellen. Ett positivt inflytande tyder på att funktionen bidrar mycket över prediktion. De här värdena är inte korrelationskoefficienter eftersom de är olika mått. Mer information finns i [permutationsfunktionens prioritet](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/permutation-feature-importance).
+Vi kan också använda en metod med namnet **permutationsfunktionens prioritet**, en viktig aspekt av modelloptimeringen. De inbyggda modellerna har liten eller ingen insikt i effekten av någon särskild funktion på den slutliga prediktionen. I kalkylatorn för funktionsprioritet används en anpassad algoritm för att beräkna hur enskilda funktioner påverkas av resultatet för en viss modell. Funktionens prioritet är normaliserad mellan +1 och -1. En negativ inverkan betyder att motsvarande funktion har ett kontraintuitivt inflytande på resultatet och bör tas bort från modellen. Ett positivt inflytande tyder på att funktionen bidrar mycket över prediktion. De här värdena är inte korrelationskoefficienter eftersom de är olika mått. Mer information finns i [permutationsfunktionens prioritet](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
 Hela [omsättningsexperimentet finns tillgängligt i Azure AI Gallery](https://gallery.azure.ai/Experiment/Hotel-Churn-Predictive-Exp).
 
@@ -168,7 +168,7 @@ Hela [produktrekommendationsexperimentet finns i Azure AI Gallery.](https://gall
 
 ## <a name="integrate-custom-models"></a>Integrera anpassade modeller
 
-Om du vill använda dessa förutsägelser i Customer Insights måste du **exportera** förutsägelserna tillsammans med kund-ID. [Exportera dem till samma Azure Blob Storage-plats](https://docs.microsoft.com/azure/storage/common/storage-import-export-data-from-blobs) som du exporterar källdata till. Den förutsägbara webbtjänsten kan schemaläggas att köras regelbundet och uppdateras.
+Om du vill använda dessa förutsägelser i Customer Insights måste du **exportera** förutsägelserna tillsammans med kund-ID. [Exportera dem till samma Azure Blob Storage-plats](/azure/storage/common/storage-import-export-data-from-blobs) som du exporterar källdata till. Den förutsägbara webbtjänsten kan schemaläggas att köras regelbundet och uppdateras.
 
 Data som genereras av den anpassade modellen kan användas för att ytterligare berika dina kunddata. Mer information finns i [anpassade maskininlärningsmodeller](custom-models.md).
 

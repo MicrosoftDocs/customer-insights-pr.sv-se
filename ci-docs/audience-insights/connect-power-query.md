@@ -2,23 +2,23 @@
 title: Mata in data via ett Power Query-anslutningsprogram
 description: Anslutningar för datakällor baserade på Power Query.
 ms.date: 09/29/2020
-ms.reviewer: adkuppa
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: b9a1b30e37c3792aa7bdfcfc177da9e8a32c324d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267797"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596935"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Ansluta till en Power Query-datakälla
 
-Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta av dessa anslutningar stöds av Dynamics 365 Customer Insights. Att lägga till datakällor baserade på Power Query-anslutningar följer i allmänhet de steg som beskrivs i nästa avsnitt. Beroende på vilken anslutning du använder krävs emellertid olika uppgifter. Mer information finns i dokumentationen om enskilda anslutningar i [Power Query anslutningsreferens](https://docs.microsoft.com/power-query/connectors/).
+Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta av dessa anslutningar stöds av Dynamics 365 Customer Insights. Att lägga till datakällor baserade på Power Query-anslutningar följer i allmänhet de steg som beskrivs i nästa avsnitt. Beroende på vilken anslutning du använder krävs emellertid olika uppgifter. Mer information finns i dokumentationen om enskilda anslutningar i [Power Query anslutningsreferens](/power-query/connectors/).
 
 ## <a name="create-a-new-data-source"></a>Skapa en ny datakälla
 
@@ -44,7 +44,7 @@ Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta
    > [!div class="mx-imgBorder"]
    > ![Dialogrutan Redigera frågor](media/data-manager-configure-edit-queries.png "Dialogrutan Redigera frågor")
 
-1. Du kan även omvandla dina data. Välj en entitet att redigera eller omvandla. Använd alternativen i fönstret Power Query för att tillämpa omvandlingar. Varje omvandling visas under **tillämpade steg**. Power Query innehåller flera fördefinierade omvandlingsalternativ. Mer information finns i [Power Query omvandlingar](https://docs.microsoft.com/power-query/power-query-what-is-power-query#transformations).
+1. Du kan även omvandla dina data. Välj en entitet att redigera eller omvandla. Använd alternativen i fönstret Power Query för att tillämpa omvandlingar. Varje omvandling visas under **tillämpade steg**. Power Query innehåller flera fördefinierade omvandlingsalternativ. Mer information finns i [Power Query omvandlingar](/power-query/power-query-what-is-power-query#transformations).
 
 1. Du kan lägga till ytterligare entiteter till din datakälla genom att markera **Hämta data** i dialogrutan **Redigera frågor**.
 
@@ -59,7 +59,7 @@ Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta
 
 ## <a name="available-power-query-data-sources"></a>Tillgängliga Power Query datakällor
 
-Se [Power Query anslutningsreferens](https://docs.microsoft.com/power-query/connectors/) för en aktuell lista över anslutningar som du kan välja för att importera data till Customer Insights. 
+Se [Power Query anslutningsreferens](/power-query/connectors/) för en aktuell lista över anslutningar som du kan välja för att importera data till Customer Insights. 
 
 Anslutningar med en bockmarkering i kolumnen **Customer Insights (dataflöden)** är tillgängliga för att skapa nya datakällor utifrån Power Query. Läs dokumentationen för en specifik kontakt om du vill ha mer information om dess krav, begränsningar och annan information.
 

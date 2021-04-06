@@ -1,31 +1,31 @@
 ---
 title: Språk som stöds för målgruppsinsikter
 description: Förstå och konfigurera språkstöd.
-ms.date: 04/27/2020
+ms.date: 02/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: philk
+author: pkieffer
+ms.author: philk
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 84c4011e61058729a0ed0b7123df8a9227b0f083
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: cbf37b55ea6c54d912200a1f7167126925b35443
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268202"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595494"
 ---
 # <a name="supported-languages-for-audience-insights-capability"></a>Språk som stöds för funktionen målgruppsinsikter
 
-Funktionen målgruppsinsikter i Dynamics 365 Customer Insights har stöd för ett antal språk. I det här ämne visas de tillgängliga språken och det finns stöd för att ändra dem, samt en översikt över vad innehåll är översatt.
+Målgruppsinsikter för Dynamics 365 Customer Insights översätts till många språk. Följande lista innehåller tillgängliga språk och information om vad som översatts. Du kan också läsa mer om hur du ändrar språkinställningarna. 
 
 ## <a name="languages"></a>Språk
 
 | Språknamn (engelska)|  Språknamn (modersmål) |
 | ------------- | ------------- |
 | Baskiska | euskara |
-| Bulgariska | Български |
+| Bulgariska | български |
 | Katalanska | català |
 | Kinesiska (förenklad) | 中文(简体) |
 | Kinesiska (traditionell) | 中文(繁體) |
@@ -42,22 +42,22 @@ Funktionen målgruppsinsikter i Dynamics 365 Customer Insights har stöd för et
 | Grekiska | Ελληνικά |
 | Hindi | हिंदी |
 | Ungerska | ungerska |
-| Indonesiska | indonesiska |
+| Indonesiska | Indonesien |
 | Italienska | Italienska |
 | Japanska | 日本語 |
-| Kazakiska | Қазақ |
+| Kazakiska | қазақ тілі |
 | Koreanska | 한국어 |
 | Lettiska | lettiska |
 | Litauiska | lietuvių |
-| Malajiska | Bahasa Melayu |
-| Norska (bokmål) | norska (bokmål) |
-| Polska | Polski |
+| Malajiska | Melayu |
+| Norska (bokmål) | norska bokmål |
+| Polska | polska |
 | Portugisiska (Brasilien) | português |
 | Portugisiska (Portugal) | português |
 | Rumänska | rumänska |
-| Ryska | Русский |
+| Ryska | pусский |
 | Serbiska (kyrillisk) | српски |
-| Serbiska (latin) | serbiska |
+| Serbiska (latinsk) | serbiska |
 | Slovakiska | slovakiska |
 | Slovenska | slovenski |
 | Spanska | spanska |

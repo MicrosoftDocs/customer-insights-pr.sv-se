@@ -2,19 +2,19 @@
 title: Exportera Customer Insights-data till Azure Data Lake Storage Gen2
 description: Lär dig hur du konfigurerar anslutningen till Azure Data Lake Storage Gen2.
 ms.date: 02/04/2021
-ms.reviewer: sthe
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: stefanie-msft
+ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: b00c3d6178150cbc93fe800779f094809d4dc67b
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: 7c0eef575f745efa6312d7141a6dd96607f9797e
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5477201"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596663"
 ---
 # <a name="connector-for-azure-data-lake-storage-gen2-preview"></a>Anslutningsprogram för Azure Data Lake Storage Gen2 (förhandsversion)
 
@@ -29,8 +29,8 @@ Lagra dina Customer Insights-data i Azure Data Lake Storage Gen2 eller använd d
 1. Ange ditt mål som ett beskrivande namn i fältet **visningsnamn**.
 
 1. Ange **Kontonamn**, **Kontonyckel** och **Behållare** för Azure Data Lake Storage Gen2.
-    - Mer information om hur du skapar ett lagringskonto att använda med Azure Data Lake Storage Gen2 finns i [Skapa lagringskonto](https://docs.microsoft.com/azure/storage/blobs/create-data-lake-storage-account). 
-    - Mer information om hur du hittar namnet och kontonyckeln till Azure Data Lake Gen2-lagringskontot finns i [Hantera inställningar för lagringskonto i Azure Portal](https://docs.microsoft.com/azure/storage/common/storage-account-manage).
+    - Mer information om hur du skapar ett lagringskonto att använda med Azure Data Lake Storage Gen2 finns i [Skapa lagringskonto](/azure/storage/blobs/create-data-lake-storage-account). 
+    - Mer information om hur du hittar namnet och kontonyckeln till Azure Data Lake Gen2-lagringskontot finns i [Hantera inställningar för lagringskonto i Azure Portal](/azure/storage/common/storage-account-manage).
 
 1. Välj **Nästa**.
 

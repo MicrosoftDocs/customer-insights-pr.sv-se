@@ -2,19 +2,19 @@
 title: Datainmatning och begränsningar i realtid
 description: Allmän information om realtidsfunktioner i målgruppsinsikter.
 ms.date: 10/27/2020
-ms.reviewer: nikeller
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3c84cfe7441eb026c1fd45eda1f72421388d01d7
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270302"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598591"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainmatning i realtid (förhandsversion)
 
@@ -54,7 +54,7 @@ Med realtids-API kan du publicera en ny aktivitet från ditt källsystem (en ens
 
 Du kan ansluta till realtids-API:et på två sätt:
 
-- [indirekt](#connect-via-the-dynamics-365-customer-insights-connector) med hjälp av [Dynamics 365 Customer Insights koppling](https://docs.microsoft.com/connectors/customerinsights/)
+- [indirekt](#connect-via-the-dynamics-365-customer-insights-connector) med hjälp av [Dynamics 365 Customer Insights koppling](/connectors/customerinsights/)
 - [direkt](#connect-directly-to-the-real-time-api), med kod
 
 Båda sätten delar följande förutsättningar:
@@ -66,13 +66,13 @@ Båda sätten delar följande förutsättningar:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Anslut via Dynamics 365 Customer Insights kopplingen
 
-API i realtid kan hämta data från en dedikerad Power Platform-koppling, [Dynamics 365 Customer Insights-koppling](https://docs.microsoft.com/connectors/customerinsights/) utan att någon kod behöver skrivas och distribueras.    
-Kopplingen kan utföra samma realtidsåtgärder som API. Du behöver en giltig licens för Premium-anslutningar. Mer information finns i [Vanliga frågor om licensiering för Power Apps och Power Automate](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+API i realtid kan hämta data från en dedikerad Power Platform-koppling, [Dynamics 365 Customer Insights-koppling](/connectors/customerinsights/) utan att någon kod behöver skrivas och distribueras.    
+Kopplingen kan utföra samma realtidsåtgärder som API. Du behöver en giltig licens för Premium-anslutningar. Mer information finns i [Vanliga frågor om licensiering för Power Apps och Power Automate](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps och/eller Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps och/eller Power Automate](/connectors/)
+- Azure [Logic Apps](/azure/connectors/apis-list)
 
-Mer information om hur du skapar flöden finns i [Power Automate-dokumentationen](https://docs.microsoft.com/power-automate/).
+Mer information om hur du skapar flöden finns i [Power Automate-dokumentationen](/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Anslut direkt till API i realtid
 
