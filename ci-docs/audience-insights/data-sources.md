@@ -1,7 +1,7 @@
 ---
 title: Använd datakällor för att mata in data
 description: Lär dig hur du importerar data från olika källor.
-ms.date: 11/03/2020
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 780dc61a82d6ed9856a37dc8f164fa946d982bbe
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595969"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887916"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
@@ -32,8 +32,15 @@ Du kan lägga till en datakälla på tre huvudsakliga sätt:
 - [Från en Common Data Model-mapp](connect-common-data-model.md)
 - [Från din egen Common Data Service sjö](connect-common-data-service-lake.md)
 
-> [!NOTE]
-> Du kan inte lägga till data från lokala datakällor ännu.
+## <a name="add-data-from-on-premises-data-sources"></a>Lägga till data lokala datakällor
+
+Det finns stöd för lokala datakällor i målgruppinsikter bygger på Power Platform-dataflöden. Dataflöden kan aktiveras i Customer Insights av [ange Microsoft Dataverse miljö-URL](manage-environments.md#create-an-environment-in-an-existing-organization) när du ställer in miljön.
+
+Datakällor som skapas efter att ha associerat en Dataverse-miljö med Customer Insights kommer att använda [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) by default. Dataflöden stöder lokal anslutning med datagateways. Ta bort och återskapa datakällor som fanns innan en Dataverse-miljö associerades för att använda lokal datagateways.
+
+Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att synas och du kan återanvända i Customer Insights. På sidan för datakällor visas länkar som går till den Power Platform-miljö där du kan visa och konfigurera lokal datagateways.
+
+:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Skärmbild på sidan med datakällor som visar länkar som pekar till Power Platform-miljön.":::
 
 ## <a name="review-ingested-data"></a>Granska inmatade data
 
@@ -65,7 +72,7 @@ Uppdatera en datakälla på begäran så här:
 
 2. Välj den lodräta ellipsen bredvid den datakälla som du vill uppdatera och välj **Uppdatera** från listrutan.
 
-3. Datakällan aktiveras nu för en manuell uppdatering. Att uppdatera en datakälla uppdaterar både entitetsschemat och data för alla entiteter som specificerats i datakällan.
+3. Datakällan aktiveras nu för en manuell uppdatering. Om du uppdaterar datakälla uppdateras både entitetsschemat och data för alla entiteter som anges i datakälla.
 
 4. Välj **Avbryt uppdatering** om du vill avbryta en pågående uppdatering, så återgår datakällan till den senaste uppdateringsstatusen.
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 75f5f9f8f56a33b2a43a605595a463ca2e937c6b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595678"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906924"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Förutsäga abonnemangsomsättning (förhandsversion)
 
@@ -49,6 +49,12 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
         - **Tidsstämpel:** Datum och tid för händelsen som identifierats av primärnyckeln.
         - **Händelse:** Namnet på den händelse som du vill använda. Ett fält med namnet "UserAction" i en videotjänst för direktuppspelning kan t.ex. ha värdet "Visat".
         - **Detaljer:** Detaljerad information om händelsen. Ett fält med namnet "ShowTitle" i en videotjänst för direktuppspelning kan t.ex. ha värdet för en video som en kund har tittat på.
+- Föreslagna dataegenskaper:
+    - Tillräckliga tidigare data: Prenumerationsdata för minst dubbla det valda tidsfönstret. Helst två till tre års prenumerationsdata.
+    - Prenumerationsstatus: Data omfattar aktiva och inaktiva prenumerationer för varje kund så det finns flera poster per kund-ID.
+    - Antal kunder: Minst 10 kundprofiler, helst mer än 1 000 unika kunder. Modellen fungerar inte med färre än 10 kunder och det finns för få tidigare data.
+    - Datafullständighet: Mindre än 20 % av de värden som saknas i entitetens datafält.
+   
    > [!NOTE]
    > Du behöver minst två aktivitetsposter för 50 % av de kunder som du vill beräkna omsättning för.
 
@@ -67,7 +73,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
 ### <a name="define-customer-churn"></a>Definiera kundomsättning
 
 1. Ange antalet **Dagar sedan prenumerationen avslutades** som företaget betraktar en kund som varandes i omsättningstillstånd. Denna period används vanligtvis för affärsaktiviteter som erbjudanden och andra marknadsföringsåtgärder som försöker förhindra att kunden går förlorad.
-1. Ange antalet **dagar för att undersöka framtid för att förutse omsättningen** och ställ in ett fönster för att förutse omsättningen för. Om du till exempel vill förutsäga risken för omsättning för dina kunder under de kommande 90 dagarna för att anpassa sig efter dina marknadsföringsåtgärder. Om du förväntar omsättningsrisker under längre eller kortare tidsperioder kan det bli svårare att åtgärda faktorerna i din omsättningsprofil, men det är mycket beroende av dina specifika affärskrav. Fortsätt **Nästa** för att fortsätta
+1. Ange antalet **dagar för att undersöka framtid för att förutse omsättningen** och ställ in ett fönster för att förutse omsättningen för. Om du till exempel vill förutsäga risken för omsättning för dina kunder under de kommande 90 dagarna för att anpassa sig efter dina marknadsföringsåtgärder. Om risken ökar för längre eller kortare tidsperioder kan det bli svårare att ta sig an faktorerna i riskprofilen, beroende på företagets specifika behov. Fortsätt **Nästa** för att fortsätta
    >[!TIP]
    > Du kan välja att **Spara och stänga** när som helst när du vill spara förutsägelsen som ett utkast. Du hittar utkastförutsägelsen i fliken **Mina förutsägelser** om du vill fortsätta med den.
 
@@ -113,7 +119,8 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
 1. Välj den prediktion du vill granska.
    - **Namn på förutsägelse:** Det namn på förutsägelsen som angavs när den skapades.
    - **Förutsägelsetyp:** Den typ av modell som används för förutsägelsen
-   - **Utdataentitet:** Namnet på den entitet där utflödet för förutsägelsen ska lagras. Du kan söka efter en entitet med det här namnet på **Data** > **Entiteter**.
+   - **Utdataentitet:** Namnet på den entitet där utflödet för förutsägelsen ska lagras. Du kan söka efter en entitet med det här namnet på **Data** > **Entiteter**.    
+     I utdataentiteten är *ChurnScore* är den förutsagda sannolikheten för omsättning och *IsChurn* är en binär etikett baserad på *ChurnScore* med 0,5 tröskel. Standardtröskeln kanske inte fungerar för ditt scenario. [Skapa ett nytt segment](segments.md#create-a-new-segment) med önskad tröskel.
    - **Förutsagt fält:** Det här fältet fylls endast i för vissa typer av förutsägelser och används inte i förutsägelse om prenumerationsomsättning.
    - **Status:** Aktuell status för förutsägelsens körning.
         - **Köade:** Förutsägelsen väntar för närvarande på att andra processer ska köras.

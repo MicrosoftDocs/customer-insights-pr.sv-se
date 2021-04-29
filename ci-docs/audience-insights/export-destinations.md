@@ -1,7 +1,7 @@
 ---
-title: Exportmål
-description: Exportera data och hantera exportdestinationer.
-ms.date: 07/21/2020
+title: Exportera data från Customer Insights
+description: 'Hantera dataexport för att dela data. '
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,102 +9,73 @@ ms.topic: conceptual
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5557442983f8c48cd46387009e0060beb6e764bb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 354ce9ef30fe918975d06290430996c84f8bd3f7
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596109"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896165"
 ---
-# <a name="export-destinations-preview-overview"></a>Översikt över exportmål (förhandsversion)
+# <a name="exports-preview-overview"></a>Exporter (förhandsversion) översikt
 
-På sidan **exportera destinationer** visas alla platser som du har konfigurerat för att exportera data till. Du kan också lägga till nya destinationer för export. Dessutom visas exportalternativ som är tillgängliga för tillfället. Få en snabb översikt, beskrivning och ta reda på vad du kan göra med de olika utökningsalternativen. Exportera enhetliga profiler, mått och segment till program som stöds och som är relevanta för ditt företag.
+På sidan **Exporter** visas alla konfigurerade exporter. Med exporter delar du specifika data med olika program. De kan inkludera kundprofiler eller entiteter, scheman och mappningsdetaljer. För varje export krävs en [anslutning, konfigurerad av en administratör, för att hantera autentisering och åtkomst](connections.md).
 
-Gå till **administration** > **exportdestinationer** för att hitta följande utökningsalternativ:
+> [!NOTE]
+> Fram till mars 2021 skapades automatiskt en anslutning till motsvarande tjänst. För export krävs nu en [anslutning som har skapats och delats av en administratör](connections.md) innan du kan skapa dem.
 
-- [Adobe Campaign Standard](export-adobe-campaign-standard.md)
-- [Adobe Experience-plattform](export-adobe-experience-platform.md)
-- [AdRoll](export-adroll.md)
-- [Autopilot](export-autopilot.md)
-- [Azure Blob Storage](export-azure-blob-storage.md)
-- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
-- [Robot för Microsoft Teams](export-teams-bot.md)
-- [Customer Insights API](apis.md)
-- [DotDigital](export-dotdigital.md)
-- [Dynamics 365 Customer Service (tillägget för kundkort)](customer-card-add-in.md)
-- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
-- [Dynamics 365 Sales](export-dynamics365-sales.md)
-- [Dynamics 365 Försäljningsnav (tillägget för kundkort)](customer-card-add-in.md)
-- [Facebook Ads Manager](export-facebook.md)
-- [Google Ads](export-google-ads.md)
-- [LiveRamp&reg;](export-liveramp.md)
-- [Mailchimp](export-mailchimp.md)
-- [Marketo](export-marketo.md)
-- [Power Automate](export-power-automate.md)
-- [Power Apps](export-power-apps.md)
-- [Power BI](export-power-bi.md)
-- [SendGrid](export-sendgrid.md)
-- [SFTP](export-sftp.md)
+Gå till **Data** > **Exporter** om du vill visa exportsidan. Alla användarroller har åtkomst till att visa konfigurerade exporter. Använda sökfältet i kommandofältet för att söka efter exporter efter namn, anslutningsnamn eller anslutningstyp.
 
-## <a name="add-a-new-export-destination"></a>Lägg till ett nytt exportmål
+## <a name="set-up-a-new-export"></a>Ställ in en ny export
 
-Om du vill lägga till exportdestinationer har du [administratörsbehörigheter](permissions.md). Om du exporterar till Microsoft-tjänster antar vi att båda tjänsterna finns i samma organisation.
+Om du vill konfigurera eller redigera en export måste anslutningarna vara tillgängliga för dig. Anslutningarna beror på din [användarroll](permissions.md):
+- Administratörer har åtkomst till alla anslutningar. De kan också skapa nya anslutningar när de upprättar en export.
+- Deltagare kan ha åtkomst till specifika anslutningar. De är beroende av administratörer för att konfigurera och dela anslutningar. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Det går bara att visa befintlig export men inte skapa den.
 
-1. Gå till **Administratör** > **Exportera mål**.
+1. Gå till **Data** > **Exporter**.
 
-1. Gå till fliken **Mina exportdestinationer**.
+1. Välj **Lägg till export** om du vill skapa en ny exportmål.
 
-1. Välj **Lägg till mål** om du vill skapa ett nytt exportmål.
+1. I rutan **Ställ in export** väljer du vilken anslutning som ska användas. [Anslutningarna ](connections.md) hanteras av administratörer. 
 
-1. I rutan **Lägg till mål** väljer du **Typ** av exportmål i listrutan.
+1. Ange den information som krävs och välj **Spara** för att skapa exporten.
 
-1. Ange de uppgifter som krävs och välj **Nästa** för att skapa exportmålet.
-
-Du kan också välja **Konfigurera** på panelen **Identifiering**.
-
-## <a name="view-export-destinations"></a>Visa exportmål
-
-När du har skapat exportmål hittar du dem i en tabell på fliken **Mina exportmål**. Tabellen har tre kolumner:
-
-- **Visningsnamn**: det namn du angav när du skapade målet.
-- **Typ**: den exportmåltyp du angav när du skapade målet.
-- **Skapades**: Det datum då du skapade målet.
-
-## <a name="edit-an-export-destination"></a>Redigera ett exportmål
+### <a name="edit-an-export"></a>Redigera export
 
 1. Markera den vertikala ellipsen för det exportmål du vill redigera.
 
-   > [!div class="mx-imgBorder"]
-   > ![Lodrät ellips](media/export-destinations-page-ellipsis.png "Lodrät ellips")
+1. Välj **Redigera** från listrutan.
 
-1. Välj **Redigera** från listruta.
+1. Ändra de värden du vill uppdatera och välj **Spara**.
 
-1. Ändra värdena som kräver uppdatering och välj **Spara**.
+## <a name="view-exports-and-export-details"></a>Visa export- och exportinformation
 
-## <a name="export-data-on-demand"></a>Exportera data på begäran
+Efter att ha skapat exportdestinationer listas de på **Data** > **Exporter**. Alla användare kan se vilka data som delas och dess senaste status.
 
-När du har konfigurerat en anslutning till ett exportmål körs exporten med varje [schemalagd uppdatering](system.md#schedule-tab).
+1. Gå till **Data** > **Exporter**.
 
-För att exportera data utan att vänta på en schemalagd uppdatering, gå till fliken **Mina exportmål** på **Administratör** > **Exportmål**.
+1. Användare utan redigeringsbehörighet väljer **Visa** i stället för **Redigera** visas exportinformationen.
 
-> [!div class="mx-imgBorder"]
-> ![Lodrät ellips](media/export-destinations-page-ellipsis.png "Lodrät ellips")
+1. I den här sidan visas hur exporten har ställts in. Du kan inte ändra värden utan att redigera behörigheter. Välj **Stäng** om du vill återgå till exportsidan.
 
-- Välj **Exportera** ovanför listan om du vill köra exporten till alla exportmål samtidigt.
-- Markera ellipsknappen (...) efter ett listobjekt och välj alternativet **export** för att köra exporten för ett enskilt exportmål.
+## <a name="run-exports-on-demand"></a>Kör exporter på begäran
 
-## <a name="remove-an-export-destination"></a>Ta bort ett exportmål
+När du har konfigurerat en export körs den med alla [schemalagda uppdateringar](system.md#schedule-tab) så länge den har en fungerande anslutning.
 
-Om du vill ta bort ett exportmål går du till sidan **exportmål**.
+För att exportera data utan att vänta på en schemalagd uppdatering, gå till **Data** > **Exporter**. Du har två alternativ:
 
-1. Markera den vertikala ellipsen för det exportmål du vill ta bort.
+- Om du vill köra alla exporter väljer du **Kör alla** i kommandofältet. 
+- Om du vill köra en enskild export markerar du denlipsen (...) på ett listobjekt och väljer sedan **Kör**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Lodrät ellips](media/export-destinations-page-ellipsis.png "Lodrät ellips")
+## <a name="remove-an-export"></a>Ta bort en export
 
-2. Välj **Ta bort** från listrutan.
+1. Gå till **Data** > **Exporter**.
 
-3. Bekräfta borttagningen genom att välja **ta bort** på bekräftelseskärmen.
+1. Markera den vertikala ellipsen för det export du vill ta bort.
+
+1. Välj **Ta bort** från listrutan.
+
+1. Bekräfta borttagningen genom att välja **ta bort** på bekräftelseskärmen.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

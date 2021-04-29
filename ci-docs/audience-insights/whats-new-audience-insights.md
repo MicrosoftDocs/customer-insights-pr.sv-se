@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 03/08/2021
+ms.date: 04/07/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 96c0b871eeaaf0976e5c718f37f883f4410977dc
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2159481f9355de738a7b457dcf0849a45c3e08db
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598515"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896257"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -22,14 +22,51 @@ ms.locfileid: "5598515"
 
 Vi är glada över att kunna meddela våra senaste uppdateringar! Denna artikel sammanfattar funktioner för allmänt tillgänglig förhandsversion, förbättringar av allmän tillgänglighet och funktionsuppdateringar. Om du vill se de långsiktiga funktionsplanerna, se [utgivningsplaner för Dynamics 365 och Power Platform](/dynamics365/release-plans/).
 
-Du kan också titta på följande video om du vill veta mer om de funktioner som har planerats för de senaste sex månaderna.
-
-> [!VIDEO https://www.youtube.com/embed/jQh-7pscH30]
-
 Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner före andra. Om inget annat anges behöver du inte vidta några åtgärder så uppdateras appen automatiskt utan driftsavbrott.
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="march-2021-updates"></a>Uppdateringar i mars 2021
+
+Uppdateringarna i mars 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="activities"></a>Aktiviteter
+
+- **Aktivitetsguiden och olika typer av aktivitetstyper** Vi har nu förbättrat och uppdaterat vår aktivitetsmappningserfarenhet för att vägleda och förenkla skapandet av aktivitetsmappning. I den här nya upplevelsen får användarna en guidad upplevelse som hjälper dig att slutföra varje steg i processen. Vid aktivitetsmappningssteget kan användaren, förutom att välja bland många aktivitetstyper, välja att semantiskt mappa data för *Prenumeration* och/eller *SalesOrderLine* till branschstandardscheman, som kan användas för nedströmsförbrukning.    
+  Mer information finns i [Kundaktiviteter](activities.md).
+
+### <a name="data-ingestion"></a>Datainsamling
+
+- **Anslut till lokala datakällor med Power Platform dataflöden och gateways** Vi ser fram till att kunna presentera förhandsgranskning av Power Platform dataflöden och lokal anslutning via gateways i Customer Insights med en associerad Power Platform eller Dataverse miljö. Alla nya datakällor som skapas i en Customer Insights-miljö med en länkad Dataverse-miljö kommer att standardinställas till Power Platform dataflöden och ta med lokal dataanslutning och en mängd anslutnings- och omvandlingsfunktioner.
+
+### <a name="extensibility"></a>Utbyggbar
+
+- **Exporter ordnade i anslutningar och exporter** Vi har bytt namn på sidan **Exportera destinationer** till **Anslutningar** och lagt till en separat sida för **Exporter**. Som en del av den här uppdateringen övergår vi befintlig export till par i en anslutning och en export med den anslutningen. Administratörerna har nu större tydlighet i fråga om utgående data på sidan **Anslutningar**. Alla användarroller har åtkomst till sidan **Export**, men bara administratörer kan välja att tillåta deltagare att redigera specifik export med delade anslutningar.     
+  Mer information finns i [Översikt över anslutningar](connections.md) och [Exportöversikt](export-destinations.md).
+
+- **Exportera segment till Campaign Monitor** Nu har exportmålen utökats till att omfatta Campaign Monitor. Nu kan du exportera segment från Customer Insights till listor med Campaign Monitor och använda dem som grund för dina marknadsföringskampanjer.    
+   Mer information finns i [Exportera data till Campaign Monitor](export-campaign-monitor.md).
+
+- **Exportera segment till Constant Contact** Nu har exportmålen utökats till att omfatta Constant Contact. Nu kan du exportera segment från Customer Insights till listor med Constant Contact och använda dem som grund för dina marknadsföringskampanjer.   
+   Mer information finns i [Exportera data till Constant Contact](export-constant-contact.md).
+
+- **Exportera segment till RollWorks** Nu har exportmålen utökats till att omfatta RollWorks. Nu kan du exportera segment från Customer Insights till listor med RollWorks och använda dem som grund för din B2B-reklam.    
+   Mer information finns i [Exportera data till RollWorks](export-rollworks.md).
+
+- **Exportera segment till Snapchat** Nu har exportmålen utökats till att omfatta Snapchat. Nu kan du exportera segment från Customer Insights till listor med Snapchat och använda dem som grund för din reklam.     
+   Mer information finns i [Exportera data till Snapchat](export-snapchat.md).
+
+### <a name="predictions"></a>Prediktioner
+
+- **Använd produktfilter i rekommenderade produktrekommendationer** Vi har lagt till möjligheten att använda produktfilter i vår produktrekommendationsmodell. Nu kan du skapa en prediktion som endast använder en delmängd av dina produkter.    
+   Mer information finns i [Konfigurera produktfilter](predict-product-recommendation.md#configure-product-filters).
+
+- **Skapa segment utifrån modellprognoser** Vi har lagt till ett snabbt sätt att skapa segment med resultatet av en prediktionsmodell. På resultatsidan för modellen kan du enkelt skapa ett nytt segment genom att välja det nya alternativet **Skapa segment**.    
+  Mer information finns i [Skapa ett segment utifrån en prediktion modell](prediction-based-segment.md).
+
+- **Förklaringar för produktrekommendationer** Vi har lagt till information som förklarar de nyckelfaktorer som AI-modellen har lärt sig för att generera produktrekommendationer och i vilken grad dessa faktorer bidrar till produktrekommendationerna. Den här informationen läggs till i resultatskärmen för modellen.    
+   Mer information finns i [Granska en förutsägelsestatus och resultat](predict-product-recommendation.md#review-a-prediction-status-and-results).
 
 ## <a name="february-2021-updates"></a>Uppdateringar i februari 2021
 
@@ -107,7 +144,7 @@ Uppdateringarna i december 2020 innehåller flera funktioner, prestandauppgrader
 
   Dessutom har vi lagt till nya konfigurationsalternativ för att bättre styra hur du vill att dina kundprofiler ska berikas. 
 
-  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md).
+  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft.md).
 
 - **Kontrollera vilka profiler som ska berikas**
 
@@ -309,8 +346,8 @@ Uppdateringarna i augusti 2020 innehåller flera funktioner, prestandauppgraderi
 
 - **Berikning av intressesamhörighet är tillgänglig på fler marknader**
 
-  Vi utökar tillgängligheten för berikning av intressesamhörighet utanför USA till fem andra marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du berika dina kunddata med fler intressen för dessa marknader. Vi ska också berika dina kundprofiler som finns på dessa marknader med hjälp av lokala patentskyddade data från Microsoft Graph.
-  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md)
+  Vi utökar tillgängligheten för berikning av intressesamhörighet utanför USA till fem andra marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du berika dina kunddata med fler intressen för dessa marknader. Vi utökar också dina kundprofiler som finns på dessa marknader med hjälp av lokala tillverkarspecifika data från Microsoft.
+  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft.md)
 
 
 ## <a name="july-2020-updates"></a>Uppdatering i juli 2020
@@ -330,8 +367,8 @@ Uppdateringarna i juli 2020 innehåller flera funktioner, prestandauppgraderinga
 
 - **Berikning av varumärkessamhörighet är tillgänglig på fler marknader**
 
-  Vi utökar tillgängligheten för berikning av varumärkessamhörighet utanför USA till fem andra marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du utöka dina kunddata med lokala varumärken på dessa marknader. Vi ska också berika dina kundprofiler som finns på dessa marknader med hjälp av lokala patentskyddade data från Microsoft Graph.
-  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md)
+  Vi utökar tillgängligheten för berikning av varumärkessamhörighet utanför USA till fem andra marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du utöka dina kunddata med lokala varumärken på dessa marknader. Vi utökar också dina kundprofiler som finns på dessa marknader med hjälp av lokala tillverkarspecifika data från Microsoft.
+  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft.md)
 
 ## <a name="june-2020-updates"></a>Uppdatering i juni 2020
 
@@ -355,7 +392,7 @@ Uppdateringarna i juni 2020 innehåller flera funktioner, prestandauppgraderinga
 - **Särskild berikning av samhörigheter med varumärke och intresse**
 
   Samhörigheter med varumärke och intresse är nu tillgängliga som två oberoende berikningar. Separerade berikningar ger flexibiliteten att konfigurera och hantera dem individuellt, beroende på dina affärskrav eller behov.    
-  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md).
+  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft.md).
 
 #### <a name="extensibility"></a>Utökningsbarhet
 

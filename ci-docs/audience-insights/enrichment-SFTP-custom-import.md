@@ -1,7 +1,7 @@
 ---
 title: Berikning med anpassad SFTP-import
 description: Allmän information om berikning med anpassad SFTP-import.
-ms.date: 11/18/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,44 +9,63 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: d9e095ef793cbd25415864f76a541dce68fafe47
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: a2d450635c19432bdd88db74b61c17febdeb568d
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595877"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896303"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Berika kundprofiler med anpassade data (förhandsversion)
 
-Anpassad SFTP-import (Secure File Transfer Protocol) gör det möjligt att importera data som inte behöver gå igenom dataförening. Det är ett flexibelt, säkert och enkelt sätt att ta med dina data. Anpassad SFTP-import kan användas i kombination med [SFTP-export](export-sftp.md), som gör att du kan exportera de kundprofildata som behövs för berikning. Data kan sedan bearbetas, berikas och med anpassad SFTP-import användas för att återställa berikade data till målgruppsinsiktskapaciteten i Dynamics 365 Customer Insights.
+Anpassad import av Secure File Transfer Protocol (SFTP) gör att du kan importera data som inte behöver gå igenom processen för datasamordning. Det är ett flexibelt, säkert och enkelt sätt att ta med dina data. Anpassad SFTP-import kan användas i kombination med [SFTP-export](export-sftp.md), som gör att du kan exportera de kundprofildata som behövs för berikning. Data kan sedan bearbetas, berikas och med anpassad SFTP-import användas för att återställa berikade data till målgruppsinsiktskapaciteten i Dynamics 365 Customer Insights.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
 Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera anpassad SFTP-import:
 
-- Du har användarautentiseringsuppgifter (användarnamn och löseord) för den SFTP-plats som data ska importeras från.
-- Du har en URL och ett portnummer (vanligtvis 22) för STF-värden.
-- Du har filnamn och plats för filen som ska importeras till SFTP-värden.
-- Det finns en *model.json*-fil som anger schemat för de data som ska importeras. Filen måste finnas i samma katalog som filen som ska importeras.
-- Du har [administratörs](permissions.md#administrator)behörighet.
+- Du har filnamnet och sökvägen (sökvägen) för den fil som ska importeras på SFTP-värd.
+- Det finns en *model.json*-fil som anger schemat för [Common Data Model-schema](/common-data-model/) för data att importeras. Filen måste finnas i samma katalog som filen som ska importeras.
+- En SFTP-anslutning har redan konfigurerats av en administratör *eller* eller så har du [administratör](permissions.md#administrator) behörigheter. Du behöver autentiseringsuppgifterna, URL:en och portnumret för den SFTP-plats där du vill importera data från.
 
-## <a name="configuration"></a>Konfiguration
+
+## <a name="configure-the-import"></a>Konfigurera importen
 
 1. Gå till **Data** > **Berikning** och välj fliken **Upptäcka**.
 
-1. I panelen **Anpassad SFTP-import** väljer du **Berika mina data**.
+1. På **Anpassad SFTP-importpanel**, välj **Utöka mina data** och välj **Kom igång**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Panelen Anpassad SFTP-import](media/SFTP_Custom_Import_tile.png "Panelen Anpassad SFTP-import")
+   :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Anpassad SFTP-importpanelen.":::
 
-1. Välj **Kom igång** och ange autentiseringsuppgifterna och adressen för SFTP-servern. Till exempel sftp://mysftpserver.com:22.
+1. Välj en [anslutning](connections.md) från listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning** och välja **Anpassad SFTP-import** från listrutan.
 
-1. Ange namnet på den fil som innehåller data och sökvägen till filen på SFTP-servern om den inte finns i rotmappen.
+1. Välj **Anslut till anpassad import** för att bekräfta anslutningen.
 
-1. Bekräfta alla indata genom att välja **Anslut till anpassad import**.
+1.  Välj **Nästa** och ange **filnamnet** och **sökvägen** till den datafil du vill importera.
 
-   > [!div class="mx-imgBorder"]
-   > ![Utfällbar meny Konfiguration av anpassad SFTP-import](media/SFTP_Custom_Import_Configuration_flyout.png "Utfällbar meny Konfiguration av anpassad SFTP-import")
+    :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Skärmbild när dataplats matas in.":::
+
+1. Välj **Nästa** och ange ett namn på utdataenheten och ett namn för utdataenheten. 
+
+1. Välj **Spara berikning** när du har granskat dina val.
+
+## <a name="configure-the-connection-for-sftp-custom-import"></a>Konfigurera anslutningen för anpassad SFTP-import 
+
+Du måste vara en administratör för att konfigurera anslutningar. Välj **Lägg till anslutning** när du konfigurerar ett tillägg *eller* gå till **Admin** > **Anslutningar** och välj **Konfigurera** på panelen för anpassad import.
+
+1. Ange ett namn för anslutningen i rutan **visningsnamn**.
+
+1. Ange ett giltigt användarnamn, lösenord och en värd-URL för STFP-servern som de data som ska importeras finns på.
+
+1. Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**.
+
+1. Välj **Verifiera** om konfigurationen ska verifieras.
+
+1. När verifieringen är klar går det att spara anslutningen genom att klicka på **Spara**.
+
+> [!div class="mx-imgBorder"]
+   > ![Konfigurationssida för Experian-anslutning](media/enrichment-SFTP-connection.png "Konfigurationssida för Experian-anslutning")
+
 
 ## <a name="defining-field-mappings"></a>Definiera fältmappningar 
 
@@ -105,8 +124,5 @@ Du kan få tillgång till en detaljerad vy över respektive berikad profil genom
 ## <a name="next-steps"></a>Nästa steg
 
 Skapa ovanpå dina berikade kunddata. Skapa [segmen](segments.md), [mått](measures.md) och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
-
-
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

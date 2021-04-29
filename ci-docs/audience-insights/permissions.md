@@ -1,7 +1,7 @@
 ---
 title: Hantera användarbehörigheter
 description: Läs om behörigheter och användarroller.
-ms.date: 10/27/2020
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e58bb1a3bd4c0920ff984daffabbf16162185f3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8638489dba908d4504278916d2c28454e3ea9e18
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595724"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760395"
 ---
 # <a name="user-permissions"></a>Användarbehörigheter
 
@@ -31,7 +31,7 @@ Det finns tre typer av roller:
 - Visa och utforska sidan **Berikning**.
 - Utforska och exportera entiteter med hjälp av sidan **entiteter**.
 - Visa status för systemprocesser med hjälp av sidan **system**.
-- Exportera segment från sidan **Segment**.
+- Visa exporter på sidan **Exporter**.
 - Installera och använd instrumentpanelen **Power BI Customer Insights**.
 
 ## <a name="contributor"></a>Deltagare
@@ -43,6 +43,7 @@ Det finns tre typer av roller:
 - Skapa segment med hjälp sidan **Segment**.
 - Skapa mått med hjälp av sidan **Mått**.
 - Hantera konfiguration och berika kundprofiler från sidan **Berikning** (endast för de förstapartsberikningar).
+- Hantera och skapa export utifrån anslutningar som delas med deltagare. [Läs mer om hur administratörer tillåter att deltagare använder en anslutning för exporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="administrator"></a>Administratör
 
@@ -50,8 +51,9 @@ Det finns tre typer av roller:
 - Ändra inställningarna på sidan **System**, inklusive arbetsspråket och uppdateringsscheman för systemprocesserna.
 - Visa och lägg till behörigheter med hjälp av sidan **Behörigheter**.
 - Ange sök- och filterdefinitioner för sidan Kunder med hjälp av sidan **Sök- och filterindex** (nås via sidan **Kunder**).
-- Definiera segmentmål för Dynamics 365 Sales med hjälp av sidan **Exportmål**.
+- Hantera anslutningar och tillåt dem för andra användarroller på sidan **Anslutningar**.
 - Hantera konfigurationer och berika kundprofiler från sidan **Berikning** (för samtliga berikningar).
+- Hantera och skapa exporter på sidan **Exporter**.
 - Installera och använd **Tillägget för kundkort**.
 - Lägg till och använd **Power Apps anslutningsprogram**.
 - Aktivera användning av [Customer Insights-API:er](apis.md).

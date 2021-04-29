@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Azure Blob Storage
-description: Lär dig hur du konfigurerar anslutningen till Azure Blob Storage.
-ms.date: 09/18/2020
+description: Lär dig hur du konfigurerar anslutningen och exporterar till Blob Storage.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,45 +9,57 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0986ee5caf5fa079994ca584fb2c4d9294ddb80b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 294feff2f77c3756fbadb36c90aab430454f5967
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596199"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760257"
 ---
-# <a name="connector-for-azure-blob-storage-preview"></a>Connector för Azure Blob Storage (förhandsversion)
+# <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Exportera segmentlista och andra data till Azure Blob Storage (förhandsgranskning)
 
-Lagra Customer Insights-data i Azure Blob Storage eller använd det för att överföra data till andra program.
+Lagra Customer Insights-data i Blob Storage eller använd det för att överföra data till andra appar.
 
-## <a name="configure-the-connector-for-azure-blob-storage"></a>Konfigurera anslutningsprogram för Azure Blob Storage
+## <a name="set-up-the-connection-to-blob-storage"></a>Upprätta anslutningen till Blob Storage
 
-1. I målgruppsinsikter går du till **Admin** > **Exportdestinationer**.
+1. Gå till **Admin** > **Anslutningar**.
 
-1. Under **Azure Blob Storage**, välj **Ställ in**.
+1. Välj **Lägg till anslutning** och välj **Azure Blob Storage** för att konfigurera anslutningen.
 
-1. Ange **Kontonamn**, **Kontonyckel** och **Behållare** för ditt Azure Blob Storage-kontot.
-    - Om du vill veta mer om hur du hittar Azure Blob Storage-kontots namn och kontonyckel, se [Hantera lagringsinställningar i Azure-portalen](/azure/storage/common/storage-account-manage).
+1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
+
+1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Ange **Kontonamn**, **Kontonyckel** och **Behållare** för ditt Blob Storage-konto.
+    - Mer information om hur du hittar Blob Storage-kontonamn och kontonyckel finns i [Hantera inställningar för lagringskonto på Azure-portalen](/azure/storage/common/storage-account-manage).
     - Mer information om hur du skapar en behållare finns i [skapa en behållare](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Ange ditt mål som ett beskrivande namn i fältet **visningsnamn**.
+1. Välj **Spara** för att slutföra anslutningen. 
 
-1. Välj **Nästa**.
+## <a name="configure-an-export"></a>Konfigurera en export
+
+Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+
+1. Gå till **Data** > **Exporter**.
+
+1. Välj för att skapa en ny export **Lägg till destination**.
+
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Azure Blob Storage. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
 
 1. Markera rutan bredvid var och en av de entiteter som du vill exportera till det här målet.
 
 1. Välj **Spara**.
 
-Exporterade data lagras i Azure Blob Storage-behållaren som du konfigurerade. Följande mappsökvägar skapas automatiskt i behållaren:
+När du sparar en export körs inte exporten omedelbart.
+
+Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab).     
+Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
+
+Exporterade data lagras i den Blob Storage-behållare som du konfigurerade. Följande mappsökvägar skapas automatiskt i behållaren:
 
 - För källentiteter och entiteter som genererats av systemet: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`
   - Exempel: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`
-- model.json för de exporterade entiteterna finns på nivån %ExportDestinationName%
+- Model.json för de exporterade entiteterna finns på %ExportDestinationName% nivån
   - Exempel: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`
-
-## <a name="export-the-data"></a>Exportera data
-
-Du kan [Exportera data på begäran](export-destinations.md#export-data-on-demand). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md#schedule-tab).
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

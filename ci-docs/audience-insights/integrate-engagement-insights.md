@@ -9,12 +9,12 @@ author: mukeshpo
 ms.author: mukeshpo
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 14ebff30d3ec7fc52dca6f86136309a3f454fa27
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 9a4cb77bb4c6ef0d88b3f00802f66baab5520a07
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597487"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896441"
 ---
 # <a name="integrate-web-data-from-engagement-insights-with-audience-insights"></a>Integrera webbdata från engagemangsinsikter med målgruppsinsikter
 
@@ -46,7 +46,7 @@ Att tänka på när man skapar förfinade händelser:
     - Signal.Action.Name – ange aktivitetsinformationen
     - Signal.User.Id – används för att mappa med kund-ID
     - Signal.View.Uri – används som webbadress som bas för segment eller mått
-    - Signal.Export.Id – att använda som primärnyckel för händelser <!-- system generated, do we need to list?-->
+    - Signal.Export.Id – att använda som primärnyckel för händelser
     - Signal.Timestamp – för att fastställa datum och tid för aktiviteten
 
 Välj vilka filter som ska fokusera på de händelser och sidor som är viktiga för ditt användningsområde. I det här exemplet använder vi åtgärdsnamnet "E-postkampanj".

@@ -9,12 +9,12 @@ ms.topic: overview
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8fdfe16d609fbebd53703b56f4e0252125bedf8f
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598652"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896487"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Målgruppsinsikter för översikt över Dynamics 365 Customer Insights
 
@@ -27,9 +27,9 @@ Målgruppsinsikter hjälper dig att bygga en djupare förståelse för dina kund
   - Anslut och förena dina data med lätthet, hämta transaktions-, observations- och beteendedata från populära [datakällor genom att använda förbyggda anslutningsprogram](data-sources.md).
   - Omvandla kunddata på ett intelligent sätt – bygga enhetliga kundprofiler som överensstämmer [Common Data Model](/common-data-model/). Lösa kundidentiteter med AI/ML-drivna rekommendationer.
 
-- **Utöka med publikinformation som finns i Microsoft Graph**
+- **Berika med målgruppsinformation**
 
-  - Skapa rikare kundprofiler genom att [inkludera målgruppsintelligens som finns i Microsoft Graph](enrichment-microsoft-graph.md).  
+  - Skapa bättre kundprofiler genom att [införliva utökade data](enrichment-hub.md).  
 
 - **Arbeta med dina affärsprocesser och anpassa kundupplevelsen**
 
@@ -43,7 +43,7 @@ Målgruppsinsikter hjälper dig att bygga en djupare förståelse för dina kund
 
   - Få tillgång till en stor samling med anslutningsprogram för att mata in all kundinformation.
   - Möjlighet att förena kunddata och omvandla det till ett [Common Data Model](/common-data-model/)-format.
-  - Du kan utöka kundinformationen med hjälp av publik information i Microsoft Graph, t.ex. varumärkes tillhörighet och intressen.
+  - Du kan utöka kundinformationen med hjälp av målgruppsinformation t.ex. varumärkes tillhörighet och intressen.
   - "Klick inte kod"-konfiguration och felsökningsfunktioner som gör det enklare att konfigurera målgruppsinsikter och identifiera potentiella problem.
   - Rengöra och standardisera kunddata över olika källor med AI-baserade rekommendationer.  
 

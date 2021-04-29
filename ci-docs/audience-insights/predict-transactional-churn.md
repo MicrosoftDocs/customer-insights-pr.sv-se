@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f120e9e3cf8d40d913c7fa6a81fbf9facd045e3c
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597211"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906878"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Förutsägelse av transaktionell omsättning (förhandsversion)
 
@@ -46,6 +46,14 @@ Förutsägelse av transaktionell omsättning hjälper till att förutsäga om en
         - **Tidsstämpel:** Datum och tid för händelsen som identifierats av primärnyckeln.
         - **Händelse:** Namnet på den händelse som du vill använda. Ett fält med namnet "UserAction" i en livsmedelsbutik kan till exempel vara en kuponganvändning av kunden.
         - **Detaljer:** Detaljerad information om händelsen. Ett fält med namnet "CouponValue" i en livsmedelsbutik kan till exempel vara valutavärdet på kupongen.
+- Föreslagna dataegenskaper:
+    - Tillräckliga tidigare data: Transaktionsdata för minst dubbla det valda tidsfönstret. Helst två till tre års prenumerationsdata. 
+    - Flera inköp per kund: helst minst två transaktioner per kund.
+    - Antal kunder: Minst 10 kundprofiler, helst mer än 1 000 unika kunder. Modellen fungerar inte med färre än 10 kunder och det finns för få tidigare data.
+    - Datafullständighet: Mindre än 20 % av de värden som saknas i entitetens datafält.
+
+> [!NOTE]
+> För ett företag med hög kundinköpsfrekvens (varannan vecka) bör du välja en kortare prediktion definition för fönster och kund. För låg inköpsfrekvens (med några månader eller en gång per år) väljer du en längre prediktion och omsättningsdefinitionen.
 
 ## <a name="create-a-transactional-churn-prediction"></a>Skapa en förutsägelse av transaktionell omsättning
 
@@ -129,7 +137,9 @@ Förutsägelse av transaktionell omsättning hjälper till att förutsäga om en
 1. Välj den prediktion du vill granska.
    - **Förutsägelsens namn:** Namnet på förutsägelsen som angavs när den skapades.
    - **Förutsägelsetyp:** Den modelltyp som används för förutsägelse
-   - **Utdataentitet:** Namnet på den entitet där utflödet för förutsägelsen ska lagras. Du kan söka efter en entitet med det här namnet på **Data** > **Entiteter**.
+   - **Utdataentitet:** Namnet på den entitet där utflödet för förutsägelsen ska lagras. Du kan söka efter en entitet med det här namnet på **Data** > **Entiteter**.    
+     I utdataentiteten är *ChurnScore* är den förutsagda sannolikheten för omsättning och *IsChurn* är en binär etikett baserad på *ChurnScore* med 0,5 tröskel. Standardtröskeln kanske inte fungerar för ditt scenario. [Skapa ett nytt segment](segments.md#create-a-new-segment) med önskad tröskel.
+     Alla kunder behöver inte vara aktiva kunder. En del av dem kanske inte har haft någon aktivitet under en längre tid och betraktas som redan nedtonade, baserat på din definition. Det är inte användbart att ta risken för kunder som redan har börjat använda programmet eftersom de inte publik av intresse.
    - **Förutsagt fält:** Det här fältet fylls endast i för vissa typer av förutsägelser och används inte i omsättningsförutsägelser.
    - **Status:** Status för förutsägelsekörningen.
         - **Köade** Förutsägelse väntar på att andra processer ska köras.

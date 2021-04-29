@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: d6a9e7872a488b6d68afce35b547f93cc4a7c652
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596889"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896349"
 ---
 # <a name="customer-profiles"></a>Kundprofiler
 
@@ -59,7 +59,7 @@ Kundinformation innefattar:
 
 -   **Kundprofilspanel:** Den här panelen visar de olika värdena från den enhetliga kundprofilsentiteten. Informationen kan vara e-postadress, namn, stad och så vidare. 
 
--   **Potentiella intressen, potentiella varumärken:** Visar om du har konfigurerat en förstapartsberikning. Den representerar potentiella intressen och samhörigheter för en kund som har en profil som liknar den som kunden har. Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md).
+-   **Potentiella intressen, potentiella varumärken:** Visar om du har konfigurerat en förstapartsberikning. Den representerar potentiella intressen och samhörigheter för en kund som har en profil som liknar den som kunden har. Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft.md).
 
 -   **Mått:** Visar om du har konfigurerat ett eller flera mått av en specifik typ: mått av kundattribut. De inkluderar beräknade KPI:er runt dina kunder på den enskilda kundnivån. Mer information finns i [Definiera och hantera mått](measures.md).
 

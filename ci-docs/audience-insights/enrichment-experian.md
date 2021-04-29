@@ -1,7 +1,7 @@
 ---
 title: Berikning med tredjepartsberikningen Experian
 description: Allmän information om tredjepartsberikningen Experian.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4d4723e8f793ee857c4f5204a42be8338c71d4c3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 9cf2a7fa18ecc022ea67f6829f52381ad59f3172
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597809"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896395"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Berika kundprofiler med demografisk information från Experian (förhandsversion)
 
@@ -25,10 +25,10 @@ Experian är en global ledare inom konsument- och affärskreditrapportering och 
 För att konfigurera Experian måste följande villkor vara uppfyllda:
 
 - Du har en aktiv Experian-prenumeration. Om du vill få en prenumeration [kontaktar du Experian](https://www.experian.com/marketing-services/contact) direkt. [Läs mer om Experian databerikande](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
-- Du har användar-ID, part-ID och modellnummer för ditt SSH-aktiverade Secure Transport-konto (ST) som Experian skapat åt dig.
-- Du har [administratörs](permissions.md#administrator)behörigheter i målgruppsinsikter.
 
-## <a name="configuration"></a>Konfiguration
+- En Experian-anslutning har redan konfigurerats av en administratör *eller* eller så har du [administratör](permissions.md#administrator) behörigheter. Du behöver också användar-ID, part-ID och modellnummer för ditt SSH-konto (Secure Transport) som Experian har skapat åt dig.
+
+## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 
 1. Gå till **Data** > **Berikning** och välj fliken **Upptäcka**.
 
@@ -36,26 +36,46 @@ För att konfigurera Experian måste följande villkor vara uppfyllda:
 
    > [!div class="mx-imgBorder"]
    > ![Experian-panel](media/experian-tile.png "Experian-panel")
+   > 
 
-1. Välj **komma igång** och ange användar-ID, part-ID och modellnummer för ditt Experian Secure Transport-konto. Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**. Bekräfta alla indata genom att välja **tillämpa**.
+1. Välj en [anslutning](connections.md) från listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning** och välja Experian från listrutan. 
 
-## <a name="map-your-fields"></a>Mappa dina fält
+1. Välj **Anslut till Experian** för att bekräfta anslutningsvalet.
 
-1.  Välj **Lägg till data** och välj den **kunddatauppsättning** du vill berika med demografidata från Experian. Du kan välja entiteten **Kund** för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
+1.  Välj **Nästa** och välj den **kunddatauppsättning** du vill utöka med demografi från Experian. Du kan välja entiteten **Kund** för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
 
-1. Välj nyckelidentifierare från **Namn och adress**, **E-post** eller **Telefon** att skicka till Experian för identitetslösning.
+    :::image type="content" source="media/enrichment-Experian-configuration-customer-data-set.png" alt-text="Bild när du väljer kunddatauppsättningen.":::
 
-   > [!TIP]
-   > Fler nyckel-ID-attribut som skickas till Experian ger troligen en högre matchningsfrekvens.
+1. Välj **Nästa** och definiera vilken typ av fält från dina enhetliga profiler som ska användas för att söka efter matchande demografi från Experian. Minst ett av fälten **Namn och adress**, **Telefon** eller **E-post** krävs. För en bättre matchning kan du lägga till upp till två andra fält. Det här valet påverkar mappningsfälten du har åtkomst till i nästa steg.
 
-1. Välj **Nästa** och mappa motsvarande attribut från entiteten Enhetlig kund för de valda nyckel-ID-fälten.
+    > [!TIP]
+    > Fler nyckel-ID-attribut som skickas till Experian ger troligen en högre matchningsfrekvens.
 
-1. Välj **Lägg till attribut** för att mappa ytterligare attribut som du vill skicka till Experian.
+1. Välj **Nästa** för att starta fältmappningen.
 
-1.  Välj **Spara** för att slutföra fältmappningen.
+1. Definiera vilka fält från dina enhetliga profiler som ska användas för att leta efter matchande demografiska data från Experian. Behövliga fält är markerade.
 
-    > [!div class="mx-imgBorder"]
-    > ![Experian fältmappning](media/experian-field-mapping.png "Experian fältmappning")
+1. Ange ett namn för berikningen och ett namn för den utgående enheten.
+
+1. Välj **Spara berikning** när du har granskat dina val.
+
+## <a name="configure-the-connection-for-experian"></a>Konfigurera anslutningen för Experian 
+
+Du måste vara en administratör för att konfigurera anslutningar. Välj **Lägg till anslutning** när du konfigurerar ett tillägg *eller* gå till **Admin** > **Anslutningar** och välj **Konfigurera** på Experian-panelen.
+
+1. Välj **Komma igång**.
+
+1. Ange ett namn för anslutningen i rutan **visningsnamn**.
+
+1. Ange giltigt användar-ID, parti-ID och modellnummer för ditt Experian Secure Transport-konto.
+
+1. Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**
+
+1. Välj **Verifiera** om konfigurationen ska verifieras.
+
+1. Välj **Spara** när verifieringen har slutförts.
+   
+   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Konfigurationsfönster för Experian-anslutning":::
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 

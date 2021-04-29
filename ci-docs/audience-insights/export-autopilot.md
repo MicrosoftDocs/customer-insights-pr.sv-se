@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Autopilot
-description: Lär dig hur du konfigurerar anslutningen till Autopilot.
-ms.date: 12/08/2020
+description: Lär dig hur du konfigurerar anslutningen och exporterar till Autopilot.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,54 +9,22 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6d039c4afd84eaad942d214d4e6fb8ef7b1ec72a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e320a48d5b7c35b530e3a38567b226b804879e4e
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596153"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760165"
 ---
-# <a name="connector-for-autopilot-preview"></a>Anslutningsprogram för Autopilot (förhandsversion)
+# <a name="export-segments-to-autopilot-preview"></a>Exportera segment till Autopilot (förhandsgranskning)
 
 Exportera segment med enhetliga kundprofiler till Autopilot och använd dem för e-postmarknadsföring i Autopilot. 
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites-for-a-connection"></a>Krav för anslutning
 
 -   Du har ett [Autopilot-konto](https://www.autopilothq.com/) och motsvarande administratörsautentiseringsuppgifter.
 -   Du har [konfigurerade segment](segments.md) i målgruppsinsikter.
 -   Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
-
-## <a name="connect-to-autopilot"></a>Anslut till Autopilot
-
-1. Gå till **Administratör** > **Exportera mål**.
-
-1. Under **Autopilot** väljer du **Konfigurera**.
-
-1. Ange ditt exportmål som ett beskrivande namn i fältet **visningsnamn**.
-
-   :::image type="content" source="media/export-autopilot.PNG" alt-text="Konfigurationsfönster för Anslutning till Autopilot.":::
-
-1. Ange **API-nyckeln till Autopilot** [API-nyckel till Autopilot](https://autopilot.docs.apiary.io/#).
-
-1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
-
-1. Välj **Anslut** om du vill initiera anslutningen till Autopilot.
-
-1. Välj **Lägg till dig själv som exportanvändare** och ange dina autentiseringsuppgifter för Customer Insights.
-
-1. Välj **Nästa** du vill konfigurera exporten.
-
-## <a name="configure-the-connector"></a>Konfigurera kopplingen
-
-1. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Upprepa samma steg för andra valfria fält, t.ex. **Förnamn**, **Efternamn**.
-
-1. Välj de segment som du vill exportera. Vi rekommenderar **starkt att du inte exporterar fler än 100 000 kundprofiler totalt** till Autopilot. 
-
-1. Välj **Spara**.
-
-## <a name="export-the-data"></a>Exportera data
-
-Du kan [Exportera data på begäran](export-destinations.md). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md#schedule-tab).
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
@@ -64,6 +32,46 @@ Du kan [Exportera data på begäran](export-destinations.md). Exporten kommer oc
 - Export till Autopilot är begränsad till segment.
 - Att exportera upp till 100 000 profiler till Autopilot kan ta upp till några timmar att genomföra. 
 - Antalet profiler som du kan exportera till Autopilot är beroende av och begränsat enligt ditt kontrakt med Autopilot.
+
+## <a name="set-up-connection-to-autopilot"></a>Upprätta anslutningen till Autopilot
+
+1. Gå till **Admin** > **Anslutningar**.
+
+1. Välj **Lägg till anslutning** och välj **Autopilot** för att konfigurera anslutningen.
+
+1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
+
+1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+3. Ange din [Autopilot API-nyckel](https://autopilot.docs.apiary.io/#).
+
+1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
+
+1. Välj **Anslut** om du vill initiera anslutningen till Autopilot.
+
+1. Välj **Lägg till dig själv som exportanvändare** och ange dina autentiseringsuppgifter för Customer Insights.
+
+1. Välj **Spara** för att slutföra anslutningen.
+
+## <a name="configure-an-export"></a>Konfigurera en export
+
+Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+
+1. Gå till **Data** > **Exporter**.
+
+1. Välj för att skapa en ny export **Lägg till destination**.
+
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Autopilot. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+
+3. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Upprepa samma steg för andra valfria fält, t.ex. **Förnamn**, **Efternamn**.
+
+1. Välj de segment som du vill exportera. Vi rekommenderar **starkt att du inte exporterar fler än 100 000 kundprofiler totalt** till Autopilot. 
+
+1. Välj **Spara**.
+
+När du sparar en export körs inte exporten omedelbart.
+
+Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 

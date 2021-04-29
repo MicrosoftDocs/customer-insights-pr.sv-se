@@ -1,7 +1,7 @@
 ---
 title: Skapa och hantera mått
 description: Definiera mått som ska analyseras och reflektera företagets resultat.
-ms.date: 02/02/2021
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,28 +9,28 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 202ea22d290be04e54ce9676b6b693162354607f
-ms.sourcegitcommit: d3eb07dcc72624a2d5cfc95c7ea9faaa2c1b6001
+ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "5654754"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887962"
 ---
 # <a name="define-and-manage-measures"></a>Definiera och hantera mått
 
-Med hjälp av mått kan du få en bättre förståelse för kundbeteenden och affärsresultat genom att hämta relevanta värden från [enhetliga profiler](data-unification.md). Ett företag vill till exempel se den *totala kostnaden per kund* för att förstå enskilda kunders köphistorik. Eller mäta *total försäljning för företaget* för att förstå den aggregerade nivån av intäkt i hela verksamheten.  
+Åtgärder hjälper dig att få en bättre förståelse av kundbeteenden och affärsresultat. De tittar på relevanta värden från [enhetliga profiler](data-unification.md). Ett företag vill till exempel se den *totala kostnaden per kund* för att förstå den enskilda kundens köphistorik eller mäta *företagets totala försäljning* för att förstå den sammanlagda omsättningen för hela verksamheten.  
 
 Mått skapas med måttverktyget, en datafrågeställningsplattform med olika operatörer och enkla mappningsalternativ. Du kan filtrera data, gruppera resultat, identifiera [entitetsrelationssökvägar](relationships.md) och förhandsgranska utdata.
 
 Använd måttverktyget om du vill planera affärsaktiviteter genom att fråga efter kunddata och extrahera insikter. Om du till exempel skapar ett mått på *totalsumma per kund* och *total intäkt per kund* kan du identifiera en grupp av kunder som spenderar mycket men ger höga intäkter. Du kan [skapa ett segment](segments.md) för att driva på nästa bästa åtgärd. 
 
-## <a name="create-a-measure"></a>Skapa ett mått
+## <a name="build-your-own-measure-from-scratch"></a>Bygg upp ditt eget mått från början
 
 Det här avsnittet innehåller information om hur du skapar ett nytt mått från grunden. Du kan skapa ett mått med dataattribut från dataentiteter som har en relation som är konfigurerad för att ansluta till entiteten Kund. 
 
 1. I målgruppsinsikter går du till **Åtgärder**.
 
-1. Välj **Nytt**.
+1. Välj **Ny** och välj **Skapa din egen**.
 
 1. Välj **Redigera namn** och tillhandahåll ett **namn** för måttet. 
    > [!NOTE]
@@ -72,6 +72,8 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
    1. Välj **Redigera dimensioner** för att lägga till dataattribut som du vill gruppera måttvärdena efter. Till exempel ort eller kön. Som standard väljs dimensionen *Kund-ID* för att skapa *mått på kundnivå*. Du kan ta bort standarddimensionen om du vill skapa *mått på företagsnivå*.
    1. Välj **Klart** för att lägga till dimensionerna till måttet.
 
+1. Om det finns värden i dina data som du behöver ersätta med ett heltal, till exempel ersätter du *null* med *0*, välj **Regler**. Konfigurera regeln och se till att du endast väljer heltal som ersättare.
+
 1. Om det finns flera sökvägar mellan den dataentitet du mappade och entiteten *Kund* måste du välja någon av de identifierade [entitetsrelationssökvägarna](relationships.md). Resultaten av måtten kan variera beroende på den valda sökvägen. 
    1. Välj **Datainställningar** och välj den entitetssökväg som ska användas för att identifiera måttet. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
    1. Välj **Klart** för att tillämpa dina val. 
@@ -88,9 +90,57 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
 
 1. Gå till **Mått** för att se det nyskapade måttet i listan.
 
+## <a name="use-a-template-to-build-a-measure"></a>Skapa ett mått med hjälp av en mall
+
+Du kan använda fördefinierade mallar med vanliga åtgärder för att skapa dem. Detaljerade beskrivningar av mallarna och en guidad upplevelse hjälper dig att skapa effektiva mått. Mallar bygger på mappade data från entiteten *Enhetlig aktivitet*. Kontrollera därför att du har konfigurerat [kundaktiviteter](activities.md) innan du skapar ett mått från en mall.
+
+Tillgängliga mätmallar: 
+- Genomsnittligt transaktionsvärde
+- Totalt transaktionsvärde
+- Genomsnittlig daglig intäkt
+- Genomsnittlig årlig intäkt
+- Transaktionsantal
+- Intjänade lojalitetspoäng
+- Inlösta lojalitetspoäng
+- Saldo för lojalitetspoäng
+- Livslängd för aktiv kund
+- Lojalitetsmedlemskapets varaktighet
+- Tid sedan senaste inköpet
+
+I följande procedur beskrivs stegen för att skapa ett nytt mått med hjälp av en mall.
+
+1. I målgruppsinsikter går du till **Åtgärder**.
+
+1. Välj **Ny** och markera **Välj en mall**.
+
+   :::image type="content" source="media/measure-use-template.png" alt-text="Skärmbild på listrutan när du skapar ett nytt mått med markering i mallen.":::
+
+1. Hitta den mall som passar dina behov och välj **Välj mall**.
+
+1. Granska de data som krävs och välj **Kom igång** om alla data är på plats.
+
+1. I rutan **Redigera namn** ange namn för måttet och utdataentiteten. 
+
+1. Välj **Utfört**.
+
+1. I avsnittet **Ange tidsperiod** definierar du tidsram för de data som ska användas. Välj om du vill att det nya måttet ska täcka hela datauppsättningen genom att välja **Hela tiden**. Eller om du vill att måttet ska fokusera på en **Viss tidsperiod**.
+
+   :::image type="content" source="media/measure-set-time-period.png" alt-text="Skärmbild som visar avsnittet tidsperiod när du konfigurerar ett mått från en mall.":::
+
+1. Välj **Lägg till data** i nästa avsnitt om du vill välja aktiviteter och mappa motsvarande data från entiteten *Enhetlig aktivitet*.
+
+    1. Steg 1 av 2: Under **Aktivitetstyp** väljer du vilken typ av entitet du vill använda. Välj de **Aktiviteter** väljer du de entiteter du vill mappa.
+    1. Steg 2 av 2: Välj attributet från entiteten *Enhetlig aktivitet* för den komponent som krävs av formeln. För genomsnittstransaktionsvärdet är det till exempel attributet som representerar transaktionsvärdet. För **tidsstämpeln för aktivitet** väljer du attributet från entiteten Enhetlig aktivitet som representerar datum och tid för aktiviteten.
+   
+1. När datamappningen är klar kan du se statusen **Slutförd** och namnet på de mappade aktiviteterna och attributen.
+
+   :::image type="content" source="media/measure-template-configured.png" alt-text="Skärmbild av en slutförd måttmallskonfiguration.":::
+
+1. Nu kan du välja **Kör** för att beräkna resultatet av åtgärden. Om du vill förfina den senare markerar du **Spara utkast**.
+
 ## <a name="manage-your-measures"></a>Hantera dina mått
 
-När du har [skapat ett mått](#create-a-measure) visas en lista med mått på sidan **Mått**.
+Listan med åtgärder finns på sidan **Mått**.
 
 Här finns information om måttypen, den som skapade den, datumet då den skapades, statusen och tillståndet. När du väljer ett mått i listan kan du förhandsgranska utdata och hämta en .CSV-fil.
 
