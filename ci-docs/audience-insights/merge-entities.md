@@ -1,7 +1,7 @@
 ---
 title: Slå samman entiteter i datasammanslutningen
 description: Slå samman entiteter för att skapa enhetliga kundprofiler.
-ms.date: 04/16/2020
+ms.date: 05/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,85 +9,121 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4ad06a0baf57e612fc0e0214dfd23d28e7d2b6be
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 2cab702509596dd87c0c9b9769d1af8ba8387f9d
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896533"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085598"
 ---
-# <a name="merge-entities"></a><span data-ttu-id="730b8-103">Slå samman entiteter</span><span class="sxs-lookup"><span data-stu-id="730b8-103">Merge entities</span></span>
+# <a name="merge-entities"></a><span data-ttu-id="c0def-103">Slå samman entiteter</span><span class="sxs-lookup"><span data-stu-id="c0def-103">Merge entities</span></span>
 
-<span data-ttu-id="730b8-104">Sammanslagningsfasen är den sista fasen i föreningsprocessen för data.</span><span class="sxs-lookup"><span data-stu-id="730b8-104">The merge phase is the last phase in the data unification process.</span></span> <span data-ttu-id="730b8-105">Dess syfte avstäms av motstridiga data.</span><span class="sxs-lookup"><span data-stu-id="730b8-105">Its purpose is reconciling conflicting data.</span></span> <span data-ttu-id="730b8-106">Exempel på data som är i konflikt kan vara ett kundnamn som finns i två av dina datauppsättningar, men som visar lite annorlunda i varje (“Grant Marshall” jämfört med “Grant Marshal”), eller ett telefonnummer som skiljer sig från formatet (617-803-091X jämfört med 617803091X).</span><span class="sxs-lookup"><span data-stu-id="730b8-106">Examples of conflicting data could include a customer name found in two of your datasets but that shows up a little differently in each ("Grant Marshall" versus "Grant Marshal"), or a phone number that differs in format (617-803-091X versus 617803091X).</span></span> <span data-ttu-id="730b8-107">Sammanfoga dessa motstridiga datapunkter görs på ett attribut till attributbasis.</span><span class="sxs-lookup"><span data-stu-id="730b8-107">Merging those conflicting data points is done on an attribute-by-attribute basis.</span></span>
+<span data-ttu-id="c0def-104">Sammanslagningsfasen är den sista fasen i föreningsprocessen för data.</span><span class="sxs-lookup"><span data-stu-id="c0def-104">The merge phase is the last phase in the data unification process.</span></span> <span data-ttu-id="c0def-105">Dess syfte avstäms av motstridiga data.</span><span class="sxs-lookup"><span data-stu-id="c0def-105">Its purpose is reconciling conflicting data.</span></span> <span data-ttu-id="c0def-106">Exempel på data som är i konflikt kan vara ett kundnamn som finns i två av dina datauppsättningar, men som visar lite annorlunda i varje (“Grant Marshall” jämfört med “Grant Marshal”), eller ett telefonnummer som skiljer sig från formatet (617-803-091X jämfört med 617803091X).</span><span class="sxs-lookup"><span data-stu-id="c0def-106">Examples of conflicting data could include a customer name found in two of your datasets but that shows up a little differently in each ("Grant Marshall" versus "Grant Marshal"), or a phone number that differs in format (617-803-091X versus 617803091X).</span></span> <span data-ttu-id="c0def-107">Sammanfoga dessa motstridiga datapunkter görs på ett attribut till attributbasis.</span><span class="sxs-lookup"><span data-stu-id="c0def-107">Merging those conflicting data points is done on an attribute-by-attribute basis.</span></span>
 
-<span data-ttu-id="730b8-108">Efter att ha avslutat [matchningsfasen](match-entities.md) kan du starta sammanslagningsfasen genom att välja panelen **Sammanslagning** på sidan **Enhet**.</span><span class="sxs-lookup"><span data-stu-id="730b8-108">After completing the [match phase](match-entities.md), you start the merge phase by selecting the **Merge** tile on the **Unify** page.</span></span>
+:::image type="content" source="media/merge-fields-page.png" alt-text="Sammanslå sida i dataförlopp som visar tabell med kopplade fält som definierar den enhetliga kundprofilen.":::
 
-## <a name="review-system-recommendations"></a><span data-ttu-id="730b8-109">Granska systemrekommendationer</span><span class="sxs-lookup"><span data-stu-id="730b8-109">Review system recommendations</span></span>
+<span data-ttu-id="c0def-109">Efter att ha avslutat [matchningsfasen](match-entities.md) kan du starta sammanslagningsfasen genom att välja panelen **Sammanslagning** på sidan **Enhet**.</span><span class="sxs-lookup"><span data-stu-id="c0def-109">After completing the [match phase](match-entities.md), you start the merge phase by selecting the **Merge** tile on the **Unify** page.</span></span>
 
-<span data-ttu-id="730b8-110">På sidan **Sammanslå** kan du välja och exkludera attribut som ska slås samman i entiteten enhetlig kundprofil (resultatet av konfigurationsprocessen).</span><span class="sxs-lookup"><span data-stu-id="730b8-110">On the **Merge** page, you choose and exclude attributes to merge within your unified customer profile entity (the result of the configuration process).</span></span> <span data-ttu-id="730b8-111">Vissa attribut slås samman automatiskt av systemet.</span><span class="sxs-lookup"><span data-stu-id="730b8-111">Some attributes are automatically merged by the system.</span></span>
+## <a name="review-system-recommendations"></a><span data-ttu-id="c0def-110">Granska systemrekommendationer</span><span class="sxs-lookup"><span data-stu-id="c0def-110">Review system recommendations</span></span>
 
-### <a name="view-merged-attributes"></a><span data-ttu-id="730b8-112">Visa sammankopplade attribut</span><span class="sxs-lookup"><span data-stu-id="730b8-112">View merged attributes</span></span>
+<span data-ttu-id="c0def-111">I **Data** > **Förena** > **Slå samman** väljer du och utesluter attribut att slå samman inom din enhetliga kundprofilenhet.</span><span class="sxs-lookup"><span data-stu-id="c0def-111">On **Data** > **Unify** > **Merge**, you choose and exclude attributes to merge within your unified customer profile entity.</span></span> <span data-ttu-id="c0def-112">Den enhetliga kundprofilen är resultatet av dataföreningsprocessen.</span><span class="sxs-lookup"><span data-stu-id="c0def-112">The unified customer profile is the result of the data unification process.</span></span> <span data-ttu-id="c0def-113">Vissa attribut slås samman automatiskt av systemet.</span><span class="sxs-lookup"><span data-stu-id="c0def-113">Some attributes are automatically merged by the system.</span></span>
 
-<span data-ttu-id="730b8-113">Om du vill visa de attribut som är inkluderade i ett av de automatiskt sammankopplade attributen markerar du det sammankopplade attributet.</span><span class="sxs-lookup"><span data-stu-id="730b8-113">To view the attributes that are included in one of your automatically merged attributes, select that merged attribute.</span></span> <span data-ttu-id="730b8-114">De två attributen som utgör det sammankopplade attributet visas i två nya rader under det sammankopplade attributet.</span><span class="sxs-lookup"><span data-stu-id="730b8-114">The two attributes that compose that merged attribute display in two new rows beneath the merged attribute.</span></span>
+<span data-ttu-id="c0def-114">Om du vill visa attributen som ingår i ett av dina automatiskt kopplade attribut väljer du det kopplade attributet på fliken **Kundfält** i tabellen.</span><span class="sxs-lookup"><span data-stu-id="c0def-114">To view the attributes that are included in one of your automatically merged attributes, select that merged attribute in the **Customer fields** tab of the table.</span></span> <span data-ttu-id="c0def-115">Attributen som utgör det sammankopplade attributet visas i två nya rader under det sammankopplade attributet.</span><span class="sxs-lookup"><span data-stu-id="c0def-115">The attributes that compose that merged attribute display in two new rows beneath the merged attribute.</span></span>
+
+## <a name="separate-rename-exclude-and-edit-merged-fields"></a><span data-ttu-id="c0def-116">Separera, byta namn på, utesluta och redigera kopplade fält</span><span class="sxs-lookup"><span data-stu-id="c0def-116">Separate, rename, exclude, and edit merged fields</span></span>
+
+<span data-ttu-id="c0def-117">Du kan ändra hur systemet bearbetar kopplade attribut för att skapa en enhetlig kundprofil.</span><span class="sxs-lookup"><span data-stu-id="c0def-117">You can change how the system processes merged attributes to generate the unified customer profile.</span></span> <span data-ttu-id="c0def-118">Välj **Visa fler** och välj vad du vill ändra.</span><span class="sxs-lookup"><span data-stu-id="c0def-118">Select **Show more** and choose what you want to change.</span></span>
+
+:::image type="content" source="media/manage-merged-attributes.png" alt-text="Alternativ i listrutan Visa fler för att hantera kopplade attribut.":::
+
+<span data-ttu-id="c0def-120">Mer information finns i följande avsnitt.</span><span class="sxs-lookup"><span data-stu-id="c0def-120">For more information, see the following sections.</span></span>
+
+## <a name="separate-merged-fields"></a><span data-ttu-id="c0def-121">Separera sammanslagna fält</span><span class="sxs-lookup"><span data-stu-id="c0def-121">Separate merged fields</span></span>
+
+<span data-ttu-id="c0def-122">Om du vill separera sammanslagna fält hittar du attributet i tabellen.</span><span class="sxs-lookup"><span data-stu-id="c0def-122">To separate merged fields, find the attribute in the table.</span></span> <span data-ttu-id="c0def-123">Separerade fält visas som enskilda datapunkter i den enhetliga kundprofilen.</span><span class="sxs-lookup"><span data-stu-id="c0def-123">Separated fields show as individual data points on the unified customer profile.</span></span> 
+
+1. <span data-ttu-id="c0def-124">Välj det sammanslagna fältet.</span><span class="sxs-lookup"><span data-stu-id="c0def-124">Select the merged field.</span></span>
+  
+1. <span data-ttu-id="c0def-125">Välj **Visa fler** och välj **Separata fält**.</span><span class="sxs-lookup"><span data-stu-id="c0def-125">Select **Show more** and choose **Separate fields**.</span></span>
+ 
+1. <span data-ttu-id="c0def-126">Bekräfta separationen.</span><span class="sxs-lookup"><span data-stu-id="c0def-126">Confirm the separation.</span></span>
+
+1. <span data-ttu-id="c0def-127">Välj **Spara** och **Kör** för att bearbeta ändringarna.</span><span class="sxs-lookup"><span data-stu-id="c0def-127">Select **Save** and **Run** to process the changes.</span></span>
+
+## <a name="rename-merged-fields"></a><span data-ttu-id="c0def-128">Byta namn på kopplade fält</span><span class="sxs-lookup"><span data-stu-id="c0def-128">Rename merged fields</span></span>
+
+<span data-ttu-id="c0def-129">Ändra visningsnamn kopplade attribut.</span><span class="sxs-lookup"><span data-stu-id="c0def-129">Change the display name of merged attributes.</span></span> <span data-ttu-id="c0def-130">Du kan inte ändra namn på utdataentitet.</span><span class="sxs-lookup"><span data-stu-id="c0def-130">You can't change the name of the output entity.</span></span>
+
+1. <span data-ttu-id="c0def-131">Välj det sammanslagna fältet.</span><span class="sxs-lookup"><span data-stu-id="c0def-131">Select the merged field.</span></span>
+  
+1. <span data-ttu-id="c0def-132">Välj **Visa fler** och välj **Byt namn**.</span><span class="sxs-lookup"><span data-stu-id="c0def-132">Select **Show more** and choose **Rename**.</span></span>
+
+1. <span data-ttu-id="c0def-133">Bekräfta det ändrade visningsnamnet.</span><span class="sxs-lookup"><span data-stu-id="c0def-133">Confirm the changed display name.</span></span> 
+
+1. <span data-ttu-id="c0def-134">Välj **Spara** och **Kör** för att bearbeta ändringarna.</span><span class="sxs-lookup"><span data-stu-id="c0def-134">Select **Save** and **Run** to process the changes.</span></span>
+
+## <a name="exclude-merged-fields"></a><span data-ttu-id="c0def-135">Utelämna sammanslagna fält</span><span class="sxs-lookup"><span data-stu-id="c0def-135">Exclude merged fields</span></span>
+
+<span data-ttu-id="c0def-136">Utelämna ett attribut från den enhetliga kundprofilen.</span><span class="sxs-lookup"><span data-stu-id="c0def-136">Exclude an attribute from the unified customer profile.</span></span> <span data-ttu-id="c0def-137">Om fältet används i andra processer, till exempel i ett segment, tar du bort det från dessa processer innan du utesluter det från kundprofilen.</span><span class="sxs-lookup"><span data-stu-id="c0def-137">If the field is used in other processes, for example in a segment, remove it from these processes before excluding it from the customer profile.</span></span> 
+
+1. <span data-ttu-id="c0def-138">Välj det sammanslagna fältet.</span><span class="sxs-lookup"><span data-stu-id="c0def-138">Select the merged field.</span></span>
+  
+1. <span data-ttu-id="c0def-139">Välj **Visa fler** och välj **Uteslut**.</span><span class="sxs-lookup"><span data-stu-id="c0def-139">Select **Show more** and choose **Exclude**.</span></span>
+
+1. <span data-ttu-id="c0def-140">Bekräfta uteslutningen.</span><span class="sxs-lookup"><span data-stu-id="c0def-140">Confirm the exclusion.</span></span>
+
+1. <span data-ttu-id="c0def-141">Välj **Spara** och **Kör** för att bearbeta ändringarna.</span><span class="sxs-lookup"><span data-stu-id="c0def-141">Select **Save** and **Run** to process the changes.</span></span> 
+
+<span data-ttu-id="c0def-142">På sidan **Sammanslå**, välj **Uteslutna fält** om du vill visa listan över alla uteslutna fält.</span><span class="sxs-lookup"><span data-stu-id="c0def-142">On the **Merge** page, select **Excluded fields** to see the list of all excluded fields.</span></span> <span data-ttu-id="c0def-143">I den här rutan kan du lägga till uteslutna fält bakåt.</span><span class="sxs-lookup"><span data-stu-id="c0def-143">This pane lets you add excluded fields back.</span></span>
+
+## <a name="manually-combine-fields"></a><span data-ttu-id="c0def-144">Kombinera fält manuellt</span><span class="sxs-lookup"><span data-stu-id="c0def-144">Manually combine fields</span></span>
+
+<span data-ttu-id="c0def-145">Ange ett kopplat attribut manuellt.</span><span class="sxs-lookup"><span data-stu-id="c0def-145">Specify a merged attribute manually.</span></span> 
+
+1. <span data-ttu-id="c0def-146">På sidan **Sammanslå**, välj **Kombinera fält**.</span><span class="sxs-lookup"><span data-stu-id="c0def-146">On the **Merge** page, select **Combine fields**.</span></span>
+
+1. <span data-ttu-id="c0def-147">Ange ett **Namn** och ett **Utdatafältsnamn**.</span><span class="sxs-lookup"><span data-stu-id="c0def-147">Provide a **Name** and an **Output field name**.</span></span>
+
+1. <span data-ttu-id="c0def-148">Välj ett fält att lägga till.</span><span class="sxs-lookup"><span data-stu-id="c0def-148">Choose a field to add.</span></span> <span data-ttu-id="c0def-149">Välj **Lägg till fält** för att kombinera fler fält.</span><span class="sxs-lookup"><span data-stu-id="c0def-149">Select **Add fields** to combine more fields.</span></span>
+
+1. <span data-ttu-id="c0def-150">Bekräfta uteslutningen.</span><span class="sxs-lookup"><span data-stu-id="c0def-150">Confirm the exclusion.</span></span>
+
+1. <span data-ttu-id="c0def-151">Välj **Spara** och **Kör** för att bearbeta ändringarna.</span><span class="sxs-lookup"><span data-stu-id="c0def-151">Select **Save** and **Run** to process the changes.</span></span> 
+
+## <a name="change-the-order-of-fields"></a><span data-ttu-id="c0def-152">Ändra ordning på fält</span><span class="sxs-lookup"><span data-stu-id="c0def-152">Change the order of fields</span></span>
+
+<span data-ttu-id="c0def-153">Vissa entiteter innehåller mer information än andra.</span><span class="sxs-lookup"><span data-stu-id="c0def-153">Some entities contain more details than others.</span></span> <span data-ttu-id="c0def-154">Om en entitet innehåller de senaste data om ett fält kan du prioritera den framför andra entiteter när du kopplar samman värden.</span><span class="sxs-lookup"><span data-stu-id="c0def-154">If an entity includes the latest data about a field, you can prioritize it over other entities when merging values.</span></span>
+
+1. <span data-ttu-id="c0def-155">Välj det sammanslagna fältet.</span><span class="sxs-lookup"><span data-stu-id="c0def-155">Select the merged field.</span></span>
+  
+1. <span data-ttu-id="c0def-156">Välj **Visa fler** och välj **Redigera**.</span><span class="sxs-lookup"><span data-stu-id="c0def-156">Select **Show more** and choose **Edit**.</span></span>
+
+1. <span data-ttu-id="c0def-157">I rutan **Kombinera fält**, välj **Flytta upp/ned** för att ange ordning eller dra och släpp dem i önskad position.</span><span class="sxs-lookup"><span data-stu-id="c0def-157">In the **Combine fields** pane, select **Move up/down** to set the order or drag and drop them in the desired position.</span></span>
+
+1. <span data-ttu-id="c0def-158">Bekräfta ändringen.</span><span class="sxs-lookup"><span data-stu-id="c0def-158">Confirm the change.</span></span>
+
+1. <span data-ttu-id="c0def-159">Välj **Spara** och **Kör** för att bearbeta ändringarna.</span><span class="sxs-lookup"><span data-stu-id="c0def-159">Select **Save** and **Run** to process the changes.</span></span>
+
+## <a name="run-your-merge"></a><span data-ttu-id="c0def-160">Kör din koppling</span><span class="sxs-lookup"><span data-stu-id="c0def-160">Run your merge</span></span>
+
+<span data-ttu-id="c0def-161">Oavsett om du kopplar attribut manuellt eller låter systemet koppla ihop dem kan du alltid köra kopplingen.</span><span class="sxs-lookup"><span data-stu-id="c0def-161">Whether you manually merge attributes or let the system merge them, you can always run your merge.</span></span> <span data-ttu-id="c0def-162">Välj **Kör** på sidan **Koppla** för att starta processen.</span><span class="sxs-lookup"><span data-stu-id="c0def-162">Select **Run** on the **Merge** page to start the process.</span></span>
 
 > [!div class="mx-imgBorder"]
-> <span data-ttu-id="730b8-115">![Välj sammankopplade attribut](media/configure-data-merge-profile-attributes.png "Välj sammankopplade attribut")</span><span class="sxs-lookup"><span data-stu-id="730b8-115">![Select merged attribute](media/configure-data-merge-profile-attributes.png "Select merged attribute")</span></span>
+> <span data-ttu-id="c0def-163">![Datakoppling Spara och kör](media/configure-data-merge-save-run.png "Datakoppling Spara och kör")</span><span class="sxs-lookup"><span data-stu-id="c0def-163">![Data merge Save and Run](media/configure-data-merge-save-run.png "Data merge Save and Run")</span></span>
 
-### <a name="separate-merged-attributes"></a><span data-ttu-id="730b8-116">Separata sammankopplade attribut</span><span class="sxs-lookup"><span data-stu-id="730b8-116">Separate merged attributes</span></span>
+<span data-ttu-id="c0def-164">Välj **Kör endast sammanslagning** om du bara vill visa utdata som reflekteras i entiteten för en enhetlig kund.</span><span class="sxs-lookup"><span data-stu-id="c0def-164">Choose **Run only Merge** if you only want to see the output reflected in the unified customer entity.</span></span> <span data-ttu-id="c0def-165">Processer nedströms uppdateras enligt vad som [definieras i uppdateringsschemat](system.md#schedule-tab).</span><span class="sxs-lookup"><span data-stu-id="c0def-165">Downstream processes will be refreshed as [defined in the refresh schedule](system.md#schedule-tab).</span></span>
 
-<span data-ttu-id="730b8-117">Om du vill separera eller ta isär de automatiskt sammankopplade attributen kan du söka efter attributet i tabellen i **profilattribut**.</span><span class="sxs-lookup"><span data-stu-id="730b8-117">To separate or unmerge any of the automatically merged attributes, find the attribute in the **Profile attributes** table.</span></span>
+<span data-ttu-id="c0def-166">Välj **Kör sammanslagnings- och nedströmsprocesser** om du vill uppdatera systemet med ändringarna.</span><span class="sxs-lookup"><span data-stu-id="c0def-166">Choose **Run Merge and downstream processes** to refresh the system with your changes.</span></span> <span data-ttu-id="c0def-167">Alla processer, inklusive berikning, segment och åtgärder, körs om automatiskt.</span><span class="sxs-lookup"><span data-stu-id="c0def-167">All processes, including enrichment, segments, and measures will rerun automatically.</span></span> <span data-ttu-id="c0def-168">När alla processer nedströms har slutförts återspeglar kundprofilerna alla ändringar du har gjort.</span><span class="sxs-lookup"><span data-stu-id="c0def-168">After all downstream processes have completed, the customer profiles reflect any changes you made.</span></span>
 
-1. <span data-ttu-id="730b8-118">Markera ellips-knappen (...) .</span><span class="sxs-lookup"><span data-stu-id="730b8-118">Select the ellipsis (...) button.</span></span>
-  
-2. <span data-ttu-id="730b8-119">Välj i listrutan **Separata fält**.</span><span class="sxs-lookup"><span data-stu-id="730b8-119">In the dropdown list, select **Separate fields**.</span></span>
-
-### <a name="remove-merged-attributes"></a><span data-ttu-id="730b8-120">Ta bort sammankopplade attribut</span><span class="sxs-lookup"><span data-stu-id="730b8-120">Remove merged attributes</span></span>
-
-<span data-ttu-id="730b8-121">Om du vill utesluta ett attribut från den slutgiltiga entiteten för kundprofilen söker du efter **Profilattribut**.</span><span class="sxs-lookup"><span data-stu-id="730b8-121">To exclude an attribute from the final customer profile entity, find it in the **Profile attributes** table.</span></span>
-
-1. <span data-ttu-id="730b8-122">Markera ellips-knappen (...) .</span><span class="sxs-lookup"><span data-stu-id="730b8-122">Select the ellipsis (...) button.</span></span>
-  
-2. <span data-ttu-id="730b8-123">Välj i listrutan **Koppla inte**.</span><span class="sxs-lookup"><span data-stu-id="730b8-123">In the dropdown list, select **Don't merge**.</span></span>
-
-   <span data-ttu-id="730b8-124">Attributet flyttas till avsnittet **borttaget från kundpost**.</span><span class="sxs-lookup"><span data-stu-id="730b8-124">The attribute is moved to the **Removed from customer record** section.</span></span>
-
-## <a name="manually-add-a-merged-attribute"></a><span data-ttu-id="730b8-125">Lägg till ett sammankopplat attribut manuellt</span><span class="sxs-lookup"><span data-stu-id="730b8-125">Manually add a merged attribute</span></span>
-
-<span data-ttu-id="730b8-126">Om du vill lägga till ett kopplar attribut går du till sidan **Koppla**.</span><span class="sxs-lookup"><span data-stu-id="730b8-126">To add a merged attribute, go to the **Merge** page.</span></span>
-
-1. <span data-ttu-id="730b8-127">Välj **Lägg till sammankopplade attribut**.</span><span class="sxs-lookup"><span data-stu-id="730b8-127">Select **Add merged attribute**.</span></span>
-
-2. <span data-ttu-id="730b8-128">Ange ett **namn** för att identifiera det på sidan **Koppla** senare.</span><span class="sxs-lookup"><span data-stu-id="730b8-128">Provide a **Name** to identify it on the **Merge** page later.</span></span>
-
-3. <span data-ttu-id="730b8-129">Alternativt kan du ange ett **visningsnamn** som ska visas i entiteten för den enhetliga kundprofilen.</span><span class="sxs-lookup"><span data-stu-id="730b8-129">Optionally, provide a **Display name** to appear in the unified Customer Profile entity.</span></span>
-
-4. <span data-ttu-id="730b8-130">Konfigurera **Markera dubblettattribut** för att välja de attribut som du vill koppla från de matchade entiteterna.</span><span class="sxs-lookup"><span data-stu-id="730b8-130">Configure **Select duplicate attributes** to select the attributes that you want to merge from the matched entities.</span></span> <span data-ttu-id="730b8-131">Du kan även söka efter attribut.</span><span class="sxs-lookup"><span data-stu-id="730b8-131">You can also search for attributes.</span></span>
-
-5. <span data-ttu-id="730b8-132">Ange **rangordna efter prioritet** om du vill prioritera ett attribut ovanför de övriga.</span><span class="sxs-lookup"><span data-stu-id="730b8-132">Set the **Rank by importance** to prioritize one attribute above the others.</span></span> <span data-ttu-id="730b8-133">Till exempel om entiteten *WebAccountCSV* innehåller den mest exakta informationen om attributet *fullständigt namn* kan du prioritera den här entiteten *ContactCSV* genom att välja *WebAccountCSV*.</span><span class="sxs-lookup"><span data-stu-id="730b8-133">For example, if the *WebAccountCSV* entity includes the most accurate data about the *Full Names* attribute, you could prioritize this entity over *ContactCSV* by selecting *WebAccountCSV*.</span></span> <span data-ttu-id="730b8-134">Detta innebär att *WebAccountCSV* flyttar till den första prioriteten medan *ContactCSV* flyttar till den andra prioriteten när de hämtar värden för attributet *fullständigt namn*.</span><span class="sxs-lookup"><span data-stu-id="730b8-134">As a result, *WebAccountCSV* moves to first priority, while *ContactCSV* moves to second priority when pulling values for the *Full Name* attribute.</span></span>
-
-## <a name="run-your-merge"></a><span data-ttu-id="730b8-135">Kör din koppling</span><span class="sxs-lookup"><span data-stu-id="730b8-135">Run your merge</span></span>
-
-<span data-ttu-id="730b8-136">Oavsett om du kopplar attribut manuellt eller låter systemet koppla ihop dem kan du alltid köra kopplingen.</span><span class="sxs-lookup"><span data-stu-id="730b8-136">Whether you manually merge attributes or let the system merge them, you can always run your merge.</span></span> <span data-ttu-id="730b8-137">Välj **Kör** på sidan **Koppla** för att starta processen.</span><span class="sxs-lookup"><span data-stu-id="730b8-137">Select **Run** on the **Merge** page to start the process.</span></span>
-
-> [!div class="mx-imgBorder"]
-> <span data-ttu-id="730b8-138">![Datakoppling Spara och kör](media/configure-data-merge-save-run.png "Datakoppling Spara och kör")</span><span class="sxs-lookup"><span data-stu-id="730b8-138">![Data merge Save and Run](media/configure-data-merge-save-run.png "Data merge Save and Run")</span></span>
-
-<span data-ttu-id="730b8-139">Om du vill göra ytterligare ändringar och köra steget igen kan du avbryta en pågående koppling.</span><span class="sxs-lookup"><span data-stu-id="730b8-139">To make additional changes and rerun the step, you can cancel an in-progress merge.</span></span> <span data-ttu-id="730b8-140">Välj **Uppdatera...** och välj **Avbryt jobb** i sidorutan som visas.</span><span class="sxs-lookup"><span data-stu-id="730b8-140">Select **Refreshing ...** and select **Cancel job**  in the side pane that appears.</span></span>
-
-<span data-ttu-id="730b8-141">Efter att texten **Uppdaterar...** ändras till **Lyckad**, men sammanslagning har slutfört och löst motstridig information i enlighet med de principer du angav.</span><span class="sxs-lookup"><span data-stu-id="730b8-141">After the **Refreshing ...** text changes to **Successful**, merge has completed and resolved contradictions in your data according to the policies you defined.</span></span> <span data-ttu-id="730b8-142">Sammanslagna och inte sammanslagna attribut ingår i entiteten Enhetliga profiler.</span><span class="sxs-lookup"><span data-stu-id="730b8-142">Merged and unmerged attributes are included in the unified profile entity.</span></span> <span data-ttu-id="730b8-143">Utelämnade attribut ingår inte i entiteten Enhetliga profiler.</span><span class="sxs-lookup"><span data-stu-id="730b8-143">Excluded attributes aren't included in the unified profile entity.</span></span>
-
-<span data-ttu-id="730b8-144">Om det inte var första gången som du körde en sammanslagning, kommer alla efterföljande processer, inklusive berikning, segmentering och mått att köras igen automatiskt.</span><span class="sxs-lookup"><span data-stu-id="730b8-144">If it wasn't the first time you ran a merge successfully, all downstream processes, including enrichment, segmentation, and measures will rerun automatically.</span></span> <span data-ttu-id="730b8-145">När alla efterföljande processer har körts igen återspeglas de ändringar du har gjort i kundprofilen.</span><span class="sxs-lookup"><span data-stu-id="730b8-145">After all downstream processes have been rerun, the customer profiles reflect any changes you made.</span></span>
+<span data-ttu-id="c0def-169">Om du vill göra fler ändringar och köra steget igen kan du avbryta en pågående koppling.</span><span class="sxs-lookup"><span data-stu-id="c0def-169">To make more changes and rerun the step, you can cancel an in-progress merge.</span></span> <span data-ttu-id="c0def-170">Välj **Uppdatera...** och välj **Avbryt jobb** i sidorutan som visas.</span><span class="sxs-lookup"><span data-stu-id="c0def-170">Select **Refreshing ...** and select **Cancel job**  in the side pane that appears.</span></span>
 
 > [!TIP]
-> <span data-ttu-id="730b8-146">Det finns [sex typer av status](system.md#status-types) för uppgifter/processer.</span><span class="sxs-lookup"><span data-stu-id="730b8-146">There are [six types of status](system.md#status-types) for tasks/processes.</span></span> <span data-ttu-id="730b8-147">Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies).</span><span class="sxs-lookup"><span data-stu-id="730b8-147">Additionally, most processes [depend on other downstream processes](system.md#refresh-policies).</span></span> <span data-ttu-id="730b8-148">Du kan välja status för en process om du vill visa information om förloppet för hela jobbet.</span><span class="sxs-lookup"><span data-stu-id="730b8-148">You can select the status of a process to see details on the progress of the entire job.</span></span> <span data-ttu-id="730b8-149">När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.</span><span class="sxs-lookup"><span data-stu-id="730b8-149">After selecting **See details** for one of the job's tasks, you find additional information: processing time, the last processing date, and all errors and warnings associated with the task.</span></span>
+> <span data-ttu-id="c0def-171">Det finns [sex typer av status](system.md#status-types) för uppgifter/processer.</span><span class="sxs-lookup"><span data-stu-id="c0def-171">There are [six types of status](system.md#status-types) for tasks/processes.</span></span> <span data-ttu-id="c0def-172">Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies).</span><span class="sxs-lookup"><span data-stu-id="c0def-172">Additionally, most processes [depend on other downstream processes](system.md#refresh-policies).</span></span> <span data-ttu-id="c0def-173">Du kan välja status för en process om du vill visa information om förloppet för hela jobbet.</span><span class="sxs-lookup"><span data-stu-id="c0def-173">You can select the status of a process to see details on the progress of the entire job.</span></span> <span data-ttu-id="c0def-174">När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.</span><span class="sxs-lookup"><span data-stu-id="c0def-174">After selecting **See details** for one of the job's tasks, you find additional information: processing time, the last processing date, and all errors and warnings associated with the task.</span></span>
 
-## <a name="next-step"></a><span data-ttu-id="730b8-150">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="730b8-150">Next Step</span></span>
+## <a name="next-step"></a><span data-ttu-id="c0def-175">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="c0def-175">Next Step</span></span>
 
-<span data-ttu-id="730b8-151">Konfigurera [aktiviteter](activities.md), [berikning](enrichment-hub.md)eller [relationer](relationships.md) till mer information om kunderna.</span><span class="sxs-lookup"><span data-stu-id="730b8-151">Configure [activities](activities.md), [enrichment](enrichment-hub.md), or [relationships](relationships.md) to gain more insights about your customers.</span></span>
+<span data-ttu-id="c0def-176">Konfigurera [aktiviteter](activities.md), [berikning](enrichment-hub.md)eller [relationer](relationships.md) till mer information om kunderna.</span><span class="sxs-lookup"><span data-stu-id="c0def-176">Configure [activities](activities.md), [enrichment](enrichment-hub.md), or [relationships](relationships.md) to gain more insights about your customers.</span></span>
 
-<span data-ttu-id="730b8-152">Om du redan har konfigurerat aktiviteter, berikning eller relationer eller om du har definierat segment, bearbetas de automatiskt så att de senaste kunddata används.</span><span class="sxs-lookup"><span data-stu-id="730b8-152">If you already configured activities, enrichment, or relationships, or if you defined segments, they'll be processed automatically to use the latest customer data.</span></span>
-
-
-
+<span data-ttu-id="c0def-177">Om du redan har konfigurerat aktiviteter, utökar eller segment, bearbetas de automatiskt för att använda de senaste kunddata.</span><span class="sxs-lookup"><span data-stu-id="c0def-177">If you already configured activities, enrichment, or segments, they'll be processed automatically to use the latest customer data.</span></span>
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
