@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
+ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595831"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "5954601"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Förutsägelse av kundens livstidsvärde (förhandsversion)
 
@@ -38,11 +38,11 @@ Följande data krävs och där de är markerade som valfria rekommenderas de fö
 - Kundidentifierare: Unik identifierare som matchar transaktioner till en enskild kund
 
 - Transaktionshistorik: Logg över tidigare transaktioner med nedanstående dataschema
-    - Transaktions-ID: Unik identifierare för varje transaktion
-    - Transaktionsdatum: Datum, helst en tidstämpel för varje transaktion
-    - Transaktionsbelopp: Penningvärde (till exempel omsättning eller vinstmarginal) för varje transaktion
-    - Etikett tilldelad för returer (valfritt): Booleskt värde som anger om transaktionen är en retur 
-    - Produkt-ID (valfritt): Produkt-ID för produkten som är inblandad i transaktionen
+    - **Transaktions-ID**: Unik identifierare för varje transaktion
+    - **Transaktionsdatum**: Datum, helst en tidstämpel för varje transaktion
+    - **Transaktionsbelopp**: Penningvärde (till exempel omsättning eller vinstmarginal) för varje transaktion
+    - **Etikett tilldelad för returer** (valfritt): Booleskt värde som anger om transaktionen är en retur 
+    - **Produkt-ID** (valfritt): Produkt-ID för produkten som är inblandad i transaktionen
 
 - Ytterligare data (valfritt), till exempel
     - Webbaktiviteter: webbplatsbesökshistorik, e-posthistorik
@@ -53,10 +53,20 @@ Följande data krävs och där de är markerade som valfria rekommenderas de fö
     - Kundidentifierare för att mappa aktiviteter till dina kunder
     - Aktivitetsinformation som innehåller namnet och datumet för aktiviteten
     - Ett dataschema för aktiviteter inkluderar: 
-        - Primärnyckel: En unik identifierare för en aktivitet
-        - Tidsstämpel: Datum och tid för händelsen som identifierats av primärnyckeln
-        - Händelse (aktivitetsnamn): Namnet på händelsen som du vill använda
-        - Detaljer (belopp eller värde): Information om kundaktiviteten
+        - **Primärnyckel**: En unik identifierare för en aktivitet
+        - **Tidsstämpel**: Datum och tid för händelsen som identifierats av primärnyckeln
+        - **Händelse (aktivitetsnamn)**: Namnet på händelsen som du vill använda
+        - **Detaljer (belopp eller värde)**: Information om kundaktiviteten
+
+- Föreslagna dataegenskaper:
+    - Tillräckliga tidigare data: Minst ett år med transaktionsdata. Helst två till tre års transaktionsdata för att få CLV att använda ett år.
+    - Flera köp per kund: Vilket minst två till tre transaktioner per kund-ID, helst över flera datum.
+    - Antal kunder: Minst 100 kunder, helst fler än 10 000 kunder. Modellen fungerar inte med färre än 100 kunder och det finns för få tidigare data
+    - Datafullständighet: Mindre än 20 % saknade värden i obligatoriska fält i indata   
+
+> [!NOTE]
+> - För modellen krävs kundens transaktionshistorik. Det går bara att konfigurera en entitet för transaktionshistorik för tillfället. Om det finns flera köp-/transaktionsentiteter kan du Power Query innan datainmatning.
+> - Om du vill ha ytterligare aktivitetsdata (valfritt) kan du lägga till så många kundaktivitetsentiteter du vill ha med i modellen.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Skapa en förutsägelse av kundens livstidsvärde
 
@@ -76,7 +86,7 @@ Följande data krävs och där de är markerade som valfria rekommenderas de fö
    Som standard anges enheten som månader. Du kan ändra det till år för att se längre fram.
 
    > [!TIP]
-   > För att korrekt kunna förutse kundens livstidsvärde för den tidsperiod du anger behöver du en jämförbar period av historiska data. Om du till exempel vill förutse för de kommande 12 månaderna rekommenderar vi att du har minst 18–24 månaders historisk information.
+   > För att korrekt kunna förutse kundens livstidsvärde för den tidsperiod du anger behöver du en jämförbar period av historiska data. Om du till exempel vill förutse CLV för de kommande 12 månaderna rekommenderar vi att du har minst 18–24 månaders historisk information.
 
 1. Ange vad **aktiva kunder** betyder för företaget. Ange tidsramen inom vilken en kund måste ha minst en transaktion för att anses vara aktiv. Modellen förutser endast kundens livstid för aktiva kunder. 
    - **Låt modellen beräkna inköpsintervall (rekommenderas)**: Modellen analyserar dina data och fastställer en tidsperiod utifrån tidigare köp.
@@ -181,14 +191,14 @@ Det finns tre primära dataområden på resultatsidan.
   Med hjälp av definitionen av kunder med högt värde som angavs vid konfigurationen av förutsägelsen bedömer systemet hur AI-modellen presterade i förutsägelsen av kunder med högt värde jämfört med en grundmodell.    
 
   Betyg fastställs utifrån följande regler:
-  - A när modellen korrekt förutsade minst 5 % fler kunder med högt värde jämfört med grundmodellen.
-  - B när modellen korrekt förutsade mellan 0 och 5 % fler kunder med högt värde jämfört med grundmodellen.
-  - C när modellen korrekt förutsade färre kunder med högt värde än grundmodellen.
+  - **A** när modellen korrekt förutsade minst 5 % fler kunder med högt värde jämfört med grundmodellen.
+  - **B** när modellen korrekt förutsade mellan 0 och 5 % fler kunder med högt värde jämfört med grundmodellen.
+  - **C** när modellen korrekt förutsade färre kunder med högt värde än grundmodellen.
 
   I rutan **Modellbetyg** visas ytterligare information om AI-modellens prestanda och grundmodellen. Grundmodellen bygger på en icke-AI-baserad metod för beräkning av kundens livstidsvärde, främst baserat på tidigare köp som gjorts av kunder.     
   Standardformeln som används för att beräkna kundens livstidsvärde enligt grundmodellen:    
 
-  *Kundens livstidsvärde för varje kund = Genomsnittligt månatligt köp som gjorts av kunden i det aktiva kundfönstret * Antal månader i perioden för förutsägelse av kundens livstidsvärde * Övergripande kvarhållning av alla kunder*
+  _**Kundens livstidsvärde för varje kund** = Genomsnittligt månatligt köp som gjorts av kunden i det aktiva kundfönstret * Antal månader i perioden för förutsägelse av kundens livstidsvärde *Övergripande kvarhållning av alla kunder*_
 
   AI-modellen jämförs med grundmodellen utifrån två prestandamått.
   

@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2eb84c44aa530346a73ba720106734d705a45f23
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595586"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085644"
 ---
 # <a name="match-entities"></a>Matcha entiteter
 
@@ -103,6 +103,18 @@ Matchningsregler representerar uppsättningar av villkor. Om du vill matcha enti
 
 > [!NOTE]
 > Regelordningen är viktig. Matchningsalgoritmen försöker matcha baserat på den första regeln och fortsätter endast till den andra regeln om inga matchningar identifierades med den första regeln.
+
+### <a name="change-the-entity-order-in-match-rules"></a>Ändra entitetsordningen i matchningsregler
+
+Du kan ändra ordningen på entiteter för matchningsregler om du vill ändra i vilken ordning de bearbetas. Regler som står i konflikt på grund av en ändrad order tas bort. Du måste återskapa borttagna regler med en uppdaterad konfiguration.
+
+1. Gå till **Data** > **Förena** > **Matcha** och välj **Redigera**.
+
+1. I rutan **Redigera regel** markerar du kontrollen **Flytta upp/ned** entiteter för att ändra ordningen.
+
+   :::image type="content" source="media/reorder-match-rules.png" alt-text="Alternativ för att ändra i vilken ordning entiteter bearbetas i matchningsfasen.":::
+
+1. Välj **Klar** för att spara regeln.
 
 ## <a name="define-deduplication-on-a-match-entity"></a>Definiera deduplicering på en matchningsentitet
 

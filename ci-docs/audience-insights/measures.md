@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
+ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887962"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049272"
 ---
 # <a name="define-and-manage-measures"></a>Definiera och hantera mått
 
@@ -34,7 +34,7 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
 
 1. Välj **Redigera namn** och tillhandahåll ett **namn** för måttet. 
    > [!NOTE]
-   > Om den nya måttkonfigurationen endast har två fält, till exempel Kund-ID och en beräkning, läggs utdatan till som en ny kolumn i den systemgenererade entiteten Kundmått. Dessutom kan du se måttens värde i den enhetliga kundprofilen. Andra mått genererar egna entiteter.
+   > Om den nya måttkonfigurationen endast innehåller två fält, till exempel Kund-ID och en beräkning, läggs utdata till som en ny kolumn i den systemgenererade entiteten Customer_Measure. Dessutom kan du se måttens värde i den enhetliga kundprofilen. Andra mått genererar egna entiteter.
 
 1. I konfigurationsområdet väljer du sammansättningsfunktionen från listrutan **Välj funktion**. Sammansättningsfunktioner omfattar: 
    - **Sum**

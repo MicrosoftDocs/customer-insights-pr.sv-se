@@ -6,15 +6,15 @@ ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: phkieffer
+author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e973bb11b31c9e70b695ebec8aa2700fdaa5e44f
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: ce2477d957a1792e0436a0dfc15a33621b1c89a9
+ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597947"
+ms.lasthandoff: 05/04/2021
+ms.locfileid: "5976110"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate anslutningsprogram (förhandsversion)
 
@@ -27,7 +27,7 @@ Med utlösare kan du skapa molnflöden och automatisera repetitiva uppgifter, ti
 - Utlöses när en uppdatering av en datakälla misslyckas. 
 - Utlöses när en uppdatering av en datakälla lyckas.
 - Utlöses när ett tröskelvärde passeras i ett segment. Utlösaren begränsas till att passera över tröskelvärdet.
-- Utlöses när ett tröskelvärde passeras i ett affärsmått. Utlösaren begränsas till att passera över tröskelvärdet.
+- Utlöses när ett tröskelvärde passeras i ett affärsmått. Endast affärsmått utan dimension stöds. Utlösaren begränsas till att passera över tröskelvärdet.
 - Utlösa när en fullständig uppdatering av (datakällor, segment, mått ...) är slutförd.
 - Utlöses när en uppdatering av föreningsprocessen (mappning, matchning, sammanslagning) har slutförts.
 

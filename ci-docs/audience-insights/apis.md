@@ -1,7 +1,7 @@
 ---
 title: Arbeta med API:er
 description: Använd API:er och förstå begränsningar.
-ms.date: 03/10/2021
+ms.date: 05/10/2021
 ms.reviewer: wimohabb
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 59161456914df84d7e72402ed1f5faf70a5119ba
-ms.sourcegitcommit: a39e00a50ad3eda820fd756c5611081f0ca04662
+ms.openlocfilehash: 4d41d7d328dfa6699b5f5e992d3a5bf3179490d8
+ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "5873684"
+ms.lasthandoff: 05/10/2021
+ms.locfileid: "6016642"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbeta med API:er i Customer Insights
 
@@ -90,19 +90,13 @@ Avsnittet för [registrering av appar](#create-a-new-app-registration-in-the-azu
 
 1. På din app-registrering i Azure Portal går du till **API-behörigheter**.
 
-1. Välj **Lägg till en behörighet** och välj **Customer Insights** i sidorutan.
+1. Välj **Lägg till behörighet**. 
+
+1. Välj fliken **API:er som min organisation använder** och välj **Dynamics 365 AI för Customer Insights** från listan. 
 
 1. För **Behörighetstyp** väljer du **Programbehörigheter** och väljer behörigheten **CustomerInsights.Api.All**.
 
 1. Välj **Lägg till behörigheter**.
-
-1. För att ge administratörsmedgivande på denna programbehörighet måste du lägga till ett Service Principal.
-
-   1. Installera Azure Active Directory PowerShell-modulen (AD): `Install-Module -Name AzureAD -AllowClobber -Scope AllUsers`
-   1. Anslut till ditt AD-konto: `Connect-AzureAD -TenantId <your tenant id>`. Du hittar klientorganisationens ID på **Översikt** > **Azure Active Directory**.
-   1. Kör följande kommando för att lägga till Azure AD Service Principal `New-AzureADServicePrincipal -AppId "38c77d00-5fcb-4cce-9d93-af4738258e3c" -DisplayName "Microsoft Dynamics 365 Customer Insights"` Parametern AppId gäller API-appen Customer Insights.
-
-   :::image type="content" source="media/azureAD-service-principal.png" alt-text="Exempel på huvudkonto för tjänsten":::
 
 1. Gå tillbaka till **API-behörigheter** för din app-registrering.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 383523bad5105e08e57758838e90a49e805b5f9b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
+ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596429"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049416"
 ---
 # <a name="entities-in-audience-insights"></a>Entiteter i målgruppsinsikter
 
@@ -37,12 +37,12 @@ Välj en entitet för att utforska de olika fält och poster som ingår i entite
 > [!div class="mx-imgBorder"]
 > ![Välj en entitet](media/data-manager-entities-data.png "Välj en entitet")
 
-- Fliken **data** väljs som standard och visar en tabell med information om enskilda poster i entiteten.
+- Fliken **Data** visar en tabell med information om enskilda poster i entiteten.
 
 > [!div class="mx-imgBorder"]
 > ![Fälttabell](media/data-manager-entities-fields.PNG "Fälttabell")
 
-- På fliken **fält** visas en tabell för att visa information om den valda entiteten, t.ex. fält namn, datatyper och typer. Kolumnen **Typ** visar Common Data Model associerade typer som antingen identifieras automatiskt av systemet eller som [mappas manuellt](map-entities.md) av användarna. Dessa är semantiska typer som kan skilja sig från attributens datatyper, t.ex. fältet *E-post* nedan har datatypen *Text* men dess (semantiska) Common Data Model-typ kan vara *E-post* eller *EmailAddress*.
+- Fliken **Attribut** är markerad som standard och visar en tabell för att granska information om den valda entiteten, till exempel fältnamn, datatyper och typer. Kolumnen **Typ** visar Common Data Model associerade typer som antingen identifieras automatiskt av systemet eller som [mappas manuellt](map-entities.md) av användarna. Dessa är semantiska typer som kan skilja sig från attributens datatyper, t.ex. fältet *E-post* nedan har datatypen *Text* men dess (semantiska) Common Data Model-typ kan vara *E-post* eller *EmailAddress*.
 
 > [!NOTE]
 > I båda tabellerna visas endast ett exempel på entitetens data. Om du vill visa hela datauppsättningen går du till sidan **Datakällor**, väljer en entitet och sedan **redigera** och visar sedan entitetens data med Power Query redigeraren som förklaras i [Datakällor](data-sources.md).

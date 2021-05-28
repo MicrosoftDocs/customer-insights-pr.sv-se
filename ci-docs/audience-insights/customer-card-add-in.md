@@ -1,7 +1,7 @@
 ---
-title: Installera och konfigurera Tillägget för kundkort
-description: Installera och konfigurera tillägget kundkort för Dynamics 365 Customer Insights.
-ms.date: 01/20/2021
+title: Tillägget för kundkort i Dynamics 365-appar
+description: Visa data från målinsikter i Dynamics 365-appar med det här tillägget.
+ms.date: 05/18/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,30 +9,31 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f3c4a01f9ce7749eeee72f7901620dae7cb9b8d3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
+ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597349"
+ms.lasthandoff: 05/18/2021
+ms.locfileid: "6059610"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Visa tidslinjer för demografiska data och aktiviteter med kundkorttillägget.
+Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med kundkortstillägget installerat i en Dynamics 365-app som stöds kan du välja att visa demografi, insikter och aktivitetstid. Tillägget hämtar data från Customer Insights utan att det påverkar data i den anslutna Dynamics 365-appen. 
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-- Dynamics 365-app (t.ex. Försäljningsnav eller Kundtjänstnav) version 9.0 och senare med enhetligt gränssnitt aktiverat.
-- Kundprofiler som [matats in från Dynamics 365-appen med Common Data Service](connect-power-query.md).
-- Användare av tillägget Kundkort måste [läggas till som användare](permissions.md) i målgruppsinsikter.
-- [Konfigurerade sök- och filterfunktioner](search-filter-index.md).
-- Demografisk kontroll: Demografiska fält (till exempel ålder eller kön) är tillgängliga i den enhetliga kundprofilen.
-- Berikningskontroll: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler.
-- Intelligenskontroll: Kräver data som genererats med Azure Machine Learning ([prediktionsmodeller](predictions.md) eller [anpassade modeller](custom-models.md))
-- Måttkontroll: Kräver [konfigurerade åtgärder](measures.md).
-- Tidslinjekontroll: Kräver [konfigurerade aktiviteter](activities.md).
+- Tillägget fungerar bara med Dynamics 365 modellbaserade appar, till exempel Sales eller kundtjänst, version 9.0 och senare.
+- För att dina Dynamics 365-data ska mappas till målinsikternas kundprofiler måste de [tas in i appen Dynamics 365 med hjälp av kopplingen Common Data Service](connect-power-query.md).
+- Alla Dynamics 365-användare av tillägget kundkort måste [läggas till som användare](permissions.md) målinsikter för att kunna se dessa data.
+- [Konfigurerade sök- och filterfunktioner](search-filter-index.md) i målinsikter krävs för att slå upp data som ska fungera.
+- För varje tilläggskontroll används specifika data målinsikter:
+  - Måttkontroll: Kräver [konfigurerade åtgärder](measures.md).
+  - Intelligent kontroll: Kräver data som genereras med hjälp av [prediktioner](predictions.md) eller [anpassade modeller](custom-models.md).
+  - Demografisk kontroll: Demografiska fält (till exempel ålder eller kön) är tillgängliga i den enhetliga kundprofilen.
+  - Berikningskontroll: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler.
+  - Tidslinjekontroll: Kräver [konfigurerade aktiviteter](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Installera tillägget för kundkort
 
@@ -56,9 +57,9 @@ Det kan ta en stund innan lösningen har installerats i din miljö.
    > [!NOTE]
    > Kontrollera att webbläsarens popup-blockerare inte blockerar verifieringsfönstret när du klickar på knappen **Logga in**.
 
-1. Välj vilken miljö du vill hämta data från.
+1. Välj vilken Customer Insights-miljön du vill hämta data från.
 
-1. Definiera fältmappningen till poster i Dynamics 365-appen.
+1. Definiera fältmappningen till poster i Dynamics 365-appen. Beroende på dina data i Customer Insights kan du välja att mappa följande alternativ:
    - Om du vill mappa med en kontakt markerar du fältet i entiteten Kund som matchar ID för din kontaktentitet.
    - Om du vill mappa med ett konto markerar du fältet i entiteten Kund som matchar ID för din kontoentitet.
 
