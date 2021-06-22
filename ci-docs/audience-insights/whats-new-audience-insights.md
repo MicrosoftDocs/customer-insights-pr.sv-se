@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 05/06/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: c66b37d6e4d6ed830238566fbc09934832892b34
-ms.sourcegitcommit: 3f9981df97fa7b1f432a446d3f11936ea4cfbde5
+ms.openlocfilehash: 355dc22ac381145b231848830cefc47eda7968f4
+ms.sourcegitcommit: 6944c1592877eb92ec789df5f2e0dbecef638837
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "5988942"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6263273"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -26,6 +26,37 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="may-2021-updates"></a>Uppdateringar maj 2021
+
+Uppdateringarna i maj 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="data-ingestion"></a>Datainsamling
+
+- **Visa eller ändra metadata eller entitetsdefinition när du bifogar data från din Azure Data Lake Storage** Du kan nu visa och redigera metadata- eller entitetsdefinition i målgruppsinsikter när du bifogar data från en Common Data Model i Azure Data Lake Storage. Den här funktionen ger feedback i realtid, modellvalidering och felkontroll. Det låter dig redigera både model.json och manifest.json sömlöst.
+
+### <a name="extensibility"></a>Utbyggbar
+
+- **Förbättrad segmentexport, anpassat schema och duplicering** Du kan nu [se alla exporter för ett visst segment](export-destinations.md#view-exports-and-export-details) i en lista. Den här nya vyn hjälper till att hantera hur ett visst segment används och anpassa befintlig eller skapa ny export.    
+  Du kan [definiera anpassade uppdateringsscheman](export-destinations.md#schedule-and-run-exports) för enskilda exporter eller flera exporter samtidigt. Hittills har all export körts med varje systemuppdatering.    
+  I stället för att skapa en ny export från grunden kan du börja baserat på en befintlig för att spara lite tid.
+
+- **Exportera segment till Microsoft Advertising** Nu har exportmålen utökats till att omfatta Microsoft Advertising. Skapa Customer Match-målgrupper i Microsoft Advertising med dina enhetliga kundprofildata, och använd målgrupperna för dina kampanjer och annonser. Mer information finns i [Exportera segment till Microsoft Advertising](export-microsoft-advertising.md).
+
+- **Exportera segment till LinkedIn Ads** Vi har utökat våra exportdestinationer till att omfatta LinkedIn Ads och gör det möjligt för dig att låsa upp kontaktinriktning och företagsinriktning via LinkedIn genom att exportera dina enhetliga kundprofildata. Mer information finns i [Exportera segment till LinkedIn Ads](export-linkedin-ads.md).
+
+
+- **Exportera segment till Omnisend** Nu har exportmålen utökats till att omfatta Omnisend. Använd segmenten som skapas i målgruppsinsikter för att generera kampanjer, skapa e-postmarknadsföring och dra nytta av specifika kundgrupper med Omnisend. Mer information finns i [Exportera segment till Omnisend](export-omnisend.md)
+
+### <a name="predictions"></a>Prediktioner
+
+- **Användbarhetsrapport för indata** Rapporten om användbarhet av indata ger en konsoliderad vy över de fel och varningar som dina färdiga förutsägelser kan generera. Det ger också rekommendationer om hur man förbättrar modellens prestanda.    
+  Rapporten är tillgänglig när en modell har slutfört sin utbildningsprocess. Den skapas för varje modell separat, oavsett om den har slutförts eller inte.
+  För närvarande fungerar den här funktionen bara för transaktionsomsättningsmodellen. Mer information finns i [Användbarhetsrapport av indata](manage-predictions.md#input-data-usability-report).
+
+### <a name="relationships"></a>Relationer
+
+- **Relationsvisualisering** Vyn i relationsvisualiseraren låter dig se alla befintliga relationer mellan entiteter och deras kardinalitet. Relationer ordnas nu i grupper: användarskapade, system och ärvda relationer. Du kan också exportera en vy som en bild. Mer information finns i [Visa relationer](relationships.md#view-relationships). 
 
 ## <a name="april-2021-updates"></a>Uppdatering april 2021
 

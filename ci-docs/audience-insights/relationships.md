@@ -1,74 +1,110 @@
 ---
 title: Relationer mellan entiteter och entiteters sökvägar
 description: Skapa och hantera relationer mellan entiteter från flera datakällor.
-ms.date: 04/14/2020
+ms.date: 06/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: mukeshpo
-ms.author: mukeshpo
+author: MichelleDevaney
+ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: c25bfcb8e2a8223498dd1a5e8cfb3712a40ab85e
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
+ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595234"
+ms.lasthandoff: 06/03/2021
+ms.locfileid: "6171186"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellan entiteter
 
-Relationer hjälper dig att ansluta entiteter och skapa ett diagram över dina data när entiteter delar en gemensam identifierare (sekundär nyckel) som kan refereras från en entitet till en annan. Med anslutna entiteter kan du definiera segment och mått baserat på flera datakällor.
+Relationer ansluter entiteter och definierar ett diagram över dina data när entiteter delar en gemensam identifierare, en utländsk nyckel. Den här utländska nyckeln kan refereras från en entitet till en annan. Med anslutna entiteter kan du definiera segment och mått baserat på flera datakällor.
 
-Det finns två typer av relationer. Systemrelationer som inte kan redigeras, som skapas automatiskt och anpassade relationer skapas och konfigureras av användare.
+Det finns tre typer av relationer: 
+- Icke-redigerbara systemrelationer, skapat av systemet som en del av datasammansättningsprocessen
+- Icke-redigerbara relationer, som skapas automatiskt från att mata in datakällor 
+- Redigerbara anpassade relationer, skapad och konfigurerad av användare
 
-Under matchnings- och sammanslagningsprocesserna skapas systemrelationer i bakgrunden, baserat på intelligent matchning. Med hjälp av dessa relationer kan kund profilposterna relateras till andra motsvarande entiteter. Följande diagram illustrerar skapandet av tre systemrelationer när entiteten kund matchas med ytterligare entiteter för att producera den slutliga entiteten för kundprofilen.
+## <a name="non-editable-system-relationships"></a>Icke-redigerbara systemrelationer
 
-> [!div class="mx-imgBorder"]
-> ![Skapar relation](media/relationships-entities-merge.png "Skapar relation")
+Under dataenandet skapas systemrelationer automatiskt baserat på intelligent matchning. Med hjälp av dessa relationer kan kundprofilposterna relateras till motsvarande entiteter. Följande diagram illustrerar skapandet av tre systembaserade relationer. Kundentiteten matchas med andra entiteter för att producera den enhetliga *kundentiteten*.
 
-- ***CustomerToContact* relationen** skapades mellan entiteten kund och entiteten kontakt. Entiteten Kund hämtar nyckelfält **Contact_contactId** som relaterar till nyckelfältet kontaktentitet **contactId**.
-- ***CustomerToAccount* relationen** skapades mellan entiteten kund och entiteten konto. Entiteten Kund hämtar nyckelfält **Account_accountId** som relaterar till nyckelfältet kontoentitet **accountId**.
-- ***CustomerToWebAccount* relationen** skapades mellan entiteten kund och entiteten WebAccount. Entiteten Kund hämtar nyckelfält **WebAccount_webaccountId** som relaterar till nyckelfältet WebAccount-entitet **webaccountId**.
+:::image type="content" source="media/relationships-entities-merge.png" alt-text="Diagram med relationsvägar för kundentiteten med tre 1-n-relationer.":::
 
-## <a name="create-a-relationship"></a>Skapa en relation
+- ***CustomerToContact*-relation** skapades mellan entiteten *Kund* och entiteten *Kontakt*. Entiteten *Kund* får nyckelfältet **Contact_contactID** att relatera till entiteten *Kontakt* s nyckelfält **contactID**.
+- ***CustomerToAccount*-relation** skapades mellan entiteten *Kund* och entiteten *Konto*. Entiteten *Kund* hämtar nyckelfält **Account_accountID** som relaterar till entiteten *Konto* s nyckelfält **accountID**.
+- ***CustomerToWebAccount*-relation** skapades mellan entiteten *Kund* och entiteten *WebAccount*. Entiteten *Kund* hämtar nyckelfältet **WebAccount_webaccountID** för att relatera till entiteten *WebAccount* s nyckelfält **webaccountID**.
 
-Definiera anpassade relationer på sidan **Relationer**. Varje relation består av en källentitet (entiteten som innehåller sekundär nyckeln) och en målentitet (den entitet som källentitetens externa nyckel refererar till).
+## <a name="non-editable-inherited-relationships"></a>Icke-redigerbara ärvda relationer
+
+Under datainmatningsprocessen kontrollerar systemet datakällor för befintliga relationer. Om det inte finns någon relation skapas de automatiskt. Dessa relationer används också i nedströmsprocesser.
+
+## <a name="create-a-custom-relationship"></a>Skapa en anpassad relation
+
+Relationen består av en *källentitet* som innehåller den utländska nyckeln och en *målentitet* som källentitetens utländska nyckel pekar mot. 
 
 1. I målgruppsinsikter går du till **Data** > **Relationer**.
 
 2. Välj **Ny relation**.
 
-3. I fönstret **Lägg till relationer** anger du följande information:
+3. I fönstret **Ny relation** anger du följande information:
 
-   > [!div class="mx-imgBorder"]
-   > ![Ange relationsdetaljer](media/relationships-add.png "Ange relationsdetaljer")
+   :::image type="content" source="media/relationship-add.png" alt-text="Nytt relationsfönster med tomma inmatningsfält.":::
 
-   - **Relationsnamn**: namn som återspeglar syftet med relationen (t.ex. **AccountWebLogs**).
+   - **Relationsnamn**: Namn som återspeglar relationens syfte. Exempel: CustomerToSupportCase.
    - **Beskrivning**: Beskrivning av relationsrollen.
-   - **Källentiteten**: Välj den entitet som används som källa i relationen (t.ex. WebLog).
-   - **Kardinalitet**: Välj kardinalitet för källentitetsposterna. Exempelvis betyder "många" att flera bloggposter är relaterade till ett enda WebAccount.
-   - **Fältet Källnyckel**: Detta representerar det externa nyckel fältet källentiteten. Till exempel WebLog har **accountId** externa nyckelfältet.
-   - **Målentiteten**: Välj den entitet som används som mål i relationen (t.ex. WebAccount).
-   - **Målets kardinalitet**: Välj kardinalitet för målentitetsposterna. Exempelvis betyder "en" att flera bloggposter är relaterade till ett enda WebAccount.
-   - **Fältet Målnyckel**: det här fältet representerar nyckelfältet för målentiteten. Till exempel WebAccount har **accountId** nyckelfältet.
+   - **Källentitet**: Entitet som används som källa i relationen. Exempel: SupportCase.
+   - **Målentitet**: Entitet som används som mål i relationen. Exempel: Kund.
+   - **Källkardinalitet**: Ange källentitetens kardinalitet. Kardinalitet beskriver antalet möjliga element i en uppsättning. Det har alltid att göra med målkardinaliteten. Du kan välja mellan **En** och **Många**. Det går bara att använda många till en-relationer och en till en-relationer.  
+     - Många till en: Flera källposter kan relatera till en målpost. Exempel: Flera supportärenden från en enskild kund.
+     - En-till-en: En enda källpost relaterar till en målpost. Exempel: Ett lojalitets-ID för en enskild kund.
 
-> [!NOTE]
-> Det går bara att använda många till en-relationer och en till en-relationer. Många till många-relationer kan skapas med två många till en-relationer och en länkentitet (en entitet som används för att ansluta källentiteten och målentiteten).
+     > [!NOTE]
+     > Många till många-relationer kan skapas med två många-till-en-relationer och en länkande entitet, som förbinder källentiteten och målentiteten.
 
-## <a name="delete-a-relationship"></a>Ta bort en relation
+   - **Målets kardinalitet**: Välj kardinalitet för målentitetsposterna. 
+   - **Källnyckelfält**: Fältet för främmande nyckel i källentiteten. Exempel: SupportCase kan använda CaseID som ett fält med främmande nyckel.
+   - **Fältet Målnyckel**: nyckelfältet för målentiteten. Exempel: Kund kan använda nyckelfältet **CustomerID**.
 
-1. I målgruppsinsikter går du till **Data** > **Relationer**.
+4. Välj **Spara** för att skapa den anpassade relationen.
 
-2. Markera kryssrutan för de relationer du väljer att radera.
+## <a name="view-relationships"></a>Visa relationer
 
-3. Välj **Radera** längst upp i tabellen **Relationer**.
+På Relationer-sidan visas alla relationer som har skapats. Varje rad representerar en relation, som också innehåller information om källentiteten, målentiteten och kardinaliteten. 
 
-4. Bekräfta borttagningen.
+:::image type="content" source="media/relationships-list.png" alt-text="Lista över relationer och alternativ i åtgärdsfältet på Relationer-sidan.":::
+
+Den här sidan innehåller en uppsättning alternativ för befintliga och nya relationer: 
+- **Ny relation**: [Skapa en anpassad relation](#create-a-custom-relationship).
+- **Visualiserare**: [Utforska relationsvisualiseraren](#explore-the-relationship-visualizer) för att se ett nätverksdiagram över befintliga relationer och deras kardinalitet.
+- **Filtrera efter**: Välj vilken typ av relationer som ska visas i listan.
+- **Sök relationer**: Använd en textbaserad sökning efter egenskaper för relationer.
+
+### <a name="explore-the-relationship-visualizer"></a>Utforska relationsvisualiseraren
+
+Relationsvisualiseraren visar ett nätverksdiagram över befintliga relationer mellan anslutna entiteter och deras kardinalitet.
+
+Om du vill anpassa vyn kan du ändra rutornas placering genom att dra dem på arbetsytan.
+
+:::image type="content" source="media/relationship-visualizer.png" alt-text="Skärmbild av relationsvisualiseringsnätverksdiagrammet med anslutningar mellan relaterade entiteter.":::
+
+Tillgängliga alternativ: 
+- **Exportera som bild**: Spara den aktuella vyn som en bildfil.
+- **Ändra till vågrät/lodrät layout**: Ändra justeringen för entiteterna och relationer.
+- **Redigera**: Uppdatera egenskaper för anpassade relationer i redigeringsfönstret och spara ändringar.
+
+## <a name="manage-existing-relationships"></a>Hantera befintliga relationer 
+
+På sidan Relationer representeras varje relation av en rad. 
+
+Välj en relation och välj något av följande alternativ: 
+ 
+- **Redigera**: Uppdatera egenskaper för anpassade relationer i redigeringsfönstret och spara ändringar.
+- **Ta bort**: Ta bort anpassade relationer.
+- **Visa**: Visa systemskapade och ärvda relationer. 
 
 ## <a name="next-step"></a>Nästa steg
 
-System och anpassade relationer används för att skapa segment utifrån flera datakällor som inte längre är silor. Mer information finns [Segment](segments.md).
-
+System och anpassade relationer används för att [skapa segment](segments.md) utifrån flera datakällor som inte längre är silor.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

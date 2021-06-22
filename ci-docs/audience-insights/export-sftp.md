@@ -9,14 +9,14 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3663a48955f0b1db8a96e25403e5f8947bc6a220
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: 000b44dc8e5cc419132bd17e359fbdd5879caf1b
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976961"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124341"
 ---
-# <a name="export-segment-lists-and-other-data-to-sftp-preview"></a>Exportera segmentlistor och annan data till SFTP (förhandsvisning)
+# <a name="export-segments-and-other-data-to-sftp-preview"></a>Exportera segment och annan data till SFTP (förhandsversion)
 
 Använd kunddata i program från tredje part genom att exportera dem till en SFTP-plats (Secure File Transfer Protocol).
 

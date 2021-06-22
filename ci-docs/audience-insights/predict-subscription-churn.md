@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906924"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095670"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Förutsäga abonnemangsomsättning (förhandsversion)
 
@@ -147,30 +147,9 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
        > [!div class="mx-imgBorder"]
        > ![Lista som visar tongivande faktorer och deras betydelse för att förutsäga omsättningsresultatet](media/subscription-churn-influentialfactors.PNG "Lista som visar tongivande faktorer och deras betydelse för att förutsäga omsättningsresultatet")
 
-## <a name="fix-a-failed-prediction"></a>Åtgärda en misslyckad förutsägelse
+## <a name="manage-predictions"></a>Hantera förutsägelser
 
-1. Gå till fliken **Mina förutsägelser** under **Intelligens** > **Förutsägelser**.
-1. Välj den förutsägelse du vill visa felloggar för och välj **Loggar**.
-   > [!div class="mx-imgBorder"]
-   > ![Vy över menyraden för resultat inklusive knapparna Stäng, Redigera modell och Loggar](media/subscription-churn-logsbutton.PNG "Vy över menyraden för resultat inklusive knapparna Stäng, Redigera modell och Loggar")
-1. Granska alla fel. Det finns flera typer av fel som kan inträffa, och dessa beskriver vilket villkor som orsakat problemet. Till exempel ett fel som innebär att det inte finns tillräckligt med data för att förutse åtgärdas vanligtvis genom att ytterligare data läses in.
-
-## <a name="refresh-a-prediction"></a>Uppdatera en förutsägelse
-
-Förutsägelser uppdateras automatiskt i samma [schema som dina data uppdaterar](system.md#schedule-tab) enligt konfigurationen i inställningarna.
-
-1. Gå till fliken **Mina förutsägelser** under **Intelligens** > **Förutsägelser**.
-1. Markera de lodräta punkterna bredvid den förutsägelse du vill uppdatera.
-1. Välj **Uppdatera**.
-
-## <a name="delete-a-prediction"></a>Ta bort en förutsägelse
-
-1. Gå till fliken **Mina förutsägelser** under **Intelligens** > **Förutsägelser**.
-1. Markera de lodräta punkterna bredvid den förutsägelse du vill ta bort.
-1. Välj **Ta bort**.
-
-> [!NOTE]
-> Om du tar bort en prediktion tas dess utdataenhet bort.
+Det är möjligt att optimera, felsöka, uppdatera eller ta bort förutsägelser. Granska en användbarhetsrapport för indata för att ta reda på hur du gör en prediktion snabbare och mer tillförlitlig. Mer information finns i [Hantera förutsägelser](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

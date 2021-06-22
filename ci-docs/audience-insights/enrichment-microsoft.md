@@ -1,7 +1,7 @@
 ---
 title: Berika kundprofiler med data från Microsoft
 description: Använd tillverkarspecifika data från Microsoft för att berika kunddata med intresse och varumärke.
-ms.date: 04/09/2021
+ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: be042dd139607849b795c903fa58da2edb9ff589
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
+ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064913"
+ms.lasthandoff: 06/14/2021
+ms.locfileid: "6245729"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Utöka kundprofiler med varumärkes- och intressetillhörighet (förhandsversion)
 
@@ -69,12 +69,10 @@ En guidad upplevelse hjälper dig genom konfigurationen av berikningar.
 
 ### <a name="define-your-brands-or-interests"></a>Definiera dina varumärken eller intressen
 
-Välj ett av följande alternativ:
+Välj upp till fem varumärken eller intressen med ett eller båda av dessa alternativ:
 
-- **Bransch**: Systemet identifierar de främsta varumärkena och intressena som är relevanta för din bransch, och berikar dina kunddata med dem.
-- **Välj en egen**: Välj upp till fem objekt i en lista med varumärken eller intressen som är mest relevanta för organisationen.
-
-Om du vill lägga till ett varumärke eller ett intresse anger du det i inmatningsområdet för att få förslag utifrån matchande termer. Om vi inte visar ett varumärke eller intresse som du letar efter kan du skicka feedback med hjälp av **föreslå** länk.
+- **Bransch**: Välj din bransch i listrutan och välj sedan bland de bästa varumärkena eller intressena för den branschen.
+- **Välj ditt eget**: Ange ett varumärke eller intresse som är relevant för din organisation och välj sedan bland matchande förslag. Om vi inte visar ett varumärke eller intresse som du letar efter kan du skicka feedback med hjälp av **föreslå** länk.
 
 ### <a name="review-enrichment-preferences"></a>Granska inställningar för berikning
 

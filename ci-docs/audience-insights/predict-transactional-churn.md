@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906878"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095624"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Förutsägelse av transaktionell omsättning (förhandsversion)
 
@@ -144,7 +144,7 @@ Förutsägelse av transaktionell omsättning hjälper till att förutsäga om en
    - **Status:** Status för förutsägelsekörningen.
         - **Köade** Förutsägelse väntar på att andra processer ska köras.
         - **Uppdatera:** Förutsägelse körs för närvarande för att producera resultat som ska flöda till utdataentiteten.
-        - **Misslyckades:** Förutsägelsekörningen misslyckades. [Granska loggar](#troubleshoot-a-failed-prediction) för mer information.
+        - **Misslyckades:** Förutsägelsekörningen misslyckades. [Granska loggar](manage-predictions.md#troubleshoot-a-failed-prediction) för mer information.
         - **Lyckades:** Förutsägelsen har slutförts. Välj **Visa** under de lodräta punkterna för att granska förutsägelsen
    - **Redigerad:** Det datum då konfigurationen för förutsägelsen ändrades.
    - **Senaste uppdatering:** Det datum då förutsägelsen uppdaterade resultat i utdataenheten.
@@ -168,35 +168,9 @@ Förutsägelse av transaktionell omsättning hjälper till att förutsäga om en
        
     1. **Faktorer med störst påverkan:** Det finns många faktorer som bör beaktas när du skapar en förutsägelse. Var och en av faktorerna har en betydelse beräknad för de aggregerade förutsägelserna som skapas av en modell. Du kan använda dessa faktorer för att validera resultatet av en förutsägelse. Du kan också använda den här informationen senare om du vill [skapa segment](segments.md) som kan påverka omsättningsrisken för en kund.
 
-## <a name="troubleshoot-a-failed-prediction"></a>Felsöka en misslyckad förutsägelse
+## <a name="manage-predictions"></a>Hantera förutsägelser
 
-1. Gå till **Intelligens** > **Förutsägelser** och välj fliken **Mina förutsägelser**.
-
-1. Välj de lodräta ellipserna bredvid den förutsägelse som du vill visa felloggarna för.
-
-1. Välj **Loggar**.
-
-1. Granska alla fel. Det finns flera typer av fel som kan inträffa, och dessa beskriver vilket villkor som orsakat problemet. Ett fel som till exempel innebär att det inte finns tillräckligt med data för att förutsäga problemet korrekt löses vanligtvis genom att ytterligare data läses in i Customer Insights.
-
-## <a name="refresh-a-prediction"></a>Uppdatera en förutsägelse
-
-Förutsägelser uppdateras automatiskt i samma [schema som dina data uppdaterar](system.md#schedule-tab) enligt konfigurationen i inställningarna. Du kan uppdatera dem manuellt.
-
-1. Gå till **Intelligens** > **Förutsägelser** och välj fliken **Mina förutsägelser**.
-
-1. Markera de lodräta punkterna bredvid den förutsägelse du vill uppdatera.
-
-1. Välj **Uppdatera**.
-
-## <a name="delete-a-prediction"></a>Ta bort en förutsägelse
-
-Om du tar bort en förutsägelse tas även dess utdataentitet bort.
-
-1. Gå till **Intelligens** > **Förutsägelser** och välj fliken **Mina förutsägelser**.
-
-1. Markera de lodräta punkterna bredvid den förutsägelse du vill ta bort.
-
-1. Välj **Ta bort**.
+Det är möjligt att optimera, felsöka, uppdatera eller ta bort förutsägelser. Granska en användbarhetsrapport för indata för att ta reda på hur du gör en prediktion snabbare och mer tillförlitlig. Mer information finns i [Hantera förutsägelser](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

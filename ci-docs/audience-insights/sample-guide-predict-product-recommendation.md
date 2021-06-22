@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 20072d14b160e54f5ad044adc1de6c079bf790e4
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
+ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595295"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6129921"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse av produktrekommendationer (förhandsversion)
 
@@ -22,7 +22,7 @@ Vi ger dig ett komplett exempel på förutsägelse av produktrekommendation med 
 
 ## <a name="scenario"></a>Scenario
 
-Contoso är ett företag som producerar kaffe och kaffemaskiner av hög kvalitet, som de säljer via Contoso Coffee-webbplatsen. Målet är att förstå vilka produkter de ska rekommendera till sina återkommande kunder. Om du vet vilka kunder som **sannolikt kommer att köpa**, kan du göra besparingar på marknadsföring genom att fokusera på specifika objekt.
+Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner, som de säljer via sin Contoso Coffee-webbplats. Målet är att förstå vilka produkter de ska rekommendera till sina återkommande kunder. Om du vet vilka kunder som **sannolikt kommer att köpa**, kan du göra besparingar på marknadsföring genom att fokusera på specifika objekt.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -65,7 +65,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
 
 1. I fältet **Namn** i sidofönstret byter du namn på din datakälla från **Fråga** till **eCommercePurchases**.
 
-1. Spara datakällan.
+1. **Spara** datakällan.
 
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Mata in kunddata från lojalitetsschema
@@ -83,11 +83,11 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
 
 1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **loyCustomers**.
 
-1. Spara datakällan.
+1. **Spara** datakällan.
 
 ## <a name="task-2---data-unification"></a>Uppgift 2 – Dataförening
 
-Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** för att skapa en enhetlig kundprofil. Mer information finns i [Dataförening](data-unification.md).
+När vi har matat in data börjar vi nu datasammanföringsprocessen för att skapa en enhetlig kundprofil. Mer information finns i [Dataförening](data-unification.md).
 
 ### <a name="map"></a>Mappa
 
@@ -156,7 +156,7 @@ Med de enhetliga kundprofilerna på plats kan vi nu köra förutsägelsen om pre
 
    - **Antal produkter**: Sätt detta värde på **5**. Den här inställningen anger hur många produkter du vill rekommendera till kunderna.
 
-   - **Föreslå produkter som kunder nyligen har köpt?**: Välj **Ja** för att ange att du vill inkludera produkter i rekommendationen som dina kunder har köpt tidigare.
+   - **Upprepade köp förväntas**: Välj **Ja** för att ange att du vill inkludera produkter i rekommendationen som dina kunder har köpt tidigare.
 
    - **Fönstret Titta bakåt:** Välj minst **365 dagar**. Den här inställningen definierar hur långt bak i tiden som modellen tittar på kundens aktivitet för att använda den som indata i rekommendationerna.
    

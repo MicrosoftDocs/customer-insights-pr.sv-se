@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: e2f92a64d01a443bcf3c1605621abe045b93ee5e
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954601"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095532"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Förutsägelse av kundens livstidsvärde (förhandsversion)
 
@@ -149,7 +149,6 @@ För data som återspeglar viktiga kundinteraktioner (som webb-, kundtjänst- oc
 
 1. Välj **Nästa**.
 
-
 ### <a name="review-and-run-the-model-configuration"></a>Granska och köra modellkonfigurationen
 
 1. I steget **Granska modellinformationen** verifierar du konfigurationen av förutsägelsen. Du kan gå tillbaka till valfri del av förutsägelsekonfigurationen genom att välja **Redigera** under visat värde. Du kan också välja ett konfigurationssteg från förloppsindikatorn.
@@ -170,11 +169,10 @@ För data som återspeglar viktiga kundinteraktioner (som webb-, kundtjänst- oc
 - **Status**: Status för förutsägelsekörningen.
     - **Köade**: Förutsägelse väntar på att andra processer ska slutföras.
     - **Uppdatera**: Förutsägelse körs för närvarande för att skapa resultat som ska flöda till utdataentiteten.
-    - **Misslyckades**: Förutsägelsekörningen misslyckades. [Granska loggar](#troubleshoot-a-failed-prediction) för mer information.
+    - **Misslyckades**: Förutsägelsekörningen misslyckades. [Granska loggar](manage-predictions.md#troubleshoot-a-failed-prediction) för mer information.
     - **Lyckades**: Förutsägelsen har slutförts. Välj **Vy** under de vertikala ellipserna om du vill granska förutsägelseresultat.
 - **Redigerad**: Det datum då konfigurationen för förutsägelsen ändrades.
 - **Senaste uppdatering**: Det datum då förutsägelsen uppdaterade resultat i utdataenheten.
-
 
 ### <a name="review-prediction-results"></a>Granska förutsägelsens resultat
 
@@ -216,28 +214,8 @@ Det finns tre primära dataområden på resultatsidan.
 
 - **Mest inflytelserika faktorer**: Olika faktorer beaktas när du skapar förutsägelser av kundens livstidsvärde baserat på indata till AI-modellen. Betydelsen för var och en av faktorerna beräknas för de ansamlade förutsägelser som skapas av en modell. Du kan använda dessa faktorer för att validera resultatet av en förutsägelse. Dessa faktorer ger också en bättre inblick i de mest inflytelserika faktorerna som bidrog till förutsägelsen av kundens livtidsvärde för alla dina kunder.
 
-## <a name="refresh-a-prediction"></a>Uppdatera en förutsägelse
+## <a name="manage-predictions"></a>Hantera förutsägelser
 
-Förutsägelser uppdateras automatiskt enligt samma [schema som data uppdateras](system.md#schedule-tab) enligt konfigurationen i inställningarna. Du kan uppdatera dem manuellt.
-
-1. Gå till **Intelligens** > **Förutsägelser** och välj fliken **Mina förutsägelser**.
-2. Markera de lodräta punkterna bredvid den förutsägelse du vill uppdatera.
-3. Välj **Uppdatera**.
-
-## <a name="delete-a-prediction"></a>Ta bort en förutsägelse
-
-Om du tar bort en förutsägelse tas även dess utdataentitet bort.
-
-1. Gå till **Intelligens** > **Förutsägelser** och välj fliken **Mina förutsägelser**.
-2. Markera de lodräta punkterna bredvid den förutsägelse du vill ta bort.
-3. Välj **Ta bort**.
-
-## <a name="troubleshoot-a-failed-prediction"></a>Felsöka en misslyckad förutsägelse
-
-1. Gå till **Intelligens** > **Förutsägelser** och välj fliken **Mina förutsägelser**.
-2. Välj de lodräta ellipserna bredvid den förutsägelse som du vill visa felloggarna för.
-3. Välj **Loggar**.
-4. Granska alla fel. Det finns flera typer av fel som kan inträffa, och dessa beskriver vilket villkor som orsakat problemet. Till exempel ett fel som innebär att det inte finns tillräckligt med data för att korrekt förutse åtgärdas vanligtvis genom att ytterligare data läses in i målgruppsinsikter.
-
+Det är möjligt att optimera, felsöka, uppdatera eller ta bort förutsägelser. Granska en användbarhetsrapport för indata för att ta reda på hur du gör en prediktion snabbare och mer tillförlitlig. Mer information finns i [Hantera förutsägelser](manage-predictions.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Skapa och hantera miljöer
 description: Läs om hur du registrerar dig för tjänsten och hur du hanterar miljöer.
-ms.date: 03/26/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 06310ea6fc72f26e21e185a6abcb5d19d4b201f6
+ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5888008"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6259121"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
 
@@ -76,9 +76,9 @@ För att skapa en miljö i:
    > Vi stöder endast Azure Data Lake Gen2-lagringskonton från samma Azure-region som du valde när du skapade miljön.
    > Vi stöder endast Azure Data Lake Gen2 hierarkiska namnrymd (HNS) lagringskonton.
 
-   - För alternativet Azure Data Lake Storage Gen2 kan du välja mellan ett resursbaserat alternativ och ett prenumerationsbaserat alternativ för autentisering. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Namnet på **behållare** går inte att ändra, utan kommer att vara "customerinsights".
+   - För alternativet Azure Data Lake Storage Gen2 kan du välja mellan ett resursbaserat alternativ och ett prenumerationsbaserat alternativ för autentisering. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Namnet på **Behållare** kan inte ändras och blir `customerinsights`.
    
-   - Om du vill använda [prediktioner](predictions.md), konfigurerar du datadelning med program och lösningar baserat på Microsoft Dataverse eller aktiverar datainmatning från lokala datakällor tillhandahåller du Microsoft Dataverse miljö-URL under **Konfigurera datadelning med Microsoft Dataverse och aktiverar ytterligare funktioner**. Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Microsoft Dataverse-hanterad Data Lake.
+   - Om du vill använda [prediktioner](predictions.md), konfigurerar du datadelning med Microsoft Dataverse eller aktiverar datainmatning från lokala datakällor tillhandahåller du Microsoft Dataverse miljö-URL under **Konfigurera datadelning med Microsoft Dataverse och aktiverar ytterligare funktioner**. Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Microsoft Dataverse-hanterad Data Lake.
 
      > [!NOTE]
      > - Datadelning med Microsoft Dataverse-hanterad Data Lake stöds för närvarande inte när du sparar alla data i din egen Azure Data Lake Storage.
@@ -87,7 +87,7 @@ För att skapa en miljö i:
      > [!div class="mx-imgBorder"]
      > ![Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
 
-   När du kör processer, till exempel datainmatning eller skapande av segment, kommer motsvarande mappar att skapas i det lagringskonto du angav ovan. Datafiler och model.json-filer skapas och läggs till i motsvarande undermappar baserat på den process du kör.
+   När du kör processer, till exempel datainmatning eller skapande av segment, kommer motsvarande mappar att skapas i det lagringskonto du angav ovan. Datafiler och model.json-filer skapas och läggs till i mappar, beroende på processnamnet.
 
    Om du skapar flera miljöer av Customer Insights och väljer att spara utdataentiteterna från dessa miljöer i ditt lagringskonto, kommer separata mappar att skapas för varje miljö med ci_<environmentid> i behållaren.
 
@@ -146,7 +146,7 @@ Du kan redigera vissa av detaljerna i befintliga miljöer.
    > - Datadelning med Microsoft Dataverse-hanterad Data Lake stöds för närvarande inte när du sparar alla data i din egen Azure Data Lake Storage.
    > - [Prediktion av värden som saknas i en entitet](predictions.md) stöds för närvarande inte när du aktiverar datadelning med Microsoft Dataverse-hanterad Data Lake.
 
-   När du har aktiverat datadelning med Microsoft Dataverse, en fullständig uppdatering av dina datakällor och andra processer kommer att utlösas. Om processer körs och köas för tillfället visas inte alternativet att aktivera datadelning med Microsoft Dataverse. Du kan vänta tills processerna har slutförts eller avbrutits om du vill aktivera datadelning. 
+   När du har aktiverat datadelning med Microsoft Dataverse startas en fullständig uppdatering av dina datakällor och andra processer. Om processer körs för tillfället visas inte alternativet att aktivera datadelning med Microsoft Dataverse. Vänta tills processerna har slutförts eller avbrutits om du vill aktivera datadelning. 
    
    :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse.":::
    
