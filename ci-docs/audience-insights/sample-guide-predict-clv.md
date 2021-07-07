@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 73d294a285b4ad706bec7fe925c1daa0b839ddd6
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129967"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306371"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Kundens livstidsvärde (CLV) prediktion exempelguide
 
@@ -123,9 +123,9 @@ När vi har matat in data börjar vi nu datasammanföringsprocessen för att ska
 
 1. Gå till fliken **Matcha** och välj **Ange ordning**.
 
-1. I listrutan **Primär** väljer du **eCommerceContacts: e-handel** som primär källa och inkluderar alla poster.
+1. I listrutan **Primär** väljer du **eCommerceContacts : eCommerce** som primär källa och inkluderar samtliga poster.
 
-1. I listrutan **Entitet 2** väljer du **loyCustomers: LoyaltyScheme** och inkluderar alla poster.
+1. I listrutan **Entitet 2** väljer du **loyCustomers : LoyaltyScheme** och inkluderar alla poster.
 
    ![Förena matchande e-handel och lojalitet.](media/unify-match-order.png)
 
@@ -133,16 +133,16 @@ När vi har matat in data börjar vi nu datasammanföringsprocessen för att ska
 
 1. Lägg till ditt första villkor med hjälp av FullName.
 
-   - För eCommerceContacts välj **FullName** i listrutan.
-   - För loyCustomers välj **FullName** i listrutan.
-   - Välj listrutan **Normalisera** och välj **Typ (telefon, namn, adress ...)**.
+   - För eCommerceContacts väljer du **FullName** i listrutan.
+   - För loyCustomers väljer du **FullName** i listrutan.
+   - Välj listrutan **Normalisera** och välj sedan **Typ (telefonnummer, namn, adress...)**.
    - Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 
 1. Ange namnet **FullName, E-post** för den nya regeln.
 
    - Lägg till ett andra villkor för e-postadress genom att välja **Lägg till villkor**
-   - För entitet eCommerceContacts väljer du **EMail** i listrutan.
-   - För entitet loyCustomers väljer du **EMail** i listrutan.
+   - För entiteten eCommerceContacts väljer du **EMail** i listrutan.
+   - För entiteten loyCustomers väljer du **EMail** i listrutan.
    - Lämna Normalisera tomt.
    - Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: dbebc3ee3978ca6ee9d1ad1c15c226479876709f
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: 67bfa23d56b26ae592efa4d7197713664bb02623
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124387"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304856"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Exportera segment till AdRoll (förhandsgranskning)
 
@@ -28,11 +28,11 @@ Exportera segment med enhetliga kundprofiler till AdRoll och använd dem för an
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till totalt 250 000 profiler per export till AdRoll.
+- Du kan exportera upp till 250 000 profiler till AdRoll åt gången.
 - Du kan inte exportera segment med färre än 100 profiler till AdRoll. 
 - Export till AdRoll är begränsad till segment.
 - Det kan ta upp till 10 minuter att exportera upp till 250 000 profiler till AdRoll. 
-- Antalet profiler som du kan exportera till AdRoll är beroende av och begränsat enligt ditt kontrakt med AdRoll.
+- Antalet profiler du kan exportera till AdRoll beror på ditt kontrakt med AdRoll.
 
 ## <a name="set-up-connection-to-adroll"></a>Upprätta anslutningen till AdRoll
 
@@ -62,19 +62,21 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Välj för att skapa en ny export **Lägg till destination**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet AdRoll. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet AdRoll. Om avsnittets namn inte visas är inga anslutningar av den här typen tillgängliga för dig.
 
-1. Ange ditt **AdRoll annonsörens ID** För mer information, se [Annonsörprofiler för AdRoll](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Ange ditt **Annonsörs-ID för AdRoll**. Mer information finns i [Annonsörsprofiler för AdRoll](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
 3. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Det krävs för att exportera segment till AdRoll.
 
-1. Välj de segment som du vill exportera. Välj ett segment med minst 100 medlemmar. Det går inte att exportera mindre segment. Dessutom är det maximala värdet för ett segment som ska exporteras 250 000 medlemmar per export. 
+1. Välj de segment som du vill exportera. Välj ett segment med minst 100 medlemmar. Det går inte att exportera mindre segment. Dessutom är det maximala värdet som ett segment kan exportera 250 000 medlemmar per export. 
 
 1. Välj **Spara**.
 
 När du sparar en export körs inte exporten omedelbart.
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
+Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). 
+
+Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
 
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad

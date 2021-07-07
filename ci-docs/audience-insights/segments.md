@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6cb7bd62bf0f61e6dc5811b20e5011e4a086c743
-ms.sourcegitcommit: 84283d523a891298fca8aaf629d9f9ab2a1bc067
+ms.openlocfilehash: 336cab8619c0b80b7b8a38035cae99620baf2873
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2021
-ms.locfileid: "6111409"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306279"
 ---
 # <a name="segments-overview"></a>Segment – översikt
 
@@ -38,7 +38,7 @@ Gå till sidan **Segment** om du vill visa alla sparade segment och hantera dem.
 
 Varje segment representeras av en rad som innehåller ytterligare information om segmentet.
 
-:::image type="content" source="media/segments-selected-segment.png" alt-text="Markerat segment med alternativ i listrutan och tillgängliga alternativ.":::
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Valt segment med alternativlistrutan och tillgängliga alternativ.":::
 
 Följande åtgärd är tillgänglig när du väljer ett segment:
 
@@ -68,7 +68,7 @@ Du kan exportera ett segment från segmentsidan eller [exportsidan](export-desti
 
 1. Välj **Visa mer [...]** för det segment som du vill exportera.
 
-1. Välj **Hantera exporter** från listrutan med åtgärder.
+1. Välj **Hantera exporter** i listrutan Åtgärder.
 
 1. Sidan **Exporter (förhandsversion) för segment** öppnas. Du kan se alla konfigurerade exporter grupperade efter export som innehåller det aktuella segmentet eller inte innehåller det.
 

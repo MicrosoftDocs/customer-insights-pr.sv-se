@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 06310ea6fc72f26e21e185a6abcb5d19d4b201f6
-ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
+ms.openlocfilehash: 904ce68336cba4b7a4d5a37692b72d091400559d
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6259121"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304902"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
 
@@ -54,29 +54,32 @@ För att skapa en miljö i:
 1. Välj **Nytt**.
 
    > [!div class="mx-imgBorder"]
-   > ![Miljöinställningar](media/environment-settings-dialog.png)
+   > ![Miljöinställningar.](media/environment-settings-dialog.png)
 
-1. I dialogrutan **Skapa ny miljö** välj **Ny miljö**.
+1. I dialogrutan **Skapa en miljö** väljer du **Ny miljö**.
 
    Om du vill [Kopiera data från den aktuella miljön](#considerations-for-copy-configuration-preview) väljer du **Kopiera från befintlig miljö**. Du ser en lista över alla tillgängliga miljöer i organisationen som du kan kopiera data från.
 
 1. Ange följande information:
    - **Namn**: Namnet på miljön. Detta fält är redan ifyllt om du har kopierat en befintlig miljö, men du kan ändra det.
-   - **Region**: Den region där tjänsten disribueras och förvaras
    - **Typ**: Välj om du vill skapa en produktions- eller sandbox-miljö.
-
+   - **Region**: Den region där tjänsten disribueras och förvaras
+   
 1. Alternativt kan du välja **Avancerade inställningar**:
 
-   - **Spara alla data till**: anger var du vill lagra de utflödesdata som genererades från Customer Insights. Du har två alternativ: **Customer Insights-lagring** (en Azure Data Lake som hanteras av Customer Insights-teamet) och **Azure Data Lake Storage Gen2** (din egen Azure Data Lake Storage). Som standard är alternativet för Customer Insights-lagring markerat.
+   - **Spara alla data till**: anger var du vill lagra de utflödesdata som genererades från Customer Insights. Du har två alternativ: **Customer Insights-lagring** (en Azure Data Lake som hanteras av Customer Insights-teamet) och **Azure Data Lake Storage** (din egen Azure Data Lake Storage). Som standard är alternativet för Customer Insights-lagring markerat.
 
-   > [!NOTE]
-   > Genom att spara data i Azure Data Lake Storage godkänner du att data överförs till och lagras på rätt geografiska plats för Azure Storage-kontot, som kan skilja sig från varifrån data lagras i Dynamics 365 Customer Insights. [Läs mer i Microsoft Trust Center.](https://www.microsoft.com/trust-center)
-   >
-   > För närvarande lagras hämtade entiteter alltid i Customer Insights hanterade Data Lake.
-   > Vi stöder endast Azure Data Lake Gen2-lagringskonton från samma Azure-region som du valde när du skapade miljön.
-   > Vi stöder endast Azure Data Lake Gen2 hierarkiska namnrymd (HNS) lagringskonton.
+     > [!NOTE]
+     > Genom att spara data i Azure Data Lake Storage godkänner du att data överförs till och lagras på rätt geografiska plats för Azure Storage-kontot, som kan skilja sig från varifrån data lagras i Dynamics 365 Customer Insights. [Läs mer i Microsoft Trust Center.](https://www.microsoft.com/trust-center)
+     >
+     > För närvarande lagras inmatad entiteter alltid i Customer Insights hanterade Data Lake. 
+     > 
+     > Vi stöder endast Azure Data Lake Storage-konton från samma Azure-region som du valde när du skapade miljön. 
+     > 
+     > Vi stöder endast Azure Data Lake Storage.konton som har hierarkisk namnrymd aktiverad.
 
-   - För alternativet Azure Data Lake Storage Gen2 kan du välja mellan ett resursbaserat alternativ och ett prenumerationsbaserat alternativ för autentisering. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Namnet på **Behållare** kan inte ändras och blir `customerinsights`.
+
+   - För alternativet Azure Data Lake Storage kan du välja mellan ett resursbaserat alternativ och ett prenumerationsbaserat autentiseringsalternativ. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Namnet på **Behållare** kan inte ändras och blir `customerinsights`.
    
    - Om du vill använda [prediktioner](predictions.md), konfigurerar du datadelning med Microsoft Dataverse eller aktiverar datainmatning från lokala datakällor tillhandahåller du Microsoft Dataverse miljö-URL under **Konfigurera datadelning med Microsoft Dataverse och aktiverar ytterligare funktioner**. Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Microsoft Dataverse-hanterad Data Lake.
 
@@ -85,7 +88,7 @@ För att skapa en miljö i:
      > - [Förutsägelse av saknade värden i en entitet](predictions.md) stöds för närvarande inte när du aktiverar datadelning med Microsoft Dataverse-hanterad Data Lake.
 
      > [!div class="mx-imgBorder"]
-     > ![Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
+     > ![Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse.](media/datasharing-with-DataverseMDL.png)
 
    När du kör processer, till exempel datainmatning eller skapande av segment, kommer motsvarande mappar att skapas i det lagringskonto du angav ovan. Datafiler och model.json-filer skapas och läggs till i mappar, beroende på processnamnet.
 
@@ -113,14 +116,14 @@ Följande konfigurationsinställningar kan *inte* kopieras:
 
 - Kundprofiler.
 - Autentiseringsuppgifter för datakälla. Du måste ange autentiseringsuppgifterna för varje datakälla och uppdatera datakällorna manuellt.
-- Datakällor från Common Data Model-mappen och den Common Data Service-hanterade sjön. Du måste skapa dessa datakällor manuellt med samma namn som i källmiljön.
+- Datakällor från mappen Common Data Model och Dataverse-hanterad Data Lake. Du måste skapa dessa datakällor manuellt med samma namn som i källmiljön.
 
 När du kopierar en miljö visas ett bekräftelsemeddelande om att den nya miljön har skapats. Välj **gå till datakällor** om du vill visa listan över datakällor.
 
 I alla data källor visas statusen **Autentiseringsuppgifter krävs**. Redigera datakällorna och ange autentiseringsuppgifterna för att uppdatera dem.
 
 > [!div class="mx-imgBorder"]
-> ![Datakällor som kopierats](media/data-sources-copied.png)
+> ![Datakällor som kopierats.](media/data-sources-copied.png)
 
 När datakällorna har uppdaterats går du till **Data** > **Förena**. Här hittar du inställningar från källmiljön. Redigera dem efter behov eller välj **kör** om du vill starta föreningsprocessen för data och skapa entiteten för enhetliga kunder.
 
@@ -136,7 +139,7 @@ Du kan redigera vissa av detaljerna i befintliga miljöer.
 
 3. I rutan **Redigera miljö** kan du uppdatera miljöns **visningsnamn**, men du kan inte ändra **Region** eller **Typ**.
 
-4. Om en miljö är konfigurerad att lagra data i Azure Data Lake Storage Gen2 kan du uppdatera **kontonyckeln**. Du kan emellertid inte ändra **Kontonam** eller namnet för **Behållare**.
+4. Om en miljö har konfigurerats för att lagra data i Azure Data Lake Storage kan du uppdatera **kontonyckeln**. Du kan emellertid inte ändra **Kontonam** eller namnet för **Behållare**.
 
 5. Alternativt kan du uppdatera från en kontonyckelbaserad anslutning till en resursbaserad eller prenumerationsbaserad anslutning. När du har uppgraderat kan du inte återgå till kontonyckeln efter uppdateringen. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Du kan inte ändra informationen **Behållare** när anslutningen uppdateras.
 
@@ -158,19 +161,19 @@ Som en administratör kan du återställa en miljö till ett tomt tillstånd om 
 
 1.  Välj **Miljö**-väljaren i apphuvudet. 
 
-2.  Välj den miljö du vill återställa och välj ellipsen **...**. 
+2.  Välj den miljö du vill återställa och välj ellipsen (**...**). 
 
 3. Välj alternativet **Återställ**. 
 
 4.  Bekräfta borttagningen genom att ange miljönamnet och välj **Återställ**.
 
-## <a name="delete-an-existing-environment-available-only-for-admins"></a>Ta bort en befintlig miljö (finns endast för administratörer)
+## <a name="delete-an-existing-environment"></a>Ta bort en befintlig miljö
 
 Som en administratör kan du ta bort en miljö som du administrerar.
 
 1.  Välj **Miljö**-väljaren i apphuvudet.
 
-2.  Välj den miljö du vill återställa och välj ellipsen **...**. 
+2.  Välj den miljö du vill återställa och välj ellipsen (**...**). 
 
 3. Välj alternativet **Ta bort**. 
 

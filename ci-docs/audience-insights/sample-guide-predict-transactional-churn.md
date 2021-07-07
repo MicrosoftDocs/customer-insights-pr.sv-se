@@ -9,20 +9,20 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 251bc26246cee16952e8e4cb08e2ed7aa4d18488
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49dad45c951f3c00d77ddd99faec48bfccada8b0
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595448"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306142"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse om transaktionell omsättning (förhandsversion)
 
-Den här guiden ger dig ett komplett exempel på förutsägelse av transaktionell omsättning i Customer Insights med hjälp av de data som anges nedan. Inga data som används i den här guiden är riktiga kunddata och är en del av Contoso-datauppsättningen som finns i miljön *Demo* i din Customer Insights-prenumeration.
+Den här guiden ger dig ett komplett exempel på förutsägelse av transaktionell omsättning i Customer Insights med hjälp av de data som anges nedan. Alla data som används i den här guiden är inte verkliga kunddata och är en del av den Contoso-datauppsättning som finns i *demomiljön* i din Customer Insights-prenumeration.
 
 ## <a name="scenario"></a>Scenario
 
-Contoso är ett företag som producerar kaffe och kaffemaskiner av hög kvalitet, som de säljer via Contoso Coffee-webbplatsen. Deras mål är att veta vilka kunder som vanligtvis köper deras produkter regelbundet kommer att sluta vara aktiva kunder under de närmaste 60 dagarna. Att veta vilka av deras kunder som **sannolikt kommer att omsättas** kan hjälpa dem att spara marknadsföringsinsatser genom att fokusera på att behålla dem.
+Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner, som de säljer via sin Contoso Coffee-webbplats. Deras mål är att veta vilka kunder som vanligtvis köper deras produkter regelbundet kommer att sluta vara aktiva kunder under de närmaste 60 dagarna. Att veta vilka av deras kunder som **sannolikt kommer att omsättas** kan hjälpa dem att spara marknadsföringsinsatser genom att fokusera på att behålla dem.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -109,9 +109,9 @@ Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** 
 
 1. Gå till fliken **Matcha** och välj **Ange ordning**.
 
-1. I listrutan **Primär** väljer du **eCommerceContacts: e-handel** som primär källa och inkluderar alla poster.
+1. I listrutan **Primär** väljer du **eCommerceContacts : eCommerce** som primär källa och inkluderar samtliga poster.
 
-1. I listrutan **Entitet 2** väljer du **loyCustomers: LoyaltyScheme** och inkluderar alla poster.
+1. I listrutan **Entitet 2** väljer du **loyCustomers : LoyaltyScheme** och inkluderar alla poster.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Förena matchande e-handel och lojalitet.":::
 
@@ -119,16 +119,16 @@ Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** 
 
 1. Lägg till ditt första villkor med hjälp av FullName.
 
-   * För eCommerceContacts välj **FullName** i listrutan.
-   * För loyCustomers välj **FullName** i listrutan.
+   * För eCommerceContacts väljer du **FullName** i listrutan.
+   * För loyCustomers väljer du **FullName** i listrutan.
    * Välj listrutan **Normalisera** och välj **Typ (telefon, namn, adress ...)**.
    * Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 
 1. Ange namnet **FullName, E-post** för den nya regeln.
 
    * Lägg till ett andra villkor för e-postadress genom att välja **Lägg till villkor**
-   * För entitet eCommerceContacts väljer du **EMail** i listrutan.
-   * För entitet loyCustomers väljer du **EMail** i listrutan. 
+   * För entiteten eCommerceContacts väljer du **EMail** i listrutan.
+   * För entiteten loyCustomers väljer du **EMail** i listrutan. 
    * Lämna Normalisera tomt. 
    * Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 

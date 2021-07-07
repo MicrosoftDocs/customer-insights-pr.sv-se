@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 917ab9559416f3ee0ffd66e471e590e8da3faffc
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760303"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305408"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Använd Customer Insights-segment i Adobe Campaign Standard (förhandsversion)
 
-Som användare av målgruppsinsikter för Dynamics 365 Customer Insights kan du ha skapat segment som gör dina marknadsföringskampanjer effektivare genom att rikta sig mot relevanta målgrupper. Om du vill använda ett segment från målgruppsinsikter i Adobe Experience Platform och program som Adobe Campaign Standard måste du följa stegen i den här artikeln.
+Som användare av målgruppsikter i Dynamics 365 Customer Insights kan du ha skapat segment i avsikt att göra dina marknadsföringskampanjer mer effektiva genom att rikta dig till relevanta målgrupper. Om du vill använda ett segment från målgruppsinsikter i Adobe Experience Platform och program som Adobe Campaign Standard måste du följa stegen i den här artikeln.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="Processdiagram över stegen som beskrivs i den här artikeln.":::
 
@@ -28,7 +28,7 @@ Som användare av målgruppsinsikter för Dynamics 365 Customer Insights kan du 
 -   Licens för Adobe Campaign Standard
 -   Azure Blob Storage-konto
 
-## <a name="campaign-overview"></a>Översikt över kampanj
+## <a name="campaign-overview"></a>Kampanjöversikt
 
 För att få en bättre förståelse av hur du kan använda segment från målgruppsinsikter i Adobe Experience Platform, ska vi titta på en fiktiv exempelkampanj.
 
@@ -54,7 +54,7 @@ Med målgruppen identifierad kan vi konfigurera exporten från målgruppsinsikte
 
 1. I målgruppsinsikter, gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **Adobe Campaign** om du vill konfigurera anslutningen eller välj **Konfigurera** i panelen **Adobe Campaign**
+1. Välj **Lägg till anslutning** och välj sedan **Adobe Campaign** om du vill konfigurera anslutningen, eller välj **Konfigurera** i panelen **Adobe Campaign**.
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Konfigurationspanel för Adobe Campaign Standard.":::
 
@@ -66,7 +66,7 @@ Med målgruppen identifierad kan vi konfigurera exporten från målgruppsinsikte
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Skärmbild på lagringskontots konfiguration. "::: 
 
-   - Om du vill veta mer om hur du hittar Azure Blob Storage-kontots namn och kontonyckel, se [Hantera lagringsinställningar i Azure-portalen](/azure/storage/common/storage-account-manage).
+   - Om du vill veta mer om hur du hittar Azure Blob Storage-kontots namn och kontonyckel, se [Hantera inställningar för lagringskonto i Azure-portalen](/azure/storage/common/storage-account-manage).
 
    - Mer information om hur du skapar en behållare finns i [skapa en behållare](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
@@ -80,7 +80,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Välj för att skapa en ny export **Lägg till export**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Adobe Campaign. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Adobe Campaign. Om avsnittets namn inte visas är inga anslutningar av den här typen tillgängliga för dig.
 
 1. Välj det segment som du vill exportera. I det här exemplet är det **ChurnProneCustomers**.
 
@@ -118,7 +118,7 @@ När ett segment från målgruppsinsikter exporteras innehåller det de kolumner
 
 För att kunna använda segmenten i Adobe Campaign Standard måste vi utöka profilschemat i Adobe Campaign Standard så att det omfattar ytterligare två fält. Lär dig hur du [utökar profilresursen](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) med nya fält i Adobe Campaign Standard.
 
-I vårt exempel är dessa fält *Segmentnamn och Segmentdatum (valfritt).*
+I vårt exempel är dessa fält *Segmentnamn och Segmentdatum (valfritt)*.
 
 Vi använder fälten för att identifiera vilka profiler i Adobe Campaign Standard som ska användas för kampanjen.
 
@@ -128,7 +128,7 @@ Om det inte finns några andra poster i Adobe Campaign Standard, förutom de du 
 
 Nu när allt är på plats måste vi importera förberedda målgruppsdata från målgruppsinsikter till Adobe Campaign Standard för att skapa profiler. Lär dig [hur du importerar profiler i Adobe Campaign Standard](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) med hjälp av ett arbetsflöde.
 
-Importarbetsflödet i bilden nedan har konfigurerats att köras var 8:e timme och söker efter exporterade målgruppsinsiktssegment (.csv-fil i Azure Blob Storage). Arbetsflödet extraherar .csv-filens innehåll i en angiven kolumnordning. Arbetsflödet har skapats för att utföra grundläggande felhantering och se till att varje post har en e-postadress innan data skickas i Adobe Campaign Standard. Arbetsflödet extraherar också segmentnamnet från filnamnet innan det konfigureras i ACS-profildata.
+Importarbetsflödet i bilden nedan har konfigurerats att köras var åttonde timme och söka efter exporterade segment för målgruppsikter (.csv-fil i Azure Blob Storage). Arbetsflödet extraherar .csv-filens innehåll i en angiven kolumnordning. Arbetsflödet har skapats för att utföra grundläggande felhantering och se till att varje post har en e-postadress innan data skickas i Adobe Campaign Standard. Arbetsflödet extraherar också segmentnamnet från filnamnet innan det förs in (upsert) i profildata för Adobe Campaign Standard.
 
 :::image type="content" source="media/ACS-import-workflow.png" alt-text="Skärmbild av ett importarbetsflöde i användargränssnittet i Adobe Campaign Standard.":::
 

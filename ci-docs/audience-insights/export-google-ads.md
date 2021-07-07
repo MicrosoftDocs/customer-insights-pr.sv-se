@@ -9,27 +9,26 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 73f3257a3ae6e8423f45410546535df5e3b400ce
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: c23c8b4e6758df08e04bf1e3ae0cba4dee06fe2b
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976340"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305362"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Exportera segment till Google Ads (förhandsgranskning)
 
-Exportera segment av enhetliga kundprofiler till Google Ads målgruppslista och använd dem för att annonsera i Google Sök, Gmail, YouTube och Googles Display-nätverk. 
+Exportera segment med enhetliga kundprofiler till en Google Ads-målgruppslista och använd dem för att annonsera på Google Search, Gmail, YouTube och Google Display Network. 
 
 ## <a name="prerequisites-for-connection"></a>Krav för anslutning
 
 -   Du har ett [Google Ads-konto](https://ads.google.com/) och motsvarande administratörsautentiseringsuppgifter.
--   Du har en [godkänd token för Google Ads-utvecklare](https://developers.google.com/google-ads/api/docs/first-call/dev-token) 
--   Du uppfyller kraven i [policyn för kundmatchning](https://support.google.com/adspolicy/answer/6299717)
--   Du uppfyller kraven i [storlekarna för återmarknadsföringslista](https://support.google.com/google-ads/answer/7558048) 
-
+-   Du har en [godkänd token för Google Ads-utvecklare](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
+-   Du uppfyller kraven i [policyn för kundmatchning](https://support.google.com/adspolicy/answer/6299717).
+-   Du uppfyller kraven i [storlekar för återmarknadsföringslista](https://support.google.com/google-ads/answer/7558048).
 -   Det finns befintliga målgrupper i Google Ads och motsvarande ID. Mer information finns i [Målgrupper för Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
--   Du har [konfigurerat segment](segments.md)
--   Enhetliga kundprofiler i de exporterade segmenten innehåller fält som representerar en e-postadress, ett förnamn och ett efternamn
+-   Du har [konfigurerat segment](segments.md).
+-   Enhetliga kundprofiler i de exporterade segmenten innehåller fält som representerar en e-postadress, ett förnamn och ett efternamn.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
@@ -68,7 +67,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Välj för att skapa en ny export **Lägg till destination**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Google Ads. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Google Ads. Om avsnittets namn inte visas är inga anslutningar av den här typen tillgängliga för dig.
 
 1. Ange ditt **[målgrupps-ID för Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)** och välj **Anslut** för att initiera anslutningen till Google Ads.
 
@@ -78,7 +77,9 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 När du sparar en export körs inte exporten omedelbart.
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
+Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). 
+
+Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 

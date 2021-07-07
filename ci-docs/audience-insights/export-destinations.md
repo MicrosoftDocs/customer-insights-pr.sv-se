@@ -9,18 +9,18 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6e7793fa99f8431d9d420529b39e0b5b5dbf6748
-ms.sourcegitcommit: 0689e7ed4265855d1f76745d68af390f8f4af8a0
+ms.openlocfilehash: 28563e3a76535cb0c92bfcda4ef5037430d00cfa
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6253062"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305500"
 ---
 # <a name="exports-preview-overview"></a>Exporter (förhandsversion) översikt
 
 På sidan **Exporter** visas alla konfigurerade exporter. Med exporter delar du specifika data med olika program. De kan inkludera kundprofiler eller entiteter, scheman och mappningsdetaljer. För varje export krävs en [anslutning, konfigurerad av en administratör, för att hantera autentisering och åtkomst](connections.md).
 
-Gå till **Data** > **Exporter** om du vill visa exportsidan. Alla användarroller har åtkomst till att visa konfigurerade exporter. Använda sökfältet i kommandofältet för att söka efter exporter efter namn, anslutningsnamn eller anslutningstyp.
+Gå till **Data** > **Exporter** om du vill visa exportsidan. Alla användarroller kan visa konfigurerade exporter. Använd sökfältet i kommandofältet om du vill söka efter exporter efter namn, anslutningsnamn eller anslutningstyp.
 
 ## <a name="set-up-a-new-export"></a>Ställ in en ny export
 
@@ -65,7 +65,7 @@ Efter att ha skapat exportdestinationer listas de på **Data** > **Exporter**. A
 
 1. Gå till **Data** > **Exporter**.
 
-1. Användare utan redigeringsbehörighet väljer **Visa** i stället för **Redigera** visas exportinformationen.
+1. Användare utan redigeringsbehörigheter väljer du **Visa** istället för **Redigera** för att visa exportinformationen.
 
 1. I sidrutan visas konfigurationen av en export. Du kan inte ändra värden utan att redigera behörigheter. Välj **Stäng** om du vill återgå till exportsidan.
 
@@ -73,7 +73,7 @@ Efter att ha skapat exportdestinationer listas de på **Data** > **Exporter**. A
 
 Varje export som du konfigurerar har ett uppdateringsschema. Vid en uppdatering söker systemet efter nya eller uppdaterade data som ska ingå i en export. Som standard körs exporter som en del av alla [schemalagda systemuppdateringar](system.md#schedule-tab). Du kan anpassa uppdateringsschemat eller inaktivera det om du vill köra exporten manuellt.
 
-Exportscheman beror på tillståndet för miljön. Om det finns uppdateringar av [beroenden](system.md#refresh-policies) som pågår när en schemalagd export ska starta, slutför först systemet beroendena och kör sedan rapporten. Du kan se när en export senast uppdaterades i kolumnen **Uppdaterad**.
+Exportscheman beror på tillståndet för miljön. Om det pågår uppdateringar för [beroenden](system.md#refresh-policies) när en schemalagd export ska starta, slutför systemet först uppdateringarna och kör sedan exporten. Du kan se när en export senast uppdaterades i kolumnen **Uppdaterad**.
 
 ### <a name="schedule-exports"></a>Schemalägg exporter
 

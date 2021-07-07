@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: b9a1b30e37c3792aa7bdfcfc177da9e8a32c324d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 50c231070ff9930c1ea82971bf4f8541a89d5027
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596935"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305913"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Ansluta till en Power Query-datakälla
 
@@ -72,7 +72,7 @@ Anslutningar med en bockmarkering i kolumnen **Customer Insights (dataflöden)**
 
 1. I målgruppsinsikter går du till **Data** > **Datakällor**.
 
-2. Markera den lodräta ellipsen bredvid datakällan du vill ändra och välj **redigera** i den nedrullningsbara menyn.
+2. Välj den stående ellipsen bredvid den datakälla du vill ändra och välj sedan **Redigera** i listrutan.
 
    > [!div class="mx-imgBorder"]
    > ![Redigera alternativ](media/edit-option-data-sources.png "Redigera alternativ")

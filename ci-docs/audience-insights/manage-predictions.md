@@ -9,12 +9,12 @@ ms.topic: how-to
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: b935be08199f20e83bceb3317985b0e1dc120016
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: dccb8dcca8f65f64973e46fed9d83034d58282e2
+ms.sourcegitcommit: bcc47d15d4f0eacf008e4dbc09baac7f062b3ca8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095756"
+ms.lasthandoff: 06/29/2021
+ms.locfileid: "6315900"
 ---
 # <a name="manage-predictions"></a>Hantera förutsägelser
 
@@ -35,9 +35,6 @@ I den här artikeln beskrivs några uppgifter som de flesta prediktionsscenarier
 Rapporten om användbarhet av indata ger en konsoliderad vy över de fel och varningar som dina färdiga förutsägelser kan generera. Det ger också rekommendationer om hur man förbättrar modellens prestanda.
 
 Rapporten är tillgänglig när en modell har slutfört sin utbildningsprocess. Den skapas för varje modell separat, oavsett om den har slutförts eller inte.
-
-> [!NOTE]
-> För närvarande fungerar den här funktionen bara för transaktionsomsättningsmodellen.
 
 ### <a name="view-the-input-data-usability-report"></a>Se användbarhetsrapport över inmatning av data
 

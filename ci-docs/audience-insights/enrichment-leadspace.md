@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ccf4f661ecffb281556a4545b1f26ee809c697cd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 0496d10c994cd077a778a6e745e3774e316765ae
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5895935"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305224"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Berikning av företagsprofiler med Leadspace (förhandsversion)
 
@@ -36,7 +36,7 @@ Följande krav måste vara uppfyllda för att du ska kunna konfigurera Leadspace
 
    :::image type="content" source="media/leadspace-tile.png" alt-text="Skärmbild av Leadspaces-panelen.":::
 
-1. Välj en [anslutning](connections.md) från listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning** och välja **Leadspace**. 
+1. Välj en [anslutning](connections.md) i listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning** och välja **Leadspace**. 
 
 1. Välj **Anslut till Leadspace** för att bekräfta anslutningen.
 
@@ -57,13 +57,13 @@ Följande krav måste vara uppfyllda för att du ska kunna konfigurera Leadspace
 
 Du måste vara en administratör för att konfigurera anslutningar. Välj **Lägg till anslutning** när du konfigurerar ett tillägg *eller* gå till **Admin** > **Anslutningar** och välj **Konfigurera** på Leadspace-panelen.
 
-1. Välj **Komma igång** 
+1. Välj **Komma igång**. 
 
 1. Ange ett namn för anslutningen i rutan **visningsnamn**.
 
 1. Ange en giltig Leadspace-token.
 
-1. Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**
+1. Granska och ge ditt samtycke till **Data sekretess och efterlevnad** genom att välja **Jag godkänner**.
 
 1. Välj **Verifiera** om konfigurationen ska verifieras.
 
@@ -81,12 +81,12 @@ Mer information finns på [API:er för Leadspace](https://support.leadspace.com/
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](measures.md)och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
+Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och till och med [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till Leadspace tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att Leadspace uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.
+Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort denna berikningen i syfte att avbryta användningen av den här funktionen.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
-ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
+ms.openlocfilehash: a83caf2428f3dbd9791b9f746d00d370362a508c
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049272"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304829"
 ---
 # <a name="define-and-manage-measures"></a>Definiera och hantera mått
 
-Åtgärder hjälper dig att få en bättre förståelse av kundbeteenden och affärsresultat. De tittar på relevanta värden från [enhetliga profiler](data-unification.md). Ett företag vill till exempel se den *totala kostnaden per kund* för att förstå den enskilda kundens köphistorik eller mäta *företagets totala försäljning* för att förstå den sammanlagda omsättningen för hela verksamheten.  
+Åtgärder hjälper dig att få en bättre förståelse av kundbeteenden och affärsresultat. De tittar på relevanta värden från [enhetliga profiler](data-unification.md). Ett företag vill till exempel se den *totala kostnaden per kund* för att förstå en enskild kunds köphistorik eller mäta företagets *totala försäljning* för att förstå den sammanlagda omsättningen för hela verksamheten.  
 
 Mått skapas med måttverktyget, en datafrågeställningsplattform med olika operatörer och enkla mappningsalternativ. Du kan filtrera data, gruppera resultat, identifiera [entitetsrelationssökvägar](relationships.md) och förhandsgranska utdata.
 
@@ -34,9 +34,9 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
 
 1. Välj **Redigera namn** och tillhandahåll ett **namn** för måttet. 
    > [!NOTE]
-   > Om den nya måttkonfigurationen endast innehåller två fält, till exempel Kund-ID och en beräkning, läggs utdata till som en ny kolumn i den systemgenererade entiteten Customer_Measure. Dessutom kan du se måttens värde i den enhetliga kundprofilen. Andra mått genererar egna entiteter.
+   > Om den nya måttkonfigurationen endast innehåller två fält, till exempel kund-ID och en beräkning, läggs utdatan till som en ny kolumn i den systemgenererade entiteten Customer_Measure. Dessutom kan du se måttens värde i den enhetliga kundprofilen. Andra mått genererar egna entiteter.
 
-1. I konfigurationsområdet väljer du sammansättningsfunktionen från listrutan **Välj funktion**. Sammansättningsfunktioner omfattar: 
+1. Välj en sammansättningsfunktion i listrutan **Välj funktion** i konfigurationsområdet. Sammansättningsfunktioner omfattar: 
    - **Sum**
    - **Medel**
    - **Antal**
@@ -64,17 +64,19 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
 
 1. Om du vill lägga till filter väljer du **Filter** i konfigurationsområdet. 
   
-   1. I avsnittet **Lägg till attribut** i rutan **Filter** väljer du det attribut som du vill använda för att skapa filter.
+   1. I avsnittet **Lägg till attribut** i fönstret **Filter** väljer du det attribut som du vill använda för att skapa filter.
    1. Ange filteroperatörerna så att filtret definieras för varje markerat attribut.
    1. Välj **Tillämpa** för att lägga till filtren till måttet.
 
 1. Om du vill lägga till dimensioner väljer du **Dimension** i konfigurationsområdet. Dimensioner visas som kolumner i måttutdataentiteten.
+ 
    1. Välj **Redigera dimensioner** för att lägga till dataattribut som du vill gruppera måttvärdena efter. Till exempel ort eller kön. Som standard väljs dimensionen *Kund-ID* för att skapa *mått på kundnivå*. Du kan ta bort standarddimensionen om du vill skapa *mått på företagsnivå*.
    1. Välj **Klart** för att lägga till dimensionerna till måttet.
 
-1. Om det finns värden i dina data som du behöver ersätta med ett heltal, till exempel ersätter du *null* med *0*, välj **Regler**. Konfigurera regeln och se till att du endast väljer heltal som ersättare.
+1. Om det finns värden i dina data som du behöver ersätta med ett heltal - till exempel ersätta *null* med *0* - väljer du **Regler**. Konfigurera regeln och se till att du endast väljer heltal som ersättare.
 
 1. Om det finns flera sökvägar mellan den dataentitet du mappade och entiteten *Kund* måste du välja någon av de identifierade [entitetsrelationssökvägarna](relationships.md). Resultaten av måtten kan variera beroende på den valda sökvägen. 
+   
    1. Välj **Datainställningar** och välj den entitetssökväg som ska användas för att identifiera måttet. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
    1. Välj **Klart** för att tillämpa dina val. 
 
@@ -123,7 +125,7 @@ I följande procedur beskrivs stegen för att skapa ett nytt mått med hjälp av
 
 1. Välj **Utfört**.
 
-1. I avsnittet **Ange tidsperiod** definierar du tidsram för de data som ska användas. Välj om du vill att det nya måttet ska täcka hela datauppsättningen genom att välja **Hela tiden**. Eller om du vill att måttet ska fokusera på en **Viss tidsperiod**.
+1. I avsnittet **Ange tidsperiod** definierar du tidsram för de data som ska användas. Välj om du vill att det nya måttet ska täcka hela datauppsättningen genom att välja **Hela tiden** eller att måttet ska fokusera på en **Speficik tidsperiod**.
 
    :::image type="content" source="media/measure-set-time-period.png" alt-text="Skärmbild som visar avsnittet tidsperiod när du konfigurerar ett mått från en mall.":::
 
@@ -142,12 +144,12 @@ I följande procedur beskrivs stegen för att skapa ett nytt mått med hjälp av
 
 Listan med åtgärder finns på sidan **Mått**.
 
-Här finns information om måttypen, den som skapade den, datumet då den skapades, statusen och tillståndet. När du väljer ett mått i listan kan du förhandsgranska utdata och hämta en .CSV-fil.
+Här finns information om måttypen, den som skapade den, datumet då den skapades, statusen och tillståndet. När du väljer ett mått i listan kan du förhandsgranska utdatan och hämta en CSV-fil.
 
 Om du vill uppdatera alla dina åtgärder samtidigt markerar du **Uppdatera allt** utan att välja ett specifikt mått.
 
 > [!div class="mx-imgBorder"]
-> ![Åtgärder för att hantera enskilda mått](media/measure-actions.png "Åtgärder för att hantera enskilda mått")
+> ![Åtgärder för att hantera enskilda mått.](media/measure-actions.png "Åtgärder för att hantera enskilda mått.")
 
 Välj ett mått i listan för följande alternativ:
 
@@ -159,11 +161,11 @@ Välj ett mått i listan för följande alternativ:
 - **Aktivera** eller **Inaktivera**. Inaktiva mått uppdateras inte vid en [schemalagd uppdatering](system.md#schedule-tab).
 
 > [!TIP]
-> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
+> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Visa detaljerad information** för en av uppgifterna för jobbet hittar du ytterligare information: bearbetningstid, senaste bearbetningsdatum samt alla fel och varningar som hör till uppgiften.
 
 ## <a name="next-step"></a>Nästa steg
 
-Du kan använda befintliga mått för att skapa [ett kundsegment](segments.md).
+Du kan använda befintliga åtgärder för att skapa [ett kundsegment](segments.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

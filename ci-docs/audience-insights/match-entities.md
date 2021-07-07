@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
-ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
+ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2021
-ms.locfileid: "6085644"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306050"
 ---
 # <a name="match-entities"></a>Matcha entiteter
 
@@ -247,7 +247,7 @@ Du kan ange villkor för att vissa poster alltid ska matcha eller aldrig matcha.
 
 1. Gå till **Data** > **Datakällor** och matar in mallfilerna som nya entiteter. När du har hämtat den kan du använda dem för att ange matchningskonfigurationen.
 
-1. När du har överfört filerna och entiteterna tillgängliga väljer du alternativet för **anpassad matchning**. Du kommer att se alternativen för att ange vilka entiteter du vill ta med. Välj den erforderliga entiteten i listrutan.
+1. När du har överfört filerna och entiteterna tillgängliga väljer du alternativet för **anpassad matchning**. Du kommer att se alternativen för att ange vilka entiteter du vill ta med. Välj de entiteter som krävs i listrutan.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Skärmbild av dialogrutan för åsidosättning för ett anpassat matchningsscenario.":::
 

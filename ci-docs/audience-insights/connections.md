@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 106dbc26f95b309821d738e1484b1eaa79dd225b
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896119"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304994"
 ---
 # <a name="connections-preview-overview"></a>Översikt över anslutningar (förhandsversion)
 
@@ -74,7 +74,9 @@ När du ställer in eller redigerar en exportanslutning väljer du vilka använd
 
 ## <a name="remove-a-connection"></a>Vill du ta bort anslutningen
 
-Om anslutningen som du tar bort används för att utöka eller exportera måste du först ta bort eller ta bort den. I dialogrutan för borttagning guidas du till relevanta förbättringar eller exporter. Fristående berikningar och export blir inaktiva. Du aktiverar dem på nytt genom att lägga till en ny anslutning till dem på sidan [Berikningar](enrichment-hub.md) eller [Exporter](export-destinations.md)..
+Om anslutningen som du tar bort används för att utöka eller exportera måste du först ta bort eller ta bort den. I dialogrutan för borttagning guidas du till relevanta förbättringar eller exporter. 
+
+Fristående berikningar och export blir inaktiva. Du aktiverar dem på nytt genom att lägga till en ny anslutning till dem på sidan [Berikningar](enrichment-hub.md) eller [Exporter](export-destinations.md)..
 
 1. Gå till **Admin** > **Anslutningar (förhandsversion)**.
 

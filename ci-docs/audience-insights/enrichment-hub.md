@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c8e4a7247ccf575a62440038180010916b09d51b
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: c35e73b366fcd5db2ba5a757295ddda6db30efa0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954509"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305270"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
@@ -22,7 +22,8 @@ Använd data från källor som Microsoft och andra partners för att berika dina
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="Sidan för berikningsnav":::
 
-I målgruppsinsikter går du till **Data** > **Berikning** för att arbeta med berikningsalternativ.    
+I målgruppsinsikter går du till **Data** > **Berikning** för att arbeta med berikningsalternativ.  
+
 Du måste ha behörighet för Deltagare eller Administratör för att kunna skapa eller redigera berikningar. Mer information finns under [Behörigheter](permissions.md).
 
 På fliken **Identifiera** finns följande berikningar:
@@ -31,7 +32,7 @@ På fliken **Identifiera** finns följande berikningar:
 - [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft
 - [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft
 - [Företagsdata](enrichment-leadspace.md) tillhandahålls av Leadspace
-- [Demografi](enrichment-experian.md) tillhandahålls av Experian
+- [Demografiska uppgifter](enrichment-experian.md) tillhandahålls av Experian
 - [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies
 - [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol)
 
@@ -39,7 +40,7 @@ På fliken **Mina berikningar** kan du se vilka berikningar du har konfigurerat 
 
 ## <a name="manage-existing-enrichments"></a>Hantera befintliga berikningar
 
-Gå till **Mina berikningar** för att se alla konfigurerade berikningar. Varje berikning representeras som en rad som innehåller ytterligare information om berikningen.
+Gå till fliken **Mina berikningar** om du vill visa alla konfigurerade berikningar. Varje berikning representeras som en rad som innehåller ytterligare information om berikningen.
 
 Välj en berikning för att se de tillgängliga alternativen. Du kan också välja ellips (...) på ett listobjekt om du vill visa alternativen.
 
@@ -59,6 +60,6 @@ Tredjepartsutslag konfigureras med hjälp av [anslutningar](connections.md), som
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flera berikningar av samma typ
 
-Entiteten som ska utökas anges under konfiguration för berikning, vilket gör att du endast kan utöka en delmängd av dina profiler. Utöka endast data för ett visst segment till exempel. Du kan konfigurera flera anrop av samma typ och återanvända samma anslutning. För vissa berikningar begränsas antalet berikningar av samma typ som kan skapas. Begränsningarna och den aktuella användningen visas på sidan **Berikningar**.
+Entiteten som ska utökas anges under konfiguration för berikning, vilket gör att du endast kan utöka en delmängd av dina profiler. Berika till exempel endast data för ett visst segment. Du kan konfigurera flera anrop av samma typ och återanvända samma anslutning. För vissa berikningar begränsas antalet berikningar av samma typ som kan skapas. Begränsningarna och den aktuella användningen visas på sidan **Berikningar**.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

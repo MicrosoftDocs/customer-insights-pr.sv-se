@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: 0c728fad4ed00d1bf085fed60057211861b3a195
-ms.sourcegitcommit: f0855bd7762b1f0a1d3dd5259e23c95e1b0a6a93
+ms.openlocfilehash: 342aeb33f652d5d60cd25e13969766954bf56370
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "5866429"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304948"
 ---
 # <a name="customer-activities"></a>Kundaktiviteter
 
@@ -53,23 +53,23 @@ Dina datakällor innehåller entiteter med transaktions- och aktivitetsdata frå
 
 1. I steget **Samordning av aktiviteter** välj aktivitetshändelsen och starttiden för din aktivitet. 
    - **Obligatoriska fält**
-      1. **Händelseaktivitet**: Fält som är händelsen för aktiviteten
-      2. **Tidsstämpel**: Fält som representerar aktivitetens starttid.
+      - **Händelseaktivitet**: Fält som är händelsen för aktiviteten.
+      - **Tidsstämpel**: Fält som representerar aktivitetens starttid.
 
    - **Valfria fält**
-      1. **Ytterligare information**: Fält med relevant information för aktiviteten.
-      2. **Ikon**: Ikon som bäst representerar den här aktivitetstypen.
-      3. **Webbadress**: Fält som innehåller en URL med information om aktiviteten. Det kan till exempel vara det transaktionssystem som visar aktiviteten. URL:en kan vara vilket fält som helst från datakällan, eller också kan den skapas som ett nytt fält med hjälp av en Power Query-omvandling. URL-data lagras i entiteten *Enhetlig aktivitet*, som kan användas nedströms med [API:er](apis.md). 
+      - **Ytterligare information**: Fält med relevant information för aktiviteten.
+      - **Ikon**: Ikon som bäst representerar den här aktivitetstypen.
+      - **Webbadress**: Fält som innehåller en URL med information om aktiviteten. Det kan till exempel vara det transaktionssystem som visar aktiviteten. URL:en kan vara vilket fält som helst från datakällan, eller också kan den skapas som ett nytt fält med hjälp av en Power Query-omvandling. URL-data lagras i entiteten *Enhetlig aktivitet*, som kan användas nedströms med [API:er](apis.md). 
    
    :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Ange kundaktivitetsdata i en entitet för enhetlig aktivitet.":::
 
 1. Klicka på **Nästa** för att gå till nästa steg. Du kan välja **Slutför och granska** om du vill spara aktiviteten nu med aktivitetstypen **Annat**. 
 
-1. Välj aktivitetstyp i steget **Aktivitetstyp** och välj om du vill mappa några av aktivitetstyperna så att de kan användas i andra områden av Customer Insights. För närvarande kan aktivitetstypernaför *Prenumeration* & *SalesOrderLine* kan kartläggas semantiskt efter att ha godkänt att kartlägga fälten. Om en aktivitetstyp inte är relevant för den nya aktiviteten kan du välja *Annat* eller *Skapa ny* för en anpassad aktivitetstyp.
+1. Välj aktivitetstyp i steget **Aktivitetstyp** och välj om du vill mappa några av aktivitetstyperna så att de kan användas i andra områden av Customer Insights. För närvarande går det att mappa aktivitetstyperna *Prenumeration* och *SalesOrderLine* semantiskt efter att ha godkänt att fälten mappas. Om en aktivitetstyp inte är relevant för den nya aktiviteten kan du välja *Annat* eller *Skapa ny* för en anpassad aktivitetstyp.
 
 1. Klicka på **Nästa** för att gå till nästa steg. 
 
-1. I steget **Granska**, kontrollera dina val. Gå tillbaka till föregående steg och uppdatera informationen om det behövs.
+1. I steget **Granska**, kontrollera dina val. Gå tillbaka till valfritt föregående steg och uppdatera informationen vid behov.
 
    :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Granska de angivna fälten för en aktivitet.":::
    
@@ -89,7 +89,7 @@ Följande åtgärder är tillgängliga när du väljer en aktivitet.
 
 - **Redigera**: Öppnar aktivitetskonfigurationen i granskningssteget. Du kan ändra vilken som helst av eller hela den aktuella konfigurationen från det här steget. När du har ändrat konfigurationen väljer du **Spara aktivitet** och väljer **Kör** för att bearbeta ändringarna.
 
-- **Byt namn**: Öppnar en dialogruta där du kan ange ett annat namn för den valda aktiviteten. Välj **Spara** för att införa ändringarna.
+- **Byt namn**: Öppnar en dialog där du kan ange ett annat namn för den valda aktiviteten. Välj **Spara** för att införa ändringarna.
 
 - **Ta bort**: Öppnar en dialog för att bekräfta borttagningen av den markerade aktiviteten. Du kan också ta bort mer än en aktivitet samtidigt genom att markera aktiviteterna och sedan markera ikonen för borttagning. Välj **Ta bort** för att borttagningen.
 

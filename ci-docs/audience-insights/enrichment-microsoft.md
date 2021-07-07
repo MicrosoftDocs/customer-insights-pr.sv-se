@@ -9,16 +9,16 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
-ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
+ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6245729"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305178"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Utöka kundprofiler med varumärkes- och intressetillhörighet (förhandsversion)
 
-Använd tillverkarspecifika data från Microsoft för att berika kunddata med intresse och varumärke. Dessa intressetillhörigheter bestäms utifrån data från personer som har liknande demografiska kunder. Med hjälp av den här informationen kan du bättre förstå och segmentera dina kunder utifrån deras tillhörigheter till särskilda varumärken och intressen.
+Använd tillverkarspecifika data från Microsoft för att berika kunddata med intresse och varumärke. Dessa samhörigheter baseras på data från personer med demografiska egenskaper som liknar dina kunders. Med hjälp av den här informationen kan du bättre förstå och segmentera dina kunder utifrån deras tillhörigheter till särskilda varumärken och intressen.
 
 I målgruppsinsikter går du till **Data** > **Berikning** för att [konfigurera och visa berikningar](enrichment-hub.md).
 
@@ -53,7 +53,7 @@ Beroende på vilken granularitet du vill använda för att mäta tillhörigheten
 
 Vi stöder för närvarande följande alternativ för land: Australien, Kanada (engelska), Frankrike, Tyskland, Storbritannien och USA (engelska).
 
-Om du vill välja ett land öppnar du **varumärken** eller **intressen** och väljer **ändra** bredvid **land/region**. I fönstret **inställningar för land/region** väljer du ett alternativ och väljer **tillämpa**.
+Om du vill välja ett land eller en region öppnar du **Varumärkesberikning** eller **Intresseberikning** och **Ändra** bredvid **Land/Region**. I fönstret **inställningar för land/region** väljer du ett alternativ och väljer **tillämpa**.
 
 ### <a name="implications-related-to-country-selection"></a>Effekter relaterade till val av land
 
@@ -61,7 +61,7 @@ Om du vill välja ett land öppnar du **varumärken** eller **intressen** och v�
 
 - När [du väljer en bransch](#define-your-brands-or-interests) får du de mest relevanta märkena eller intressena utifrån valt land eller vald region.
 
-- När [du berikar profiler](#refresh-enrichment) berikar vi alla kundprofiler som vi får data för för de valda märkena och intressena. Inklusive profiler som inte finns i det valda landet eller den valda regionen. Om du till exempel valde Tyskland utökar vi profiler i USA om det finns tillgängliga data för valda tillverkare och intressen i USA.
+- När [profiler berikas](#refresh-enrichment) berikar vi alla kundprofiler för vilka vi får data för valda varumärken och intressen, inklusive profiler som inte finns i valt land eller vald region. Om du till exempel valde Tyskland utökar vi profiler i USA om det finns tillgängliga data för valda tillverkare och intressen i USA.
 
 ## <a name="configure-enrichment"></a>Konfigurera berikning
 
@@ -71,7 +71,7 @@ En guidad upplevelse hjälper dig genom konfigurationen av berikningar.
 
 Välj upp till fem varumärken eller intressen med ett eller båda av dessa alternativ:
 
-- **Bransch**: Välj din bransch i listrutan och välj sedan bland de bästa varumärkena eller intressena för den branschen.
+- **Bransch**: Välj din bransch i listrutan och välj sedan bland de främsta varumärkena eller intressena för den branschen.
 - **Välj ditt eget**: Ange ett varumärke eller intresse som är relevant för din organisation och välj sedan bland matchande förslag. Om vi inte visar ett varumärke eller intresse som du letar efter kan du skicka feedback med hjälp av **föreslå** länk.
 
 ### <a name="review-enrichment-preferences"></a>Granska inställningar för berikning
@@ -88,19 +88,19 @@ Välj **Berikad entitet** och välj den datauppsättning du vill berika med för
 
 Mappa fält från en enhetlig kundentitet och definiera det demografiska segment som du vill att systemet ska använda för att berika kunddata. Mappa land/region och åtminstone attributen Födelsedatum eller Kön. Du måste också mappa minst en av Ort (och Region) eller Postnummer. Välj **redigera** om du vill definiera mappningen av fälten och välj **Tillämpa** när du är klar. Välj **Spara** för att slutföra fältmappningen.
 
-Följande format och värden stöds är värden inte skiftlägeskänsliga:
+Följande format och värden stöds (värden är inte skiftlägeskänsliga):
 
-- **Födelsedatum**: Vi rekommenderar att födelsedatumet konverteras till typen DateTime under datainmatning. Det kan också vara en sträng i [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) formatet "åååå-MM-dd" eller "åååå-MM-ddTHH:mm:ssZ".
-- **Kön**: man, kvinna, okänd
-- **Postnummer**: femsiffriga postnummer för oss, standard postnummer i övriga
-- **Ort**: Ortens namn på engelska
-- **Region**: en förkortning på två bokstäver för USA och Kanada. Två eller tre bokstavsförkortningar för Australien. Gäller inte för Frankrike, Tyskland eller Storbritannien.
+- **Födelsedatum**: Vi rekommenderar att födelsedatumet konverteras till typen DateTime under datainmatning. Det kan också vara en sträng i [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)-format "åååå-mm-mm" eller "åååå-mm-ddTHH:mm:ss".
+- **Kön**: man, kvinna, okänd.
+- **Postnummer**: Femsiffriga postnummer för USA, standardnummer för alla andra platser.
+- **Ort**: Ortens namn på engelska.
+- **Region**: en förkortning på två bokstäver för USA och Kanada. Förkortningar med två eller tre bokstäver för Australien. Gäller inte för Frankrike, Tyskland eller Storbritannien.
 - **Land/region**:
 
   - USA: Amerikas förenta stater, Förenta staterna, USA, US och Amerika
   - CA: Kanada, CA
   - GB: Förenade kungariket, Storbritannien, GB, Förenade kungariket av Storbritannien och Nordirland, Förenade kungariket av Storbritannien
-  - AU: Australien, AU, Australiska statsförbundet
+  - AU: Australien, AU, Australiska Statsförbundet
   - FR: Frankrike, FR, Republiken Frankrike
   - DE: Tyskland, tyska, Deutschland, Allemagne, DE, Förbundsrepubliken Tyskland
 
@@ -113,10 +113,11 @@ Slutligen får du granska informationen och ange ett namn för berikning.
 ## <a name="refresh-enrichment"></a>Uppdatera berikning
 
 Kör berikningen när du har konfigurerat varumärken, intressen och fältmappningen för demografiska mål. Starta processen genom att välja **Kör** på konfigurationssidan för varumärket eller intresset. Du kan även låta systemet köra anrikningen automatiskt som en del av en schemalagd uppdatering.
+
 Beroende på storleken på kundens data kan det ta flera minuter innan en anrikning har slutförts.
 
 > [!TIP]
-> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
+> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Visa detaljerad information** för en av uppgifterna för jobbet hittar du ytterligare information: bearbetningstid, senaste bearbetningsdatum samt alla fel och varningar som hör till uppgiften.
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 
@@ -134,7 +135,7 @@ Varumärkes- och räntetillhörigheter kan också visas på enskilda kundkort. G
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](measures.md)och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
+Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och till och med [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,5 +1,5 @@
 ---
-title: Berikning med tredjepartsberikningen HERE Technologies
+title: Berikande med tredjepartsberikande HERE Technologies
 description: Allmän information om tredjepartsberikningen HERE Technologies.
 ms.date: 04/09/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 5d1f037377010153045c9255d2d01f98ebf1fdfd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896073"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305316"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Berikning av kundprofiler med HERE Technologies (förhandsversion)
 
@@ -24,9 +24,9 @@ HERE Technologies är ett plattformsföretag som tillhandahåller platsrelaterad
 
 Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera HERE Technologies-berikning:
 
-- Du har en aktiv HERE Technologies-prenumeration. Om du vill få en prenumeration kan du [registrera dig hä](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakta HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkt. [Läs mer om HERE Technologies platsberikning.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
+- Du har en aktiv HERE Technologies-prenumeration. Om du vill få en prenumeration kan du [registrera dig här](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakta HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkt. [Läs mer om HERE Technologies platsberikning.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Det finns en HÄR [anslutning](connections.md) tillgänglig *eller* har du [administratör](permissions.md#administrator) behörigheter och HERE Technologies API-nyckel.
+- En HERE-[anslutning](connections.md) är tillgänglig *eller* också har du [administratörs](permissions.md#administrator)behörigheter och API-nyckel för HERE Technologies.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 
@@ -37,7 +37,7 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera H
    > [!div class="mx-imgBorder"]
    > ![HERE Technologies-panel](media/HERE-tile.png "HERE Technologies-panel")
 
-1. Välj en [anslutning](connections.md) från listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning**. Välj **HERE Technologies** från listrutan. 
+1. Välj en [anslutning](connections.md) i listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning**. Välj **HERE Technologies** i listrutan. 
 
 1. Välj **Anslut till HERE Technologies** för att bekräfta anslutningsvalet.
 
@@ -58,7 +58,7 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera H
 
 1. Välj **Spara berikning** när du har granskat dina val.
 
-## <a name="configure-the-connection-for-here-technologies"></a>Konfigurera anslutningen för HERE technologies 
+## <a name="configure-the-connection-for-here-technologies"></a>Konfigurera anslutningen för HERE Technologies 
 
 Du måste vara en administratör för att konfigurera anslutningar. Välj **Lägg till anslutning** när du konfigurerar ett tillägg *eller* gå till **Admin** > **Anslutningar** och välj **Konfigurera** på HERE technologies.
 
@@ -66,13 +66,13 @@ Du måste vara en administratör för att konfigurera anslutningar. Välj **Läg
 
 1. Ange en giltig API-nyckel för HERE Technologies.
 
-1. Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**
+1. Granska och ge ditt samtycke till **Data sekretess och efterlevnad** genom att välja **Jag godkänner**.
 
 1. Välj **Verifiera** om konfigurationen ska verifieras.
 
 1. Välj **Spara** när verifieringen har slutförts.
 
-> [!div class="mx-imgBorder"]
+   > [!div class="mx-imgBorder"]
    > ![Konfigurationssida för HERE technologies-anslutning](media/enrichment-HERE-connection.png "Konfigurationssida för HERE technologies-anslutning")
 
 ## <a name="enrichment-results"></a>Berikningsresultat
@@ -85,12 +85,12 @@ Du kan få tillgång till en detaljerad vy över respektive berikad profil genom
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](measures.md)och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
+Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och till och med [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till HERE Technologies tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data på din instruktion, men du ansvarar för att HERE Technologies uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.
+Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort denna berikningen i syfte att avbryta användningen av den här funktionen.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

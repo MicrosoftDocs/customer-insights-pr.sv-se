@@ -1,6 +1,6 @@
 ---
 title: Exportera Customer Insights-data till Adobe Experience Platform
-description: Lär dig använda målgruppsinsikter i Adobe Experience Platform.
+description: Lär dig hur du använder segment för målgruppsinsikter i Adobe Experience Platform.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 884f4d30f354bed29909d57be84dce4c8e46965a
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 1045d0e373fd5ea8987684e51bd9a07b7b535ee3
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760123"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305546"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Använd Customer Insights-segment i Adobe Experience Platform (förhandsversion)
 
-Som användare av målgruppsinsikter för Dynamics 365 Customer Insights kan du ha skapat segment som gör dina marknadsföringskampanjer effektivare genom att rikta sig mot relevanta målgrupper. Om du vill använda ett segment från målgruppsinsikter i Adobe Experience Platform och program som Adobe Campaign Standard måste du följa stegen i den här artikeln.
+Som användare av målgruppsikter i Dynamics 365 Customer Insights kan du ha skapat segment i avsikt att göra dina marknadsföringskampanjer mer effektiva genom att rikta dig till relevanta målgrupper. Om du vill använda ett segment från målgruppsinsikter i Adobe Experience Platform och program som Adobe Campaign Standard måste du följa stegen i den här artikeln.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="Processdiagram över stegen som beskrivs i den här artikeln.":::
 
@@ -55,9 +55,9 @@ Med målgruppen identifierad kan vi konfigurera exporten från målgruppsinsikte
 
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **Azure Blob Storage** eller välj **Konfigurera** i panelen **Azure Blob Storage**:
+1. Välj **Lägg till anslutning** och välj sedan **Azure Blob Storage** eller **Konfigurera** i panelen **Azure Blob Storage** för att konfigurera anslutningen.
 
-   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Konfigurationspanel för Azure Blob Storage."::: för att konfigurera anslutningen.
+   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Konfigurationspanel för Azure Blob Storage."::: 
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
@@ -67,7 +67,7 @@ Med målgruppen identifierad kan vi konfigurera exporten från målgruppsinsikte
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Skärmbild på lagringskontots konfiguration. "::: 
    
-    - Mer information om hur du hittar Blob Storage-kontonamn och kontonyckel finns i [Hantera inställningar för lagringskonto på Azure-portalen](/azure/storage/common/storage-account-manage).
+    - Mer information om hur du hittar kontonamn och kontonyckel för Blob Storage finns i [Hantera inställningar för lagringskonto på Azure-portalen](/azure/storage/common/storage-account-manage).
     - Mer information om hur du skapar en behållare finns i [skapa en behållare](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
 1. Välj **Spara** för att slutföra anslutningen. 
@@ -80,7 +80,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Välj för att skapa en ny export **Lägg till export**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Azure Blob Storage. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Azure Blob Storage. Om avsnittets namn inte visas är inga anslutningar av den här typen tillgängliga för dig.
 
 1. Välj det segment som du vill exportera. I det här exemplet är det **ChurnProneCustomers**.
 
@@ -123,7 +123,8 @@ När du har definierat källanslutningen [konfigurerar du ett dataflöde](https:
 
 För att skicka e-postmeddelandet för den här kampanjen använder vi Adobe Campaign Standard. När vi har importerat data till Adobe Experience Platform måste vi [skapa en målgrupp](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) i Adobe Campaign Standard med hjälp av data i Adobe Experience Platform.
 
-Lär dig hur du [använder segmentverktyget](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/working-with-adobe-experience-platform/aep-using-segment-builder.html#building-a-segment) i Adobe Campaign Standard för att definiera en målgrupp baserad på data i Adobe Experience Platform.
+
+Lär dig hur du [använder segmentverktyget](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) i Adobe Campaign Standard för att definiera en målgrupp baserad på data i Adobe Experience Platform.
 
 ## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Skapa och skicka e-postmeddelandet med Adobe Campaign Standard
 

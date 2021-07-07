@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
-ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
+ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "5700690"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305681"
 ---
 # <a name="custom-machine-learning-models"></a>Anpassade maskininlärningsmodeller
 
@@ -72,7 +72,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
       > [!div class="mx-imgBorder"]
       > ![Fönster för parameter för modellens utdata](media/intelligence-screen3-outputparameters.png "Fönster för parameter för modellens utdata")
 
-1. Välj det matchande attributet från listrutan **Kund-ID i resultat** som identifierar kunder och välj **Spara**.
+1. Välj det matchande attributet i listrutan **Resultat för Kund-ID** som identifierar kunder och välj **Spara**.
 
    > [!div class="mx-imgBorder"]
    > ![Relatera resultat till fönstret Kunddata](media/intelligence-screen4-relatetocustomer.png "Relatera resultat till fönstret Kunddata")
@@ -100,7 +100,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
       1. Välj **namnet på parametern för utdata till datalager** för din testpipeline.
       1. Välj **namnet på parametern för utdata till sökväg** för din testpipeline.
 
-1. Välj det matchande attributet från listrutan **Kund-ID i resultat** som identifierar kunder och välj **Spara**.
+1. Välj det matchande attributet i listrutan **Resultat för Kund-ID** som identifierar kunder och välj **Spara**.
    Välj ett attribut från inferensutdata med värden som liknar kolumnen Kund-ID i kundentiteten. Om du inte har en sådan kolumn i din datauppsättning väljer du ett attribut som identifierar raden unikt.
 
 ## <a name="run-a-workflow"></a>Köra ett arbetsflöde
