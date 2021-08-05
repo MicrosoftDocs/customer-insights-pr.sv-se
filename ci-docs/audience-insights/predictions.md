@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595923"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692549"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Komplettera dina ofullständiga data med förutsägelser
 
@@ -31,11 +31,11 @@ Med hjälp av prediktioner kan du enkelt skapa förutsagda värden som förbätt
 
 Innan du kan använda funktionen prediktioner i organisationen bör du kontrollera att följande förutsättningar är uppfyllda:
 
-1. Din organisation har en instans [konfigurerad i Common Data Service](/ai-builder/build-model#prerequisites) och den är i samma organisation som Customer Insights.
+1. Din organisation har en instans [konfigurerad i Microsoft Dataverse](/ai-builder/build-model#prerequisites) och finns i samma organisation som Customer Insights.
 
-2. Din miljö är kopplad till din Common Data Service-instans.
+2. Din miljö för målgruppsinsikter bifogas till din Dataverse-instans.
 
-Om du [skapar en ny miljö](manage-environments.md) konfigurerar du den i dialogrutan **Skapa en miljö** och väljer **Avancerat**. Om du redan har skapat en miljö går du till dess inställningar och väljer **Avancerat**. Oavsett vilket anger du i avsnittet **Använd förutsägelser** Common Data Service-instansens URL som du vill koppla din miljö till.
+Om du [skapar en ny miljö](get-started-paid.md) konfigurerar du den i dialogrutan **Skapa en miljö** och väljer **Avancerat**. Om du redan har skapat en miljö går du till dess inställningar och väljer **Avancerat**. Oavsett vilket anger du i avsnittet **Använd förutsägelser** Dataverse-instansens URL som du vill koppla din miljö till.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Skapa en förutsägelse i entiteten Kund
 
@@ -47,17 +47,17 @@ Om du [skapar en ny miljö](manage-environments.md) konfigurerar du den i dialog
 
 4. Sök efter det attributnamn som du vill förutsäga värden för och välj sedan ikonen **översikt** i kolumnen **sammanfattning**.
    > [!div class="mx-imgBorder"]
-   > ![Ikonen Översikt](media/intelligence-overviewicon.png "Ikonen Översikt")
+   > ![Ikonen Översikt.](media/intelligence-overviewicon.png "Ikonen Översikt")
 
 5. Om attributet saknar en hög hastighet på saknade värden väljer du **Predicera saknade värden** för att fortsätta med din prediktion.
    > [!div class="mx-imgBorder"]
-   > ![Översiktsstatus med knappen predicera saknade värden visas](media/intelligence-overviewpredictmissingvalues.png "Översiktsstatus med knappen predicera saknade värden visas")
+   > ![Översiktsstatus med knappen Förutsäg saknade värden visas.](media/intelligence-overviewpredictmissingvalues.png "Översiktsstatus med knappen predicera saknade värden visas")
 
 6. Ange ett **visningsnamn** och **utdataenhetens namn** för resultatet av prediktionen.
 
 7. I en lista över alternativ som är i förväg visas var du kan mappa värdena till en fördefinierad kategori. I det här fallet är de enda kategorialternativen 0 eller 1 som mappas till den faktiska/falska eller binära typen av förutsägelse. I kolumnen Kategori, mappa de fältvärden som du vill ska vara klassificerade som "0" i den slutliga prediktionen till "0" och de objekt som du vill klassificera som "1" i den slutliga prediktionen till "1".
    > [!div class="mx-imgBorder"]
-   > ![Exempel som visar mappade fältvärden för kategorier](media/intelligence-categorymapping.png "Exempel som visar mappade fältvärden för kategorier")
+   > ![Exempel som visar mappade fältvärden för kategorier.](media/intelligence-categorymapping.png "Exempel som visar mappade fältvärden för kategorier")
 
 8. Välj **klart** och prediktionen kommer att bearbetas. Bearbetningen kan ta en stund, beroende på datastorlek och komplexitet. Resultatet blir tillgängligt i en ny entitet baserat på **Utdataenhetens namn** för den prediktion du skapade.
 
@@ -77,7 +77,7 @@ Som en del av detta flöde kan du välja ett specifikt attribut som du vill base
 
 5. Om det segment du skapade innehåller ofullständiga data i källfältet kan du välja att förutsäga de saknade värdena.
    > [!div class="mx-imgBorder"]
-   > ![Knappen prediktion](media/segments-predictoption.png "Knappen prediktion")
+   > ![Knappen Förutsägelse.](media/segments-predictoption.png "Knappen prediktion")
 
 6. Ange ett **visningsnamn** och **utdataenhetens namn** för resultatet av prediktionen.
 
@@ -93,7 +93,7 @@ Som en del av detta flöde kan du välja ett specifikt attribut som du vill base
 
 4. Du ser flera datapunkter i vyn av din prediktion.
    > [!div class="mx-imgBorder"]
-   > ![Sidan Prediktioner](media/intelligence-predictionsviewpage.png "Sidan Prediktioner")
+   > ![Sidan Förutsägelser.](media/intelligence-predictionsviewpage.png "Sidan Prediktioner")
 
    - **Predicerade värden** visar den mappning du skapade vid fältvärdet för kategorimappning. Dessa är värden i dina datauppsättning som har mappats till en specifik kategori.
    -**Främsta influerare** är de faktorer inom datauppsättning som sannolikt skulle påverka prediktionens relevans för fältvärdet som mappas till en specifik kategori.
@@ -139,7 +139,7 @@ Nästa gång du kör din prediktion används den uppdaterade modell som du har s
 
 ## <a name="troubleshooting"></a>Felsökning
 
-Om du inte kan slutföra anslutna Common Data Service-processen på grund av ett fel kan du försöka slutföra processen manuellt. Det finns två kända problem som kan uppstå under anslutningsprocessen:
+Om du inte kan slutföra anslutna Dataverse-processen på grund av ett fel kan du försöka slutföra processen manuellt. Det finns två kända problem som kan uppstå under anslutningsprocessen:
 
 - Tilläggslösningen Customer Card har inte installerats.
     1. Slutför anvisningarna för att [Installera och konfigurera lösningen](customer-card-add-in.md).

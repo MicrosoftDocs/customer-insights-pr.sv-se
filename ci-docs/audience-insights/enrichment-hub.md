@@ -1,7 +1,7 @@
 ---
 title: Berika enhetliga kundprofiler
 description: Använd kapaciteter för att berika dina kunddata.
-ms.date: 04/09/2021
+ms.date: 07/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,19 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c35e73b366fcd5db2ba5a757295ddda6db30efa0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.custom: intro-internal
+ms.openlocfilehash: d12c0a9dd65d31f9ae8a9cafeafab2767d57893e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305270"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555283"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
 Använd data från källor som Microsoft och andra partners för att berika dina kunddata.
 
-:::image type="content" source="media/enrichment-hub-page.png" alt-text="Sidan för berikningsnav":::
+:::image type="content" source="media/enrichment-hub-page.png" alt-text="Sida för förbättringsnav.":::
 
 I målgruppsinsikter går du till **Data** > **Berikning** för att arbeta med berikningsalternativ.  
 
@@ -42,17 +43,17 @@ På fliken **Mina berikningar** kan du se vilka berikningar du har konfigurerat 
 
 Gå till fliken **Mina berikningar** om du vill visa alla konfigurerade berikningar. Varje berikning representeras som en rad som innehåller ytterligare information om berikningen.
 
-Välj en berikning för att se de tillgängliga alternativen. Du kan också välja ellips (...) på ett listobjekt om du vill visa alternativen.
+Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja ellips (...) på ett listobjekt om du vill visa alternativen. Om du har konfigurerat flera förbättringar kan du använda sökrutan för att hitta den snabbt.
 
-:::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Alternativ för hantering av listan över berikningar":::
+:::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Alternativ för hantering av listan över förbättringar.":::
 
 - **Visa** detaljerad information om hur många kundprofiler som har berikats.
 - **Redigera** konfiguration för berikning.
 - **Kör** berikningen för att uppdatera kundprofiler med senaste data.
 - **Inaktivera** en befintlig berikning om du vill förhindra att den uppdateras automatiskt vid alla schemalagda uppdateringar. Data från den senaste uppdateringen kommer fortfarande att vara tillgängliga. **Aktivera** en inaktiv anrikning för att starta om automatisk uppdatering vid alla schemalagda uppdateringar.
-- **Ta bort** en berikning.
+- **Ta bort** förbättringen.
 
-Du kan köra eller inaktivera flera berikningar samtidigt genom att markera dem i listan. Visnings- och redigeringsalternativ är inte tillgängliga som massåtgärd och fungerar bara för en berikning åt gången.
+Kör eller inaktivera flera förbättringar samtidigt genom att markera dem i listan. Visning- och redigeringsalternativ är inte tillgängliga som massåtgärd. De arbetar bara för en förbättring i taget.
 
 ## <a name="enrichments-and-connections"></a>Berikningar och anslutningar
 

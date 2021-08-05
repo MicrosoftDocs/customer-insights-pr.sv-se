@@ -1,7 +1,7 @@
 ---
 title: Anslutningsapp för Power BI
 description: Läs mer om hur du använder Dynamics 365 Customer Insights anslutningsprogram i Power BI.
-ms.date: 09/21/2020
+ms.date: 07/23/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e43e2f9dbc84ebfbf2154990a752740f973296cb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: faeb95bd7d2fe3cb220308cdee559b3347c5af54
+ms.sourcegitcommit: f98b6b2058f384365f222d1f9ba0cc9ce801f09d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596061"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "6661124"
 ---
 # <a name="connector-for-power-bi-preview"></a>Koppling för Power BI (förhandsversion)
 
@@ -39,7 +39,7 @@ Skapa visualiseringar för dina data med Power BI Desktop. Skapa ytterligare ins
 
 1. Klicka på dialogrutan **Navigering**. du ser listan över alla miljöer som du har åtkomst till. Expandera en miljö och öppna någon av mapparna (entiteter, mått, segment, berikningar). Öppna till exempel mappen **entiteter** om du vill visa alla entiteter som du kan importera.
 
-   ![Power BI kopplingsnavigering](media/power-bi-navigator.png "Power BI kopplingsnavigering")
+   ![Power BI-navigator för anslutningsprogram.](media/power-bi-navigator.png "Power BI kopplingsnavigering")
 
 1. Markera kryssrutorna bredvid de entiteter som ska tas med och **läsas in**. Du kan välja flera entiteter från flera miljöer.
 
@@ -68,5 +68,11 @@ Du kan identifiera och ta bort de duplicerade relationerna.
 3. Ta bort eventuella dubblettrelationer som har identifierats.
 
 När du har tagit bort dubblettrelationer försöker du konfigurera Power BI-anslutningsprogrammet igen. Miljön ska vara tillgänglig nu.
+
+### <a name="errors-on-date-fields-when-loading-entities-in-power-bi-desktop"></a>Fel i datumfält när entiteter läses in i Power BI Desktop
+
+När du läser in entiteter som innehåller fält med datumformat som MM/DD/ÅÅÅÅ kan du stöta på fel på grund av felaktiga språkformat. Denna felmatchning inträffar om din Power BI Desktop-fil har angetts till en annan språktyp än engelska (USA), detta eftersom datumfälten i målgruppsinsikter sparas i amerikanskt format.
+
+Filen Power BI Desktop har en enda språkinställning som används när data hämtas. Se till att dessa datumfält fungerar som de ska, och ange språkinställningen för .BPI-filen som engelska (USA). [Lär dig hur du ändrar språkversionen för en stationär Power BI-fil](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

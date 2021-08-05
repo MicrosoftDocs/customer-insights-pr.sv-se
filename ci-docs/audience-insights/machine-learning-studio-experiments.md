@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: ameetj
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2eb44604e72b32292f971754d4f8c4fd1988c697
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598361"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555191"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Använd modeller baserade på Azure Machine Learning Studio (klassisk)
 
@@ -41,7 +41,7 @@ I ett första steg måste vi skapa en arbetsyta för och öppna Machine Learning
 
 1. När du har skapat resursen visas instrumentpanelen för Machine Learning Studio-arbetsytan. Välj **Starta Machine Learning Studio**.
 
-   ![Azure Machine Learning Studio-användargränssnitt](media/azure-machine-learning-studio.png)
+   ![Azure Machine Learning Studio-användargränssnitt.](media/azure-machine-learning-studio.png)
 
 ## <a name="work-with-azure-machine-learning-studio"></a>Arbeta Azure Machine Learning Studio
 
@@ -55,7 +55,7 @@ Nu kan du skapa ett nytt experiment eller importera en befintlig mall från exem
 
 1. Om du skapar ett nytt experiment eller använder en experiment mall i galleriet måste du konfigurera egenskaperna **Importera data**. Använd den guidade upplevelsen eller ge detaljer direkt för att komma åt Azure Blob Storage som innehåller dina data.  
 
-   ![Azure Machine Learning Studio-experiment](media/azure-machine-learning-studio-experiment.png)
+   ![Azure Machine Learning Studio-experiment.](media/azure-machine-learning-studio-experiment.png)
 
 1. Nu kan du skapa en anpassad processpipeline för att rengöra och förbehandla data, extrahera funktioner och utbilda en lämplig modell.
 
@@ -63,15 +63,15 @@ Nu kan du skapa ett nytt experiment eller importera en befintlig mall från exem
 
 1. När du är nöjd med kvaliteten på en modell markerar du **Konfigurera webbtjänst** > **Prediktiva webbtjänst**. Det här alternativet importerar den utbildade modellen och funktionalisering pipeline från utbildningsexperimentet till en prediktiv tjänst. För den prediktiva tjänsten kan du utföra en ny uppsättning indata med det schema som används i övningsexperimentet för att göra prognoser.
 
-   ![Konfigurera en prediktiv webbtjänst](media/predictive-webservice-control.png)
+   ![Konfigurera en prediktiv webbtjänst.](media/predictive-webservice-control.png)
 
 1. När experimentet för prediktiv webbtjänst fungerar kan du distribuera det för automatisk schemaläggning. Om du vill att webbtjänsten ska fungera med Customer Insights väljer du **distribuera webbtjänst** > **förhandsversion av distribuera webbtjänst [ny]**. [Läs mer om distribuera en webbtjänst](/azure/machine-learning/studio/deploy-a-machine-learning-web-service)
 
-   ![Distribuera en prediktiv webbtjänst](media/predictive-webservice-deploy.png)
+   ![Distribuera en prediktiv webbtjänst.](media/predictive-webservice-deploy.png)
 
 ## <a name="sample-models-from-the-gallery"></a>Exempelmodeller från galleriet
 
-Vi använder ett fiktivt scenario med Contoso hotell för modellerna i den här artikeln. Contoso Hotel samlar in följande data:
+Vi använder ett fiktivt scenario för Contoso Hotel för de modeller som beskrivs i den här artikeln. Contoso Hotel samlar in följande data:
 
 - CRM-data som består av hotell vistelseaktivitet. Datauppsättningen innehåller information om vilka datum som är kvar för varje registrerad kund. Den innehåller också information om bokning, rumstyper, detaljer om utgifter och så vidare. Uppgifterna omfattar fyra år, från 2014 till januari till januari 2018.
 - Kund profiler för hotellgäster. Profilerna innehåller information om varje kund, inklusive namn, födelsedatum, postadress, kön och telefonnummer.
@@ -87,13 +87,13 @@ Definitionen av omsättning kan skilja sig från de olika scenarierna. I det hä
 
 Du kan importera experimentmallen från galleriet. Börja med att importera data för **hotelvistelseaktivitet**, **kunddata** och **tjänstens användningsdata** från Azure Blob Storage.
 
-   ![Importera data för omsättningsmodell](media/import-data-azure-blob-storage.png)
+   ![Importera data för omsättningsmodell.](media/import-data-azure-blob-storage.png)
 
 ### <a name="featurization"></a>Funktionalisering
 
 Baserat på definitionen av omsättningen identifierar vi först de obearbetade funktioner som påverkar etiketten. Sedan bearbetar vi dessa obearbetade funktioner till numeriska funktioner som kan användas med maskininlärningsmodeller. Dataintegrering sker i Customer Insights så att vi kan sammanfoga dessa tabeller genom att använda *kund-ID*.
 
-   ![Anslut importerade data](media/join-imported-data.png)
+   ![Koppla importerade data.](media/join-imported-data.png)
 
 Funktionalisering för att bygga modellen för omsättningsanalys kan vara lite knepigt. Data är en funktion av tid med ny hotellaktivitet registrerad dagligen. Under funktionalisering vill vi skapa statiska funktioner från de dynamiska data. I det här fallet genererar vi flera funktioner från hotellaktiviteten med ett skjutfönster för ett år. Vi expanderar även de kategorifunktionerna som rumstyp eller bokningstyp i separata funktioner med enkel kodning.  
 
@@ -114,7 +114,7 @@ Nu måste du välja den optimala algoritm som ska användas. I det här fallet b
 
 I följande bild visas modellutbildning och utvärderingsförlopp från Azure Machine Learning Studio:
 
-![Omsättningsmodell i Azure Machine Learning Studio](media/azure-machine-learning-model.png)
+![Omsättningsmodell i Azure Machine Learning Studio.](media/azure-machine-learning-model.png)
 
 Vi kan också använda en metod med namnet **permutationsfunktionens prioritet**, en viktig aspekt av modelloptimeringen. De inbyggda modellerna har liten eller ingen insikt i effekten av någon särskild funktion på den slutliga prediktionen. I kalkylatorn för funktionsprioritet används en anpassad algoritm för att beräkna hur enskilda funktioner påverkas av resultatet för en viss modell. Funktionens prioritet är normaliserad mellan +1 och -1. En negativ inverkan betyder att motsvarande funktion har ett kontraintuitivt inflytande på resultatet och bör tas bort från modellen. Ett positivt inflytande tyder på att funktionen bidrar mycket över prediktion. De här värdena är inte korrelationskoefficienter eftersom de är olika mått. Mer information finns i [permutationsfunktionens prioritet](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
@@ -148,7 +148,7 @@ Vi definierar målet med att maximera antalet kronor i tjänstanvändningen geno
 
 Precis som i omsättningsmodellen sammanfogar vi hotellets ServiceCustomerID med CustomerID för att skapa rekommendationer konsekvent per CustomerID.
 
-![Funktionalisering för rekommendationsmodellen](media/azure-machine-learning-model-featurization.png)
+![Urvalsfunktion för rekommendationsmodellen.](media/azure-machine-learning-model-featurization.png)
 
 Data hämtas från tre olika entiteter och funktioner hämtas från dem. Funktionalisering för rekommendationsproblemet skiljer sig jämfört med omsättnings- eller CLTV-scenarier. För rekommendationsmodellen krävs indata i form av tre uppsättningar funktioner.
 
@@ -156,13 +156,13 @@ Data hämtas från tre olika entiteter och funktioner hämtas från dem. Funktio
 
 Vi förutsäger produkter eller tjänster med hjälp av algoritmen som kallas **Träna Matchbox-rekommenderaren** för att träna rekommendationsmodellen.
 
-![Algoritmen för produktrekommendationer](media/azure-machine-learning-model-recommendation-algorithm.png)
+![Algoritm för produktrekommendationer.](media/azure-machine-learning-model-recommendation-algorithm.png)
 
 De tre ingångsportarna för modellen **Träna Matchbox-rekommenderaren** tar in utbildningstjänstens användningsdata, kundbeskrivning (valfritt) och tjänstbeskrivning. Det finns tre olika sätt att bedöma modellen på. En är för modellutvärdering, där en poäng för normaliserad diskonterad vinst (NDCG) beräknas för att rangordna de klassificerade objekten. I det här testet har vi NDCG-poängen som 0,97. De andra två alternativen bedömer modellen för hela den rekommenderade tjänstkatalogen, eller endast de artiklar som användarna inte har använt tidigare.
 
 Om vi tittar närmare på fördelningen av rekommendationer i hela tjänstkatalogen, ser vi att telefon, WiFi och kurir är de tjänster som rekommenderas mest. Detta överensstämmer med vad som upptäcktes från distributionerna av tjänstens förbrukningsdata:
 
-![Resultat för rekommendationsmodell](media/azure-machine-learning-model-output.png)
+![Resultat för rekommendationsmodell.](media/azure-machine-learning-model-output.png)
 
 Hela [produktrekommendationsexperimentet finns i Azure AI Gallery.](https://gallery.azure.ai/Experiment/Recommendation-4)
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 28c89693239393d93b7a816535b8c3fffe353935
+ms.sourcegitcommit: e57d51ae3cc233f7b6185c074c66efd9800c02c1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095624"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6559427"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Förutsägelse av transaktionell omsättning (förhandsversion)
 
@@ -47,7 +47,7 @@ Förutsägelse av transaktionell omsättning hjälper till att förutsäga om en
         - **Händelse:** Namnet på den händelse som du vill använda. Ett fält med namnet "UserAction" i en livsmedelsbutik kan till exempel vara en kuponganvändning av kunden.
         - **Detaljer:** Detaljerad information om händelsen. Ett fält med namnet "CouponValue" i en livsmedelsbutik kan till exempel vara valutavärdet på kupongen.
 - Föreslagna dataegenskaper:
-    - Tillräckliga tidigare data: Transaktionsdata för minst dubbla det valda tidsfönstret. Helst två till tre års prenumerationsdata. 
+    - Tillräckliga tidigare data: Transaktionsdata för minst dubbla det valda tidsfönstret. Helst två till tre års transaktionshistorik. 
     - Flera inköp per kund: helst minst två transaktioner per kund.
     - Antal kunder: Minst 10 kundprofiler, helst mer än 1 000 unika kunder. Modellen fungerar inte med färre än 10 kunder och det finns för få tidigare data.
     - Datafullständighet: Mindre än 20 % av de värden som saknas i entitetens datafält.

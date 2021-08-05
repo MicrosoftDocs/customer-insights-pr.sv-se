@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: de53927f7ed1f58176a7ba83f89be7c39064947c
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306050"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650340"
 ---
 # <a name="match-entities"></a>Matcha entiteter
 
@@ -138,7 +138,7 @@ Det är inte obligatoriskt att ange dedupliceringsregler. Om inga sådana regler
    - **Minst aktuell**: Identifierar vinnarpost baserat på lägsta aktualitet. Kräver ett datum eller ett numeriskt fält för att definiera aktualitet.
  
    > [!div class="mx-imgBorder"]
-   > ![Dedupliceringsregler steg 1](media/match-selfconflation.png "Dedupliceringsregler steg 1")
+   > ![Dedupliceringsregler steg 1.](media/match-selfconflation.png "Dedupliceringsregler steg 1")
  
 1. När entiteterna har valts och deras inställningar för sammanslagning har angetts väljer du **Lägg till regel** för att definiera dedupliceringsreglerna på en entitetsnivå.
    - I **Välj fält** anges alla tillgängliga fält från den entiteten. Välj det fält du vill söka i efter dubbletter. Välj fält som troligen är unika för varje enskild kund. Till exempel en e-postadress eller kombinationen av namn, ort och telefonnummer.
@@ -146,7 +146,7 @@ Det är inte obligatoriskt att ange dedupliceringsregler. Om inga sådana regler
    - Definiera ytterligare villkor genom att välja **Lägg till villkor**.
  
    > [!div class="mx-imgBorder"]
-   > ![Dedupliceringsregler steg 2](media/match-selfconflation-rules.png "Dedupliceringsregler steg 2")
+   > ![Dedupliceringsregler steg 2.](media/match-selfconflation-rules.png "Dedupliceringsregler steg 2")
 
   Du kan skapa flera dedupliceringsregler för en entitet. 
 
@@ -179,7 +179,9 @@ Gå till **Data** > **Förena** > **Matcha** och välj **Kör** för att starta 
 Resultatet av en lyckad körning, en entitet för en enhetlig kundprofil, visas på sidan **Entiteter**. Din enhetliga kundentitet kallas **Kunder** i avsnittet **Profiler**. Vid den första lyckade matchningskörningen skapas den enhetliga *Kund*-entiteten. Alla efterföljande matchningskörningar visar den entiteten.
 
 > [!TIP]
-> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
+> När du har kört matchningsprocessen markerar du processtatusen och öppnar rutan **Uppgiftsinformation**. Den ger en översikt över bearbetningstiden, sista bearbetningsdatum och alla fel och varningar som är associerade med uppgiften. Välj **Visa information** om du vill se vilka entiteter som deltog i matchningsprocessen, vilka regler som tillämpades på dessa, samt om uppdateringarna publicerades korrekt.  
+> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Detaljerad sökväg för att komma åt processinformation från uppgiftsstatuslänken.":::
 
 ## <a name="review-and-validate-your-matches"></a>Granska och verifiera dina matchningar
 

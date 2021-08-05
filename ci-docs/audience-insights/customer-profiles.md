@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: c9adb4d7db74573d0512ae7a68a0e7ab51c994a0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 8ab55d101f98169b8f794ce580ddd0a71ede6642
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304626"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554640"
 ---
 # <a name="customer-profiles"></a>Kundprofiler
 
@@ -23,11 +23,11 @@ Sidan **Kunder** visar en kombinerad vy över dina kunder, baserat på profildat
 Kunder kan vara enskilda personer eller organisationer (förhandsgranskning). Varje kund- eller organisations profil representeras av en panel. Välj en panel om du vill visa ytterligare information om just den kunden eller organisationen. Använd sidbrytningskontrollerna längst ned på sidan om du vill visa fler poster.
 
 > [!div class="mx-imgBorder"] 
-> ![B2C-kundprofil](media/profiles-customers.png "B2C-kundprofil")
+> ![B2C-kundprofiler.](media/profiles-customers.png "B2C-kundprofil")
 
 Organisationer (förhandsversion)
 > [!div class="mx-imgBorder"] 
-> ![B2B-kundprofil](media/profile-customers-b2b.png "B2B-kundprofil")
+> ![B2B-kundprofiler.](media/profile-customers-b2b.png "B2B-kundprofil")
 
 > [!NOTE]
 > Om du inte ser panelerna när du väljer **kunder** i navigeringen måste administratören [definiera minst ett sökbart attribut](search-filter-index.md) i **Sök och filtrera index**.
@@ -47,7 +47,7 @@ Du kan filtrera kunder efter entitetsfältet kundprofil. Precis som du söker m�
 2. Markera rutorna bredvid attribut som du vill filtrera kunder efter.
 
    > [!div class="mx-imgBorder"] 
-   > ![Kundprofiler](media/profiles-customers3.png "Kundprofiler")
+   > ![Kundprofiler.](media/profiles-customers3.png "Kundprofiler")
 
 3. Ta bort dina filter genom att välja **Rensa filter** på sidan **Kunder**.
 

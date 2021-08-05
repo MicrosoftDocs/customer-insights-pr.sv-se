@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6667e411a1b56e13105a6b59b7b5d249bc8141ea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596383"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692327"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitetsscheman i Common Data Model
 
@@ -24,7 +24,7 @@ ms.locfileid: "5596383"
 
 Det här är en delad datamodell som gör att program och dataintegrerare kan samarbeta enklare genom att skapa en enhetlig definition av data. Common Data Model innehåller ett avancerat metadatasystem med standardentiteter, relationer, hierarkier, egenskaper och mycket mer. Det härstammar från Dynamics 365-appar och har öppnats på GitHub med över 260 standardentiteter. Ett stort system för interna och externa partner bidrar branschspecifika koncept till den Common Data Model.
 
-Flera system och plattformar implementerar Common Data Model i dag, inklusive Power BI dataflöden och Azure Data Services. Det stöds redan i Common Data Service, Dynamics 365, Power Apps, Power BI och kommande Azure Data Services, direkt tillfalla värde mot [Open Data Initiative](https://www.microsoft.com/open-data-initiative).
+Flera system och plattformar implementerar samma Common Data Model, inkludera Power BI dataflöden och Azure Data Services. Stöd finns redan i Microsoft Dataverse, Dynamics 365, Power Apps, Power BI och kommande Azure-datatjänster och ansamlar omgående värden till [initiativet Open Data](https://www.microsoft.com/open-data-initiative).
 
 ## <a name="customer-insights-entity-schemas"></a>Entitetsscheman för Customer Insights
 
@@ -44,7 +44,7 @@ Mer information finns i dokumentationen om [Entitetsscheman för Customer Insigh
 
 Du kan visa entiteter i [Common Data Models entitetsnavigeringsverktyg](https://microsoft.github.io/CDM/). Välj **Läs in från GitHub!** och navigera till **foundationCommon** > **crmCommon** > **lösningar** > **customerInsights** där du hittar listan med Customer Insights-entiteter och deras definitioner.
 > [!div class="mx-imgBorder"]
-> ![CDM entitetsnavigeringsverktyget visar entiteten CustomerActivity](media/CDM-entity-navigator.png "CDM entitetsnavigeringsverktyget visar entiteten CustomerActivity")
+> ![Navigeringsverktyget för CDM-entitet som visar entiteten CustomerActivity.](media/CDM-entity-navigator.png "CDM entitetsnavigeringsverktyget visar entiteten CustomerActivity")
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 50c231070ff9930c1ea82971bf4f8541a89d5027
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: b37bb5dfeed2326784ef276a93a04bec626aaf6e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305913"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554716"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Ansluta till en Power Query-datakälla
 
@@ -42,7 +42,7 @@ Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta
 1. Dialogrutan **Power Query - redigera frågor** låter dig granska och förfina data. De entiteter som identifieras i den valda datakälla visas i den vänstra rutan.
 
    > [!div class="mx-imgBorder"]
-   > ![Dialogrutan Redigera frågor](media/data-manager-configure-edit-queries.png "Dialogrutan Redigera frågor")
+   > ![Dialogrutan Redigera frågor.](media/data-manager-configure-edit-queries.png "Dialogrutan Redigera frågor")
 
 1. Du kan även omvandla dina data. Välj en entitet att redigera eller omvandla. Använd alternativen i fönstret Power Query för att tillämpa omvandlingar. Varje omvandling visas under **tillämpade steg**. Power Query innehåller flera fördefinierade omvandlingsalternativ. Mer information finns i [Power Query omvandlingar](/power-query/power-query-what-is-power-query#transformations).
 
@@ -75,7 +75,7 @@ Anslutningar med en bockmarkering i kolumnen **Customer Insights (dataflöden)**
 2. Välj den stående ellipsen bredvid den datakälla du vill ändra och välj sedan **Redigera** i listrutan.
 
    > [!div class="mx-imgBorder"]
-   > ![Redigera alternativ](media/edit-option-data-sources.png "Redigera alternativ")
+   > ![Alternativet Redigera.](media/edit-option-data-sources.png "Redigera alternativ")
 
 3. Tillämpa ändringarna och omvandlingarna i dialogrutan **Power Query - redigera frågor** som beskrivs i avsnittet [Skapa en ny datakälla](#create-a-new-data-source).
 

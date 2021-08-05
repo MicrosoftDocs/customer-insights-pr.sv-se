@@ -2,20 +2,20 @@
   href: index.yml
 - name: Produktöversikt
   href: overview.md
+- name: Skapa en utvärdering
+  href: audience-insights/get-started-trial.md
 - name: Öppna din miljö
   href: 'https://home.ci.ai.dynamics.com/'
-- name: Publikinsikter
+- name: Målgruppsinsikter
   items:
     - name: Hjälphubb
       href: audience-insights/index.yml
     - name: Kapacitetsöversikt
       href: audience-insights/overview.md
-    - name: Kostnadsfri utvärderingsversion
-      href: 'https://dynamics.microsoft.com/get-started/?appname=customerinsights'
     - name: Nya och uppdaterade funktioner
       href: audience-insights/whats-new-audience-insights.md
     - name: Skapa en ny miljö
-      href: audience-insights/home.md
+      href: audience-insights/get-started-paid.md
     - name: Lär dig moduler
       items:
         - name: Mata in data
@@ -34,8 +34,8 @@
           href: audience-insights/connect-power-query.md
         - name: Lägg till en Common Data Model-mapp som en datakälla
           href: audience-insights/connect-common-data-model.md
-        - name: Lägg till Common Data Service hanterad Data Lake
-          href: audience-insights/connect-common-data-service-lake.md
+        - name: Lägg till Dataverse hanterad Data Lake
+          href: audience-insights/connect-dataverse-managed-lake.md
         - name: Inkrementell uppdatering av datakällor
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Datainmatning i realtid
@@ -76,11 +76,11 @@
           href: audience-insights/enrichment-experian.md
         - name: Berika med anpassad SFTP-import
           href: audience-insights/enrichment-SFTP-custom-import.md
-    - name: Segment och mått
+    - name: Segment
       items:
         - name: Segment – översikt
           href: audience-insights/segments.md
-        - name: Skapa segment och kundgrupper
+        - name: Skapa segment
           href: audience-insights/segment-builder.md
         - name: Föreslagna segment baserade på mått
           href: audience-insights/suggested-segments.md
@@ -250,10 +250,12 @@
           href: engagement-insights/developer-resources.md
         - name: Begrepp och terminologi
           href: engagement-insights/glossary.md
-    - name: Händelse
+    - name: Event
       items:
         - name: Skapa och ändra händelser
           href: engagement-insights/refined-events.md
+        - name: Identifiera webbhändelser från tidigare autentiserade besökare
+          href: engagement-insights/unknown-to-known.md
         - name: Exportera händelser
           href: engagement-insights/export-events.md
     - name: Rapporter
@@ -304,7 +306,9 @@
       items:
         - name: Ta bort och exportera personuppgifter
           href: engagement-insights/delete-export-personal-data.md
+    - name: Regional tillgänglighet
+      href: engagement-insights/regional-availability.md
     - name: Tjänstbegränsningar
       href: engagement-insights/quotas.md
-- name: Kontakta support
+- name: Kontakta supporten
   href: 'https://admin.powerplatform.microsoft.com/support'

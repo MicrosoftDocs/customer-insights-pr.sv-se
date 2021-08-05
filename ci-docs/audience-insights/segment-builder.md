@@ -1,7 +1,7 @@
 ---
 title: Skapa och hantera segment.
 description: Skapa segment med kunder för att gruppera dem utifrån olika attribut.
-ms.date: 05/03/2021
+ms.date: 07/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,14 +9,24 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 550e509a24701fe5fcdeb9d54311872dc954156c
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
+ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064959"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "6685484"
 ---
 # <a name="create-and-manage-segments"></a>Skapa och hantera segment.
+
+> [!IMPORTANT]
+> I september 2021 kommer ett flertal ändringar rörande segmentframställandet att introduceras: 
+> - Segmentverktyget ser något annorlunda ut med omformaterade element och ett förbättrat användarflöde.
+> - Nya datetime-operatorer och en förbättrad datumväljare har aktiverats i segmentverktyget.
+> - Du kan lägga till eller ta bort villkor och regler från segment. 
+> - Kapslade regler som börjar med ett OR-villkor blir tillgängliga. Du behöver inte längre ett AND-villkor i det yttersta lagret.
+> - Ett sidofönster för att välja attribut kommer att vara tillgängligt löpande.
+> - Ett alternativ för att välja sökvägar för entitetsrelationer.
+> Om du vill prova det nya segmentverktyget kan du skicka ett e-postmeddelande med ämnet &quot;Begäran att aktivera det nya segmentverktyget&quot; till cihelp [at] microsoft.com. Ta med namnet på organisationen och sandbox-miljöns ID.
 
 Definiera komplexa filter runt den enhetliga kundentiteten och det är relaterade entiteter. Varje segment skapar en uppsättning kundposter efter bearbetning som du kan exportera och utföra åtgärder på. Segment hanteras på sidan **Segment**. 
 
@@ -50,13 +60,13 @@ När du skapar ett segment kan du spara ett utkast. Den sparas som ett inaktivt 
 1. Välj en operator och ett värde för det valda attributet.
 
    > [!div class="mx-imgBorder"]
-   > ![Anpassat gruppfilter](media/customer-group-numbers.png "Kundgruppfilter")
+   > ![Anpassat gruppfilter.](media/customer-group-numbers.png "Kundgruppfilter")
 
    |Antal |Definition  |
    |---------|---------|
    |1     |Entity          |
    |2     |Attribut          |
-   |3    |Operator         |
+   |3    |Operatör         |
    |4    |Värde         |
 
    1. Om du vill lägga till villkor i en grupp kan du använda två logiska operatorer:
@@ -66,7 +76,7 @@ När du skapar ett segment kan du spara ett utkast. Den sparas som ett inaktivt 
       - **ELLER** operatör: ett av villkoren behöver uppfyllas som en del av segmenteringsprocessen. Det här alternativet är mest användbart när du definierar flera villkor för samma entiteter.
 
       > [!div class="mx-imgBorder"]
-      > ![ELLER operatör där något av villkoren behöver uppfyllas](media/segmentation-either-condition.png "ELLER operatör där något av villkoren behöver uppfyllas")
+      > ![ELLER operatör där endera villkor måste uppfyllas.](media/segmentation-either-condition.png "ELLER operatör där något av villkoren behöver uppfyllas")
 
       Det går för närvarande att kapsla en **ELLER**-operatör under **OCH**-operatör, men inte tvärtom.
 
@@ -74,12 +84,12 @@ När du skapar ett segment kan du spara ett utkast. Den sparas som ett inaktivt 
    Markera **Lägg till grupp**.
 
       > [!div class="mx-imgBorder"]
-      > ![Lägg till grupp för kundgrupp](media/customer-group-add-group.png "Lägg till grupp för kundgrupp")
+      > ![Lägg till grupp för kundgrupp.](media/customer-group-add-group.png "Lägg till grupp för kundgrupp")
 
    1. Välj en av uppsättningsoperatorerna: **Union**, **Skärning** eller **Förutom**.
 
    > [!div class="mx-imgBorder"]
-   > ![Lägg till sammanförande för kundgrupp](media/customer-group-union.png "Lägg till sammanförande för kundgrupp")
+   > ![Lägg till sammanförande för kundgrupp.](media/customer-group-union.png "Lägg till sammanförande för kundgrupp")
 
    - **Sammanförande** sammanför de två grupperna.
 
@@ -90,7 +100,7 @@ När du skapar ett segment kan du spara ett utkast. Den sparas som ett inaktivt 
 1. Om entiteten är kopplad till den enhetliga kundentiteten via [Relationer](relationships.md) måste du definiera relationssökvägen för att skapa ett giltigt segment. Lägg till entiteterna från relationssökvägen tills du kan välja entiteten **kund: CustomerInsights** i listrutan. Välj sedan **Alla poster** för varje steg.
 
    > [!div class="mx-imgBorder"]
-   > ![Relationssökväg under skapande av segment](media/segments-multiple-relationships.png "Relationssökväg under skapande av segment")
+   > ![Relationssökväg under skapande av segment.](media/segments-multiple-relationships.png "Relationssökväg under skapande av segment")
 
 1. Som standard genererar segment en utdataentitet som innehåller alla attribut i kundprofiler som matchar de definierade filtren. Om ett segment bygger på andra entiteter än entiteten *Kund* kan du lägga till fler attribut från dessa entiteter i utdataentiteten. Välj **Projektattribut** om du vill välja vilka attribut som ska läggas till i utdataentiteten.  
   
@@ -127,7 +137,7 @@ Med snabbsegment kan du bygga enkla segment med en enda operator snabbt för sna
 4. Systemet tillhandahåller en **uppskattad segmentstorlek**. Du kan välja om du vill skapa ett segment som du har definierat eller om du först vill ha en annan segmentstorlek.
 
     > [!div class="mx-imgBorder"]
-    > ![Namn och uppskattning för ett snabbsegment](media/quick-segment-name.png "Namn och uppskattning för ett snabbsegment")
+    > ![Namn och uppskattning för ett snabbsegment.](media/quick-segment-name.png "Namn och uppskattning för ett snabbsegment")
 
 5. Ange ett **namn** för ditt segment. Eventuellt ge en **visningsnamn**.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
-ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
+ms.openlocfilehash: ac8b0671b20123091bef64e672fc53398fe8955a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049416"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6553997"
 ---
 # <a name="entities-in-audience-insights"></a>Entiteter i målgruppsinsikter
 
@@ -30,19 +30,19 @@ Sidan **entiteter** visar entiteter och flera kolumner:
 - **Senast uppdaterad**: datum och tid för den senaste uppdateringen av entiteten
 - **Senast uppdaterad**: datum och tid för när data uppdaterades senast
 
-## <a name="exploring-a-specific-entitys-data"></a>Utforska data för en specifik entitet
+## <a name="explore-a-specific-entitys-data"></a>Utforska data för en specifik entitet
 
 Välj en entitet för att utforska de olika fält och poster som ingår i entiteten.
 
 > [!div class="mx-imgBorder"]
-> ![Välj en entitet](media/data-manager-entities-data.png "Välj en entitet")
+> ![Välj entitet.](media/data-manager-entities-data.png "Välj en entitet")
 
 - Fliken **Data** visar en tabell med information om enskilda poster i entiteten.
 
 > [!div class="mx-imgBorder"]
-> ![Fälttabell](media/data-manager-entities-fields.PNG "Fälttabell")
+> ![Fälttabell.](media/data-manager-entities-fields.PNG "Fälttabell")
 
-- Fliken **Attribut** är markerad som standard och visar en tabell för att granska information om den valda entiteten, till exempel fältnamn, datatyper och typer. Kolumnen **Typ** visar Common Data Model associerade typer som antingen identifieras automatiskt av systemet eller som [mappas manuellt](map-entities.md) av användarna. Dessa är semantiska typer som kan skilja sig från attributens datatyper, t.ex. fältet *E-post* nedan har datatypen *Text* men dess (semantiska) Common Data Model-typ kan vara *E-post* eller *EmailAddress*.
+- Fliken **Attribut** är markerad som standard och visar en tabell för att granska information om den valda entiteten, till exempel fältnamn, datatyper och typer. Kolumnen **Typ** visar Common Data Model associerade typer som antingen identifieras automatiskt av systemet eller som [mappas manuellt](map-entities.md) av användarna. Dessa typer är semantiska och kan skilja sig åt från attributens datatyper. Fältet *E-post* nedan har exempelvis datatypen *Text*, men dess (semantiska) Common Data Model-typ kan vara *E-post* eller *E-postadress*.
 
 > [!NOTE]
 > I båda tabellerna visas endast ett exempel på entitetens data. Om du vill visa hela datauppsättningen går du till sidan **Datakällor**, väljer en entitet och sedan **redigera** och visar sedan entitetens data med Power Query redigeraren som förklaras i [Datakällor](data-sources.md).
@@ -52,11 +52,28 @@ Om du vill lära dig mer om data som tas med i entiteten kan du få en del vikti
 Välj diagramikonen om du vill visa en sammanfattning av data.
 
 > [!div class="mx-imgBorder"]
-> ![Sammanfattningssymbol](media/data-manager-entities-summary.png "Datasammanfattningstabell")
+> ![Sammanfattningssymbol.](media/data-manager-entities-summary.png "Datasammanfattningstabell")
 
-### <a name="next-step"></a>Nästa steg
+## <a name="entity-specific-information"></a>Entitetsspecifik information
 
-Se ämnet [Förena](data-unification.md) för att lära dig *mappa*, *matcha* och *koppling* hämtade data.
+I följande avsnitt finns information om vissa systemskapade entiteter.
+
+### <a name="corrupted-data-sources"></a>Skadade datakällor
+
+Fält från en inmatad datakälla kan innehålla skadade data. Poster med skadade fält visas i entiteter som skapats av systemet. Om du känner till skadade poster kan du identifiera vilka data som ska granskas och uppdateras i källsystemet. Efter nästa uppdatering av datakällan skickas de korrigerade posterna till Customer Insights och sedan vidare till processer nedströms. 
+
+Exempelvis har datatypen &quot;datum&quot; angetts för kolumnen &quot;födelsedag&quot;. En kundpost har födelsedagen angiven som &quot;1977-01-01&quot;. Systemet flaggar då denna post som skadad. Någon kan nu ändra födelsedagen i källsystemet till &quot;1977&quot;. Efter en automatisk uppdatering av datakällor har fältet nu ett giltigt format och posten tas bort från den skadade entiteten. 
+
+Gå till **Data** > **Entiteter** och leta efter skadade entiteter i avsnittet **System**. Namnschema för skadade entiteter: &quot;DataSourceName_EntityName_corrupt&quot;.
+
+Customer Insights behandlar fortfarande skadade poster. Däremot kan de orsaka problem när du arbetar med enhetliga data.
+
+Följande kontroller körs på inmatade data för att visa skadade poster: 
+
+- Värdet för ett fält stämmer inte överens med datatypen för kolumnen.
+- Fält innehåller tecken som gör att kolumnerna inte matchar det förväntade schemat. Till exempel: felaktigt formaterade offerter, icke-förfallna offerter eller nyradstecken.
+- Om det finns kolumner med datetime/date/datetimeoffset måste formatet anges i modellen om ISO-standardformatet inte används.
+
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

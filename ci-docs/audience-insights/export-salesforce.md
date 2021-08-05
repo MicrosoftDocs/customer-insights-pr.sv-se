@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Salesforce Marketing Cloud
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Salesforce Marketing Cloud.
-ms.date: 06/24/2021
+ms.date: 07/23/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 123f8b2dbb6140785dec6c1b4164d2f513f66a53
-ms.sourcegitcommit: 057079532e31c12bac36f374857ba3dc847d6ad0
+ms.openlocfilehash: 8ce243918c2388e931a98df3bbe576ddf692f707
+ms.sourcegitcommit: 4823684a1399fd66ffecfce21735f2bc90a1733c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2021
-ms.locfileid: "6314681"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "6660289"
 ---
 # <a name="export-segments-and-other-data-to-salesforce-marketing-cloud-preview"></a>Exportera segment och andra data till Salesforce Marketing Cloud (förhandsgranskning)
 
@@ -23,11 +23,6 @@ Använd dina kunddata i Salesforce Marketing Cloud genom att exportera dem via e
 ## <a name="prerequisites-for-connection"></a>Krav för anslutning
 
 - Tillgängligheten för en SFTP-värd och motsvarande administratörsuppgifter. [Så här konfigurerar su SFTP-platser för Salesforce Marketing Cloud](https://help.salesforce.com/articleView?id=sf.mc_es_configure_enhanced_ftp.htm&type=5) 
-
-## <a name="known-limitations"></a>Kända begränsningar
-
-- Hur länge en export körs beror på systemprestanda. Vi rekommenderar två processorkärnor och 1 Gb minne som minimal konfiguration av servern. 
-- Det kan ta 90 minuter att exportera entiteter med upp till 100 miljoner kundprofiler om den rekommenderade minimikonfigurationen används. 
 
 ## <a name="set-up-the-connection-to-salesforce-marketing-cloud"></a>Konfigurera anslutningen till Salesforce Marketing Cloud
 

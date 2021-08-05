@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 36b7f7b2fac9497245cf6759506c53753972f173
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 7fc05aca61d1136f620019ee82dc6937ea39d8e5
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596015"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555145"
 ---
 # <a name="map-entities-and-attributes"></a>Mappa entiteter och attribut
 
@@ -35,14 +35,14 @@ Mer information om det allmänna flödet av dataförening finns i [förena](data
 3. Välj de entiteter och attribut du vill använda i faserna *matchning* och *koppla*. Du kan välja de attribut som krävs separat från en entitet eller ta med alla attribut från en entitet genom att markera kryssrutan **Inkludera alla fält** på entitetsnivån. Vi rekommenderar att du väljer minst två entiteter att dra nytta av föreningsprocessen för data.
 
    > [!div class="mx-imgBorder"]
-   > ![Lägg till entitetsexempel](media/data-manager-configure-map-add-entities-example.png "Lägg till entitetsexempel")
+   > ![Lägg till entitetsexempel.](media/data-manager-configure-map-add-entities-example.png "Lägg till entitetsexempel")
 
    I det här exemplet lägger vi till entiteterna **eCommerceContacts** och **loyCustomers**. Genom att välja de här entiteterna kan du få insikter om vilka av de online-kunder som är medlemmar i ett förmånsprogram.
    
    Du kan söka på nyckelord för alla attribut och entiteter för att välja vilka attribut som ska mappas.
    
      > [!div class="mx-imgBorder"]
-   > ![Exempel på sökfält](media/data-manager-configure-map-search-fields-example.png "Exempel på sökfält")
+   > ![Exempel på sökfält.](media/data-manager-configure-map-search-fields-example.png "Exempel på sökfält")
 
 4. Välj **Bekräfta** för att bekräfta dina val.
 
@@ -55,7 +55,7 @@ När du har valt entiteter **Karta** visas de valda entiteterna i översiktssida
 - **Attribut semantisk typ**: kategorier för attribut, t.ex. e-postadress eller namn. Om du vill använda AI-modeller för smart prediktion av semantik, spara tid och förbättra precisionen, anger du **Intelligent mappning** till **PÅ**. Intelligent mappningen visar rekommendation av AI-baserad semantik i fältet **Typ**. Om du väljer **AV** ser du våra rekommendationer för regelbunden mappning. Du kan välja valfri semantisk typ i listan med tillgängliga alternativ och ersätta det föreslagna urvalet.
 
 > [!div class="mx-imgBorder"]
-> ![Attributtyp och semantisk prediktion](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtyp och semantisk prediktion")
+> ![Attributtyp och semantisk förutsägelse.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtyp och semantisk prediktion")
 
 Det går också att lägga till en anpassad entitetstyp. Välj typfältet för ett attribut och ange namnet på den anpassade semantiska typen. PÅ så sätt kan du också ändra vilka attributtyper som identifieras av systemet.
 
@@ -64,7 +64,7 @@ Alla attribut för vilka en semantisk typ identifieras identifieras automatiskt 
 Attribut som inte mappas automatiskt till en semantisk typ grupperas i **definiera data i avsnittet omappade fält**. Välj fältet semantisk typ för de omappade attributen eller ange ett eget namn för attributtypen.
 
 > [!div class="mx-imgBorder"]
-> ![Primärnyckel och attributtyp](media/data-manager-configure-map-add-attributes.png "Primärnyckel och attributtyp")
+> ![Primärnyckel och attributtyp.](media/data-manager-configure-map-add-attributes.png "Primärnyckel och attributtyp")
 
 > [!NOTE]
 > Ett fält ska mappas till den semantiska typen Person.FullName som fyller i kundnamnet på kundkortet. Annars visas inget namn på kundkorten. 
@@ -76,7 +76,7 @@ Attribut som inte mappas automatiskt till en semantisk typ grupperas i **definie
 2. I rutan **Redigera fält** lägger du till eller tar bort attribut och entiteter. Använd sökningen eller bläddra för att hitta och välja dina attribut och enheter av intresse. Du kan inte ta bort ett attribut eller en entitet om de redan har matchats.
 
    > [!div class="mx-imgBorder"]
-   > ![Lägg till eller ta bort attribut](media/configure-data-map-edit.png "Lägg till eller ta bort attribut")
+   > ![Lägg till eller ta bort attribut.](media/configure-data-map-edit.png "Lägg till eller ta bort attribut")
 
 3. Välj **tillämpa**.
 

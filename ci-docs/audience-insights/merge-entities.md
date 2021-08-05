@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 86ab3cefa70e5fab4bdb27cde363adee26efee4c
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 24b523786158ff36c314601846ee25ea64cfabbe
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305677"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650248"
 ---
 # <a name="merge-entities"></a>Slå samman entiteter
 
@@ -109,7 +109,7 @@ Vissa entiteter innehåller mer information än andra. Om en entitet innehåller
 Oavsett om du kopplar attribut manuellt eller låter systemet koppla ihop dem kan du alltid köra kopplingen. Välj **Kör** på sidan **Koppla** för att starta processen.
 
 > [!div class="mx-imgBorder"]
-> ![Datakoppling Spara och kör](media/configure-data-merge-save-run.png "Datakoppling Spara och kör")
+> ![Datakoppling Spara och kör.](media/configure-data-merge-save-run.png "Datakoppling Spara och kör")
 
 Välj **Kör endast sammanslagning** om du bara vill visa utdata som reflekteras i entiteten för en enhetlig kund. Processer nedströms uppdateras enligt vad som [definieras i uppdateringsschemat](system.md#schedule-tab).
 
@@ -118,7 +118,9 @@ Välj **Kör sammanslagnings- och nedströmsprocesser** om du vill uppdatera sys
 Om du vill göra fler ändringar och köra steget igen kan du avbryta en pågående koppling. Välj **Uppdatera...** och välj **Avbryt jobb** i sidorutan som visas.
 
 > [!TIP]
-> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
+> När du har kört kopplingsprocessen markerar du processtatusen och öppnar rutan **Uppgiftsinformation**. Den ger en översikt över bearbetningstiden, sista bearbetningsdatum och alla fel och varningar som är associerade med uppgiften. vÄLJ **vISA INFORMATION** om du vill se vilka entiteter som deltog i matchningsprocessen, om konfliktlösningen lyckades och om uppdateringarna publicerades korrekt.  
+> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Detaljerad sökväg för att komma åt processinformation från uppgiftsstatuslänken.":::
 
 ## <a name="next-step"></a>Nästa steg
 

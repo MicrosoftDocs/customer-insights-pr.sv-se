@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 0803be651662480ddf1fd22952f6a69ee1603001
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306096"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555007"
 ---
 # <a name="segment-insights-preview"></a>Segmentinsikter (förhandsversion)
 
@@ -44,7 +44,7 @@ Du kan också analysera hur överlappningen ändras för vissa attribut.
 När du har genomfört analysen hittar du detaljerad information om den här insikten på **Segment** > **Insikter (förhandsversion)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Överlappande segmentinformation om insikter":::
+> :::image type="content" source="media/segment-overlap.png" alt-text="Överlappande segmentinformation om insikter.":::
 
 Välj en insikt för att se resultatet av analysen:
 
@@ -77,7 +77,7 @@ Segmentdifferentieringar hjälper dig att ta reda på vad som skiljer ett segmen
 När du har genomfört analysen hittar du detaljerad information om den här insikten på **Segment** > **Insikter (förhandsversion)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentdifferentieringar om insikter":::
+> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentdifferentiering för insiktsinformation.":::
 
 Välj en insikt för att se resultatet av analysen. En differentieringsanalys innehåller två flikar. På fliken **attribut** anges de profilmappar som betraktas som differentieringar. På fliken **mått** en lista över differentieringarna. Varje flik innehåller följande detaljer:
 

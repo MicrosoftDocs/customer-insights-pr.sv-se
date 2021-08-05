@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 385406b706890d741fec2694c190c0fada7809d7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49bab0605197912cd4b81ff193b914599a092792
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596567"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554916"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Anslut till en Common Data Model-mapp som använder Azure Data Lake-konto
 
@@ -45,7 +45,7 @@ Den här artikeln innehåller information om hur du matar in data från en Commo
 
 1. Du kan välja mellan att använda ett resursbaserat alternativ och ett prenumerationsbaserat alternativ för autentisering. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Ange informationen **Behållare** och välj **Nästa**.
    > [!div class="mx-imgBorder"]
-   > ![Dialogruta för att ange nya anslutningsdetaljer för Azure Data Lake](media/enter-new-storage-details.png)
+   > ![Dialogruta för att ange nya anslutningsdetaljer för Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
    > Du behöver en av följande roller antingen till den behållare eller det lagringskonto som nämns ovan för att kunna ansluta till och skapa en datakälla:
    >  - Storage Blob-dataläsare
@@ -58,11 +58,11 @@ Den här artikeln innehåller information om hur du matar in data från en Commo
 
 1. Du får en lista över tillgängliga entiteter i den valda model.json- eller manifest.json-filen. Du kan granska och välja i listan bland tillgängliga entiteter och välja **Spara**. Alla de valda entiteterna matas in från den nya datakällan.
    > [!div class="mx-imgBorder"]
-   > ![Dialogruta med en lista över entiteter från en modell.json-fil](media/review-entities.png)
+   > ![Dialogruta med en lista över entiteter från en modell.json-fil.](media/review-entities.png)
 
 8. Ange vilka dataentiteter du vill aktivera dataprofilering för och välj **Spara**. Med dataprofilering kan du använda analyser och andra funktioner. Du kan välja hela entiteten, som väljer alla attribut från entiteten, eller välja vissa valfria attribut. Som standard är ingen entitet aktiverad för dataprofilering.
    > [!div class="mx-imgBorder"]
-   > ![Dialogruta som visar en dataprofilering](media/dataprofiling-entities.png)
+   > ![Dialogruta som visar en dataprofilering.](media/dataprofiling-entities.png)
 
 9. När du har sparat dina val öppnas sidan **datakällor**. Nu bör du se anslutningen för Common Data Model-mappen som en datakälla.
 
@@ -81,12 +81,12 @@ Du kan uppdatera åtkomstnyckeln för det lagringskonto som innehåller Common D
 
 4. Om du vill kan du uppdatera **åtkomst nyckeln** och välja **nästa**.
 
-   ![Dialogruta för att redigera och uppdatera en snabb tangent för en befintlig datakälla](media/edit-access-key.png)
+   ![Dialogruta för att redigera och uppdatera en snabbtangent för en befintlig datakälla.](media/edit-access-key.png)
 
 5. Eventuellt kan du uppdatera från en kontonyckelanslutning till en resursbaserad eller en prenumerationsbaserad anslutning. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Du kan inte ändra informationen **Behållare** när anslutningen uppdateras.
    > [!div class="mx-imgBorder"]
 
-   > ![Dialogruta för att ange anslutningsinformation för Azure Data Lake till ett befintligt lagringskonto](media/enter-existing-storage-details.png)
+   > ![Dialogruta för att ange anslutningsinformation för Azure Data Lake till ett befintligt lagringskonto.](media/enter-existing-storage-details.png)
 
    > [!NOTE]
    > Du behöver en av följande roller antingen till den behållare eller det lagringskonto som nämns ovan för att kunna ansluta till och skapa en datakälla:

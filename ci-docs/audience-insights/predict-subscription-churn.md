@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 9eb0593f93d713124e4113dcb62c588819f5b97b
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095670"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556329"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Förutsäga abonnemangsomsättning (förhandsversion)
 
@@ -63,7 +63,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
 1. I målgruppsinsikter går du till **Intelligens** > **Förutsägelser**.
 1. Välj ikonen **Modell för prenumerationsomsättning (förhandsversion)** och välj sedan **Använd denna modell**.
    > [!div class="mx-imgBorder"]
-   > ![Ikon för prenumerationsomsättningsmodell med knappen Använd denna modell](media/subscription-churn-usethismodel.PNG "Ikon för prenumerationsomsättningsmodell med knappen Använd denna modell")
+   > ![Ikon för prenumerationsomsättningsmodell med knappen Använd denna modell.](media/subscription-churn-usethismodel.PNG "Ikon för prenumerationsomsättningsmodell med knappen Använd denna modell")
 
 ### <a name="name-model"></a>Namnge modell
 
@@ -86,11 +86,11 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
     1. Välj den **Kundentitet** som matchar den primära kundentiteten.
     1. Ange ett namn som beskriver relationen.
        > [!div class="mx-imgBorder"]
-       > ![Sidan för prenumerationshistorik som anger skapandet av en relation till en kund](media/subscription-churn-subscriptionhistoryrelationship.PNG "Sidan för prenumerationshistorik som anger skapandet av en relation till en kund")
+       > ![Sidan för prenumerationshistorik som anger skapandet av en relation till en kund.](media/subscription-churn-subscriptionhistoryrelationship.PNG "Sidan för prenumerationshistorik som anger skapandet av en relation till en kund")
 1. Välj **Nästa**.
 1. Mappa semantikfälten till attribut i entiteten för prenumerationshistorik och välj **Spara**. För beskrivningar av fälten, läs igenom [kraven](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Sidan för prenumerationshistorik som visar semantiska attribut som mappats till fält i den valda entiteten för prenumerationshistorik](media/subscription-churn-subscriptionhistorymapping.PNG "Sidan för prenumerationshistorik som visar semantiska attribut som mappats till fält i den valda entiteten för prenumerationshistorik")
+   > ![Sidan för prenumerationshistorik som visar semantiska attribut som mappats till fält i den valda entiteten för prenumerationshistorik.](media/subscription-churn-subscriptionhistorymapping.PNG "Sidan för prenumerationshistorik som visar semantiska attribut som mappats till fält i den valda entiteten för prenumerationshistorik")
 1. Välj **Lägg till data** för **Kundaktiviteter** och välj den entitet som tillhandahåller information om kundaktivitet enligt beskrivet bland kraven.
 1. Välj en aktivitetstyp som överensstämmer med den typ av kundaktivitet som du konfigurerar.  Välj **Skapa nytt** och ange ett namn om du inte ser något alternativ som överensstämmer med den aktivitetstyp du behöver.
 1. Du måste konfigurera relationen mellan entiteten för kundaktivitet och entiteten Kund.
@@ -101,7 +101,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
 1. Mappa semantikfälten till attribut i entiteten för kundaktivitet och välj **Spara**. För beskrivningar av fälten, läs igenom [kraven](#prerequisites).
 1. (Valfritt) Om du har andra kundaktiviteter som du vill ta med upprepar du stegen ovan.
    > [!div class="mx-imgBorder"]
-   > ![Definiera entitetsrelation](media/subscription-churn-customeractivitiesmapping.PNG "Sidan för kundaktiviteter som visar semantiska attribut som mappats till fält i den valda entiteten för kundaktivitet")
+   > ![Definiera entitetsrelation.](media/subscription-churn-customeractivitiesmapping.PNG "Sidan för kundaktiviteter som visar semantiska attribut som mappats till fält i den valda entiteten för kundaktivitet")
 1. Välj **Nästa**.
 
 ### <a name="set-schedule-and-review-configuration"></a>Ange schema och granska konfigurationen
@@ -115,7 +115,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
 
 1. Gå till fliken **Mina förutsägelser** under **Intelligens** > **Förutsägelser**.
    > [!div class="mx-imgBorder"]
-   > ![Vy över sidan Mina förutsägelser](media/subscription-churn-mypredictions.PNG "Vy över sidan Mina förutsägelser")
+   > ![Vy över sidan Mina förutsägelser.](media/subscription-churn-mypredictions.PNG "Vy över sidan Mina förutsägelser")
 1. Välj den prediktion du vill granska.
    - **Namn på förutsägelse:** Det namn på förutsägelsen som angavs när den skapades.
    - **Förutsägelsetyp:** Den typ av modell som används för förutsägelsen
@@ -131,7 +131,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
    - **Senaste uppdatering:** Det datum då förutsägelsen uppdaterade resultat i utdataenheten.
 1. Markera de lodräta punkterna bredvid den förutsägelse som du vill granska resultat för och välj **Visa**.
    > [!div class="mx-imgBorder"]
-   > ![Vy över alternativ på menyn med lodräta punkter för en förutsägelse, bland annat redigera, uppdatera, visa, loggar och ta bort](media/subscription-churn-verticalellipses.PNG "Vy över alternativ på menyn med lodräta punkter för en förutsägelse, bland annat redigera, uppdatera, visa, loggar och ta bort")
+   > ![Vy över alternativ på menyn med lodräta punkter för en förutsägelse, bland annat redigera, uppdatera, visa, loggar och ta bort.](media/subscription-churn-verticalellipses.PNG "Vy över alternativ på menyn med lodräta punkter för en förutsägelse, bland annat redigera, uppdatera, visa, loggar och ta bort")
 1. Det finns tre primära dataområden på resultatsidan:
     1. **Prestanda för övningsmodell** A, B eller C är möjliga poäng. Detta resultat anger förutsägelsens prestanda och kan hjälpa dig att fatta beslutet att använda resultaten som lagras i utdataenheten.
         - Poängen bestäms utifrån följande regler:
@@ -139,13 +139,13 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
             - **B** om modellen noggrant förutsäger minst 50 % av det totala antalet prediktioner och när procentsatsen av exakta prediktioner för kunder som har blivit utdelad är upp till 10 % större än den historiska genomsnittliga omsättningen av den historiska genomsnittliga omsättningen.
             - **C** när modellen noggrant förutsäger mindre 50 % av det totala antalet prediktioner, eller när procenten av exakta prediktioner för kunder som har blivit mindre än den historiska genomsnittliga omsättningen.
                > [!div class="mx-imgBorder"]
-               > ![Vy över modellprestandaresultat](media/subscription-churn-modelperformance.PNG "Vy över modellprestandaresultat")
+               > ![Vy över modellprestandaresultat.](media/subscription-churn-modelperformance.PNG "Vy över modellprestandaresultat")
     1. **Sannolikhet för omsättning (antal kunder):** Kundgrupper utifrån deras förutsedda omsättningsrisk. Den här informationen kan hjälpa dig senare om du vill skapa ett kundsegment med hög omsättningsrisk. Sådana segment hjälper dig att förstå var avgränsarna bör finnas för segmentmedlemskap.
        > [!div class="mx-imgBorder"]
-       > ![Graf som visar distributionen av omsättningsresultat uppdelad i intervall från 0-100 %](media/subscription-churn-resultdistribution.PNG "Graf som visar distributionen av omsättningsresultat uppdelad i intervall från 0-100 %")
+       > ![Graf som visar distributionen av omsättningsresultat uppdelad i intervall från 0-100 %.](media/subscription-churn-resultdistribution.PNG "Graf som visar distributionen av omsättningsresultat uppdelad i intervall från 0-100 %")
     1. **Faktorer med störst påverkan:** Det finns många faktorer som bör beaktas när du skapar en förutsägelse. Betydelsen för var och en av faktorerna beräknas för de ansamlade förutsägelser som skapas av en modell. Du kan använda dessa faktorer för att validera resultatet av en förutsägelse. Du kan också använda den här informationen senare om du vill [skapa segment](segments.md) som kan påverka omsättningsrisken för en kund.
        > [!div class="mx-imgBorder"]
-       > ![Lista som visar tongivande faktorer och deras betydelse för att förutsäga omsättningsresultatet](media/subscription-churn-influentialfactors.PNG "Lista som visar tongivande faktorer och deras betydelse för att förutsäga omsättningsresultatet")
+       > ![Lista som visar tongivande faktorer och deras betydelse för att förutsäga omsättningsresultatet.](media/subscription-churn-influentialfactors.PNG "Lista som visar tongivande faktorer och deras betydelse för att förutsäga omsättningsresultatet")
 
 ## <a name="manage-predictions"></a>Hantera förutsägelser
 

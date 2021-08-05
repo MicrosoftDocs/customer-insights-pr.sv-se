@@ -9,19 +9,19 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: b6cc0ad1a47a6c00e3bf220271f42870fc53621b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: a6131d4dddce48b0fba153bcefe5631e0d22d808
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597165"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554043"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundprofiler: Sök- och filterindex
 
 Resultatet av att förena kunddata är en kundprofils entitet som tillhandahåller en enhetlig vy till den totala kundbasen. Om du snabbt vill [hitta information om en viss kund eller grupp](customer-profiles.md) kan du konfigurera funktionerna **Sök** och **Filter** på sidan **Kunder**. Läs vidare om du vill veta hur administratörer kan redigera attributen på sidan **Sök och filtrera index** som är tillgängliga för användare för sökning och filtrering.
 
 > [!div class="mx-imgBorder"]
-> ![Sökfilter](media/search-filter.png "Sökfilter")
+> ![Sökfilter.](media/search-filter.png "Sökfilter")
 
 ## <a name="add-fields-and-specify-attributes"></a>Lägg till fält och ange attribut
 

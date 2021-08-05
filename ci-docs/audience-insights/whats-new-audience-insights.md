@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 06/15/2021
+ms.date: 07/19/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 355dc22ac381145b231848830cefc47eda7968f4
-ms.sourcegitcommit: 6944c1592877eb92ec789df5f2e0dbecef638837
+ms.openlocfilehash: 1c54d74c999eb4776074951a129019843017964e
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6263273"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692411"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -26,6 +26,28 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="june-2021-updates"></a>Uppdatering i juni 2021
+
+Uppdateringarna i juni 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="data-ingestion"></a>Datainsamling
+
+- **Förbättrade förloppsuppdateringar för datasamordning** Du kan nu visa mer detaljerade och förbättrade dynamiska statusuppdateringar i stegen för [datasamordningsprocess](data-unification.md). Med den här funktionen kan du hålla reda på det detaljerade förloppet i syfte att förstå processflödet och vidta åtgärder om några steg behöver uppmärksammas.
+
+### <a name="extensibility"></a>Utbyggbar
+
+- **Exportera segment och andra data till Salesforce Marketing Cloud** Vi har utökat våra exportmål till att omfatta [Salesforce Marketing Cloud](export-salesforce.md). Du kan nu exportera segment och andra typer av data till Salesforce Marketing Cloud via en märkt SFTP-export . Dataimport kan automatiseras helt i Salesforce och användas för att skapa effektivare marknadsföringskampanjer.  
+ 
+- **Exportera segment till ActiveCampaign** Vi har utökat våra exportmål till att omfatta [Active Campaign](export-active-campaign.md). Du kan nu exportera segment i syfte att generera kampanjer, köra e-postmarknadsföring och arbeta med specifika kundgrupper i ActiveCampaign.
+ 
+- **Exportera segment till Sendinblue** Vi har utökat våra exportmål till att omfatta [Sendinblue](export-sendinblue.md). Du kan nu exportera segment i syfte att generera kampanjer, köra e-postmarknadsföring och arbeta med specifika kundgrupper med Sendinblue.
+ 
+### <a name="ux-updates"></a>UX--uppdateringar 
+
+- **Ny och förbättrad kundsida och sida för profilinformation** Vi har gjort om vår kundsida och sidan för profilinformation i syfte att kunna erbjuda bättre användarupplevelse och bättre prestanda. Med dessa ändringarna kan du visa, sortera, söka och filtrera kunder. Filter representeras nu i webbadressen för att sömlöst dela sökresultaten med andra användare. Sökresultat kan också sparas som ett segment.    
+  Informationssidan för kundprofiler grupperar nu data i olika underavsnitt, till exempel demografisk information, ID och andra profilattribut för bättre läsbarhet. Andra avsnitt på sidan med profilinformation är nu mer interaktiva. I avsnittet med aktiviteter tillåts exempelvis nu filtrering och sortering.
+
 
 ## <a name="may-2021-updates"></a>Uppdateringar maj 2021
 
@@ -170,7 +192,7 @@ Uppdateringarna i februari 2021 innehåller flera funktioner, prestandauppgrader
 
 - **Kopiera miljöstöd för fler typer av datakällor**
 
-  Administratörer kan kopiera miljökonfigurationer till en ny miljö i samma organisation. Den här funktionen utökar funktionen för kopiering av miljön i fall där datakällor baserade på en Common Data Service-datasjö eller en Common Data Model-mapp används.
+  Administratörer kan kopiera miljökonfigurationer till en ny miljö i samma organisation. Med den här funktionen utvidgas kopieringsmiljöns funktioner för ärenden där datakällor som bygger på en Microsoft Dataverse-hanterad datasjö eller Common Data Model-mapp används.
 
 ## <a name="january-2021-updates"></a>Uppdateringar januari 2021
 

@@ -1,7 +1,7 @@
 ---
 title: Tjänstbegränsningar
 description: Förstå gränser och begränsningar.
-ms.date: 10/15/2020
+ms.date: 07/08/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b68ab833538db7020c8be8be7658c86f083f137a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 81253332cbea3110c0b3804db3a4d03b514f92d4
+ms.sourcegitcommit: 9a99e48e96dfb3d895db428f37c30ae55eea66b7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598544"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6604391"
 ---
 # <a name="service-limits-in-dynamics-365-customer-insights-audience-insights-capability"></a>Tjänstbegränsningar i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -23,6 +23,7 @@ I den här artikeln beskrivs de inbyggda begränsningarna för Customer Insights
 | Ytdiagram  | Gränser  | OBS! |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
 | Segment och mått | 100 segment eller mått. | Det totala antalet aktiva [segment](segments.md) och [mått](measures.md) kan inte tillsammans överstiga 100.  |
+| Relationer | 20 djupnivåer för relationer i entitetssökvägar. | När du skapar [segment](segments.md) eller [mått](measures.md) med hjälp av verktygsgränssnittet kan entitetssökvägar ha upp till 20 relationshopp mellan start- och målentiteterna.  |
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

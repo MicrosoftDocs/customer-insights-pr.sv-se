@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 72ccb2d86c698939d0ff018b4d36203e793df9ae
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305681"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554870"
 ---
 # <a name="custom-machine-learning-models"></a>Anpassade maskininlärningsmodeller
 
@@ -42,7 +42,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 1. Ge din anpassade modell ett lätt igenkännligt namn i fältet **Namn**.
 
    > [!div class="mx-imgBorder"]
-   > ![Skärmbild av det nya fönstret för arbetsflöde](media/new-workflowv2.png "Skärmbild av det nya fönstret för arbetsflöde")
+   > ![Skärmbild av fönstret Nytt arbetsflöde.](media/new-workflowv2.png "Skärmbild av det nya fönstret för arbetsflöde")
 
 1. Välj den organisation som innehåller webbtjänsten i **Klientorganisation som innehåller din webbtjänst**.
 
@@ -59,7 +59,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
    > Arbetsflödet med en anpassad modell används för att mappa webbtjänstens indatafält till entitetsattributen utifrån fältets namn och datatyp. Ett felmeddelande visas om ett webbtjänstfält inte kan mappas till en entitet.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfigurera ett arbetsflöde](media/intelligence-screen2-updated.png "Konfigurera ett arbetsflöde")
+   > ![Konfigurera ett arbetsflöde.](media/intelligence-screen2-updated.png "Konfigurera ett arbetsflöde")
 
 1. I steget **Parametrar för modellens utdata** anger du följande egenskaper:
    - Machine Learning Studio (klassisk)
@@ -70,12 +70,12 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
       1. Välj **Namn på parametern för utdata för sökväg** på din batch-pipeline från listrutan.
 
       > [!div class="mx-imgBorder"]
-      > ![Fönster för parameter för modellens utdata](media/intelligence-screen3-outputparameters.png "Fönster för parameter för modellens utdata")
+      > ![Parameterfönster för modellens utdata.](media/intelligence-screen3-outputparameters.png "Fönster för parameter för modellens utdata")
 
 1. Välj det matchande attributet i listrutan **Resultat för Kund-ID** som identifierar kunder och välj **Spara**.
 
    > [!div class="mx-imgBorder"]
-   > ![Relatera resultat till fönstret Kunddata](media/intelligence-screen4-relatetocustomer.png "Relatera resultat till fönstret Kunddata")
+   > ![Relatera resultat till fönstret Kunddata.](media/intelligence-screen4-relatetocustomer.png "Relatera resultat till fönstret Kunddata")
 
 1. Skärmen **Arbetsflödet sparades** visas med information om arbetsflödet.    
    Om du har konfigurerat ett arbetsflöde för en Azure Machine Learning-pipeline, kopplats målgruppsinsikter till arbetsytan som innehåller pipelinen. Målgruppsinsikter kommer att få rollen **Deltagare** arbetsytan i Azure.

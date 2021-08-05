@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 9c453c9b416bff0e6362a8ccf7ff534f4efa1e00
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e832fbbdfb59cb06d98715223edca438d2c3a7f2
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597533"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554379"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Registrerades begäran (DSR) under GDPR
 
@@ -40,7 +40,7 @@ En administratör för Customer Insights kan följa stegen nedan för att ta bor
    2. Kontrollera status för datakälla under **Status**. En bockmarkering betyder att uppdateringen har slutförts. En varningstriangel betyder att något har gått fel. Om en varningstriangel visas kontaktar du D365CI@microsoft.com.
 
 > [!div class="mx-imgBorder"]
-> ![Hantera GDPR begäran för att ta bort kunddata](media/gdpr-data-sources.png "Hantera GDPR begäran för att ta bort kunddata")
+> ![Hantera GDPR-begäran för att ta bort kunddata](media/gdpr-data-sources.png "Hantera GDPR begäran för att ta bort kunddata")
 
 #### <a name="manage-delete-requests-for-user-data"></a>Hantera begäranden om att ta bort användardata
 
@@ -52,7 +52,7 @@ En Customer Insights-administratör kan följa stegen nedan för att ta bort Cus
 4. Välj **Ta bort**.
 
 > [!div class="mx-imgBorder"]
-> ![Hantera GDPR och begäranden om att ta bort användardata](media/gdpr-permissions.png "Hantera GDPR och begäranden om att ta bort användardata")
+> ![Hantera GDPR-begäranden om att ta bort användardata.](media/gdpr-permissions.png "Hantera GDPR och begäranden om att ta bort användardata")
 
 ## <a name="responding-to-gdpr-data-subject-export-requests"></a>Svara på GDPR registrerades begäran för att exportera data
 

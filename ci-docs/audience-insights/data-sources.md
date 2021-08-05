@@ -9,12 +9,13 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54dd7b629d4b4e7f640b932b0f9246e0602f46bd
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.custom: intro-internal
+ms.openlocfilehash: 0a017a37777adaaf7de079cf481ec10c70c7adba
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304718"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692457"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
@@ -30,13 +31,13 @@ Du kan lägga till en datakälla på tre huvudsakliga sätt:
 
 - [Efter dussintals Power Query-anslutningar](connect-power-query.md)
 - [Från en Common Data Model-mapp](connect-common-data-model.md)
-- [Från din egen Microsoft Dataverse sjö](connect-common-data-service-lake.md)
+- [Från din egen Microsoft Dataverse sjö](connect-dataverse-managed-lake.md)
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Lägga till data lokala datakällor
 
-Inmatning av data från lokala datakällor i målgruppinsikter stöds baserat på Microsoft Power Platform-dataflöden. Dataflöden kan aktiveras i Customer Insights av [ange Microsoft Dataverse miljö-URL](manage-environments.md#create-an-environment-in-an-existing-organization) när du ställer in miljön.
+Inmatning av data från lokala datakällor i målgruppinsikter stöds baserat på Microsoft Power Platform-dataflöden. Dataflöden kan aktiveras i Customer Insights av [ange Microsoft Dataverse miljö-URL](get-started-paid.md) när du ställer in miljön.
 
-Datakällor som skapas efter att ha associerat en Dataverse-miljö med Customer Insights kommer att använda [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) by default. Dataflöden stöder lokal anslutning med datagateway. Ta bort och återskapa datakällor som fanns innan en Dataverse-miljö associerades för att [använda lokal datagateways](/data-integration/gateway/service-gateway-app.md).
+Datakällor som skapas efter att ha associerat en Dataverse-miljö med Customer Insights kommer att använda [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) by default. Dataflöden stöder lokal anslutning med datagateway. Ta bort och återskapa datakällor som fanns innan en Dataverse-miljö associerades för att [använda lokal datagateways](/data-integration/gateway/service-gateway-app).
 
 Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att synas och du kan återanvända i Customer Insights. På sidan för datakällor visas länkar som går till den Microsoft Power Platform-miljö där du kan visa och konfigurera lokal data-gateways.
 
@@ -45,11 +46,11 @@ Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att syna
 Du ser namnet på varje inmatad datakälla, dess status och sista gången data uppdaterades för källan. Du kan sortera listan över datakällor efter varje kolumn.
 
 > [!div class="mx-imgBorder"]
-> ![Tillagd datakälla](media/configure-data-datasource-added.png "Tillagd datakälla")
+> ![Tillagd datakälla.](media/configure-data-datasource-added.png "Tillagd datakälla")
 
 |Status  |Beskrivning  |
 |---------|---------|
-|Lyckades   |Datakälla har matats in om en tidpunkt nämns i kolumnen **Uppdaterad**.
+|Klart   |Datakälla har matats in om en tidpunkt nämns i kolumnen **Uppdaterad**.
 |Inte startad   |Datakällan har inga inmatade data än eller är fortfarande i utkastläge.         |
 |Uppdaterar    |Datainmatning pågår. Du kan avbryta åtgärden genom att välja **Avbryt uppdatering** i kolumnen **åtgärder**. Om du stoppar uppdateringen av en datakälla återställs den till dess senaste uppdateringstillstånd.       |
 |Misslyckad     |Datahämtning har stött på fel.         |

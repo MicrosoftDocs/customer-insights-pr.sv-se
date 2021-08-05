@@ -9,12 +9,12 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 3f97e22687ae4f5536d492bac83bdf9c711e2c94
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597441"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554457"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Använd Azure Machine Learning-baserade modeller
 
@@ -52,7 +52,7 @@ Du behöver skapa datauppsättningar för att använda entitetsdata från Custom
      I designern öppnar du **Välj kolumner i datauppsättning** och välj **Ställ in som pipeline-parameter** där du anger ett namn på parametern.
 
      > [!div class="mx-imgBorder"]
-     > ![Parameterisering av datauppsättning i Designer](media/intelligence-designer-dataset-parameters.png "Parameterisering av datauppsättning i Designer")
+     > ![Parameterisering av datauppsättning i designern.](media/intelligence-designer-dataset-parameters.png "Parameterisering av datauppsättning i Designer")
    
 * Datauppsättningsparameter i SDK (Python)
    
@@ -78,7 +78,7 @@ Du behöver skapa datauppsättningar för att använda entitetsdata från Custom
 
 * Designern tillhandahåller [modulen Exportera data](/azure/machine-learning/algorithm-module-reference/export-data) som gör att utdata från en pipeline kan exporteras till Azure Storage. För närvarande måste modulen använda datalagringstypen **Azure Blob Storage** and parameterisera **Datalagring** och relativ **Sökväg**. Customer Insights åsidosätter båda dessa parametrar under pipelinekörning med en datalagring och sökväg som är åtkomlig för produkten.
    > [!div class="mx-imgBorder"]
-   > ![Exportera datamodulskonfiguration](media/intelligence-designer-importdata.png "Exportera datamodulskonfiguration")
+   > ![Exportera datamodulskonfiguration.](media/intelligence-designer-importdata.png "Exportera datamodulskonfiguration")
    
 * När du skriver inferensutdata med hjälp av kod kan du ladda upp utdata till en sökväg inom en *registrerad datalagring* på arbetsytan. Om sökvägen och datalagringen är parameteriserade i pipelinen, kommer Customer insights att kunna läsa och importera inferensutdata. För närvarande stöds en enda tabellutdata i CSV-format. Sökvägen måste innehålla katalogen och filnamnet.
 

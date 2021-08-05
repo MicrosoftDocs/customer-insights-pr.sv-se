@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: bcbafa513c2c61b0280c91aa7ed71e211c32c35c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095578"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556146"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Förutsägelse av produktrekommendationer (förhandsversion)
 
@@ -64,7 +64,7 @@ Om du vill prova den här funktionen men inte har några data för att uppfylla 
 
 1. Välj panelen **Produktrekommendationsmodell (förhandsversion)** och välj **Använd denna modell**.
    > [!div class="mx-imgBorder"]
-   > ![Panelen Produktrekommendationsmodell med knappen Använd den här modellen](media/product-recommendation-usethismodel.PNG "Panelen Produktrekommendationsmodell med knappen Använd den här modellen")
+   > ![Produktikonen Rekommendationsmodell med knappen Använd denna modell.](media/product-recommendation-usethismodel.PNG "Panelen Produktrekommendationsmodell med knappen Använd den här modellen")
 
 1. Läs informationen om modellkraven. Om du har de data som krävs väljer du **Kom igång**.
 
@@ -93,7 +93,7 @@ Om du vill prova den här funktionen men inte har några data för att uppfylla 
 
 1. Mappa de semantiska fälten till attribut i entiteten för inköpshistorik och välj **Nästa**. För beskrivningar av fälten, läs igenom [kraven](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Definiera entitetsrelation](media/product-recommendation-purchasehistorymapping.PNG "Sidan Köphistorik som visar attribut som är mappade till fält i den valda inköpshistorikentiteten")
+   > ![Definiera entitetsrelation.](media/product-recommendation-purchasehistorymapping.PNG "Sidan Köphistorik som visar attribut som är mappade till fält i den valda inköpshistorikentiteten")
 
 1. Om fälten inte är ifyllda konfigurerar du relationen från entiteten för inköpshistorik till entiteten *Kund*.
     1. Välj **entiteten Inköpshistorik**.
@@ -101,7 +101,7 @@ Om du vill prova den här funktionen men inte har några data för att uppfylla 
     1. Välj den **Kundentitet** som matchar den primära kundentiteten.
     1. Ange ett namn som beskriver relationen.
        > [!div class="mx-imgBorder"]
-       > ![Sidan Inköpshistorik visar skapandet av en relation till kunden](media/model-purchase-join.png "Sidan Inköpshistorik visar skapandet av en relation till kunden")
+       > ![Sidan Inköpshistorik visar skapandet av en relation till kunden.](media/model-purchase-join.png "Sidan Inköpshistorik visar skapandet av en relation till kunden")
 
 1. Välj **Spara**.
 
@@ -145,7 +145,7 @@ Ibland är det bara vissa produkter som är lämpliga för den typ av prediktion
 
 1. Gå till fliken **Mina förutsägelser** under **Intelligens** > **Förutsägelser**.
    > [!div class="mx-imgBorder"]
-   > ![Vy över sidan Mina förutsägelser](media/product-recommendation-mypredictions.PNG "Vy över sidan Mina förutsägelser")
+   > ![Vy över sidan Mina förutsägelser.](media/product-recommendation-mypredictions.PNG "Vy över sidan Mina förutsägelser")
 
 1. Välj den prediktion du vill granska.
    - **Namn på förutsägelse:** Det namn på förutsägelsen som angavs när den skapades.
@@ -163,7 +163,7 @@ Ibland är det bara vissa produkter som är lämpliga för den typ av prediktion
 
 1. Markera de lodräta punkterna bredvid den förutsägelse som du vill granska resultat för och välj **Visa**.
    > [!div class="mx-imgBorder"]
-   > ![Vy över alternativ på menyn med lodräta punkter för en förutsägelse, bland annat redigera, uppdatera, visa, loggar och ta bort](media/product-recommendation-verticalellipses.PNG "Vy över alternativ på menyn med lodräta punkter för en förutsägelse, bland annat redigera, uppdatera, visa, loggar och ta bort")
+   > ![Vy över alternativ på menyn med lodräta punkter för en förutsägelse, bland annat redigera, uppdatera, visa, loggar och ta bort.](media/product-recommendation-verticalellipses.PNG "Vy över alternativ på menyn med lodräta punkter för en förutsägelse, bland annat redigera, uppdatera, visa, loggar och ta bort")
 
 1. Det finns fem primära dataavsnitt på resultatsidan:
     1. **Prestanda för övningsmodell** A, B eller C är möjliga poäng. Detta resultat anger förutsägelsens prestanda och kan hjälpa dig att fatta beslutet att använda resultaten som lagras i utdataenheten.
@@ -173,13 +173,13 @@ Ibland är det bara vissa produkter som är lämpliga för den typ av prediktion
             - **C** Modellen anses ha kvalitet **C** om måttet "Framgång vid K" är mindre än grundnivån.
                
                > [!div class="mx-imgBorder"]
-               > ![Vy över modellprestandaresultat](media/product-recommendation-modelperformance.PNG "Vy över modellprestandaresultat")
+               > ![Vy över modellprestandaresultat.](media/product-recommendation-modelperformance.PNG "Vy över modellprestandaresultat")
             - **Grundnivå**: Modellen tar de mest rekommenderade produkterna från antalet köp av alla kunder och använder inlärda regler som identifierats av modellen för att skapa en uppsättning rekommendationer för kunderna. Därefter jämförs förutsägelserna med de bästa produkterna, beräknat på antalet kunder som köpt produkten. Om en kund har minst en produkt i sina rekommenderade produkter som också fanns bland de produkter som köpts mest, betraktas de som en del av grundnivån. Om tio av dessa kunder hade köpt en rekommenderad produkt av 100 kunder skulle grundnivån vara 10 %.
             - **Framgång vid K**: Genom en uppsättning tidsperioder av transaktioner för validering skapas rekommendationer för alla kunder och jämförs med transaktionsuppsättningen för validering. För en tolvmånadersperiod kan exempelvis månad 12 åsidosättas som en datauppsättning för validering. Om modellen förutser minst en sak som du skulle köpa i månad 12, baserat på vad den lärt sig de senaste 11 månaderna, skulle kunden öka måttet "Framgång vid K".
     
     1. **De flesta produkter som föreslogs (med summa):** De fem bästa produkterna som kunderna kunde använda.
        > [!div class="mx-imgBorder"]
-       > ![Graf som visar de fem mest rekommenderade produkterna](media/product-recommendation-topproducts.PNG "Graf som visar de fem mest rekommenderade produkterna")
+       > ![Graf som visar de fem mest rekommenderade produkterna.](media/product-recommendation-topproducts.PNG "Graf som visar de fem mest rekommenderade produkterna")
     
     1. **Viktiga rekommendationsfaktorer:** I modellen används kundernas transaktionshistorik för att ge produktrekommendationer. Man lär sig mönster utifrån tidigare köp och hittar likheter mellan kunder och produkter. Dessa likheter används sedan för att skapa produktrekommendationer.
     Följande faktorer kan påverka produktrekommendationen från modellen. 
@@ -190,20 +190,20 @@ Ibland är det bara vissa produkter som är lämpliga för den typ av prediktion
         Varje produktrekommendation beror på en eller flera av dessa faktorer. Procentandelen rekommendationer som visualiseras i ett diagram när varje faktor har betydelse för en roll. I följande exempel används 100 % av rekommendationerna för tidigare transaktioner, 60 % av kundlikheten och 22 % av produktlikhet. Håll markören över staplarna i diagrammet om du vill se den exakta procentsatsen för var faktorerna har bidragit.
 
         > [!div class="mx-imgBorder"]
-        > ![Viktiga rekommendationsfaktorer](media/product-recommendation-keyrecommendationfactors.png "Viktiga faktorer som rekommenderas av modellen när det gäller att skapa produktrekommendationer")
+        > ![Viktiga rekommendationsfaktorer.](media/product-recommendation-keyrecommendationfactors.png "Viktiga faktorer som rekommenderas av modellen när det gäller att skapa produktrekommendationer")
        
      
    1. **Datastatistik**: Ger en översikt över antalet transaktioner, kunder och produkter som modellen omfattar. Den baseras på indata som har använts för att lära sig mönster och skapa produktrekommendationer.
 
       > [!div class="mx-imgBorder"]
-      > ![Datastatistik](media/product-recommendation-datastatistics.png "Datastatistik runt indata som används av modellen för att lära sig mönster")
+      > ![Datastatistik.](media/product-recommendation-datastatistics.png "Datastatistik runt indata som används av modellen för att lära sig mönster")
 
       I det här avsnittet visas information om datapunkter som använts av modellen för att lära sig mönster och skapa produktrekommendationer. Filtrering, som konfigurerats i modellkonfigurationen, tillämpas på utdata från modellen. Men i modellen används alla tillgängliga data för att lära sig mönster. Om du använder produktfiltrering i modellkonfigurationen visas därför det totala antal produkter som modellen har analyserats för att lära sig mönster, vilket kan skilja sig från antalet produkter som matchar de definierade filtreringsvillkoren.
 
    1. **Produktrekommendationer med hög säkerhet** Ett antal rekommendationer för dina kunder som modellen tror att kunden sannolikt kommer att köpa.    
       Om en produktkatalog läggs till ersätts produkt-ID:erna med produktnamn. Produktnamn ger en mer användbar och intuitiv information om prognoserna.
        > [!div class="mx-imgBorder"]
-       > ![Lista med förslag med hög säkerhet för en utvald uppsättning enskilda kunder](media/product-recommendation-highconfidence.PNG "Lista med förslag med hög säkerhet för en utvald uppsättning enskilda kunder")
+       > ![Lista med förslag med hög konfidens för en utvald uppsättning enskilda kunder.](media/product-recommendation-highconfidence.PNG "Lista med förslag med hög säkerhet för en utvald uppsättning enskilda kunder")
 
 ## <a name="manage-predictions"></a>Hantera förutsägelser
 

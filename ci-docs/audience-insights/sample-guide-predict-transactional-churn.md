@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 49dad45c951f3c00d77ddd99faec48bfccada8b0
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 72f3bd1f32b813fef04dc14618331e3d707b5052
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306142"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556283"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse om transaktionell omsättning (förhandsversion)
 
@@ -47,7 +47,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **CreatedOn**: Datum/Tid/Zon
 
    [!div class="mx-imgBorder"]
-   ![Transformera födelsedatum till datum](media/ecommerce-dob-date.PNG "transformera födelsedatum till datum")
+   ![Omvandla födelsedatum till datum.](media/ecommerce-dob-date.PNG "transformera födelsedatum till datum")
 
 1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **eCommerceContacts**
 
