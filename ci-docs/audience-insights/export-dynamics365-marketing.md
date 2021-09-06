@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Dynamics 365 Marketing
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Dynamics 365 Marketing.
-ms.date: 03/03/2021
+ms.date: 08/24/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,20 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bd8189f8daee1a6aea75e75e116186f62a360ba4
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+ms.openlocfilehash: b8e63a738abaf4fbb902e3edbf83f5a815978478
+ms.sourcegitcommit: 8e89575fe2acb4b289fc157fa7c4c29caf9be967
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692503"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "7417227"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Använd segment i Dynamics 365 Marketing (förhandsvisning)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Använd [segment](segments.md) för att generera kampanjer och kontakta specifika kundgrupper med Dynamics 365 Marketing. Mer information finns i [Använda segment från Dynamics 365 Customer Insights med Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments)
+Använd [segment](segments.md) för att generera kampanjer och kontakta specifika kundgrupper med Dynamics 365 Marketing. Mer information finns i [Använda segment från Dynamics 365 Customer Insights med Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments).
+
+Om du använder de nya funktionerna i Dynamics 365 Marketing för kundens färd i realtid i en Dataverse organisation behöver du inte skapa en standardexport till Dynamics 365 Marketing. Kontakter och segment från publik insikter är tillgängliga direkt i Dynamics 365 Marketing efter att ha anslutit Marketing och Customer Insights. Innan du tar bort befintlig export bör du läsa dokumentationen för [hur du ansluter målinsikter och Dynamics 365 Marketing orkestrering av kundens färd](/dynamics365/marketing/real-time-marketing-ci-profile).
 
 ## <a name="prerequisite-for-a-connection"></a>Krav för anslutning
 
