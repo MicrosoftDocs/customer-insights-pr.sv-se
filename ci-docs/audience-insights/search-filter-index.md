@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: a6131d4dddce48b0fba153bcefe5631e0d22d808
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: e53d87c4f633cba09fecbc1c219f0ac2ec6bb5598a7902cbcf7398d26d6d7c6b
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554043"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7029421"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundprofiler: Sök- och filterindex
 
@@ -60,7 +60,7 @@ Menyn **filtrera** på sidan **kunder** kan innehålla ett varierande antal attr
 
 ## <a name="next-steps"></a>Nästa steg
 
-Gå till sidan **Kunder** om du vill söka efter kundprofiler eller använda de indexerade fälten och visa en deluppsättning av alla kundprofiler.
+Gå igenom [sidan med enhetliga profiler](customer-profiles.md) om du vill söka efter profiler eller använd de indexerade fälten för att se en deluppsättning av alla enhetliga profiler.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

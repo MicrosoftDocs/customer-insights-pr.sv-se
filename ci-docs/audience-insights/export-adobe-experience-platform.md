@@ -1,6 +1,6 @@
 ---
 title: Exportera Customer Insights-data till Adobe Experience Platform
-description: Lär dig hur du använder segment för målgruppsinsikter i Adobe Experience Platform.
+description: Lär dig hur segment av målgruppsinsikter i Adobe Experience Platform.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 1045d0e373fd5ea8987684e51bd9a07b7b535ee3
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: fac976a49b1b5c5485b75e1262135738c913bd2230be7df8aa0ec12c59734053
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305546"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032139"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Använd Customer Insights-segment i Adobe Experience Platform (förhandsversion)
 
-Som användare av målgruppsikter i Dynamics 365 Customer Insights kan du ha skapat segment i avsikt att göra dina marknadsföringskampanjer mer effektiva genom att rikta dig till relevanta målgrupper. Om du vill använda ett segment från målgruppsinsikter i Adobe Experience Platform och program som Adobe Campaign Standard måste du följa stegen i den här artikeln.
+Som användare av målgruppsikter i Dynamics 365 Customer Insights kan du ha skapat segment i avsikt att göra dina marknadsföringskampanjer mer effektiva genom att rikta dig till relevanta målgrupper. Om du vill använda ett segment för målgruppsinsikter Adobe Experience Platform och program som Adobe Campaign Standard, måste du följa några steg som beskrivs i den här artikeln.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="Processdiagram över stegen som beskrivs i den här artikeln.":::
 
@@ -26,14 +26,14 @@ Som användare av målgruppsikter i Dynamics 365 Customer Insights kan du ha ska
 
 -   Dynamics 365 Customer Insights-licens
 -   Adobe Experience Platform-licens
--   Licens för Adobe Campaign Standard
+-   Adobe Campaign Standard licens
 -   Azure Blob Storage-konto
 
 ## <a name="campaign-overview"></a>Översikt över kampanj
 
-För att få en bättre förståelse av hur du kan använda segment från målgruppsinsikter i Adobe Experience Platform, ska vi titta på en fiktiv exempelkampanj.
+Om du vill ha en bättre förståelse av hur du kan använda segment från målgruppsinsikter i Adobe Experience Platform ska vi titta på en fiktiv exempelkampanj.
 
-Låt oss anta att ditt företag erbjuder en månatlig, prenumerationsbaserad tjänst till dina kunder i USA. Du vill identifiera kunder vars prenumerationer ska förnyas inom de kommande åtta dagarna men ännu inte har förnyat sin prenumeration. Om du vill behålla kunderna måste du skicka ett kampanjerbjudande via e-post med Adobe Experience Platform.
+Låt oss anta att ditt företag erbjuder en månatlig, prenumerationsbaserad tjänst till dina kunder i USA. Du vill identifiera kunder vars prenumerationer ska förnyas inom de kommande åtta dagarna men ännu inte har förnyat sin prenumeration. För att behålla dessa kunder vill du skicka ett kampanjerbjudande via e-post med Adobe Experience Platform.
 
 I det här exemplet vill vi köra kampanjen via e-post en gång. Den här artikeln innehåller inte information om hur du kör kampanjen mer än en gång.
 
@@ -93,7 +93,7 @@ När du har sparat exportmålet visas det i **Data** > **Exporter**.
 Nu kan du [exportera segmentet på begäran](export-destinations.md#run-exports-on-demand). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md).
 
 > [!NOTE]
-> Kontrollera att antalet poster i det exporterade segmentet ligger inom den tillåtna gränsen för din Adobe Campaign Standard-licens.
+> Kontrollera att antalet poster i det exporterade avsnittet ligger inom den tillåtna gränsen för din Adobe Campaign Standard-licens.
 
 Exporterade data lagras i den Azure Blob Storage-behållare som du konfigurerade ovan. Följande mappsökväg skapas automatiskt i behållaren:
 
@@ -107,27 +107,27 @@ Exempel: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24
 
 ## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Definiera Experience Data Model (XDM) i Adobe Experience Platform
 
-Innan exporterade data från målgruppsinsikter kan användas inom Adobe Experience Platform måste vi definiera Experience Data Model-schemat och [konfigurera data för kundprofil i realtid](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
+Innan exporterade data från publikinsikter kan användas inom Adobe Experience Platform, vi måste definiera schemat för Experience Data Model och [konfigurera data för realtidskundprofilen](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
 
 Lär dig [vad XDM är](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) och lär dig grunderna i [schemasammansättning](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#schema).
 
 ## <a name="import-data-into-adobe-experience-platform"></a>Importera data till Adobe Experience Platform
 
-Nu när allt är på plats måste vi importera förberedda målgruppsdata från målgruppsinsikter till Adobe Experience Platform.
+Nu när allt är på plats måste vi importera de förberedda målgruppsdata från målgruppsinsikter till Adobe Experience Platform.
 
 Börja med att [skapa en Azure Blob Storage-källanslutning](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/cloud-storage/blob.html#getting-started).    
 
-När du har definierat källanslutningen [konfigurerar du ett dataflöde](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) för en anslutning för en molnagringsbatch för att importera segmentutdata från målgruppsinsikter till Adobe Experience Platform.
+När du har definierat källanslutningen [konfigurerar du ett dataflöde ](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) för en batchanslutning för molnlagring så att segmentutdata från målgruppsinsikter till Adobe Experience Platform.
 
-## <a name="create-an-audience-in-adobe-campaign-standard"></a>Skapa en målgrupp i Adobe Campaign Standard
+## <a name="create-an-audience-in-adobe-campaign-standard"></a>Skapa en målgrupp Adobe Campaign Standard
 
-För att skicka e-postmeddelandet för den här kampanjen använder vi Adobe Campaign Standard. När vi har importerat data till Adobe Experience Platform måste vi [skapa en målgrupp](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) i Adobe Campaign Standard med hjälp av data i Adobe Experience Platform.
+För att skicka e-postmeddelandet för den här kampanjen använder vi Adobe Campaign Standard. När vi har importerat dessa data till Adobe Experience Platform, måste vi [skapa en målgrupp](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) i Adobe Campaign Standard med data i Adobe Experience Platform.
 
 
-Lär dig hur du [använder segmentverktyget](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) i Adobe Campaign Standard för att definiera en målgrupp baserad på data i Adobe Experience Platform.
+Lär dig hur [du använder segmentverktyget](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) i Adobe Campaign Standard för att definiera en målgrupp baserad på data i Adobe Experience Platform.
 
 ## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Skapa och skicka e-postmeddelandet med Adobe Campaign Standard
 
 Skapa e-postinnehållet och [testa och skicka](https://experienceleague.adobe.com/docs/campaign-standard/using/testing-and-sending/get-started-sending-messages.html#preparing-and-testing-messages) e-postmeddelandet.
 
-:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Exempel på e-postmeddelande med förnyelseerbjudande från Adobe Campaign Standard.":::
+:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Exempel på e-post med förnyelseerbjudande från Adobe Campaign Standard.":::

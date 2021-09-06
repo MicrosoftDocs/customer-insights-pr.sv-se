@@ -1,6 +1,6 @@
 ---
 title: Exportera Customer Insights-data till Adobe Campaign Standard
-description: Lär dig använda målgruppsinsikter i Adobe Campaign Standard.
+description: Lär dig hur segment av målgruppsinsikter i Adobe Campaign Standard.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,32 +9,32 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 917ab9559416f3ee0ffd66e471e590e8da3faffc
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: d301b4f0cb875303fb3d373b77177acd1c1f5219cd6f23c2a1d29ce67a222eab
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305408"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032185"
 ---
-# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Använd Customer Insights-segment i Adobe Campaign Standard (förhandsversion)
+# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Använda Customer Insights-segment i Adobe Campaign Standard (förhandsgranskning)
 
-Som användare av målgruppsikter i Dynamics 365 Customer Insights kan du ha skapat segment i avsikt att göra dina marknadsföringskampanjer mer effektiva genom att rikta dig till relevanta målgrupper. Om du vill använda ett segment från målgruppsinsikter i Adobe Experience Platform och program som Adobe Campaign Standard måste du följa stegen i den här artikeln.
+Som användare av målgruppsikter i Dynamics 365 Customer Insights kan du ha skapat segment i avsikt att göra dina marknadsföringskampanjer mer effektiva genom att rikta dig till relevanta målgrupper. Om du vill använda ett segment för målgruppsinsikter Adobe Experience Platform och program som Adobe Campaign Standard, måste du följa några steg som beskrivs i den här artikeln.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="Processdiagram över stegen som beskrivs i den här artikeln.":::
 
 ## <a name="prerequisites"></a>Förutsättningar
 
 -   Dynamics 365 Customer Insights-licens
--   Licens för Adobe Campaign Standard
+-   Adobe Campaign Standard licens
 -   Azure Blob Storage-konto
 
 ## <a name="campaign-overview"></a>Kampanjöversikt
 
-För att få en bättre förståelse av hur du kan använda segment från målgruppsinsikter i Adobe Experience Platform, ska vi titta på en fiktiv exempelkampanj.
+Om du vill ha en bättre förståelse av hur du kan använda segment från målgruppsinsikter i Adobe Experience Platform ska vi titta på en fiktiv exempelkampanj.
 
-Låt oss anta att ditt företag erbjuder en månatlig, prenumerationsbaserad tjänst till dina kunder i USA. Du vill identifiera kunder vars prenumerationer ska förnyas inom de kommande åtta dagarna men ännu inte har förnyat sin prenumeration. Om du vill behålla kunderna måste du skicka ett kampanjerbjudande via e-post med Adobe Campaign Standard.
+Låt oss anta att ditt företag erbjuder en månatlig, prenumerationsbaserad tjänst till dina kunder i USA. Du vill identifiera kunder vars prenumerationer ska förnyas inom de kommande åtta dagarna men ännu inte har förnyat sin prenumeration. För att behålla dessa kunder vill du skicka ett kampanjerbjudande via e-post med Adobe Campaign Standard.
 
-I det här exemplet vill vi köra kampanjen via e-post en gång. Den här artikeln innehåller inte information om hur du kör kampanjen mer än en gång. Målgruppsinsikter och Adobe Campaign Standard konfigureras dock så att de också fungerar för ett återkommande kampanjscenario.
+I det här exemplet vill vi köra kampanjen via e-post en gång. Den här artikeln innehåller inte information om hur du kör kampanjen mer än en gång. Däremot kan målgruppsinsikter och Adobe Campaign Standard konfigureras så att de också fungerar för ett återkommande kampanjscenario.
 
 ## <a name="identify-your-target-audience"></a>Identifiera din målgrupp
 
@@ -54,7 +54,7 @@ Med målgruppen identifierad kan vi konfigurera exporten från målgruppsinsikte
 
 1. I målgruppsinsikter, gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj sedan **Adobe Campaign** om du vill konfigurera anslutningen, eller välj **Konfigurera** i panelen **Adobe Campaign**.
+1. Välj **Lägg till anslutning** och välj **Adobe Campaign** om du vill konfigurera anslutningen, eller välj **Konfigurera** i panelen **Adobe Campaign**.
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Konfigurationspanel för Adobe Campaign Standard.":::
 
@@ -80,7 +80,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Välj för att skapa en ny export **Lägg till export**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Adobe Campaign. Om avsnittets namn inte visas är inga anslutningar av den här typen tillgängliga för dig.
+1. I fältet **Anslutning för export** väljer du en anslutning från avsnittet Adobe Campaign. Om avsnittets namn inte visas är inga anslutningar av den här typen tillgängliga för dig.
 
 1. Välj det segment som du vill exportera. I det här exemplet är det **ChurnProneCustomers**.
 
@@ -88,11 +88,11 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Välj **Nästa**.
 
-1. Nu mappar vi fälten **Källa** från målgruppsinsiktssegmentet till fälten **Mål** i Adobe Campaign Standard-profilschemat.
+1. Nu mappar vi fältet **källa** från segmentet målgruppsinsikter till fältnamnet i **Mål** för Adobe Campaign Standard-profilens schema.
 
-   :::image type="content" source="media/ACS-field-mapping.png" alt-text="Fältmappning för Adobe Campaign Standard-anslutningsprogrammet.":::
+   :::image type="content" source="media/ACS-field-mapping.png" alt-text="Fältmappning för Adobe Campaign Standard-anslutning.":::
 
-   Om du vill lägga till fler attribut väljer du **Lägg till attribut**. Målnamnet kan vara ett annat än källfältets namn så du kan mappa segmentutdata från målgruppsinsikter till Adobe Campaign Standard om fälten inte har samma namn i de två systemen.
+   Om du vill lägga till fler attribut väljer du **Lägg till attribut**. Målnamnet kan vara ett annat än källfältsnamnet så att du ändå kan mappa segment utdata från målgruppsinsikter till Adobe Campaign Standard om fälten inte har samma namn i de två systemen.
 
    > [!NOTE]
    > E-postadress används som ett identitetsfält, men du kan använda en annan identifierare från din kundprofil för målgruppsinsikter för att mappa data till Adobe Campaign Standard.
@@ -104,7 +104,7 @@ När du har sparat exportmålet visas det i **Data** > **Exporter**.
 Nu kan du [exportera segmentet på begäran](export-destinations.md#run-exports-on-demand). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md).
 
 > [!NOTE]
-> Kontrollera att antalet poster i det exporterade segmentet ligger inom den tillåtna gränsen för din Adobe Campaign Standard-licens.
+> Kontrollera att antalet poster i det exporterade avsnittet ligger inom den tillåtna gränsen för din Adobe Campaign Standard-licens.
 
 Exporterade data lagras i den Azure Blob Storage-behållare som du konfigurerade ovan. Följande mappsökväg skapas automatiskt i behållaren:
 
@@ -116,28 +116,28 @@ Exempel: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24
 
 När ett segment från målgruppsinsikter exporteras innehåller det de kolumner du valde när du definierade exportmålet i föregående steg. Dessa data kan användas för att [skapa profiler i Adobe Campaign Standard](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/about-profiles.html#managing-profiles).
 
-För att kunna använda segmenten i Adobe Campaign Standard måste vi utöka profilschemat i Adobe Campaign Standard så att det omfattar ytterligare två fält. Lär dig hur du [utökar profilresursen](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) med nya fält i Adobe Campaign Standard.
+För att kunna använda segmenten Adobe Campaign Standard, måste profilschemat i Adobe Campaign Standard utökas till att omfatta ytterligare två fält. Lär dig hur du [utökar profilresursen](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) med nya fält i Adobe Campaign Standard.
 
 I vårt exempel är dessa fält *Segmentnamn och Segmentdatum (valfritt)*.
 
-Vi använder fälten för att identifiera vilka profiler i Adobe Campaign Standard som ska användas för kampanjen.
+Vi använder fälten för att identifiera profilerna i Adobe Campaign Standard som vi vill rikta oss till för den här kampanjen.
 
 Om det inte finns några andra poster i Adobe Campaign Standard, förutom de du ska importera, kan du hoppa över det här steget.
 
 ## <a name="import-data-into-adobe-campaign-standard"></a>Importera data till Adobe Campaign Standard
 
-Nu när allt är på plats måste vi importera förberedda målgruppsdata från målgruppsinsikter till Adobe Campaign Standard för att skapa profiler. Lär dig [hur du importerar profiler i Adobe Campaign Standard](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) med hjälp av ett arbetsflöde.
+Nu när allt är på plats måste vi importera de förberedda målgruppsdata från målgruppsinsikter till Adobe Campaign Standard för att skapa profiler. Lär dig [hur du importerar profiler i Adobe Campaign Standard](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) med ett arbetsflöde.
 
-Importarbetsflödet i bilden nedan har konfigurerats att köras var åttonde timme och söka efter exporterade segment för målgruppsikter (.csv-fil i Azure Blob Storage). Arbetsflödet extraherar .csv-filens innehåll i en angiven kolumnordning. Arbetsflödet har skapats för att utföra grundläggande felhantering och se till att varje post har en e-postadress innan data skickas i Adobe Campaign Standard. Arbetsflödet extraherar också segmentnamnet från filnamnet innan det förs in (upsert) i profildata för Adobe Campaign Standard.
+Importarbetsflödet i bilden nedan har konfigurerats att köras var åttonde timme och söka efter exporterade segment för målgruppsikter (.csv-fil i Azure Blob Storage). Arbetsflödet extraherar .csv-filens innehåll i en angiven kolumnordning. Arbetsflödet har skapats för att utföra grundläggande felhantering och säkerställa att varje post har en e-postadress innan data skickas i Adobe Campaign Standard. Arbetsflödet extraherar också segmentnamnet från filnamnet innan det förs in (upsert) i profildata för Adobe Campaign Standard.
 
-:::image type="content" source="media/ACS-import-workflow.png" alt-text="Skärmbild av ett importarbetsflöde i användargränssnittet i Adobe Campaign Standard.":::
+:::image type="content" source="media/ACS-import-workflow.png" alt-text="Skärmbild av ett importarbetsflöde i användargränssnittet Adobe Campaign Standard.":::
 
-## <a name="retrieve-the-audience-in-adobe-campaign-standard"></a>Hämta målgrupp i Adobe Campaign Standard
+## <a name="retrieve-the-audience-in-adobe-campaign-standard"></a>Hämta målgrupp Adobe Campaign Standard
 
-När data har importerats till Adobe Campaign Standard kan du [skapa ett arbetsflöde](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/workflow-general-operation/building-a-workflow.html#managing-processes-and-data) och [fråga](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/targeting-activities/query.html#managing-processes-and-data) kunderna baserat på *Segmentnamn* och *Segmentdatum* för att välja profiler som identifierades för exempelkampanjen.
+När data har importerats till Adobe Campaign Standard [kan du skapa arbetsflöde](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/workflow-general-operation/building-a-workflow.html#managing-processes-and-data) och [fråga](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/targeting-activities/query.html#managing-processes-and-data) kunderna baserade på *Segmentnamn* och *Segmentdatum* för att välja profiler som identifierats för vår exempelkampanj.
 
 ## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Skapa och skicka e-postmeddelandet med Adobe Campaign Standard
 
 Skapa e-postinnehållet och [testa och skicka](https://experienceleague.adobe.com/docs/campaign-standard/using/testing-and-sending/get-started-sending-messages.html#preparing-and-testing-messages) e-postmeddelandet.
 
-:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Exempel på e-postmeddelande med förnyelseerbjudande från Adobe Campaign Standard.":::
+:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Exempel på e-post med förnyelseerbjudande från Adobe Campaign Standard.":::
