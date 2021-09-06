@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
-ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
+ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2021
-ms.locfileid: "6171186"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7035253"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellan entiteter
 
@@ -82,7 +82,7 @@ Den här sidan innehåller en uppsättning alternativ för befintliga och nya re
 
 ### <a name="explore-the-relationship-visualizer"></a>Utforska relationsvisualiseraren
 
-Relationsvisualiseraren visar ett nätverksdiagram över befintliga relationer mellan anslutna entiteter och deras kardinalitet.
+Relationsvisualiseraren visar ett nätverksdiagram över befintliga relationer mellan anslutna entiteter och deras kardinalitet. Det visualiserar också relationssökvägen.
 
 Om du vill anpassa vyn kan du ändra rutornas placering genom att dra dem på arbetsytan.
 
@@ -92,6 +92,20 @@ Tillgängliga alternativ:
 - **Exportera som bild**: Spara den aktuella vyn som en bildfil.
 - **Ändra till vågrät/lodrät layout**: Ändra justeringen för entiteterna och relationer.
 - **Redigera**: Uppdatera egenskaper för anpassade relationer i redigeringsfönstret och spara ändringar.
+
+### <a name="relationship-path"></a>Relationssökväg
+
+Relationssökvägen beskriver de entiteter som är kopplade till relationer mellan en källentitet och en målentitet. Den används när du skapar ett segment eller ett mått som innehåller andra entiteter än entiteten för en enhetlig profil och det finns flera alternativ för att nå entiteten för en enhetlig profil.
+
+Relationssökvägen informerar det system som har Relationer åtkomst till entiteten för en enhetlig profil. Olika relationssökvägar kan ge olika resultat.
+
+Entiteten har till exempel *eCommerce_eCommercePurchases* har följande information för enhetliga profil *Kund*:
+
+- eCommerce_eCommercePurchases > kund
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kund
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kund 
+
+Relationssökvägen avgör vilka entiteter du kan använda när du skapar regler för mått eller segment. Om du väljer alternativet med den längsta relationssökvägen ger det troligen färre resultat eftersom matchande poster måste vara en del av alla entiteter. I det här exemplet måste en kund ha köpt varor via e-handeln (eCommerce_eCommercePurchases), vid en försäljningsställe(POS_posPurchases) och delta i vårt lojalitetsprogram (loyaltyScheme_loyCustomers). När du väljer det första alternativet får du förmodligen fler resultat eftersom kunderna bara behöver finnas i en ytterligare entitet.
 
 ## <a name="manage-existing-relationships"></a>Hantera befintliga relationer 
 
@@ -105,6 +119,6 @@ Välj en relation och välj något av följande alternativ:
 
 ## <a name="next-step"></a>Nästa steg
 
-System och anpassade relationer används för att [skapa segment](segments.md) utifrån flera datakällor som inte längre är silor.
+System och anpassade relationer används för att [skapa segment](segments.md) och [mått](measures.md) baserade på flera datakällor som inte längre är silo.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

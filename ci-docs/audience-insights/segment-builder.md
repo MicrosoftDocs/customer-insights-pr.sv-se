@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
-ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
+ms.openlocfilehash: e759872643cc7387cf732d73c7a320ae8901e5a9
+ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/29/2021
-ms.locfileid: "6685484"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7377810"
 ---
 # <a name="create-and-manage-segments"></a>Skapa och hantera segment.
 
@@ -27,6 +27,23 @@ ms.locfileid: "6685484"
 > - Ett sidofönster för att välja attribut kommer att vara tillgängligt löpande.
 > - Ett alternativ för att välja sökvägar för entitetsrelationer.
 > Om du vill prova det nya segmentverktyget kan du skicka ett e-postmeddelande med ämnet &quot;Begäran att aktivera det nya segmentverktyget&quot; till cihelp [at] microsoft.com. Ta med namnet på organisationen och sandbox-miljöns ID.
+> :::image type="content" source="media/segment-builder-overview.png" alt-text="Element i segmentverktyget." lightbox="media/segment-builder-overview.png":::
+>
+> 1 – Ordna ditt segment med regler och underregler. Varje regel eller underregel består av villkor. Kombinera villkoren med logiska operatorer
+>
+> 2 – Välj [relationssökvägen](relationships.md) mellan entiteter som gäller för en regel. Relationssökvägen avgör vilka attribut som kan användas i ett villkor.
+>
+> 3 – Hantera regler och underregler. Ändra positionen för en regel eller ta bort den.
+>
+> 4 – Lägg till villkor och bygg upp rätt kapslingsnivå med hjälp av underregler.
+>
+> 5 – Tillämpa uppsättningsåtgärder på anslutna regler.
+>
+> 6 – Använd attributrutan om du vill lägga till tillgängliga entitetsattribut eller skapa villkor för attribut. I rutan visas listan över entiteter och attribut som är tillgängliga för den valda regeln utifrån den valda relationssökvägen.
+>
+> 7 – Lägg till villkor baserat på attribut i befintliga regler och underregler eller lägg till det i en ny regel.
+>
+> 8 – Ångra och gör om ändringar medan du skapar segmenten.
 
 Definiera komplexa filter runt den enhetliga kundentiteten och det är relaterade entiteter. Varje segment skapar en uppsättning kundposter efter bearbetning som du kan exportera och utföra åtgärder på. Segment hanteras på sidan **Segment**. 
 
@@ -147,6 +164,6 @@ Med snabbsegment kan du bygga enkla segment med en enda operator snabbt för sna
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Exportera ett segment](export-destinations.md) och utforska [kundkortet](customer-card-add-in.md) och [kontakterna](export-power-bi.md) för att komma igång med kundnivån.
+[Exportera ett segment ](export-destinations.md)och utforska [integreringen av kundkort](customer-card-add-in.md) för att använda segment i andra program.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

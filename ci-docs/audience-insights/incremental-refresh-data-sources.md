@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 1af2e4c42dc5890556c90bb3e5ef1aeb0621fda0
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: d204228f8d6881cbf0e7fac6609bf50dd5296610
+ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554181"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7377856"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Inkrementell uppdatering för datakällor baserad Power Query
 
@@ -44,8 +44,7 @@ Målgruppsinsikter möjliggör inkrementell uppdatering av datakällor som impor
 
 1. På **Inställningar för stegvis uppdatering**, konfigurerar du den inkrementella uppdateringen för alla entiteter du valde när du skapade datakälla.
 
-   > [!div class="mx-imgBorder"]
-   > ![Konfigurera entiteter i en datakälla för inkrementell uppdatering.](media/incremental-refresh-settings.png "Konfigurera entiteter i en datakälla för inkrementell uppdatering")
+   :::image type="content" source="media/incremental-refresh-settings.png" alt-text="Konfigurera entiteter i en datakälla för inkrementell uppdatering.":::
 
 1. Välj en entitet och ange följande information:
 
