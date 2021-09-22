@@ -1,0 +1,86 @@
+### YamlMime:Landing
+title: Funktionen Engagemangsinsikter (förhandsversion) i Dynamics 365 Customer Insights
+summary: Samla in data för webbplatserna. Förstå hur kunderna interagerar och använder webbplatser interaktivt. Använd den djupare integreringen mellan kontaktinsikter och målgruppsinsikter om du vill utöka dina beteendeanalyser i realtid med kundprofilrapporter. Utöka kundprofilerna med webbaktiviteter och få beteendedata i realtid tillsammans med relevanta kunddata. Omvandla verksamheten till ett omedelbart värde från dina kunddata.
+metadata:
+  title: Engagemangsinsikter (förhandsversion) dokumentation
+  description: Hjälpnav med viktiga länkar för engagemangsinsikter.
+  ms.service: customer-insights
+  ms.subservice: engagement-insights
+  ms.topic: hub-page
+  author: m-hartmann
+  ms.author: mhart
+  ms.reviewer: mhart
+  ms.date: 07/30/2021
+  ms.openlocfilehash: 9951b1834d18acf0c4961a776d9d6247d4ae3505b5721a41314266e41f8ae928
+  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 08/10/2021
+  ms.locfileid: "7036260"
+landingContent:
+- title: Om
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Kapacitetsöversikt
+      url: overview.md
+    - text: Villkor och koncept
+      url: glossary.md
+    - text: Upptäck engagemangsinsikter
+      url: https://dynamics.microsoft.com/ai/customer-insights/engagement-insights-capability/
+- title: Registrering
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Kom igång
+      url: get-started.md
+    - text: Skapa en arbetsyta
+      url: create-workspace.md
+    - text: Arrangera din webbplats
+      url: instrument-website.md
+- title: Rapporter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Visa rapporter
+      url: view-reports.md
+    - text: Skapa anpassade rapporter
+      url: custom-reports.md
+    - text: Visa rapporten enhetliga profiler
+      url: profile-reports.md
+    - text: Skapa trattrapporter
+      url: funnel-reports.md
+- title: Händelse
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Skapa förfinade händelser
+      url: refined-events.md
+    - text: Exportera händelser
+      url: export-events.md
+    - text: Ta bort och exportera personuppgifter
+      url: delete-export-personal-data.md
+- title: Resurser för utvecklare
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Resurser för utvecklare
+      url: developer-resources.md
+    - text: Exempel på Webb-SDK
+      url: websdk-sample.md
+    - text: Avancerade webb-SDK scenarier
+      url: advanced-SDK-implementation.md
+    - text: Android SDK-exempel
+      url: get-started-android.md
+    - text: iOS SDK-exempel
+      url: get-started-ios.md
+- title: Administration
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Hantera miljöer och arbetsytor
+      url: manage-environments-workspaces.md
+    - text: Anslut till målgruppinsikter
+      url: configure-connections.md
+    - text: Hantera cookies och användarmedgivande
+      url: user-consent-storage.md
