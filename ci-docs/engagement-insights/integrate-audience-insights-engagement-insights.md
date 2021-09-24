@@ -1,19 +1,19 @@
 ---
 title: Skapa en länk mellan målgruppsinsikter och engagemangsinsikter
 description: Skapa en aktiv länk mellan målgruppsinsikter och engagemangsinsikter för att möjliggöra dubbelriktad datadelning.
-ms.date: 07/22/2021
+ms.date: 09/08/2021
 ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 870209a7e19fec464ec41462a02365771bd653bd
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
+ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461035"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "7487129"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Skapa en länk mellan målgruppsinsikter och engagemangsinsikter
 
@@ -26,14 +26,14 @@ Använd enhetliga profiler och segment från olika målgruppsinsikter för fler 
 ## <a name="prerequisites"></a>Förutsättningar
 
 - Målgruppens insiktsprofiler måste lagras i en Azure Data Lake Storage konto som du äger eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;hanterad datasjö. 
-
+- Din miljö med målgruppsinsikter bör ha en associerad Dataverse-miljö. Och om den miljön också använder Dataverse för datalagring bör du kontrollera alternativet **Aktivera datadelning** bland målgruppsinsikterna. Mer information finns i [Skapa och konfigurera en betalmiljö bland målgruppsinsikterna](../audience-insights/get-started-paid.md).
 - Du måste ha administratörabehörigheter för både engagemangsinsikter och målgruppsinsikter.
-
 - Länkade miljöer måste finnas i samma geografiska område.
 
 > [!NOTE]
-> - Om dina målgruppsinsikter prenumeration är en utvärderingsversion som använder publik insikter för internt hanterade data, kontaktar du [pirequest@microsoft.com](mailto:pirequest@microsoft.com) för hjälp. 
-> - Om din miljö med målgruppsinsikter använder din egen Azure Data Lake Storage för att lagra data, måste du lägga till ett Azure-huvudkonto för tjänsten för engagemangsinsikter i ditt lagringskonto. Mer information finns i [Ansluta till ett Azure Data Lake Storage konto med ett Azure-huvudkonto för tjänsten för målgruppsinsikter](../audience-insights/connect-service-principal.md). Dessutom bör din miljö med målgruppsinsikter ha en associerad [Dataverse miljö](../audience-insights/get-started-paid.md). 
+> - Om din prenumeration på målgruppsinsikter är en utvärderingsversion som använder en internt hanterad datasjöv för målgruppsinsikter kontaktar du [pirequest@microsoft.com](mailto:pirequest@microsoft.com) för hjälp. 
+> - Om din miljö med målgruppsinsikter använder din egen Azure Data Lake Storage för att lagra data, måste du lägga till ett Azure-huvudkonto för tjänsten för engagemangsinsikter i ditt lagringskonto. Mer information finns i [Ansluta till ett Azure Data Lake Storage konto med ett Azure-huvudkonto för tjänsten för målgruppsinsikter](../audience-insights/connect-service-principal.md). 
+
 
 ## <a name="create-an-environment-link"></a>Skapa en miljölänk
 
@@ -75,6 +75,7 @@ Efter länkning av miljöer kan du välja valfria funktioner för de länkade mi
 
    > [!IMPORTANT]
    > Om du inte uttryckligen lägger till användare i det här steget döljs data för användare i engagemangsinsikter.
+   > För segment med målgruppsinsikter att visa i engagemangsinsikter måste du först [köra kopplade och nedströmsprocesser ](../audience-insights/merge-entities.md). Processer nedströms är viktiga eftersom de genererar en unik tabell som förbereder segment av målgruppsinsikter som ska delas med engagemangsinsikter. (Om en systemuppdatering schemaläggs inkluderas processer nedströms automatiskt.)
 
 1. Gå igenom valen och klicka därefter på **Slutför**.
 

@@ -4,17 +4,17 @@ description: Lär dig anpassa och köra iOS SDK
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 06/23/2021
+ms.date: 09/15/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: de8291fc429ae6433301a47bfdf9a3271b1b77294fd58448c7aa6bd0783edc97
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f05929435eeee9cf3f891ab18842c5861e39d5ba
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036895"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494252"
 ---
 # <a name="get-started-with-the-ios-sdk"></a>Kom i gång med iOS SDK
 
@@ -45,11 +45,36 @@ Påbörja processen genom att välja en arbetsyta att arbeta i, välja iOS-mobil
 
 - Om du inte har en befintlig arbetsyta väljer du **Ny arbetsyta** och följer stegen för att skapa en [ny arbetsyta](create-workspace.md).
 
+- När du har skapat en arbetsyta går du till **Administratör** > **Arbetsyta** och väljer sedan **Installationshandbok**.
+
 ## <a name="configure-the-sdk"></a>Konfigurera SDK
 
-När du har hämtat SDK kan du arbeta med det i Xcode för att aktivera och definiera händelser.
+När du har hämtat SDK kan du arbeta med det i Xcode för att aktivera och definiera händelser. Det finns två sätt att göra detta
 
-1. När du har skapat en arbetsyta går du till **Administratör** > **Arbetsyta** och väljer sedan **Installationshandbok**.
+### <a name="option-1-using-cocoapods-recommended"></a>Alternativ 1: Använda CocoaPods (rekommenderas)
+CocoaPods är beroendeansvarig för Swift and Objective-C Cocoa-projekt. Om du använder den blir det enklare att använda SDK för engagemangsinsikter för iOS. Med CocoaPods kan du också uppgradera till den senaste versionen av SDK för engagemangsinsikter. Så här använder du CocoaPods för att integrera SDK för engagemangsinsikter i ditt Xcode-projekt. 
+
+1. Installera CocoaPods. 
+
+1. Skapa en ny fil kallad Podfile i projektets rotkatalog och lägg till följande instruktioner. Ersätt YOUR_TARGET_PROJECT_NAME med namnet på Xcode-projektet. 
+```objectivec
+platform :ios, '9.0'  
+
+ target '${YOUR_TARGET_PROJECT_NAME}' do 
+
+     use_frameworks!   
+
+     pod 'EIObjC.framework.debug' 
+
+     pod 'EIObjC.framework.release' 
+
+ end 
+```
+Poddkonfigurationen ovan innehåller både felsöknings- och standardversionerna av SDK. Välj det som passar bäst för just ditt projekt.
+
+1. Installera podden genom att köra följande kommando: `pod install --repo-update `
+
+### <a name="option-2-using-download-link"></a>Alternativ 2: Använda nedladdningslänk
 
 1. Hämta [iOS-SDK för engagemangsinsikter](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-ios-sdk.zip) och placera filen `EIObjC.xcframework` i mappen `Frameworks`.
 

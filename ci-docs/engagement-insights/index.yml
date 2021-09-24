@@ -1,8 +1,8 @@
 ### YamlMime:Landing
-title: Funktionen Engagemangsinsikter (förhandsversion) i Dynamics 365 Customer Insights
+title: Funktion för engagemangsinsikter i Dynamics 365 Customer Insights (förhandsversion)
 summary: Samla in data för webbplatserna. Förstå hur kunderna interagerar och använder webbplatser interaktivt. Använd den djupare integreringen mellan kontaktinsikter och målgruppsinsikter om du vill utöka dina beteendeanalyser i realtid med kundprofilrapporter. Utöka kundprofilerna med webbaktiviteter och få beteendedata i realtid tillsammans med relevanta kunddata. Omvandla verksamheten till ett omedelbart värde från dina kunddata.
 metadata:
-  title: Engagemangsinsikter (förhandsversion) dokumentation
+  title: Dokumentation om engagemangsinsikter (förhandsversion)
   description: Hjälpnav med viktiga länkar för engagemangsinsikter.
   ms.service: customer-insights
   ms.subservice: engagement-insights
@@ -10,24 +10,24 @@ metadata:
   author: m-hartmann
   ms.author: mhart
   ms.reviewer: mhart
-  ms.date: 07/30/2021
-  ms.openlocfilehash: 9951b1834d18acf0c4961a776d9d6247d4ae3505b5721a41314266e41f8ae928
-  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.date: 09/15/2021
+  ms.openlocfilehash: bf2e40b1ca304e7b26687eaff298d2e70615cd2b
+  ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 08/10/2021
-  ms.locfileid: "7036260"
+  ms.lasthandoff: 09/15/2021
+  ms.locfileid: "7494206"
 landingContent:
 - title: Om
   linkLists:
   - linkListType: overview
     links:
-    - text: Kapacitetsöversikt
+    - text: Funktionsfördelar
       url: overview.md
-    - text: Villkor och koncept
+    - text: Ordlista
       url: glossary.md
-    - text: Upptäck engagemangsinsikter
-      url: https://dynamics.microsoft.com/ai/customer-insights/engagement-insights-capability/
+    - text: Nya och uppdaterade funktioner
+      url: /dynamics365-release-plan/2021wave1/customer-data-platform/engagement-insights/planned-features
 - title: Registrering
   linkLists:
   - linkListType: how-to-guide
@@ -38,33 +38,35 @@ landingContent:
       url: create-workspace.md
     - text: Arrangera din webbplats
       url: instrument-website.md
-- title: Rapporter
+- title: Visa och filtrera rapporter
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Visa rapporter
       url: view-reports.md
-    - text: Skapa anpassade rapporter
-      url: custom-reports.md
     - text: Visa rapporten enhetliga profiler
       url: profile-reports.md
-    - text: Skapa trattrapporter
-      url: funnel-reports.md
-- title: Händelse
+    - text: Använd målgruppssegment för att filtrera rapporter
+      url: integrate-audience-insights-segments.md
+- title: Analysera
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Skapa trattrapporter
+      url: funnel-reports.md
+    - text: Analysera beteendedata
+      url: curate-dimensions.md
+    - text: Skapa anpassade rapporter
+      url: custom-reports.md
     - text: Skapa förfinade händelser
       url: refined-events.md
     - text: Exportera händelser
       url: export-events.md
-    - text: Ta bort och exportera personuppgifter
-      url: delete-export-personal-data.md
-- title: Resurser för utvecklare
+- title: Utvecklarresurser
   linkLists:
   - linkListType: reference
     links:
-    - text: Resurser för utvecklare
+    - text: Utvecklarresurser
       url: developer-resources.md
     - text: Exempel på Webb-SDK
       url: websdk-sample.md
@@ -81,6 +83,10 @@ landingContent:
     - text: Hantera miljöer och arbetsytor
       url: manage-environments-workspaces.md
     - text: Anslut till målgruppinsikter
-      url: configure-connections.md
+      url: integrate-audience-insights-engagement-insights.md
     - text: Hantera cookies och användarmedgivande
       url: user-consent-storage.md
+    - text: Ta bort och exportera personuppgifter
+      url: delete-export-personal-data.md
+    - text: Tjänstbegränsningar
+      url: ../service-limits.md

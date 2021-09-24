@@ -14,8 +14,14 @@
       href: audience-insights/overview.md
     - name: Nya och uppdaterade funktioner
       href: audience-insights/whats-new-audience-insights.md
-    - name: Skapa en ny miljö
-      href: audience-insights/get-started-paid.md
+    - name: Kom igång
+      items:
+        - name: Snabbstartguide
+          href: audience-insights/get-started.md
+        - name: Skapa en ny miljö
+          href: audience-insights/get-started-paid.md
+        - name: Utforska målgruppinsikter
+          href: audience-insights/home.md
     - name: Lär dig moduler
       items:
         - name: Mata in data
@@ -24,7 +30,7 @@
           href: /learn/modules/unified-customer-profile/
         - name: Arbeta med appar
           href: /learn/modules/working-with-customer-insights/
-        - name: Berika data och förutsägelser
+        - name: Utöka data och förutsägelser
           href: /learn/modules/enrich-data/
     - name: Datakällor
       items:
@@ -60,21 +66,23 @@
           href: audience-insights/relationships.md
         - name: Ange kundaktiviteter
           href: audience-insights/activities.md
-    - name: Databerikande
+    - name: Datautökande
       items:
-        - name: Berika kundprofiler
+        - name: Utöka kundprofiler
           href: audience-insights/enrichment-hub.md
         - name: Varumärkes- och intressetillhörigheter
           href: audience-insights/enrichment-microsoft.md
         - name: Utökade adresser
           href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Berika med HERE Technologies
+        - name: Utöka med Azure Maps
+          href: audience-insights/enrichment-azure-maps.md
+        - name: Utöka med HERE Technologies
           href: audience-insights/enrichment-here.md
-        - name: Berika med Leadspace
+        - name: Utöka med Leadspace
           href: audience-insights/enrichment-leadspace.md
-        - name: Berika med Experian
+        - name: Utöka med Experian
           href: audience-insights/enrichment-experian.md
-        - name: Berika med anpassad SFTP-import
+        - name: Utöka med anpassad SFTP-import
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Segment
       items:
@@ -230,21 +238,15 @@
           href: audience-insights/apis.md
         - name: API-referenser
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-    - name: Tjänstbegränsningar
-      href: audience-insights/service-limits.md
-    - name: DSR-begäranden under GDPR
-      href: audience-insights/gdpr.md
 - name: Engagemangsinsikter (förhandsversion)
   items:
     - name: Hjälphubb
       href: engagement-insights/index.yml
     - name: Kapacitetsöversikt
       href: engagement-insights/overview.md
-    - name: Kostnadsfri utvärderingsversion
-      href: 'https://pi.dynamics.com/'
     - name: Kom igång
       items:
-        - name: Kom igång
+        - name: Snabbstartguide
           href: engagement-insights/get-started.md
         - name: Skapa en arbetsyta
           href: engagement-insights/create-workspace.md
@@ -300,18 +302,10 @@
           href: engagement-insights/user-roles.md
         - name: Hantera miljöer och arbetsytor
           href: engagement-insights/manage-environments-workspaces.md
-        - name: Konfigurera anslutningar
-          href: engagement-insights/configure-connections.md
         - name: Hantera cookies och användarmedgivande
           href: engagement-insights/user-consent-storage.md
-    - name: GDPR
-      items:
-        - name: Ta bort och exportera personuppgifter
-          href: engagement-insights/delete-export-personal-data.md
     - name: Regional tillgänglighet
       href: engagement-insights/regional-availability.md
-    - name: Tjänstbegränsningar
-      href: engagement-insights/quotas.md
 - name: Integrera publik och insikter om interaktion
   items:
     - name: Länka målgruppinsikter och engagemangsinsikter
@@ -320,5 +314,9 @@
       href: engagement-insights/integrate-audience-insights-segments.md
     - name: Använd demografiska mått för att dela beteendedata
       href: engagement-insights/curate-dimensions.md
+- name: Tjänstbegränsningar
+  href: service-limits.md
+- name: DSR-rättigheter och -förfrågningar
+  href: dsr-rights-requests.md
 - name: Få support
-  href: 'https://dynamics.microsoft.com/en-us/support/'
+  href: 'https://dynamics.microsoft.com/support/'

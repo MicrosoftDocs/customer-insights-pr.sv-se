@@ -1,20 +1,20 @@
 ---
 title: Kundaktiviteter
-description: Definiera kundaktiviteter och visa dem på tidslinjen för kunden.
-ms.date: 04/07/2021
+description: Definiera kundaktiviteter och visa dessa på en tidslinje för kundprofiler.
+ms.date: 09/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 6ebe899d3e3da43c4108678cd2e4f9a986e18ab35e839044becab4619adb0f14
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033653"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494433"
 ---
 # <a name="customer-activities"></a>Kundaktiviteter
 
@@ -60,12 +60,15 @@ Dina datakällor innehåller entiteter med transaktions- och aktivitetsdata frå
       - **Ytterligare information**: Fält med relevant information för aktiviteten.
       - **Ikon**: Ikon som bäst representerar den här aktivitetstypen.
       - **Webbadress**: Fält som innehåller en URL med information om aktiviteten. Det kan till exempel vara det transaktionssystem som visar aktiviteten. URL:en kan vara vilket fält som helst från datakällan, eller också kan den skapas som ett nytt fält med hjälp av en Power Query-omvandling. URL-data lagras i entiteten *Enhetlig aktivitet*, som kan användas nedströms med [API:er](apis.md). 
-   
-   :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Ange kundaktivitetsdata i en entitet för enhetlig aktivitet.":::
+
+   - **Visa på tidslinje**
+      - Välj om du vill visa denna aktivitet i tidslinjevyn för dina kundprofiler. Välj **Ja** om du vill visa aktiviteten på tidslinjen eller **Nej** för att dölja den.
+
+      :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Ange kundaktivitetsdata i en entitet för enhetlig aktivitet.":::
 
 1. Klicka på **Nästa** för att gå till nästa steg. Du kan välja **Slutför och granska** om du vill spara aktiviteten nu med aktivitetstypen **Annat**. 
 
-1. Välj aktivitetstyp i steget **Aktivitetstyp** och välj om du vill mappa några av aktivitetstyperna så att de kan användas i andra områden av Customer Insights. För närvarande går det att mappa aktivitetstyperna *Prenumeration* och *SalesOrderLine* semantiskt efter att ha godkänt att fälten mappas. Om en aktivitetstyp inte är relevant för den nya aktiviteten kan du välja *Annat* eller *Skapa ny* för en anpassad aktivitetstyp.
+1. Välj aktivitetstyp i steget **Aktivitetstyp** och välj om du vill mappa några av aktivitetstyperna så att de kan användas i andra områden av Customer Insights. I nuläget kan aktivitetstyperna *Feedback*, *Lojalitet*, *SalesOrder*, *SalesOrderLine* samt *Prenumeration* mappas semantiskt efter godkännande att fälten mappas. Om en aktivitetstyp inte är relevant för den nya aktiviteten kan du välja *Annat* eller *Skapa ny* för en anpassad aktivitetstyp.
 
 1. Klicka på **Nästa** för att gå till nästa steg. 
 

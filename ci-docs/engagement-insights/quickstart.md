@@ -9,12 +9,12 @@ ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: eebe51d343f6afbed52a66c52ab6a60eb5cd410367fb2e4409eb8679f357c91e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 95caaa1f67a7740328b67face00acaea65452eb0
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033929"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494494"
 ---
 # <a name="first-run-experience"></a>Välkomstprogram
 
@@ -26,7 +26,7 @@ Med funktionen engagemangsinsikter för Dynamics 365 Customer Insights, kan du s
 
 Du måste ha ett aktivt Microsoft Azure Active Directory-användarkonto. 
 
-1. Öppna webbplatsen [engagemangsinsikter](https://pi.dynamics.com/). 
+1. Öppna webbplatsen [engagemangsinsikter](https://home.ci.ai.dynamics.com/app/engagement-insights). 
 
 1. Logga in på ditt arbets- eller skolkonto.
 
@@ -71,7 +71,7 @@ Som standard är det bara den person som har skapat arbetsytan som har åtkomst 
 
 4. Välj **Lägg till medlemmar** för att bekräfta.
 
-Ta bort medlemmar från en arbetsyta genom att markera **...** bredvid deras namn på sidan **Medlemmar**, och välj sedan **Ta bort** i listrutan.
+Ta bort medlemmar från en arbetsyta genom att markera **…** bredvid deras namn på sidan **Medlemmar**, och välj sedan **Ta bort** i listrutan.
 
 ## <a name="edit-a-workspace"></a>Redigera en arbetsyta
 

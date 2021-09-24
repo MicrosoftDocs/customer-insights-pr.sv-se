@@ -1,20 +1,20 @@
 ---
 title: Förutsägelse av produktrekommendationer
 description: Förutse produkterna som kunder sannolikt köper eller interagerar med.
-ms.date: 03/17/2021
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: zacookmsft
-ms.author: zacook
+author: wmelewong
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 60d511181aa85e3e939eff3e5931f0de7807c01c8f38134ebca5c5604cd53871
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034978"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494561"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Förutsägelse av produktrekommendationer (förhandsversion)
 
@@ -89,23 +89,24 @@ Om du vill prova den här funktionen men inte har några data för att uppfylla 
 
 ### <a name="add-required-data"></a>Lägg till obligatoriska data
 
-1. Välj **Lägg till data** för **Kundtransaktionshistorik** och välj den entitet som innehåller information om transaktions-/inköpshistorik enligt beskrivningen i [kraven](#prerequisites).
+1. Välj **Lägg till data** och välj den aktivitetstyp i sidorutan som innehåller information om den erforderliga transaktionen eller köphistoriken.
 
-1. Mappa de semantiska fälten till attribut i entiteten för inköpshistorik och välj **Nästa**. För beskrivningar av fälten, läs igenom [kraven](#prerequisites).
-   > [!div class="mx-imgBorder"]
-   > ![Definiera entitetsrelation.](media/product-recommendation-purchasehistorymapping.PNG "Sidan Köphistorik som visar attribut som är mappade till fält i den valda inköpshistorikentiteten")
+1. Under **Välj aktiviteter** väljer du specifika aktiviteter från den valda aktivitet som du vill att beräkningen ska fokusera på.
 
-1. Om fälten inte är ifyllda konfigurerar du relationen från entiteten för inköpshistorik till entiteten *Kund*.
-    1. Välj **entiteten Inköpshistorik**.
-    1. Välj det **fält** som identifierar kunden i entiteten för inköpshistorik. Detta måste relatera till primärt kund-ID för entiteten *Kund*.
-    1. Välj den **Kundentitet** som matchar den primära kundentiteten.
-    1. Ange ett namn som beskriver relationen.
-       > [!div class="mx-imgBorder"]
-       > ![Sidan Inköpshistorik visar skapandet av en relation till kunden.](media/model-purchase-join.png "Sidan Inköpshistorik visar skapandet av en relation till kunden")
+   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="En sidoruta som anger specifika aktiviteter under semantiktypen.":::
+
+1. Om du ännu inte har mappat aktiviteten till någon semantisk typ väljer du **Redigera** för att göra så. Den guidade upplevelsen att mappa aktiviteter öppnas. Mappa dina data till motsvarande fält i vald aktivitets typ.
+
+   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Aktivitetstyp för sidinställning.":::
+
+1. När du har mappat aktiviteten till motsvarande semantiska typ väljer du **Nästa** för att gå vidare 
+ 
+1. Mappa de semantiska attributen till de fält som krävs för att köra modellen.
 
 1. Välj **Spara**.
 
 1. Välj **Nästa**.
+
 
 ### <a name="configure-product-filters"></a>Konfigurera produktfilter
 

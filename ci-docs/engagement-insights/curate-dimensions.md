@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50bb800c9e097d03cc6f26f79819c741ab5e8baf
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 8a3d7f9276330a6daacbe9428d84a371b81bbefe
+ms.sourcegitcommit: 971716c761871cee390519cacef617dac21ecd60
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461125"
+ms.lasthandoff: 09/01/2021
+ms.locfileid: "7466370"
 ---
 # <a name="use-demographic-dimensions-for-splitting-behavioral-data"></a>Använd demografiska mått för att dela beteendedata
 
@@ -29,7 +29,7 @@ Genom att använda en enhetlig profil för demografisk storlek kan användarna f
 - En miljö med engagemangsinsikter där du har kundprofildata kopplade till miljöer med målgruppsinsikter där kundprofilerna skapas. Mer information finns i [Skapa en länk mellan målgruppsinsikter och engagemangsinsikter](integrate-audience-insights-engagement-insights.md)
 
 > [!NOTE]
-> När du har skapat en länk mellan miljöer för målgruppsinsikter och engagemangsinsikter kanske du bara vill ha data specifika för kundprofilegenskaper, som kan vara användbara som mått i engagemangsinsikter. För mer information, gå till [Aktivera målgruppsinsikter, enhetliga profilattribut och segment](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).<!--note from editor: Suggested. -->
+> När du har skapat en länk mellan miljöer för målgruppsinsikter och engagemangsinsikter kanske du bara vill ha data specifika för kundprofilegenskaper, som kan vara användbara som mått i engagemangsinsikter. För mer information, gå till [Aktivera målgruppsinsikter, enhetliga profilattribut och segment](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).
 
 ## <a name="create-a-new-custom-report"></a>Skapa en ny anpassad rapport
 

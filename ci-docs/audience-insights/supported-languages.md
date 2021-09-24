@@ -1,24 +1,23 @@
 ---
-title: Språk som stöds för målgruppsinsikter
+title: Språk som stöds för Dynamics 365 Customer Insights
 description: Förstå och konfigurera språkstöd.
-ms.date: 02/26/2021
+ms.date: 09/01/2021
 ms.service: customer-insights
-ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e9161ebbfdf3ae6c48c12cdf7515b77ca49ae8055ae9a69f9ec314bc1247aeaf
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f80c3019df9b5d82273842ca6f6f18bef0239687
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035161"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483364"
 ---
-# <a name="supported-languages-for-audience-insights-capability"></a>Språk som stöds för funktionen målgruppsinsikter
+# <a name="supported-languages-for-dynamics-365-customer-insights"></a>Språk som stöds för Dynamics 365 Customer Insights
 
-Målgruppsinsikter för Dynamics 365 Customer Insights översätts till många språk. Följande lista innehåller tillgängliga språk och information om vad som översatts. Du kan också läsa mer om hur du ändrar språkinställningarna. 
+Dynamics 365 Customer Insights har översatts till många olika språk. Följande lista innehåller tillgängliga språk och information om vad som översatts. Du kan också läsa mer om hur du ändrar språkinställningarna. 
 
 ## <a name="languages"></a>Språk
 
@@ -69,7 +68,7 @@ Målgruppsinsikter för Dynamics 365 Customer Insights översätts till många s
 
 ## <a name="whats-translated"></a>Vad är översatt
 
-Appen använder din språkinställning för att visa element som menyn, etikettext och systemmeddelanden på det språk du föredrar.
+Customer Insights använder din språkinställning för att visa element som meny, etikettext och systemmeddelanden på det språk du föredrar.
 
 Eftersom de flesta funktioner bygger på dina data kvarstår vissa objekt på det ursprungliga språket. Till exempel:
 

@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 07/19/2021
+ms.date: 08/31/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 3412213bcf3a4174baf28c6b4d38f5febded18707c355d236d5082698c4c0db7
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: fcc45c24e9d89516dba9964ee16f57caf439eff0
+ms.sourcegitcommit: 2abe9b661b8c3c01e9730c629e383402e3f6a655
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035985"
+ms.lasthandoff: 08/31/2021
+ms.locfileid: "7465227"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -26,6 +26,15 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="august-2021-updates"></a>Uppdatering augusti 2021
+
+Uppdateringarna i juli och augusti 2021 innehåller en ny funktion, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="extensibility"></a>Utbyggbar
+
+- **Exportera segment till Klaviyo** Vi har utökat våra [exportmål till att omfatta Klaviyo](export-klaviyo.md). Du kan nu exportera segment i syfte att skapa kampanjer, bedriva e-postmarknadsföring samt använda specifika kundgrupper med Klaviyo. 
+
 
 ## <a name="june-2021-updates"></a>Uppdatering i juni 2021
 

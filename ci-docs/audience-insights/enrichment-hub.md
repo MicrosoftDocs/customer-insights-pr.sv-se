@@ -1,7 +1,7 @@
 ---
-title: Berika enhetliga kundprofiler
-description: Använd kapaciteter för att berika dina kunddata.
-ms.date: 07/01/2021
+title: Utöka enhetliga kundprofiler
+description: Använd kapaciteter för att utöka dina kunddata.
+ms.date: 08/31/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,16 +10,16 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: a64bbd754d4013d0a6243074ac9f55991547be82b269047a9937b583baf98697
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
+ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032550"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "7470042"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
-Använd data från källor som Microsoft och andra partners för att berika dina kunddata.
+Använd data från källor som Microsoft och andra partners för att utöka dina kunddata.
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="Sida för förbättringsnav.":::
 
@@ -29,6 +29,7 @@ Du måste ha behörighet för Deltagare eller Administratör för att kunna skap
 
 På fliken **Identifiera** finns följande berikningar:
 
+- [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
 - [Varumärken](enrichment-microsoft.md) som tillhandahålls av Microsoft
 - [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft
 - [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft
@@ -43,11 +44,11 @@ På fliken **Mina berikningar** kan du se vilka berikningar du har konfigurerat 
 
 Gå till fliken **Mina berikningar** om du vill visa alla konfigurerade berikningar. Varje berikning representeras som en rad som innehåller ytterligare information om berikningen.
 
-Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja ellips (...) på ett listobjekt om du vill visa alternativen. Om du har konfigurerat flera förbättringar kan du använda sökrutan för att hitta den snabbt.
+Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja ellips (…) på ett listobjekt om du vill visa alternativen. Om du har konfigurerat flera förbättringar kan du använda sökrutan för att hitta den snabbt.
 
 :::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Alternativ för hantering av listan över förbättringar.":::
 
-- **Visa** detaljerad information om hur många kundprofiler som har berikats.
+- **Visa** detaljerad information om hur många kundprofiler som har utökats.
 - **Redigera** konfiguration för berikning.
 - **Kör** berikningen för att uppdatera kundprofiler med senaste data.
 - **Inaktivera** en befintlig berikning om du vill förhindra att den uppdateras automatiskt vid alla schemalagda uppdateringar. Data från den senaste uppdateringen kommer fortfarande att vara tillgängliga. **Aktivera** en inaktiv anrikning för att starta om automatisk uppdatering vid alla schemalagda uppdateringar.
@@ -61,6 +62,18 @@ Tredjepartsutslag konfigureras med hjälp av [anslutningar](connections.md), som
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flera berikningar av samma typ
 
-Entiteten som ska utökas anges under konfiguration för berikning, vilket gör att du endast kan utöka en delmängd av dina profiler. Berika till exempel endast data för ett visst segment. Du kan konfigurera flera anrop av samma typ och återanvända samma anslutning. För vissa berikningar begränsas antalet berikningar av samma typ som kan skapas. Begränsningarna och den aktuella användningen visas på sidan **Berikningar**.
+Entiteten som ska utökas anges under konfiguration för berikning, vilket gör att du endast kan utöka en delmängd av dina profiler. Utöka till exempel endast data för ett visst segment. Du kan konfigurera flera anrop av samma typ och återanvända samma anslutning. För vissa berikningar begränsas antalet berikningar av samma typ som kan skapas. Begränsningarna och den aktuella användningen visas på sidan **Berikningar**.
+
+## <a name="see-the-progress-of-the-enrichment-process"></a>Se utökandeprocessens förlopp
+
+Du kan hitta information om bearbetningen av ett utökande, inklusive status och möjliga problem i samband med uppdatering eller efter det att en uppdatering har slutförts. Ta reda på vilka processer som är inblandade för att uppdatera ett utökande och hur lång tid det tog att köra processerna. Utökandestatusen stöds för Experian, Leadspace, HERE Technologies, SFTP-import och Azure Maps.
+
+Så här ser du statusen för ett utökande
+
+1. Gå till **Data** > **Berikning**. 
+1. På fliken **Mina utökanden** väljer du statusen för ett utökande om du vill öppna ett sidofönster. 
+1. I fönstret **Förloppsinformation** expanderar du avsnittet **Utökanden**. 
+1. Under det utökande du vill visa förloppet för väljer du **Visa information**. 
+1. I fönstret **Uppgiftsinformation** väljer du **Visa information** om du vill se vilka processer som är involverade i att uppdatera utökandet samt statusen för dessa. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

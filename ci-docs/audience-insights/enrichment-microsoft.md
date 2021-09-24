@@ -1,6 +1,6 @@
 ---
-title: Berika kundprofiler med data från Microsoft
-description: Använd tillverkarspecifika data från Microsoft för att berika kunddata med intresse och varumärke.
+title: Utöka kundprofiler med data från Microsoft
+description: Använd tillverkarspecifika data från Microsoft för att utöka kunddata med intresse och varumärke.
 ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,22 +9,22 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 726edb19a9fd97d80ae357103dc7d48ed38b005131ad44137b47d629a1c60b12
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 45c81a037258e42d8975e0372c104865a9d4cbfe
+ms.sourcegitcommit: 2acda3c5adf40bc3f5bbb4b2b4b6c22f84371da7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033883"
+ms.lasthandoff: 09/01/2021
+ms.locfileid: "7466646"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Utöka kundprofiler med varumärkes- och intressetillhörighet (förhandsversion)
 
-Använd tillverkarspecifika data från Microsoft för att berika kunddata med intresse och varumärke. Dessa samhörigheter baseras på data från personer med demografiska egenskaper som liknar dina kunders. Med hjälp av den här informationen kan du bättre förstå och segmentera dina kunder utifrån deras tillhörigheter till särskilda varumärken och intressen.
+Använd tillverkarspecifika data från Microsoft för att utöka kunddata med intresse och varumärke. Dessa samhörigheter baseras på data från personer med demografiska egenskaper som liknar dina kunders. Med hjälp av den här informationen kan du bättre förstå och segmentera dina kunder utifrån deras tillhörigheter till särskilda varumärken och intressen.
 
 I målgruppsinsikter går du till **Data** > **Berikning** för att [konfigurera och visa berikningar](enrichment-hub.md).
 
-Om du vill konfigurera berikning för varumärkestillhörighet kan du gå till fliken **Upptäck** och välja **Berika mina data** på ikonen **Varumärken**.
+Om du vill konfigurera berikning för varumärkestillhörighet kan du gå till fliken **Upptäck** och välja **Utöka mina data** på ikonen **Varumärken**.
 
-Om du vill konfigurera berikning av intressetillhörighet kan du gå till fliken **Upptäck** och välja **Berika mina data** på ikonen **Intressen**.
+Om du vill konfigurera berikning av intressetillhörighet kan du gå till fliken **Upptäck** och välja **Utöka mina data** på ikonen **Intressen**.
 
    > [!div class="mx-imgBorder"]
    > ![Paneler för varumärken och intressen.](media/BrandsInterest-tile-Hub.png "Paneler för varumärken och intressen")
@@ -35,7 +35,7 @@ Vi använder Microsofts onlinesökningsdata för att hitta intressegrupper och i
 
 ## <a name="affinity-level-and-score"></a>Tillhörighetsnivå och poäng
 
-I varje berikad kundprofil tillhandahåller vi två relaterade värden – tillhörighetsnivå och tillhörighetspoäng. Dessa värden hjälper dig att avgöra hur starkt tillhörigheten är för den profilens demografiska segment, för ett varumärke eller intresse, jämfört med andra demografiska segment.
+I varje utökad kundprofil tillhandahåller vi två relaterade värden – tillhörighetsnivå och tillhörighetspoäng. Dessa värden hjälper dig att avgöra hur starkt tillhörigheten är för den profilens demografiska segment, för ett varumärke eller intresse, jämfört med andra demografiska segment.
 
 *Tillhörighetsnivå* består av fyra nivåer och *tillhörighetspoäng* beräknas på en skala med 100 poäng som mappas till tillhörighetsnivåerna.
 
@@ -61,7 +61,7 @@ Om du vill välja ett land eller en region öppnar du **Varumärkesberikning** e
 
 - När [du väljer en bransch](#define-your-brands-or-interests) får du de mest relevanta märkena eller intressena utifrån valt land eller vald region.
 
-- När [profiler berikas](#refresh-enrichment) berikar vi alla kundprofiler för vilka vi får data för valda varumärken och intressen, inklusive profiler som inte finns i valt land eller vald region. Om du till exempel valde Tyskland utökar vi profiler i USA om det finns tillgängliga data för valda tillverkare och intressen i USA.
+- När [profiler utökas](#refresh-enrichment) utökar vi alla kundprofiler för vilka vi får data för valda varumärken och intressen, inklusive profiler som inte finns i valt land eller vald region. Om du till exempel valde Tyskland utökar vi profiler i USA om det finns tillgängliga data för valda tillverkare och intressen i USA.
 
 ## <a name="configure-enrichment"></a>Konfigurera berikning
 
@@ -80,13 +80,13 @@ Gå igenom standardinställningarna för berikning och uppdatera dem efter behov
 
 :::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Skärmbild av fönstret med inställningar för berikning.":::
 
-### <a name="select-entity-to-enrich"></a>Välj en entitet att berika
+### <a name="select-entity-to-enrich"></a>Välj en entitet att utöka
 
-Välj **Berikad entitet** och välj den datauppsättning du vill berika med företagsdata från Microsoft. Du kan välja entiteten Kund för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
+Välj **Utökad entitet** och välj den datauppsättning du vill utöka med företagsdata från Microsoft. Du kan välja entiteten Kund för att utöka alla dina kundprofiler eller välja en segmentsentitet för att endast utöka kundprofiler i det segmentet.
 
 ### <a name="map-your-fields"></a>Mappa dina fält
 
-Mappa fält från en enhetlig kundentitet och definiera det demografiska segment som du vill att systemet ska använda för att berika kunddata. Mappa land/region och åtminstone attributen Födelsedatum eller Kön. Du måste också mappa minst en av Ort (och Region) eller Postnummer. Välj **redigera** om du vill definiera mappningen av fälten och välj **Tillämpa** när du är klar. Välj **Spara** för att slutföra fältmappningen.
+Mappa fält från en enhetlig kundentitet och definiera det demografiska segment som du vill att systemet ska använda för att utöka kunddata. Mappa land/region och åtminstone attributen Födelsedatum eller Kön. Du måste också mappa minst en av Ort (och Region) eller Postnummer. Välj **redigera** om du vill definiera mappningen av fälten och välj **Tillämpa** när du är klar. Välj **Spara** för att slutföra fältmappningen.
 
 Följande format och värden stöds (värden är inte skiftlägeskänsliga):
 
@@ -121,13 +121,15 @@ Beroende på storleken på kundens data kan det ta flera minuter innan en anrikn
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 
-När du har kört berikningsprocessen går du till **Mina berikningar** för att granska det totala antalet berikade kunder och en uppdelning av varumärken eller intressen ii de berikade kundprofilerna.
+När du har kört berikningsprocessen går du till **Mina berikningar** för att granska det totala antalet utökade kunder och en uppdelning av varumärken eller intressen ii de utökade kundprofilerna.
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Förhandsgranskning av resultatet efter det att förbättringsprocessen har körts.":::
 
-Granska utökad data genom att välja **Visa utökad data** i diagrammet. Berikad data för varumärken skickas till entiteten **BrandAffinityFromMicrosoft**. Data för intressen finns i entiteten **InterestAffinityFromMicrosoft**. Du hittar också de här entiteterna i gruppen **Berikande** i **Data** > **Entiteter**.
+Granska utökad data genom att välja **Visa utökad data** i diagrammet. Utökad data för varumärken skickas till entiteten **BrandAffinityFromMicrosoft**. Data för intressen finns i entiteten **InterestAffinityFromMicrosoft**. Du hittar också de här entiteterna i gruppen **Utökande** i **Data** > **Entiteter**.
 
-## <a name="see-enrichment-data-on-the-customer-card"></a>Visa berikande data på kundkortet
+Du ser ett diagram med antalet utökade kundprofiler över tid och en förhandsgranskning av den utökade entiteten. Välj **Visa mer** i förhandsgranskningspanelen om du vill öppna den utökade entiteten.
+
+## <a name="see-enrichment-data-on-the-customer-card"></a>Visa utökande data på kundkortet
 
 Varumärkes- och räntetillhörigheter kan också visas på enskilda kundkort. Gå till **kunder** och välj en kundprofil. På kundkortet hittar du diagram för de varumärken eller intressen som personer i den kundens demografiska profil har tillhörighet för.
 
@@ -135,7 +137,7 @@ Varumärkes- och räntetillhörigheter kan också visas på enskilda kundkort. G
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och till och med [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
+Skapa ovanpå dina utökade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och till och med [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

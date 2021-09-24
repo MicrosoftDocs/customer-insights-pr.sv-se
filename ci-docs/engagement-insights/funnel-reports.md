@@ -4,17 +4,17 @@ description: Använda trattrapporter för att förstå hur målgruppen fattar be
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 06/23/2021
+ms.date: 09/17/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7c6b7b7285556f8a531ce9e29f0d1de162562be6fb43dd826a65fd9e00d87b30
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
+ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032277"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "7498664"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Skapa, distribuera och hantera trattrapporter
 
@@ -86,7 +86,7 @@ Engagemangsinsikter kan också samla in beteendekunddata i mobilappen. När du h
 
 1. Följ stegen för att [skapa en trattrapport](#create-a-funnel-report).    
 
-1. Om du vill spåra hur kunderna interagerar med ditt varumärke på både webbplatsen och i mobilappen - eller flera webbplatser - använder du arbetsyteväxlaren för att skapa trattsteg med data från andra arbetsytor. I **Trattredigeraren**, under **Steg**, väljer du den arbetsyta som datan för ditt trattsteg ska komma ifrån.
+1. Om du vill spåra hur kunderna interagerar med ditt varumärke på både webbplatsen och i mobilappen – eller flera webbplatser – använder du arbetsyteväxlaren för att skapa trattsteg med data från andra arbetsytor. I **Trattredigeraren**, under **Steg**, väljer du den arbetsyta som datan för ditt trattsteg ska komma ifrån.
 
 ## <a name="manage-funnel-reports"></a>Hantera trattrapporter
 
@@ -158,4 +158,21 @@ Du kan ändra namnet på en trattrapport, ta bort den eller ändra stegen i rapp
 1. Välj ett namn för att öppna rapporten.
 
 1. Markera steget du vill ta bort och välj sedan **Ta bort**.
+
+## <a name="funnel-insights"></a>Trattinsikter 
+
+Engagemangsinsikter erbjuder nu trattinsikter för kunder. Använd trattinsikter om du vill få en djupare inblick i kundbeteendet om stegen i trattrapporten. När du skapar och sparar en ny trattrapport skapas trattinsikter automatiskt för rapporten. 
+
+Du kan visa trattinsikter från följande kategorier, både på huvud- och stegnivåer: 
+
+ - Konverteringsgrad 
+ - Övergångstid 
+ - Slutförandetid 
+
+Använd dessa insikter om du vill utforska kundbeteendet djupare och få en bättre förståelse för avlämningspunkter och abonnemangsändringar för din trattrapport. 
+
+Trattinsikter beräknas om var 24:e timme eller när du **sparar** trattrapporten. 
+
+> [!NOTE]
+> För att kunna visa insikter för din tratt måste du spara rapporten varje gång du gör ändringar. 
 
