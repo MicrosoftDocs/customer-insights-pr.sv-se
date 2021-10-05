@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
-ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
+ms.openlocfilehash: 8d93a49a29c29103e189a6d4a42294c18dc28abd
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/10/2021
-ms.locfileid: "7487129"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7559040"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Skapa en länk mellan målgruppsinsikter och engagemangsinsikter
 
@@ -54,6 +54,9 @@ Du kan skapa en miljölänk genom att uppdatera inställningarna för **Admin** 
 ## <a name="enable-audience-insights-unified-profiles-attributes-and-segments"></a>Aktivera målgruppsinsikter, enhetliga profilattribut och segment
 
 Efter länkning av miljöer kan du välja valfria funktioner för de länkade miljöerna. Dessa funktioner möjliggör enhetliga profilattribut och segment från målgruppsinsikter för interaktiv analys på kunddata.
+
+> [!IMPORTANT]
+> För segment med målgruppsinsikter att visa i engagemangsinsikter måste du först [köra kopplade och nedströmsprocesser ](../audience-insights/merge-entities.md). Processer nedströms är viktiga eftersom de genererar en unik tabell som förbereder segment av målgruppsinsikter som ska delas med engagemangsinsikter. (Om en systemuppdatering schemaläggs inkluderas processer nedströms automatiskt.)
 
 **Analysera webbdata i insikter om interaktion**
 

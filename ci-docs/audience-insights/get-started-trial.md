@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: f038dedd369ac9e623146b66528efa87c47a8c23769037d8709fa9b804a0b723
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3a235e924395a606b9332de3d205289288a597a9
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035437"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558847"
 ---
 # <a name="set-up-a-trial-environment"></a>Konfigurera en utvärderingsmiljö 
 
@@ -95,7 +95,7 @@ Du kan nu använda den inmatade datan för att skräddarsy Customer Insights eft
 
 - Utvärderingsversioner är aktiva i 30 dagar som standard. Du kan emellertid utöka dem efter dag 23 när du loggar in på din utvärderingsversion.
 - Du kan inte använda ditt eget Azure Data Lake-lagringskonto för att lagra utdata under en utvärderingsversion. Du kan däremot mata in data från ett Data Lake-lagringskonto.
-- Du kan lagra upp till 3 GB data i den Dataverse-miljö som tillhandahålls automatiskt när du startar en utvärderingsversion av Customer Insights.
+- Du kan spara upp till 3 GB data i den Dataverse-miljö som tillhandahålls automatiskt när du startar en utvärderingsversion av Customer Insights.
 
 ## <a name="copy-data-from-a-trial-to-a-paid-subscription"></a>Kopiera data från en utvärderingsversion till en betald prenumeration
 

@@ -242,7 +242,7 @@
   items:
     - name: Hjälphubb
       href: engagement-insights/index.yml
-    - name: Kapacitetsöversikt
+    - name: Om engagemangsinsikter
       href: engagement-insights/overview.md
     - name: Kom igång
       items:
@@ -306,7 +306,7 @@
           href: engagement-insights/user-consent-storage.md
     - name: Regional tillgänglighet
       href: engagement-insights/regional-availability.md
-- name: Integrera publik och insikter om interaktion
+- name: Dela data mellan funktioner
   items:
     - name: Länka målgruppinsikter och engagemangsinsikter
       href: engagement-insights/integrate-audience-insights-engagement-insights.md
@@ -318,5 +318,3 @@
   href: service-limits.md
 - name: DSR-rättigheter och -förfrågningar
   href: dsr-rights-requests.md
-- name: Få support
-  href: 'https://dynamics.microsoft.com/support/'

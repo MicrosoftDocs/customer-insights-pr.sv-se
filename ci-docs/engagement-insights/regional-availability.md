@@ -4,16 +4,16 @@ description: Läs mer om de regioner och geografiska områden som tjänsten dist
 author: mkisel11
 ms.reviewer: mhart
 ms.author: mkisel
-ms.date: 09/01/2021
+ms.date: 09/28/2021
 ms.service: customer-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: c89637cbbe6626f95bcadb1f69831a1647f448a4
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: d4ae7a085ba68c482372868e75376b6f769325d7
+ms.sourcegitcommit: ce2c011f06999dba2e886b8804d3439fbf67074d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483319"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "7564616"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Regional tillgänglighet för Dynamics 365 Customer Insights
 
@@ -21,9 +21,9 @@ ms.locfileid: "7483319"
 
 Interaktionsinsikter, en Dynamics 365 Customer Insights-funktion, introducerar gradvis fler regioner, där kunderna kan välja att lagra sina data. Administratörer kan välja en region när de [skapar en ny miljö](manage-environments-workspaces.md#create-an-environment). 
 
-När du konfigurerar engagemangsinsikter för första gången kan du välja regionen samtidigt som du går igenom den [guidade förstagångsupplevelsen](quickstart.md). Senare låter samtliga nya miljöer dig välja i vilken region som datan ska lagras i.
+När du konfigurerar engagemangsinsikter för första gången kan du välja regionen samtidigt som du går igenom den [guidade förstagångsupplevelsen](quickstart.md). Senare kan du välja i vilken region data ska lagras för varje ny miljö.
 
-För närvarande finns det två geografiska områden: USA och Europa. Användarna kan välja mellan regionen Västra USA och regionen Nordeuropa.
+För närvarande har vi stöd USA och Europa. Användare kan välja mellan dessa regioner: västra USA, östra USA, norra Europa och västra Europa.
 
 En organisation kan upprätthålla miljöer i olika regioner. I Miljö A lagras till exempel data i västra USA och i miljö B lagras den i norra Frankrike.
 

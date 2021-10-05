@@ -1,20 +1,20 @@
 ---
 title: Relationer mellan entiteter och entiteters sökvägar
 description: Skapa och hantera relationer mellan entiteter från flera datakällor.
-ms.date: 06/01/2020
+ms.date: 09/27/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
+ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035253"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7557374"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellan entiteter
 
@@ -93,11 +93,11 @@ Tillgängliga alternativ:
 - **Ändra till vågrät/lodrät layout**: Ändra justeringen för entiteterna och relationer.
 - **Redigera**: Uppdatera egenskaper för anpassade relationer i redigeringsfönstret och spara ändringar.
 
-### <a name="relationship-path"></a>Relationssökväg
+## <a name="relationship-paths"></a>Relationsvägar
 
-Relationssökvägen beskriver de entiteter som är kopplade till relationer mellan en källentitet och en målentitet. Den används när du skapar ett segment eller ett mått som innehåller andra entiteter än entiteten för en enhetlig profil och det finns flera alternativ för att nå entiteten för en enhetlig profil.
+En relationsväg beskriver de entiteter som är kopplade genom relationer mellan en källentitet och en målentitet. Den används när du skapar ett segment eller ett mått som innehåller andra entiteter än entiteten för en enhetlig profil och det finns flera alternativ för att nå entiteten för en enhetlig profil. 
 
-Relationssökvägen informerar det system som har Relationer åtkomst till entiteten för en enhetlig profil. Olika relationssökvägar kan ge olika resultat.
+En relationsväg informerar systemet om vilka relationer som har åtkomst till den sammanslagna profilentiteten. Olika relationssökvägar kan ge olika resultat.
 
 Entiteten har till exempel *eCommerce_eCommercePurchases* har följande information för enhetliga profil *Kund*:
 
@@ -105,7 +105,43 @@ Entiteten har till exempel *eCommerce_eCommercePurchases* har följande informat
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kund
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kund 
 
-Relationssökvägen avgör vilka entiteter du kan använda när du skapar regler för mått eller segment. Om du väljer alternativet med den längsta relationssökvägen ger det troligen färre resultat eftersom matchande poster måste vara en del av alla entiteter. I det här exemplet måste en kund ha köpt varor via e-handeln (eCommerce_eCommercePurchases), vid en försäljningsställe(POS_posPurchases) och delta i vårt lojalitetsprogram (loyaltyScheme_loyCustomers). När du väljer det första alternativet får du förmodligen fler resultat eftersom kunderna bara behöver finnas i en ytterligare entitet.
+En relationsväg avgör vilka entiteter du kan använda när du skapar regler för åtgärder eller segment. Om du väljer alternativet med den längsta relationssökvägen ger det troligen färre resultat eftersom matchande poster måste vara en del av alla entiteter. I det här exemplet måste en kund ha köpt varor via e-handeln (eCommerce_eCommercePurchases), vid en försäljningsställe(POS_posPurchases) och delta i vårt lojalitetsprogram (loyaltyScheme_loyCustomers). När du väljer det första alternativet får du förmodligen fler resultat eftersom kunderna bara behöver finnas i en ytterligare entitet.
+
+### <a name="direct-relationship"></a>Direkt relation
+
+En relation klassificeras som en **direkt relation** då en källentitet relaterar till en målentitet med endast en relation.
+
+Om exempelvis en aktivitetsentitet med namnet *eCommerce_eCommercePurchases* ansluter till en målentitet *eCommerce_eCommerceContacts* enbart via *ContactId* är det en direkt relation.
+
+:::image type="content" source="media/direct_Relationship.png" alt-text="Källentiteten ansluter direkt till målentiteten.":::
+
+#### <a name="multi-path-relationship"></a>Relation med flera vägar
+
+En **relation med flera vägar** är en speciell typ av direkt relation som ansluter en källentitet till flera målentiteter.
+
+Om exempelvis en aktivitetsentitet med namnet *eCommerce_eCommercePurchases* ansluter till två målentiteter, både *eCommerce_eCommerceContacts* och *loyaltyScheme_loyCustomers*, är det en relation med flera vägar.
+
+:::image type="content" source="media/multi-path_relationship.png" alt-text="Källentiteten ansluter direkt till flera målentiteter via en multi-hop-relation.":::
+
+### <a name="indirect-relationship"></a>Indirekt relation
+
+En relation klassificeras som en **indirekt relation** då en källentitet relaterar till en eller flera ytterligare entiteter före den ansluter till en målentitet.
+
+#### <a name="multi-hop-relationship"></a>Multi-hop-relation
+
+En *multi-hop-relation* är en *indirekt relation* som gör att du kan ansluta en källentitet till en målentitet via en eller flera andra mellanliggande entiteter.
+
+Om exempelvis en aktivitetsentitet med namnet *eCommerce_eCommercePurchasesWest* ansluter till en mellanliggande entitet med namnet *eCommerce_eCommercePurchasesEast* och sedan ansluter till en målentitet med namnet *eCommerce_eCommerceContacts* är det multi-hop-relation.
+
+:::image type="content" source="media/multi-hop_relationship.png" alt-text="Källentiteten ansluter direkt till en målentitet med en mellanliggande entitet.":::
+
+### <a name="multi-hop-multi-path-relationship"></a>Multi-hop-relation med flera vägar
+
+Multi-hop-relationer och relationer med flera vägar kan användas tillsammans och skapa en **multi-hop-relation med flera vägar**. Den här specialtypen kombinerar funktionerna för **multi-hop-relationer** och **relationer med flera vägar**. Du kan ansluta till fler än en målentitet med hjälp av mellanliggande entiteter.
+
+Om exempelvis en aktivitetsentitet med namnet *eCommerce_eCommercePurchasesWest* ansluter till en mellanliggande entitet med namnet *eCommerce_eCommercePurchasesEast* och sedan ansluter till två målentiteter, både *eCommerce_eCommerceContacts* och *loyaltyScheme_loyCustomers*, är det multi-hop-relation med flera vägar.
+
+:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Källentiteten ansluter direkt till en målentitet och ansluter till en annan målentitet via en mellanliggande entitet.":::
 
 ## <a name="manage-existing-relationships"></a>Hantera befintliga relationer 
 

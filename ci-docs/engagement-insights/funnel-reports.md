@@ -4,17 +4,17 @@ description: Använda trattrapporter för att förstå hur målgruppen fattar be
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 09/17/2021
+ms.date: 09/21/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
-ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
+ms.openlocfilehash: efb10f2664630a5851d9582ff09c378c01777b96
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2021
-ms.locfileid: "7498664"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558964"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Skapa, distribuera och hantera trattrapporter
 
@@ -163,13 +163,23 @@ Du kan ändra namnet på en trattrapport, ta bort den eller ändra stegen i rapp
 
 Engagemangsinsikter erbjuder nu trattinsikter för kunder. Använd trattinsikter om du vill få en djupare inblick i kundbeteendet om stegen i trattrapporten. När du skapar och sparar en ny trattrapport skapas trattinsikter automatiskt för rapporten. 
 
+:::image type="content" source="media/funnel-insights.png" alt-text="Trattinsikter.":::
+
+> [!NOTE]
+> Trattinsikter kan enbart skapas för trattsteg som **inte** innehåller anpassade dimensioner. För att skapa trattinsikter för alla steg i din tratt ska du använda färdiga dimensioner i engagemangsinsikter och skapa dina trattsteg. 
+
 Du kan visa trattinsikter från följande kategorier, både på huvud- och stegnivåer: 
 
- - Konverteringsgrad 
+ - Konverteringsgrad
+ -    Konverteringsgraden mellan utcheckning och köp är 22 %.
  - Övergångstid 
+ -    Genomsnittlig övergångstid mellan kundvagn och utcheckning är 23 minuter. 
  - Slutförandetid 
+ -    Genomsnittlig tid för kunden att slutföra tratten är 47 minuter. 
 
 Använd dessa insikter om du vill utforska kundbeteendet djupare och få en bättre förståelse för avlämningspunkter och abonnemangsändringar för din trattrapport. 
+
+För att jämföra insikter för olika steg väljer du **Se steguppdelning** eller **Jämför med andra steg** från insiktskorten. Det visas ett stapeldiagram där mått jämförs för alla steg i tratten. 
 
 Trattinsikter beräknas om var 24:e timme eller när du **sparar** trattrapporten. 
 
