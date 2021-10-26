@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 75d597158233f75f0eb5f94389f9dba199d81719f2bbe4e5cc58d2a3afc7dcf8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: de31e1f25c08d0bcb5341c5f465b1999de48acf3
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032872"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645377"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
@@ -35,7 +35,7 @@ Du kan lägga till en datakälla på tre huvudsakliga sätt:
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Lägga till data lokala datakällor
 
-Inmatning av data från lokala datakällor i målgruppinsikter stöds baserat på Microsoft Power Platform-dataflöden. Dataflöden kan aktiveras i Customer Insights av [ange Microsoft Dataverse miljö-URL](get-started-paid.md) när du ställer in miljön.
+Inmatning av data från lokala datakällor i målgruppinsikter stöds baserat på Microsoft Power Platform-dataflöden. Dataflöden kan aktiveras i Customer Insights av [ange Microsoft Dataverse miljö-URL](create-environment.md) när du ställer in miljön.
 
 Datakällor som skapas efter att ha associerat en Dataverse-miljö med Customer Insights kommer att använda [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) by default. Dataflöden stöder lokal anslutning med datagateway. Ta bort och återskapa datakällor som fanns innan en Dataverse-miljö associerades för att [använda lokal datagateways](/data-integration/gateway/service-gateway-app).
 

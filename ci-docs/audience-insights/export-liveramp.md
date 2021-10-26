@@ -1,7 +1,7 @@
 ---
 title: LiveRamp anslutning
 description: Lär dig hur du konfigurerar anslutningen och exporterar till LiveRamp.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 7940db3efacad62ba16099849b3e3ca00d2a5cc1ed31e15a34209c0797e6ae13
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f9a0a88fb58897e4d279c181f4cdb4f6c852da60
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035667"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618957"
 ---
 # <a name="export-segments-to-liverampreg-preview"></a>Exportera segment till LiveRamp&reg; (förhandsgranskning)
 
@@ -58,7 +58,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
    > [!div class="mx-imgBorder"]
    > ![LiveRamp-anslutningsprogram med attributmappning.](media/export-liveramp-segments.png "LiveRamp-koppling med attributmappning")
 
-1. Mappa motsvarande attribut från entiteten enhetlig kund för den valda nyckelidentifieraren.
+1. Mappa motsvarande attribut från entiteten *Kund* för den valda nyckel-ID:t.
 
 1. Välj **Lägg till attribut** för att mappa fler attribut som ska skickas till LiveRamp.
 

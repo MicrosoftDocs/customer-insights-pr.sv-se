@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Snapchat
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Snapchat.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 421dcd5ba5421597cf9dea71a9f9f25c7972a4f26fb49d4b042f8667a317ab5d
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b7a929d65a730b60e77ae111b458c68d3cce2020
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033423"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618705"
 ---
 # <a name="export-segments-to-snapchat-preview"></a>Exportera segment till Snapchat (förhandsversion)
 
@@ -29,7 +29,7 @@ Exportera segment med enhetliga kundprofiler till Snapchat och använd dem för 
 ## <a name="known-limitations"></a>Kända begränsningar
 
 - Export till Snapchat är begränsad till segment.
-- Det kan ta upp till 15 minuter att exportera upp till 1 miljon profiler till Snapchat. 
+- Det kan ta upp till 15 minuter innan du exporterar upp till 1 miljon kundprofiler till Snapchat. 
 
 ## <a name="set-up-connection-to-snapchat"></a>Konfigurera anslutningen Snapchat
 
@@ -63,7 +63,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Ange [**Snapchat målgrupps-ID**](https://businesshelp.snapchat.com/s/article/custom-audiences).
 
-1. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Det krävs att exportera segment till Snapchat.
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Det krävs att exportera segment till Snapchat.
 
 1. Välj de segment som du vill exportera. 
 

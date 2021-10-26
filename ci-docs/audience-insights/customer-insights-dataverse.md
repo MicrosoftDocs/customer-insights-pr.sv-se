@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-data i Microsoft Dataverse
 description: Använd Customer Insights-entiteter som tabeller i Microsoft Dataverse.
-ms.date: 06/15/2021
+ms.date: 10/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 45535a7368b89e19a91f08fcd825bda9d57a8709653104bf4043c29ffa14d0b8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 9855ff6908001dd18bc19a286fc56620d0a127e5
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032918"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645240"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeta med Customer Insights-data i Microsoft Dataverse
 
@@ -24,11 +24,7 @@ Customer Insights ger möjlighet att göra utdataenheter tillgängliga i [Micros
 
 **Organisationer med befintliga Dataverse-miljöer**
 
-Organisationer som redan använder Dataverse kan [använda en av deras befintliga Dataverse-miljöer](get-started-paid.md) när en administratör konfigurerar målgruppsinsikter. Genom att tillhandahålla webbadressen till Dataverse-miljön kopplas den till deras nya målgruppsinsiktsmiljö. För att säkerställa bästa möjliga prestanda måste Customer Insights- och Dataverse-miljöer finnas i samma region.
-
-Om du vill koppla en Dataverse-miljö expanderar du **Avancerade inställningar** när du skapar målgruppsinsiktsmiljö. Ange **webbadressen till Microsoft Dataverse-miljön** och markera kryssrutan **Aktivera datadelning**.
-
-:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt.":::
+Organisationer som redan använder Dataverse kan [använda en av deras befintliga Dataverse-miljöer](create-environment.md) när en administratör konfigurerar målgruppsinsikter. Genom att tillhandahålla webbadressen till Dataverse-miljön kopplas den till deras nya målgruppsinsiktsmiljö. För att säkerställa bästa möjliga prestanda måste Customer Insights- och Dataverse-miljöer finnas i samma region.
 
 **Ny organisation**
 

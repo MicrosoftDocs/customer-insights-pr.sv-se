@@ -2,8 +2,14 @@
   href: index.yml
 - name: Produktöversikt
   href: overview.md
-- name: Skapa en utvärdering
-  href: audience-insights/get-started-trial.md
+- name: Kostnadsfri utvärderingsversion
+  items:
+    - name: Registrera dig för en kostnadsfri utvärderingsversion
+      href: trial-signup.md
+    - name: Frågor och svar om utvärderingsversionen
+      href: trial-FAQ.md
+- name: Börja med en betald licens
+  href: paid-license.md
 - name: Öppna din miljö
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Målgruppsinsikter
@@ -19,9 +25,11 @@
         - name: Snabbstartguide
           href: audience-insights/get-started.md
         - name: Skapa en ny miljö
-          href: audience-insights/get-started-paid.md
+          href: audience-insights/create-environment.md
         - name: Utforska målgruppinsikter
           href: audience-insights/home.md
+    - name: Arbeta med affärskonton
+      href: audience-insights/work-with-business-accounts.md
     - name: Lär dig moduler
       items:
         - name: Mata in data
@@ -66,6 +74,8 @@
           href: audience-insights/relationships.md
         - name: Ange kundaktiviteter
           href: audience-insights/activities.md
+        - name: Definiera semantiska mappningar
+          href: audience-insights/semantic-mappings.md
     - name: Datautökande
       items:
         - name: Utöka kundprofiler
@@ -114,7 +124,7 @@
               href: audience-insights/predict-product-recommendation.md
             - name: Förutsäga prenumerationsomsättning
               href: audience-insights/predict-subscription-churn.md
-            - name: Förutsäga transaktionell omsättning
+            - name: Prediktion för transaktionsomsättning
               href: audience-insights/predict-transactional-churn.md
             - name: Använd anpassade modeller från Azure Machine Learning
               href: audience-insights/custom-models.md
@@ -126,7 +136,7 @@
               href: audience-insights/sample-guide-predict-clv.md
             - name: Exempelguide för förutsägelse om prenumerationsomsättning
               href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Exempelguide för förutsägelse om transaktionell omsättning
+            - name: Exempelguide för prediktion för transaktionsomsättning
               href: audience-insights/sample-guide-predict-transactional-churn.md
             - name: Exempelguide för förutsägelse av produktrekommendationer
               href: audience-insights/sample-guide-predict-product-recommendation.md
@@ -222,10 +232,14 @@
           href: audience-insights/connections.md
         - name: Hantera flera miljöer
           href: audience-insights/manage-environments.md
-        - name: Ansluta till ett ADLS-lagringskonto med hjälp av Service Principal
-          href: audience-insights/connect-service-principal.md
         - name: Språk som stöds
           href: audience-insights/supported-languages.md
+        - name: Säkerhet
+          items:
+            - name: Ta med din egen Key Vault
+              href: audience-insights/use-azure-key-vault.md
+            - name: Ansluta till ett ADLS-lagringskonto med hjälp av Service Principal
+              href: audience-insights/connect-service-principal.md
     - name: Utbyggbar
       items:
         - name: Integrera webbdata från engagemangsinsikter
@@ -248,6 +262,8 @@
       items:
         - name: Snabbstartguide
           href: engagement-insights/get-started.md
+        - name: Skapa en miljö
+          href: engagement-insights/create-new-environment.md
         - name: Skapa en arbetsyta
           href: engagement-insights/create-workspace.md
         - name: Registrera händelser från webbplatser och mobilappar

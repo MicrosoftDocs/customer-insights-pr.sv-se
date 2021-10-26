@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
-ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
+ms.openlocfilehash: bd80d0315f4f501b8f8108b99c144082c21e0d4c
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7557374"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623191"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellan entiteter
 
@@ -67,6 +67,20 @@ Relationen består av en *källentitet* som innehåller den utländska nyckeln o
    - **Fältet Målnyckel**: nyckelfältet för målentiteten. Exempel: Kund kan använda nyckelfältet **CustomerID**.
 
 4. Välj **Spara** för att skapa den anpassade relationen.
+
+## <a name="set-up-account-hierarchies"></a>Ange kontohierarkier
+
+Miljöer som är konfigurerade att använda affärskonton som primär målgrupp kan konfigurera kontohierarkier för relaterade affärskonton. Till exempel ett företag som har separata affärsenheter. 
+
+Organisationer skapar kontohierarkier för att bättre hantera konton och deras relationer med varandra. Funktionen målgruppsinsikter stöder hierarkier för överordnade och underordnade konton som redan finns i hämtade kunddata. Exempelvis konton från Dynamics 365 Sales. De här hierarkierna kan konfigureras på sidan **Relationer** i målgruppsinsikter under fliken kontohierarki.
+
+1. Gå till **Data** > **Relationer**.
+1. Välj fliken **kontohierarki**.
+1. Välj **Ny kontohierarki**. 
+1. Ange ett namn på hierarkin i rutan **Kontohierarki**. Systemet skapar ett namn på utdataentiteten. Du kan ändra namnet på entiteten för utdatanamnet.
+1. Välj den entitet som innehåller kontohierarkin. Vanligtvis finns den i samma entitet som innehåller kontona.
+1. Välj **Konto-ID** och **ID för överordnat konto** från den valda entiteten 
+1. Välj **Spara** om du vill tillämpa inställningarna och slutföra kontohierarkin.
 
 ## <a name="view-relationships"></a>Visa relationer
 

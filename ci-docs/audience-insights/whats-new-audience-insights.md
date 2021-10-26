@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: fcc45c24e9d89516dba9964ee16f57caf439eff0
-ms.sourcegitcommit: 2abe9b661b8c3c01e9730c629e383402e3f6a655
+ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2021
-ms.locfileid: "7465227"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606140"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -26,6 +26,20 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2021-updates"></a>Uppdatering i september 2021
+
+Uppdateringarna i september 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="activities"></a>Aktiviteter
+
+- **Förbättringar av aktivitetstidsvyn** Vi har utökat filtren för aktivitetstidslinjen för kundprofiler. Dessutom kan du använda det nya filtret för att filtrera efter aktivitetstyp och datum. Datum kan filtreras under andra villkor. Mer information finns i [Visa tidslinjer för aktiviteter för kundprofiler](activities.md#view-activity-timelines-on-customer-profiles).
+
+### <a name="relationships"></a>Relationer
+
+- **Stöd för multi-hop-relation** Använd multi-hop relationer när du konfigurerar aktiviteter och definierar relationer mellan enheter. Multi-hop relationships använda en mellanliggande entitet för att ansluta två enheter. När du konfigurerar en aktivitet kan du använda en multi-hop-relation för att ansluta aktivitetsentiteten till en mellanliggande entitet och sedan till en kundentitet. Du kan kombinera flera multi-hop-relationer med relationer med flera vägar. Mer information finns i [Multi-hop-relation](relationships.md#multi-hop-relationship).
+
+- **Stöd för relation med flera vägar** Använd relation med flera vägar när du konfigurerar aktiviteter och definierar relationer mellan enheter. Relationer med flera vägar relaterar en källentitet till fler än en entitet. När du konfigurerar en aktivitet kan du använda en relation med flera vägar för att ansluta aktivitetsentiteten till mer än en kundentitet. Du kan kombinera relationer med flera vägar med multi-hop-relationer. Mer information finns i [relationer med flera vägar](relationships.md#multi-path-relationship).
 
 ## <a name="august-2021-updates"></a>Uppdatering augusti 2021
 

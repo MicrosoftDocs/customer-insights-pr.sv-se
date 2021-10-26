@@ -1,32 +1,32 @@
 ---
 title: Berikning av företagsprofiler med tredjepartsberikning från Leadspace
 description: Allmän information om tredjepartsberikningen Leadspace.
-ms.date: 04/09/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: kishorem-MS
-ms.author: kishorem
+author: jodahlMSFT
+ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 34b73b37670ed45e2c31ea164c0788b793bee433829ce21317c83903f3fca1fe
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c57eb0ceb50e3b778acac72a4bbfd733a5b0c401
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031725"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617476"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Berikning av företagsprofiler med Leadspace (förhandsversion)
 
-Leadspace är ett datavetenskapsföretag som tillhandahåller en B2B-kunddataplattform. Det gör det möjligt för kunder med enhetliga kundprofiler för företag att berika sina data. Berikningar omfattar fler attribut, till exempel företagsstorlek, plats, industri med mera.
+Leadspace är ett datavetenskapsföretag som tillhandahåller en B2B-kunddataplattform. Det gör att miljöer med enhetliga kundprofiler baserade på konton kan utöka sina data. Utöka *kundprofiler* med attribut som företagsstorlek, plats eller bransch. Utöka *kontaktprofiler* med attribut som rubrik-, persona- eller e-postverifiering.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
 Följande krav måste vara uppfyllda för att du ska kunna konfigurera Leadspace:
 
 - Du har en aktiv Leadspace-licens.
-- Du har [enhetliga kundprofiler](customer-profiles.md) för företag.
-- En Leadspace-anslutning har redan konfigurerats av en administratör eller så har du behörigheterna [administratör](permissions.md#administrator) och “evig nyckel” (kallas för **Leadspace-token**). Kontakta [Leadspace](https://www.leadspace.com/products/leadspace-on-demand/) direkt för mer information om produkten.
+- Du har [enhetliga kundprofiler](customer-profiles.md) som bygger på konton.
+- En Leadspace-anslutning har redan konfigurerats av en administratör eller så har du behörigheterna [administratör](permissions.md#administrator) och “evig nyckel” (kallas för **Leadspace-token**). Kontakta [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/) direkt för mer information om produkten.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 
@@ -50,6 +50,10 @@ Följande krav måste vara uppfyllda för att du ska kunna konfigurera Leadspace
 
 1. Välj **Nästa** för att slutföra fältmappningen.
 
+1. Markera kryssrutan om du har *kontaktprofiler* som du vill utöka. Målgruppen automatiskt de obligatoriska fälten.
+
+   :::image type="content" source="media/enrichment-leadspace-contacts.png" alt-text="Utöka kontaktposter i leadutrymme.":::
+ 
 1. Ange ett namn för berikning och välj **Spara berikning** efter att ha granskat dina val.
 
 
@@ -75,13 +79,14 @@ Du måste vara en administratör för att konfigurera anslutningar. Välj **Läg
 
 När du har uppdaterat en anrikning kan du granska de nya data som har utökats under [Mina berikningar](enrichment-hub.md). Du kan hitta tidpunkten för den senaste uppdateringen och antalet berikade profiler.
 
-Du kan få tillgång till en detaljerad vy över respektive berikad profil genom att markera **Visa berikade data**.
+Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
 
 Mer information finns på [API:er för Leadspace](https://support.leadspace.com/hc/en-us/sections/201997649-API).
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och till och med [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
+
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 

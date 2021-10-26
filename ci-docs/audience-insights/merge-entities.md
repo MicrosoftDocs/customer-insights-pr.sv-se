@@ -1,7 +1,7 @@
 ---
 title: Slå samman entiteter i datasammanslutningen
 description: Slå samman entiteter för att skapa enhetliga kundprofiler.
-ms.date: 09/14/2021
+ms.date: 10/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,14 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+searchScope:
+- ci-merge
+ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
+ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494341"
+ms.lasthandoff: 10/18/2021
+ms.locfileid: "7648276"
 ---
 # <a name="merge-entities"></a>Slå samman entiteter
 
@@ -89,7 +91,7 @@ På sidan **Sammanslå**, välj **Uteslutna fält** om du vill visa listan över
     :::image type="content" source="media/recency-merge-option.png" alt-text="Alternativet Aktualitet i dialogrutan för att slå samman fält.":::
     - **Minst aktuell**: Identifierar det vinnande värdet baserat på minsta aktualitet. Kräver ett datum eller ett numeriskt fält för varje deltagande entitet i omfånget för att slå samman fält för att definiera aktualitet.
 
-1.  Du kan lägga till ytterligare fält som ska delta i sammanslagningsprocessen.
+1.  Du kan lägga till fler fält för att delta i sammanfogningsprocessen.
 
 1.  Du kan byta namn på det sammanslagna fältet.
 
@@ -131,7 +133,7 @@ Vissa entiteter innehåller mer information än andra. Om en entitet innehåller
 
 När du har konfigurerat sammanslagningsfält kan du definiera hur värden för kund-ID ska genereras, de unika kundprofil-identifierarna. Sammanslagningssteget i datasamordningsprocessen genererar den unika kundprofilidentifieraren. Identifieraren är kund-ID:t i entiteten *Kund* som resulterar ur datasamordningsprocessen. 
 
-Kund-ID:t i entiteten Kund baseras på ett hash med det första värdet för primärnycklarna som inte är null. Dessa nycklar kommer från de entiteter som används i matchnings- och sammanslagningsfasen och beror på matchningsordningen. Genererat kund-ID kan därför ändras när ett primärt nyckelvärde ändras i den primära entiteten i matchningsordningen. Därför kanske det primära nyckelvärdet inte alltid motsvarar samma kund.
+Kund-ID:t i entiteten Kund baseras på ett hash med det första värdet för primärnycklarna som inte är null. Dessa nycklar kommer från de entiteter som används i matchnings- och sammanslagningsfasen och beror på matchningsordningen. Genererat kund-ID kan därför ändras när ett primärt nyckelvärde ändras i den primära entiteten i matchningsordningen. Därför kanske inte värdet för den primära nyckeln alltid motsvarar samma kund.
 
 Genom att konfigurera ett stabilt kund-ID kan du undvika detta beteende.
 
@@ -139,7 +141,7 @@ Genom att konfigurera ett stabilt kund-ID kan du undvika detta beteende.
 
 1. Gå till **Förena** > **Sammanslå**.
 
-1. På sidan **Sammanslå** väljer du fliken **Nycklar**. 
+1. Välj fliken **Nycklar**. 
 
 1. Håll markören över raden **CustomerId** och markera alternativet **Konfigurera**.
    :::image type="content" source="media/customize-stable-id.png" alt-text="Kontroll för att anpassa ID-genereringen.":::
@@ -147,6 +149,30 @@ Genom att konfigurera ett stabilt kund-ID kan du undvika detta beteende.
 1. Välj upp till fem fält som ska utgöra ett unikt kund-ID och som är stabilare. För poster som inte överensstämmer med konfigurationen används ett systemkonfigurations-ID i stället.  
 
 1. Välj **Klar** och kör sammanslagningsprocessen för att tillämpa ändringarna.
+
+## <a name="group-profiles-into-households-or-clusters"></a>Gruppera profiler i organisationer som är för sig eller i kluster
+
+Som en del av konfigurationsprocessen för kundprofilgenerering kan du definiera regler för att gruppera relaterade profiler i ett kluster. Det finns för närvarande två typer av kluster tillgängliga – förkluster och anpassade kluster. Systemet väljer automatiskt att använda fördefinierade regler om entiteten *Kund* innehåller de semantiska fälten *Person.LastName* och *Location.Address*. Du kan också skapa ett kluster med dina egna regler och villkor, på samma sätt som med [matchningsregler](match-entities.md#define-rules-for-match-pairs).
+
+**Definiera ett hushåll eller ett kluster**
+
+1. Gå till **Förena** > **Sammanslå**.
+
+1. På fliken **Sammanslå**, välj **Avancerad** > **Skapa kluster**.
+
+   :::image type="content" source="media/create-cluster.png" alt-text="Kontroll för att skapa ett nytt kluster.":::
+
+1. Välj mellan ett kluster för **Hushåll** eller ett **Anpassat** kluster. Om fältet *Person.LastName* och *Location.Address* finns i entiteten *Kund* väljs automatiskt.
+
+1. Ange ett namn på klustret och välj **Klar**.
+
+1. Markera fliken **Kluster** för att hitta klustret du skapat.
+
+1. Ange regler och villkor för att definiera klustret.
+
+1. Välj **Kör** om du vill köra den kopplade processen och skapa klustret.
+
+När du har kört den kopplade processen läggs kluster-ID:erna till som nya fält i entiteten *kund*.
 
 ## <a name="run-your-merge"></a>Kör din koppling
 

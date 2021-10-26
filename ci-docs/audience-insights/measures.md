@@ -1,7 +1,7 @@
 ---
 title: Skapa och hantera mått
 description: Definiera mått som ska analyseras och reflektera företagets resultat.
-ms.date: 04/12/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3593a02ce89233cf1e66c6beee669dd6dd261ba3b0e1d2d0cc966731349d7d0b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7037030"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623054"
 ---
 # <a name="define-and-manage-measures"></a>Definiera och hantera mått
 
@@ -26,15 +26,15 @@ Använd måttverktyget om du vill planera affärsaktiviteter genom att fråga ef
 
 ## <a name="build-your-own-measure-from-scratch"></a>Bygg upp ditt eget mått från början
 
-Det här avsnittet innehåller information om hur du skapar ett nytt mått från grunden. Du kan skapa ett mått med dataattribut från dataentiteter som har en relation som är konfigurerad för att ansluta till entiteten Kund. 
+Det här avsnittet innehåller information om hur du skapar ett nytt mått från grunden. Du kan skapa ett mått med dataattribut från dataentiteter som har en relation konfigurerad för att ansluta till entiteten för en enhetlig kundprofil.
+
+# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
 
 1. I målgruppsinsikter går du till **Åtgärder**.
 
 1. Välj **Ny** och välj **Skapa din egen**.
 
 1. Välj **Redigera namn** och tillhandahåll ett **namn** för måttet. 
-   > [!NOTE]
-   > Om den nya måttkonfigurationen endast innehåller två fält, till exempel kund-ID och en beräkning, läggs utdatan till som en ny kolumn i den systemgenererade entiteten Customer_Measure. Dessutom kan du se måttens värde i den enhetliga kundprofilen. Andra mått genererar egna entiteter.
 
 1. Välj en sammansättningsfunktion i listrutan **Välj funktion** i konfigurationsområdet. Sammansättningsfunktioner omfattar: 
    - **Sum**
@@ -73,11 +73,11 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
    1. Välj **Redigera dimensioner** för att lägga till dataattribut som du vill gruppera måttvärdena efter. Till exempel ort eller kön. Som standard väljs dimensionen *Kund-ID* för att skapa *mått på kundnivå*. Du kan ta bort standarddimensionen om du vill skapa *mått på företagsnivå*.
    1. Välj **Klart** för att lägga till dimensionerna till måttet.
 
-1. Om det finns värden i dina data som du behöver ersätta med ett heltal - till exempel ersätta *null* med *0* - väljer du **Regler**. Konfigurera regeln och se till att du endast väljer heltal som ersättare.
+1. Om det finns värden i dina data som du behöver byta ut mot ett heltal väljer du **Regler**. Konfigurera regeln och se till att du endast väljer heltal som ersättare. Ersätt till exempel *null* med *0*.
 
 1. Om det finns flera sökvägar mellan den dataentitet du mappade och entiteten *Kund* måste du välja någon av de identifierade [entitetsrelationssökvägarna](relationships.md). Resultaten av måtten kan variera beroende på den valda sökvägen. 
    
-   1. Välj **Datainställningar** och välj den entitetssökväg som ska användas för att identifiera måttet. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
+   1. Välj **Relationssökväg** och välj den entitetsväg som ska användas för att identifiera ditt mått. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
    1. Välj **Klart** för att tillämpa dina val. 
 
    :::image type="content" source="media/measures-data-preferences.png" alt-text="Välj entitetssökvägen för måttet.":::
@@ -92,7 +92,79 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
 
 1. Gå till **Mått** för att se det nyskapade måttet i listan.
 
+# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
+
+1. I målgruppsinsikter går du till **Åtgärder**.
+
+1. Välj **Ny** och välj **Skapa din egen**.
+
+1. Välj **Redigera namn** och tillhandahåll ett **namn** för måttet. 
+
+1. Välj en sammansättningsfunktion i listrutan **Välj funktion** i konfigurationsområdet. Sammansättningsfunktioner omfattar: 
+   - **Sum**
+   - **Medel**
+   - **Antal**
+   - **Antal unika**
+   - **Max**
+   - **Min**
+   - **Först**: tar det första värdet i dataposten
+   - **Sist:** tar det sista värdet som lades till i dataposten
+
+   :::image type="content" source="media/measure-operators.png" alt-text="Operatörer för måttberäkningar.":::
+
+1. Välj **Lägg till attribut** för att välja de data du behöver för att skapa måttet.
+   
+   1. Välj fliken **Attribut**. 
+   1. Dataentitet: Välj den entitet som innehåller attributet du vill mäta. 
+   1. Dataattribut: Välj det attribut som du vill använda i sammansättningsfunktionen för att beräkna måttet. Du kan bara välja ett attribut åt gången.
+   1. Du kan också välja ett dataattribut från ett befintligt mått genom att välja fliken **Mått**. Du kan också söka efter ett entitets- eller måttnamn. 
+   1. Välj **Lägg till** för att lägga till det valda attributet till måttet.
+
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Välj ett attribut som ska användas i beräkningarna.":::
+
+1. Om du vill skapa mer komplexa mått kan du lägga till fler attribut eller använda olika operatörer i måttfunktionen.
+
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Skapa ett komplext mått med matematikoperatörer.":::
+
+1. Om du vill lägga till filter väljer du **Filter** i konfigurationsområdet. 
+  
+   1. I avsnittet **Lägg till attribut** i fönstret **Filter** väljer du det attribut som du vill använda för att skapa filter.
+   1. Ange filteroperatörerna så att filtret definieras för varje markerat attribut.
+   1. Välj **Tillämpa** för att lägga till filtren till måttet.
+
+1. Om du vill lägga till dimensioner väljer du **Dimension** i konfigurationsområdet. Dimensioner visas som kolumner i måttutdataentiteten.
+ 
+   1. Välj **Redigera dimensioner** för att lägga till dataattribut som du vill gruppera måttvärdena efter. Till exempel ort eller kön. Som standard väljs dimensionen *Kund-ID* för att skapa *mått på kundnivå*. Du kan ta bort standarddimensionen om du vill skapa *mått på företagsnivå*.
+   1. Välj **Klart** för att lägga till dimensionerna till måttet.
+
+1. Om det finns värden i dina data som du behöver byta ut mot ett heltal väljer du **Regler**. Konfigurera regeln och se till att du endast väljer heltal som ersättare. Ersätt till exempel *null* med *0*.
+
+1. Du kan använda växlingen **Sammanslagning av delkonton** om du [använder konton med hierarkier](relationships.md#set-up-account-hierarchies).
+   - Om det är inställt på **Av** beräknas måttet för varje konto. Varje konto får sitt eget resultat.
+   - Om den har angetts till **På** väljer du **Redigera** för att välja kontohierarkin enligt de hämtade hierarkierna. Måttet ger bara ett resultat eftersom det är aggregerat med underkonton.
+
+1. Om det finns flera sökvägar mellan den dataentitet du mappade och entiteten *Kund* måste du välja någon av de identifierade [entitetsrelationssökvägarna](relationships.md). Resultaten av måtten kan variera beroende på den valda sökvägen. 
+   
+   1. Välj **Relationssökväg** och välj den entitetsväg som ska användas för att identifiera ditt mått. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
+   1. Välj **Klart** för att tillämpa dina val. 
+
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Välj entitetssökvägen för måttet.":::
+
+1. Välj **...** i beräkningen för att **duplicera**, **byta namn på** eller **ta bort** en beräkning från ett mått.
+
+1. I området **Förhandsgranskning** ser du dataschemat för måttutdataentiteten, inklusive filter och dimensioner. Förhandsgranskningen reagerar dynamiskt på ändringar i konfigurationen.
+
+1. Välj **Kör** för att beräkna resultaten för det konfigurerade måttet. Välj **Spara och stäng** om du vill behålla den aktuella konfigurationen och köra måttet senare.
+
+1. Gå till **Mått** för att se det nyskapade måttet i listan.
+
+---
+
 ## <a name="use-a-template-to-build-a-measure"></a>Skapa ett mått med hjälp av en mall
+
+Du kan använda fördefinierade mallar med vanliga åtgärder för att skapa dem. Detaljerade beskrivningar av mallarna och en guidad upplevelse hjälper dig att skapa effektiva mått. Mallar bygger på mappade data från entiteten *Enhetlig aktivitet*. Kontrollera därför att du har konfigurerat [kundaktiviteter](activities.md) innan du skapar ett mått från en mall.
+
+# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
 
 Du kan använda fördefinierade mallar med vanliga åtgärder för att skapa dem. Detaljerade beskrivningar av mallarna och en guidad upplevelse hjälper dig att skapa effektiva mått. Mallar bygger på mappade data från entiteten *Enhetlig aktivitet*. Kontrollera därför att du har konfigurerat [kundaktiviteter](activities.md) innan du skapar ett mått från en mall.
 
@@ -140,6 +212,12 @@ I följande procedur beskrivs stegen för att skapa ett nytt mått med hjälp av
 
 1. Nu kan du välja **Kör** för att beräkna resultatet av åtgärden. Om du vill förfina den senare markerar du **Spara utkast**.
 
+# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
+
+Den här funktionen är endast tillgänglig för åtgärder som har skapats i miljöer med enskilda kunder som primär målgrupp.
+
+---
+
 ## <a name="manage-your-measures"></a>Hantera dina mått
 
 Listan med åtgärder finns på sidan **Mått**.
@@ -166,6 +244,5 @@ Välj ett mått i listan för följande alternativ:
 ## <a name="next-step"></a>Nästa steg
 
 Du kan använda befintliga åtgärder för att skapa [ett kundsegment](segments.md).
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

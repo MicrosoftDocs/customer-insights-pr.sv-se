@@ -1,7 +1,7 @@
 ---
 title: Skapa och hantera miljöer
 description: Läs om hur du registrerar dig för tjänsten och hur du hanterar miljöer.
-ms.date: 07/22/2021
+ms.date: 10/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e3f99f8f151aea5f120084382babd5e46e109545a4f63aafc51c3ecb1400cc33
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ce2fdd435a81bb04148057554c5958e3ab59f125
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034199"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645148"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
 
@@ -26,7 +26,7 @@ Välj kontrollen **miljö** i det övre högra hörnet av sidan om du vill ändr
 
 :::image type="content" source="media/home-page-environment-switcher.png" alt-text="Skärmbild av kontrollen för att växla miljöer.":::
 
-Administratörer kan [skapa](get-started-paid.md) och hantera miljöer.
+Administratörer kan [skapa](create-environment.md) och hantera miljöer.
 
 ## <a name="edit-an-existing-environment"></a>Redigera en befintlig miljö
 
@@ -36,23 +36,9 @@ Du kan redigera vissa av detaljerna i befintliga miljöer.
 
 2.  Välj ikonen **Redigera**.
 
-3. I rutan **Redigera miljö** kan du uppdatera miljöns **visningsnamn**, men du kan inte ändra **Region** eller **Typ**.
+3. I rutan **Redigera miljö** kan du uppdatera miljöinställningarna.
 
-4. Om en miljö har konfigurerats för att lagra data i Azure Data Lake Storage kan du uppdatera **kontonyckeln**. Du kan emellertid inte ändra **Kontonam** eller namnet för **Behållare**.
-
-5. Alternativt kan du uppdatera från en kontonyckelbaserad anslutning till en resursbaserad eller prenumerationsbaserad anslutning. När du har uppgraderat kan du inte återgå till kontonyckeln efter uppdateringen. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Du kan inte ändra informationen **Behållare** när anslutningen uppdateras.
-
-6. Du kan även ange en Microsoft Dataverse miljö-URL under **Konfigurera datadelning med Microsoft Dataverse och aktivera ytterligare funktioner**. Dessa funktioner för datadelning med program och lösningar som bygger på Microsoft Dataverse, datainsamling som lokala datakällor eller användning av [prediktioner](predictions.md). Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Microsoft Dataverse-hanterad Data Lake.
-
-   > [!NOTE]
-   > - Datadelning med Microsoft Dataverse-hanterad Data Lake stöds för närvarande inte när du sparar alla data i din egen Azure Data Lake Storage.
-   > - [Förutsägelse rörande saknade värden i en entitet](predictions.md) och inbäddade PowerBI-rapporter i målgruppsinsikter (om detta har aktiverats i din miljö) stöds inte för närvarande när du aktiverar datadelning med en Microsoft Dataverse-hanterad datasjö.
-
-   När du har aktiverat datadelning med Microsoft Dataverse startas en fullständig uppdatering av dina datakällor och andra processer. Om processer körs för tillfället visas inte alternativet att aktivera datadelning med Microsoft Dataverse. Vänta tills processerna har slutförts eller avbrutits om du vill aktivera datadelning. 
-   
-   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse.":::
-   
-   När du kör processer, till exempel datainmatning eller skapande av segment, kommer motsvarande mappar att skapas i det lagringskonto du angav ovan. Datafiler och model.json-filer skapas och läggs till i respektive undermappar, beroende på vilken process du kör.
+Mer information om miljöinställningar finns i [Skapa en ny miljö](create-environment.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopiera miljökonfigurationen
 

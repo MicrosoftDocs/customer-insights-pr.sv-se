@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Omnisend
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Omnisend.
-ms.date: 05/21/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 58b54dc24f4656f9dd376415a701539c8796e83e6d4e3c6754f5627ce77c5685
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 5496efa075fa3474c579366d143ea55e86ec3995
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031788"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619050"
 ---
 # <a name="export-segments-to-omnisend-preview"></a>Exportera segment till Omnisend (förhandsversion)
 
@@ -28,9 +28,9 @@ Exportera segment med enhetliga kundprofiler till Omnisend och använd dem för 
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till 1 miljon profiler per export till Omnisend och det kan ta upp till 4 timmar att slutföra.
+- Du kan exportera ta upp till 1 miljon kundprofiler per export till Omnisend och det kan ta 4 timmar att genomföra.
 - Export till Omnisend är begränsad till segment.
-- Antalet profiler som du kan exportera till Omnisend beror på ditt kontrakt med Omnisend.
+- Hur många kundprofiler du kan exportera till Omnisend är beroende av ditt kontrakt med Omnisend.
 
 ## <a name="set-up-connection-to-omnisend"></a>Konfigurera anslutningen till Omnisend
 
@@ -62,7 +62,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Omnisend. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
 
-1. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Det krävs för att exportera segment till Omnisend. Alternativt kan du exportera Förnamn, Efternamn, Adress, Land/Region, Delstat, Ort och Postnummer för att skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Det krävs för att exportera segment till Omnisend. Alternativt kan du exportera Förnamn, Efternamn, Adress, Land/Region, Delstat, Ort och Postnummer för att skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
 
 1. Välj **Spara**.
 

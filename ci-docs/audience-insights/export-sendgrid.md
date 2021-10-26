@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till SendGrid
 description: Lär dig hur du konfigurerar anslutningen och exporterar till SendGrid.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 03df2ab5fce1da1f4f662e1975533f2b538b47dbdd5cf96aae4f1007163e3729
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: da3da5ea68d178deab3b9ab31dd810dee610f607
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036123"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617853"
 ---
 # <a name="export-segments-to-sendgrid-preview"></a>Exportera segment till SendGrid (förhandsgranskning)
 
@@ -29,10 +29,10 @@ Exportera segment med enhetliga kundprofiler till SendGrid-kontaktlistor och anv
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Upp till 100 000 profiler totalt till SendGrid.
+- Upp till 100 000 kundprofiler totalt till SendGrid.
 - Export till SendGrid är begränsad till segment.
-- Att exportera upp till 100 000 profiler till SendGrid kan ta upp till några timmar att genomföra. 
-- Antalet profiler som du kan exportera till SendGrid är beroende av och begränsat enligt ditt kontrakt med SendGrid.
+- Det kan ta upp till några timmar innan du exporterar upp till 100 000 kundprofiler till SendGrid. 
+- Hur många kundprofiler du kan exportera till SendGrid är beroende av och begränsas av ditt kontrakt med SendGrid.
 
 ## <a name="set-up-connection-to-sendgrid"></a>Konfigurera anslutningen SendGrid
 
@@ -66,7 +66,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Ange ditt **[ID för SendGrid-lista](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts)**.
 
-1. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Upprepa samma steg för andra valfria fält, t.ex. **Förnamn**, **Efternamn**, **Land/region**, **Delstat**, **Stad** och **Postnummer**.
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Upprepa samma steg för andra valfria fält, t.ex. **Förnamn**, **Efternamn**, **Land/region**, **Delstat**, **Stad** och **Postnummer**.
 
 1. Välj de segment som du vill exportera. Vi **rekommenderar starkt att du inte exporterar fler än 100 000 kundprofiler totalt** till SendGrid. 
 

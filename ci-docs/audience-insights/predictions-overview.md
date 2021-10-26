@@ -1,7 +1,7 @@
 ---
 title: Översikt över prediktionsscenarier som stöds
 description: Prediktionsscenarier och alternativ som omfattas av Dynamics 365 Customer Insights-programmet.
-ms.date: 05/18/2021
+ms.date: 09/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: zacookmsft
 ms.author: zacook
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 57c61895d636273fc90a0ac5a942fd0c9abf583c687ae20621949554e581cdf8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: be452e4f1515f637f6edbc3ae3aaf6a3d3471489
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036031"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618865"
 ---
 # <a name="predictions-overview"></a>Preditionsöversikt
 
@@ -24,10 +24,20 @@ Dynamics 365 Customer Insights levereras med en mängd olika alternativ som utny
 ## <a name="out-of-box-models"></a>Färdiga modeller
 
 Det enklaste sättet att börja med att förutsäga data är fördefinierade modeller, ofta kallade färdiga modeller. De kräver bara vissa data och strukturer för att generera insikter snabbt. För närvarande är följande modeller tillgängliga: 
-- [Kundens livstidsvärde](predict-customer-lifetime-value.md): Förutsäger en kunds potentiella intäkter under hela interaktionen med ett företag. 
+
+# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
+
+- [Kundens livstidsvärde](predict-customer-lifetime-value.md): Förutsäger en kunds potentiella intäkter under hela interaktionen med ett företag.
 - [Produktrekommendation](predict-product-recommendation.md): Föreslår uppsättningar av prediktiva produktrekommendationer baserade på köpbeteende och kunder med liknande inköpsmönster.
 - [Prenumerationsomsättning](predict-subscription-churn.md): Förutsäger om en kund riskerar att inte längre använda ditt företags prenumerationsprodukter eller tjänster.
 - [Transaktionsbortfall](predict-transactional-churn.md): Förutsäger om en kund inte längre kommer att köpa dina produkter eller tjänster inom en viss tidsram.
+
+# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
+
+- [Transaktionsbortfall](predict-transactional-churn.md): Förutsäger om en kund inte längre kommer att köpa dina produkter eller tjänster inom en viss tidsram.
+
+---
+
 
 ## <a name="azure-machine-learning-integration"></a>Integration av Azure Machine Learning
 

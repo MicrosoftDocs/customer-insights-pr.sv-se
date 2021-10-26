@@ -4,17 +4,17 @@ description: Skapa, redigera och ta bort mått.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 06/09/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 97189168e0f5586aad8be8089a1f9e27893c2115c7e805ddaab1efc00e11b860
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 79600a14bc7e98dfd066270f19c353fd007e1341
+ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034291"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623744"
 ---
 # <a name="view-and-create-metrics"></a>Visa och skapa mått
 
@@ -38,21 +38,24 @@ Dessa systemmått baseras på befintliga händelseegenskaper i grundhändelser.
 1. Gå till **Data** i vänstra navigeringsfönstret. 
 1. Välj fliken **Mått** för att se en lista över alla mått i arbetsytan. 
    > [!NOTE]
-   > Systemgenererade mått är skrivskyddade. Du kan inte ändra eller ta bort dem. Du kan endast skapa och redigera anpassade mått.
+   > Systemgenererade mått är skrivskyddade. Du kan inte redigera eller ta bort dem. Du kan endast skapa och redigera anpassade mått.
 
 ## <a name="create-a-metric"></a>Skapa ett mått
 
 Miljö- och arbetsyteadministratörer kan skapa mått. Händelseegenskaper måste skickas till arbetsytan innan du skapar ett mått. Du kan skapa mått utifrån händelseegenskaper som skickas av grundhändelser eller använda webb-SDK för att [skicka anpassade händelseegenskaper](advanced-SDK-implementation.md).
 
 1. Gå till **Data** > **Mått**.
-1. Välj **Nytt mått**.
+1. Välj **Nytt mått** om du vill öppna dialogrutan **Resursbibliotek** och **Nytt namnlöst mått**.
 
    :::image type="content" source="media/new-metric.png" alt-text="Lägg till ett mått i en händelse.":::
 
-1. För format väljer du datatypen **Heltal** eller **Dubbel**. Heltal är ett helt tal. För Dubbel kan du välja mellan en och tre decimaler.
-1. I fönstret **Resursbibliotek** letar du upp den händelseegenskap som måttet ska baseras på.
-1. Välj **plustecknet (+)** bredvid egenskapen som ska användas i formeln. Du kan endast skapa en formel som bygger på en egenskap. 
-1. Välj en av följande mängdfunktioner. 
+1. I dialogrutan **Nytt namnlöst mått** välj listrutan **Format** och datatypen **Heltal** eller **Dubbel**. Heltal är ett helt tal. För Dubbel kan du välja en och tre decimaler.
+
+   :::image type="content" source="media/create-new-metric.png" alt-text="Skapa ett nytt mått.":::
+   
+5. I fönstret **Resursbibliotek** letar du upp den händelseegenskap som måttet ska baseras på.
+6. Välj **plustecknet (+)** bredvid egenskapen som ska användas i formeln. Du kan endast skapa en formel som bygger på en egenskap. 
+7. Välj en av följande mängdfunktioner. 
 
    - Summa: totalsumman för alla värden 
    - Medel: genomsnitt för alla värden
@@ -68,12 +71,16 @@ Det kan ta upp till en minut för måttet innan du kan använda det till att [sk
 
 ## <a name="edit-a-metric"></a>Redigera ett mått
 
+Du kan bara redigera anpassade mått.
+
 1. Gå till **Data** > **Mått**.
 1. Välj måttet i listan.
 1. Ändra definitionen för måttet
 1. Välj **Spara**.
 
 ## <a name="change-the-name-of-a-metric"></a>Ändra namnet på ett mått
+
+Du kan bara ändra namnet på anpassade mått.
 
 1. Gå till **Data** > **Mått**.
 1. Välj **Mer [...]** för ett mått och välj **Redigera namn**.
@@ -82,11 +89,15 @@ Det kan ta upp till en minut för måttet innan du kan använda det till att [sk
 
 ## <a name="delete-a-metric"></a>Ta bort ett mått
 
+Du kan bara ta bort anpassade mått.
+
 1. Gå till **Data** > **Mått**.
 1. Välj **Mer [...]** för ett mått och välj **Ta bort**.
 
    :::image type="content" source="media/delete-metric.png" alt-text="Ta bort ett mått från en händelse.":::
 
 1. Välj **Ta bort** för att borttagningen.
+
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

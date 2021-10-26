@@ -1,7 +1,7 @@
 ---
 title: Tillägget för kundkort i Dynamics 365-appar
 description: Visa data från målinsikter i Dynamics 365-appar med det här tillägget.
-ms.date: 05/18/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,20 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0f6c922104df229980b308136a4d764938121b35d6d744f41b1530bdb5515e7f
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c9c7cfbf9f47cca53e5543e2cda2584e25ad855d
+ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033010"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "7643470"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med kundkortstillägget installerat i en Dynamics 365-app som stöds kan du välja att visa demografi, insikter och aktivitetstid. Tillägget hämtar data från Customer Insights utan att det påverkar data i den anslutna Dynamics 365-appen. 
+Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tillägget Kundkort installerat i en Dynamics 365-app som stöds kan du välja att visa fält för kundprofil, insikter och aktivitetstidstid. Tillägget hämtar data från Customer Insights utan att det påverkar data i den anslutna Dynamics 365-appen.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN1qv]
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -28,20 +30,19 @@ Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med kundkor
 - För att dina Dynamics 365-data ska mappas till målinsikternas kundprofiler måste de [tas in i appen Dynamics 365 med hjälp av kopplingen Microsoft Dataverse](connect-power-query.md).
 - Alla Dynamics 365-användare av tillägget kundkort måste [läggas till som användare](permissions.md) målinsikter för att kunna se dessa data.
 - [Konfigurerade sök- och filterfunktioner](search-filter-index.md) i målinsikter krävs för att slå upp data som ska fungera.
-- För varje tilläggskontroll används specifika data målinsikter:
-  - Måttkontroll: Kräver [konfigurerade åtgärder](measures.md).
-  - Intelligent kontroll: Kräver data som genereras med hjälp av [prediktioner](predictions.md) eller [anpassade modeller](custom-models.md).
-  - Demografisk kontroll: Demografiska fält (till exempel ålder eller kön) är tillgängliga i den enhetliga kundprofilen.
-  - Berikningskontroll: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler.
-  - Tidslinjekontroll: Kräver [konfigurerade aktiviteter](activities.md).
+- För varje tilläggskontroll används specifika data målinsikter. Vissa data och kontroller är endast tillgängliga i miljöer av specifika typer. Tilläggets konfiguration meddelar dig om en kontroll inte är tillgänglig på grund av den valda miljötypen. Läs mer om [miljöanvändningsfall](work-with-business-accounts.md).
+  - **Måttkontroll**: Kräver [konfigurerade mått](measures.md) för typen kundattribut.
+  - **Intelligent kontroll**: Kräver data som genereras med hjälp av [prediktioner](predictions.md) eller [anpassade modeller](custom-models.md).
+  - **Kontroll för kundinformation**: Alla fält från profilen är tillgängliga i den enhetliga kundprofilen.
+  - **Berikningskontroll**: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler.
+  - **Kontaktkontroll**: Kräver definition av entitet för utformning av typkontakter.
+  - **Tidslinjekontroll**: Kräver [konfigurerade aktiviteter](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Installera tillägget för kundkort
 
 Kundkort-tillägget är en lösning för Customer Engagement-appar i Dynamics 365. Om du vill installera lösningen går du till AppSource och söker efter **Dynamics kundkort**. Välj [Tillägget för kundkort i AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) och välj **Skaffa det nu**.
 
-Du kan behöva logga in med administratörsautentiseringsuppgifter för Dynamics 365-appen för att installera lösningen.
-
-Det kan ta en stund innan lösningen har installerats i din miljö.
+Du kan behöva logga in med administratörsautentiseringsuppgifter för Dynamics 365-appen för att installera lösningen. Det kan ta en stund innan lösningen har installerats i din miljö.
 
 ## <a name="configure-the-customer-card-add-in"></a>Konfigurera tillägget för kundkortet
 
@@ -50,7 +51,7 @@ Det kan ta en stund innan lösningen har installerats i din miljö.
 1. Markera länken **visningsnamn** för lösningen **Dynamics 365 Customer Insights tillägg för kundkort (förhandsversion)**.
 
    > [!div class="mx-imgBorder"]
-   > ![Välj visningsnamn.](media/select-display-name.png "Välj visningsnamn")
+   > ![Välj visningsnamn.](media/select-display-name.png "Välj visningsnamn.")
 
 1. Välj **Logga in** och ange autentiseringsuppgifterna för administratörskontot som du använder för att konfigurera Customer Insights.
 
@@ -64,7 +65,7 @@ Det kan ta en stund innan lösningen har installerats i din miljö.
    - Om du vill mappa med ett konto markerar du fältet i entiteten Kund som matchar ID för din kontoentitet.
 
    > [!div class="mx-imgBorder"]
-   > ![Fältet kontakt-ID.](media/contact-id-field.png "Fältet kontakt-ID")
+   > ![Fältet kontakt-ID.](media/contact-id-field.png "Fältet kontakt-ID.")
 
 1. Välj **Spara konfiguration** för att spara inställningen.
 
@@ -73,7 +74,9 @@ Det kan ta en stund innan lösningen har installerats i din miljö.
 1. Tilldela rollen **Anpassare av Customer Insights-kort** för användare som ska anpassa innehållet som visas på kortet för hela organisationen.
 
 ## <a name="add-customer-card-controls-to-forms"></a>Lägga till Kundkortskontroller i formulär
-  
+
+Beroende på ditt scenario kan du välja att lägga till kontroller till antingen **kontaktformuläret** eller **kontoformuläret**. Om din miljö för målgruppsinsikter är för företagskonton rekommenderar vi att du lägger till kontrollerna i kontoformuläret. I så fall ersätter du "kontakt" i stegen nedan med "konto".
+
 1. Om du vill lägga till kundkortskontrollerna i kontaktformuläret går du till **inställningar** > **anpassningar** i Dynamics 365.
 
 1. Välj **Anpassa systemet**
@@ -83,7 +86,7 @@ Det kan ta en stund innan lösningen har installerats i din miljö.
 1. Välj det kontaktformulär där du vill lägga till kundkortskontrollerna.
 
     > [!div class="mx-imgBorder"]
-    > ![Välj kontaktformuläret.](media/contact-active-forms.png "Välj kontaktformulär")
+    > ![Välj kontaktformuläret.](media/contact-active-forms.png "Välj kontaktformulär.")
 
 1. Om du vill lägga en kontroll för formulärredigerare drar du ett fält från **fältutforskaren** till den plats där du vill att den visas.
 
@@ -102,6 +105,7 @@ Det kan ta en stund innan lösningen har installerats i din miljö.
 1. Du kan anpassa vad som ska visas på den anpassade kontrollen genom att klicka på knappen Redigera i det övre högra hörnet.
 
 ## <a name="upgrade-customer-card-add-in"></a>Uppgradera tillägget för kundkort
+
 Kundkortstillägget uppgraderas inte automatiskt. Uppgradera till den senaste versionen genom att följa stegen i appen Dynamics 365 som har tillägget installerat.
 
 1. I appen Dynamics 365 går du till **Inställningar** > **Anpassning** och väljer **Lösningar**.

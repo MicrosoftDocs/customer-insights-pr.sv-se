@@ -1,39 +1,34 @@
 ---
-title: Aktivera färdig profilrapporter
-description: Så här skapar du färdig profilrapporter grupperade efter ålder, region eller ursprung.
+title: Aktivera färdig (OOB) profilrapporter
+description: Så här skapar du färdig (OOB) profilrapporter grupperade efter ålder, region eller ursprung.
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 05/03/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: bf2ec67c9fb99918b87841d3c0b131934e31b58b
-ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
+ms.openlocfilehash: cba2c112e9e475ceb047fe627fb41e6c8a27e1e7
+ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/09/2021
-ms.locfileid: "7486142"
+ms.lasthandoff: 09/30/2021
+ms.locfileid: "7582808"
 ---
-# <a name="out-of-box-profile-reports"></a>Färdig profilrapporter
+# <a name="out-of-box-oob-unified-profile-reports"></a>Färdiga (OOB) enhetliga profilrapporter
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-En rapport är en samling med datavisualisering som hjälper dig att förstå hur användare uppträder. Genom att ansluta till Customer Insights målgruppinsikter, engagemangsinsikter kan insikter om åtaganden visa en rapport med information om enhetliga kundprofiler. I rapporten ingår antalet profiler, grupperade efter ålder och geografisk plats.
+En enhetlig profilrapport är en samling med datavisualisering som hjälper dig att förstå hur användare uppträder. Genom att ansluta till målgruppsinsikter för Customer Insights kan du visa OOB-rapporter med information om enhetliga kundprofiler. I rapporten ingår antalet profiler, grupperade efter ålder och geografisk plats. Mer information om kundprofiler finns i [Kundprofiler](../audience-insights/customer-profiles.md).
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-I miljö för målgruppinsikter måste data lagras i ett kundhanterat Azure Data Lake Storage-konto.
-
-Om du använder en utvärderingsversion av funktionen målgruppinsikter eller en miljö i en Customer Insights hanterade datasjö, [kontakta oss](https://go.microsoft.com/fwlink/?linkid=2145734) för hjälp.  
-
+En miljöadministratör måste [skapa en länk mellan åtagandeinsikter och målgruppsinsikter](integrate-audience-insights-engagement-insights.md).
 
 ## <a name="enable-the-customer-profile-report"></a>Aktivera rapporten kundprofil
 
-En miljöadministratör måste [länka insikter om interaktion och publik](integrate-audience-insights-engagement-insights.md).
-
-När administratören har specificerat anslutningsinformationen kan han eller hon ge åtkomst till andra personer i organisationen för att se rapporten. Miljöadministratören som ställer in anslutningen får automatiskt åtkomst till rapporten. 
+Efter att ha angett kopplingen mellan engagemangsinsikter och målgruppsinsikter kan administratören sedan ge andra personer i organisationen åtkomst för att se rapporten. Miljöadministratören som ställer in anslutningen får automatiskt åtkomst till rapporten. 
 
 När anslutningen har avslutats blir funktionen **Profiler** tillgänglig i det vänstra navigeringsfönstret. 
 

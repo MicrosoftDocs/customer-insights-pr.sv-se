@@ -1,7 +1,7 @@
 ---
 title: Startsida i målgruppsinsikter
 description: Börja utforska appen på startsidan.
-ms.date: 08/26/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 55c0313d1dbf7fb6774c058a6784cf02821d9133
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 4ab5497024cb15b103e96b0fc9a2e0739fd4691c
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7470041"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617718"
 ---
 # <a name="explore-audience-insights"></a>Utforska målgruppinsikter
 
@@ -23,7 +23,7 @@ Du kan [få tillgång till målgruppsinsikter från Dynamics 365 Customer Insigh
 
 :::image type="content" source="media/home-page.png" alt-text="Skärmbild på startsidan med exempelinsikter.":::
 
-1 – Växla mellan funktionerna i Customer Insights 2 – Använd den vänstra rutan för att navigera mellan olika områden 3 – Ta reda på vilken miljö du arbetar i och hantera miljöer som Administratör 4 – Ange personliga inställningar för Customer Insights
+1 - Växla mellan funktionerna i Customer Insights 2 - Använd den vänstra rutan för att navigera mellan olika områden och välj det primära målet publik 3 - Ta reda på vilken miljö du arbetar i och hanterar miljöer som en Administratör 4 - Ange personliga inställningar för Customer Insights
 
 Under **senaste segment** visas grupper med kunder utifrån demografiska, beteende- eller transaktionella attribut som du har definierat. [Genom att skapa segment](segments.md) kan du gruppera din kundbas och rikta dina affärsaktiviteter på ett bättre sätt.
 

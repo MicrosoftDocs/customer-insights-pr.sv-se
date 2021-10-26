@@ -1,7 +1,7 @@
 ---
 title: Utöka enhetliga kundprofiler
 description: Använd kapaciteter för att utöka dina kunddata.
-ms.date: 08/31/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7470042"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617577"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
@@ -27,16 +27,26 @@ I målgruppsinsikter går du till **Data** > **Berikning** för att arbeta med b
 
 Du måste ha behörighet för Deltagare eller Administratör för att kunna skapa eller redigera berikningar. Mer information finns under [Behörigheter](permissions.md).
 
-På fliken **Identifiera** finns följande berikningar:
+På fliken **Upptäck** hittar du alla alternativ för berikning som stöds.
 
-- [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
+# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
+
 - [Varumärken](enrichment-microsoft.md) som tillhandahålls av Microsoft
 - [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft
-- [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft
-- [Företagsdata](enrichment-leadspace.md) tillhandahålls av Leadspace
+- [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft 
 - [Demografiska uppgifter](enrichment-experian.md) tillhandahålls av Experian
-- [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies
-- [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol)
+- [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol) 
+- [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
+
+# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
+
+- [Företagsdata](enrichment-leadspace.md) tillhandahålls av Leadspace
+- [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft 
+- [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies 
+- [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol) 
+- [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
+
+---
 
 På fliken **Mina berikningar** kan du se vilka berikningar du har konfigurerat och redigera deras egenskaper.
 
@@ -58,7 +68,7 @@ Kör eller inaktivera flera förbättringar samtidigt genom att markera dem i li
 
 ## <a name="enrichments-and-connections"></a>Berikningar och anslutningar
 
-Tredjepartsutslag konfigureras med hjälp av [anslutningar](connections.md), som en administratör konfigurerar med autentiseringsuppgifter och ger sitt godkännande för informationsöverföring. Anslutningen kan användas av administratörer och bidragsgivare för att konfigurera berikningar.  
+Tredjepartsutslag konfigureras med hjälp av [anslutningar](connections.md), som en administratör konfigurerar med autentiseringsuppgifter och ger sitt godkännande för informationsöverföring. Anslutningarna kan användas av administratörer och deltagare för att konfigurera berikningar.  
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flera berikningar av samma typ
 

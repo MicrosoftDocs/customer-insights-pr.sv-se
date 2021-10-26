@@ -4,27 +4,33 @@ description: Översikt över tillgängliga roller och behörigheter för arbetsy
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 07/06/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 6d7f4db4a130fc15a69b380c892538db5492d96d8e13f3c070c6a6b9bd098371
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 68e28caf1c14c23acd506da5f7b441f1e3b72e8b
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036715"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645559"
 ---
 # <a name="roles-and-permissions"></a>Roller och behörigheter
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-En arbetsyta är hur du lagrar och hanterar händelser och rapporter. En medlem är en användare som kan komma åt en arbetsyta. Du kan tilldela medlemmar till din arbetsyta och definiera deras roller och behörigheter. Administratörroller hanterar arbetsytor och miljöer samt konfigurerar interaktionsinsikter för andra användare. Deltagarrollerna är inriktade på analytiker som inte behöver konfigurera interaktionsinsikter utan vill skapa egna rapporter, &quot;trattar&quot; eller segment.
+En arbetsyta är där du lagrar och hanterar händelser och rapporter. Mer information finns i [Skapa en arbetsyta och lägga till medlemmar](create-workspace.md). 
+
+En arbetsyta kan innehålla följande roller och behörigheter:
+
+- *Medlemsroller* är användare som kan komma åt en arbetsyta. Du kan tilldela medlemmar till din arbetsyta och definiera deras roller och behörigheter. 
+- *Administratörroller* hanterar arbetsytor och miljöer samt konfigurerar interaktionsinsikter för andra användare. 
+- *Deltagarroller* är inriktade på analytiker som inte behöver konfigurera engagemangsinsikter utan vill skapa egna rapporter, trattar eller segment.
 
 ## <a name="permissions"></a>Behörigheter
   
-I följande diagram visas behörigheter för varje roll. 
+I följande tabell visas behörigheter för varje roll. 
 
 | Behörighet | Miljöadministratör | Administratör för arbetsyta | Miljödeltagare | Deltagare för arbetsyta | 
 |--|--|--|--|--|

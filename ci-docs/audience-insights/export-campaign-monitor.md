@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Campaign Monitor
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Campaign Monitor.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d2cc3ec944faa1d77ffb44e8abb422d753c5625d0ccef75cbb7efb14cb7c3741
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 063de14c4ffd51b3afd89786606d7b37626695dc
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031909"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619003"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Exportera segment till Campaign Monitor (förhandsversion)
 
@@ -28,10 +28,10 @@ Exportera segment med enhetliga kundprofiler till Campaign Monitor och använd d
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till en miljoner profiler per export till Campaign Monitor.
+- Du kan exportera upp till 1 miljon kundprofiler per export till Campaign Monitor.
 - Export till Campaign Monitor är begränsad till segment.
-- Det kan ta upp till 20 minuter att exportera upp till 1 miljon profiler till Campaign Monitor. 
-- Hur många profiler du kan exportera till Campaign Monitor beror på och begränsas av ditt kontrakt med Campaign Monitor.
+- Det kan ta upp till 20 minuter innan du exporterar upp till 1 miljon kundprofiler till Campaign Monitor. 
+- Hur många kundprofiler du kan exportera till Campaign Monitor är beroende av och begränsas av ditt kontrakt med Campaign Monitor.
 
 ## <a name="set-up-connection-to-campaign-monitor"></a>Konfigurera anslutning till Campaign Monitor 
 
@@ -66,7 +66,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 1. Ange [**Campaign Monitor list-ID**](https://www.campaignmonitor.com/api/getting-started/#your-list-id).    
    [Generera API-nyckeln](https://www.campaignmonitor.com/api/getting-started/) från **Kontoinställningar** i Campaign Monitor  först för att visa API-list-ID:t.  
 
-3. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Det krävs att exportera segment till Campaign Monitor.
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Det krävs att exportera segment till Campaign Monitor.
 
 1. Välj **Spara**.
 

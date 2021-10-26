@@ -1,7 +1,7 @@
 ---
 title: Kundaktiviteter
 description: Definiera kundaktiviteter och visa dessa på en tidslinje för kundprofiler.
-ms.date: 09/12/2021
+ms.date: 09/27/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: c250efcd54ec126c0726b22a971cdedd89760d6b
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494433"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617991"
 ---
 # <a name="customer-activities"></a>Kundaktiviteter
 
@@ -24,8 +24,7 @@ Kombinera kundaktiviteter från [olika datakällor](data-sources.md) i Dynamics 
 
 Dina datakällor innehåller entiteter med transaktions- och aktivitetsdata från flera datakällor. Identifiera entiteterna och välj de aktiviteter du vill visa på kundens tidslinje. Välj den entitet som innehåller målaktiviteten eller aktiviteterna.
 
-> [!NOTE]
-> En entitet måste ha minst ett attribut av typen **Datum** för att kunna tas med i en kundtidslinje och du kan inte lägga till entiteter utan **datum**-fält. Kontrollen **Lägg till aktivitet** är inaktiverad om ingen sådan entitet hittas.
+En entitet måste ha minst ett attribut av typen **Datum** för att kunna tas med i en kundtidslinje och du kan inte lägga till entiteter utan **datum**-fält. Kontrollen **Lägg till aktivitet** är inaktiverad om ingen sådan entitet hittas.
 
 1. I målgruppsinsikter går du till **Data** > **Aktiviteter**.
 
@@ -41,13 +40,16 @@ Dina datakällor innehåller entiteter med transaktions- och aktivitetsdata frå
 
 1. Gå vidare till nästa steg genom att välja **Nästa**.
 
-1. I steget **Relation** konfigurerar du informationen så att dina aktivitetsdata kan kopplas till motsvarande kund. Det här steget visualiserar anslutningen mellan entiteter.  
+1. I **Relation**, konfigurera detaljerna för att ansluta dina aktivitetsuppgifter till motsvarande kundpost. Det här steget visualiserar anslutningen mellan entiteter.  
 
    - **Först**: Fält för externa fält i aktivitetsentiteten som används för att upprätta en relation med en annan entitet.
    - **Andra**: Motsvarande källkundentitet som din aktivitetsentitet ska vara i relation till. Du kan endast relatera till källkundentiteter som används i datakällprocessen.
    - **Tredje**: Om en relation mellan den här aktivitetsentiteten och den valda källkundentiteten redan finns kommer relationsnamnet att vara skrivskyddat läge. Om det inte finns någon sådan relation skapas en ny relation med det namn du anger i rutan.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definiera entitetsrelation.":::
+
+   > [!TIP]
+   > I B2B-miljöer kan du välja mellan kontoentiteter och andra entiteter. Om du väljer en kontoentitet anges relationssökvägen automatiskt. För andra entiteter måste du definiera relationssökvägen över en eller flera mellanliggande entiteter tills du når en kontoentitet.
 
 1. Gå vidare till nästa steg genom att välja **Nästa**. 
 
@@ -95,5 +97,34 @@ Följande åtgärder är tillgängliga när du väljer en aktivitet.
 - **Byt namn**: Öppnar en dialog där du kan ange ett annat namn för den valda aktiviteten. Välj **Spara** för att införa ändringarna.
 
 - **Ta bort**: Öppnar en dialog för att bekräfta borttagningen av den markerade aktiviteten. Du kan också ta bort mer än en aktivitet samtidigt genom att markera aktiviteterna och sedan markera ikonen för borttagning. Välj **Ta bort** för att borttagningen.
+
+## <a name="view-activity-timelines-on-customer-profiles"></a>Visa tidslinjer för aktiviteter på kundprofiler
+
+När du har konfigurerat kundaktiviteter väljer du **Visa i aktivitetstidslinjen** i aktivitetskonfigurationen och hittar alla kundens aktiviteter i kundprofilen.
+
+Om du vill öppna tidslinjen för en kund går du till **Kunder** och väljer den kundprofil du vill visa.
+
+Om en kund har deltagit i en aktivitet som du har konfigurerat hittar du den i avsnittet **Tidslinje för aktivitet**.
+
+:::image type="content" source="media/Activity_Timeline1.PNG" alt-text="Visa konfigurerade aktiviteter i kundprofiler.":::
+
+Det finns flera sätt att filtrera aktiviteter i aktivitetstidslinjen:
+
+- Du kan markera en eller flera av aktivitetsikonerna om du vill förfina resultatet så att endast valda typer ingår.
+
+  :::image type="content" source="media/Activity_Timeline2.PNG" alt-text="Filtrera aktiviteter efter typ med hjälp av ikonerna.":::
+
+- Du kan välja **Filter** om du vill öppna en filterpanel och konfigurera dina tidslinjefilter.
+
+   1. Du kan filtrera efter *ActivityType* och *Datum*
+   1. Välj **Tillämpa** om du vill använda filtren i aktivitetstidslinjen.
+
+   :::image type="content" source="media/Activity_Timeline3.PNG" alt-text="Konfigurera filtervillkoren med hjälp av filterpanelen.":::
+
+Om du vill ta bort filter markerar du **x** bredvid varje filter som används på tidslinjen eller väljer **Avmarkera filter**.
+
+
+> [!NOTE]
+> Aktivitetsfilter tas bort när du lämnar en kundprofil. Du måste tillämpa dem varje gång du öppnar i en kundprofil.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

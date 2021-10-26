@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Constant Contact
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Constant Contact.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 30dfe4d6c2374ba9979827ea70a71c52a1334b45dd3e36ccb1de90fae0c61ad9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b25e4f11e21d059c2d867e925c0ae5635a87addc
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031863"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619141"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Exportera segment till Constant Contact (förhandsversion)
 
@@ -28,10 +28,10 @@ Exportera segment med enhetliga kundprofiler till Constant Contact och använd d
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till en miljoner profiler per export till Constant Contact.
+- Du kan exportera upp till 1 miljon kundprofiler per export till Constant Contact.
 - Export till Constant Contact är begränsad till segment.
-- Det kan ta upp till 1 timme att exportera upp till 1 miljon profiler till Constant Contact. 
-- Hur många profiler du kan exportera till Constant Contact beror på och begränsas av ditt kontrakt med Constant Contact.
+- Det kan ta upp till 1 timme innan du exporterar upp till 1 miljon kundprofiler till Constant Contact. 
+- Hur många kundprofiler du kan exportera till Constant Contact är beroende av och begränsas av ditt kontrakt med Constant Contact.
 
 ## <a name="set-up-connection-to-constant-contact"></a>Konfigurera anslutning till Constant Contact
 
@@ -65,7 +65,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Ange din [**Constant Contact list-ID**](https://app.constantcontact.com/pages/contacts/ui#lists). Öppna en lista i Constant Contact för att hitta list-ID:t i URL:en.
 
-1. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Det krävs att exportera segment till Constant Contact.
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Det krävs att exportera segment till Constant Contact.
 
 1. Alternativt kan du exportera Förnamn och Efternamn som ytterligare fält för att skapa mer personligt anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
 

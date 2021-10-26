@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8d93a49a29c29103e189a6d4a42294c18dc28abd
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: db38778c0da862e119f9b374e07c82ead0d3a4f2
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7559040"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645604"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Skapa en länk mellan målgruppsinsikter och engagemangsinsikter
 
@@ -26,7 +26,7 @@ Använd enhetliga profiler och segment från olika målgruppsinsikter för fler 
 ## <a name="prerequisites"></a>Förutsättningar
 
 - Målgruppens insiktsprofiler måste lagras i en Azure Data Lake Storage konto som du äger eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;hanterad datasjö. 
-- Din miljö med målgruppsinsikter bör ha en associerad Dataverse-miljö. Och om den miljön också använder Dataverse för datalagring bör du kontrollera alternativet **Aktivera datadelning** bland målgruppsinsikterna. Mer information finns i [Skapa och konfigurera en betalmiljö bland målgruppsinsikterna](../audience-insights/get-started-paid.md).
+- Din miljö med målgruppsinsikter bör ha en associerad Dataverse-miljö. Och om den miljön också använder Dataverse för datalagring bör du kontrollera alternativet **Aktivera datadelning** bland målgruppsinsikterna. Mer information finns i [Skapa och konfigurera en miljö i målgruppsinsikter](../audience-insights/create-environment.md).
 - Du måste ha administratörabehörigheter för både engagemangsinsikter och målgruppsinsikter.
 - Länkade miljöer måste finnas i samma geografiska område.
 

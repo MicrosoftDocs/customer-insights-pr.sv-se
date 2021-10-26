@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Marketo
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Marketo.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0d5eaa769973c861d89287bba0ed29509ab2efc653bdd8e177cc49b3560c698e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 71a16bd71a58b5cc0a6a2ed421561d91f782dd8e
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033515"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619187"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Exportera segment till Marketo (förhandsgranskning)
 
@@ -29,10 +29,10 @@ Exportera segment av enhetliga kundprofiler för att generera kampanjer, skapa e
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Upp till 1 000 000 profiler per export till Marketo.
+- Upp till 1 miljoner kundprofiler per export till Marketo.
 - Export till Marketo är begränsad till segment.
-- Det kan ta upp till 3 timmar att exportera segment med totalt 1 000 000 profiler. 
-- Antalet profiler som du kan exportera till Marketo är beroende av och begränsat enligt ditt kontrakt med Marketo.
+- Det kan ta upp till tre timmar att exportera segment med totalt 1 miljon kundprofiler. 
+- Hur många kundprofiler du kan exportera till Marketo är beroende av och begränsas av ditt kontrakt med Marketo.
 
 ## <a name="set-up-connection-to-marketo"></a>Upprätta anslutningen till Marketo
 
@@ -64,7 +64,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Ange ditt **[ID för Marketo-lista](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. List-ID:t är ett endast numeriskt värde. Om ditt Marketo-list-ID är ST12345A7 tar du bort tecknet före och efter numeriska tecken och anger `12345`. 
 
-1. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. 
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. 
 
 1. Alternativt kan du exportera **Förnamn**, **Efternamn**, **Ort**, **Delstat** och **Land/Region** för att skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
 

@@ -1,7 +1,7 @@
 ---
 title: Segments i målgruppsinsikter
 description: Översikt över segment och hur du skapar och hanterar dem.
-ms.date: 05/03/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f1003b53b17e3ba2c37c0f2d94b89f7e97c2b6f10e28b7bbe93160e4c7f08d54
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036395"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617397"
 ---
 # <a name="segments-overview"></a>Segment – översikt
 
@@ -26,11 +26,19 @@ Kundprofiler som överensstämmer med filter för en segmentdefinition kallas *m
 
 Du kan skapa ett nytt segment på flera sätt: 
 
-- Komplext segment med segmentverktyget: [Tomt segment](segment-builder.md#create-a-new-segment)
-- Enkla segment med en operator: [Snabbsegment](segment-builder.md#quick-segments)
-- AI-drivet sätt att hitta liknande kunder: [Liknande kunder](find-similar-customer-segments.md)
-- AI-drivna förslag baserade på mått eller attribut: [Förslag på segment för att förbättra åtgärder](suggested-segments.md)
-- Förslag utifrån aktiviteter: [Förslag på segment utifrån kundaktivitet](suggested-segments-activity.md)
+# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
+
+- Komplext segment med segmentverktyget: [Bygga ett eget](segment-builder.md#create-a-new-segment) 
+- Enkla segment med en operator: [Snabbsegment](segment-builder.md#quick-segments) 
+- AI-drivet sätt att hitta liknande kunder: [Liknande kunder](find-similar-customer-segments.md) 
+- AI-drivna förslag baserade på mått eller attribut: [Förslag på segment för att förbättra åtgärder](suggested-segments.md) 
+- Förslag utifrån aktiviteter: [Förslag på segment utifrån kundaktivitet](suggested-segments-activity.md) 
+
+# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
+
+- Komplext segment med segmentverktyget: [Bygga ett eget](segment-builder.md#create-a-new-segment)
+
+---
 
 ## <a name="manage-existing-segments"></a>Hantera befintliga segment
 
@@ -70,9 +78,9 @@ Du kan exportera ett segment från segmentsidan eller [exportsidan](export-desti
 
 1. Välj **Hantera exporter** i listrutan Åtgärder.
 
-1. Sidan **Exporter (förhandsversion) för segment** öppnas. Du kan se alla konfigurerade exporter grupperade efter export som innehåller det aktuella segmentet eller inte innehåller det.
+1. Sidan **Exporter (förhandsversion) för segment** öppnas. Alla konfigurerade exporter visas grupperade efter om de innehåller det aktuella avsnittet eller inte.
 
-   1. Om du vill lägga till det valda segmentet i en export markerar du exporten i listan och väljer **Lägg till segment**.
+   1. Om du vill lägga till det valda segmentet i en export **redigerar** du respektive export så att motsvarande segment markeras och sparar sedan. I miljöer för enskilda kunder kan du i stället markera exporten i listan och välja **Lägg till segment** för att få samma resultat.
 
    1. Om du vill skapa en ny export med det markerade segmentet väljer du **Lägg till export**. Mer information om hur du skapar export finns i [Konfigurera en ny export](export-destinations.md#set-up-a-new-export).
 

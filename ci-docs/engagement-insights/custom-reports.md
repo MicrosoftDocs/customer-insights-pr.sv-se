@@ -4,23 +4,23 @@ description: Lär dig hur du skapar och anpassar rapporter.
 author: mochimochi016
 ms.reviewer: mhart
 ms.author: jefhar
-ms.date: 06/09/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 2540221710786dc1c84b231fbb23b9749b601cc6a2aeb78614e16002302a80a9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3fa801bfc8b0aee65c21b90de2423a3d5d5e4e26
+ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036985"
+ms.lasthandoff: 09/30/2021
+ms.locfileid: "7582899"
 ---
 # <a name="create-and-edit-custom-reports"></a>Skapa och redigera anpassade rapporter
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Förutom färdiga rapporter kan du skapa en anpassad rapport med diagram och tabellvisualiseringar som gör det lätt att förstå hur användarna fungerar. I den här artikeln förklaras hur du skapar en rapport med de data du behöver med hjälp av tabell- och diagramvisualiseringar. 
+Förutom att använda färdiga (OOB) rapporter kan du skapa en anpassad rapport med diagram- och tabellvisualiseringar för att bättre förstå användarbeteendet. I den här artikeln förklaras hur du skapar en rapport med de data du behöver med hjälp av tabell- och diagramvisualiseringar. Mer information om OOB-rapporter finns i [Visa rapporter](view-reports.md).
 
 ## <a name="create-a-custom-report"></a>Skapa en anpassad rapport
 
@@ -35,11 +35,13 @@ Förutom färdiga rapporter kan du skapa en anpassad rapport med diagram och tab
     - Välj **Lägg till visuellt element** i kommandofältet om du vill skapa en standardvisualisering i tabellen.
     - Du kan också markera en kolumn, stapel, rad, område, cirkel, ring eller tabellvisualisering i **rapportredigeraren**.
 
-1. I rutan **Data**, välj ett av de tillgängliga **Mått** (till exempel sidvisningar) som ska visas. Lägg sedan **Dimensioner** (till exempel land) som ska visas i visualiseringen. Mer information om hur du lägger till ytterligare alternativ att välja bland finns i [Visa och skapa mått](metrics.md) och [Visa och skapa dimensioner](dimensions.md).
+1. I avsnittet **Data** i redigeraren för **visualisering** väljer du ett av de tillgängliga alternativen (till exempel sidvyer) i listrutan **Mått**. Du kan också lägga till **Mått** (till exempel land) som ska visas i visualiseringen. Mer information finns i V[isa och skapa mått](metrics.md) och [Visa och skapa mått](dimensions.md).
 
-1. Välj **Design** i **Redigeraren för visualisering** för att lägga till **Rubriktext** och ange **Position**, **Dataetiketter** och **axel**.  Du kan också ändra visualiseringen genom att välja en annan diagramtyp.
+   :::image type="content" source="media/page-views.png" alt-text="Välj ett mått för din rapport.":::
 
-1. Du kan ändra storlek och placering för en visualisering:
+1. Välj avsnittet **Design** i **redigeraren för visualisering** om du vill lägga till **rubriktext** och växla **rubrik** av och på.  Du kan också ändra visualiseringstyp genom att välja ett annat diagram, till exempel **cirkeldiagram**.
+
+1. Så här ändrar du storlek och placering för en visualisering:
    - Välj visualiseringen och dra sedan en av de olika objekten för att justera storleken.
    - Välj visualiseringen och flytta den till en ny plats. Du kan också ändra positionen med hjälp av piltangenterna.
 1. Om du vill lägga till ytterligare en visualisering väljer du **Lägg till visuellt objekt** i kommandofältet.
@@ -47,17 +49,27 @@ Förutom färdiga rapporter kan du skapa en anpassad rapport med diagram och tab
 
 1. Ange ett namn på den anpassade rapporten och välj **Spara** för att skapa den.
  
+## <a name="filter-a-custom-report"></a>Filtrera en anpassad rapport
+
+Du kan välja tidsram eller datumintervall i en anpassad rapport om du vill fokusera på ett värde eller en tidsperiod.
+
+Välj en tidsram genom att välja ett värde i den nedrullningsbara listan i rapporten längst upp till höger i rapportvyn. Du kan också välja ett **Fast datumintervall*.
+
+:::image type="content" source="media/filter-time-date-range.png" alt-text="Filtrera efter tid eller datumintervall.":::
+
+För de flesta rapporter väljer du **+ Lägg till villkor** om du vill välja ett segment för filtrering av rapporten. Mer information finns i [Visa och skapa segment](segments.md).
+
 ## <a name="edit-a-custom-report"></a>Redigera en anpassad rapport
 
 1. Gå till **Analysera** > **Anpassa** för att komma åt den anpassade rapportlistan.
 
 1. I den anpassade rapportlistan, välj **Mer [...]** 
 
-1. Välj **Redigera information** om du vill ändra namnet på rapporten.
+1. Välj **Redigera namn** om du vill ändra namnet på rapporten.
 
-1. Markera namnet på rapporten och använd alternativen **Lägg visuellt objekt** och **Redigera** för att lägga till, ta bort, flytta eller ändra storlek på visualiseringarna.
+1. Markera namnet på rapporten och använd alternativen **+ Lägg visuellt objekt** och **Redigera** för att lägga till, ta bort, flytta eller ändra storlek på visualiseringarna.
 
-1. Om du vill ändra egenskaperna för en visualisering markerar du **...** och väljer sedan **Redigera visuellt objekt**.
+1. Om du vill ändra egenskaperna för en visualisering väljer du det visuella och väljer **...** och sedan **Redigera visuellt objekt**.
 
    :::image type="content" source="media/edit-visual-control.png" alt-text="Redigera diagramegenskaper för anpassade rapporter.":::
 
@@ -72,5 +84,6 @@ Förutom färdiga rapporter kan du skapa en anpassad rapport med diagram och tab
 1. Välj **Ta bort** om du vill ta bort rapporten.
 
 1. Bekräfta borttagningen om du vill ta bort rapporten permanent.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

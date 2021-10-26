@@ -1,22 +1,22 @@
 ---
-title: Skapa en arbetsyta
-description: Syftet med en arbetsyta och hur du skapar en.
+title: Skapa en ny arbetsyta
+description: Syftet med en arbetsyta och hur du skapar en ny.
 author: jusali
 ms.reviewer: mhart
 ms.author: jusali
-ms.date: 06/18/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 38c817c169ce7986c73fb46fa14a9a8352a218d359cdcb2fa822a34303ff5ecc
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 816f948331a06794c15000eb779f93cc7fdda202
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034154"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645332"
 ---
-# <a name="create-the-first-workspaces-and-add-members"></a>Skapa de första arbetsytorna och lägg till medlemmar
+# <a name="create-a-new-workspace-and-add-members"></a>Skapa en ny arbetsyta och lägg till medlemmar
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
@@ -24,7 +24,7 @@ En arbetsyta är hur du visar användaraktiviteter i realtid för att få en bä
 
 När du skapar en arbetsyta väljer du vilken typ av data du vill fokusera på. Du kan när som helst lägga till andra användare eller medlemmar i en befintlig arbetsyta. 
 
-## <a name="create-a-workspace"></a>Skapa en arbetsyta
+## <a name="create-a-new-workspace"></a>Skapa en ny arbetsyta
 
 När du skapar en arbetsyta konfigureras *miljön* för att organisera arbetsytan. En miljö är ett utrymme som kan innehålla en eller flera arbetsytor. Du kan använda en miljö för att hantera dina arbetsytor och anslutningar till funktionen Customer Insights målgruppinsikter.
 
@@ -32,13 +32,25 @@ När du skapar en arbetsyta konfigureras *miljön* för att organisera arbetsyta
 
    :::image type="content" source="media/new-workspace.png" alt-text="Customer Insights-sida med bildtext i navigeringsfönstret och beskrivning.":::
 
-1. Välj miljön i listan eller välj **Skapa ny miljö**.
-1. Ange ett **Arbetsytenamn**.
-1. Välj den plattform som du vill mäta.
-1. Välj **Avsluta** om du är klar. 
-1. Du kan lägga till medlemmar och tilldela deras behörighetsnivå i listan **Roll**. Mer information finns i [Roller och behörigheter](user-roles.md). Välj sedan **Slutför** om du vill skapa arbetsytan eller **Nästa** för att installera kod.
-1. Installera kodavsnitt för att börja emot data och välj **Klar**.
+1. I fönstret **Arbetsyta** ange ett **Arbetsytenamn**.
+
+   :::image type="content" source="media/workspace-name.png" alt-text="Skriv ett arbetsytenamn.":::
+
+1. Välj den plattformstyp (webb eller mobil) du vill mäta.
+
+1. Välj **Visa avancerade inställningar** om du vill aktivera eller inaktivera dessa valfria inställningar:
+
+   - Växla **okänd till känd** som aktiverad för att associera webbhändelser med användare som tidigare autentiserats. Mer information finns i [Identifiera webbhändelser från tidigare autentiserade besökare](unknown-to-known.md)
+   - Växla **Filtrera robottrafik** till "aktiverad" för att ta bort webbtrafiken genom att lägga till filter för den här arbetsytan. 
+
+1. Välj **Slutför** när du är klar. 
+
+1. Installera koden så kodavsnitt ta emot data och välj **Slutför** för att skapa arbetsytan. Mer information finns i [Översikt över utvecklarresurser](developer-resources.md).
+
+> [!NOTE]
+> Nu kan du lägga till medlemmar och tilldela deras behörighetsnivå i listan **Roll**. Mer information finns i [Roller och behörigheter](user-roles.md). 
 
 För mer information, se [Hantera miljöer och arbetsytor](manage-environments-workspaces.md).
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b67aa7477033222b0bc9512a962a1580edd973b4882ce925620ff5ec14f83fe3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: fa1d4ffd9f77e128b5d804e4562e964561f4684f
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032734"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618727"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Berika kundprofiler med anpassade data (förhandsversion)
 
@@ -44,6 +44,8 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera a
 1.  Välj **Nästa** och ange **Sökväg** och **Filnamn** för den datafil som du vill importera.
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Skärmbild när dataplats matas in.":::
+
+1. Välj **Nästa** och välj kunddatauppsättningen. Det kan vara antingen alla kundprofiler eller ett segment.
 
 1. Välj **Nästa** och ange ett namn på utdataenheten och ett namn för utdataenheten. 
 
@@ -119,10 +121,10 @@ Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du k
 
 När en berikningsprocess har slutförts kan du granska dina nyligen importerade anpassade berikningsdata under **Mina berikningar**. Du hittar också tid för den senaste uppdateringen och antalet utökat profilnamn.
 
-Du kan få tillgång till en detaljerad vy över respektive berikad profil genom att markera **Visa berikade data**.
+Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
