@@ -1,7 +1,7 @@
 ---
 title: Skapa segment med segmentverktyget
 description: Skapa segment med kunder för att gruppera dem utifrån olika attribut.
-ms.date: 09/07/2021
+ms.date: 10/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e089c475234935742fc42fc3f2bada47711305bf
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: bd01edfe7d63d6c7712a808224171f1bb8ad8a2b
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623066"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673572"
 ---
 # <a name="create-segments"></a>Skapa segment
 
@@ -23,6 +23,7 @@ Definiera komplexa filter runt den enhetliga kundentiteten och det är relaterad
 > [!TIP]
 > - Snabbsegment stöds endast i miljöer för **enskilda kunder**.    
 > - Segment som är baserade på **enskilda kunder** innehåller automatiskt tillgänglig kontaktinformation för segmentmedlemmar. I miljöer för **affärskonton** baseras segmenten på konton (företag eller dotterbolag). Om du vill ta med kontaktinformation i ett segment använder du funktionerna för **projektattribut** i segmentverktyget.
+>    - Se till att kontaktdatakällorna är [semantiskt mappade till entiteten ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
 
 ## <a name="segment-builder"></a>Segmentverktyg
 
@@ -52,7 +53,7 @@ Exemplet ovan illustrerar segmenteringsfunktionerna. Vi har definierat ett segme
 
 Du kan skapa ett nytt segment på flera sätt. I detta avsnitt beskrivs hur du bygger ett eget segment från grunden. Du kan också skapa ett *snabbsegment* som bygger på befintliga entiteter eller använda maskininlärning för att få *förslag på segment*. Mer information finns i [Segment – översikt](segments.md).
 
-När du skapar ett segment kan du spara ett utkast. I utkaststadiet sparas ett segment som ett inaktivt segment. När du har slutfört segmentkonfigurationen kör du den för att aktivera segmenten. Du kan också ***Aktivera** ett segment från sidan *Alla segments**.
+När du skapar ett segment kan du spara ett utkast. I utkaststadiet sparas ett segment som ett inaktivt segment. När du har slutfört segmentkonfigurationen kör du den för att aktivera segmenten. Du kan också **Aktivera** ett segment från sidan **Alla segments**.
 
 1. Gå till sidan **Segment**.
 
@@ -86,17 +87,25 @@ När du skapar ett segment kan du spara ett utkast. I utkaststadiet sparas ett s
 
    När du använder operatorn ELLER måste alla villkor baseras på entiteter som ingår i relationssökvägen.
 
-   - Du kan skapa flera regler för att skapa olika uppsättningar med kundposter. Du kan kombinera grupper så att de kunder som krävs för ditt affärsfall inkluderas. Välj **Lägg till regel** för att skapa en ny regel. Om du inte kan ta med en entitet i en regel på grund av den angivna relationssökvägen måste du skapa en ny regel för att välja attribut som utgör den.
+   - Du kan skapa flera regler för att skapa olika uppsättningar med kundposter. Du kan kombinera grupper så att de kunder som krävs för ditt affärsfall inkluderas. Välj **Lägg till regel** för att skapa en ny regel. Om du inte kan ta med en entitet i en regel på grund av den angivna relationssökvägen, måste du skapa en ny regel för att välja attribut som formar den.
 
       :::image type="content" source="media/segment-rule-grouping.png" alt-text="Lägg till en ny regel i ett segment och välj den inställda operatorn.":::
 
    - Välj en av uppsättningsoperatorerna: **Union**, **Skärning** eller **Förutom**.
 
       - **Sammanförande** sammanför de två grupperna.
-      - **Överlappande** överlappar de två grupperna. Endast data som *är gemensamma* för båda grupperna behålls i den enhetliga gruppen.
-      - **Förutom** kombinerar de två grupperna. Endast data i grupp A som *inte är samma* som data i grupp B behålls.
+      - **Överlappande** överlappar de två grupperna. Endast data som *är gemensamma* för båda grupperna finns kvar i den enhetliga gruppen.
+      - **Förutom** kombinerar de två grupperna. Endast data i grupp A som *inte är gemensamma* med data i grupp B bevaras.
 
-1. Som standard genererar segment den utdataentitet som innehåller alla attribut för kundprofiler som matchar de definierade filtren. Om ett segment bygger på andra entiteter än entiteten *Kund* kan du lägga till fler attribut från dessa entiteter i utdataentiteten. Välj **Projektattribut** om du vill välja vilka attribut som ska läggas till i utdataentiteten.  
+1. Som standard genererar segment den utdataentitet som innehåller alla attribut för kundprofiler som matchar de definierade filtren. Om ett segment bygger på andra entiteter än entiteten *Kund* kan du lägga till fler attribut från dessa entiteter i utdataentiteten. Välj **Projektattribut** om du vill välja vilka attribut som ska läggas till i utdataentiteten. 
+
+   > [!IMPORTANT]
+   > För segment som bygger på affärskonton måste information om en eller flera kontakter för varje konto från entiteten *ContactProfile* inkluderas i avsnittet så att det kan aktiveras eller exporteras till mål där det krävs kontaktinformation. Mer information om entiteten *ContactProfile* finns i [Semantiska mappningar](semantic-mappings.md).
+   > Ett exempel på utdata för ett segment som bygger på affärskonton med projekterade attribut för kontakter kan se ut så här: 
+   >
+   > |ID  |Kontonamn  |Intäkter  |Kontaktnamn  | Kontaktens roll|
+   > |---------|---------|---------|---------|---|
+   > |10021     | Contoso | 100K | [Abbie Moss, Ruth Soto]  | [CEO, inköpschef]
 
    :::image type="content" source="media/segments-project-attributes.png" alt-text="Exempel på projicerade attribut som markerats i den sidoruta som ska läggas till i utdataentiteten.":::
   
@@ -107,13 +116,14 @@ När du skapar ett segment kan du spara ett utkast. I utkaststadiet sparas ett s
    > - Om attributet du vill projektera är mer än en hop från entiteten *Kund*, enligt relationens definition, ska attributet användas i alla regler i segmentfrågan som du skapar. 
    > - Om attributet du vill projektera är bara ett hopp från entiteten *Kund*, det attributet behöver inte vara närvarande i alla regler i segmentfrågan som du skapar. 
    > - **Projekterade attribut** räknas in när du använder uppsättningsoperatorer.
-   > - För segment som bygger på affärskonton måste information om en eller flera kontakter för varje konto inkluderas i avsnittet så att det kan aktiveras eller exporteras till mål där det krävs kontaktinformation.
 
 1. Innan du sparar och kör ett segment väljer du **Redigera information** bredvid segmentnamnet. Ange ett namn för ditt segment och uppdatera det föreslagna **Namnet på utdataentiteten** för segmentet. Du kan också lägga till en beskrivning i segmentet.
 
 1. Välj **Kör** om du vill spara avsnittet, aktivera det och börja bearbeta ditt segment utifrån alla regler och villkor. I annat fall sparas det som ett inaktivt segment.
-
+   
 1. Klicka på **Tillbaka till segment** för att gå tillbaka till sidan **Segment**.
+
+1. Som standard skapas segment som ett dynamiskt segment. Det innebär att segmenten uppdateras vid systemuppdateringar. Om du vill [stoppa den automatiska uppdateringen](segments.md#manage-existing-segments) väljer du segmentet och väljer alternativet **Gör statisk**. Statiska segment kan [uppdateras manuellt](segments.md#refresh-segments) när som helst.
 
 > [!TIP]
 > - Segmentverktyget föreslår inga giltiga värden från entiteter när operatorerna anges för villkoren. Du kan gå till **Data** > **Entiteter** och ladda ned entitetsdata för att se vilka värden som är tillgängliga.

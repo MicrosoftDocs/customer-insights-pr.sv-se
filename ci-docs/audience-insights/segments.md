@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: ac33a6dcde4c710cecd3c6836aad3e26ce5c7de6
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617397"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673863"
 ---
 # <a name="segments-overview"></a>Segment – översikt
 
@@ -26,7 +26,7 @@ Kundprofiler som överensstämmer med filter för en segmentdefinition kallas *m
 
 Du kan skapa ett nytt segment på flera sätt: 
 
-# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
 
 - Komplext segment med segmentverktyget: [Bygga ett eget](segment-builder.md#create-a-new-segment) 
 - Enkla segment med en operator: [Snabbsegment](segment-builder.md#quick-segments) 
@@ -34,7 +34,7 @@ Du kan skapa ett nytt segment på flera sätt:
 - AI-drivna förslag baserade på mått eller attribut: [Förslag på segment för att förbättra åtgärder](suggested-segments.md) 
 - Förslag utifrån aktiviteter: [Förslag på segment utifrån kundaktivitet](suggested-segments-activity.md) 
 
-# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
 - Komplext segment med segmentverktyget: [Bygga ett eget](segment-builder.md#create-a-new-segment)
 

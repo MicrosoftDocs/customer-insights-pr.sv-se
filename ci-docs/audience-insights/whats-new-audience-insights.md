@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: e501df8701493a1c5b83c4d06da3a73fd226165f
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7606140"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673886"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -166,7 +166,7 @@ Uppdateringarna i mars 2021 innehåller flera funktioner, prestandauppgraderinga
 - **Exportera segment till Constant Contact** Nu har exportmålen utökats till att omfatta Constant Contact. Nu kan du exportera segment från Customer Insights till listor med Constant Contact och använda dem som grund för dina marknadsföringskampanjer.   
    Mer information finns i [Exportera data till Constant Contact](export-constant-contact.md).
 
-- **Exportera segment till RollWorks** Nu har exportmålen utökats till att omfatta RollWorks. Nu kan du exportera segment från Customer Insights till listor med RollWorks och använda dem som grund för din B2B-reklam.    
+- **Exportera segment till RollWorks** Nu har exportmålen utökats till att omfatta RollWorks. Nu kan du exportera segment från Customer Insights till RollWorks-målgrupper och använda dem som baslinje för din B2B-annonsering.    
    Mer information finns i [Exportera data till RollWorks](export-rollworks.md).
 
 - **Exportera segment till Snapchat** Nu har exportmålen utökats till att omfatta Snapchat. Nu kan du exportera segment från Customer Insights till listor med Snapchat och använda dem som grund för din reklam.     

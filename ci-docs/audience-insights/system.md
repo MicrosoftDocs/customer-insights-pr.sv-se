@@ -1,7 +1,7 @@
 ---
 title: Systemkonfiguration i målgruppsinsikter
 description: Läs om systeminställningar för funktionen målgruppsinsikter i Dynamics 365 Customer Insights.
-ms.date: 02/12/2021
+ms.date: 10/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2af8728009b4f1d53ebc2557bab8c79537a0dc5dda54477493ab1ad16f3f9a8a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
+ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035938"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7651862"
 ---
 # <a name="system-configuration"></a>Systemkonfiguration
 
@@ -24,9 +24,9 @@ På sidan **System** finns följande flikar:
 - [API-användning](#api-usage-tab)
 - [Om](#about-tab)
 - [Allmänt](#general-tab)
+- [Säkerhet](#security-tab)
 
-> [!div class="mx-imgBorder"]
-> ![Systemsida.](media/system-tabs.png "Systemsida")
+:::image type="content" source="media/system-tabs.png" alt-text="Inställningsflikar på systemsidan.":::
 
 ## <a name="status-tab"></a>Fliken status
 
@@ -84,9 +84,15 @@ Fliken **Om** innehåller organisationens **Visningsnamn**, aktivt **Miljö-ID**
 
 ## <a name="general-tab"></a>Fliken Allmänt
 
-Det finns två alternativ på fliken **Allmänt**, **Språk** och **Land/region-format**.
+Du kan ändra språk och land/region-format på fliken **Allmänt**.
 
-Appen [stöder ett antal språk](supported-languages.md). Om du vill ändra önskat språk väljer du ett **språk** i listrutan.
+Customer Insights [stöder ett antal språk](/dynamics365/get-started/availability). Appen använder din språkinställning för att visa element som menyn, etikettext och systemmeddelanden på det språk du föredrar.
+
+Importerade data och information som du har angett manuellt översätts inte.
+
+### <a name="update-the-settings"></a>Uppdatera inställningarna
+
+Om du vill ändra önskat språk väljer du ett **språk** i listrutan.
 
 Om du vill ändra förvald formatering för datum, tid och tal använder du listrutan **Land/region-format**. En förhandsgranskning av formatering visas under det här fältet. Systemet kommer automatiskt att föreslå ett urval när du väljer ett nytt språk.
 
@@ -105,6 +111,13 @@ Hitta information om API-användningen i realtid och se vilka händelser som har
 
    Åtgärder som använder [datainmatning i realtid](real-time-data-ingestion.md) innehåller en knapp med en kikarsymbol för att visa API-användning i realtid. Välj knappen för att öppna en sidoruta som innehåller användningsdetaljer för API-användningen i realtid i den aktuella miljön.   
    Använd rutan **Gruppera efter** i fönstret **API-användning i realtid** för att välja hur realtidsinteraktioner bäst ska presenteras. Du kan gruppera data efter API-metod, kvalificerade namn för entiteter (upptagen entitet), skapade av (händelsens källa), resultat (lyckade eller misslyckade) eller felkoder. Informationen är tillgänglig som ett historikdiagram och som en tabell.
+
+## <a name="security-tab"></a>Fliken Säkerhet
+
+På fliken **Säkerhet** kan du länka och hantera ditt eget [Azure Key Vault](/azure/key-vault/general/basic-concepts) till miljön.
+Dedikerade nyckelvalv kan användas för att arrangera och använda hemligheter i en organisations efterlevnadsgräns. Målgruppsinsikter kan använda hemligheterna i Azure Key Vault för att [konfigurera anslutningar](connections.md) till system från tredje part.
+
+Mer information finns i [Använd ditt eget Azure Key Vault](use-azure-key-vault.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

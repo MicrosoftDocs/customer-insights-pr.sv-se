@@ -1,7 +1,7 @@
 ---
 title: Segment som föreslås genom maskininlärning
 description: Låt maskininlärning hjälpa dig att hitta nya och intressant segment baserat på kundattribut.
-ms.date: 02/01/2021
+ms.date: 10/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 manager: shellyha
-ms.openlocfilehash: f743853826cee0427618abccfba27f10016a0f05cc674f5f7da2210366d60305
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 44e46bb650b6f090afcab3bc940d03a304e9c375
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028382"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673205"
 ---
 # <a name="suggested-segments-preview"></a>Föreslagna segment (förhandsversion)
 
@@ -23,7 +23,7 @@ Identifiera intressanta segment för dina kunder med hjälp av en AI-modell. Mas
 > [!NOTE]
 > Funktionen för föreslagna segment använder automatiserade metoder för att utvärdera data och göra förutsägelser utifrån dessa data och har därför möjlighet att användas som metod för profilering, eftersom den termen definieras av allmänna dataskyddsförordningen ("GDPR"). Din användning av den här funktionen för att bearbeta data kan omfattas av GDPR eller andra lagar och förordningar. Du ansvarar för att din användning av Dynamics 365 Customer Insights, inklusive denna funktion, följer alla tillämpliga lagar och förordningar, inklusive lagar som rör sekretess, personuppgifter, biometriska data, dataskydd och sekretess för kommunikation.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="Sidan Förslag på segment i Customer Insights som visar information om ett förslag i ett sidofönster.":::
+:::image type="content" source="media/suggested-segments.png" alt-text="Sidan Föreslagna segment som visar information om ett förslag i en sidopanel.":::
 
 ## <a name="suggested-segments-to-improve-your-kpis"></a>Förslag på segment för att förbättra KPI:er
 
@@ -49,7 +49,7 @@ Segmentförslag skiljer sig om du väljer ett numeriskt attribut eller ett kateg
 
 Med ett numeriskt attribut som *årsinkomst* eller *medlemsskapsperiod* som primärt attribut föreslår systemet segment som har ett högre eller lägre medelvärde för det numeriska attributet i jämförelse med alla kunder.
 
-Ett kategoriskt attribut som *kundnöjdhet* som primärt attribut leder till föreslagna segment som har en högre eller lägre andel av kunder som tillhör en viss kategori i jämförelse med andelen av alla kunder som tillhör samma kategori. Exempel: *Kundnöjdhet* väljs som primärt attribut och består av tre kategorier (*Låg*, *Medel* och *Hög*). För varje kategori föreslås segment som har en betydligt högre eller lägre andel kunder som tillhör kategorin i jämförelse med andelen av alla kunder i samma kategori. Om 22 % av alla kunder har *Hög* nöjdhet föreslås endast segment som har en betydligt högre eller lägre andel kunder med *Hög* nöjdhet i jämförelse med 22 % för den kategorin. På samma sätt föreslås segment för var och en av de andra kategorierna (*Låg* och *Medel*) om de är statistiskt betydelsefulla.
+Ett kategoriskt attribut som *kundnöjdhet* som primärt attribut leder till föreslagna segment som har en högre eller lägre andel av kunder som tillhör en viss kategori i jämförelse med andelen av alla kunder som tillhör samma kategori. Exempel: *Kundnöjdhet* väljs som primärt attribut och består av tre kategorier (*Låg*, *Medel* och *Hög*). För varje kategori föreslås segment som har en högre eller lägre procentandel kunder som tillhör den kategorin jämfört med proportionen av alla kunder i samma kategori. Om 22 % av alla kunder har *Hög* nöjdhet föreslås endast segment med en högre eller lägre proportion kunder med *Hög* nöjdhet jämfört med 22 % för den kategorin. På samma sätt föreslås segment för var och en av de andra kategorierna (*Låg* och *Medel*) om de är statistiskt betydelsefulla.
 
 > [!NOTE]
 > För tillfället har vi bara stöd för primära kategoriska attribut som har upp till 10 kategorier. Om du vill visa segmentförslag som bygger på ett primärt attribut med mer än 10 kategorier rekommenderar vi att du grupperar några av kategorierna så att antalet kategorier blir 10 eller färre. Den här begränsningen gäller endast primära attribut. För påverkande kategoriska attribut har vi för närvarande stöd för maximalt 100 kategorier.
@@ -77,7 +77,7 @@ Ett kategoriskt attribut som *kundnöjdhet* som primärt attribut leder till fö
 
 När AI-modellen har genererat förslagen hittar du dem i **Segment** > **Förslag (förhandsgranskning)**.
  
-Välj ett föreslaget segment om du vill granska informationen om det förslaget, inklusive en jämförelse av genomsnittsvärdet och antalet segmentmedlemmar. Du kan också granska attributvärdena eller reglerna som AI-modellen har lärt sig för att föreslå det valda segmentet.
+Välj ett föreslaget segment för att granska detaljerna för det förslaget. Du kan också granska attributvärdena eller reglerna som AI-modellen har lärt sig för att föreslå det valda segmentet.
 
 ## <a name="save-a-suggestion-as-a-segment"></a>Spara ett förslag som ett segment
 

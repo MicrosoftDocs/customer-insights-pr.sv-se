@@ -1,7 +1,7 @@
 ---
 title: Prediktion för transaktionsomsättning
 description: Förutse om det finns en risk med att kunden inte längre vill köpa dina produkter eller tjänster.
-ms.date: 10/11/2021
+ms.date: 10/20/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ac484f74e388aa23422a89e25dabb555f2ad4118
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: 9fa6a044989d523e1068aff24266cfb475632736
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643454"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673067"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Prediktion för transaktionsomsättning (förhandsversion)
 
@@ -28,6 +28,32 @@ För miljöer som bygger på affärskonton kan vi skapa transaktioner för ett k
 > Prova självstudien om en prediktion exempeldata: [Exempelguide för prediktion för transaktionsomsättning (förhandsgranskning)](sample-guide-predict-transactional-churn.md). 
 
 ## <a name="prerequisites"></a>Förutsättningar
+
+# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
+
+- Minst [Deltagarbehörighet](permissions.md) i Customer Insights.
+- Affärskunskaper för att förstå vad omsättningen innebär för företaget. Vi har stöd för tidsbaserade omsättningsdefinitioner, vilket innebär att en kund anses ha omsatts efter en period där inga inköp gjorts.
+- Data om dina transaktioner/inköp och deras historik:
+    - Transaktionsidentifierare för att särskilja inköp och transaktioner.
+    - Kundidentifierare för att matcha transaktioner mot dina kunder.
+    - Datum för transaktionshändelser, som definierar datumen då transaktionen genomfördes.
+    - Det semantiska dataschemat för inköp/transaktioner kräver följande information:
+        - **Transaktions-ID**: En unik identifierare för ett inköp eller en transaktion.
+        - **Transaktionsdatum**: Datumet för köpet eller transaktionen.
+        - **Värde för transaktionen**: Valutan/det numeriska värdet för transaktionen/artikeln.
+        - (Valfritt) **Unikt produkt-ID**: ID för den produkt eller tjänst som köpts om dina data finns på en radartikelnivå.
+        - (Valfritt) **Om transaktionen var en retur**: Ett sant/falskt-fält som identifierar om transaktionen returnerades. Om **värdet för transaktionen** är negativt används även den här informationen för att härleda en retur.
+- (Valfri) Data om kundaktiviteter:
+    - Aktivitetsidentifierare för att särskilja aktiviteter av samma typ.
+    - Kundidentifierare för att mappa aktiviteter mot dina kunder.
+    - Aktivitetsinformation som innehåller namnet och datumet för aktiviteten.
+    - Det semantiska dataschemat för kundaktiviteter omfattar:
+        - **Primärnyckel:** En unik identifierare för en aktivitet. Exempelvis kan ett besök på en webbplats eller en användningspost som visar att kunden testade ett exempel på din produkt.
+        - **Tidsstämpel:** Datum och tid för händelsen som identifierats av primärnyckeln.
+        - **Händelse:** Namnet på den händelse som du vill använda. Ett fält med namnet "UserAction" i en livsmedelsbutik kan till exempel vara en kuponganvändning av kunden.
+        - **Detaljer:** Detaljerad information om händelsen. Ett fält med namnet "CouponValue" i en livsmedelsbutik kan till exempel vara valutavärdet på kupongen.
+
+# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
 - Minst [Deltagarbehörighet](permissions.md) i Customer Insights.
 - Affärskunskaper för att förstå vad omsättningen innebär för företaget. Vi har stöd för tidsbaserade omsättningsdefinitioner, vilket innebär att en kund anses ha omsatts efter en period där inga inköp gjorts.
@@ -59,6 +85,9 @@ För miljöer som bygger på affärskonton kan vi skapa transaktioner för ett k
         - **Land:** Land för en kund.
         - **Bransch:** En kunds branschtyp. Ett fält med namnet Bransch i en kaffeställen kan till exempel visa om kunden var återförsäljningskund.
         - **Klassificering:** Kategorisering av en kund för företaget. Ett fält med namnet ValueSegment i en kaffesoffa kan exempelvis vara kundnivån utifrån kundens storlek.
+
+---
+
 - Föreslagna dataegenskaper:
     - Tillräckliga tidigare data: Transaktionsdata för minst dubbla det valda tidsfönstret. Helst två till tre års transaktionshistorik. 
     - Flera inköp per kund: helst minst två transaktioner per kund.
@@ -114,6 +143,32 @@ För miljöer som bygger på affärskonton kan vi skapa transaktioner för ett k
 
 1. Välj **Nästa**.
 
+# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
+
+### <a name="add-additional-data-optional"></a>Lägg till ytterligare data (valfritt)
+
+Konfigurera relationen från kundaktivitetsentiteten till entiteten *Kund*.
+
+1. Välj det fält som identifierar kunden i tabellen för kundaktivitet. Den kan vara direkt relaterad till det primära kund-ID för entiteten *Kund*.
+
+1. Välj den entitet som är din primära entiteten *Kund*.
+
+1. Ange ett namn som beskriver relationen.
+
+#### <a name="customer-activities"></a>Kundaktiviteter
+
+1. Alternativt kan du välja **Lägg till data** för **Kundaktiviteter**.
+
+1. Välj den typ av aktivitet som innehåller den information du vill använda och välj sedan en eller flera aktiviteter i avsnittet **Aktiviteter**.
+
+1. Välj en aktivitetstyp som överensstämmer med den typ av kundaktivitet som du konfigurerar. Välj **Skapa ny** och välj en tillgänglig aktivitetstyp eller skapa en ny typ.
+
+1. Välj **Nästa**, sedan **Spara**.
+
+1. Om du har andra kundaktiviteter som du vill ta med upprepar du stegen ovan.
+
+# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
+
 ### <a name="select-prediction-level"></a>Välj prediktionsnivå
 
 De flesta prediktioner skapas på kundnivå. I vissa situationer kanske det inte är tillräckligt detaljerad för att kunna tillgodose företagets behov. Du kan använda den här funktionen för att skapa nya funktioner för en kundgren, till exempel i stället för kunden som helhet.
@@ -122,9 +177,9 @@ De flesta prediktioner skapas på kundnivå. I vissa situationer kanske det inte
 
 1. Expandera de entiteter du vill välja den sekundära nivån från eller filtrera de markerade alternativen med hjälp av sökfilterrutan.
 
-1. Välj attributet du vill använda som sekundär nivå och välj sedan **Lägg till**
+1. Välj attributet du vill använda som sekundär nivå och välj sedan **Lägg till**.
 
-1. Välj **Nästa**
+1. Välj **Nästa**.
 
 > [!NOTE]
 > De entiteter som är tillgängliga i det här avsnittet visas eftersom de har en relation till den entitet du valde i föregående avsnitt. Om du inte ser den entitet du vill lägga till ska du kontrollera att den har en giltig relation i **Relationer**. Endast en till en och flera-till-en relationer för den här konfigurationen.
@@ -159,7 +214,7 @@ Konfigurera relationen från kundaktivitetsentiteten till entiteten *Kund*.
 
 1. Välj **Nästa**.
 
-### <a name="provide-an-optional-list-of-benchmark-accounts-business-accounts-only"></a>Ange en valfri lista med jämförelsekonton (endast företagskonton)
+### <a name="provide-an-optional-list-of-benchmark-accounts"></a>Ange en valfri lista med jämförelsekonton
 
 Lägg till en lista över dina företagskunder och konton som du vill använda som riktmärken. Du får [information om dessa jämförelsekonton](#review-a-prediction-status-and-results), bland annat deras omsättningspoäng och de flesta funktioner som har påverkat deras prediktion.
 
@@ -168,6 +223,8 @@ Lägg till en lista över dina företagskunder och konton som du vill använda s
 1. Välj vilka kunder som ska fungera som jämförelse.
 
 1. Fortsätt genom att klicka på **Nästa**.
+
+---
 
 ### <a name="set-schedule-and-review-configuration"></a>Ange schema och granska konfigurationen
 
@@ -201,6 +258,25 @@ Lägg till en lista över dina företagskunder och konton som du vill använda s
 1. Markera de lodräta punkterna bredvid den förutsägelse som du vill granska resultat för och välj **Visa**.
 
    :::image type="content" source="media/model-subs-view.PNG" alt-text="Visa kontroll om du vill visa resultatet av en förutsägelse.":::
+
+# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
+
+1. Det finns tre primära dataområden på resultatsidan:
+   - **Prestanda för övningsmodell**: A, B eller C är möjliga poäng. Detta resultat anger förutsägelsens prestanda och kan hjälpa dig att fatta beslutet att använda resultaten som lagras i utdataenheten. Poängen bestäms utifrån följande regler: 
+        - **A** När modellen korrekt förutsäger minst 50 % av det totala antalet förutsägelser, och när procentandelen av korrekta förutsägelser för kunder som har omsatts är större än baslinjen med minst 10 %.
+            
+        - **B** När modellen korrekt förutsäger minst 50 % av det totala antalet förutsägelser, och när procentandelen av korrekta förutsägelser för kunder som har omsatts är upp till 10 % större än baslinjen.
+            
+        - **C** När modellen korrekt förutsäger mindre än 50 % av det totala antalet förutsägelser, eller när procentandelen av korrekta förutsägelser för kunder som har omsatts är mindre än baslinjen.
+               
+        - **Baslinjen** tar tidsintervallet för förutsägelse för modellen (till exempel 1 år) och modellen skapar olika tidsintervall genom att dela det med 2 tills det når 1 månad eller mindre. De mindre tidsintervallen används för att skapa en affärsregel för kunder som inte har köpt något i denna tidsram. Dessa kunder betraktas som omsatta. Den tidsbaserade affärsregeln med den högsta förmågan att förutse vem som sannolikt omsätts väljs som baslinjemodell.
+            
+    - **Sannolikhet för omsättning (antal kunder)**: Kundgrupper utifrån deras förutsedda omsättningsrisk. Den här informationen kan hjälpa dig senare om du vill skapa ett kundsegment med hög omsättningsrisk. Sådana segment hjälper dig att förstå var avgränsarna bör finnas för segmentmedlemskap.
+       
+    - **Faktorer med störst påverkan**: Det finns många faktorer som bör beaktas när du skapar en förutsägelse. Var och en av faktorerna har en betydelse beräknad för de aggregerade förutsägelserna som skapas av en modell. Du kan använda dessa faktorer för att validera prediktion resultat, eller så kan du använda den här informationen senare för att [skapa segment](segments.md) som kan påverka kundrisken.
+
+
+# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
 1. Det finns tre primära dataområden på resultatsidan:
    - **Prestanda för övningsmodell**: A, B eller C är möjliga poäng. Detta resultat anger förutsägelsens prestanda och kan hjälpa dig att fatta beslutet att använda resultaten som lagras i utdataenheten. Poängen bestäms utifrån följande regler: 
@@ -237,6 +313,11 @@ Lägg till en lista över dina företagskunder och konton som du vill använda s
        Om du försöker lösa detta på kontonivån tas hänsyn till alla konton genom att beräkna genomsnittsvärdena för funktionen för segment av omsättning. För prognos på sekundär nivå för varje konto beror spridning av segment på den sekundära nivån för objektet som valts i sidoruta. Om ett objekt till exempel har en sekundär nivå av produktkategori = kontorsmaterial, beaktas endast de objekt som har kontorsmaterial som produktkategori när genomsnittsvärdena för funktionen för segment används. Den här logiken används för att säkerställa en korrekt jämförelse av objektets funktionsvärden med genomsnittsvärdena i segmenten låg, tjock och hög.
 
        I vissa fall är genomsnittsvärdet för segment med låg eller hög omsättning tom eller inte tillgänglig eftersom det inte finns några objekt i motsvarande segment för segmenten ovan.
+       
+       > [!NOTE]
+       > Tolkningen av värden under kolumnerna låg, medium och hög skiljer sig åt för kategorifunktioner som land och bransch. Eftersom begreppet om ett "genomsnittligt" funktionsvärde inte gäller kategorifunktioner är värdena i dessa kolumner proportionerna med kunder i omsättningssegment med låg, medium och hög omsättning som har samma värde för kategorifunktionen jämfört med objektet som valts i sidopanelen.
+
+---
 
 ## <a name="manage-predictions"></a>Hantera förutsägelser
 

@@ -1,19 +1,19 @@
 ---
 title: Komma igång med en betald licens på Dynamics 365 Customer Insights
 author: m-hartmann
-description: Bekanta dig med den första upplevelsen Dynamics 365 Customer Insights och utforska funktionerna.
+description: Bekanta dig med den välkomstupplevelsen i Dynamics 365 Customer Insights och utforska funktionerna.
 ms.author: mhart
 ms.date: 10/05/2021
 ms.service: customer-insights
 ms.topic: overview
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: b4228a36069f4adb8098ea96cefec0eef81a6560
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 9f96a70d0cc316e8793921fedb0cc3fa4751c827
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645733"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673496"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Komma igång efter att ha köpt Customer Insights
 
@@ -29,7 +29,7 @@ Om du vill prova tjänsten och funktionerna finns mer information i [Konfigurera
 
 ## <a name="start-with-customer-insights"></a>Starta med Customer Insights
 
-Den första körningen hjälper dig att välja inledande fokus med Customer Insights och utforska funktionerna med exempeldata. I nästa steg kan du skapa din egen miljö och arbeta med dina egna data.
+Den välkomstupplevelsen hjälper dig att välja inledande fokus med Customer Insights och utforska funktionerna med exempeldata. I nästa steg kan du skapa din egen miljö och arbeta med dina egna data.
 
 **Logga in första gången**:
 

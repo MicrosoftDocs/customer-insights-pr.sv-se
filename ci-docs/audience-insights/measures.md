@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: d77d1901fee4771537554c05d3963316d0fb37cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623054"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673525"
 ---
 # <a name="define-and-manage-measures"></a>Definiera och hantera mått
 
@@ -28,7 +28,7 @@ Använd måttverktyget om du vill planera affärsaktiviteter genom att fråga ef
 
 Det här avsnittet innehåller information om hur du skapar ett nytt mått från grunden. Du kan skapa ett mått med dataattribut från dataentiteter som har en relation konfigurerad för att ansluta till entiteten för en enhetlig kundprofil.
 
-# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
 
 1. I målgruppsinsikter går du till **Åtgärder**.
 
@@ -92,7 +92,7 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
 
 1. Gå till **Mått** för att se det nyskapade måttet i listan.
 
-# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
 1. I målgruppsinsikter går du till **Åtgärder**.
 
@@ -164,7 +164,7 @@ Det här avsnittet innehåller information om hur du skapar ett nytt mått från
 
 Du kan använda fördefinierade mallar med vanliga åtgärder för att skapa dem. Detaljerade beskrivningar av mallarna och en guidad upplevelse hjälper dig att skapa effektiva mått. Mallar bygger på mappade data från entiteten *Enhetlig aktivitet*. Kontrollera därför att du har konfigurerat [kundaktiviteter](activities.md) innan du skapar ett mått från en mall.
 
-# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
 
 Du kan använda fördefinierade mallar med vanliga åtgärder för att skapa dem. Detaljerade beskrivningar av mallarna och en guidad upplevelse hjälper dig att skapa effektiva mått. Mallar bygger på mappade data från entiteten *Enhetlig aktivitet*. Kontrollera därför att du har konfigurerat [kundaktiviteter](activities.md) innan du skapar ett mått från en mall.
 
@@ -212,7 +212,7 @@ I följande procedur beskrivs stegen för att skapa ett nytt mått med hjälp av
 
 1. Nu kan du välja **Kör** för att beräkna resultatet av åtgärden. Om du vill förfina den senare markerar du **Spara utkast**.
 
-# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
 Den här funktionen är endast tillgänglig för åtgärder som har skapats i miljöer med enskilda kunder som primär målgrupp.
 

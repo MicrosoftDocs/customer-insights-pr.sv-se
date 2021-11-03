@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: ce2fdd435a81bb04148057554c5958e3ab59f125
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 2d977ef4eb585e26b36139681552db22d84759c9
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645148"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673766"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
 
@@ -67,7 +67,8 @@ Följande data kopieras *inte*:
 
 - Kundprofiler.
 - Autentiseringsuppgifter för datakälla. Du måste ange autentiseringsuppgifterna för varje datakälla och uppdatera datakällorna manuellt.
-- Datakällor från mappen Common Data Model och Dataverse-hanterad Data Lake. Du måste skapa dessa datakällor manuellt med samma namn som i källmiljön.
+
+- Datakällor från mappen Common Data Model och Dataverse-hanterad datasjö. Du måste skapa dessa datakällor manuellt med samma namn som i källmiljön.
 
 När du kopierar en miljö visas ett bekräftelsemeddelande om att den nya miljön har skapats. Välj **gå till datakällor** om du vill visa listan över datakällor.
 

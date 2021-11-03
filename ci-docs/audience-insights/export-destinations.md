@@ -10,12 +10,12 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: 61e95e47489495e367498547687b0065169519e6
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623155"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673345"
 ---
 # <a name="exports-preview-overview"></a>Exporter (förhandsversion) översikt
 
@@ -32,14 +32,14 @@ Det finns två huvudtyper av export:
 
 ### <a name="export-segments"></a>Exportera segment
 
-**Exportera segment i miljöer för affärskonton (B2B) eller enskilda kunder (B2C)**  
-De flesta exportalternativ har stöd för båda typerna av miljöer. Det finns särskilda krav för att exportera segment till olika målsystem. Vanligtvis innehåller segmentmedlem, kundprofilen, kontaktinformation. Detta är vanligt i segment som bygger på enskilda kunder (B2C), men det behöver inte vara fallet för segment som bygger på affärskonton (B2B). 
+**Exportera segment i miljöer för affärskonton (B2B) eller enskilda konsumenter (B2C)**  
+De flesta exportalternativ har stöd för båda typerna av miljöer. Det finns särskilda krav för att exportera segment till olika målsystem. Vanligtvis innehåller segmentmedlem, kundprofilen, kontaktinformation. Detta är vanligt i segment som bygger på enskilda konsumenter (B2C), men det behöver inte vara fallet för segment som bygger på affärskonton (B2B). 
 
 **Segmentexportmiljöer för affärskonton (B2B)**  
 - Segment i samband med miljöer för affärskonton bygger på entiteten *konto*. För att kunna exportera kontosegment i sin form måste målsystemet ha stöd för kontosegment. Detta gäller för [LinkedIn](export-linkedin-ads.md) när du väljer alternativet **företag** när du definierar exporten.
 - Alla andra målsystem kräver fält från kontaktentiteten. För att säkerställa att kontosegment kan hämta data från relaterade kontakter måste segmentdefinitionen projektattribut för kontaktentiteten. Läs mer om hur du [konfigurerar segment och projektattribut](segment-builder.md).
 
-**Segmentexport i miljöer för enskilda kunder (B2C)**  
+**Segmentexport i miljöer för enskilda konsumenter (B2C)**  
 - Segment i samband med miljöer för individuella kunder bygger på entiteten *Unified Customer Profile*. Alla segment som uppfyller målsystemens krav (till exempel en e-postadress) kan exporteras.
 
 **Begränsningar för segmentexport**  
