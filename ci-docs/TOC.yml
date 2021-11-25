@@ -84,6 +84,8 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Utökade adresser
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Berika företagsdata
+          href: audience-insights/enrichment-enhanced-company-data.md
         - name: Utöka med Azure Maps
           href: audience-insights/enrichment-azure-maps.md
         - name: Utöka med HERE Technologies
@@ -250,6 +252,40 @@
           href: audience-insights/apis.md
         - name: API-referenser
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+- name: Samtyckeshantering (förhandsversion)
+  items:
+    - name: Hjälphubb
+      href: consent-management/index.yml
+    - name: Kapacitetsöversikt
+      href: consent-management/overview.md
+    - name: Kom igång
+      items:
+        - name: Kom igång
+          href: consent-management/get-started.md
+        - name: Begrepp och terminologi
+          href: consent-management/glossary.md
+    - name: Importera samtyckesdata
+      items:
+        - name: Importera samtyckesdata
+          href: consent-management/import-consent-data.md
+        - name: Ange samtyckesdata och tillämpa samtyckesinställningar
+          href: consent-management/set-consent-rules.md
+    - name: Hantera samtyckesdata
+      items:
+        - name: Aktivera samtyckesregler i målgruppinsikter
+          href: audience-insights/activate-consent.md
+        - name: Hantera standardregler för samtycke i segment för målgruppinsikter
+          href: audience-insights/change-default-consent-rules.md
+    - name: Hantera inställningar och användare
+      items:
+        - name: Konfigurera systeminställningar
+          href: consent-management/system-settings.md
+        - name: Hantera användare och behörigheter
+          href: consent-management/manage-users.md
+    - name: Använd samtyckesdata
+      items:
+        - name: Skapa prediktioner med samtyckesdata
+          href: consent-management/predictions-consent-data.md
 - name: Engagemangsinsikter (förhandsversion)
   items:
     - name: Hjälphubb

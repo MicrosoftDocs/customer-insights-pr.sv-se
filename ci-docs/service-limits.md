@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eba7871faf304d5945191b5b9bc215243b4f8a05
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: eb25e050b8aa768e6e1d8d4c5adce6095cccc346
+ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483713"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7792002"
 ---
 # <a name="service-limits-in-customer-insights-capabilities"></a>Tjänstebegränsningar i Customer Service-funktioner
 
@@ -24,9 +24,9 @@ I den här artikeln beskrivs de inbyggda begränsningarna för Customer Insights
 
 ### <a name="service-limits-in-dynamics-365-customer-insights-audience-insights-capability"></a>Tjänstbegränsningar i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
-| Ytdiagram  | Gränser  | Kommentarer |
+| Ytdiagram  | Gränser  | OBS! |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segment och mått | 100 segment eller mått. | Det totala antalet aktiva [segment](audience-insights/segments.md) och [mått](audience-insights/measures.md) kan inte tillsammans överstiga 100.  |
+| Segment, mått och förutsägelser | 300  | Totalt antal [segment](audience-insights/segments.md), [mått](audience-insights/measures.md) och [prognoser](audience-insights/predictions.md) får tillsammans inte överstiga 300.  |
 | Relationer | 20 djupnivåer för relationer i entitetssökvägar. | När du skapar [segment](audience-insights/segments.md) eller [mått](audience-insights/measures.md) med hjälp av verktygsgränssnittet kan entitetssökvägar ha upp till 20 relationshopp mellan start- och målentiteterna.  |
 
 

@@ -1,7 +1,7 @@
 ---
 title: Skapa och hantera miljöer
 description: Läs om hur du registrerar dig för tjänsten och hur du hanterar miljöer.
-ms.date: 10/14/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 2d977ef4eb585e26b36139681552db22d84759c9
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 65c6a68f550c2873ec30c6ac54f1752d880ce12c
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673766"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799657"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
 
@@ -39,6 +39,19 @@ Du kan redigera vissa av detaljerna i befintliga miljöer.
 3. I rutan **Redigera miljö** kan du uppdatera miljöinställningarna.
 
 Mer information om miljöinställningar finns i [Skapa en ny miljö](create-environment.md).
+
+## <a name="connect-to-microsoft-dataverse"></a>Anslut till Microsoft Dataverse
+   
+I **Microsoft Dataverse** steget kan du koppla Customer Insights till din Dataverse miljö.
+
+Om du vill använda [färdiga prediktionsmodeller](predictions-overview.md#out-of-box-models), konfigurera datadelning med Dataverse. Du kan också aktivera datainmatning från lokala datakällor, med den Microsoft Dataverse miljö-URL som organisationen administrerar. Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Dataverse-hanterad datasjö.
+
+:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse.":::
+
+> [!NOTE]
+> Customer Insights stöder inte följande datadelningsscenarier:
+> - Om du sparar alla data till din egen Azure Data Lake Storage kommer du inte att kunna aktivera datadelning med en Dataverse-hanterad datasjö.
+> - Om du aktiverar datadelning med Dataverse kommer du inte kunna [skapa förutsagda eller saknade värden i en entitet](predictions.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopiera miljökonfigurationen
 

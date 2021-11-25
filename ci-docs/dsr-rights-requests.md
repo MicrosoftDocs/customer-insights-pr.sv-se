@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: c116f7ce208c0288851a4b2230e27784ba3a5337
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483712"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732702"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Registrerades begäran (DSR) under GDPR
 
@@ -79,7 +79,14 @@ Klientorganisationens administratör följer de här stegen för att exportera d
 2. Bekräfta bekräftelsen av att exportera data för den begärda användaren.
 3. Ta emot exporterade data via e-postadressen för innehavaradministration.
 
-## <a name="engagement-insights"></a>Engagemangsinsikter
+## <a name="consent-management-preview"></a>Samtyckeshantering (förhandsversion)
+
+Med funktionen för samtyckeshantering samlas inte användardata in direkt. Den importerar och bearbetar endast samtyckesdata som tillhandahålls av användare i andra program.
+
+Ta bort samtyckesdata om specifika användare genom att ta bort dem i datakällorna som inte har funktioner för samtyckeshantering. När du har datakälla informationen tas även de bort i Samtyckescenter. Program som använder samtyckesentiteten tar även bort data som har tagits bort på källan efter en [uppdatering](audience-insights/system.md#refresh-processes). Vi rekommenderar att du uppdaterar datakällor snabbt när du har besvarat en förfrågan om dataämne för att ta bort användarens data från alla andra processer och program.
+
+
+## <a name="engagement-insights-preview"></a>Engagemangsinsikter (förhandsversion)
 
 ### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Ta bort och exportera händelsedata som innehåller identifierbar användarinformation
 

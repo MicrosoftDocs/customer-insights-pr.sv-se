@@ -1,7 +1,7 @@
 ---
 title: Slå samman entiteter i datasammanslutningen
 description: Slå samman entiteter för att skapa enhetliga kundprofiler.
-ms.date: 10/10/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-merge
-ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648276"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732794"
 ---
 # <a name="merge-entities"></a>Slå samman entiteter
 
@@ -187,10 +187,9 @@ Välj **Kör sammanslagnings- och nedströmsprocesser** om du vill uppdatera sys
 
 Om du vill göra fler ändringar och köra steget igen kan du avbryta en pågående koppling. Välj **Uppdatera…** och välj **Avbryt jobb** i sidorutan som visas.
 
-> [!TIP]
-> När du har kört kopplingsprocessen markerar du processtatusen och öppnar rutan **Uppgiftsinformation**. Den ger en översikt över bearbetningstiden, sista bearbetningsdatum och alla fel och varningar som är associerade med uppgiften. vÄLJ **vISA INFORMATION** om du vill se vilka entiteter som deltog i matchningsprocessen, om konfliktlösningen lyckades och om uppdateringarna publicerades korrekt.  
-> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="Detaljerad sökväg för att komma åt processinformation från uppgiftsstatuslänken.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+:::image type="content" source="media/process-detail-path.png" alt-text="Detaljerad sökväg för att komma åt processinformation från uppgiftsstatuslänken.":::
 
 ## <a name="next-step"></a>Nästa steg
 

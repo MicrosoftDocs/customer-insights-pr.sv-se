@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c9c7cfbf9f47cca53e5543e2cda2584e25ad855d
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: dbcdcbea8ffd1755b58c322233c08c70a065db36
+ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643470"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7792048"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
 
@@ -34,7 +34,7 @@ Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tilläg
   - **Måttkontroll**: Kräver [konfigurerade mått](measures.md) för typen kundattribut.
   - **Intelligent kontroll**: Kräver data som genereras med hjälp av [prediktioner](predictions.md) eller [anpassade modeller](custom-models.md).
   - **Kontroll för kundinformation**: Alla fält från profilen är tillgängliga i den enhetliga kundprofilen.
-  - **Berikningskontroll**: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler.
+  - **Berikningskontroll**: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler. Korttillägget stöder dessa tillägg: [Varumärken](enrichment-microsoft.md)från Microsoft, [Intressen](enrichment-microsoft.md) tillhandahållen av Microsoft.
   - **Kontaktkontroll**: Kräver definition av entitet för utformning av typkontakter.
   - **Tidslinjekontroll**: Kräver [konfigurerade aktiviteter](activities.md).
 

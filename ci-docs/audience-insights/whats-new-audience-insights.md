@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 08/31/2021
+ms.date: 11/04/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: e501df8701493a1c5b83c4d06da3a73fd226165f
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: f7e2645e1608ea83b5d3af1073a5d6f6e97eec8f
+ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673886"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "7753139"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -26,6 +26,41 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="october-2021-updates"></a>Uppdateringar i oktober 2021
+
+Uppdateringarna i oktober 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="b-to-b"></a>B2B
+
+Från och med oktober 2021 kan du arbeta med affärskonton och deras relaterade kontakter i Customer Insights. Tidigare har appen främst skräddarsytts för enskilda användare. Flera funktionsområden har uppdaterats för att stödja B2B-scenarier utöver den nya miljötypen. En översikt över B2B-funktioner som stöds finns i [Arbeta med affärskonton i målgruppinsikter](work-with-business-accounts.md).
+
+I följande avsnitt framhävs några av de viktigaste områdena som har anpassats för att stödja verksamhetskonton och enskilda åtgärder.
+
+#### <a name="export-segments-based-on-business-accounts"></a>Exportera segment utifrån affärskonton
+
+Alla segmentexporter i målgruppinsikter är tillgängliga när det gäller affärskonton. De flesta segmentexporter kräver extra konfigurations- och [kontaktinformation som projiceras](segment-builder.md#create-a-new-segment) i de underliggande segmenten för att kunna användas för affärskonton. Mer information finns i [Exportera segments](export-destinations.md#export-segments).
+
+#### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>Använd export av LinkedIn-annonser med affärskonton
+
+Exporten av LinkedIn-annonser kan nu göras tillgänglig för målgruppsanpassning för kontakter och företag i samband med affärskonton. När du väljer målgrupp för företag som primärt fokus i LinkedIn-exporten kan du exportera segment som bygger på affärskonton utan att det krävs någon projektkontaktinformation. Mer information finns i dokumentet om [export av LinkedIn-annonser](export-linkedin-ads.md) och skillnaden mellan [kontaktanpassning](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) och [företagsanpassning](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). 
+
+#### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Skapa åtgärder utifrån affärskonton och deras hierarki
+
+Med måttverktyget kan du skapa mått runt affärskonton och om du vill kan du använda hierarkiinformationen. Hierarkiinformation används för att skapa en måttberäkning för ett konto och alla dess relaterade underkonton. Du kan till exempel skapa mått som totalintäkt för varje grupp affärskonton som identifieras med hjälp av deras hierarki. Mer information finns i [Definiera och hantera mått](measures.md).
+
+#### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Skapa segment utifrån affärskonton och deras hierarki
+
+Med segmentverktyget kan du skapa segment av affärskonton som eventuellt innehåller kontaktinformation för varje konto i ett segment. Om du har ställt in kontohierarkin kan du använda kontohierarkiinformation när du skapar ett segment. Mer information finns i [Skapa ett nytt segment](segment-builder.md#create-a-new-segment).
+
+#### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Behåll dina affärskonton med djupare insikter för deras förakt
+
+Nu har prediktionsmodell för kundomsättning också stöd för affärskonton. Du kan utvärdera risken för att det inte bara gäller ett konto utan även för en kombination av ett konto och en produkt eller tjänstkategori som de köper från dig. Detta gör det lättare att förstå om det är troligare att ett konto slutar köpa från dig i allmänhet eller bara för en viss kategori varor eller tjänster. För att ytterligare hjälpa dig att använda den här AI-modellen anger den också orsaker till varför ett konto sannolikt kommer att förlora. Mer information finns i [Prediktion av transaktionsomsättning (förhandsversion)](predict-transactional-churn.md).
+
+#### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Visa kontakter för ett affärskonto i kundvyn
+
+Om affärskonton är mappade till relaterade konton visas dessa relaterade kontakter i appen Customer Insights som en del av vyn med kundinformation. Mer information finns i [Kundprofiler](customer-profiles.md).
+
 
 ## <a name="september-2021-updates"></a>Uppdatering i september 2021
 

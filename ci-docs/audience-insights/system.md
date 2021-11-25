@@ -1,7 +1,7 @@
 ---
 title: Systemkonfiguration i målgruppsinsikter
 description: Läs om systeminställningar för funktionen målgruppsinsikter i Dynamics 365 Customer Insights.
-ms.date: 10/15/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,14 +9,16 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
-ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
+ms.openlocfilehash: 1b790106f8b9617d0c1f244e1d15a74c7ef9a82b
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/19/2021
-ms.locfileid: "7651862"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732392"
 ---
 # <a name="system-configuration"></a>Systemkonfiguration
+
+För att komma åt systemkonfigurationer i målgruppsinsikter, välj i det vänstra navigeringsfältet **Admin** > **System** för att se en lista över systemuppgifter och processer.
 
 På sidan **System** finns följande flikar:
 - [Status](#status-tab)
@@ -30,39 +32,55 @@ På sidan **System** finns följande flikar:
 
 ## <a name="status-tab"></a>Fliken status
 
-Under **fliken Status** kan du spåra förloppet för datainmatning, dataexport och många andra viktiga produktprocesser. Granska informationen på den här fliken för att säkerställa fullständigheten av aktiva processer.
+På fliken **Status** kan du spåra allt som har med uppgifter, dataexporter och flera andra viktiga produktprocesser att göra. Granska informationen på den här fliken för att säkerställa att dina aktiva uppgifter och processer är fullständiga.
 
-Den här fliken innehåller tabeller med status och bearbetningsinformation för olika processer. I varje tabell spåras **namnet** på uppgiften och tillhörande entitet, **statusen** för dess senaste körning och när den **senast uppdaterades**.
+Den här fliken innehåller tabeller med status och bearbetningsinformation för olika processer. I varje tabell spåras **namnet** på uppgiften och tillhörande entitet, **statusen** för dess senaste körning och när den **senast uppdaterades**. Du kan visa information om de senaste flera körningarna genom att välja uppgifts- eller processnamnet. 
 
-Visa information om de senaste körningarna av en uppgift genom att välja dess namn.
+Välj status bredvid uppgiften eller kolumnen **Status** för att öppna rutan **Förloppsinformation**.
 
-### <a name="status-types"></a>Statustyper
+   :::image type="content" source="media/system-progress-details.png" alt-text="Informationsfönstret Systemförlopp":::
 
-Det finns sex typer av status för uppgifter. Följande statustyper visas även på sidorna *Matchning*, *Sammanslagning*, *Datakällor*, *Segment*, *Mått*, *Bberikning*, *Aktiviteter* och *Förutsägelser*:
+### <a name="status-definitions"></a>Statusdefinitioner
 
-- **Pågår**: uppgiften pågår. Status kan ändras till lyckat eller misslyckat.
-- **Klart:** uppgiften har slutförts.
-- **Hoppades över:** Uppgiften hoppades över. En eller flera processer längre fram som denna uppgift är beroende av fallerar eller hoppas över.
-- **Fel:** Det gick inte att bearbeta uppgiften.
-- **Avbruten:** bearbetningen avbröts av användaren innan den avslutades.
-- **Köad**: Bearbetningen köas och startar när alla överordnade uppgifter har slutförts. Mer information finns i [uppdatera principer](#refresh-policies).
+I systemet används följande statusar för uppgifter och processer:
 
-### <a name="refresh-policies"></a>Uppdateringsprinciper
+|Status  |Definition  |
+|---------|---------|
+|Annullerad |Bearbetningen avbröts av användaren innan den slutfördes.   |
+|Misslyckad   |Datahämtning har stött på fel.         |
+|Misslyckades  |Bearbetningen misslyckades.  |
+|Inte startat   |Datakällan har inga inmatade data än eller är fortfarande i utkastläge.         |
+|Bearbetas  |Uppgift eller process pågår.  |
+|Uppdaterar    |Datainmatning pågår. Du kan avbryta åtgärden genom att välja **Avbryt uppdatering** i kolumnen **åtgärder**. Om du stoppar uppdateringen av en datakälla återställs den till dess senaste uppdateringstillstånd.       |
+|Hoppades över  |Uppgift eller process har hoppats över. En eller flera processer längre fram som denna uppgift är beroende av fallerar eller hoppas över.|
+|Klart  |Uppgiften eller förloppet har slutförts. För datakällor anger du att data har tagits bort om en tid anges i kolumnen **Uppdaterad**.|
+|I kö | Bearbetningen köas och startar när alla uppgifter och processer har slutförts. Mer information, se [uppdatera förlopp](#refresh-processes).|
 
-Den här listan visar uppdateringsprinciperna för var och en av huvudprocesserna:
+### <a name="refresh-processes"></a>Uppdatera förlopp
 
-- **Datakällor:** körs enligt det [konfigurerade schemat](#schedule-tab). Är inte beroende av någon annan process. Matchningen beror på att processen har slutförts.
-- **Matchning:** körs enligt det [konfigurerade schemat](#schedule-tab). Är beroende av behandlingen av datakällor som används i matchningsdefinitionen. Sammanslagning beror på att processen har slutförts.
-- **Sammanslagning**: körs enligt det [konfigurerade schemat](#schedule-tab). Beror på att matchningsprocessen har slutförts. Segment, mått, berikning, sökning, aktiviteter, prediktion och dataförberedelse är beroende av att processen har slutförts.
-- **Segment**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning. Insikter beror på behandlingen.
-- **Mått**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Aktiviteter**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Berikning**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Sök**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Dataförberedelse**: körs enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Insikter**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av segment.
+Uppdatering för uppgifter och processer körs enligt det [konfigurerade schemat](#schedule-tab). 
 
-Välj status för en uppgift om du vill visa information om förloppet för hela jobbet. Med uppdateringsprinciperna ovan kan du få en uppfattning om vad du kan göra för att ta itu med en **överhoppad** eller **köad** uppgift.
+|Bearbeta  |Beskrivning  |
+|---------|---------|
+|Aktivitet  |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. Insikter beror på behandlingen.|
+|Analyskoppling |Körs manuellt (engångsuppdatering). Är beroende av segment.  |
+|Analysförberedelse |Körs manuellt (engångsuppdatering). Är beroende av segment.  |
+|Dataförberedelse   |Är beroende av sammanslagning.   |
+|Datakällor   |Är inte beroende av någon annan process. Matchningen beror på att processen har slutförts.  |
+|Berikningar   |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. |
+|Exporterar mål |Körs manuellt (engångsuppdatering). Är beroende av segment.  |
+|Insikter |Körs manuellt (engångsuppdatering). Är beroende av segment.  |
+|Intelligens   |Är beroende av sammanslagning.   |
+|Matchning |Är beroende av behandlingen av datakällor som används i matchningsdefinitionen.      |
+|Mått  |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen.  |
+|Sammanslå   |Beror på att matchningsprocessen har slutförts. Segment, mått, berikning, sökning, aktiviteter, prediktion och dataförberedelse är beroende av att processen har slutförts.   |
+|Profiler   |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. |
+|Search   |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. |
+|Segment  |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. Insikter beror på behandlingen.|
+|System   |Beror på att matchningsprocessen har slutförts. Segment, mått, berikning, sökning, aktiviteter, prediktion och dataförberedelse är beroende av att processen har slutförts.   |
+|Användare  |Körs manuellt (engångsuppdatering). Beroende av entiteter.  |
+
+Markera status för en process om du vill visa förloppsinformationen för hela jobbet som den fanns i. Uppdateringsprocesserna ovan kan hjälpa dig att förstå vad du kan göra för att ta itu med en **Hoppades över** eller **Köad** uppgift eller process.
 
 ## <a name="schedule-tab"></a>Fliken Schemalägg
 
@@ -86,7 +104,7 @@ Fliken **Om** innehåller organisationens **Visningsnamn**, aktivt **Miljö-ID**
 
 Du kan ändra språk och land/region-format på fliken **Allmänt**.
 
-Customer Insights [stöder ett antal språk](/dynamics365/get-started/availability). Appen använder din språkinställning för att visa element som menyn, etikettext och systemmeddelanden på det språk du föredrar.
+Customer Insights [har stöd för många språk](/dynamics365/get-started/availability). Appen använder din språkinställning för att visa element som menyn, etikettext och systemmeddelanden på det språk du föredrar.
 
 Importerade data och information som du har angett manuellt översätts inte.
 

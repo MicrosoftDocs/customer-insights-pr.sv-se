@@ -1,7 +1,7 @@
 ---
 title: Semantiska mappningar (förhandsgranskning)
 description: Översikt över semantiska mappningar och hur man använder dem.
-ms.date: 09/28/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: f23c622572ff9f967eca07de7898419d1ffc18b0
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622957"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7731965"
 ---
 # <a name="semantic-mappings"></a>Semantiska mappningar
 
@@ -75,8 +75,7 @@ Med hjälp av en semantisk mappning kan du mappa icke-aktivitetsdata till förde
 
 1. Om du vill köra en mappning senare markerar du semantisk mappning och väljer **Uppdatera**.
 
-> [!TIP]
-> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Hantera befintliga semantiska mappningar
 
@@ -91,5 +90,6 @@ I **Data** > **semantisk mappning (förhandsversion)**, kan du se alla dina spar
 - **Byt namn**: Öppnar en dialogruta där du kan ange ett annat namn för den valda semantiska mappningen. Välj **Spara** för att införa ändringarna.
 
 - **Ta bort**: Öppnar en dialog för att bekräfta borttagningen av den valda semantiska mappningen. Du kan också ta bort fler än en semantisk mappning på samma gång genom att välja de olika semantiska mappningarna och borttagningsikonen. Välj **Ta bort** för att borttagningen.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

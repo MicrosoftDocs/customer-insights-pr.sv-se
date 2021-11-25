@@ -1,7 +1,7 @@
 ---
 title: Slutför partiella data med hjälp av förutsägelser
 description: Använd förutsägelser för att fylla i ofullständiga kunddata.
-ms.date: 05/05/2020
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,16 +9,17 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 3100acf383d85c00a6ff0a8ebc54e038bd813427
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645056"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732455"
 ---
-# <a name="complete-your-partial-data-with-predictions"></a>Komplettera dina ofullständiga data med förutsägelser
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fyll i ofullständiga data med hjälp av prediktioner (inaktuella)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+> [!IMPORTANT]
+> Den här funktionen är **inaktuell** från den **5 november 2021**.  De aktuella implementeringarna fortsätter tills funktionen har tagits bort, men du kommer inte att kunna skapa nya integreringar enligt anvisningarna nedan.
 
 Med hjälp av prediktioner kan du enkelt skapa förutsagda värden som förbättrar förståelsen av en kund. På sidan **Intelligens** > **Förutsägelser** kan du välja **Mina förutsägelser** för att se förutsägelser som du har konfigurerat i andra delar av målgruppinsikter och anpassa dem ytterligare.
 
@@ -60,6 +61,8 @@ Mer information finns i [Skapa en ny miljö](create-environment.md).
    > ![Exempel som visar mappade fältvärden för kategorier.](media/intelligence-categorymapping.png "Exempel som visar mappade fältvärden för kategorier")
 
 8. Välj **klart** och prediktionen kommer att bearbetas. Bearbetningen kan ta en stund, beroende på datastorlek och komplexitet. Resultatet blir tillgängligt i en ny entitet baserat på **Utdataenhetens namn** för den prediktion du skapade.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Skapa en prediktion när du skapar ett segment
 

@@ -9,16 +9,18 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 409dfce02c41d7c52295409912880b9224469908805e199066faeb2b7a4f1f9d
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f9397729d2f79d079b4dea2ee92d0823b6d987e4
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035345"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799749"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Förutsäga abonnemangsomsättning (förhandsversion)
 
 Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida en kund löper risk att inte längre kunna använda företagets prenumerationsprodukter eller -tjänster. Du kan skapa nya förutsägelser om abonnemangsomsättning via sidan **Intelligens** > **Förutsägelser**. Välj **Mina förutsägelser** för att se andra förutsägelser som du har skapat.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOKNQ]
 
 > [!TIP]
 > Testa självstudierna för en förutsägelse av prenumerationsomsättning med exempeldata: [Guide för förutsägelse av prenumerationsomsättning](sample-guide-predict-subscription-churn.md).

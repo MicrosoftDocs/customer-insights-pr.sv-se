@@ -1,7 +1,7 @@
 ---
 title: Använd datakällor för att mata in data
 description: Lär dig hur du importerar data från olika källor.
-ms.date: 04/12/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: de31e1f25c08d0bcb5341c5f465b1999de48acf3
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645377"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732189"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
@@ -48,14 +48,7 @@ Du ser namnet på varje inmatad datakälla, dess status och sista gången data u
 > [!div class="mx-imgBorder"]
 > ![Tillagd datakälla.](media/configure-data-datasource-added.png "Tillagd datakälla")
 
-|Status  |Beskrivning  |
-|---------|---------|
-|Klart   |Datakälla har matats in om en tidpunkt nämns i kolumnen **Uppdaterad**.
-|Inte startad   |Datakällan har inga inmatade data än eller är fortfarande i utkastläge.         |
-|Uppdaterar    |Datainmatning pågår. Du kan avbryta åtgärden genom att välja **Avbryt uppdatering** i kolumnen **åtgärder**. Om du stoppar uppdateringen av en datakälla återställs den till dess senaste uppdateringstillstånd.       |
-|Misslyckad     |Datahämtning har stött på fel.         |
-
-Välj värdet i kolumnen **Status** för en datakälla för att se mer information. I rutan **Förloppsinformation** visar du **Datakällor**. Välj **Se information** för mer information om uppdateringsstatusen, inklusive felinformation och uppdateringar om nedströmsprocesser.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 Det kan ta lång tid att läsa in data. Efter en lyckad uppdatering kan hämtade data granskas från sidan **entiteter**. Mer information finns i [Entiteter](entities.md).
 
