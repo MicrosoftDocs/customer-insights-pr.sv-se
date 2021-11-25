@@ -1,7 +1,7 @@
 ---
 title: Berikning av företagsdata
 description: Utöka och normalisera företagsdata med Microsoft-modeller.
-ms.date: 11/05/2021
+ms.date: 11/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 9bfb96d47de4ec98325e644c60752fc7cab2706c
-ms.sourcegitcommit: 6efcba688d1db1a5d6343c229f292a26c48fc007
+ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
+ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "7770192"
+ms.lasthandoff: 11/15/2021
+ms.locfileid: "7813939"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Berika företagsprofiler med berikade företagsdata
 
@@ -51,7 +51,8 @@ Det finns några begränsningar med den förbättrade informationen. Objekten i 
 
 1.  Bekräfta företagets identitet. Vi kontrollerar inte om indata är en befintlig organisation eller om ett företag använder utdata som standardnamn.
 2.  Täcker företag globalt. Microsofts sammanställda företagsdata har global täckning, men erbjuder mest täckning i Australien, Kanada, Storbritannien och USA.
-3.  Garanterar att data är korrekta eller nya. När affärsinformationen ofta ändras kan vi inte garantera att den förbättrade företagsdatan alltid är exakt eller uppdaterad.
+3.  Standardisera företagsadresser globalt. Vi stöder för närvarande standardiserade adresser i dessa länder eller regioner: Australien, Kanada, Frankrike, Tyskland, Italien, Japan, Storbritannien och USA.
+4.  Garanterar att data är korrekta eller nya. När affärsinformationen ofta ändras kan vi inte garantera att den förbättrade företagsdatan alltid är exakt eller uppdaterad.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 

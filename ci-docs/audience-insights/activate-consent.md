@@ -1,6 +1,6 @@
 ---
-title: Aktivera samtyckesregler för segment i målgruppsinsikter
-description: Steg för att länka samtyckesdata och aktivera samtyckeskontroller målgruppsinsikter.
+title: Aktivera samtyckesregler för segment
+description: Följ stegen för att länka samtyckesdata och aktivera samtyckeskontroller målgruppsinsikter. En administratör kan även inaktivera samtyckeskontroller.
 ms.date: 11/03/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,20 +9,20 @@ author: smithy7
 ms.author: smithc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 33ec3a684c2ca47badb4e5461f069d1b2e4a4f3d
-ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
+ms.openlocfilehash: 45899738d39bd5caa433e123f9fe59020e831998
+ms.sourcegitcommit: 79b09498d1328e5551fb8684c44af1fb149f9881
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "7753083"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7790797"
 ---
 # <a name="activate-consent-rules"></a>Aktivera samtyckesregler
 
-[Med Samtyckescenter (förhandsversion)](../consent-management/overview.md) kan du godkänna samtyckesuppgifter från olika källor. Använd den enhetliga entiteten *Samtycke* för att tillämpa standard samtyckeskontroller. När du har importerat samtyckesdata i Samtyckescenter och konfigurerat reglerna för importerade samtyckesdata synkroniseras entiteten *Samtycke* automatiskt målgruppsinsikter.
+Med [Samtyckescenter (förhandsversion)](../consent-management/overview.md) kan du godkänna samtyckesuppgifter från olika källor. Använd den enhetliga entiteten *Samtycke* för att tillämpa standard samtyckeskontroller. När du har importerat samtyckesdata i Samtyckescenter och konfigurerat reglerna för data synkroniseras entiteten *Samtycke* automatiskt målgruppsinsikter.
 
 ## <a name="enable-consent-checks"></a>Aktivera samtyckeskontroller
 
-Med samtyckesdata importerade till Samtyckescenter (förhandsversion) och regler kan du aktivera godkännandekontroller i målgruppsinsikter. 
+Med samtyckesdata importerade till Samtyckescenter (förhandsversion) och regler kan du aktivera godkännandekontroller. 
 
 :::image type="content" source="../consent-management/media/enable-consent-checks-audience-insights.png" alt-text="Fliken Samtycke i inställningar för målgruppsinsikter med aktiverade samtyckesdata.":::
 
@@ -30,7 +30,7 @@ Med samtyckesdata importerade till Samtyckescenter (förhandsversion) och regler
 
 1. Välj fliken **Samtycke (förhandsversion)**.
 
-1. I avsnittet **Aktivera samtyckeskontroller** anger du växlingen för det område du vill aktivera för **På**.
+1. I avsnittet **Aktivera samtyckeskontroller** anger du växlingen för alla de områden du vill aktivera för **På**.
 
 1. Markera kryssrutan **Tillåt åsidosättning av standardregler** för samtycke om du vill ta bort standardkontroller för samtycke som tillämpas för ett visst segment. 
 

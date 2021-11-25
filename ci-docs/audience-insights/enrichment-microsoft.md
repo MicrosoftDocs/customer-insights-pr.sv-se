@@ -1,7 +1,7 @@
 ---
 title: Utöka kundprofiler med data från Microsoft
-description: Använd tillverkarspecifika data från Microsoft för att utöka kunddata med intresse och varumärke.
-ms.date: 11/01/2021
+description: Använd tillverkarspecifika data från Microsoft för att utöka dina kunddata med samhörigheter och Share of Voice.
+ms.date: 11/11/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,29 +9,33 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: c25dbb7a877da2d3fccc1a4e5b219b9792bc6402
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 346c79d0a4d5cd5c47e91c195a48d3a153db0dc0
+ms.sourcegitcommit: 9d3c9e4eb2ce20996a4f4fb44c42e3fe020c5b48
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732564"
+ms.lasthandoff: 11/11/2021
+ms.locfileid: "7793725"
 ---
-# <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Utöka kundprofiler med varumärkes- och intressetillhörighet (förhandsversion)
+# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Utöka kundprofiler med samhörigheter och Share of Voice (förhandsversion)
 
-Använd tillverkarspecifika data från Microsoft för att utöka kunddata med intresse och varumärke. Dessa samhörigheter baseras på data från personer med demografiska egenskaper som liknar dina kunders. Med hjälp av den här informationen kan du bättre förstå och segmentera dina kunder utifrån deras tillhörigheter till särskilda varumärken och intressen.
+Använd tillverkarspecifika data från Microsoft för att utöka dina kunddata med varumärkesaffiniteter, intresseaffiniteter och Share of Voice (SoV). Dessa samhörigheter och SoV baseras på data från personer med demografi som liknar dina kunder. Denna information hjälper dig att bättre förstå och segmentera dina kunder baserat på deras affinitet eller SoV till specifika varumärken och intressen.
 
 I målgruppsinsikter går du till **Data** > **Berikning** för att [konfigurera och visa berikningar](enrichment-hub.md).
 
-Om du vill konfigurera berikning för varumärkestillhörighet kan du gå till fliken **Upptäck** och välja **Utöka mina data** på ikonen **Varumärken**.
+Om du vill konfigurera varumärkessamhörigheter och SoV-berikning går du till fliken **Upptäck** och väljer **Utöka mina data** på panelen **Varumärken**.
 
-Om du vill konfigurera berikning av intressetillhörighet kan du gå till fliken **Upptäck** och välja **Utöka mina data** på ikonen **Intressen**.
+Om du vill konfigurera intressesamhörigheter och SoV-berikning går du till fliken **Upptäck** och väljer **Utöka mina data** på panelen **Intressen**.
 
    > [!div class="mx-imgBorder"]
    > ![Paneler för varumärken och intressen.](media/BrandsInterest-tile-Hub.png "Paneler för varumärken och intressen")
 
-## <a name="how-we-determine-affinities"></a>Så här avgör vi intresse
+## <a name="how-we-determine-affinities-and-sov"></a>Så här avgör vi samhörigheter och SoV
 
-Vi använder Microsofts onlinesökningsdata för att hitta intressegrupper och intressen i olika demografiska segment (definierade efter ålder, kön eller plats). Om du söker online efter ett varumärke eller en ränta bestäms hur mycket tillhörighet som ett demografiskt segment ska jämföras med andra segment, det vill säga det varumärket.
+Vi använder Microsofts onlinesökningsdata för att hitta samhörigheter och SoV för varumärken och intressen i olika demografiska segment (definierade efter ålder, kön eller plats). Sökvolym online för ett varumärke eller intresse utgör grunden för att fastställa samhörighet eller SoV. Men var och en ger ett annat perspektiv för att förstå dina kunder.
+
+- Samhörighet kan jämföras med demografisk segment. Du kan använda den här informationen för att identifiera målgruppssegment som har den högsta tillhörigheten för ett visst varumärke eller intresse jämfört med andra segment.
+
+- Share of voice är en jämförelse mellan dina valda varumärken eller intressen. Med hjälp av den här informationen kan du identifiera vilket varumärke eller intresse som har den högsta Share Of Voice i ett visst målgruppssegment, jämfört med andra varumärken eller intressen du valt.
 
 ## <a name="affinity-level-and-score"></a>Tillhörighetsnivå och poäng
 
@@ -48,6 +52,10 @@ I varje utökad kundprofil tillhandahåller vi två relaterade värden – tillh
 |Lågt     | 1–34        |
 
 Beroende på vilken granularitet du vill använda för att mäta tillhörigheten kan du använda antingen tillhörighetsnivå eller poäng. Med tillhörighetspoäng får du mer exakt kontroll.
+
+## <a name="share-of-voice-sov"></a>Share of voice (SoV)
+
+Vi beräknar SoV på en 100-punktsskala. Den totala SoV för alla varumärken eller intressen för varje berikad kundprofil blir 100. Till skillnad från samhörigheter är SoV relativt till de intressen du väljer. SoV-värdena för Microsoft kan exempelvis vara annorlunda om de valda värdena är (Microsoft, "GitHub") och (Microsoft, LinkedIn).
 
 ## <a name="supported-countriesregions"></a>Länder/regioner som stöds
 
@@ -82,7 +90,7 @@ Gå igenom standardinställningarna för berikning och uppdatera dem efter behov
 
 ### <a name="select-entity-to-enrich"></a>Välj en entitet att utöka
 
-Välj **Utökad entitet** och välj den datauppsättning du vill utöka med företagsdata från Microsoft. Du kan välja entiteten Kund för att utöka alla dina kundprofiler eller välja en segmentsentitet för att endast utöka kundprofiler i det segmentet.
+Välj **Berikad entitet** och välj den datauppsättning du vill berika med data från Microsoft. Du kan välja entiteten Kund för att utöka alla dina kundprofiler eller välja en segmentsentitet för att endast utöka kundprofiler i det segmentet.
 
 ### <a name="map-your-fields"></a>Mappa dina fält
 
@@ -124,13 +132,11 @@ När du har kört berikningsprocessen går du till **Mina berikningar** för att
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Förhandsgranskning av resultatet efter det att förbättringsprocessen har körts.":::
 
-Granska utökad data genom att välja **Visa utökad data** i diagrammet. Utökad data för varumärken skickas till entiteten **BrandAffinityFromMicrosoft**. Data för intressen finns i entiteten **InterestAffinityFromMicrosoft**. Du hittar också de här entiteterna i gruppen **Utökande** i **Data** > **Entiteter**.
-
-Du ser ett diagram med antalet utökade kundprofiler över tid och en förhandsgranskning av den utökade entiteten. Välj **Visa mer** i förhandsgranskningspanelen om du vill öppna den utökade entiteten.
+Du hittar ett diagram med antalet utökade kundprofiler över tid och förhandsgranskningar av de utökade entiteterna. Granska berikade data genom att välja diagrammen **Visa mer** i **Samhörighetsnivån** eller **Share of Voice**. Berikad data för varumärken går till entiteterna **BrandAffinityFromMicrosoft** och **BrandShareOfVoiceFromMicrosoft**. Data för intressen finns i entiteterna **InterestAffinityFromMicrosoft** och **InterestShareOfVosoftMicrosoft**.  Du hittar också de här entiteterna i gruppen **Utökande** i **Data** > **Entiteter**.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>Visa utökande data på kundkortet
 
-Varumärkes- och räntetillhörigheter kan också visas på enskilda kundkort. Gå till **kunder** och välj en kundprofil. På kundkortet hittar du diagram för de varumärken eller intressen som personer i den kundens demografiska profil har tillhörighet för.
+Varumärke och intresse SoV kan också visas på enskilda kundkort. Gå till **kunder** och välj en kundprofil. På kundkorten hittar du diagram för varumärket eller kundens intresse SoV baserat på personer i den kundens demografiska profil.
 
 :::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundkort med förbättrade data.":::
 
