@@ -1,7 +1,7 @@
 ---
 title: Matcha entiteter för datasammanslutningen
-description: Matcha entiteter och kombinera datauppsättningar och skapa enhetliga kundprofiler.
-ms.date: 11/01/2021
+description: Matcha entiteter för att skapa enhetliga kundprofiler.
+ms.date: 11/24/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
+ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732656"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "7863833"
 ---
 # <a name="match-entities"></a>Matcha entiteter
 
@@ -224,17 +224,24 @@ Du kan konfigurera om och finjustera de flesta matchningsparametrarna.
 
 ## <a name="specify-custom-match-conditions"></a>Ange anpassade matchningsvillkor
 
-Du kan ange villkor för att vissa poster alltid ska matcha eller aldrig matcha. De här reglerna kan laddas upp för att åsidosätta standardmatchningsprocessen. Om det till exempel finns John Doe I och John Doe II i våra register kan systemet matcha dem som en person. Med anpassade matchningsregler kan du ange att deras profiler refererar till olika personer. 
+Det går att ange villkor som åsidosätter standardinställd matchningslogik. Det finns fyra alternativ: 
+
+|Option  |Description |Exempel  |
+|---------|---------|---------|
+|Matcha alltid     | Definiera värden som alltid matchas.         |  Matcha alltid *Mike* och *MikeR*.       |
+|Matcha aldrig     | Definiera värden som aldrig matchas.        | Matcha aldrig *John* och *Jonathan*.        |
+|Anpassad överhoppning     | Definierar värden som systemet alltid måste ignorera i matchningsfasen. |  Ignorera värdena *11111* och *Okänt* under matchning.        |
+|Aliasmappning    | Definierar värden som systemet måste anse vara samma värde.         | Anse att *Joe* är lika med *Joseph*.        |
 
 1. Gå till **Data** > **Förena** > **Matcha** och välj **Anpassad matchning** i avsnittet **Information om matchade poster**.
 
-  :::image type="content" source="media/custom-match-create.png" alt-text="Skärmbild av avsnittet Matchningsregler med kontroll för anpassad matchning markerad.":::
+   :::image type="content" source="media/custom-match-create.png" alt-text="Skärmbild av avsnittet Matchningsregler med kontroll för anpassad matchning markerad.":::
 
-1. Om du inte har angett några anpassade matchningsregler visas en ny ruta för **anpassad matchning** med mer information.
+1. Öppna fliken **Poster** i fönstret **Anpassat**.
 
-1. Välj **Fyll i mallen** för att få en mallfil som kan ange vilka poster som entiteterna alltid ska matcha eller aldrig matcha. Du måste fylla i posterna "alltid stämma" och "aldrig" i två olika filer separat.
+1. Välj standardalternativet för matchning i listrutan **Anpassad typ** och välj **Ladda ned mall**. Du måste ha en separat mall för varje matchningsalternativ.
 
-1. Mallen innehåller fält som används för att ange entiteten och de primär nyckelvärden som ska användas i den anpassade matchningen. Om du till exempel vill att primärnyckeln *12345* från entiteten *Försäljning* alltid matchar primärnyckeln *34567* från entiteten *Kontakt*, fyller du i mallen:
+1. En mallfil laddas ned. Öppna den och fyll i informationen. Mallen innehåller fält som används för att ange entiteten och de primär nyckelvärden som ska användas i den anpassade matchningen. Om du till exempel vill att primärnyckeln *12345* från entiteten *Försäljning* alltid matchar primärnyckeln *34567* från entiteten *Kontakt*, fyller du i mallen:
     - Entitet1: Försäljning
     - Enhetsnyckel1: 12345
     - Entitet2: Kontakt
@@ -244,26 +251,32 @@ Du kan ange villkor för att vissa poster alltid ska matcha eller aldrig matcha.
    
    Om du vill ange anpassad matchning för deduplicering för en entitet anger du samma entitet som både Entitet 1 och Entitet 2 och anger de olika primärnyckelvärdena.
 
-1. När du har lagt till alla åsidosättningar som du vill använda sparar du mallfilen.
+1. Spara mallfilen när du har lagt till alla åsidosättningar.
 
-1. Gå till **Data** > **Datakällor** och matar in mallfilerna som nya entiteter. När du har hämtat den kan du använda dem för att ange matchningskonfigurationen.
+1. Gå till **Data** > **Datakällor** och matar in mallfilerna som nya entiteter.
 
-1. När du har överfört filerna och entiteterna tillgängliga väljer du alternativet för **anpassad matchning**. Du kommer att se alternativen för att ange vilka entiteter du vill ta med. Välj de entiteter som krävs i listrutan.
+1. När du har överfört filerna och entiteterna tillgängliga väljer du alternativet för **anpassad matchning**. Du kommer att se alternativen för att ange vilka entiteter du vill ta med. Välj obligatoriska entiteter på den nedrullningsbara menyn och välj **Klart**.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Skärmbild av dialogrutan för åsidosättning för ett anpassat matchningsscenario.":::
 
-1. Välj de entiteter som du vill använda för **Matcha alltid** och **Matcha aldrig**, välj **Klar**.
+1. Användning av den anpassade matchningen beror på matchningsalternativet som du vill använda. 
+
+   - Gå till nästa steg för **Matcha alltid** eller **Matcha aldrig**.
+   - Välj **Redigera** för **Anpassad åsidosättning** eller **Aliasmappning** på en befintlig matchningsregel eller skapa en ny regel. Välj alternativet **Anpassad åsidosättning** eller **Aliasmappning** i listrutan Normaliseringar och välj **Klart**.
 
 1. Välj **Spara** på sidan **Matcha** för att tillämpa den anpassade matchningskonfigurationen.
 
 1. Välj **Kör** på sidan **Matcha** för att starta matchningsprocessen. Andra angivna matchningsregler åsidosätts av den anpassade matchningskonfigurationen.
 
-> [!TIP]
-> Gå till **Data** > **Entiteter** och granska entiteten **ConflationMatchPair** för att bekräfta att åsidosättningarna tillämpas.
+### <a name="known-issues"></a>Kända problem
+
+- Självsammanslagning visar inte normaliserad data i avdupliceringsentiteter. Det använder dock normalisering internt under avduplicering. Det är inbyggt för alla normaliseringar. 
+- Om den semantiska typinställningen tas bort i fasen **Mappa** när en matchningsregel använder Aliasmappning eller Anpassad åsidosättning, använd inte normaliseringen. Det händer endast om du rensar den semantiska typen efter konfiguration av normaliseringen i matchningsregeln eftersom den semantiska typen blir okänd.
+
 
 ## <a name="next-step"></a>Nästa steg
 
-När matchningsprocessen för minst ett matchningspar har slutförts kan du åtgärda eventuella motstridiga data genom att gå igenom ämnet [**sammanslå**](merge-entities.md).
+Fortsätt till steget [**Sammanfoga**](merge-entities.md) när du har slutfört matchning för minst ett matchningspar.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
