@@ -1,7 +1,7 @@
 ---
 title: Inkrementell uppdatering för Power Query-baserade datakällor
 description: Uppdatera nya och uppdaterade data för stora datakällor baserat på Power Query.
-ms.date: 09/28/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,16 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d204228f8d6881cbf0e7fac6609bf50dd5296610
-ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
+ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7377856"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900307"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Inkrementell uppdatering för datakällor baserad Power Query
+
+I den här artikeln beskrivs hur du konfigurerar uppdateringar för uppdateringar av uppdateringar för Power Query.
 
 Stegvis uppdatering för datakällor har följande fördelar:
 
@@ -30,9 +32,9 @@ Målgruppsinsikter möjliggör inkrementell uppdatering av datakällor som impor
 
 1. [Skapa en ny datakälla utifrån Power Query](connect-power-query.md).
 
-1. Ange ett namn på datakällan.
+1. Ange ett **namn** på datakällan.
 
-1. Välj en datakälla som stöder inkrementell uppdatering, t.ex. Azure SQL-databas.
+1. Välj en datakälla som stöder inkrementell uppdatering, t.ex. [Azure SQL-databas.](/power-query/connectors/azuresqldatabase).
 
 1. Välj de entiteter eller register som du vill samla in.
 

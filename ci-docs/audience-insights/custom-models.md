@@ -1,7 +1,7 @@
 ---
 title: Anpassade maskininlärningsmodeller | Microsoft Docs
 description: Arbeta med anpassade modeller från Azure Machine Learning i Dynamics 365 Customer Insights.
-ms.date: 03/22/2021
+ms.date: 12/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,20 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 187995cdf4d92a0609f8abb4c792e698ad4342cdb1f578744136add1bfcf3a53
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 47e2e5109ef8f21a782f6c8f87088009f8a40fdf
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032964"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881806"
 ---
 # <a name="custom-machine-learning-models"></a>Anpassade maskininlärningsmodeller
+
+> [!NOTE]
+> Support för Machine Learning Studio (klassisk) upphör 31 augusti 2024. Vi rekommenderar att du övergår till [Azure Machine Learning](/azure/machine-learning/overview-what-is-azure-machine-learning) det datumet.
+>
+> Från och med den 1 december 2021 kommer du inte att kunna skapa nya resurser för Machine Learning Studio (klassisk). Till och med 31 augusti 2024 kan du fortsätta använda de befintliga Machine Learning Studio (klassiska) resurserna. Mer information finns i [Migrera till Azure Machine Learning](/azure/machine-learning/migrate-overview).
+
 
 Med **Intelligens** > **Anpassade modeller** kan du hantera arbetsflöden baserat på Azure Machine Learning-modeller. Arbetsflöden hjälper dig att välja de data du vill generera insikter från och mappa resultaten till dina enhetliga kunddata. Mer information om hur du bygger anpassade ML-modeller finns i [Använda Azure Machine Learning-baserade modeller](azure-machine-learning-experiments.md).
 
@@ -26,7 +32,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-- För närvarande stöder den här funktionen webbtjänster som publicerats via [Machine Learning Studio (klassisk)](https://studio.azureml.net) och [Azure Machine Learning-batchpipelines](/azure/machine-learning/concept-ml-pipelines).
+- Den här funktionen stöder webbtjänster som publicerats via [Azure Machine Learning batch-pipeline](/azure/machine-learning/concept-ml-pipelines).
 
 - Du behöver ett Azure Data Lake Gen2-lagringskonto som är associerat med din Azure Studio-instans för att kunna använda den här funktionen. Mer information finns i [Skapa ett Azure Data Lake Storage Gen2 Storage-konto](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
 
@@ -48,11 +54,10 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 
 1. Om din Azure Machine Learning-prenumeration finns i en annan klientorganisation än Customer Insights väljer du **Logga in** med dina autentiseringsuppgifter för den valda organisationen.
 
-1. Välj de **arbetsytor** som är kopplade till din webbtjänst. Det finns två avsnitt som anges, ett för Azure Machine Learning v1 (Machine Learning Studio (klassisk)) och Azure Machine Learning v2 (Azure Machine Learning). Om du är osäker på vilken arbetsyta som är den rätta för din Machine Learning Studio-webbtjänst (klassisk) väljer du **Valfri**.
+1. Välj de **arbetsytor** som är kopplade till din webbtjänst. 
 
-1. Välj den Machine Learning Studio-webbtjänst (klassisk) eller Azure Machine Learning-pipeline i listrutan **Webbtjänst som innehåller din modell**. Välj sedan **Nästa**.
-   - Läs mer om att [publicera en webbtjänst i Machine Learning Studio (klassisk)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Läs mer om att [publicera en pipeline i Azure Machine Learning med designern](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline måste publiceras under en [pipelineslutpunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+1. Välj Azure Machine Learning pipeline i listrutan **Webbtjänst som innehåller din modell**. Välj sedan **Nästa**.    
+   Läs mer om att [publicera en pipeline i Azure Machine Learning med designern](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline måste publiceras under en [pipelineslutpunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. För varje **indata till webbtjänst** väljer du matchande **entitet** från målgruppsinsikter och väljer **Nästa**.
    > [!NOTE]
@@ -62,9 +67,6 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
    > ![Konfigurera ett arbetsflöde.](media/intelligence-screen2-updated.png "Konfigurera ett arbetsflöde")
 
 1. I steget **Parametrar för modellens utdata** anger du följande egenskaper:
-   - Machine Learning Studio (klassisk)
-      1. Ange utdata **Entitetens namn** som du vill att utdataresultat för webbtjänsten ska flöda in i.
-   - Azure Machine Learning
       1. Ange utdata **Entitetens namn** som du vill att utdataresultat för pipelinen ska flöda in i.
       1. Välj **Namn på parametern för utdata för datalager** på din batch-pipeline från listrutan.
       1. Välj **Namn på parametern för utdata för sökväg** på din batch-pipeline från listrutan.
@@ -93,9 +95,6 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 1. För varje **indata till webbtjänst** kan du uppdatera matchande **entitet** från målgruppsinsikter. Välj sedan **Nästa**.
 
 1. I steget **Parametrar för modellens utdata** anger du följande egenskaper:
-   - Machine Learning Studio (klassisk)
-      1. Ange utdata **Entitetens namn** som du vill att utdataresultat för webbtjänsten ska flöda in i.
-   - Azure Machine Learning
       1. Ange utdata **Entitetens namn** som du vill att utdataresultat för pipelinen ska flöda in i.
       1. Välj **namnet på parametern för utdata till datalager** för din testpipeline.
       1. Välj **namnet på parametern för utdata till sökväg** för din testpipeline.

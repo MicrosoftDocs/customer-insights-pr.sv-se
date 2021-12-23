@@ -1,20 +1,20 @@
 ---
-title: Tillägget för kundkort i Dynamics 365-appar
+title: Tillägget för kundkort för Dynamics 365-appar (video)
 description: Visa data från målinsikter i Dynamics 365-appar med det här tillägget.
-ms.date: 09/30/2021
+ms.date: 12/07/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: pkieffer
-ms.author: philk
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: dbcdcbea8ffd1755b58c322233c08c70a065db36
-ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
+ms.openlocfilehash: e15d73bfc7af2cd9c8b5d983f01922459ec4a2ee
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7792048"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7904035"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
 
@@ -34,7 +34,7 @@ Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tilläg
   - **Måttkontroll**: Kräver [konfigurerade mått](measures.md) för typen kundattribut.
   - **Intelligent kontroll**: Kräver data som genereras med hjälp av [prediktioner](predictions.md) eller [anpassade modeller](custom-models.md).
   - **Kontroll för kundinformation**: Alla fält från profilen är tillgängliga i den enhetliga kundprofilen.
-  - **Berikningskontroll**: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler. Korttillägget stöder dessa tillägg: [Varumärken](enrichment-microsoft.md)från Microsoft, [Intressen](enrichment-microsoft.md) tillhandahållen av Microsoft.
+  - **Berikningskontroll**: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler. Korttillägget stöder dessa berikningar: [Varumärken](enrichment-microsoft.md) som tillhandahålls av Microsoft, [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft och [Office engagemangsdata](enrichment-office.md) som tillhandahålls av Microsoft.
   - **Kontaktkontroll**: Kräver definition av entitet för utformning av typkontakter.
   - **Tidslinjekontroll**: Kräver [konfigurerade aktiviteter](activities.md).
 

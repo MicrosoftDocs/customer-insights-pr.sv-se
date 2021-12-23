@@ -1,7 +1,7 @@
 ---
 title: Ansluta till ett Azure Data Lake Storage konto med hjälp av ett tjänstobjekt
 description: Använd en Azure-huvudkonto för tjänsten och anslut till din egen datasjö.
-ms.date: 09/08/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,26 +9,26 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b901d799dbd73841a6ddbae754c4e4275f61146a
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645194"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900297"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Ansluta till ett Azure Data Lake Storage konto med hjälp av ett Azure-tjänstobjekt
 
-Automatiserade verktyg som använder Azure-tjänster bör alltid ha begränsade behörigheter. I stället för att låta program logga in som en fullt privilegierad användare erbjuder Azure huvudkonton för tjänsten. Läs vidare för att lära dig hur du ansluter Dynamics 365 Customer Insights med ett Azure Data Lake Storage konto med hjälp av en Azure huvudkonto för tjänsten i stället för lagringskontonycklar. 
+Denna artikel diskuterar hur du ansluter Dynamics 365 Customer Insights med ett Azure Data Lake Storage konto med ett Azure huvudkonto för tjänsten istället för lagringskontonycklar. 
 
-Du kan använda huvudkonto för tjänsten för att på ett säkert sätt [lägga till eller redigera mappen Common Data Model datakälla](connect-common-data-model.md), eller [skapa eller uppdatera en miljö](create-environment.md).
+Automatiserade verktyg som använder Azure-tjänster bör alltid ha begränsade behörigheter. I stället för att låta program logga in som en fullt privilegierad användare erbjuder Azure huvudkonton för tjänsten. Du kan använda tjänstens huvudkonto för att säkert [lägga till eller redigera en mapp för Common Data Model som datakälla](connect-common-data-model.md) eller [skapa eller uppdatera en miljö](create-environment.md).
 
 > [!IMPORTANT]
 > - Det Data Lake Storage-konto som använder tjänstens huvudkonto måste ha [aktiverat hierarkisk namnrymd](/azure/storage/blobs/data-lake-storage-namespace).
-> - Du måste ha administratörsbehörighet för din Azure-prenumeration för att skapa huvudkontot för tjänsten.
+> - Du behöver administratörsbehörighet för din Azure-prenumeration för att skapa ett huvudkonto för tjänsten.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Skapa ett Azure-huvudkonto för tjänsten för Customer Insights
 
-Innan du skapar ett nytt huvudkonto för tjänsten för målgruppsinsikter eller engagemangsinsikter bör du kontrollera om den redan finns i organisationen.
+Innan du skapar ett nytt tjänstens huvudkonto för Customer Insights bör du kontrollera om det redan finns i organisationen.
 
 ### <a name="look-for-an-existing-service-principal"></a>Leta efter ett befintligt huvudkonto för tjänsten
 

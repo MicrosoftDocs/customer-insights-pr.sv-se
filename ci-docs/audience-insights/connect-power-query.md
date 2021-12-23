@@ -1,7 +1,7 @@
 ---
-title: Mata in data via ett Power Query-anslutningsprogram
+title: Indata via en Power Query koppling (video)
 description: Anslutningar för datakällor baserade på Power Query.
-ms.date: 11/01/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,18 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 5d54d33c235e646644e8874e5b0c28898dcff11a
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 38c447d80a25feca087ca9f110278b8401423018
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732240"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903862"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Ansluta till en Power Query-datakälla
 
-Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta av dessa anslutningar stöds av Dynamics 365 Customer Insights. Att lägga till datakällor baserade på Power Query-anslutningar följer i allmänhet de steg som beskrivs i nästa avsnitt. Beroende på vilken anslutning du använder krävs emellertid olika uppgifter. Mer information finns i dokumentationen om enskilda anslutningar i [Power Query anslutningsreferens](/power-query/connectors/).
+Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta av dessa anslutningar stöds av Dynamics 365 Customer Insights. 
+
+Att lägga till datakällor Power Query kopplingar följer vanligtvis stegen i det här avsnittet. Beroende på vilken anslutning du använder krävs emellertid olika uppgifter. Mer information finns i dokumentationen för enskilda anslutningar i [Power Query koppling referens](/power-query/connectors/).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
 
@@ -28,14 +30,11 @@ Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta
 
 1. Välj **Lägg till datakälla**.
 
-1. Välj metoden **Importera data** och välj **Nästa**.
+1. Välj **Microsoft Power Query** och sedan **Nästa**.
 
-1. Ange ett **namn** på datakälla och välj **nästa** om du vill skapa datakälla. Namnge riktlinjer: 
-   - Inled med en bokstav.
-   - Använd endast bokstäver och siffror. Specialtecken och blanksteg är inte tillåtna.
-   - Använd mellan 3 och 64 tecken.
+1. Ange ett **namn** på datakälla och välj **nästa** om du vill skapa datakälla.
 
-1. Välj ett av [tillgängliga anslutningsprogram](#available-power-query-data-sources). I det här exemplet väljer du anslutningen **Text/CSV**.
+1. Välj ett av [tillgängliga anslutningsprogram](#available-power-query-data-sources). I det här exemplet väljer du kopplingen **Text/CSV**.
 
 1. Ange obligatoriska uppgifter i **anslutningsinställningar** för den valda anslutningen och välj **Nästa** om du vill visa en förhandsgranskning av informationen.
 
@@ -50,7 +49,7 @@ Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta
 
 1. Du kan lägga till ytterligare entiteter till din datakälla genom att markera **Hämta data** i dialogrutan **Redigera frågor**.
 
-   Dessa omvandlingar rekommenderas högt:
+   Vi rekommenderar att du använder följande omvandlingar:
 
    - Om du samlar in data från en CSV-fil innehåller den första raden ofta rubriker. Gå till **Omvandla tabell** och välj **Använd rubriker som första rad**.
    - Kontrollera att datatypen har definierats korrekt.
@@ -61,7 +60,7 @@ Power Query erbjuder ett stort antal kontakter för att samla in data. De flesta
 
 ## <a name="available-power-query-data-sources"></a>Tillgängliga Power Query datakällor
 
-Se [Power Query anslutningsreferens](/power-query/connectors/) för en aktuell lista över anslutningar som du kan välja för att importera data till Customer Insights. 
+Se [Power Query koppling referens](/power-query/connectors/) för en lista över kopplingar som du kan använda för att importera data till Customer Insights. 
 
 Anslutningar med en bockmarkering i kolumnen **Customer Insights (dataflöden)** är tillgängliga för att skapa nya datakällor utifrån Power Query. Läs dokumentationen för en specifik kontakt om du vill ha mer information om dess krav, begränsningar och annan information.
 

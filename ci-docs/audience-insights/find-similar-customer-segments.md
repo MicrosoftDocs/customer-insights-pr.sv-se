@@ -1,5 +1,5 @@
 ---
-title: Sök efter liknande kunder med AI
+title: Hitta liknande kunder med AI (video)
 description: Hitta liknande kundsegment med artificiell intelligens.
 ms.date: 06/25/2020
 ms.service: customer-insights
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7c447609bd54de0780dd14aae9f05c7c24b8cce5
-ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
+ms.openlocfilehash: 7999c4964773c3b5c49537027a2ed67f0ad57ec5
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "7799703"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903913"
 ---
 # <a name="similar-customers-preview"></a>Liknande kunder (förhandsversion)
 

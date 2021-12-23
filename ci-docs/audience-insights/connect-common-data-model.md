@@ -1,7 +1,7 @@
 ---
 title: Anslut Common Data Model till ett Azure Data Lake-konto
 description: Arbeta med Common Data Model-data med hjälp av Azure Data Lake Storage.
-ms.date: 05/29/2020
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 93871f8029053d4ed4a116d3af3550b7684ee11ea8633e937138245e193a44e6
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033148"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900219"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Anslut till en Common Data Model-mapp som använder Azure Data Lake-konto
 
@@ -30,7 +30,7 @@ Den här artikeln innehåller information om hur du matar in data från en Commo
 
 - Den Azure Data Lake du vill ansluta och mata in data från måste vara i samma Azure-region som Dynamics 365 Customer Insights-miljön. Anslutningar till en Common Data Model-mapp från en datasjö i en annan Azure-region stöds inte. Om du vill veta Azure-regionen i miljön, gå till **Admin** > **System** > **Om** i målgruppsinsikter.
 
-- Data som lagras i onlinetjänster kan lagras på en annan plats än där data behandlas eller lagras i Dynamics 365 Customer Insights.Genom att importera eller ansluta till data som lagras på en onlinetjänst, t.ex. godkänner du att data kan överföras till och lagras med Dynamics 365 Customer Insights. [Läs mer i Microsoft säkerhetscenter.](https://www.microsoft.com/trust-center)
+- Data som lagras i onlinetjänster kan lagras på en annan plats än där data behandlas eller lagras i Dynamics 365 Customer Insights.Genom att importera eller ansluta till data som lagras på en onlinetjänst, t.ex. godkänner du att data kan överföras till och lagras med Dynamics 365 Customer Insights. [Läs mer i Microsoft säkerhetscenter](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-common-data-model-folder"></a>Anslut till en Common Data Model-mapp
 
@@ -38,12 +38,11 @@ Den här artikeln innehåller information om hur du matar in data från en Commo
 
 1. Välj **Lägg till datakälla**.
 
-1. Välj **Anslut till en Common Data Model-mapp**, ange ett **Namn** på datakällan och välj **Nästa**. Namnge riktlinjer: 
-   - Inled med en bokstav.
-   - Använd endast bokstäver och siffror. Specialtecken och blanksteg är inte tillåtna.
-   - Använd mellan 3 och 64 tecken.
+1. Välj **Azure Data Lake Storage**, ange ett **namn** för datakälla och välj sedan **Nästa**.
 
-1. Du kan välja mellan att använda ett resursbaserat alternativ och ett prenumerationsbaserat alternativ för autentisering. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Ange informationen **Behållare** och välj **Nästa**.
+   - Om du får frågan väljer du en av exempeldatauppsättningarna för din bransch och väljer sedan **Nästa**. 
+
+1. Du kan välja mellan att använda ett resursbaserat alternativ och ett prenumerationsbaserat alternativ för autentisering. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Ange **serveradressen**, välj **inloggning** och välj sedan **Nästa**.
    > [!div class="mx-imgBorder"]
    > ![Dialogruta för att ange nya anslutningsdetaljer för Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
@@ -56,11 +55,11 @@ Den här artikeln innehåller information om hur du matar in data från en Commo
    > [!NOTE]
    > Inga model.json- eller manifest.json-filer som är associerade med en annan datakälla i miljön visas.
 
-1. Du får en lista över tillgängliga entiteter i den valda model.json- eller manifest.json-filen. Du kan granska och välja i listan bland tillgängliga entiteter och välja **Spara**. Alla de valda entiteterna matas in från den nya datakällan.
+1. En lista med tillgängliga entiteter visas i den valda filen model.json eller manifest.json. Granska och välj från listan över tillgängliga enheter och välj sedan **Spara**. Alla de valda entiteterna matas in från den nya datakällan.
    > [!div class="mx-imgBorder"]
    > ![Dialogruta med en lista över entiteter från en modell.json-fil.](media/review-entities.png)
 
-8. Ange vilka dataentiteter du vill aktivera dataprofilering för och välj **Spara**. Med dataprofilering kan du använda analyser och andra funktioner. Du kan välja hela entiteten, som väljer alla attribut från entiteten, eller välja vissa valfria attribut. Som standard är ingen entitet aktiverad för dataprofilering.
+8. Ange vilka dataentiteter du vill aktivera dataprofilering och välj **Spara**. Med dataprofilering kan du använda analyser och andra funktioner. Du kan välja hela entiteten, som väljer alla attribut från entiteten, eller välja vissa valfria attribut. Som standard är ingen entitet aktiverad för dataprofilering.
    > [!div class="mx-imgBorder"]
    > ![Dialogruta som visar en dataprofilering.](media/dataprofiling-entities.png)
 

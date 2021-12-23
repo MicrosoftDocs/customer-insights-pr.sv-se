@@ -1,7 +1,7 @@
 ---
 title: Skapa miljöer i Customer Insights
 description: Steg för att skapa miljöer med en licensierad prenumeration för Dynamics 365 Customer Insights.
-ms.date: 10/14/2021
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 914af46d2d82f3556d149f2836680c902f826d50
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 4f26220f6ba7f5b5ae00c11216129f9ad814b77d
+ms.sourcegitcommit: 626d485dae1e001e63e4d4bf78f6770766822ba0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673413"
+ms.lasthandoff: 12/06/2021
+ms.locfileid: "7892360"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Skapa en miljö i målgruppsinsikter
 
@@ -77,6 +77,9 @@ Om du skapar flera miljöer med Customer Insights och väljer att spara utdataen
 I **Microsoft Dataverse** steget kan du koppla Customer Insights till din Dataverse miljö.
 
 Om du vill använda [färdiga prediktionsmodeller](predictions-overview.md#out-of-box-models), konfigurera datadelning med Dataverse. Du kan också aktivera datainmatning från lokala datakällor, med den Microsoft Dataverse miljö-URL som organisationen administrerar. Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Dataverse-hanterad datasjö.
+
+> [!IMPORTANT]
+> Customer Insights och Dataverse måste finnas i samma region för att kunna dela data.
 
 :::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse.":::
 

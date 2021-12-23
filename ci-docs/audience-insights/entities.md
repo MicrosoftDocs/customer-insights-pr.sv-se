@@ -1,7 +1,7 @@
 ---
 title: Entiteter och datauppsättningar
 description: Visa data på sidan Entiteter.
-ms.date: 11/01/2021
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,51 +9,57 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 2a207a3dcad4bf192efb6ee1554195f10b19670b
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732103"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900449"
 ---
 # <a name="entities-in-audience-insights"></a>Entiteter i målgruppsinsikter
 
 När [du har konfigurerat datakällorna](data-sources.md) går du till sidan **entiteter** för att utvärdera kvaliteten hos hämtade data. Entiteter betraktas som datauppsättningar. Flera funktioner i Dynamics 365 Customer Insights är byggda runt dessa entiteter. Om du granskar dem noga kan du kontrollera hur de funktionerna ser ut.
 
-Sidan **entiteter** visar entiteter och flera kolumner:
+Sidan **Entiteter** anger entiteter och innehåller följande kolumner:
 
-- **Namn**: namnet på entiteten för data. Om en varningssymbol visas bredvid ett entitetsnamn betyder det att det inte gick att läsa in data för den entiteten.
-- **Källa**: typen av datakälla som hämtade entiteten
-- **Skapades den**: Namnet på den person som skapade entiteten
-- **Skapad**: datum och tid då entiteten skapades
-- **Uppdaterad**: Namnet på personen som uppdaterade entiteten
-- **Status**: Information om den senaste uppdateringen av entiteten
+- **Namn**: Namnet på dataentiteten. Om en varningssymbol visas bredvid ett entitetsnamn betyder det att det inte gick att läsa in data för den entiteten.
+- **Källa**: Typ av datakälla som hämtade entiteten.
+- **Uppdaterad**: Tidpunkt då enheten senast uppdaterades.
+- **Status**: Information om den senaste uppdateringen av entiteten.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="explore-a-specific-entitys-data"></a>Utforska data för en specifik entitet
 
-Välj en entitet för att utforska de olika fält och poster som ingår i entiteten.
+1. I målgruppsinsikter går du till **Data** > **Entiteter**.
+1. Från sidan **Entiteter** välj en entitet för att öppna informationssidan.  
+1. Utforska de olika fält och poster som ingår i entiteten.
 
-> [!div class="mx-imgBorder"]
-> ![Välj entitet.](media/data-manager-entities-data.png "Välj en entitet")
-
-- Fliken **Data** visar en tabell med information om enskilda poster i entiteten.
+- Fliken **Attribut** är markerad som standard och visar en tabell för att granska information om den valda entiteten, till exempel fältnamn, datatyper och typer. Kolumnen **Typ** visar Common Data Model associerade typer som antingen identifieras automatiskt av systemet eller som [mappas manuellt](map-entities.md) av användarna. Dessa typer är semantiska och kan skilja sig åt från attributens datatyper. Fältet *E-post* nedan har exempelvis datatypen *Text*, men dess (semantiska) Common Data Model-typ kan vara *E-post* eller *E-postadress*.
 
 > [!div class="mx-imgBorder"]
 > ![Fälttabell.](media/data-manager-entities-fields.PNG "Fälttabell")
 
-- Fliken **Attribut** är markerad som standard och visar en tabell för att granska information om den valda entiteten, till exempel fältnamn, datatyper och typer. Kolumnen **Typ** visar Common Data Model associerade typer som antingen identifieras automatiskt av systemet eller som [mappas manuellt](map-entities.md) av användarna. Dessa typer är semantiska och kan skilja sig åt från attributens datatyper. Fältet *E-post* nedan har exempelvis datatypen *Text*, men dess (semantiska) Common Data Model-typ kan vara *E-post* eller *E-postadress*.
-
 > [!NOTE]
-> I båda tabellerna visas endast ett exempel på entitetens data. Om du vill visa hela datauppsättningen går du till sidan **Datakällor**, väljer en entitet och sedan **redigera** och visar sedan entitetens data med Power Query redigeraren som förklaras i [Datakällor](data-sources.md).
+> På den här sidan visas endast ett exempel på entitetens data. Om du vill visa hela datauppsättningen går du till sidan **Datakällor**, väljer en entitet och sedan **redigera** och visar sedan entitetens data med Power Query redigeraren som förklaras i [Datakällor](data-sources.md).
 
-Om du vill lära dig mer om data som tas med i entiteten kan du få en del viktiga egenskaper för informationen, t.ex. nullvärden, saknade värden, unika värden, antal och fördelningar, som kan användas för dina data i kolumnen **Sammanfattning**.
-
-Välj diagramikonen om du vill visa en sammanfattning av data.
+Om du vill lära dig mer om data som tas med i entiteten kan du få en del viktiga egenskaper för informationen, t.ex. nullvärden, saknade värden, unika värden, antal och fördelningar, som kan användas för dina data i kolumnen **Sammanfattning**. Välj diagramikonen om du vill visa en sammanfattning av data.
 
 > [!div class="mx-imgBorder"]
 > ![Sammanfattningssymbol.](media/data-manager-entities-summary.png "Datasammanfattningstabell")
+
+- Fliken **Data** visar en tabell med information om enskilda poster i entiteten. Informationen i listan beror på entitetens datatyp.
+
+> [!div class="mx-imgBorder"]
+> ![Välj entitet.](media/data-manager-entities-data.png "Välj en entitet")
+
+- Med fliken **Rapporter** (tillgänglig för vissa entiteter) kan du visualisera dina data genom att skapa en rapport och inkluderar följande kolumner:
+
+  - **Rapportnamn**: Namn på rapporten.
+  - **Skapades den**: Namnet på den person som skapade entiteten.
+  - **Skapad**: datum och tid då entiteten skapades.
+  - **Redigerades den**: Namnet på den person som ändrade entiteten.
+  - **Redigerad**: datum och tid då entiteten ändrades. 
 
 ## <a name="entity-specific-information"></a>Entitetsspecifik information
 
@@ -73,8 +79,7 @@ Följande kontroller körs på inmatade data för att visa skadade poster:
 
 - Värdet för ett fält stämmer inte överens med datatypen för kolumnen.
 - Fält innehåller tecken som gör att kolumnerna inte matchar det förväntade schemat. Till exempel: felaktigt formaterade offerter, icke-förfallna offerter eller nyradstecken.
-- Om det finns kolumner med datetime/date/datetimeoffset måste formatet anges i modellen om ISO-standardformatet inte används.
-
+- Om det finns kolumner med datetime/date/datetimeoffset måste formatet anges i modellen om det inte följer standard ISO-formatet.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

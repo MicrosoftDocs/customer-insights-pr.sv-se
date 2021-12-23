@@ -1,7 +1,7 @@
 ---
 title: Använd datakällor för att mata in data
 description: Lär dig hur du importerar data från olika källor.
-ms.date: 11/01/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 6846c73cb156aaa049e2656c8e327bcba1f73abc
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732189"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900401"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
@@ -25,19 +25,22 @@ Kapaciteten för målgruppsinsikter i Dynamics 365 Customer Insights ansluter ti
 
 ## <a name="add-a-data-source"></a>Lägg till en datakälla
 
-Se de detaljerade artiklarna om hur du lägger till en datakälla beroende på vilket alternativ du väljer.
+Detaljerade artiklar innehåller information om hur du lägger till datakälla, beroende på vilket alternativ du väljer.
 
-Du kan lägga till en datakälla på tre huvudsakliga sätt:
+Du kan lägga till följande datakällor:
 
-- [Efter dussintals Power Query-anslutningar](connect-power-query.md)
-- [Från en Common Data Model-mapp](connect-common-data-model.md)
-- [Från din egen Microsoft Dataverse sjö](connect-dataverse-managed-lake.md)
+- [Power Query-anslutningsprogram](connect-power-query.md)
+- [Common Data Model](connect-common-data-model.md)
+- [Microsoft Dataverse lake](connect-dataverse-managed-lake.md)
+
+> [!NOTE]
+> Om du använder provversionen innehåller avsnittet importmetoder ett **databibliotek för Customer Insights**.  Välj det här alternativet om du vill datauppsättning exempel för olika branscher. Mer information finns i [Dynamics 365 Customer Insights-utvärdering](../trial-signup.md).
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Lägga till data lokala datakällor
 
-Inmatning av data från lokala datakällor i målgruppinsikter stöds baserat på Microsoft Power Platform-dataflöden. Dataflöden kan aktiveras i Customer Insights av [ange Microsoft Dataverse miljö-URL](create-environment.md) när du ställer in miljön.
+Inmatning av data från lokala datakällor i målgruppinsikter stöds baserat på Microsoft Power Platform-dataflöden. Du kan aktivera dataflöden i Customer Insights genom att [ange Microsoft Dataverse miljö-URL](create-environment.md) när du ställer in miljön.
 
-Datakällor som skapas efter att ha associerat en Dataverse-miljö med Customer Insights kommer att använda [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) by default. Dataflöden stöder lokal anslutning med datagateway. Ta bort och återskapa datakällor som fanns innan en Dataverse-miljö associerades för att [använda lokal datagateways](/data-integration/gateway/service-gateway-app).
+Datakällor som skapas efter att en Dataverse miljö associerats med Customer Insights använder du [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflöden stöder lokal anslutning med datagateway. Du kan ta bort och återskapa datakällor som fanns innan en Dataverse miljö associerades med [använda lokala datagateway](/data-integration/gateway/service-gateway-app).
 
 Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att synas och du kan återanvända i Customer Insights. På sidan för datakällor visas länkar som går till den Microsoft Power Platform-miljö där du kan visa och konfigurera lokal data-gateways.
 

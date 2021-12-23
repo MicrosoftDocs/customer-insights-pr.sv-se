@@ -1,5 +1,5 @@
 ---
-title: Exportera Customer Insights-data till SFTP-värdar
+title: Exportera Customer Insights-data till SFTP-värd (video)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till SFTP-plats.
 ms.date: 03/03/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: a54025588945e4db6ab800dca034520b5f08d49b
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: bb73c49cf87657b71e0c2f5934662b062eeffb21
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673938"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7904151"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Exportera segment och annan data till SFTP (förhandsversion)
 

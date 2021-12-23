@@ -1,7 +1,7 @@
 ---
 title: Aktivera samtyckesregler för segment
 description: Följ stegen för att länka samtyckesdata och aktivera samtyckeskontroller målgruppsinsikter. En administratör kan även inaktivera samtyckeskontroller.
-ms.date: 11/03/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: smithy7
 ms.author: smithc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 45899738d39bd5caa433e123f9fe59020e831998
-ms.sourcegitcommit: 79b09498d1328e5551fb8684c44af1fb149f9881
+ms.openlocfilehash: 552cb0739c4d17266dd028638df067f3384b738a
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7790797"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7884096"
 ---
 # <a name="activate-consent-rules"></a>Aktivera samtyckesregler
 
@@ -49,3 +49,6 @@ För att sluta använda samtyckesdata i målgruppsinsikter måste administratör
 1. Välj fliken **Samtycke (förhandsversion)**.
 
 1. I avsnittet **Aktivera samtyckeskontroller** ställer du in växling till **Av**.
+
+> [!TIP]
+> Om du vill sluta använda funktionen för godkännandehantering går du [Systeminställningar i Medgivandecenter (förhandsversion)](../consent-management/system-settings.md).

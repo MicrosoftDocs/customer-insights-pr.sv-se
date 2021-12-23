@@ -1,5 +1,5 @@
 ---
-title: Utöka adressförbättringar
+title: Utöka adressförbättringar (videoklipp)
 description: Utöka och normalisera adressuppgifter i kundprofiler med Microsoft-modeller.
 ms.date: 07/25/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: f56be1f4ecdac124ed76a0fb0eb1e313099248bf
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: 2158d80aa088c5bf8589fb7d23586496e2d8b855
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643447"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903981"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Utöka kundprofiler med förbättrade adresser
 

@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 11/04/2021
+ms.date: 12/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: f7e2645e1608ea83b5d3af1073a5d6f6e97eec8f
-ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
+ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "7753139"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7884284"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
@@ -26,6 +26,18 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="november-2021-updates"></a>Uppdateringar i november 2021
+
+Uppdateringarna i november 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="segment-membership-now-available-in-dataverse"></a>Nu är segmentmedlemskapet tillgängligt i Dataverse
+
+Information om segmentmedlemskap för kundprofiler finns nu tillgänglig Dataverse tillsammans med kundprofilerna och insikterna. Dynamics 365-åtgärdsappar och modellstyrda appar kan använda den här informationen när du söker efter information om segmentmedlemskap för en viss kund.
+
+### <a name="activities-support-contact-level-details-for-business-accounts"></a>Aktiviteter stöder kontaktnivåinformation för företagskonton
+
+Nu kan du konfigurera, visa och filtrera aktiviteter för kontakter i tidslinjen för din affärskontoaktivitet för att få en bättre bild av vilka kontokontakter som deltog i specifika aktiviteter.
 
 ## <a name="october-2021-updates"></a>Uppdateringar i oktober 2021
 
