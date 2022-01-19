@@ -1,7 +1,7 @@
 ---
-title: Tillägget för kundkort för Dynamics 365-appar (video)
+title: Tillägget för kundkort för Dynamics 365-appar (innehåll video)
 description: Visa data från målinsikter i Dynamics 365-appar med det här tillägget.
-ms.date: 12/07/2021
+ms.date: 12/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: e15d73bfc7af2cd9c8b5d983f01922459ec4a2ee
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 3927b5a13a5f9b4d2b39c7f0b389bc51cafeb213
+ms.sourcegitcommit: 3811dede65946c37aa7ed3cc364251f20ffd4d17
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904035"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "7945449"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
 
@@ -27,12 +27,12 @@ Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tilläg
 ## <a name="prerequisites"></a>Förutsättningar
 
 - Tillägget fungerar bara med Dynamics 365 modellbaserade appar, till exempel Sales eller kundtjänst, version 9.0 och senare.
-- För att dina Dynamics 365-data ska mappas till målinsikternas kundprofiler måste de [tas in i appen Dynamics 365 med hjälp av kopplingen Microsoft Dataverse](connect-power-query.md).
+- För att dina Dynamics 365-data ska mappas till målinsikternas kundprofiler rekommenderar vi att de [tas in i appen Dynamics 365 med hjälp av kopplingen Microsoft Dataverse](connect-power-query.md). Om du använder en annan metod för att mata in Dynamics 365-kontakter (eller konton), måste du se till att fält `contactid` (eller `accountid`) anges som [primärnyckeln för den datakällan i kartsteget i datasammanslutningsprocessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
 - Alla Dynamics 365-användare av tillägget kundkort måste [läggas till som användare](permissions.md) målinsikter för att kunna se dessa data.
 - [Konfigurerade sök- och filterfunktioner](search-filter-index.md) i målinsikter krävs för att slå upp data som ska fungera.
 - För varje tilläggskontroll används specifika data målinsikter. Vissa data och kontroller är endast tillgängliga i miljöer av specifika typer. Tilläggets konfiguration meddelar dig om en kontroll inte är tillgänglig på grund av den valda miljötypen. Läs mer om [miljöanvändningsfall](work-with-business-accounts.md).
   - **Måttkontroll**: Kräver [konfigurerade mått](measures.md) för typen kundattribut.
-  - **Intelligent kontroll**: Kräver data som genereras med hjälp av [prediktioner](predictions.md) eller [anpassade modeller](custom-models.md).
+  - **Intelligent kontroll**: Kräver data som genereras med hjälp av [prediktioner eller anpassade modeller](predictions-overview.md).
   - **Kontroll för kundinformation**: Alla fält från profilen är tillgängliga i den enhetliga kundprofilen.
   - **Berikningskontroll**: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler. Korttillägget stöder dessa berikningar: [Varumärken](enrichment-microsoft.md) som tillhandahålls av Microsoft, [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft och [Office engagemangsdata](enrichment-office.md) som tillhandahålls av Microsoft.
   - **Kontaktkontroll**: Kräver definition av entitet för utformning av typkontakter.

@@ -1,7 +1,7 @@
 ---
-title: Prediktion för transaktionsomsättning (video)
+title: Prediktion för transaktionsomsättning (innehåller video)
 description: Förutse om det finns en risk med att kunden inte längre vill köpa dina produkter eller tjänster.
-ms.date: 10/20/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ad87e0fd848168d1a18f28f2ac5c507bb01e1f28
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 602a86a67006925faac00add8e089d28f7071c14
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904094"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967769"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Prediktion för transaktionsomsättning (förhandsversion)
 
@@ -103,10 +103,10 @@ För miljöer som bygger på affärskonton kan vi skapa transaktioner för ett k
 
 1. Välj panelen **Kundomsättningsmodell (förhandsversion)** och välj **Använd denna modell**.
 
-1. I rutan **Kundomsättningsmodell**, välj **Transaktion** och välj **Komma igång**.
+1. I rutan **Kundomsättningsmodell (förhandsversion)**, välj **Transaktion** och välj **Komma igång**.
 
 :::image type="content" source="media/select-transaction-churn.PNG" alt-text="Skärmbild med valt transaktionsalternativ i rutan Kundomsättningsmodell.":::
-
+ 
 ### <a name="name-model"></a>Namnge modell
 
 1. Ange ett namn för modellen om du vill särskilja den från andra modeller.
@@ -117,11 +117,11 @@ För miljöer som bygger på affärskonton kan vi skapa transaktioner för ett k
 
 ### <a name="define-customer-churn"></a>Definiera kundomsättning
 
-1. Ange ett antal dagar som omsättnings ska förutsägas för i fältet **Identifiera kunder som kan omsättas inom de kommande**. Du kan till exempel förutse risken för omsättning av dina kunder under de kommande 90 dagarna för att anpassa dina marknadsföringsinsatser för att behålla kunder. Om du förutser omsättningrisker under en längre eller kortare tid kan det bli svårare att åtgärda faktorerna i din omsättningsriskprofil, men det beror på dina specifika affärskrav.
+1. Ange **prediktionsperiod**. Du kan till exempel förutse risken för omsättning av dina kunder under de kommande 90 dagarna för att anpassa dina marknadsföringsinsatser för att behålla kunder. Om du förutser omsättningrisker under en längre eller kortare tid kan det bli svårare att åtgärda faktorerna i din omsättningsriskprofil, men det beror på dina specifika affärskrav.
    >[!TIP]
-   > Du kan välja att **Spara och stänga** när som helst när du vill spara förutsägelsen som ett utkast. Du hittar utkastförutsägelsen i fliken **Mina förutsägelser** om du vill fortsätta med den.
+   > Du kan när som helst välja **Spara utkast** om du vill prediktion utkast. Du hittar utkastförutsägelsen i fliken **Mina förutsägelser** om du vill fortsätta med den.
 
-1. Ange antalet dagar som du vill definiera omsättningen för i fältet **En kund har omsatts om han/hon inte har genomfört något köp på:**. Om en kund exempelvis inte har gjort några inköp under de senaste 30 dagarna kan han/hon betraktas som omsatt. 
+1. Ange antalet dagar som ska definiera omsättning i fältet **Omsättningsdefinition**. Om en kund exempelvis inte har gjort några inköp under de senaste 30 dagarna kan han/hon betraktas som omsatt. 
 
 1. Fortsätt genom att klicka på **Nästa**.
 
@@ -129,19 +129,16 @@ För miljöer som bygger på affärskonton kan vi skapa transaktioner för ett k
 
 1. Välj **Lägg till data** och välj den aktivitetstyp i sidorutan som innehåller information om den erforderliga transaktionen eller köphistoriken.
 
-1. Under **Välj aktiviteter** väljer du specifika aktiviteter från den valda aktivitet som du vill att beräkningen ska fokusera på.
+1. Under **Välj aktiviteter** väljer du de specifika aktiviteterna från den valda aktivitetstyp som du vill att beräkningen ska fokusera på.
 
-   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="En sidoruta som anger specifika aktiviteter under semantiktypen.":::
+   :::image type="content" source="media/transaction-churn-select-activity.PNG" alt-text="En sidoruta som anger specifika aktiviteter under semantiktypen.":::
 
-1. Om du ännu inte har mappat aktiviteten till någon semantisk typ väljer du **Redigera** för att göra så. Den guidade upplevelsen att mappa aktiviteter öppnas. Mappa dina data till motsvarande fält i vald aktivitets typ.
+   Om du ännu inte har mappat aktiviteten till någon semantisk typ väljer du **Redigera** för att göra så. Den guidade upplevelsen att mappa aktiviteter öppnas. Mappa dina data till motsvarande fält i vald aktivitets typ.
 
-   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Aktivitetstyp för sidinställning.":::
+1. Mappa de semantiska attributen till de fält som krävs för att köra modellen. Om fälten nedan inte är ifyllda konfigurerar du relationen från entiteten för inköpshistorik till entiteten *Kund*. Välj **Spara**.
 
-1. När du har mappat aktiviteten till motsvarande semantiska typ väljer du **Nästa** för att gå vidare
+1. I steget **Lägg till obligatoriska data**, välj **Nästa** för att fortsätta om du inte vill lägga till fler aktiviteter.
 
-1. Mappa de semantiska attributen till de fält som krävs för att köra modellen. Om fälten nedan inte är ifyllda konfigurerar du relationen från entiteten för inköpshistorik till entiteten *Kund*.
-
-1. Välj **Nästa**.
 
 # <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
 

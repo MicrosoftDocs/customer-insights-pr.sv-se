@@ -1,5 +1,5 @@
 ---
-title: Prediktion för omsättning av prenumeration (video)
+title: Prediktion för omsättning av prenumeration (innehåller video)
 description: Förutsäg huruvida en kund löper risk att inte längre kunna använda företagets prenumerationsprodukter eller -tjänster.
 ms.date: 08/19/2020
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 1ef2ff642731ee1ba0a142433745fc5a5b398c88
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 52ef7a8584cbae5dff0c800650b0238cc09fd6d5
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904047"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967723"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Förutsäga abonnemangsomsättning (förhandsversion)
 
@@ -77,7 +77,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
 1. Ange antalet **Dagar sedan prenumerationen avslutades** som företaget betraktar en kund som varandes i omsättningstillstånd. Denna period används vanligtvis för affärsaktiviteter som erbjudanden och andra marknadsföringsåtgärder som försöker förhindra att kunden går förlorad.
 1. Ange antalet **dagar för att undersöka framtid för att förutse omsättningen** och ställ in ett fönster för att förutse omsättningen för. Om du till exempel vill förutsäga risken för omsättning för dina kunder under de kommande 90 dagarna för att anpassa sig efter dina marknadsföringsåtgärder. Om risken ökar för längre eller kortare tidsperioder kan det bli svårare att ta sig an faktorerna i riskprofilen, beroende på företagets specifika behov. Fortsätt **Nästa** för att fortsätta
    >[!TIP]
-   > Du kan välja att **Spara och stänga** när som helst när du vill spara förutsägelsen som ett utkast. Du hittar utkastförutsägelsen i fliken **Mina förutsägelser** om du vill fortsätta med den.
+   > Du kan när som helst välja **Spara utkast** om du vill prediktion utkast. Du hittar utkastförutsägelsen i fliken **Mina förutsägelser** om du vill fortsätta med den.
 
 ### <a name="add-required-data"></a>Lägg till obligatoriska data
 

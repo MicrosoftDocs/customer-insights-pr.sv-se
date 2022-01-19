@@ -80,7 +80,7 @@
       items:
         - name: Utöka kundprofiler
           href: audience-insights/enrichment-hub.md
-        - name: Varumärkes- och intressetillhörigheter
+        - name: Varumärken och intressen
           href: audience-insights/enrichment-microsoft.md
         - name: Utökade adresser
           href: audience-insights/enrichment-enhanced-addresses.md
@@ -130,6 +130,8 @@
               href: audience-insights/predict-subscription-churn.md
             - name: Prediktion för transaktionsomsättning
               href: audience-insights/predict-transactional-churn.md
+            - name: Analysera sentiment i kundfeedback
+              href: audience-insights/sentiment-analysis.md
             - name: Använd anpassade modeller från Azure Machine Learning
               href: audience-insights/custom-models.md
             - name: Fullständiga data som delvis saknas
