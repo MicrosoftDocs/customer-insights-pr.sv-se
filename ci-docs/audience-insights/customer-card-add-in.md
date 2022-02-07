@@ -9,16 +9,11 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 3927b5a13a5f9b4d2b39c7f0b389bc51cafeb213
-ms.sourcegitcommit: 3811dede65946c37aa7ed3cc364251f20ffd4d17
-ms.translationtype: HT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "7945449"
 ---
+
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tillägget Kundkort installerat i en Dynamics 365-app som stöds kan du välja att visa fält för kundprofil, insikter och aktivitetstidstid. Tillägget hämtar data från Customer Insights utan att det påverkar data i den anslutna Dynamics 365-appen.
 

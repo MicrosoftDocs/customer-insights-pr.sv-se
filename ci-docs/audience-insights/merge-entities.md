@@ -1,7 +1,7 @@
 ---
 title: Slå samman entiteter i datasammanslutningen
 description: Slå samman entiteter för att skapa enhetliga kundprofiler.
-ms.date: 11/01/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-merge
-ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732794"
+  - ci-merge
 ---
+
 # <a name="merge-entities"></a>Slå samman entiteter
 
 Sammanslagningsfasen är den sista fasen i föreningsprocessen för data. Dess syfte avstäms av motstridiga data. Exempel på data som är i konflikt kan vara ett kundnamn som finns i två av dina datauppsättningar, men som visar lite annorlunda i varje (“Grant Marshall” jämfört med “Grant Marshal”), eller ett telefonnummer som skiljer sig från formatet (617-803-091X jämfört med 617803091X). Sammanfoga dessa motstridiga datapunkter görs på ett attribut till attributbasis.
@@ -99,11 +94,13 @@ På sidan **Sammanslå**, välj **Uteslutna fält** om du vill visa listan över
 
 1. Välj **Spara** och **Kör** för att bearbeta ändringarna. 
 
-## <a name="manually-combine-fields"></a>Kombinera fält manuellt
+## <a name="combine-fields-manually"></a>Kombinera fält manuellt
 
-Ange ett kopplat attribut manuellt. 
+Ange ett kopplat attribut manuellt.
 
-1. På sidan **Sammanslå**, välj **Kombinera fält**.
+1. På sidan **Koppla**, välj **Kombinera**.
+
+1. Välj alternativet **Fält**.
 
 1. Ange policy för sammanslående i listrutan **Kombinera fält efter**.
 
@@ -114,6 +111,26 @@ Ange ett kopplat attribut manuellt.
 1. Välj **Klart** för att införa ändringarna.
 
 1. Välj **Spara** och **Kör** för att bearbeta ändringarna. 
+
+## <a name="combine-a-group-of-fields"></a>Kombinera grupp med fält
+
+En grupp fält används som en enskild enhet. Till exempel om våra poster innehåller fälten Adress1, Adress2, Ort, Delstat och Postnummer. Troligtvis vill vi inte koppla ihop Adress 2 i en annan post, eftersom vi tror att det skulle göra våra data mer fullständiga
+
+1. På sidan **Koppla**, välj **Kombinera**.
+
+1. Välj alternativet **Grupp med fält**.
+
+1. Ange policy för sammanslående i listrutan **Rangordna grupper efter**.
+
+1. Välj **Lägg till** och välj om du vill lägga till fler fält eller ytterligare grupper till fälten.
+
+1. Ange ett **namn** och ett **utdatanamn** för alla kombinerade fält.
+
+1. Ange ett **namn** för gruppen av fält. 
+
+1. Välj **Klart** för att införa ändringarna.
+
+1. Välj **Spara** och **Kör** för att bearbeta ändringarna.
 
 ## <a name="change-the-order-of-fields"></a>Ändra ordning på fält
 

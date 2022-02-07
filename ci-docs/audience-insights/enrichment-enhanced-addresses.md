@@ -1,7 +1,7 @@
 ---
 title: Utöka adressförbättringar (innehåller videoklipp)
 description: Utöka och normalisera adressuppgifter i kundprofiler med Microsoft-modeller.
-ms.date: 12/16/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,13 +9,8 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: afb1a6b4805702697889bb91ca36a96a714cba3d
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
-ms.translationtype: HT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934945"
 ---
+
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Utöka kundprofiler med förbättrade adresser
 
 Adresser i dina data kan vara oadresserade, ofullständiga eller felaktiga. Med Microsoft-modeller kan du normalisera och utöka adresserna i formatet [Common Data Model](/common-data-model/schema/core/applicationcommon/address) för bättre precision och insikter.
@@ -100,17 +95,17 @@ Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du k
 
 När en berikningsprocessen har slutförts kan du granska de nyligen utsatta kundprofildata under **Mina berikningar**. Du hittar också tid för den senaste uppdateringen och antalet utökat profilnamn.
 
-Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
+Du kan visa ett exempel på utökade data i panelen **Förhandsgranskning av berikade kunder**. Välj **Visa mer** och välj fliken **Data** om du vill få tillgång till en detaljerad vy över alla profiler.
 
 ### <a name="overview-card"></a>Översiktskort
 
 Översiktskort innehåller information om omfattningen av berikande. 
 
-* **Kunder som bearbetats och ändrats**: Antalet kundprofiler som har förts vidare.
+* **Adresser som bearbetats och ändrats**: Antalet kundprofiler med adresser som har förts vidare.
 
-* **Kunder som bearbetats och inte ändrats**: Antalet kundprofiler som har erkänts men inte ändrats. Det händer oftast när indata är giltiga och inte kan förbättras av berikningen.
+* **Adresser som bearbetats och inte ändrats**: Antalet kundprofiler med adresser som har erkänts men inte ändrats. Det händer oftast när indata är giltiga och inte kan förbättras av berikningen.
 
-* **Kunder som inte bearbetats och inte ändrats**: Antalet profiler som har erkänts men inte erkänts. Vanligtvis för indata som är ogiltiga eller som inte stöds av berikande.
+* **Adresser som inte bearbetats och inte ändrats**: Antalet profiler med adresser som inte har erkänts. Vanligtvis för indata som är ogiltiga eller som inte stöds av berikande.
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -1,7 +1,7 @@
 ---
 title: Anslut Common Data Model till ett Azure Data Lake-konto
 description: Arbeta med Common Data Model-data med hjälp av Azure Data Lake Storage.
-ms.date: 12/06/2021
+ms.date: 01/25/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,13 +9,8 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
-ms.translationtype: HT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900219"
 ---
+
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Anslut till en Common Data Model-mapp som använder Azure Data Lake-konto
 
 Den här artikeln innehåller information om hur du matar in data från en Common Data Model-mapp med hjälp av ditt Azure Data Lake Storage Gen2-konto.
@@ -25,6 +20,8 @@ Den här artikeln innehåller information om hur du matar in data från en Commo
 - Data i Azure Data Lake måste följa standarden Common Data Model. Andra format stöds inte för tillfället.
 
 - Datainmatning stöder Azure Data Lake *Gen2*-lagringskonton exklusivt. Du kan inte använda Azure Data Lake Gen1-lagringskonton för att mata in data.
+
+- Azure Data Lake Storage-kontot måste ha [hierarkisk namnrymd aktiverad](/azure/storage/blobs/data-lake-storage-namespace).
 
 - Om du vill autentisera med Azure-tjänstens huvudkonto, se till att det är konfigurerat i din klientorganisation. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md).
 

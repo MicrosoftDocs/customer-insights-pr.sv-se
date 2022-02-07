@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
-description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 12/02/2021
+description: 'Information om nya funktioner, förbättringar och felkorrigeringar.'
+ms.date: 01/27/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,11 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
-ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
-ms.translationtype: HT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "7884284"
 ---
+
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Vi är glada över att kunna meddela våra senaste uppdateringar! Denna artikel sammanfattar funktioner för allmänt tillgänglig förhandsversion, förbättringar av allmän tillgänglighet och funktionsuppdateringar. Om du vill se de långsiktiga funktionsplanerna, se [utgivningsplaner för Dynamics 365 och Power Platform](/dynamics365/release-plans/).
 
@@ -26,6 +21,50 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+
+## <a name="december-2021-updates"></a>Uppdateringar i december 2021
+
+Uppdateringarna i december 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Vidarebefordra Customer Insights-loggar till Azure Monitor
+
+Customer Insights ger en direkt integrering med Azure Monitor. Den här funktionen omfattar granskningshändelser och verksamhetshändelser. Azure Monitor resursloggar gör att du kan övervaka och skicka loggar till Azure Storage, Azure Log Analytics eller strömma dem till Azure händelsehubben.
+
+Mer information finns i [Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsversion)](diagnostics.md).
+
+### <a name="enrich-customer-profiles-with-engagement-data"></a>Utöka kundprofiler med data från kontaktdata
+
+Använd data från Microsoft Office 365 för att utöka dina kundkontoprofiler med insikter om åtaganden via Office 365 appar. Kontaktdata består av e-post- och mötesaktiviteter som samlas in på kontonivån. Till exempel antalet e-postmeddelanden från ett affärskonto eller antalet möten med kontot. Inga data om enskilda användare delas. Den här berikningen finns i följande regioner, Storbritannien, Europa och Nordamerika.
+
+Mer information finns i [Berika kundprofiler med kontaktdata (förhandsgranskning)](enrichment-office.md)
+
+### <a name="advanced-data-unification-features"></a>Avancerade funktioner för samordning av data
+
+#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Aktivera konfliktlösningsprinciper på enskild attributnivå
+
+När du deduplicerar kundregister inom en enhet kanske du inte vill behöva välja en fullständig post som vinnare. Nu kan du koppla de bästa fälten från olika poster utifrån regler för varje attribut. Du kan till exempel välja att behålla den senaste e-postadressen OCH den mest fullständiga adressen från olika poster. 
+
+Nu kan du definiera separata kopplade regler för enskilda attribut samtidigt som du inaktiverar och kopplar poster inom en enskild entitet. Tidigare kunde du bara välja en enskild kopplingsregel (hålla poster baserade på korrekt data slutförda) och den regeln tillämpas på postnivån på alla attribut. Det är inte bra om en del av de data du vill behålla finns i post A och andra bra data som finns i post B.
+
+Mer information finns i [Definiera deduplicering på en matchningsentitet](match-entities.md#define-deduplication-on-a-match-entity).
+
+#### <a name="custom-rules-for-matching"></a>Anpassade regler för matchning
+
+Det finns tillfällen då du måste ange ett undantag till allmänna regler för att INTE matcha poster. Detta kan inträffa om flera personer delar tillräckligt med information så att systemet matchar dem som enskilda personer. Till exempel tvillingar med samma efternamn, som bor i samma stad och delar födelsedatum.
+
+Med undantag säkerställs att felaktiga data kan åtgärdas i reglerna. Du kan lägga till flera undantag för en regel.
+
+Mer information finns i [Lägg till undantag till en regel](match-entities.md#add-exceptions-to-a-rule).
+
+#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>Tillhandahåll ytterligare konfliktlösningsprinciper och aktivera gruppering av attribut
+
+Med den här funktionen kan du skapa en grupp fält som en enskild enhet. Till exempel om våra poster innehåller fälten Adress1, Adress2, Ort, Delstat och Postnummer. Troligtvis vill vi inte koppla ihop Adress 2 i en annan post, eftersom vi tror att det skulle göra våra data mer fullständiga.
+
+Nu kan du kombinera en grupp med relaterade fält och använda en enskild kopplingsprincip för gruppen. 
+
+Mer information finns i [Kombinera en grupp fält](merge-entities.md#combine-a-group-of-fields).
+
 
 ## <a name="november-2021-updates"></a>Uppdateringar i november 2021
 

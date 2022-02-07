@@ -1,7 +1,7 @@
 ---
 title: Matcha entiteter för datasammanslutningen
 description: Matcha entiteter för att skapa enhetliga kundprofiler.
-ms.date: 11/24/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-match
-ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
-ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
-ms.translationtype: HT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "7863833"
+  - ci-match
 ---
+
 # <a name="match-entities"></a>Matcha entiteter
 
 Matchningsfasen anger hur dina datauppsättningar kombineras till en enhetlig kundprofil datauppsättning. När du har slutfört [mappningssteget](map-entities.md) i datasammanslutningsprocessen är du redo att matcha dina entiteter. Matchningsfasen kräver minst två mappade entiteter.
@@ -35,7 +30,7 @@ Varje matchning kombinerar två eller flera entiteter till en enda konsoliderad 
 
 :::image type="content" source="media/match-page.png" alt-text="Skärmbild av sidan Matchning i området Sammanslutning i datasammanslutningsprocessen .":::
   
-Den primära entiteten *eCommerce:eCommerceContacts* matchas med nästa entitet *LoyaltyScheme:loyCustomers*. Den datauppsättning som uppstår från det första matchningssteget matchas med följande entitet om du har fler än två entiteter.
+Den primära entiteten *eCommerce:eCommerceContacts* matchas med nästa entitet *LoyaltyScheme:loyCustomers*. Datauppsättningen som resulterar från det första matchningssteget matchas med följande enhet om du har fler än två enheter.
 
 > [!IMPORTANT]
 > Den entitet som du väljer som primär entitet ska utgöra grund för datauppsättningen för dina sammanslutna profiler. Ytterligare entiteter som väljs under matchningsfasen läggs till i den här entiteten. Detta betyder inte att den enhetliga entiteten omfattar *alla* data som ingår i entiteten.
@@ -130,17 +125,21 @@ Det är inte obligatoriskt att ange dedupliceringsregler. Om inga sådana regler
 
 1. Gå till **Data** > **Förena** > **Matcha**.
 
-1. I avsnittet **Sammanfogade dubbletter** väljer du **Ange entiteter**. I händelse av att dedupliceringsregler redan har skapats väljer du **Redigera**.
+1. I avsnittet **Information om deduplicerade poster** väljer du **Ange entiteter**. I händelse av att dedupliceringsregler redan har skapats väljer du **Redigera**.
 
 1. I fönstret **Sammanfogningspreferenser** väljer du de entiteter som du vill tillämpa deduplicering på.
 
-1. Ange hur du ska kombinera de duplicerade posterna och välj ett av tre alternativ:
-   - **Mest ifylld**: Identifierar posten med flest ifyllda attributfält som vinnarpost. Det här är standardalternativet för sammanfogning.
-   - **Senaste**: Identifierar vinnarpost baserat på aktualitet. Kräver ett datum eller ett numeriskt fält för att definiera aktualitet.
-   - **Minst aktuell**: Identifierar vinnarpost baserat på lägsta aktualitet. Kräver ett datum eller ett numeriskt fält för att definiera aktualitet.
+   1. Ange hur du ska kombinera de duplicerade posterna och välj ett av tre alternativ:
+      - **Mest ifylld**: Identifierar posten med flest ifyllda attributfält som vinnarpost. Det här är standardalternativet för sammanfogning.
+      - **Senaste**: Identifierar vinnarpost baserat på aktualitet. Kräver ett datum eller ett numeriskt fält för att definiera aktualitet.
+      - **Minst aktuell**: Identifierar vinnarpost baserat på lägsta aktualitet. Kräver ett datum eller ett numeriskt fält för att definiera aktualitet.
+
+   1. Alternativt väljer du **Avancerat** om du vill definiera dubblettregler för enskilda attribut i en entitet. Du kan till exempel välja att behålla den senaste e-postadressen OCH den mest fullständiga adressen från olika poster. Expandera entiteten om du vill visa alla attribut och definiera vilket alternativ som ska användas för enskilda attribut. Om du väljer ett recency-baserat alternativ måste du också ange ett datum- och tidsfält som definierar recency. 
  
-   > [!div class="mx-imgBorder"]
-   > ![Dedupliceringsregler steg 1.](media/match-selfconflation.png "Dedupliceringsregler steg 1")
+      > [!div class="mx-imgBorder"]
+      > ![Dedupliceringsregler steg 1.](media/match-selfconflation.png "Dedupliceringsregler steg 1")
+
+   1. Välj **Klar** om du vill använda kopplingsinställningarna för deduplicering.
  
 1. När entiteterna har valts och deras inställningar för sammanslagning har angetts väljer du **Lägg till regel** för att definiera dedupliceringsreglerna på en entitetsnivå.
    - I **Välj fält** anges alla tillgängliga fält från den entiteten. Välj det fält du vill söka i efter dubbletter. Välj fält som troligen är unika för varje enskild kund. Till exempel en e-postadress eller kombinationen av namn, ort och telefonnummer.
@@ -158,7 +157,7 @@ Det är inte obligatoriskt att ange dedupliceringsregler. Om inga sådana regler
 
 1. Alla anpassade matchningsregler som har definierats skriver över dedupliceringsregler. Om en dedupliceringsregel identifierar matchande poster och en anpassad matchningsregel är inställd på att aldrig matcha dessa poster, matchas inte dessa två poster.
 
-1. Efter att ha [kört matchningsprocessen](#run-the-match-process) ser du dedupliceringsstatistiken i panelerna med viktiga mått.
+1. När du har [kört matchningsprocessen](#run-the-match-process) visas dedupliceringen i de viktigaste måttpanelerna.
 
 ### <a name="deduplication-output-as-an-entity"></a>Dedupliceringsutdata som en entitet
 
@@ -222,7 +221,23 @@ Du kan konfigurera om och finjustera de flesta matchningsparametrarna.
 
 - **Ta bort en regel** genom att välja symbolen **Ta bort**.
 
-## <a name="specify-custom-match-conditions"></a>Ange anpassade matchningsvillkor
+## <a name="advanced-options"></a>Avancerade alternativ
+
+### <a name="add-exceptions-to-a-rule"></a>Lägga till undantag för en regel
+
+I de flesta fall leder entitetsmatchningen till unika användarprofiler med konsoliderade data. Om du vill hantera undantagsfall med falskt positiva och falskt negativa resultat dynamiskt kan du definiera undantag för en matchningsregel. Undantag tillämpas efter bearbetning av matchningsreglerna och undviker att matcha alla poster som uppfyller undantagsvillkoren.
+
+Till exempel, om din matchningsregel kombinerar efternamn, stad och födelsedatum, identifierar systemet tvillingar med samma efternamn som bor i samma stad som samma profil. Du kan ange ett undantag som inte matchar profilerna om de förnamn i entiteterna du kombinerar inte är samma.
+
+1. Gå till **Data** > **Förena** > **Matcha** och välj **Redigera** för den regel som du vill lägga till villkor för.
+
+1. I fönstret **Redigera regel**, välj **Lägg till undantag**.
+
+1. Ange undantagsvillkor. 
+
+1. Välj **Klar** för att spara regeln.
+
+### <a name="specify-custom-match-conditions"></a>Ange anpassade matchningsvillkor
 
 Det går att ange villkor som åsidosätter standardinställd matchningslogik. Det finns fyra alternativ: 
 
@@ -241,7 +256,7 @@ Det går att ange villkor som åsidosätter standardinställd matchningslogik. D
 
 1. Välj standardalternativet för matchning i listrutan **Anpassad typ** och välj **Ladda ned mall**. Du måste ha en separat mall för varje matchningsalternativ.
 
-1. En mallfil laddas ned. Öppna den och fyll i informationen. Mallen innehåller fält som används för att ange entiteten och de primär nyckelvärden som ska användas i den anpassade matchningen. Om du till exempel vill att primärnyckeln *12345* från entiteten *Försäljning* alltid matchar primärnyckeln *34567* från entiteten *Kontakt*, fyller du i mallen:
+1. Öppna den hämtade mallfilen och fyll i informationen. Mallen innehåller fält som används för att ange entiteten och de primär nyckelvärden som ska användas i den anpassade matchningen. Om du till exempel vill att primärnyckeln *12345* från entiteten *Försäljning* alltid matchar primärnyckeln *34567* från entiteten *Kontakt*, fyller du i mallen:
     - Entitet1: Försäljning
     - Enhetsnyckel1: 12345
     - Entitet2: Kontakt
@@ -268,7 +283,7 @@ Det går att ange villkor som åsidosätter standardinställd matchningslogik. D
 
 1. Välj **Kör** på sidan **Matcha** för att starta matchningsprocessen. Andra angivna matchningsregler åsidosätts av den anpassade matchningskonfigurationen.
 
-### <a name="known-issues"></a>Kända problem
+#### <a name="known-issues"></a>Kända problem
 
 - Självsammanslagning visar inte normaliserad data i avdupliceringsentiteter. Det använder dock normalisering internt under avduplicering. Det är inbyggt för alla normaliseringar. 
 - Om den semantiska typinställningen tas bort i fasen **Mappa** när en matchningsregel använder Aliasmappning eller Anpassad åsidosättning, använd inte normaliseringen. Det händer endast om du rensar den semantiska typen efter konfiguration av normaliseringen i matchningsregeln eftersom den semantiska typen blir okänd.
