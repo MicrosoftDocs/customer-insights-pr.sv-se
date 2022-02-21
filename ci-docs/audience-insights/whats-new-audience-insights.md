@@ -1,7 +1,7 @@
 ---
 title: Nya och kommande funktioner
-description: 'Information om nya funktioner, förbättringar och felkorrigeringar.'
-ms.date: 01/27/2022
+description: Information om nya funktioner, förbättringar och felkorrigeringar.
+ms.date: 03/02/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,8 +9,13 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
+ms.openlocfilehash: 0e25ed4e4e25b130fda410d4ba1c78caded7f0f9
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+ms.translationtype: HT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088307"
 ---
-
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
 
@@ -21,6 +26,17 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+
+## <a name="january-2022-updates"></a>Uppdateringar januari 2022
+
+Uppdateringarna i januari 2022 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="sentiment-analysis-of-your-customers-feedback"></a>Attitydanalys av din kunds feedback
+
+Customer Insights innehåller en ny AI-driven funktion som kan syntetisera kundattityder och identifiera specifika affärsaspekter som affärsmöjligheter för målinriktade förbättringar. Genom att analysera den skriftliga feedbacken från dina kunder kan du få korrekta insikter till låg kostnad. Attitydanalys med NLP-modeller (Natural Language Processing) som genererar två härledda insikter för varje kund-ID. En attitydpoäng (från –5 till 5) och en lista över tillämpliga affärsaspekter. 
+
+Mer information finns i [Analysera attityd i kundfeedback (förhandsversion)](sentiment-analysis.md).
 
 
 ## <a name="december-2021-updates"></a>Uppdateringar i december 2021
@@ -37,7 +53,7 @@ Mer information finns i [Logga in i Dynamics 365 Customer Insights med Azure Mon
 
 Använd data från Microsoft Office 365 för att utöka dina kundkontoprofiler med insikter om åtaganden via Office 365 appar. Kontaktdata består av e-post- och mötesaktiviteter som samlas in på kontonivån. Till exempel antalet e-postmeddelanden från ett affärskonto eller antalet möten med kontot. Inga data om enskilda användare delas. Den här berikningen finns i följande regioner, Storbritannien, Europa och Nordamerika.
 
-Mer information finns i [Berika kundprofiler med kontaktdata (förhandsgranskning)](enrichment-office.md)
+Mer information finns i [Berika kundprofiler med kontaktdata (förhandsversion)](enrichment-office.md).
 
 ### <a name="advanced-data-unification-features"></a>Avancerade funktioner för samordning av data
 

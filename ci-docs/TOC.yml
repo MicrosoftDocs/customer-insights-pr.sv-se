@@ -2,6 +2,22 @@
   href: index.yml
 - name: Produktöversikt
   href: overview.md
+- name: Utbildningskatalog
+  items:
+    - name: Kom i gång
+      href: /learn/modules/get-started-customer-data-platform/
+    - name: Mata in data
+      href: /learn/modules/ingest-data-customer-insights/
+    - name: Skapa en enhetlig kundprofil
+      href: /learn/modules/unified-customer-profile/
+    - name: Arbeta med målgruppsinsikter
+      href: /learn/modules/working-with-customer-insights/
+    - name: Berika data och gör förutsägelser
+      href: /learn/modules/enrich-data/
+    - name: Hantera externa anslutningar
+      href: /learn/modules/configure-third-party-connections/
+    - name: Administrera Customer Insights
+      href: /learn/modules/administer-customer-data-platform/
 - name: Kostnadsfri utvärderingsversion
   items:
     - name: Registrera dig för en kostnadsfri utvärderingsversion
@@ -30,21 +46,11 @@
           href: audience-insights/home.md
     - name: Arbeta med affärskonton
       href: audience-insights/work-with-business-accounts.md
-    - name: Lär dig moduler
-      items:
-        - name: Mata in data
-          href: /learn/modules/ingest-data-customer-insights/
-        - name: Skapa en enhetlig kundprofil
-          href: /learn/modules/unified-customer-profile/
-        - name: Arbeta med appar
-          href: /learn/modules/working-with-customer-insights/
-        - name: Utöka data och förutsägelser
-          href: /learn/modules/enrich-data/
     - name: Datakällor
       items:
         - name: Översikt över datakällor
           href: audience-insights/data-sources.md
-        - name: Lägg till datakällor via på Power Query-anslutningar
+        - name: Lägg till datakällor via Power Query-kopplingar
           href: audience-insights/connect-power-query.md
         - name: Lägg till en Common Data Model-mapp som en datakälla
           href: audience-insights/connect-common-data-model.md
@@ -372,3 +378,5 @@
   href: service-limits.md
 - name: DSR-rättigheter och -förfrågningar
   href: dsr-rights-requests.md
+- name: Få support
+  href: /power-platform/admin/get-help-support

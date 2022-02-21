@@ -4,15 +4,15 @@ metadata:
   author: m-hartmann
   description: Hitta relevanta artiklar för att börja med hjälpinnehåll.
   ms.author: mhart
-  ms.date: 07/30/2021
+  ms.date: 03/02/2022
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: e6a658f43b382934ee9b9b55c54fc1dff3f4df72
-  ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
+  ms.openlocfilehash: e154b37f57bb2765f48a9f6b38f86dffcb05f403
+  ms.sourcegitcommit: a371fc1e75b2321e45d3f972a3ac84c725f8cc38
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 09/17/2021
-  ms.locfileid: "7498619"
+  ms.lasthandoff: 02/10/2022
+  ms.locfileid: "8107221"
 title: Dynamics 365 Customer Insights-dokumentation
 summary: Hitta användbara resurser som hjälper dig att komma igång och lär dig mer om funktioner och funktioner i Customer Insights.
 landingContent:
@@ -23,9 +23,13 @@ landingContent:
     - text: Översikt över Customer Insights
       url: overview.md
     - text: Lanseringsplaner
-      url: /dynamics365-release-plan/
+      url: /dynamics365/release-plans/
     - text: Utforska CDP
       url: https://dynamics.microsoft.com/ai/customer-insights/
+  - linkListType: learn
+    links:
+    - text: Utbildningsväg för Customer Insights
+      url: /learn/paths/build-customer-insights/
 - title: Komma igång med Customer Insights
   linkLists:
   - linkListType: get-started
@@ -34,8 +38,26 @@ landingContent:
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
     - text: Nyheter i målgruppsinsikter
       url: audience-insights/whats-new-audience-insights.md
-    - text: Nyheter i engagemangsinsikter
-      url: https://docs.microsoft.com/dynamics365-release-plan/2021wave1/customer-data-platform/engagement-insights/planned-features
+    - text: Snabbstartguide
+      url: audience-insights/get-started.md
+  - linkListType: learn
+    links:
+    - text: Kom i gång
+      url: /learn/modules/get-started-customer-data-platform/
+- title: Administrera målgruppinsikter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurera systemet
+      url: audience-insights/system.md
+    - text: Definiera användarbehörigheter
+      url: audience-insights/permissions.md
+    - text: Hantera flera miljöer
+      url: audience-insights/manage-environments.md
+  - linkListType: learn
+    links:
+    - text: Administrera Customer Insights
+      url: /learn/modules/administer-customer-data-platform/
 - title: Ta kontakt
   linkLists:
   - linkListType: overview
@@ -66,16 +88,6 @@ landingContent:
       url: audience-insights/customer-card-add-in.md
     - text: Anslutningsapp för Power BI
       url: audience-insights/export-power-bi.md
-- title: Administrera målgruppinsikter
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Konfigurera systemet
-      url: audience-insights/system.md
-    - text: Definiera användarbehörigheter
-      url: audience-insights/permissions.md
-    - text: Hantera flera miljöer
-      url: audience-insights/manage-environments.md
 - title: Om engagemangsinsikter (förhandsversion)
   linkLists:
   - linkListType: overview

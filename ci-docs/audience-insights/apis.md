@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 7201ed9e5315d73e6b9c25b4bc4c4e4ed839a215
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 413746e1896928d2c648ba59d67d4247a173da57
+ms.sourcegitcommit: 21854bb66ffa53948f659886f2e131236539ae88
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732286"
+ms.lasthandoff: 02/08/2022
+ms.locfileid: "8100162"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbeta med API:er i Customer Insights
 
@@ -35,7 +35,7 @@ I den här artikeln beskrivs hur du öppnar API för Customer Insights, skapar e
  
    Att aktivera API:erna skapar en primär och sekundär prenumerationsnyckel för din instans som används i API-begäranden. Du kan återskapa nycklarna genom att välja **Återskapa primär** eller **Återskapa sekundär** på **Admin** > **Behörigheter** > **API:er**.
 
-   :::image type="content" source="media/enable-apis.gif" alt-text="Aktivera Customer Insights-API:er.":::
+<!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
 1. Välj **Utforska våra API:er** för att [prova API:erna](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
 
@@ -49,7 +49,7 @@ I den här artikeln beskrivs hur du öppnar API för Customer Insights, skapar e
 
 HTTP-svaret visas snart nedan.
 
-   :::image type="content" source="media/try-apis.gif" alt-text="Så här testar du API:er.":::
+<!--   :::image type="content" source="media/try-apis.gif" alt-text="How to test the APIs."::: -->
 
 ## <a name="create-a-new-app-registration-in-the-azure-portal"></a>Skapa en ny appregistrering i Azure-portalen
 
@@ -65,7 +65,7 @@ Dessa steg hjälper dig att komma igång med API:er för Customer Insights i ett
 
 1. På din nya App-registrering går du till **API-behörigheter**.
 
-   :::image type="content" source="media/app-registration-1.gif" alt-text="Så här anger du API-behörigheter i appregistreringen.":::
+<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
 
 1. Välj **Lägg till en behörighet** och välj **Customer Insights** i sidorutan.
 
@@ -77,7 +77,7 @@ Dessa steg hjälper dig att komma igång med API:er för Customer Insights i ett
 
 Du kan använda Program-/klient-ID för den här appregistreringen med Microsoft Authentication Library (MSAL) för att få ett ägartoken att skicka med din begäran till API:et.
 
-:::image type="content" source="media/grant-admin-consent.gif" alt-text="Så här beviljar du administratörsmedgivande.":::
+<!-- :::image type="content" source="media/grant-admin-consent.gif" alt-text="How to grant admin consent."::: -->
 
 Mer information om MSAL finns i [Översikt över MSAL (Microsoft Authentication Library)](/azure/active-directory/develop/msal-overview).
 
@@ -103,7 +103,7 @@ Avsnittet för [registrering av appar](#create-a-new-app-registration-in-the-azu
 
 1. Välj **Bevilja admin-godkännande för...** för att slutföra registreringen av appen.
 
-   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Så här beviljar du administratörsmedgivande.":::
+ <!--  :::image type="content" source="media/grant-admin-consent.gif" alt-text="How to grant admin consent."::: -->
 
 1. Slutligen måste vi lägga till namnet på appregistreringen som användare i Customer Insights.  
    
@@ -129,7 +129,7 @@ Lär dig hur du kommer igång med att använda C#-klientbiblioteken från NuGet.
  
    Alternativt kan du köra det här kommandot i **pakethanterarkonsolen för NuGet**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
-   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Lägg till NuGet-paket i Visual Studio-projekt.":::
+ <!--  :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Add NuGet package to Visual Studio project."::: -->
 
 #### <a name="use-the-c-client-library"></a>Använda klientbiblioteket C#
 
@@ -141,7 +141,7 @@ Lär dig hur du kommer igång med att använda C#-klientbiblioteken från NuGet.
 
 1. Skicka denna `HttpClient` i konstruktionen av `CustomerInsights`-klienten.
 
-   :::image type="content" source="media/httpclient-sample.png" alt-text="Exempel på httpclient.":::
+<!--   :::image type="content" source="media/httpclient-sample.png" alt-text="Sample of httpclient."::: -->
 
 1. Gör anrop med klienten till "tilläggsmetoderna", till exempel `GetAllInstancesAsync`. Om tillgång till underliggande `Microsoft.Rest.HttpOperationResponse` är att föredra, använd "http-meddelandemetoderna", till exempel `GetAllInstancesWithHttpMessagesAsync`.
 

@@ -3,18 +3,18 @@ title: Vanliga frågor om utvärderingsversion Dynamics 365 Customer Insights
 description: Lösningar på vanliga frågor relaterade till Customer Insights inställning och hantering av utvärderingsversion. Läs om hur du stänger plattforms- och appspecifika problem.
 author: m-hartmann
 ms.author: mhart
-ms.date: 09/30/2021
+ms.date: 02/10/2022
 ms.topic: get-started
 ms.service: customer-insights
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 2837ae13b4150310193a2d09d59aed66b4a69c69
-ms.sourcegitcommit: e6020c178a61beb0ee31a031c11ded914d10d995
+ms.openlocfilehash: f63ed39ba8c710d0c0149e0944efaafe27e7b9bb
+ms.sourcegitcommit: 5dd32dc2b18027cf2aa954356dded4bc6aab9801
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2021
-ms.locfileid: "7642916"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "8115990"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Vanliga frågor och svar om Dynamics 365 Customer Insights utvärderingsversion
 
@@ -43,7 +43,7 @@ När du registrerar dig för utvärderingsversionen får du ett e-postmeddelande
 
 ### <a name="how-do-i-add-more-users-to-a-trial"></a>Hur lägger jag till fler användare i en utvärderingsversion?
 
-Om du vill lägga till användare går du till [administrationscentret för Microsoft 365](https://admin.microsoft.com) med hjälp av administrationskontot för utvärderingsversionen. Följ [vägledningen för administrationscentret](/microsoft-365/admin/add-users/add-users) om du vill lägga till användare upp till licensgränsen för utvärderingsversionen. Om användaren du lägger till redan har ett Microsoft 365-konto tilldelar du denne en lämplig säkerhetsroll i utvärderingsorganisationen. Mer information finns i [Tilldela en säkerhetsroll till en användare](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
+Om du vill lägga till användare går du till [Microsoft 365-administrationscentret](https://admin.microsoft.com) med hjälp av administrationskontot för utvärderingsversionen. Följ [vägledningen för administrationscentret](/microsoft-365/admin/add-users/add-users) om du vill lägga till användare upp till licensgränsen för utvärderingsversionen. Om användaren du lägger till redan har ett Microsoft 365-konto tilldelar du denne en lämplig säkerhetsroll i utvärderingsorganisationen. Mer information finns i [Tilldela en säkerhetsroll för en användare](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
 
 ### <a name="how-many-users-can-i-add-to-my-trial-environment"></a>Hur många användare kan jag lägga till i min utvärderingsmiljö?
 
@@ -63,7 +63,7 @@ Du kan utöka utvärderingsversionen direkt i appen. Du kan förlänga utvärder
 
 Vanligtvis rekommenderar vi att du börjar om från början med dina egna data när du uppgraderar till betalversionen av Customer Insights. 
 
-Alternativt, om du bara använder målgruppsinsikter, kan du kopiera dina data från en utvärderingsmiljö om du köper Customer Insights. Du måste vara administratör för utvärderingsversionen av Customer Insights och global administratör för din Microsoft 365-klientorganisation, alternativt Dynamics 365-administratör inom organisationen, om du vill migrera inställningarna från en utvärderingsmiljö till en betalmiljö. 
+Alternativt, om du bara använder målgruppsinsikter, kan du kopiera dina data från en utvärderingsmiljö om du köper Customer Insights. Du måste vara administratör av utvärderingsversionen av Customer Insights och den globala administratören av Microsoft 365-klientorganisationen, eller Dynamics 365-administratör i organisationen om du vill migrera inställningarna från en utvärderingsmiljö till en betald miljö. 
 
 När du har loggat in på din betalinstans av Customer Insights för första gången uppmanas du att skapa en ny miljö. I den här processen kan du välja att kopiera konfigurationen från en befintlig miljö och migrera de flesta inställningar. Om du har de behörigheter som anges ovan visas utvärderingsmiljön i den här listan. Mer information finns i [Kopiera miljökonfigurationen](audience-insights/manage-environments.md#copy-the-environment-configuration).
 
@@ -82,8 +82,9 @@ När du har registrerat dig för provperioden kommer du fram till appens huvudsk
 
 De flesta funktionerna i Customer Insights är tillgängliga under utvärderingsperioden.
 
-Följande funktion är inte tillgänglig: 
+Följande funktioner är **inte tillgängliga**: 
 - Du kan inte skapa nya miljöer som använder ditt eget Azure Data Lake Storage-konto.
+- Du kan inte ta bort utvärderingsmiljön. 
 
 ### <a name="how-long-does-the-trial-last"></a>Hur länge varar utvärderingsversionen?
 

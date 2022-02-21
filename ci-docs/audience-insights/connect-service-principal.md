@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+ms.openlocfilehash: 1af01e5579f85d7c8bc8976a003f53ef2dd280d1
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900297"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088169"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Ansluta till ett Azure Data Lake Storage konto med hjälp av ett Azure-tjänstobjekt
 
@@ -23,7 +23,7 @@ Denna artikel diskuterar hur du ansluter Dynamics 365 Customer Insights med ett 
 Automatiserade verktyg som använder Azure-tjänster bör alltid ha begränsade behörigheter. I stället för att låta program logga in som en fullt privilegierad användare erbjuder Azure huvudkonton för tjänsten. Du kan använda tjänstens huvudkonto för att säkert [lägga till eller redigera en mapp för Common Data Model som datakälla](connect-common-data-model.md) eller [skapa eller uppdatera en miljö](create-environment.md).
 
 > [!IMPORTANT]
-> - Det Data Lake Storage-konto som använder tjänstens huvudkonto måste ha [aktiverat hierarkisk namnrymd](/azure/storage/blobs/data-lake-storage-namespace).
+> - Data Lake-lagringskontot som använder tjänstens huvudkonto måste vara Gen2 och ha [hierarkiskt namnområde aktiverat](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagringskonton stöds inte.
 > - Du behöver administratörsbehörighet för din Azure-prenumeration för att skapa ett huvudkonto för tjänsten.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Skapa ett Azure-huvudkonto för tjänsten för Customer Insights

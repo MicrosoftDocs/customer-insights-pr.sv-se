@@ -1,7 +1,7 @@
 ---
 title: Tillägget för kundkort för Dynamics 365-appar (innehåll video)
 description: Visa data från målinsikter i Dynamics 365-appar med det här tillägget.
-ms.date: 12/22/2021
+ms.date: 02/02/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,8 +9,13 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
+ms.openlocfilehash: ce6c8fab84fd4c5dfc9f78b91dde3483a1d358c1
+ms.sourcegitcommit: 11308ed275b4b25a35576eccfcae9dda9e2c2784
+ms.translationtype: HT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "8085270"
 ---
-
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
 
 
@@ -113,5 +118,26 @@ Kundkortstillägget uppgraderas inte automatiskt. Uppgradera till den senaste ve
 
 1. När du har startat uppgraderingsprocessen visas en inläsningssymbol tills uppgraderingen är klar. Om det inte finns någon senare version visas ett felmeddelande för uppgraderingen.
 
+## <a name="troubleshooting"></a>Felsökning
+
+### <a name="controls-from-customer-card-add-in-dont-find-data"></a>Kontroller från tillägget Kundkort hittar inga data
+
+**Problem:**
+
+Även med korrekt konfigurerade ID-fält går det inte att hitta data för någon kund med kontrollerna.  
+
+**Lösning:**
+
+1. Se till att du har konfigurerat korttillägget enligt instruktionerna: [Konfigurera tillägget Kundkort](#configure-the-customer-card-add-in) 
+
+1. Granska konfigurationen av datainmatningen. Redigera datakälla för Dynamics 365-systemet som innehåller kontakt-ID GUID. Om kontakt-ID GUID visas med versaler i Power Query-redigeraren gör du följande: 
+    1. Redigera datakällan för att öppna datakällan i Power Query-redigeraren.
+    1. Välj kolumnen för kontakt-ID.
+    1. Välj **Omvandla** i rubrikfältet om du vill visa tillgängliga åtgärder.
+    1. Markera **gemener**. Kontrollera att GUID i tabellen nu är i gemener.
+    1. Spara datakällan.
+    1. Kör datainmatning, förening och nedströmsprocesser för att föra över ändringarna till GUID. 
+
+När den fullständiga uppdateringen har slutförts ska de förväntade data visas i kontrollerna för tillägget Kundkort. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
