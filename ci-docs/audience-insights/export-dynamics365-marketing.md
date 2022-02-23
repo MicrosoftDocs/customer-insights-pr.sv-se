@@ -9,8 +9,13 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
+ms.openlocfilehash: e2ec9f1cc11fdab5ff313bb3041d2b158ed6ca67
+ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.translationtype: HT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "8046769"
 ---
-
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Använd segment i Dynamics 365 Marketing (förhandsvisning)
 
 

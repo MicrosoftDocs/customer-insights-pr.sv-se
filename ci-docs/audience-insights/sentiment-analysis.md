@@ -9,8 +9,13 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
+ms.openlocfilehash: 8a4473c1c395bbcf8efa2bfa24cddb82e1784279
+ms.sourcegitcommit: 15ec8c5f54242feda9489e7665726ec5e0983dc9
+ms.translationtype: HT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "8008787"
 ---
-
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Analysera sentiment i kundfeedback (förhandsversion)
 
 Kunderna förväntar sig produkter, tjänster och erfarenheter av hög kvalitet nuförtiden. Särskilt kunder som delar med sig av sin feedback. Det är mycket svårt för organisationer att analysera en ökande volym data utan att minska precisionen och öka arbetskostnaden. Dynamics 365 Customer Insights innehåller en modell för attitydanalys för kundfeedback som gör det möjligt för organisationer att analysera sina data bättre och till en lägre kostnad.
