@@ -4,17 +4,17 @@ description: Skapa, redigera och ta bort dimensioner.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 10/01/2021
+ms.date: 06/09/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 136da1e1265c7087d861712d34d011b09cb60ad5
-ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
+ms.openlocfilehash: b575c5e84197d76f53a722bac60c5af928c917f9671720ede1de38c4a7478be4
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623654"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7034019"
 ---
 # <a name="view-and-create-dimensions"></a>Visa och skapa dimensioner
 
@@ -22,7 +22,7 @@ ms.locfileid: "7623654"
 
 En dimension är ett attribut för en händelse som kan beskriva, filtrera eller gruppera data. Om du kör en marknadsföringskampanj på webbplatsen kan du använda dimensioner för att sortera besökare efter nya och återkommande användare.  
 
-Engagemangsinsikter innehåller färdiga (OOB) dimensioner för händelseegenskaper. Exempel:
+Engagemangsinsikter innehåller färdiga dimensioner för händelseegenskaper. Exempel:
 
 - Webbläsarens namn
 - Sidnamn
@@ -44,21 +44,17 @@ Dimensioner baseras på befintliga händelseegenskaper. När du använder spårn
 Förutom systemgenererade dimensioner kan administratörer för miljö och arbetsytor skapa egna dimensioner. Anpassade dimensioner baseras på standardegenskaper för grundhändelser eller på [anpassade egenskaper för en händelse](advanced-SDK-implementation.md).
 
 1. Gå till **Data** > **Dimensioner**.
-1. Välj **Ny dimension**.
+1. Välj **Lägg till en dimension**.
 
    :::image type="content" source="media/add-dimension.png" alt-text="Lägga till en dimension i en händelse.":::
 
 1. I rutan **Skapa en dimension** väljer du en egenskap som dimensionen ska baseras på. I egenskapslistan visas alla egenskaper i arbetsytan som inte har tilldelats någon dimension.
-   
-   :::image type="content" source="media/create-new-dimension.png" alt-text="Skapa en ny dimension.":::
-      
-3. Ange ett namn i rutan **Visningsnamn**. Alternativt kan du lägga till en **beskrivning**.
-4. Välj **Skapa** för att spara dimensionen. Det kan ta upp till en minut innan du kan använda dimensionen i en [anpassad rapport](custom-reports.md) eller ett anpassat [segment](segments.md). 
+1. Ange ett namn i rutan **Visningsnamn**. Alternativt kan du lägga till en beskrivning.
+1. Välj **Skapa** för att spara dimensionen. Det kan ta upp till en minut innan du kan använda dimensionen i en [anpassad rapport](custom-reports.md) eller ett anpassat [segment](segments.md). 
 
 ## <a name="edit-a-dimension"></a>Redigera en dimension
 
-Du kan ändra namn och beskrivning av en dimension. Du kan bara redigera användarskapade mått, men du kan inte redigera systemmått.
-
+Du kan ändra namn och beskrivning av en dimension.
 
 1. Gå till **Data** > **Dimensioner**.
 1. Markera den dimension du vill ta bort.

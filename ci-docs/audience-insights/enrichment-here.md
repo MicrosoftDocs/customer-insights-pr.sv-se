@@ -1,20 +1,20 @@
 ---
-title: Berikande med tredjepartsberikande HERE Technologies
+title: Berikning med tredjepartsberikningen HERE Technologies
 description: Allmän information om tredjepartsberikningen HERE Technologies.
-ms.date: 04/09/2021
-ms.reviewer: mhart
+ms.date: 10/27/2020
+ms.reviewer: jodahl
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: jodahlMSFT
-ms.author: jodahl
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 61fba6bbf9d33ee8d9c725133f0f7f304c1ca79e
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 7082fcfec099c3c9436b233c193be23625f6691a
+ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618497"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "4668700"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Berikning av kundprofiler med HERE Technologies (förhandsversion)
 
@@ -24,56 +24,33 @@ HERE Technologies är ett plattformsföretag som tillhandahåller platsrelaterad
 
 Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera HERE Technologies-berikning:
 
-- Du har en aktiv HERE Technologies-prenumeration. Om du vill få en prenumeration kan du [registrera dig här](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakta HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkt. [Läs mer om HERE Technologies platsberikning.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
+- Du har en aktiv HERE Technologies-prenumeration. Om du vill få en prenumeration kan du [registrera dig hä](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakta HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkt. [Läs mer om HERE Technologies platsberikning.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- En HERE-[anslutning](connections.md) är tillgänglig *eller* också har du [administratörs](permissions.md#administrator)behörigheter och API-nyckel för HERE Technologies.
+- Du använder HERE Technologies API-nyckel.
 
-## <a name="configure-the-enrichment"></a>Konfiguration av berikning
+- Du har [administratörs](permissions.md#administrator)behörigheter.
 
-1. Gå till **Data** > **Berikning**. 
+## <a name="configuration"></a>Konfiguration
 
-1. Välj **Utöka mina data** på panelen HERE Technologies och välj **Kom igång**.
+1. Gå till **Data** > **Berikning**.
+
+1. Välj **Berika mina data** i panelen HERE Technologies.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies-panel.](media/HERE-tile.png "HERE Technologies-panel")
+   > ![HERE Technologies-panel](media/HERE-tile.png "HERE Technologies-panel")
 
-1. Välj en [anslutning](connections.md) i listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning**. Välj **HERE Technologies** i listrutan. 
+1. Ange en aktiv **API-nyckel för HERE Technologies**. Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**. 
 
-1. Välj **Anslut till HERE Technologies** för att bekräfta anslutningsvalet.
+1. Bekräfta båda indata genom att välja **Anslut till HERE**.
 
-1.  Välj **Nästa** och välj den **kunddatauppsättning** du vill utöka med platsdata från HERE Technologies. Du kan välja entiteten **Kund** för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
-
-    :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Bild när du väljer kunddatauppsättningen.":::
-
-1. Välj om du vill mappa fält till den primära och/eller sekundära adressen. Du kan ange en fältmappning för både adresser och utöka profilerna för båda adresserna separat. Till exempel om det finns ett hem och en affärsadress. Välj **Nästa**.
+1. Välj **Lägg till data** och välj om du vill mappa fält till den primära och/eller sekundära adressen. Du kan ange en fältmappning för båda adresserna (t.ex. hem- och affärsadress) och berika profilerna för båda adresserna separat. Välj **Nästa**.
 
 1. Definiera vilka fält från dina enhetliga profiler som ska användas för att söka efter matchande platsdata från HERE Technologies. Fälten **Gata 1** och **Postnummer** är obligatoriska för den valda primära och/eller sekundära adressen. För en högre matchningsnoggrannhet kan fler fält läggas till.
 
    > [!div class="mx-imgBorder"]
-   > ![Sida för förbättringskonfiguration av HERE Technologies-](media/enrichment-HERE-configuration.png "Sida för konfiguration av HERE Technologies-berikning")
+   > ![Sida för konfiguration av HERE Technologies-berikning](media/enrichment-HERE-configuration.png "Sida för konfiguration av HERE Technologies-berikning")
 
-1. Välj **Nästa** för att slutföra fältmappningen.
-
-1. Ange ett namn för anrikningen. 
-
-1. Välj **Spara berikning** när du har granskat dina val.
-
-## <a name="configure-the-connection-for-here-technologies"></a>Konfigurera anslutningen för HERE Technologies 
-
-Du måste vara en administratör för att konfigurera anslutningar. Välj **Lägg till anslutning** när du konfigurerar ett tillägg *eller* gå till **Admin** > **Anslutningar** och välj **Konfigurera** på HERE technologies.
-
-1. Ange ett namn för anslutningen i rutan **visningsnamn**.
-
-1. Ange en giltig API-nyckel för HERE Technologies.
-
-1. Granska och ge ditt samtycke till **Data sekretess och efterlevnad** genom att välja **Jag godkänner**.
-
-1. Välj **Verifiera** om konfigurationen ska verifieras.
-
-1. Välj **Spara** när verifieringen har slutförts.
-
-   > [!div class="mx-imgBorder"]
-   > ![Konfigurationssida för HERE technologies-anslutning.](media/enrichment-HERE-connection.png "Konfigurationssida för HERE technologies-anslutning")
+1. Välj **Tillämpa** för att slutföra fältmappningen.
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 
@@ -81,16 +58,13 @@ Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du k
 
 När en berikningsprocessen har slutförts kan du granska de nyligen utsatta kundprofildata under **Mina berikningar**. Du hittar också tid för den senaste uppdateringen och antalet utökat profilnamn.
 
-Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
+Du kan få tillgång till en detaljerad vy över respektive berikad profil genom att markera **Visa berikade data**.
 
 ## <a name="next-steps"></a>Nästa steg
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](measures.md)och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till HERE Technologies tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data på din instruktion, men du ansvarar för att HERE Technologies uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort denna berikningen i syfte att avbryta användningen av den här funktionen.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.

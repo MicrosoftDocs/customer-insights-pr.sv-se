@@ -1,7 +1,7 @@
 ---
 title: Förutsägelse av produktrekommendationer
 description: Förutse produkterna som kunder sannolikt köper eller interagerar med.
-ms.date: 01/13/2022
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 62b829b6ca3074e0ca52fb52584b74572bb05f05
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967861"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494561"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Förutsägelse av produktrekommendationer (förhandsversion)
 
@@ -79,11 +79,11 @@ Om du vill prova den här funktionen men inte har några data för att uppfylla 
 1. Ange **antalet produkter** som du vill rekommendera till en kund. Värdet beror på hur leveranssättet fyller i data. Om du kan rekommendera tre produkter anger du detta värde.
    
    >[!TIP]
-   > Du kan när som helst välja **Spara utkast** om du vill prediktion utkast. Förutsägelseutkastet finns under fliken **Mina förutsägelser**.
+   > Du kan välja att **Spara och stänga** när som helst när du vill spara förutsägelsen som ett utkast. Förutsägelseutkastet finns under fliken **Mina förutsägelser**.
 
-1. Välj om du vill ta med produkter som kunder nyligen har köpt i fältet **Upprepade inköp som förväntas**.
+1. Välj om du vill **föreslå produkter som kunder nyligen har köpt**.
 
-1. Ange **Titta bakåt-fönster**. Den här inställningen anger tidsramen som modellen tar i beaktande innan produkten rekommenderas till användaren igen. Ange till exempel att en kund köper en bärbar dator vartannat år. I det här fönstret visas inköpshistoriken för de senaste två år och om de hittar ett objekt filtreras objektet från rekommendationerna.
+1. Om du har valt att *inte* rekommendera nyligen köpta produkter ställer du in **fönstret Se tillbaka**. Den här inställningen anger tidsramen som modellen tar i beaktande innan produkten rekommenderas till användaren igen. Ange till exempel att en kund köper en bärbar dator vartannat år. I det här fönstret visas inköpshistoriken för de senaste två år och om de hittar ett objekt filtreras objektet från rekommendationerna.
 
 1. Välj **Nästa**
 

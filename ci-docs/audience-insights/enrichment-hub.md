@@ -1,7 +1,7 @@
 ---
 title: Utöka enhetliga kundprofiler
 description: Använd kapaciteter för att utöka dina kunddata.
-ms.date: 02/07/2022
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 5c3dda3b9bae828857258025ff79958ee22bdb6f
-ms.sourcegitcommit: a399bd17523c8d06afd7d78af4fc711f93c0e8be
+ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/07/2022
-ms.locfileid: "8098811"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617577"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
@@ -29,7 +29,7 @@ Du måste ha behörighet för Deltagare eller Administratör för att kunna skap
 
 På fliken **Upptäck** hittar du alla alternativ för berikning som stöds.
 
-# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
+# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
 
 - [Varumärken](enrichment-microsoft.md) som tillhandahålls av Microsoft
 - [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft
@@ -37,17 +37,14 @@ På fliken **Upptäck** hittar du alla alternativ för berikning som stöds.
 - [Demografiska uppgifter](enrichment-experian.md) tillhandahålls av Experian
 - [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol) 
 - [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
-- [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies 
 
-# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
+# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
 
 - [Företagsdata](enrichment-leadspace.md) tillhandahålls av Leadspace
 - [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft 
-- [Berikade företagsdata ](enrichment-enhanced-company-data.md) från Microsoft
 - [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies 
 - [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol) 
 - [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
-- [Data för kontoengagemang](enrichment-office.md) som tillhandahålls av Microsoft
 
 ---
 

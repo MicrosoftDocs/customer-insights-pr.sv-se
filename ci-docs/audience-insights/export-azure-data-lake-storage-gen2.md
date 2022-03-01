@@ -1,65 +1,43 @@
 ---
 title: Exportera Customer Insights-data till Azure Data Lake Storage Gen2
 description: Lär dig hur du konfigurerar anslutningen till Azure Data Lake Storage Gen2.
-ms.date: 10/06/2021
-ms.reviewer: mhart
+ms.date: 02/04/2021
+ms.reviewer: sthe
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: stefanie-msft
-ms.author: sthe
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 934c396559d4c4be8e640917d2265805753eb62d
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: b00c3d6178150cbc93fe800779f094809d4dc67b
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7605925"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477201"
 ---
-# <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Exportera segmentlista och andra data till Azure Data Lake Storage Gen2 (förhandsgranskning)
+# <a name="connector-for-azure-data-lake-storage-gen2-preview"></a>Anslutningsprogram för Azure Data Lake Storage Gen2 (förhandsversion)
 
-Lagra Customer Insights-data i Data Lake Storage Gen2-konto eller använd det för att överföra data till andra appar.
+Lagra dina Customer Insights-data i Azure Data Lake Storage Gen2 eller använd det för att överföra dina data till andra program.
 
-## <a name="known-limitations"></a>Kända begränsningar
+## <a name="configure-the-connector-for-azure-data-lake-storage-gen2"></a>Konfigurera anslutningsprogrammet för Azure Data Lake Storage Gen2
 
-1. För Azure Data Lake Storage Gen2 kan du välja mellan [nivåerna Standard-prestanda och Premium-prestanda](/azure/storage/blobs/create-data-lake-storage-account) när du skapar ett lagringskonto för din datasjö. Om du väljer prestandanivån Premium väljer du premium blockblobb som kontotyp. 
+1. I målgruppsinsikter går du till **Admin** > **Exportdestinationer**.
 
+1. Under **Azure Data Lake Storage Gen2** väljer du **Konfigurera**.
 
-## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Upprätta anslutningen till Azure Data Lake Storage Gen2 
-
-
-1. Gå till **Admin** > **Anslutningar**.
-
-1. Välj **Lägg till anslutning** och välj **Azure Data Lake Gen 2** för att konfigurera anslutningen.
-
-1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
-
-1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Ange ditt mål som ett beskrivande namn i fältet **visningsnamn**.
 
 1. Ange **Kontonamn**, **Kontonyckel** och **Behållare** för Azure Data Lake Storage Gen2.
-    - Mer information om hur du skapar ett lagringskonto att använda med Azure Data Lake Storage Gen2 finns i [Skapa lagringskonto](/azure/storage/blobs/create-data-lake-storage-account). 
-    - Mer information om hur du hittar Azure Data Lake Gen 2-kontonamn och kontonyckel finns i [Hantera inställningar för lagringskonto på Azure-portalen](/azure/storage/common/storage-account-manage).
+    - Mer information om hur du skapar ett lagringskonto att använda med Azure Data Lake Storage Gen2 finns i [Skapa lagringskonto](https://docs.microsoft.com/azure/storage/blobs/create-data-lake-storage-account). 
+    - Mer information om hur du hittar namnet och kontonyckeln till Azure Data Lake Gen2-lagringskontot finns i [Hantera inställningar för lagringskonto i Azure Portal](https://docs.microsoft.com/azure/storage/common/storage-account-manage).
 
-1. Välj **Spara** för att slutföra anslutningen. 
-
-## <a name="configure-an-export"></a>Konfigurera en export
-
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
-
-1. Gå till **Data** > **Exporter**.
-
-1. Välj för att skapa en ny export **Lägg till export**.
-
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet **Azure Data Lake**. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. Välj **Nästa**.
 
 1. Markera rutan bredvid var och en av de entiteter som du vill exportera till det här målet.
 
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
+## <a name="export-the-data"></a>Exportera data
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
-
-Exporterade data lagras i den Azure Data Lake Gen 2-behållare som du konfigurerade. 
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+Du kan [Exportera data på begäran](export-destinations.md#export-data-on-demand). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md#schedule-tab).

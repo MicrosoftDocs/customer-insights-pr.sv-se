@@ -1,20 +1,20 @@
 ---
 title: Anslutningsapp för Power Apps
 description: Anslut med Power Apps och Power Automate.
-ms.date: 10/01/2021
-ms.reviewer: mhart
+ms.date: 08/21/2020
+ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: Nils-2m
-ms.author: nikeller
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 985e6c85795fba8ca3063cdffc7f9012e798856a
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: b6ec103e29e218b2f27bfc1193300ea793a6b30b
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623245"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4407063"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps anslutningsprogram (förhandsversion)
 
@@ -22,55 +22,53 @@ Få enhetliga kundprofiler i dina anpassade appar med Power Apps.
 
 ## <a name="connect-power-apps-and-dynamics-365-customer-insights"></a>Ansluta till Power Apps och Dynamics 365 Customer Insights
 
-Customer Insights är en av de många [tillgängliga källorna för data i Power Apps](/powerapps/maker/canvas-apps/working-with-data-sources).
+Customer Insights är en av de många [tillgängliga källorna för data i Power Apps](https://docs.microsoft.com/powerapps/maker/canvas-apps/working-with-data-sources).
 
-Se Power Apps-dokumentationen om hur du [lägger till en dataanslutning i en app](/powerapps/maker/canvas-apps/add-data-connection). Vi rekommenderar att du även granskar [hur Power Apps använder delegering för att hantera stora data mängder i arbetsyteappar](/powerapps/maker/canvas-apps/delegation-overview).
+Se Power Apps-dokumentationen om hur du [lägger till en dataanslutning i en app](https://docs.microsoft.com/powerapps/maker/canvas-apps/add-data-connection). Vi rekommenderar att du även granskar [hur Power Apps använder delegering för att hantera stora data mängder i arbetsyteappar](https://docs.microsoft.com/powerapps/maker/canvas-apps/delegation-overview).
 
 ## <a name="available-entities"></a>Tillgängliga entiteter
 
 När du har lagt till Customer Insights som en dataanslutning kan du välja följande entiteter i Power Apps:
 
-- **Kund**: om du vill använda data från den [enhetliga kundprofilen](customer-profiles.md).
-- **UnifiedActivity**: för att visa [aktivitetstidslinjen](activities.md) i appen.
-- **ContactProfile**: för att visa en kunds kontakter. Den här entiteten är endast tillgänglig i målgruppsinsikter-miljöerna för företagskonton.
+- Kund: om du vill använda data från den [enhetliga kundprofilen](customer-profiles.md).
+- Enhetlig kundaktivitet: så här visar du den [enhetliga tidslinjen](activities.md) i appen.
 
 ## <a name="limitations"></a>Begränsningar
 
 ### <a name="retrievable-entities"></a>Hämtningsbara entiteter
 
-Du kan bara hämta entiteterna **Kund**, **UnifiedActivity**, **Segment** och **ContactProfile** via Power Apps anslutningsprogram. ContactProfile är endast tillgänglig i målgruppsinsikter-instansen för företagskonton. Andra entiteter visas eftersom den underliggande anslutningen stöder dem via utlösare i Power Automate.
+Du kan bara hämta entiteterna **Kund**, **UnifiedActivity** och **Segment** via Power Apps-anslutaren. Andra entiteter visas eftersom den underliggande anslutningen stöder dem via utlösare i Power Automate.  
 
 ### <a name="delegation"></a>Delegering
 
-Delegering fungerar för entiteten **kund** och **UnifiedActivity**. 
+Delegering fungerar för entiteten kund och UnifiedActivity. 
 
 - Delegering för entiteten **Kund**: För att använda delegering för den här entiteten måste fältet indexeras i [Sök & filtrera](search-filter-index.md).  
-- Delegering för **UnifiedActivity**: delegering för den här entiteten fungerar endast för fälten **ActivityId** och **CustomerId**.  
-- Delegering för **ContactProfile**: Delegering för den här entiteten fungerar endast för fälten **ContactId** och **CustomerId**. ContactProfile är endast tillgänglig i målgruppsinsikter-miljöer för företagskonton.
 
-Mer information om delegering finns i [Power Apps delegerbara funktioner och åtgärder](/powerapps/maker/canvas-apps/delegation-overview). 
+- Delegering för **UnifiedActivity**: delegering för den här entiteten fungerar endast för fälten **ActivityId** och **CustomerId**.  
+
+- Mer information om delegering finns i [Power Apps delegerbara funktioner och åtgärder](https://docs.microsoft.com/connectors/commondataservice/#power-apps-delegable-functions-and-operations-for-the-cds-for-apps). 
 
 ## <a name="example-gallery-control"></a>Kontroll i exempelgalleri
 
-Du kan lägga till kundprofiler i en [gallerikontroll](/powerapps/maker/canvas-apps/add-gallery).
+Du lägger till exempel till kundprofiler i en [gallerikontroll](https://docs.microsoft.com/powerapps/maker/canvas-apps/add-gallery).
 
 1. Lägg till en **Galleri**-kontroll i en app som du bygger.
 
+> [!div class="mx-imgBorder"]
+> ![Lägga till ett gallerielement](media/connector-powerapps9.png "Lägga till ett gallerielement")
+
+1. Välj **kund** som datakälla för artiklar.
+
     > [!div class="mx-imgBorder"]
-    > ![Lägga till ett gallerielement.](media/connector-powerapps9.png "Lägga till ett gallerielement.")
+    > ![Välj datakälla](media/choose-datasource-powerapps.png "Välj datakälla")
 
-2. Välj **kund** som datakälla för artiklar.
+1. Du kan ändra datapanelen till höger och välja vilket fält för den kundentitet som ska visas i galleriet.
 
-    > [!div class="mx-imgBorder"]
-    > ![Välj en datakälla.](media/choose-datasource-powerapps.png "Välj datakälla.")
+1. Om du vill visa ett fält från den valda kunden i galleriet fyller du i egenskapen text för en etikett: **{Name_of_the_gallery}.Valt.{property_name}**
 
-3. Du kan ändra datapanelen till höger och välja vilket fält för den kundentitet som ska visas i galleriet.
+    Exempel: Gallery1.Selected.address1_city
 
-4. Om du vill visa ett fält från den valda kunden i galleriet fyller du i egenskapen **Text** för en etikett **{Name_of_the_gallery}.Valt.{property_name}**  
-    - Till exempel: _Gallery1.Selected.address1_city_
+1. Om du vill visa den enhetliga tidslinjen för en kund lägger du till ett gallerielement och lägger till egenskapen för Objekt: **Filter('UnifiedActivity', CustomerId = {Customer_Id})**
 
-5. Om du vill visa den enhetliga tidslinjen för en kund lägger du till ett gallerielement och lägger till egenskapen **objekt** med **Filter('UnifiedActivity', CustomerId = {Customer_Id})**  
-    - Till exempel: _Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)_
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+    Exempel: Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)

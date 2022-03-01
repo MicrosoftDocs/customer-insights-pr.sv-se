@@ -1,7 +1,7 @@
 ---
 title: Berikning av företagsdata
 description: Utöka och normalisera företagsdata med Microsoft-modeller.
-ms.date: 01/19/2022
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 693e2f410a77cbf2e87ff0132ce963aab7e8e3e4
-ms.sourcegitcommit: 4c9db6c124d7244e7e8bb2f8bfdc697523781c31
+ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
+ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "8010951"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "7927604"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Berika företagsprofiler med berikade företagsdata
 
@@ -82,17 +82,17 @@ Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du k
 
 När en berikningsprocessen har slutförts kan du granska de nyligen utsatta kundprofildata under **Mina berikningar**. Du hittar också tid för den senaste uppdateringen och antalet utökat profilnamn.
 
-Du kan visa ett exempel på utökade data i panelen **Förhandsgranskning av berikade kunder**. Välj **Visa mer** och välj fliken **Data** om du vill få tillgång till en detaljerad vy över alla profiler.
+Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
 
 ### <a name="overview-card"></a>Översiktskort
 
 Översiktskort innehåller information om omfattningen av berikande. 
 
-* **Företag som bearbetats och ändrats**: Antalet kundföretagsprofiler som har förts vidare.
+* **Kunder som bearbetats och ändrats**: Antalet kundprofiler som har förts vidare.
 
-* **Företag som bearbetats och inte ändrats**: Antalet kundföretagsprofiler som har erkänts men inte ändrats. Det händer oftast när indata är giltiga och inte kan förbättras av berikningen.
+* **Kunder som bearbetats och inte ändrats**: Antalet kundprofiler som har erkänts men inte ändrats. Det händer oftast när indata är giltiga och inte kan förbättras av berikningen.
 
-* **Företag som inte bearbetats och inte ändrats**: Antalet kundföretagsprofiler som inte har erkänts. Detta sker vanligtvis för indata som är ogiltiga eller som inte stöds av berikande.
+* **Kunder som inte bearbetats och inte ändrats**: Antalet profiler som har erkänts men inte erkänts. Vanligtvis för indata som är ogiltiga eller som inte stöds av berikande.
 
 ## <a name="next-steps"></a>Nästa steg
 

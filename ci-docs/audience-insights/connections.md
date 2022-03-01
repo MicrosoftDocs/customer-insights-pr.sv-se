@@ -5,16 +5,16 @@ ms.date: 04/09/2021
 ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
+ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: e78e18b75ee9797b5fc76486615992e301e4c650
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977759"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304994"
 ---
 # <a name="connections-preview-overview"></a>Översikt över anslutningar (förhandsversion)
 
@@ -47,7 +47,6 @@ Om du vill lägga till anslutningar måste du ha [administratörsbehörighet](pe
 1. I fönstret **Konfigurera anslutning** ange de uppgifter som krävs. 
    1. En **Visningsnamn** och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
    1. Exakt vilka fält som är beroende av vilken tjänst du ansluter till. Mer information om en specifik anslutningstyp finns i artikeln om måltjänsten.
-   1. Om du [använder ditt eget Key Vault](use-azure-key-vault.md) för att lagra hemligheter aktiverar du **Använd Key Vault** och väljer hemligheten i listan.
 
 1. Välj för att skapa anslutningen **Spara**.
 
@@ -94,6 +93,3 @@ Fristående berikningar och export blir inaktiva. Du aktiverar dem på nytt geno
 
 1. Bekräfta borttagningen genom att markera **Ta bort**.
 
-## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Upprätta anslutningar med hemligheter som hanteras av ditt eget Key Vault
-
-Vissa anslutningar behöver hemligheter som API-nycklar eller lösenord. Vissa anslutningar stöder hemligheter som lagras i ditt eget Key Vault. Läs mer om anslutningar som stöds och hur du upprättar en [egen Key Vault för målgruppsinsikter](use-azure-key-vault.md).

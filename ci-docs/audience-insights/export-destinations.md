@@ -1,141 +1,97 @@
 ---
-title: Exportera data från Customer Insights
-description: 'Hantera dataexport för att dela data. '
-ms.date: 11/01/2021
-ms.reviewer: mhart
+title: Exportmål
+description: Exportera data och hantera exportdestinationer.
+ms.date: 07/21/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 05485fc7def3d699d5179bcaa005ceb57024f840
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: 9032d99357db86e66588eda544211a5f8eb2f23b
+ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977989"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "4643885"
 ---
-# <a name="exports-preview-overview"></a>Exporter (förhandsversion) översikt
+# <a name="export-destinations-preview"></a>Exportmål (förhandsversion)
 
-På sidan **Exporter** visas alla konfigurerade exporter. Med exporter delar du specifika data med olika program. De kan innehålla kundprofiler, entiteter, scheman och mappningsdetaljer. För varje export krävs en [anslutning, konfigurerad av en administratör, för att hantera autentisering och åtkomst](connections.md).
+På sidan **exportera destinationer** visas alla platser som du har konfigurerat för att exportera data till. Du kan också lägga till nya destinationer för export. Dessutom visas exportalternativ som är tillgängliga för tillfället. Få en snabb översikt, beskrivning och ta reda på vad du kan göra med de olika utökningsalternativen. Exportera enhetliga profiler, mått och segment till program som stöds och som är relevanta för ditt företag.
 
-Gå till **Data** > **Exporter** om du vill visa exportsidan. Alla användarroller kan visa konfigurerade exporter. Använd sökfältet i kommandofältet om du vill söka efter exporter efter namn, anslutningsnamn eller anslutningstyp.
+Gå till **administration** > **exportdestinationer** för att hitta följande utökningsalternativ:
 
-## <a name="export-types"></a>Exporttyper
+- [Tillägget för kundkort i Dynamics 365](customer-card-add-in.md)
+- [Anslutning för Facebook Ads Manager](export-facebook.md)
+- [Power Automate anslutningsprogram](export-power-automate.md)
+- [Power Apps anslutningsprogram](export-power-apps.md)
+- [Power BI anslutningsprogram](export-power-bi.md)
+- [DotDigital](export-dotdigital.md)
+- [Dynamics 365 Sales](export-dynamics365-sales.md)
+- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
+- [Azure Blob Storage](export-azure-blob-storage.md)
+- [LiveRamp&reg; anslutning](export-liveramp.md)
+- [Robot för Microsoft Teams](export-teams-bot.md)
+- [Mailchimp](export-mailchimp.md)
+- [Customer Insights API](apis.md)
 
-Det finns två huvudtyper av export:  
+## <a name="add-a-new-export-destination"></a>Lägg till ett nytt exportmål
 
-- **Export av utdata** låter dig exportera alla typer av entiteter som är målgruppsinsikter. De entiteter du väljer för export exporteras med alla datafält, metadata, scheman och mappningsdetaljer. 
-- Med **segmentexport** kan du exportera segmententiteter från målgruppsinsikter. Segment representerar en lista över kundprofiler. När du konfigurerar exporten väljer du de datafält som ingår, beroende på vilket målsystem du exporterar data till. 
+Om du vill lägga till exportdestinationer har du [administratörsbehörigheter](permissions.md). Om du exporterar till Microsoft-tjänster antar vi att båda tjänsterna finns i samma organisation.
 
-### <a name="export-segments"></a>Exportera segment
+1. Gå till **Administratör** > **Exportera mål**.
 
-**Exportera segment i miljöer för affärskonton (B2B) eller enskilda konsumenter (B2C)**  
-De flesta exportalternativ har stöd för båda typerna av miljöer. Det finns särskilda krav för att exportera segment till olika målsystem. Vanligtvis innehåller segmentmedlem, kundprofilen, kontaktinformation. Detta är vanligt i segment som bygger på enskilda konsumenter (B2C), men det behöver inte vara fallet för segment som bygger på affärskonton (B2B). 
+1. Gå till fliken **Mina exportdestinationer**.
 
-**Segmentexportmiljöer för affärskonton (B2B)**  
-- Segment i samband med miljöer för affärskonton bygger på entiteten *konto*. För att kunna exportera kontosegment i sin form måste målsystemet ha stöd för kontosegment. Detta gäller för [LinkedIn](export-linkedin-ads.md) när du väljer alternativet **företag** när du definierar exporten.
-- Alla andra målsystem kräver fält från kontaktentiteten. För att säkerställa att kontosegment kan hämta data från relaterade kontakter måste segmentdefinitionen projektattribut för kontaktentiteten. Läs mer om hur du [konfigurerar segment och projektattribut](segment-builder.md).
+1. Välj **Lägg till mål** om du vill skapa ett nytt exportmål.
 
-**Segmentexport i miljöer för enskilda konsumenter (B2C)**  
-- Segment i samband med miljöer för individuella kunder bygger på entiteten *Unified Customer Profile*. Alla segment som uppfyller målsystemens krav (till exempel en e-postadress) kan exporteras.
+1. I rutan **Lägg till mål** väljer du **Typ** av exportmål i listrutan.
 
-**Begränsningar för segmentexport**  
-- Målsystem från tredje part kan begränsa antalet kundprofiler som du kan exportera. 
-- För enskilda kunder visas det faktiska antalet segmentmedlemmar när du väljer ett segment för export. Du får en varning om ett segment är för stort. 
-- För affärskonton visas antalet konton i ett segment. Antalet kontakter som kan projiceras visas emellertid inte. I vissa fall kan det leda till att det exporterade segmentet verkligen innehåller fler kundprofiler än vad målsystemet accepterar. Att överskrida gränserna för målsystemresultaten kommer att hoppa över exporten. 
+1. Ange de uppgifter som krävs och välj **Nästa** för att skapa exportmålet.
 
-## <a name="set-up-a-new-export"></a>Ställ in en ny export  
-Om du vill konfigurera eller redigera en export måste anslutningarna vara tillgängliga för dig. Anslutningarna beror på din [användarroll](permissions.md):
-- **Administratörer** har åtkomst till alla anslutningar. De kan också skapa nya anslutningar när de upprättar en export.
-- **Deltagare** kan ha åtkomst till specifika anslutningar. De är beroende av administratörer för att konfigurera och dela anslutningar. I exportlistan visas deltagare om de kan redigera eller bara visa en export i kolumnen **Dina behörigheter**. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
-- **Visningsprogram** kan bara visa befintlig export - inte skapa dem.
+Du kan också välja **Konfigurera** på panelen **Identifiering**.
 
-### <a name="define-a-new-export"></a>Definiera en ny export
+## <a name="view-export-destinations"></a>Visa exportmål
 
-1. Gå till **Data** > **Exporter**.
+När du har skapat exportmål hittar du dem i en tabell på fliken **Mina exportmål**. Tabellen har tre kolumner:
 
-1. Välj **Lägg till export** för att skapa en ny export.
+- **Visningsnamn**: det namn du angav när du skapade målet.
+- **Typ**: den exportmåltyp du angav när du skapade målet.
+- **Skapades**: Det datum då du skapade målet.
 
-1. I rutan **Ställ in export** väljer du vilken anslutning som ska användas. [Anslutningarna ](connections.md) hanteras av administratörer. 
+## <a name="edit-an-export-destination"></a>Redigera ett exportmål
 
-1. Ange den information som krävs och välj **Spara** för att skapa exporten.
+1. Markera den vertikala ellipsen för det exportmål du vill redigera.
 
-### <a name="define-a-new-export-based-on-an-existing-export"></a>Definiera en ny export utifrån en befintlig export
+   > [!div class="mx-imgBorder"]
+   > ![Lodrät ellips](media/export-destinations-page-ellipsis.png "Lodrät ellips")
 
-1. Gå till **Data** > **Exporter**.
+1. Välj **Redigera** från listruta.
 
-1. I listan över exporter väljer du den export som du vill duplicera.
+1. Ändra värdena som kräver uppdatering och välj **Spara**.
 
-1. Välj **Skapa dubblett** i kommandofältet om du vill öppna fönstret **Konfigurera export** med informationen för den valda exporten.
+## <a name="export-data-on-demand"></a>Exportera data på begäran
 
-1. Granska och anpassa exporten och välj **Spara** för att skapa en ny export.
+När du har konfigurerat en anslutning till ett exportmål körs exporten med varje [schemalagd uppdatering](system.md#schedule-tab).
 
-### <a name="edit-an-export"></a>Redigera export
+För att exportera data utan att vänta på en schemalagd uppdatering, gå till fliken **Mina exportmål** på **Administratör** > **Exportmål**.
 
-1. Gå till **Data** > **Exporter**.
+> [!div class="mx-imgBorder"]
+> ![Lodrät ellips](media/export-destinations-page-ellipsis.png "Lodrät ellips")
 
-1. I listan över exporter väljer du den export som du vill redigera.
+- Välj **Exportera** ovanför listan om du vill köra exporten till alla exportmål samtidigt.
+- Markera ellipsknappen (...) efter ett listobjekt och välj alternativet **export** för att köra exporten för ett enskilt exportmål.
 
-1. Välj **Redigera** i kommandofältet.
+## <a name="remove-an-export-destination"></a>Ta bort ett exportmål
 
-1. Ändra de värden du vill uppdatera och välj **Spara**.
+Om du vill ta bort ett exportmål går du till sidan **exportmål**.
 
-## <a name="view-exports-and-export-details"></a>Visa exporter och exportinformation
+1. Markera den vertikala ellipsen för det exportmål du vill ta bort.
 
-Efter att ha skapat exportdestinationer listas de på **Data** > **Exporter**. Alla användare kan se vilka data som delas och dess senaste status.
+   > [!div class="mx-imgBorder"]
+   > ![Lodrät ellips](media/export-destinations-page-ellipsis.png "Lodrät ellips")
 
-1. Gå till **Data** > **Exporter**.
+2. Välj **Ta bort** från listrutan.
 
-1. Användare utan redigeringsbehörigheter väljer du **Visa** istället för **Redigera** för att visa exportinformationen.
-
-1. I sidrutan visas konfigurationen av en export. Du kan inte ändra värden utan att redigera behörigheter. Välj **Stäng** om du vill återgå till exportsidan.
-
-## <a name="schedule-and-run-exports"></a>Schemalägg och kör exporter
-
-Varje export som du konfigurerar har ett uppdateringsschema. Vid en uppdatering söker systemet efter nya eller uppdaterade data som ska ingå i en export. Som standard körs exporter som en del av alla [schemalagda systemuppdateringar](system.md#schedule-tab). Du kan anpassa uppdateringsschemat eller inaktivera det om du vill köra exporten manuellt.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
-
-Exportscheman beror på tillståndet för miljön. Om det pågår uppdateringar för [beroenden](system.md#refresh-processes) när en schemalagd export ska starta, slutför systemet först uppdateringarna och kör sedan exporten. Du kan se när en export senast uppdaterades i kolumnen **Uppdaterad**.
-
-### <a name="schedule-exports"></a>Schemalägg exporter
-
-Du kan definiera anpassade uppdateringsscheman för enskilda exporter eller flera exporter samtidigt. Det för närvarande definierade schemat visas i kolumnen **Schema** i exportlistan. Du kan ändra schemat på samma sätt som när du [redigerar och definierar exporter](export-destinations.md#set-up-a-new-export). 
-
-1. Gå till **Data** > **Exporter**.
-
-1. Välj den export som du vill schemalägga.
-
-1. Välj **Schemalägg** i kommandofältet.
-
-1. I fönstret **Schemalägg export** ställer du in **Schemalägg körning** på **På** för att köra exporten automatiskt. Ställ in på **Av** för att uppdatera manuellt.
-
-1. För automatiskt uppdaterade exporter väljer du ett värde för **Upprepning** och anger detaljer för det. Den angivna tiden gäller för alla förekomster av en upprepning. Det är den tid då en export ska börja uppdateras.
-
-1. Tillämpa och aktivera ändringarna genom att välja **Spara**.
-
-När du redigerar schemat för flera exporter måste du välja under **Behåll eller åsidosätt scheman**:
-- **Behåll enskilda scheman**: Bevara det tidigare definierade schemat för den valda exporten och inaktivera eller aktivera dem endast.
-- **Ange ett nytt schema för alla valda exporter**: Åsidosätta befintliga scheman för de valda exporterna.
-
-### <a name="run-exports-on-demand"></a>Kör exporter på begäran
-
-För att exportera data utan att vänta på en schemalagd uppdatering, gå till **Data** > **Exporter**.
-
-- Om du vill köra alla exporter väljer du **Kör alla** i kommandofältet. Den här åtgärden kör endast exporter med ett aktivt schema.
-- Om du vill köra en enskild export markerar du den i listan och väljer **Kör** i kommandofältet. På det här viset kör du exporter utan något aktivt schema. 
-
-## <a name="remove-an-export"></a>Ta bort en export
-
-1. Gå till **Data** > **Exporter**.
-
-1. Markera den export du vill ta bort.
-
-1. Välj **Ta bort** i kommandofältet.
-
-1. Bekräfta borttagningen genom att välja **ta bort** på bekräftelseskärmen.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+3. Bekräfta borttagningen genom att välja **ta bort** på bekräftelseskärmen.

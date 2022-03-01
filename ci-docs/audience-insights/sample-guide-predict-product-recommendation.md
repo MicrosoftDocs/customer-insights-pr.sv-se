@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: b219935dfbd9f7acc1104d83e2ca281801a1a4251ae4c19fc03d4b1ce46f4613
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
+ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035207"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6129921"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse av produktrekommendationer (förhandsversion)
 
@@ -105,9 +105,9 @@ När vi har matat in data börjar vi nu datasammanföringsprocessen för att ska
 
 1. Gå till fliken **Matcha** och välj **Ange ordning**.
 
-2. I listrutan **Primär** väljer du **eCommerceContacts : eCommerce** som primär källa och inkluderar samtliga poster.
+2. I listrutan **Primär** väljer du **eCommerceContacts: e-handel** som primär källa och inkluderar alla poster.
 
-3. I listrutan **Entitet 2** väljer du **loyCustomers : LoyaltyScheme** och inkluderar alla poster.
+3. I listrutan **Entitet 2** väljer du **loyCustomers: LoyaltyScheme** och inkluderar alla poster.
 
    ![Förena matchande e-handel och lojalitet.](media/unify-match-order.png)
 
@@ -115,16 +115,16 @@ När vi har matat in data börjar vi nu datasammanföringsprocessen för att ska
 
 5. Lägg till ditt första villkor med hjälp av FullName.
 
-   - För eCommerceContacts väljer du **FullName** i listrutan.
-   - För loyCustomers väljer du **FullName** i listrutan.
+   - För eCommerceContacts välj **FullName** i listrutan.
+   - För loyCustomers välj **FullName** i listrutan.
    - Välj listrutan **Normalisera** och välj **Typ (telefon, namn, adress ...)**.
    - Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 
 6. Ange namnet **FullName, E-post** för den nya regeln.
 
    - Lägg till ett andra villkor för e-postadress genom att välja **Lägg till villkor**
-   - För entiteten eCommerceContacts väljer du **EMail** i listrutan.
-   - För entiteten loyCustomers väljer du **EMail** i listrutan.
+   - För entitet eCommerceContacts väljer du **EMail** i listrutan.
+   - För entitet loyCustomers väljer du **EMail** i listrutan.
    - Lämna Normalisera tomt.
    - Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 

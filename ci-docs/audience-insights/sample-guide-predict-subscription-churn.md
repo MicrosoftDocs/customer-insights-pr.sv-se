@@ -2,19 +2,19 @@
 title: Exempelguide för förutsägelse om prenumerationsomsättning
 description: Använd exempelguiden för att prova den medföljande modellen för förutsägelse om prenumerationsomsättning.
 ms.date: 11/19/2020
-ms.reviewer: mhart
+ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: tutorial
-author: diegogranados117
-ms.author: digranad
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: e2360c707bcbdfa64482f06f0a0cd0783a377b4fd79620ffd3cc1c9c6cad9ed3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
+ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7029605"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "4654002"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse om prenumerationsomsättning (förhandsversion)
 
@@ -22,7 +22,7 @@ Vi ger dig ett komplett exempel på förutsägelse av prenumerationsomsättning 
 
 ## <a name="scenario"></a>Scenario
 
-Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner, som de säljer via sin Contoso Coffee-webbplats. De startade nyligen ett prenumerationsalternativ för sina kunder för att med jämna mellanrum få kaffe. Deras mål är att förstå vilka prenumererande kunder som kan komma att säga upp prenumerationen inom de kommande månaderna. Att veta vilka av deras kunder som **sannolikt kommer att omsättas** kan hjälpa dem att spara marknadsföringsinsatser genom att fokusera på att behålla dem.
+Contoso är ett företag som producerar kaffe och kaffemaskiner av hög kvalitet, som de säljer via Contoso Coffee-webbplatsen. De startade nyligen ett prenumerationsalternativ för sina kunder för att med jämna mellanrum få kaffe. Deras mål är att förstå vilka prenumererande kunder som kan komma att säga upp prenumerationen inom de kommande månaderna. Att veta vilka av deras kunder som **sannolikt kommer att omsättas** kan hjälpa dem att spara marknadsföringsinsatser genom att fokusera på att behålla dem.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -46,9 +46,10 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **DateOfBirth**: Datum
    - **CreatedOn**: Datum/Tid/Zon
 
-   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Transformera födelsedatum till datum.":::
+   [!div class="mx-imgBorder"]
+   ![Transformera födelsedatum till datum](media/ecommerce-dob-date.PNG "transformera födelsedatum till datum")
 
-1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **eCommerceContacts**
+1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **eCommerceContacts**
 
 1. Spara datakällan.
 
@@ -66,7 +67,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **RewardsPoints**: Heltal
    - **CreatedOn**: Datum/Tid
 
-1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **loyCustomers**.
+1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **loyCustomers**.
 
 1. Spara datakällan.
 
@@ -89,7 +90,7 @@ Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällo
    - **Is_auto_renew**: Sant/falskt
    - **RecurringFrequencyInMonths**: Hela numret
 
-1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **SubscriptionHistory**.
+1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **SubscriptionHistory**.
 
 1. Spara datakällan.
 
@@ -128,9 +129,9 @@ Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** 
 
 1. Gå till fliken **Matcha** och välj **Ange ordning**.
 
-1. I listrutan **Primär** väljer du **eCommerceContacts : eCommerce** som primär källa och inkluderar samtliga poster.
+1. I listrutan **Primär** väljer du **eCommerceContacts: e-handel** som primär källa och inkluderar alla poster.
 
-1. I listrutan **Entitet 2** väljer du **loyCustomers : LoyaltyScheme** och inkluderar alla poster.
+1. I listrutan **Entitet 2** väljer du **loyCustomers: LoyaltyScheme** och inkluderar alla poster.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Förena matchande e-handel och lojalitet.":::
 
@@ -138,16 +139,16 @@ Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** 
 
 1. Lägg till ditt första villkor med hjälp av FullName.
 
-   * För eCommerceContacts väljer du **FullName** i listrutan.
-   * För loyCustomers väljer du **FullName** i listrutan.
+   * För eCommerceContacts välj **FullName** i listrutan.
+   * För loyCustomers välj **FullName** i listrutan.
    * Välj listrutan **Normalisera** och välj **Typ (telefon, namn, adress ...)**.
    * Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 
 1. Ange namnet **FullName, E-post** för den nya regeln.
 
    * Lägg till ett andra villkor för e-postadress genom att välja **Lägg till villkor**
-   * För entiteten eCommerceContacts väljer du **EMail** i listrutan.
-   * För entiteten loyCustomers väljer du **EMail** i listrutan. 
+   * För entitet eCommerceContacts väljer du **EMail** i listrutan.
+   * För entitet loyCustomers väljer du **EMail** i listrutan. 
    * Lämna Normalisera tomt. 
    * Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 
@@ -229,6 +230,3 @@ Du kan skapa ett nytt segment baserat på entiteten som skapats av modellen.
 Du har nu ett segment som uppdateras dynamiskt som identifierar kunder med hög omsättningsrisk för den här prenumerationsverksamheten.
 
 Mer information finns i [Skapa och hantera segment](segments.md).
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

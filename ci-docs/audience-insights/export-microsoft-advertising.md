@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Microsoft Advertising
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Microsoft Advertising.
-ms.date: 10/08/2021
+ms.date: 05/12/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 12fd221acb7c0eed443c9b860aca42dcb2b3788c
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: c2ac92de2718cf7f0622b407bf198a7a7e50a37b
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618083"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124558"
 ---
 # <a name="export-segments-to-microsoft-advertising-preview"></a>Exportera segment till Microsoft Advertising (förhandsversion)
 
@@ -29,9 +29,9 @@ Exportera Customer Insights-segment till Microsoft Advertising för att skapa Cu
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till 500 000 kundprofiler per export till Microsoft Advertising.
+- Du kan exportera upp till 500 000 profiler per export till Microsoft Advertising.
 - Export till Microsoft Advertising är begränsad till segment.
-- Det kan ta upp till 10 minuter innan du exporterar upp till 500 000 kundprofiler till Microsoft Advertising. 
+- Det kan ta upp till 10 minuter att exportera upp till 500 000 profiler till Microsoft Advertising. 
 
 
 ## <a name="set-up-the-connection-to-microsoft-advertising"></a>Upprätta anslutningen till Microsoft Advertising
@@ -68,7 +68,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Ange ditt **kund-ID och konto-ID för Microsoft Advertising**. Du hittar kund-ID (`cid`) och konto-ID (`aid`) i parametrarna för webbadressen när du är inloggad på Microsoft Advertising.
 
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet med en kunds e-postadress. Det krävs för att exportera segment till Microsoft Advertising.
+1. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du fältet i din enhetliga kundprofil som innehåller kundens e-postadress. Det krävs för att exportera segment till Microsoft Advertising.
 
 1. Välj **Spara**.
 

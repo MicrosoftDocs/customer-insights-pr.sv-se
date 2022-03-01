@@ -1,86 +1,76 @@
 ---
 title: Exportera Customer Insights-data till Marketo
-description: Lär dig hur du konfigurerar anslutningen och exporterar till Marketo.
-ms.date: 10/08/2021
-ms.reviewer: mhart
+description: Lär dig hur du konfigurerar anslutningen till Marketo.
+ms.date: 11/12/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 71a16bd71a58b5cc0a6a2ed421561d91f782dd8e
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 34ccee2894f1f2b552d0c6a88a6810e2dfc677a3
+ms.sourcegitcommit: 0b1d3ca11b8ba362a959da0eea15c37e9cdba084
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7619187"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "4570425"
 ---
-# <a name="export-segments-to-marketo-preview"></a>Exportera segment till Marketo (förhandsgranskning)
+# <a name="connector-for-marketo-preview"></a>Anslutningsprogram för Marketo (förhandsversion)
 
 Exportera segment av enhetliga kundprofiler för att generera kampanjer, skapa e-postmarknadsföring och använda specifika kundgrupper med Marketo.
 
-## <a name="prerequisites-for-connection"></a>Krav för anslutning
+## <a name="prerequisites"></a>Förutsättningar
 
 -   Du har ett [Marketo-konto](https://login.marketo.com/) och motsvarande administratörsautentiseringsuppgifter.
 -   Det finns befintliga listor i Marketo och motsvarande ID. Mer information finns på [Marketo-listor](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
 -   Du har [konfigurerat segment](segments.md).
 -   Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
-## <a name="known-limitations"></a>Kända begränsningar
+## <a name="connect-to-marketo"></a>Ansluta till Marketo
 
-- Upp till 1 miljoner kundprofiler per export till Marketo.
-- Export till Marketo är begränsad till segment.
-- Det kan ta upp till tre timmar att exportera segment med totalt 1 miljon kundprofiler. 
-- Hur många kundprofiler du kan exportera till Marketo är beroende av och begränsas av ditt kontrakt med Marketo.
+1. Gå till **Administratör** > **Exportera mål**.
 
-## <a name="set-up-connection-to-marketo"></a>Upprätta anslutningen till Marketo
+1. Under **Marketo** väljer du **Konfigurera**.
 
-1. Gå till **Admin** > **Anslutningar**.
+1. Ange ditt exportmål som ett beskrivande namn i fältet **visningsnamn**.
 
-1. Välj **Lägg till anslutning** och välj **Marketo** för att konfigurera anslutningen.
+1. Ange ditt **[klient-ID för Marketo, din klienthemlighet och slutpunktsvärdnamnet för REST](https://developers.marketo.com/rest-api/authentication/)**.
 
-1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
-
-1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
-
-1. Ange ditt **[klient-ID för Marketo, din klienthemlighet och slutpunktsvärdnamnet för REST](https://developers.marketo.com/rest-api/authentication/)**. Endast slutpunktsvärdnamn för REST utan `https://`. Exempel: `xyz-abc-123.mktorest.com`. 
+1. Ange ditt **[ID för Marketo-lista](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)** 
 
 1. Välj **Jag godkänner** för att bekräfta **datasekretess och regelefterlevnad** och välj **Anslut** för att initiera anslutningen till Marketo.
 
 1. Välj **Lägg till dig själv som exportanvändare** och ange dina autentiseringsuppgifter för Customer Insights.
 
-1. Välj **Spara** för att slutföra anslutningen.
+   :::image type="content" source="media/export-connect-marketo.png" alt-text="Exportera skärmbild för Marketo-anslutning":::
 
-## <a name="configure-an-export"></a>Konfigurera en export
+1. Välj **Nästa** du vill konfigurera exporten.
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+## <a name="configure-the-connector"></a>Konfigurera kopplingen
 
-1. Gå till **Data** > **Exporter**.
+1. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. 
 
-1. Välj för att skapa en ny export **Lägg till destination**.
-
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Marketo. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
-
-1. Ange ditt **[ID för Marketo-lista](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. List-ID:t är ett endast numeriskt värde. Om ditt Marketo-list-ID är ST12345A7 tar du bort tecknet före och efter numeriska tecken och anger `12345`. 
-
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. 
-
-1. Alternativt kan du exportera **Förnamn**, **Efternamn**, **Ort**, **Delstat** och **Land/Region** för att skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
+1. Alternativt kan du exportera **Förnamn**, **Efternamn**, **Ort**, **Delstat** och **Land/region** som ytterligare fält för att skapa mer personligt anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
 
 1. Välj de segment som du vill exportera. Du kan exportera upp till totalt 1 000 000 kundprofiler till Marketo.
 
+   :::image type="content" source="media/export-segment-marketo.png" alt-text="Välj fält och segment som ska exporteras till Marketo":::
+
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
+## <a name="export-the-data"></a>Exportera data
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). I Marketo kan du nu hitta dina segment under [Marketo-listor](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
+Du kan [Exportera data på begäran](export-destinations.md). Exporten kommer också att köras med alla [schemalagda uppdateringar](system.md#schedule-tab). I Marketo kan du nu hitta dina segment under [Marketo-listor](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
 
+## <a name="known-limitations"></a>Kända begränsningar
+
+- Upp till 1 000 000 profiler per export till Marketo.
+- Export till Marketo är begränsad till segment.
+- Det kan ta upp till 3 timmar att exportera segment med totalt 1 000 000 profiler. 
+- Antalet profiler som du kan exportera till Marketo är beroende av och begränsat enligt ditt kontrakt med Marketo.
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till Marketo tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att Marketo uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
 Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

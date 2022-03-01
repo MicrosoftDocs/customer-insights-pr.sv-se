@@ -1,7 +1,7 @@
 ---
 title: Exportera Customer Insights-data till Azure Synapse Analytics
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Azure Synapse Analytics.
-ms.date: 01/05/2022
+ms.date: 04/12/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 6f630b8fb03bf615ada6d40fe27a91975d0c856e
-ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
+ms.openlocfilehash: 822082d661863e737ea3d3a749a6c878db766967
+ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2022
-ms.locfileid: "7951064"
+ms.lasthandoff: 05/04/2021
+ms.locfileid: "5977399"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Exportera data till Azure Synapse Analytics (förhandsversion)
 
@@ -49,8 +49,6 @@ i Azure:
 
 ### <a name="configure-a-connection"></a>Konfigurera en anslutning
 
-För att skapa en anslutning ska tjänstens huvudman och användarkontot i Customer Insights behöver du behörigheten **Läsare** i *resursgruppen* där Synapse Analytics workspace finns. Dessutom behöver tjänstens huvudman och användaren på Synapse Analytics workspace behörigheten **Synapse administratör**. 
-
 1. Gå till **Admin** > **Anslutningar**.
 
 1. Välj **Lägg till anslutning** och välj **Azure Synapse Analytics** eller välj **Konfigurera** på panelen **Azure Synapse Analytics** för att konfigurera anslutningen.
@@ -65,7 +63,7 @@ För att skapa en anslutning ska tjänstens huvudman och användarkontot i Custo
 
 ### <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Om du vill konfigurera exporten med en delad anslutning måste du minst ha **deltagare** i Customer Insights. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
 
 1. Gå till **Data** > **Exporter**.
 
@@ -76,16 +74,12 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 1. Ange ett igenkännande **Visningsnamn** för exporten och ett **Databasnamn** .
 
 1. Välj vilka entiteter du vill exportera till Azure Synapse Analytics.
-   > [!NOTE]
-   > Datakällor som bygger på en [Common Data Model-mapp](connect-common-data-model.md) stöds inte.
 
-2. Välj **Spara**.
+1. Välj **Spara**.
 
 När du sparar en export körs inte exporten omedelbart.
 
 Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand).
-
-Om du vill fråga efter data som har exporterats till Synapse Analytics måste du ha åtkomsten **Storage Blob Data-läsare** till destinationslagringen på exportarbetsytan. 
 
 ### <a name="update-an-export"></a>Uppdatera en export
 

@@ -2,30 +2,8 @@
   href: index.yml
 - name: Produktöversikt
   href: overview.md
-- name: Utbildningskatalog
-  items:
-    - name: Kom i gång
-      href: /learn/modules/get-started-customer-data-platform/
-    - name: Mata in data
-      href: /learn/modules/ingest-data-customer-insights/
-    - name: Skapa en enhetlig kundprofil
-      href: /learn/modules/unified-customer-profile/
-    - name: Arbeta med målgruppsinsikter
-      href: /learn/modules/working-with-customer-insights/
-    - name: Berika data och gör förutsägelser
-      href: /learn/modules/enrich-data/
-    - name: Hantera externa anslutningar
-      href: /learn/modules/configure-third-party-connections/
-    - name: Administrera Customer Insights
-      href: /learn/modules/administer-customer-data-platform/
-- name: Kostnadsfri utvärderingsversion
-  items:
-    - name: Registrera dig för en kostnadsfri utvärderingsversion
-      href: trial-signup.md
-    - name: Frågor och svar om utvärderingsversionen
-      href: trial-FAQ.md
-- name: Börja med en betald licens
-  href: paid-license.md
+- name: Skapa en utvärdering
+  href: audience-insights/get-started-trial.md
 - name: Öppna din miljö
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Målgruppsinsikter
@@ -41,16 +19,24 @@
         - name: Snabbstartguide
           href: audience-insights/get-started.md
         - name: Skapa en ny miljö
-          href: audience-insights/create-environment.md
+          href: audience-insights/get-started-paid.md
         - name: Utforska målgruppinsikter
           href: audience-insights/home.md
-    - name: Arbeta med affärskonton
-      href: audience-insights/work-with-business-accounts.md
+    - name: Lär dig moduler
+      items:
+        - name: Mata in data
+          href: /learn/modules/ingest-data-customer-insights/
+        - name: Skapa en enhetlig kundprofil
+          href: /learn/modules/unified-customer-profile/
+        - name: Arbeta med appar
+          href: /learn/modules/working-with-customer-insights/
+        - name: Utöka data och förutsägelser
+          href: /learn/modules/enrich-data/
     - name: Datakällor
       items:
         - name: Översikt över datakällor
           href: audience-insights/data-sources.md
-        - name: Lägg till datakällor via Power Query-kopplingar
+        - name: Lägg till datakällor via på Power Query-anslutningar
           href: audience-insights/connect-power-query.md
         - name: Lägg till en Common Data Model-mapp som en datakälla
           href: audience-insights/connect-common-data-model.md
@@ -80,18 +66,14 @@
           href: audience-insights/relationships.md
         - name: Ange kundaktiviteter
           href: audience-insights/activities.md
-        - name: Definiera semantiska mappningar
-          href: audience-insights/semantic-mappings.md
     - name: Datautökande
       items:
         - name: Utöka kundprofiler
           href: audience-insights/enrichment-hub.md
-        - name: Varumärken och intressen
+        - name: Varumärkes- och intressetillhörigheter
           href: audience-insights/enrichment-microsoft.md
         - name: Utökade adresser
           href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Berikade företagsdata
-          href: audience-insights/enrichment-enhanced-company-data.md
         - name: Utöka med Azure Maps
           href: audience-insights/enrichment-azure-maps.md
         - name: Utöka med HERE Technologies
@@ -100,8 +82,6 @@
           href: audience-insights/enrichment-leadspace.md
         - name: Utöka med Experian
           href: audience-insights/enrichment-experian.md
-        - name: Berika med Office 365-data
-          href: audience-insights/enrichment-office.md
         - name: Utöka med anpassad SFTP-import
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Segment
@@ -134,10 +114,8 @@
               href: audience-insights/predict-product-recommendation.md
             - name: Förutsäga prenumerationsomsättning
               href: audience-insights/predict-subscription-churn.md
-            - name: Prediktion för transaktionsomsättning
+            - name: Förutsäga transaktionell omsättning
               href: audience-insights/predict-transactional-churn.md
-            - name: Analysera sentiment i kundfeedback
-              href: audience-insights/sentiment-analysis.md
             - name: Använd anpassade modeller från Azure Machine Learning
               href: audience-insights/custom-models.md
             - name: Fullständiga data som delvis saknas
@@ -148,12 +126,14 @@
               href: audience-insights/sample-guide-predict-clv.md
             - name: Exempelguide för förutsägelse om prenumerationsomsättning
               href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Exempelguide för prediktion för transaktionsomsättning
+            - name: Exempelguide för förutsägelse om transaktionell omsättning
               href: audience-insights/sample-guide-predict-transactional-churn.md
             - name: Exempelguide för förutsägelse av produktrekommendationer
               href: audience-insights/sample-guide-predict-product-recommendation.md
             - name: Experiment med Azure Machine Learning
               href: audience-insights/azure-machine-learning-experiments.md
+            - name: Experiment med Azure Machine Learning Studio
+              href: audience-insights/machine-learning-studio-experiments.md
         - name: Hantera förutsägelser
           href: audience-insights/manage-predictions.md
         - name: Skapa segment grundade på prediktioner
@@ -242,14 +222,10 @@
           href: audience-insights/connections.md
         - name: Hantera flera miljöer
           href: audience-insights/manage-environments.md
-        - name: Säkerhet
-          items:
-            - name: Ta med din egen Key Vault
-              href: audience-insights/use-azure-key-vault.md
-            - name: Ansluta till ett ADLS-lagringskonto med hjälp av Service Principal
-              href: audience-insights/connect-service-principal.md
-            - name: Exportera diagnostikloggar
-              href: audience-insights/diagnostics.md
+        - name: Ansluta till ett ADLS-lagringskonto med hjälp av Service Principal
+          href: audience-insights/connect-service-principal.md
+        - name: Språk som stöds
+          href: audience-insights/supported-languages.md
     - name: Utbyggbar
       items:
         - name: Integrera webbdata från engagemangsinsikter
@@ -262,40 +238,6 @@
           href: audience-insights/apis.md
         - name: API-referenser
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-- name: Samtyckeshantering (förhandsversion)
-  items:
-    - name: Hjälphubb
-      href: consent-management/index.yml
-    - name: Kapacitetsöversikt
-      href: consent-management/overview.md
-    - name: Kom igång
-      items:
-        - name: Kom igång
-          href: consent-management/get-started.md
-        - name: Begrepp och terminologi
-          href: consent-management/glossary.md
-    - name: Importera samtyckesdata
-      items:
-        - name: Importera samtyckesdata
-          href: consent-management/import-consent-data.md
-        - name: Ange samtyckesdata och tillämpa samtyckesinställningar
-          href: consent-management/set-consent-rules.md
-    - name: Hantera samtyckesdata
-      items:
-        - name: Aktivera samtyckesregler i målgruppinsikter
-          href: audience-insights/activate-consent.md
-        - name: Hantera standardregler för samtycke i segment för målgruppinsikter
-          href: audience-insights/change-default-consent-rules.md
-    - name: Hantera inställningar och användare
-      items:
-        - name: Konfigurera systeminställningar
-          href: consent-management/system-settings.md
-        - name: Hantera användare och behörigheter
-          href: consent-management/manage-users.md
-    - name: Använd samtyckesdata
-      items:
-        - name: Skapa prediktioner med samtyckesdata
-          href: consent-management/predictions-consent-data.md
 - name: Engagemangsinsikter (förhandsversion)
   items:
     - name: Hjälphubb
@@ -306,8 +248,6 @@
       items:
         - name: Snabbstartguide
           href: engagement-insights/get-started.md
-        - name: Skapa en miljö
-          href: engagement-insights/create-new-environment.md
         - name: Skapa en arbetsyta
           href: engagement-insights/create-workspace.md
         - name: Registrera händelser från webbplatser och mobilappar
@@ -378,5 +318,3 @@
   href: service-limits.md
 - name: DSR-rättigheter och -förfrågningar
   href: dsr-rights-requests.md
-- name: Få support
-  href: /power-platform/admin/get-help-support

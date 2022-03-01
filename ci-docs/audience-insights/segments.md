@@ -1,20 +1,20 @@
 ---
 title: Segments i målgruppsinsikter
 description: Översikt över segment och hur du skapar och hanterar dem.
-ms.date: 11/01/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
+ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 740d293b21f43b50201f23fcba109318823ef3af
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7978081"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617397"
 ---
 # <a name="segments-overview"></a>Segment – översikt
 
@@ -26,7 +26,7 @@ Kundprofiler som överensstämmer med filter för en segmentdefinition kallas *m
 
 Du kan skapa ett nytt segment på flera sätt: 
 
-# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
+# <a name="individual-customers-b2c"></a>[Enskilda kunder (B2C)](#tab/b2c)
 
 - Komplext segment med segmentverktyget: [Bygga ett eget](segment-builder.md#create-a-new-segment) 
 - Enkla segment med en operator: [Snabbsegment](segment-builder.md#quick-segments) 
@@ -34,7 +34,7 @@ Du kan skapa ett nytt segment på flera sätt:
 - AI-drivna förslag baserade på mått eller attribut: [Förslag på segment för att förbättra åtgärder](suggested-segments.md) 
 - Förslag utifrån aktiviteter: [Förslag på segment utifrån kundaktivitet](suggested-segments-activity.md) 
 
-# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
+# <a name="business-accounts-b2b"></a>[Företagskonton (B2B)](#tab/b2b)
 
 - Komplext segment med segmentverktyget: [Bygga ett eget](segment-builder.md#create-a-new-segment)
 
@@ -65,7 +65,8 @@ Följande åtgärd är tillgänglig när du väljer ett segment:
 
 Du kan uppdatera alla segment på en gång genom att markera **Uppdatera alla** på sidan **Segment**, eller också kan du uppdatera ett eller flera segment när du markerar dem och väljer **Uppdatera** bland alternativen. Du kan även konfigurera en återkommande uppdatering på **Administratör** > **System** > **Schemalägg**.
 
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+> [!TIP]
+> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
 
 ## <a name="export-segments"></a>Exportera segment
 
@@ -104,6 +105,5 @@ Den nedre delen innehåller en lista över segmentets medlemmar.
 > Fält som visas i listan bygger på attributen för segmentets entiteter.
 >
 >Listan är en förhandsgranskning av de matchande segmentmedlemmarna och visar de första 100 posterna för ditt segment så att du snabbt kan utvärdera den och granska dess definitioner om det behövs. Om du vill visa alla matchande poster måste du [exportera segmentet](export-destinations.md).
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)] 

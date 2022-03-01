@@ -1,7 +1,7 @@
 ---
 title: Slutför partiella data med hjälp av förutsägelser
 description: Använd förutsägelser för att fylla i ofullständiga kunddata.
-ms.date: 11/01/2021
+ms.date: 05/05/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,17 +9,16 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3100acf383d85c00a6ff0a8ebc54e038bd813427
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732455"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692549"
 ---
-# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fyll i ofullständiga data med hjälp av prediktioner (inaktuella)
+# <a name="complete-your-partial-data-with-predictions"></a>Komplettera dina ofullständiga data med förutsägelser
 
-> [!IMPORTANT]
-> Den här funktionen är **inaktuell** från den **5 november 2021**.  De aktuella implementeringarna fortsätter tills funktionen har tagits bort, men du kommer inte att kunna skapa nya integreringar enligt anvisningarna nedan.
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Med hjälp av prediktioner kan du enkelt skapa förutsagda värden som förbättrar förståelsen av en kund. På sidan **Intelligens** > **Förutsägelser** kan du välja **Mina förutsägelser** för att se förutsägelser som du har konfigurerat i andra delar av målgruppinsikter och anpassa dem ytterligare.
 
@@ -36,7 +35,7 @@ Innan du kan använda funktionen prediktioner i organisationen bör du kontrolle
 
 2. Din miljö för målgruppsinsikter bifogas till din Dataverse-instans.
 
-Mer information finns i [Skapa en ny miljö](create-environment.md).
+Om du [skapar en ny miljö](get-started-paid.md) konfigurerar du den i dialogrutan **Skapa en miljö** och väljer **Avancerat**. Om du redan har skapat en miljö går du till dess inställningar och väljer **Avancerat**. Oavsett vilket anger du i avsnittet **Använd förutsägelser** Dataverse-instansens URL som du vill koppla din miljö till.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Skapa en förutsägelse i entiteten Kund
 
@@ -61,8 +60,6 @@ Mer information finns i [Skapa en ny miljö](create-environment.md).
    > ![Exempel som visar mappade fältvärden för kategorier.](media/intelligence-categorymapping.png "Exempel som visar mappade fältvärden för kategorier")
 
 8. Välj **klart** och prediktionen kommer att bearbetas. Bearbetningen kan ta en stund, beroende på datastorlek och komplexitet. Resultatet blir tillgängligt i en ny entitet baserat på **Utdataenhetens namn** för den prediktion du skapade.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Skapa en prediktion när du skapar ett segment
 

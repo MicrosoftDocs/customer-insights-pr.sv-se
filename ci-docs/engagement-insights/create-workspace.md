@@ -9,12 +9,12 @@ ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 1f8922703af506974c8b5b24086b61f05a83609d
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 816f948331a06794c15000eb779f93cc7fdda202
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673515"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645332"
 ---
 # <a name="create-a-new-workspace-and-add-members"></a>Skapa en ny arbetsyta och lägg till medlemmar
 
@@ -26,11 +26,11 @@ När du skapar en arbetsyta väljer du vilken typ av data du vill fokusera på. 
 
 ## <a name="create-a-new-workspace"></a>Skapa en ny arbetsyta
 
-När du skapar en arbetsyta konfigureras *miljön* för att organisera arbetsytan. En miljö är ett utrymme som kan innehålla en eller flera arbetsytor. Du kan använda en miljö för att hantera dina arbetsytor och anslutningar målinsikter.
+När du skapar en arbetsyta konfigureras *miljön* för att organisera arbetsytan. En miljö är ett utrymme som kan innehålla en eller flera arbetsytor. Du kan använda en miljö för att hantera dina arbetsytor och anslutningar till funktionen Customer Insights målgruppinsikter.
 
-1. Välj **+Nytt** i arbetsyteväljaren.
+1. Välj **Nytt** i arbetsyteväljaren.
 
-   :::image type="content" source="media/new-workspace.png" alt-text="Customer Insights-sidan med bildtext i navigeringsfönstret och beskrivning.":::
+   :::image type="content" source="media/new-workspace.png" alt-text="Customer Insights-sida med bildtext i navigeringsfönstret och beskrivning.":::
 
 1. I fönstret **Arbetsyta** ange ett **Arbetsytenamn**.
 

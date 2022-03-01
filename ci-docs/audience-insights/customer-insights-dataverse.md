@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-data i Microsoft Dataverse
 description: Använd Customer Insights-entiteter som tabeller i Microsoft Dataverse.
-ms.date: 11/25/2021
+ms.date: 10/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6f74559b34a95ed976a4e353c2dbabe59e1a8839
-ms.sourcegitcommit: 9558ff772ee6c944fcb8db4bfc8cda13b38a1bff
+ms.openlocfilehash: 9855ff6908001dd18bc19a286fc56620d0a127e5
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/29/2021
-ms.locfileid: "7866956"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645240"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeta med Customer Insights-data i Microsoft Dataverse
 
@@ -45,7 +45,6 @@ Vissa utdataentiteter från målgruppsinsikter är tillgängliga som tabeller i 
 - [CustomerMeasure](#customermeasure)
 - [Berikning](#enrichment)
 - [Prediktion](#prediction)
-- [Segmentmedlemskap](#segment-membership)
 
 
 ### <a name="customerprofile"></a>CustomerProfile
@@ -122,16 +121,3 @@ Den här tabellen innehåller utdata från modellförutsägelser.
 | Värden               | JSON-sträng | Lista över attribut som produceras av modellen |
 | msdynci_predictionid | GUID        | Deterministiskt GUID genererat från msdynci_identifier | 
 | msdynci_identifier   | String      |  `Model|ModelProvider|CustomerId`                      |
-
-### <a name="segment-membership"></a>Segmentmedlemskap
-
-Den här tabellen innehåller kundprofilernas information om segmentmedlemskap.
-
-| Column        | Type | Description                        |
-|--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Kundprofil-ID        |
-| SegmentProvider      | String       | App som publicerar segmenten. Standard: Målgruppsinsikter         |
-| SegmentMembershipType | String       | Kundtyp som det här segmentmedlemskapet registrerar. Stöder flera typer, såsom kund, kontakt eller konto. Standard: kund  |
-| Segment       | JSON-sträng  | Lista med unika segment där kundprofilen är medlem      |
-| msdynci_identifier  | String   | Unik identifierare för det här segmentmedlemskapets post. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID      | Deterministiskt GUID genererat från `msdynci_identifier`          |

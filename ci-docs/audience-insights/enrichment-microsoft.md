@@ -1,7 +1,7 @@
 ---
-title: Utöka kundprofiler med data från Microsoft
-description: Använd tillverkarspecifika data från Microsoft för att utöka dina kunddata med samhörigheter och Share of Voice.
-ms.date: 11/11/2021
+title: Berika kundprofiler med data från Microsoft
+description: Använd tillverkarspecifika data från Microsoft för att berika kunddata med intresse och varumärke.
+ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,37 +9,33 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 346c79d0a4d5cd5c47e91c195a48d3a153db0dc0
-ms.sourcegitcommit: 9d3c9e4eb2ce20996a4f4fb44c42e3fe020c5b48
+ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/11/2021
-ms.locfileid: "7793725"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305178"
 ---
-# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Utöka kundprofiler med samhörigheter och Share of Voice (förhandsversion)
+# <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Utöka kundprofiler med varumärkes- och intressetillhörighet (förhandsversion)
 
-Använd tillverkarspecifika data från Microsoft för att utöka dina kunddata med varumärkesaffiniteter, intresseaffiniteter och Share of Voice (SoV). Dessa samhörigheter och SoV baseras på data från personer med demografi som liknar dina kunder. Denna information hjälper dig att bättre förstå och segmentera dina kunder baserat på deras affinitet eller SoV till specifika varumärken och intressen.
+Använd tillverkarspecifika data från Microsoft för att berika kunddata med intresse och varumärke. Dessa samhörigheter baseras på data från personer med demografiska egenskaper som liknar dina kunders. Med hjälp av den här informationen kan du bättre förstå och segmentera dina kunder utifrån deras tillhörigheter till särskilda varumärken och intressen.
 
 I målgruppsinsikter går du till **Data** > **Berikning** för att [konfigurera och visa berikningar](enrichment-hub.md).
 
-Om du vill konfigurera varumärkessamhörigheter och SoV-berikning går du till fliken **Upptäck** och väljer **Utöka mina data** på panelen **Varumärken**.
+Om du vill konfigurera berikning för varumärkestillhörighet kan du gå till fliken **Upptäck** och välja **Berika mina data** på ikonen **Varumärken**.
 
-Om du vill konfigurera intressesamhörigheter och SoV-berikning går du till fliken **Upptäck** och väljer **Utöka mina data** på panelen **Intressen**.
+Om du vill konfigurera berikning av intressetillhörighet kan du gå till fliken **Upptäck** och välja **Berika mina data** på ikonen **Intressen**.
 
    > [!div class="mx-imgBorder"]
-   > ![Paneler för varumärken och intressen.](media/BrandsInterest-tile-Hub.png "Paneler för varumärken och intressen")
+   > ![Paneler för varumärken och intressen](media/BrandsInterest-tile-Hub.png "Paneler för varumärken och intressen")
 
-## <a name="how-we-determine-affinities-and-sov"></a>Så här avgör vi samhörigheter och SoV
+## <a name="how-we-determine-affinities"></a>Så här avgör vi intresse
 
-Vi använder Microsofts onlinesökningsdata för att hitta samhörigheter och SoV för varumärken och intressen i olika demografiska segment (definierade efter ålder, kön eller plats). Sökvolym online för ett varumärke eller intresse utgör grunden för att fastställa samhörighet eller SoV. Men var och en ger ett annat perspektiv för att förstå dina kunder.
-
-- Samhörighet kan jämföras med demografisk segment. Du kan använda den här informationen för att identifiera målgruppssegment som har den högsta tillhörigheten för ett visst varumärke eller intresse jämfört med andra segment.
-
-- Share of voice är en jämförelse mellan dina valda varumärken eller intressen. Med hjälp av den här informationen kan du identifiera vilket varumärke eller intresse som har den högsta Share Of Voice i ett visst målgruppssegment, jämfört med andra varumärken eller intressen du valt.
+Vi använder Microsofts onlinesökningsdata för att hitta intressegrupper och intressen i olika demografiska segment (definierade efter ålder, kön eller plats). Om du söker online efter ett varumärke eller en ränta bestäms hur mycket tillhörighet som ett demografiskt segment ska jämföras med andra segment, det vill säga det varumärket.
 
 ## <a name="affinity-level-and-score"></a>Tillhörighetsnivå och poäng
 
-I varje utökad kundprofil tillhandahåller vi två relaterade värden – tillhörighetsnivå och tillhörighetspoäng. Dessa värden hjälper dig att avgöra hur starkt tillhörigheten är för den profilens demografiska segment, för ett varumärke eller intresse, jämfört med andra demografiska segment.
+I varje berikad kundprofil tillhandahåller vi två relaterade värden – tillhörighetsnivå och tillhörighetspoäng. Dessa värden hjälper dig att avgöra hur starkt tillhörigheten är för den profilens demografiska segment, för ett varumärke eller intresse, jämfört med andra demografiska segment.
 
 *Tillhörighetsnivå* består av fyra nivåer och *tillhörighetspoäng* beräknas på en skala med 100 poäng som mappas till tillhörighetsnivåerna.
 
@@ -53,10 +49,6 @@ I varje utökad kundprofil tillhandahåller vi två relaterade värden – tillh
 
 Beroende på vilken granularitet du vill använda för att mäta tillhörigheten kan du använda antingen tillhörighetsnivå eller poäng. Med tillhörighetspoäng får du mer exakt kontroll.
 
-## <a name="share-of-voice-sov"></a>Share of voice (SoV)
-
-Vi beräknar SoV på en 100-punktsskala. Den totala SoV för alla varumärken eller intressen för varje berikad kundprofil blir 100. Till skillnad från samhörigheter är SoV relativt till de intressen du väljer. SoV-värdena för Microsoft kan exempelvis vara annorlunda om de valda värdena är (Microsoft, "GitHub") och (Microsoft, LinkedIn).
-
 ## <a name="supported-countriesregions"></a>Länder/regioner som stöds
 
 Vi stöder för närvarande följande alternativ för land: Australien, Kanada (engelska), Frankrike, Tyskland, Storbritannien och USA (engelska).
@@ -69,7 +61,7 @@ Om du vill välja ett land eller en region öppnar du **Varumärkesberikning** e
 
 - När [du väljer en bransch](#define-your-brands-or-interests) får du de mest relevanta märkena eller intressena utifrån valt land eller vald region.
 
-- När [profiler utökas](#refresh-enrichment) utökar vi alla kundprofiler för vilka vi får data för valda varumärken och intressen, inklusive profiler som inte finns i valt land eller vald region. Om du till exempel valde Tyskland utökar vi profiler i USA om det finns tillgängliga data för valda tillverkare och intressen i USA.
+- När [profiler berikas](#refresh-enrichment) berikar vi alla kundprofiler för vilka vi får data för valda varumärken och intressen, inklusive profiler som inte finns i valt land eller vald region. Om du till exempel valde Tyskland utökar vi profiler i USA om det finns tillgängliga data för valda tillverkare och intressen i USA.
 
 ## <a name="configure-enrichment"></a>Konfigurera berikning
 
@@ -88,13 +80,13 @@ Gå igenom standardinställningarna för berikning och uppdatera dem efter behov
 
 :::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Skärmbild av fönstret med inställningar för berikning.":::
 
-### <a name="select-entity-to-enrich"></a>Välj en entitet att utöka
+### <a name="select-entity-to-enrich"></a>Välj en entitet att berika
 
-Välj **Berikad entitet** och välj den datauppsättning du vill berika med data från Microsoft. Du kan välja entiteten Kund för att utöka alla dina kundprofiler eller välja en segmentsentitet för att endast utöka kundprofiler i det segmentet.
+Välj **Berikad entitet** och välj den datauppsättning du vill berika med företagsdata från Microsoft. Du kan välja entiteten Kund för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
 
 ### <a name="map-your-fields"></a>Mappa dina fält
 
-Mappa fält från en enhetlig kundentitet och definiera det demografiska segment som du vill att systemet ska använda för att utöka kunddata. Mappa land/region och åtminstone attributen Födelsedatum eller Kön. Du måste också mappa minst en av Ort (och Region) eller Postnummer. Välj **redigera** om du vill definiera mappningen av fälten och välj **Tillämpa** när du är klar. Välj **Spara** för att slutföra fältmappningen.
+Mappa fält från en enhetlig kundentitet och definiera det demografiska segment som du vill att systemet ska använda för att berika kunddata. Mappa land/region och åtminstone attributen Födelsedatum eller Kön. Du måste också mappa minst en av Ort (och Region) eller Postnummer. Välj **redigera** om du vill definiera mappningen av fälten och välj **Tillämpa** när du är klar. Välj **Spara** för att slutföra fältmappningen.
 
 Följande format och värden stöds (värden är inte skiftlägeskänsliga):
 
@@ -124,25 +116,26 @@ Kör berikningen när du har konfigurerat varumärken, intressen och fältmappni
 
 Beroende på storleken på kundens data kan det ta flera minuter innan en anrikning har slutförts.
 
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+> [!TIP]
+> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Visa detaljerad information** för en av uppgifterna för jobbet hittar du ytterligare information: bearbetningstid, senaste bearbetningsdatum samt alla fel och varningar som hör till uppgiften.
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 
-När du har kört berikningsprocessen går du till **Mina berikningar** för att granska det totala antalet utökade kunder och en uppdelning av varumärken eller intressen ii de utökade kundprofilerna.
+När du har kört berikningsprocessen går du till **Mina berikningar** för att granska det totala antalet berikade kunder och en uppdelning av varumärken eller intressen ii de berikade kundprofilerna.
 
-:::image type="content" source="media/my-enrichments.png" alt-text="Förhandsgranskning av resultatet efter det att förbättringsprocessen har körts.":::
+:::image type="content" source="media/my-enrichments.png" alt-text="Förhandsgranskning av resultatet efter att processen har körts":::
 
-Du hittar ett diagram med antalet utökade kundprofiler över tid och förhandsgranskningar av de utökade entiteterna. Granska berikade data genom att välja diagrammen **Visa mer** i **Samhörighetsnivån** eller **Share of Voice**. Berikad data för varumärken går till entiteterna **BrandAffinityFromMicrosoft** och **BrandShareOfVoiceFromMicrosoft**. Data för intressen finns i entiteterna **InterestAffinityFromMicrosoft** och **InterestShareOfVosoftMicrosoft**.  Du hittar också de här entiteterna i gruppen **Utökande** i **Data** > **Entiteter**.
+Granska utökad data genom att välja **Visa utökad data** i diagrammet. Berikad data för varumärken skickas till entiteten **BrandAffinityFromMicrosoft**. Data för intressen finns i entiteten **InterestAffinityFromMicrosoft**. Du hittar också de här entiteterna i gruppen **Berikande** i **Data** > **Entiteter**.
 
-## <a name="see-enrichment-data-on-the-customer-card"></a>Visa utökande data på kundkortet
+## <a name="see-enrichment-data-on-the-customer-card"></a>Visa berikande data på kundkortet
 
-Varumärke och intresse SoV kan också visas på enskilda kundkort. Gå till **kunder** och välj en kundprofil. På kundkorten hittar du diagram för varumärket eller kundens intresse SoV baserat på personer i den kundens demografiska profil.
+Varumärkes- och räntetillhörigheter kan också visas på enskilda kundkort. Gå till **kunder** och välj en kundprofil. På kundkortet hittar du diagram för de varumärken eller intressen som personer i den kundens demografiska profil har tillhörighet för.
 
-:::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundkort med förbättrade data.":::
+:::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundkort med berikad data":::
 
 ## <a name="next-steps"></a>Nästa steg
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och till och med [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

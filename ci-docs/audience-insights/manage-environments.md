@@ -1,7 +1,7 @@
 ---
 title: Skapa och hantera miljöer
 description: Läs om hur du registrerar dig för tjänsten och hur du hanterar miljöer.
-ms.date: 12/06/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,63 +9,93 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 8251cac9f95455b61eb0300b6c72cd4ab2969591
-ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.openlocfilehash: 06310ea6fc72f26e21e185a6abcb5d19d4b201f6
+ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "8046355"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6259121"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
 
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
+I den här artikeln beskriver vi hur du skapar en ny organisation och hur du etablerar en miljö.
 
-## <a name="switch-environments"></a>Växla miljö
+## <a name="sign-up-and-create-an-organization"></a>Registrera dig och skapa en organisation
 
-Välj kontrollen **miljö** i det övre högra hörnet av sidan om du vill ändra miljöer.
+1. Gå till [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/) webbplatsen.
 
-:::image type="content" source="media/home-page-environment-switcher.png" alt-text="Skärmbild av kontrollen för att växla miljöer.":::
+2. Välj **Komma igång**.
 
-Administratörer kan [skapa](create-environment.md) och hantera miljöer.
+3. Välj önskat inloggningsscenario och välj motsvarande länk.
 
-## <a name="edit-an-existing-environment"></a>Redigera en befintlig miljö
+4. Godkänn villkoren och välj **Fortsätt** när du vill börja skapa organisationen.
 
-Du kan redigera vissa av detaljerna i befintliga miljöer.
+5. När miljön har skapats omdirigeras du till [Customer Insights](https://home.ci.ai.dynamics.com).
 
-1.  Välj **Miljö**-väljaren i apphuvudet.
+6. Använd demonstrationsmiljön för att utforska appen eller skapa en ny miljö genom att följa stegen i nästa avsnitt.
 
-2.  Välj ikonen **Redigera**.
+7. När du har angett miljöinställningarna väljer du **skapa**.
 
-3. I rutan **Redigera miljö** kan du uppdatera miljöinställningarna.
+8. Du kommer att vara inloggad efter att miljön har skapats.
 
-Mer information om miljöinställningar finns i [Skapa en ny miljö](create-environment.md).
+## <a name="create-an-environment-in-an-existing-organization"></a>Skapa en miljö i en befintlig organisation
 
-## <a name="connect-to-microsoft-dataverse"></a>Anslut till Microsoft Dataverse
-   
-I **Microsoft Dataverse** steget kan du koppla Customer Insights till din Dataverse miljö.
-
-Om du vill använda [färdiga prediktionsmodeller](predictions-overview.md#out-of-box-models), konfigurera datadelning med Dataverse. Du kan också aktivera datainmatning från lokala datakällor, med den Microsoft Dataverse miljö-URL som organisationen administrerar. Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Dataverse-hanterad datasjö.
-
-> [!IMPORTANT]
-> Customer Insights och Dataverse måste finnas i samma region för att kunna dela data.
-
-:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse.":::
+En ny miljö kan skapas på två olika sätt. Du kan antingen ange en helt ny konfiguration, eller också kan du kopiera vissa konfigurationsinställningar från en befintlig miljö.
 
 > [!NOTE]
-> Customer Insights stöder inte följande datadelningsscenarier:
-> - Om du sparar alla data till din egen Azure Data Lake Storage kommer du inte att kunna aktivera datadelning med en Dataverse-hanterad datasjö.
-> - Om du aktiverar datadelning med Dataverse kommer du inte kunna [skapa förutsagda eller saknade värden i en entitet](predictions.md).
+> Organisationer kan skapa *två* miljöer för varje Customer Insights-licens. Om din organisation köper mer än en gång licens [kontakta vårt supportteam](https://go.microsoft.com/fwlink/?linkid=2079641) för att öka antalet tillgängliga miljöer. Mer information om kapacitet och kapacitet för tillägg finns i [Dynamics 365 licensguiden](https://go.microsoft.com/fwlink/?LinkId=866544).
 
-## <a name="copy-the-environment-configuration"></a>Kopiera miljökonfigurationen
+För att skapa en miljö i:
 
-När du skapar en ny miljö kan du välja att kopiera konfigurationen från en befintlig miljö. 
+1. Välj **Miljö**-väljaren i apphuvudet.
 
-:::image type="content" source="media/environment-settings-dialog.png" alt-text="Skärmbild av inställningsalternativen i miljöinställningarna.":::
+1. Välj **Nytt**.
 
-Du ser en lista över alla tillgängliga miljöer i organisationen som du kan kopiera data från.
+   > [!div class="mx-imgBorder"]
+   > ![Miljöinställningar](media/environment-settings-dialog.png)
+
+1. I dialogrutan **Skapa ny miljö** välj **Ny miljö**.
+
+   Om du vill [Kopiera data från den aktuella miljön](#considerations-for-copy-configuration-preview) väljer du **Kopiera från befintlig miljö**. Du ser en lista över alla tillgängliga miljöer i organisationen som du kan kopiera data från.
+
+1. Ange följande information:
+   - **Namn**: Namnet på miljön. Detta fält är redan ifyllt om du har kopierat en befintlig miljö, men du kan ändra det.
+   - **Region**: Den region där tjänsten disribueras och förvaras
+   - **Typ**: Välj om du vill skapa en produktions- eller sandbox-miljö.
+
+1. Alternativt kan du välja **Avancerade inställningar**:
+
+   - **Spara alla data till**: anger var du vill lagra de utflödesdata som genererades från Customer Insights. Du har två alternativ: **Customer Insights-lagring** (en Azure Data Lake som hanteras av Customer Insights-teamet) och **Azure Data Lake Storage Gen2** (din egen Azure Data Lake Storage). Som standard är alternativet för Customer Insights-lagring markerat.
+
+   > [!NOTE]
+   > Genom att spara data i Azure Data Lake Storage godkänner du att data överförs till och lagras på rätt geografiska plats för Azure Storage-kontot, som kan skilja sig från varifrån data lagras i Dynamics 365 Customer Insights. [Läs mer i Microsoft Trust Center.](https://www.microsoft.com/trust-center)
+   >
+   > För närvarande lagras hämtade entiteter alltid i Customer Insights hanterade Data Lake.
+   > Vi stöder endast Azure Data Lake Gen2-lagringskonton från samma Azure-region som du valde när du skapade miljön.
+   > Vi stöder endast Azure Data Lake Gen2 hierarkiska namnrymd (HNS) lagringskonton.
+
+   - För alternativet Azure Data Lake Storage Gen2 kan du välja mellan ett resursbaserat alternativ och ett prenumerationsbaserat alternativ för autentisering. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Namnet på **Behållare** kan inte ändras och blir `customerinsights`.
+   
+   - Om du vill använda [prediktioner](predictions.md), konfigurerar du datadelning med Microsoft Dataverse eller aktiverar datainmatning från lokala datakällor tillhandahåller du Microsoft Dataverse miljö-URL under **Konfigurera datadelning med Microsoft Dataverse och aktiverar ytterligare funktioner**. Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Microsoft Dataverse-hanterad Data Lake.
+
+     > [!NOTE]
+     > - Datadelning med Microsoft Dataverse-hanterad Data Lake stöds för närvarande inte när du sparar alla data i din egen Azure Data Lake Storage.
+     > - [Förutsägelse av saknade värden i en entitet](predictions.md) stöds för närvarande inte när du aktiverar datadelning med Microsoft Dataverse-hanterad Data Lake.
+
+     > [!div class="mx-imgBorder"]
+     > ![Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
+
+   När du kör processer, till exempel datainmatning eller skapande av segment, kommer motsvarande mappar att skapas i det lagringskonto du angav ovan. Datafiler och model.json-filer skapas och läggs till i mappar, beroende på processnamnet.
+
+   Om du skapar flera miljöer av Customer Insights och väljer att spara utdataentiteterna från dessa miljöer i ditt lagringskonto, kommer separata mappar att skapas för varje miljö med ci_<environmentid> i behållaren.
+
+### <a name="considerations-for-copy-configuration-preview"></a>Att tänka på vid kopieringskonfiguration (förhandsgranskning)
 
 Följande konfigurationsinställningar kan kopieras:
 
+- Funktionskonfigurationer
 - Inmatade/importerade datakällor
 - Dataföreningskonfiguration (mappning, matchning, sammanslagning)
 - Segments
@@ -75,26 +105,52 @@ Följande konfigurationsinställningar kan kopieras:
 - Sök och filtrera index
 - Exportmål
 - Schemalagd uppdatering
-- Berikningar
+- Berikning
 - Modellhantering
 - Rolltilldelningar
 
-Följande data kopieras *inte*:
+Följande konfigurationsinställningar kan *inte* kopieras:
 
 - Kundprofiler.
 - Autentiseringsuppgifter för datakälla. Du måste ange autentiseringsuppgifterna för varje datakälla och uppdatera datakällorna manuellt.
-
-- Datakällor från mappen Common Data Model och Dataverse-hanterad datasjö. Du måste skapa dessa datakällor manuellt med samma namn som i källmiljön.
+- Datakällor från Common Data Model-mappen och den Common Data Service-hanterade sjön. Du måste skapa dessa datakällor manuellt med samma namn som i källmiljön.
 
 När du kopierar en miljö visas ett bekräftelsemeddelande om att den nya miljön har skapats. Välj **gå till datakällor** om du vill visa listan över datakällor.
 
 I alla data källor visas statusen **Autentiseringsuppgifter krävs**. Redigera datakällorna och ange autentiseringsuppgifterna för att uppdatera dem.
 
-:::image type="content" source="media/data-sources-copied.png" alt-text="Lista över datakällor som kopierats och som behöver autentisering.":::
+> [!div class="mx-imgBorder"]
+> ![Datakällor som kopierats](media/data-sources-copied.png)
 
 När datakällorna har uppdaterats går du till **Data** > **Förena**. Här hittar du inställningar från källmiljön. Redigera dem efter behov eller välj **kör** om du vill starta föreningsprocessen för data och skapa entiteten för enhetliga kunder.
 
 När dataföreningen är klar, gå till **Mått** och **Segment** för att uppdatera dem.
+
+## <a name="edit-an-existing-environment"></a>Redigera en befintlig miljö
+
+Du kan redigera vissa av detaljerna i befintliga miljöer.
+
+1.  Välj **Miljö**-väljaren i apphuvudet.
+
+2.  Välj ikonen **Redigera**.
+
+3. I rutan **Redigera miljö** kan du uppdatera miljöns **visningsnamn**, men du kan inte ändra **Region** eller **Typ**.
+
+4. Om en miljö är konfigurerad att lagra data i Azure Data Lake Storage Gen2 kan du uppdatera **kontonyckeln**. Du kan emellertid inte ändra **Kontonam** eller namnet för **Behållare**.
+
+5. Alternativt kan du uppdatera från en kontonyckelbaserad anslutning till en resursbaserad eller prenumerationsbaserad anslutning. När du har uppgraderat kan du inte återgå till kontonyckeln efter uppdateringen. Mer information finns i [Ansluta målgruppsinsikter till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto](connect-service-principal.md). Du kan inte ändra informationen **Behållare** när anslutningen uppdateras.
+
+6. Du kan även ange en Microsoft Dataverse miljö-URL under **Konfigurera datadelning med Microsoft Dataverse och aktivera ytterligare funktioner**. Dessa funktioner för datadelning med program och lösningar som bygger på Microsoft Dataverse, datainsamling som lokala datakällor eller användning av [prediktioner](predictions.md). Välj **Aktivera datadelning** för att dela Customer Insights-utdata med en Microsoft Dataverse-hanterad Data Lake.
+
+   > [!NOTE]
+   > - Datadelning med Microsoft Dataverse-hanterad Data Lake stöds för närvarande inte när du sparar alla data i din egen Azure Data Lake Storage.
+   > - [Prediktion av värden som saknas i en entitet](predictions.md) stöds för närvarande inte när du aktiverar datadelning med Microsoft Dataverse-hanterad Data Lake.
+
+   När du har aktiverat datadelning med Microsoft Dataverse startas en fullständig uppdatering av dina datakällor och andra processer. Om processer körs för tillfället visas inte alternativet att aktivera datadelning med Microsoft Dataverse. Vänta tills processerna har slutförts eller avbrutits om du vill aktivera datadelning. 
+   
+   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurationsalternativ för att aktivera datadelning med Microsoft Dataverse.":::
+   
+   När du kör processer, till exempel datainmatning eller skapande av segment, kommer motsvarande mappar att skapas i det lagringskonto du angav ovan. Datafiler och model.json-filer skapas och läggs till i respektive undermappar, beroende på vilken process du kör.
 
 ## <a name="reset-an-existing-environment"></a>Återställa en befintlig miljö
 
@@ -102,19 +158,19 @@ Som en administratör kan du återställa en miljö till ett tomt tillstånd om 
 
 1.  Välj **Miljö**-väljaren i apphuvudet. 
 
-2.  Välj den miljö du vill återställa och välj ellipsen (**...**). 
+2.  Välj den miljö du vill återställa och välj ellipsen **...**. 
 
 3. Välj alternativet **Återställ**. 
 
 4.  Bekräfta borttagningen genom att ange miljönamnet och välj **Återställ**.
 
-## <a name="delete-an-existing-environment"></a>Ta bort en befintlig miljö
+## <a name="delete-an-existing-environment-available-only-for-admins"></a>Ta bort en befintlig miljö (finns endast för administratörer)
 
 Som en administratör kan du ta bort en miljö som du administrerar.
 
 1.  Välj **Miljö**-väljaren i apphuvudet.
 
-2.  Välj den miljö du vill återställa och välj ellipsen (**...**). 
+2.  Välj den miljö du vill återställa och välj ellipsen **...**. 
 
 3. Välj alternativet **Ta bort**. 
 
