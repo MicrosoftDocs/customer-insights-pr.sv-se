@@ -5,16 +5,15 @@ author: m-hartmann
 ms.author: mhart
 ms.date: 09/30/2021
 ms.topic: get-started
-ms.service: customer-insights
 ms.custom: template-trial-setup
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: dc1ea94ad55886c605d27caea031e00964f6f7c8
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 1b50da077cb0584ca9f277b276d0e9ebb46b2c5d
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645513"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350245"
 ---
 # <a name="sign-up-for-a-free-dynamics-365-customer-insights-trial"></a>Registrera dig för en kostnadsfri Dynamics 365 Customer Insights-utvärderingsversion
 
@@ -32,23 +31,12 @@ Utvärderingsversionen tar en stund att ladda, då kan du börja använda appar.
 
 Testmiljön innehåller samma funktioner som den betalda versionen. Följande länkar vägleder dig genom användningen av några av de viktigaste funktionerna.
 
-### <a name="audience-insights"></a>Målgruppsinsikter
-
 - [Snabbstart för målgruppsinsikter.](audience-insights/get-started.md)
 - [Lägg till fler användare och tilldela behörigheter.](audience-insights/permissions.md)
 - [Mata in dina datakällor](audience-insights/data-sources.md) och kör dem genom [samordningsprocessen för data](audience-insights/data-unification.md) för att får [enhetliga kundprofiler](audience-insights/customer-profiles.md).
 - [Utöka de enhetliga kundprofilerna](audience-insights/enrichment-hub.md) eller [kör prediktiva modeller](audience-insights/predictions-overview.md).
 - Skapa [segment](audience-insights/segments.md) för att gruppera kunder och [mått](audience-insights/measures.md) granska KPI:er.
 - Konfigurera [anslutningar](audience-insights/connections.md) och [exporter](audience-insights/export-destinations.md) för att bearbeta underuppsättningar av dina data i andra program.
-
-### <a name="engagement-insights"></a>Engagemangsinsikter
-
-- [Snabbstart för Engagemangsinsikter.](engagement-insights/get-started.md)
-- [Skapa ett arbetsyta](engagement-insights/create-workspace.md) och lägg till medlemmar.
-- [Lägg till kod på webbplatsen](engagement-insights/instrument-website.md) eller [mobilappen](engagement-insights/developer-resources.md#capture-events-from-mobile-apps).
-- Visa en [realtidsrapport](engagement-insights/view-reports.md) eller skapa [anpassade rapporter](engagement-insights/custom-reports.md).
-- [Skapa förfinade händelser](engagement-insights/refined-events.md) för export.
-- [Exportera data](engagement-insights/export-events.md) till Azure Data Lake Storage.
 
 ## <a name="additional-resources"></a>Ytterligare resurser
 

@@ -1,446 +1,351 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 11/02/2020
-ms.service: customer-insights
+ms.date: 03/02/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 07b4bee0445f9cd7d53a37cd405af839feb07ae3
-ms.sourcegitcommit: 4004eadac7a65e50e0a409cb925958523c2b6348
+ms.openlocfilehash: 667a984f1a2287456f4e6324eafe628fba957bf5
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "4650026"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232726"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Vi är glada över att kunna meddela våra senaste uppdateringar! Denna artikel sammanfattar funktioner för allmänt tillgänglig förhandsversion, förbättringar av allmän tillgänglighet och funktionsuppdateringar. Om du vill se de långsiktiga funktionsplanerna, se [utgivningsplaner för Dynamics 365 och Power Platform](https://docs.microsoft.com/dynamics365/release-plans/).
 
-Du kan också titta på följande video om du vill veta mer om de funktioner som har planerats för de senaste sex månaderna.
-
-> [!VIDEO https://www.youtube.com/embed/jQh-7pscH30]
+Vi är glada över att kunna meddela våra senaste uppdateringar! Denna artikel sammanfattar funktioner för allmänt tillgänglig förhandsversion, förbättringar av allmän tillgänglighet och funktionsuppdateringar. Om du vill se de långsiktiga funktionsplanerna, se [utgivningsplaner för Dynamics 365 och Power Platform](/dynamics365/release-plans/).
 
 Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner före andra. Om inget annat anges behöver du inte vidta några åtgärder så uppdateras appen automatiskt utan driftsavbrott.
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
-## <a name="november-2020-updates"></a>Uppdateringar i november 2020
 
-Uppdateringarna i november 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+## <a name="january-2022-updates"></a>Uppdateringar januari 2022
 
-### <a name="new-and-updated-features-in-november-2020"></a>Nya och uppdaterade funktioner i november 2020
+Uppdateringarna i januari 2022 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
 
-#### <a name="data-enrichment"></a>Databerikande
+### <a name="sentiment-analysis-of-your-customers-feedback"></a>Attitydanalys av din kunds feedback
 
-- **Ta med egna berikande data via anpassad SFTP-import (Secure File Transfer Protocol)**
-  
-  Anpassad SFTP-import gör det möjligt att importera berikande data som inte behöver gå igenom dataförening. Läs mer om anpassad FTP-import.
+Customer Insights innehåller en ny AI-driven funktion som kan syntetisera kundattityder och identifiera specifika affärsaspekter som affärsmöjligheter för målinriktade förbättringar. Genom att analysera den skriftliga feedbacken från dina kunder kan du få korrekta insikter till låg kostnad. Attitydanalys med NLP-modeller (Natural Language Processing) som genererar två härledda insikter för varje kund-ID. En attitydpoäng (från –5 till 5) och en lista över tillämpliga affärsaspekter. 
 
-  Mer information finns i [Berika kundprofiler med anpassade data (förhandsversion)](enrichment-SFTP-custom-import.md).
- 
-- **Berika dina kunddata med platsdata från HERE Technologies**
-
-  Med HERE Technologies databerikande tjänster kan du få en mer exakt förståelse för kundens plats, med adress, latitud och longitud och så vidare. Läs mer om hur du berikar med HERE Technologies.
-
-  Mer information finns i [Berika kundprofiler med HERE Technologies](enrichment-here.md).
-
-#### <a name="data-unification"></a>Dataförening
-
-- **Flexibilitet för att aktivera dataprofilering på utvalda entiteter och fält från ditt lagringskonto**
-
-  Du kan ange vilka dataentiteter och fält från en Common Data Model-mapp i ditt Azure Data Lake-lagringskonto du vill aktivera dataprofilering för som en del av datainmatningsprocessen.
-
-  Mer information finns i [Ansluta till en Common Data Model-mapp](connect-common-data-model.md#connect-to-a-common-data-model-folder).
-
-#### <a name="extensibility"></a>Utbyggbar
-
-- **Aktivera dina segment via Google Ads**
-
-  Exportera segment till Google Ads målgruppslista och använd listan för att annonsera i Google Sök, Googles Display-nätverk, YouTube och Gmail. Läs mer om hur du aktiverar dina segment via Google Ads.
-
-  Mer information finns i [Anslutningsprogram för Google Ads](export-google-ads.md).
-
-- **Aktivera dina segment via Marketo**
-
-  Exportera segment till Marketo-målgrupper och använd dessa målgrupper för automatiserad marknadsföring. Läs mer om hur du aktiverar dina segment via Marketo. 
-
-  Mer information finns i [Anslutningsprogram för Marketo](export-marketo.md).
-
-- **Aktivera dina segment via DotDigital**
-
-  Exportera segment till DotDigital och använd dem i marknadsföringssyfte. Läs mer om hur du aktiverar dina segment via DotDigital. 
-
-  Mer information finns i [Anslutningsprogram för DotDigital](export-dotdigital.md).
-
-#### <a name="predictions"></a>Prediktioner
-
-- **Förutsäga transaktionell omsättning**
-
-  Förutsägelse av transaktionell omsättning gör det möjligt för dig att, utan hjälp av en datavetare, förutsäga sannolikheten för att en kund slutar köpa produkter eller tjänster.  Med hjälp förutsägelsepoängen kan du kombinera annan information om dina kunder, som kundvärde, för att skapa segment av hög omsättningsrisk eller kunder med högt värde. Använd det här segmentet för att direkt rikta in dig på kunder genom marknadsföringsaktiviteter, kundsupport och andra scenarier för att minska omsättningsrisken.
- 
-  Konfigurera definitionen av omsättning som ett tidsbaserat fönster som är specifikt för ditt företag och definiera när kunder anses vara omsatta. Till exempel, en livsmedelsbutik kanske vill se en kund som omsatt om de inte har köpt något under de senaste 30 dagarna.
- 
-  När du fortsätter att skapa förutsägelsen guidar vi dig genom vilka data som behövs och gör det möjligt för dig att mappa data om ditt företag till fält som krävs för att förutsäga omsättning för dina kunder. Du kan också ange ett schema för att omskola modellen baserat på ny information i ditt system för att anpassa sig till förändrade affärsmässiga omständigheter.
- 
-  Mer information finns i [Förutsägelse av transaktionell omsättning (förhandsversion)](predict-transactional-churn.md).
-
-#### <a name="system-administration"></a>Systemadministration
-
-- **Återställ miljö**
-
-  Återställ allt i en miljö av en vald instans för att börja om från början.
-
-  Mer information finns i [Återställ en befintlig miljö](manage-environments.md#reset-an-existing-environment).
+Mer information finns i [Analysera attityd i kundfeedback (förhandsversion)](sentiment-analysis.md).
 
 
-- **Ansluta till ditt Azure Data Lake-lagringskonto med hjälp av ett huvudkonto för tjänsten**
+## <a name="december-2021-updates"></a>Uppdateringar i december 2021
 
-  Skriv datautdata till och läsa data från ditt lagringskonto med hjälp av ett huvudkonto för Azure-tjänsten. Befintliga anslutningar för lagringskonto kan fortsätta att använda kontonyckeln. De erbjuder också ett uppgraderingsalternativ för att använda huvudkontot för tjänsten i framtiden. Nya anslutningar kommer att baseras på autentiseringsmetoden för ditt lagringskonto.
+Uppdateringarna i december 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
 
-  Mer information finns i [Ansluta till ett Azure Data Lake Storage Gen2-konto med Azure-tjänstens huvudkonto för målgruppsinsikter](connect-service-principal.md).
+### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Vidarebefordra Customer Insights-loggar till Azure Monitor
 
-## <a name="october-2020-updates"></a>Uppdateringar i oktober 2020
+Customer Insights ger en direkt integrering med Azure Monitor. Den här funktionen omfattar granskningshändelser och verksamhetshändelser. Azure Monitor resursloggar gör att du kan övervaka och skicka loggar till Azure Storage, Azure Log Analytics eller strömma dem till Azure händelsehubben.
 
-Uppdateringarna i oktober 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+Mer information finns i [Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsversion)](diagnostics.md).
 
-### <a name="new-and-updated-features-in-october-2020"></a>Nya och uppdaterade funktioner i oktober 2020
+### <a name="enrich-customer-profiles-with-engagement-data"></a>Utöka kundprofiler med data från kontaktdata
 
-#### <a name="extensibility"></a>Utbyggbar
+Använd data från Microsoft Office 365 för att utöka dina kundkontoprofiler med insikter om åtaganden via Office 365 appar. Kontaktdata består av e-post- och mötesaktiviteter som samlas in på kontonivån. Till exempel antalet e-postmeddelanden från ett affärskonto eller antalet möten med kontot. Inga data om enskilda användare delas. Den här berikningen finns i följande regioner, Storbritannien, Europa och Nordamerika.
 
-- **Export till MailChimp**
+Mer information finns i [Berika kundprofiler med kontaktdata (förhandsversion)](enrichment-office.md).
 
-Exportera segment till befintliga målgruppslistor i Mailchimp för att ge en personlig e-postupplevelse för dina kunder.
+### <a name="advanced-data-unification-features"></a>Avancerade funktioner för samordning av data
 
-Mer information finns i [Anslutningsprogram för Mailchimp](export-mailchimp.md).
+#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Aktivera konfliktlösningsprinciper på enskild attributnivå
 
-#### <a name="data-enrichment"></a>Databerikande
+När du deduplicerar kundregister inom en enhet kanske du inte vill behöva välja en fullständig post som vinnare. Nu kan du koppla de bästa fälten från olika poster utifrån regler för varje attribut. Du kan till exempel välja att behålla den senaste e-postadressen OCH den mest fullständiga adressen från olika poster. 
 
-- **Deduplicera källposterna i en matchningsentitet**
-
-Ange dedupliceringsregler på entiteter som används i matchningsprocessen för att identifiera dubblettposter. Sammanfoga dem till en post och länka alla källposter till den här sammanslagna posten. Den här deduplicerade posten används sedan i den entitetsöverskridande matchningsprocessen.
+Nu kan du definiera separata kopplade regler för enskilda attribut samtidigt som du inaktiverar och kopplar poster inom en enskild entitet. Tidigare kunde du bara välja en enskild kopplingsregel (hålla poster baserade på korrekt data slutförda) och den regeln tillämpas på postnivån på alla attribut. Det är inte bra om en del av de data du vill behålla finns i post A och andra bra data som finns i post B.
 
 Mer information finns i [Definiera deduplicering på en matchningsentitet](match-entities.md#define-deduplication-on-a-match-entity).
 
-#### <a name="system-administration"></a>Systemadministration
+#### <a name="custom-rules-for-matching"></a>Anpassade regler för matchning
 
-- **Orkestrering: Nytt uppdateringsalternativ i sammanslagning**
+Det finns tillfällen då du måste ange ett undantag till allmänna regler för att INTE matcha poster. Detta kan inträffa om flera personer delar tillräckligt med information så att systemet matchar dem som enskilda personer. Till exempel tvillingar med samma efternamn, som bor i samma stad och delar födelsedatum.
 
-Fram till idag, när du kör sammanslagningsprocessen, körde systemet alla de nedströmsprocesser som är beroende av sammanslagning och efterföljande processer. Du kan nu verifiera utdata för sammanfogningsprocessen (den enhetliga kundentiteten) innan du använder den i nedströmsbearbetning som segment eller mått.
-På sidan för sammanslagning kan du nu välja att endast köra sammanslagningssteget och endast köra den här processen. Om du vill uppdatera alla nedströmsprocesserna också kan du välja att köra sammanslagning och nedströmsprocesser. 
+Med undantag säkerställs att felaktiga data kan åtgärdas i reglerna. Du kan lägga till flera undantag för en regel.
 
-## <a name="september-2020-updates"></a>Uppdatering i september 2020
+Mer information finns i [Lägg till undantag till en regel](match-entities.md#add-exceptions-to-a-rule).
 
-Uppdateringarna i september 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>Tillhandahåll ytterligare konfliktlösningsprinciper och aktivera gruppering av attribut
 
-### <a name="new-and-updated-features-in-september-2020"></a>Nya och uppdaterade funktioner i september 2020
+Med den här funktionen kan du skapa en grupp fält som en enskild enhet. Till exempel om våra poster innehåller fälten Adress1, Adress2, Ort, Delstat och Postnummer. Troligtvis vill vi inte koppla ihop Adress 2 i en annan post, eftersom vi tror att det skulle göra våra data mer fullständiga.
 
-#### <a name="activities"></a>Aktiviteter
+Nu kan du kombinera en grupp med relaterade fält och använda en enskild kopplingsprincip för gruppen. 
 
-- **Intelligent prediktion av attributsemantik**
-
-Den nya funktionen förutsäger de semantiska typer av indatavärden som skickas till dataföreningsprocessen. Den använder maskininlärningsmodeller som förbättrar precisionen och sparar tid.
-
-#### <a name="enrichments"></a>Berikningar
-
-- **Demografisk berikning från Experian**
-
-Den demografiska berikningen av Experian finns nu tillgänglig för förhandsgranskning. Experian är en global ledare inom konsument- och affärskreditrapportering och marknadsföringstjänster. Med [Experians databerikningstjänster](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage) kan du skapa en djupare förståelse för dina kunder genom att berika dina kundprofiler med demografiska uppgifter som hushållsstorlek, inkomst och mer.
-
-Om du vill använda den här funktionen måste du ha en aktiv Experian-prenumeration.
-
-Mer information finns i [utöka kundprofiler med demografisk information från Experian](enrichment-experian.md)
+Mer information finns i [Kombinera en grupp fält](merge-entities.md#combine-a-group-of-fields).
 
 
-#### <a name="system-administration"></a>Systemadministration
+## <a name="november-2021-updates"></a>Uppdateringar i november 2021
 
-- **Fönstret uppgiftsinformation**
+Uppdateringarna i november 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
 
-Med fönstret uppgiftsinformations kan du visa information om uppgifter som systemet kör. Det är ett praktiskt sätt att identifiera problem med konfigurations- och söklösningar.
-Läs om hur du åtgärdar potentiella problem i felmeddelandena.
+### <a name="segment-membership-now-available-in-dataverse"></a>Nu är segmentmedlemskapet tillgängligt i Dataverse
+
+Information om segmentmedlemskap för kundprofiler finns nu tillgänglig Dataverse tillsammans med kundprofilerna och insikterna. Dynamics 365-åtgärdsappar och modellstyrda appar kan använda den här informationen när du söker efter information om segmentmedlemskap för en viss kund.
+
+### <a name="activities-support-contact-level-details-for-business-accounts"></a>Aktiviteter stöder kontaktnivåinformation för företagskonton
+
+Nu kan du konfigurera, visa och filtrera aktiviteter för kontakter i tidslinjen för din affärskontoaktivitet för att få en bättre bild av vilka kontokontakter som deltog i specifika aktiviteter.
+
+## <a name="october-2021-updates"></a>Uppdateringar i oktober 2021
+
+Uppdateringarna i oktober 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="b-to-b"></a>B2B
+
+Från och med oktober 2021 kan du arbeta med affärskonton och deras relaterade kontakter i Customer Insights. Tidigare har appen främst skräddarsytts för enskilda användare. Flera funktionsområden har uppdaterats för att stödja B2B-scenarier utöver den nya miljötypen. En översikt över B2B-funktioner som stöds finns i [Arbeta med affärskonton i målgruppinsikter](work-with-business-accounts.md).
+
+I följande avsnitt framhävs några av de viktigaste områdena som har anpassats för att stödja verksamhetskonton och enskilda åtgärder.
+
+#### <a name="export-segments-based-on-business-accounts"></a>Exportera segment utifrån affärskonton
+
+Alla segmentexporter i målgruppinsikter är tillgängliga när det gäller affärskonton. De flesta segmentexporter kräver extra konfigurations- och [kontaktinformation som projiceras](segment-builder.md#create-a-new-segment) i de underliggande segmenten för att kunna användas för affärskonton. Mer information finns i [Exportera segments](export-destinations.md#export-segments).
+
+#### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>Använd export av LinkedIn-annonser med affärskonton
+
+Exporten av LinkedIn-annonser kan nu göras tillgänglig för målgruppsanpassning för kontakter och företag i samband med affärskonton. När du väljer målgrupp för företag som primärt fokus i LinkedIn-exporten kan du exportera segment som bygger på affärskonton utan att det krävs någon projektkontaktinformation. Mer information finns i dokumentet om [export av LinkedIn-annonser](export-linkedin-ads.md) och skillnaden mellan [kontaktanpassning](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) och [företagsanpassning](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). 
+
+#### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Skapa åtgärder utifrån affärskonton och deras hierarki
+
+Med måttverktyget kan du skapa mått runt affärskonton och om du vill kan du använda hierarkiinformationen. Hierarkiinformation används för att skapa en måttberäkning för ett konto och alla dess relaterade underkonton. Du kan till exempel skapa mått som totalintäkt för varje grupp affärskonton som identifieras med hjälp av deras hierarki. Mer information finns i [Definiera och hantera mått](measures.md).
+
+#### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Skapa segment utifrån affärskonton och deras hierarki
+
+Med segmentverktyget kan du skapa segment av affärskonton som eventuellt innehåller kontaktinformation för varje konto i ett segment. Om du har ställt in kontohierarkin kan du använda kontohierarkiinformation när du skapar ett segment. Mer information finns i [Skapa ett nytt segment](segment-builder.md#create-a-new-segment).
+
+#### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Behåll dina affärskonton med djupare insikter för deras förakt
+
+Nu har prediktionsmodell för kundomsättning också stöd för affärskonton. Du kan utvärdera risken för att det inte bara gäller ett konto utan även för en kombination av ett konto och en produkt eller tjänstkategori som de köper från dig. Detta gör det lättare att förstå om det är troligare att ett konto slutar köpa från dig i allmänhet eller bara för en viss kategori varor eller tjänster. För att ytterligare hjälpa dig att använda den här AI-modellen anger den också orsaker till varför ett konto sannolikt kommer att förlora. Mer information finns i [Prediktion av transaktionsomsättning (förhandsversion)](predict-transactional-churn.md).
+
+#### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Visa kontakter för ett affärskonto i kundvyn
+
+Om affärskonton är mappade till relaterade konton visas dessa relaterade kontakter i appen Customer Insights som en del av vyn med kundinformation. Mer information finns i [Kundprofiler](customer-profiles.md).
+
+
+## <a name="september-2021-updates"></a>Uppdatering i september 2021
+
+Uppdateringarna i september 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="activities"></a>Aktiviteter
+
+- **Förbättringar av aktivitetstidsvyn** Vi har utökat filtren för aktivitetstidslinjen för kundprofiler. Dessutom kan du använda det nya filtret för att filtrera efter aktivitetstyp och datum. Datum kan filtreras under andra villkor. Mer information finns i [Visa tidslinjer för aktiviteter för kundprofiler](activities.md#view-activity-timelines-on-customer-profiles).
+
+### <a name="relationships"></a>Relationer
+
+- **Stöd för multi-hop-relation** Använd multi-hop relationer när du konfigurerar aktiviteter och definierar relationer mellan enheter. Multi-hop relationships använda en mellanliggande entitet för att ansluta två enheter. När du konfigurerar en aktivitet kan du använda en multi-hop-relation för att ansluta aktivitetsentiteten till en mellanliggande entitet och sedan till en kundentitet. Du kan kombinera flera multi-hop-relationer med relationer med flera vägar. Mer information finns i [Multi-hop-relation](relationships.md#multi-hop-relationship).
+
+- **Stöd för relation med flera vägar** Använd relation med flera vägar när du konfigurerar aktiviteter och definierar relationer mellan enheter. Relationer med flera vägar relaterar en källentitet till fler än en entitet. När du konfigurerar en aktivitet kan du använda en relation med flera vägar för att ansluta aktivitetsentiteten till mer än en kundentitet. Du kan kombinera relationer med flera vägar med multi-hop-relationer. Mer information finns i [relationer med flera vägar](relationships.md#multi-path-relationship).
+
+## <a name="august-2021-updates"></a>Uppdatering augusti 2021
+
+Uppdateringarna i juli och augusti 2021 innehåller en ny funktion, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="extensibility"></a>Utbyggbar
+
+- **Exportera segment till Klaviyo** Vi har utökat våra [exportmål till att omfatta Klaviyo](export-klaviyo.md). Du kan nu exportera segment i syfte att skapa kampanjer, bedriva e-postmarknadsföring samt använda specifika kundgrupper med Klaviyo. 
+
+
+## <a name="june-2021-updates"></a>Uppdatering i juni 2021
+
+Uppdateringarna i juni 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="data-ingestion"></a>Datainsamling
+
+- **Förbättrade förloppsuppdateringar för datasamordning** Du kan nu visa mer detaljerade och förbättrade dynamiska statusuppdateringar i stegen för [datasamordningsprocess](data-unification.md). Med den här funktionen kan du hålla reda på det detaljerade förloppet i syfte att förstå processflödet och vidta åtgärder om några steg behöver uppmärksammas.
+
+### <a name="extensibility"></a>Utbyggbar
+
+- **Exportera segment och andra data till Salesforce Marketing Cloud** Vi har utökat våra exportmål till att omfatta [Salesforce Marketing Cloud](export-salesforce.md). Du kan nu exportera segment och andra typer av data till Salesforce Marketing Cloud via en märkt SFTP-export . Dataimport kan automatiseras helt i Salesforce och användas för att skapa effektivare marknadsföringskampanjer.  
  
-- **Bearbeta information som lagts till ytterligare sidor**
-
-Den här förbättringen lägger till information om status för entiteterna på sidan **entiteter** och **kunder**.
+- **Exportera segment till ActiveCampaign** Vi har utökat våra exportmål till att omfatta [Active Campaign](export-active-campaign.md). Du kan nu exportera segment i syfte att generera kampanjer, köra e-postmarknadsföring och arbeta med specifika kundgrupper i ActiveCampaign.
  
-Dessutom hittar du information om processernas status tillsammans med uppgiftsinformationen på båda sidorna.
-
-- **Förbättringar av sidan systemstatus**
-
-Vi förbättrade strukturen i statusinformationstabellen för **System** > **Status** när du granskar dataexporten.
+- **Exportera segment till Sendinblue** Vi har utökat våra exportmål till att omfatta [Sendinblue](export-sendinblue.md). Du kan nu exportera segment i syfte att generera kampanjer, köra e-postmarknadsföring och arbeta med specifika kundgrupper med Sendinblue.
  
-Dessutom är fel i kolumnen **detaljer** mer detaljerade och åtgärdsbara. 
+### <a name="ux-updates"></a>UX--uppdateringar 
+
+- **Ny och förbättrad kundsida och sida för profilinformation** Vi har gjort om vår kundsida och sidan för profilinformation i syfte att kunna erbjuda bättre användarupplevelse och bättre prestanda. Med dessa ändringarna kan du visa, sortera, söka och filtrera kunder. Filter representeras nu i webbadressen för att sömlöst dela sökresultaten med andra användare. Sökresultat kan också sparas som ett segment.    
+  Informationssidan för kundprofiler grupperar nu data i olika underavsnitt, till exempel demografisk information, ID och andra profilattribut för bättre läsbarhet. Andra avsnitt på sidan med profilinformation är nu mer interaktiva. I avsnittet med aktiviteter tillåts exempelvis nu filtrering och sortering.
+
+
+## <a name="may-2021-updates"></a>Uppdateringar maj 2021
+
+Uppdateringarna i maj 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="data-ingestion"></a>Datainsamling
+
+- **Visa eller ändra metadata eller entitetsdefinition när du bifogar data från din Azure Data Lake Storage** Du kan nu visa och redigera metadata- eller entitetsdefinition i målgruppsinsikter när du bifogar data från en Common Data Model i Azure Data Lake Storage. Den här funktionen ger feedback i realtid, modellvalidering och felkontroll. Det låter dig redigera både model.json och manifest.json sömlöst.
+
+### <a name="extensibility"></a>Utbyggbar
+
+- **Förbättrad segmentexport, anpassat schema och duplicering** Du kan nu [se alla exporter för ett visst segment](export-destinations.md#view-exports-and-export-details) i en lista. Den här nya vyn hjälper till att hantera hur ett visst segment används och anpassa befintlig eller skapa ny export.    
+  Du kan [definiera anpassade uppdateringsscheman](export-destinations.md#schedule-and-run-exports) för enskilda exporter eller flera exporter samtidigt. Hittills har all export körts med varje systemuppdatering.    
+  I stället för att skapa en ny export från grunden kan du börja baserat på en befintlig för att spara lite tid.
+
+- **Exportera segment till Microsoft Advertising** Nu har exportmålen utökats till att omfatta Microsoft Advertising. Skapa Customer Match-målgrupper i Microsoft Advertising med dina enhetliga kundprofildata, och använd målgrupperna för dina kampanjer och annonser. Mer information finns i [Exportera segment till Microsoft Advertising](export-microsoft-advertising.md).
+
+- **Exportera segment till LinkedIn Ads** Vi har utökat våra exportdestinationer till att omfatta LinkedIn Ads och gör det möjligt för dig att låsa upp kontaktinriktning och företagsinriktning via LinkedIn genom att exportera dina enhetliga kundprofildata. Mer information finns i [Exportera segment till LinkedIn Ads](export-linkedin-ads.md).
+
+
+- **Exportera segment till Omnisend** Nu har exportmålen utökats till att omfatta Omnisend. Använd segmenten som skapas i målgruppsinsikter för att generera kampanjer, skapa e-postmarknadsföring och dra nytta av specifika kundgrupper med Omnisend. Mer information finns i [Exportera segment till Omnisend](export-omnisend.md)
+
+### <a name="predictions"></a>Prediktioner
+
+- **Användbarhetsrapport för indata** Rapporten om användbarhet av indata ger en konsoliderad vy över de fel och varningar som dina färdiga förutsägelser kan generera. Det ger också rekommendationer om hur man förbättrar modellens prestanda.    
+  Rapporten är tillgänglig när en modell har slutfört sin utbildningsprocess. Den skapas för varje modell separat, oavsett om den har slutförts eller inte.
+  För närvarande fungerar den här funktionen bara för transaktionsomsättningsmodellen. Mer information finns i [Användbarhetsrapport av indata](manage-predictions.md#input-data-usability-report).
+
+### <a name="relationships"></a>Relationer
+
+- **Relationsvisualisering** Vyn i relationsvisualiseraren låter dig se alla befintliga relationer mellan entiteter och deras kardinalitet. Relationer ordnas nu i grupper: användarskapade, system och ärvda relationer. Du kan också exportera en vy som en bild. Mer information finns i [Visa relationer](relationships.md#view-relationships). 
+
+## <a name="april-2021-updates"></a>Uppdatering april 2021
+
+Uppdateringarna i april 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="data-unification"></a>Dataförening
  
-- **Avbryt återställer jobb till tidigare tillstånd**
-
-När du avbryter en uppgift, till exempel i matchningsprocessen, kommer den att återgå till det senaste tillståndet. Om matchningsprocessen till exempel slutförts i igår och du avbryter den i dag, återgår den till förfaller i igår.
-
-
-## <a name="august-2020-updates"></a>Uppdatering augusti 2020
-
-Uppdateringarna i augusti 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="new-and-updated-features-in-august-2020"></a>Nya och uppdaterade funktioner i augusti 2020
-
-#### <a name="data-unification"></a>Dataförening
-
-- **Förbättrade funktioner för kartskedet under dataförening**
-
-  Med upplevelsen för kartsteget i dataföreningsprocess kan du välja entiteter, attribut och definiera semantiskt på ett mer sömlöst sätt.
-
-  Ändringar inkluderar:
+- **Förbättrad koppling av data**    
   
-  - färre interaktioner som krävs för att lägga till entiteter och fält
-  - förbättrade sökfunktioner på mappningssidan
-  - visuell och enkel identifiering av den föreslagna fälttypen
+   Nu får vi en bättre användarupplevelse när det gäller att sammanfoga konfigurationen av datakonfigureringen. Ändringarna omfattar intuitiv ordning på de kopplade fälten och detaljerad statistik om kombinerade fält och enskilda fält.
 
-#### <a name="enrichment"></a>Berikning
+- **Entitetsordning och konfiguration av alla källposter i entiteten Kund**  
+      
+   Du kan nu ordna om och ta bort enheter från en befintlig sammanslagningsplan i dataföreningsprocessen. Det ger flexibilitet att ändra ordningen på entiteterna i matchningsprocessen efter företagets behov. Dessutom aktiverar vi att alla icke-matchande poster inkluderas i den slutliga entiteten *Kund*, där de kan definiera sin kundprofil datauppsättning definition.
 
-- **Intressetillhörigheter som är tillgängliga på ytterligare marknader**
+### <a name="enrichments"></a>Berikningar
 
-  Vi utökar tillgängligheten av intressetillhörigheter bortom USA och fem ytterligare marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du utöka dina kunddata med ytterligare intressen som gäller för dessa marknader. Vi ska också berika dina kundprofiler som finns på dessa marknader med hjälp av lokala patentskyddade data från Microsoft Graph.
-  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md)
-
-
-## <a name="july-2020-updates"></a>Uppdatering i juli 2020
-
-Uppdateringarna i juli 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="new-and-updated-features-in-july-2020"></a>Nyheter och uppdaterade funktioner i juli 2020.
-
-#### <a name="extensibility"></a>Utökningsbarhet
-
-- **Power Automate utlöser slutförd föreningsprocess**
-
-  Vi har utökat våra utlösare för Power Automate och du kan skapa ett meddelande eller en åtgärd när en uppdatering av föreningsprocessen (mappa, matcha, slå samman) har slutförts.    
-  Mer information finns i [Power Automate anslutningsprogram](export-power-automate.md)
-
-#### <a name="enrichment"></a>Berikande
-
-- **Berikning av samhörigheter med varumärke som är tillgängliga på ytterligare marknader**
-
-  Vi utvidgar tillgängligheten av samhörigheter med varumärke bortom USA och ytterligare fem marknader: Kanada, Australien, Storbritannien, Frankrike och Tyskland. Med det här tillägget kan du utöka dina kunddata med lokala varumärken på dessa marknader. Vi ska också berika dina kundprofiler som finns på dessa marknader med hjälp av lokala patentskyddade data från Microsoft Graph.
-  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md)
-
-## <a name="june-2020-updates"></a>Uppdatering i juni 2020
-
-Uppdateringarna i juni 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="new-and-updated-features-in-june-2020"></a>Nyheter och uppdaterade funktioner i juni 2020.
-
-#### <a name="enrichment"></a>Berikande
-
-- **Berikning av företagsdata från Leadspace**
+ - **Ny berikning: utökade adresser**    
   
-  Definiera fält i enhetliga kundprofiler som används för att slå upp relaterade företagsdata från Leadspace. När du har kört berikningsprocessen har B2B-profiler ökats med ytterligare attribut, bland annat företagsstorlek, plats, bransch och mycket mer.    
-  Det här samarbetet gör det möjligt att förbättra kvaliteten på dina data med indata från tjänster från tredje part. Om du vill använda denna berikning måste du ha en licens från Leadspace för att få tillgång till B2B-företagsdata. Systemet kommer att använda den licensen så att dina data berikas kontinuerligt.    
-  Mer information finns i [Berika företagsprofiler med Leadspace](enrichment-leadspace.md).
+   Vi är glada för att kunna införa ett nytt utökande för att förbättra adresser i dina kunddata. Adresser i dina data kan vara oadresserade, ofullständiga eller felaktiga. Denna funktion använder Microsoft-modeller kan du normalisera och utöka adresserna i formatet Common Data Model för bättre precision och insikter.
+ 
+   Mer information finns i [Utöka kundprofiler med förbättrade adresser](enrichment-enhanced-addresses.md).
 
-- **Sidan för berikningsnav**
-
-  Alla tillgängliga data som framställs av tredjepartsleverantörer från första och tredje part konfigureras på samma plats. Konfigurering av databerikning är en sömlös upplevelse som hanteras från en gemensam plats.    
-  Mer information finns i [berikning av kundprofiler](enrichment-hub.md).
-
-- **Särskild berikning av samhörigheter med varumärke och intresse**
-
-  Samhörigheter med varumärke och intresse är nu tillgängliga som två oberoende berikningar. Separerade berikningar ger flexibiliteten att konfigurera och hantera dem individuellt, beroende på dina affärskrav eller behov.    
-  Mer information finns i [berika kundprofiler med samhörigheter med varumärke och intresse](enrichment-microsoft-graph.md).
-
-#### <a name="extensibility"></a>Utökningsbarhet
-
-- **Klickbara URL-adresser för enhetliga aktiviteter på kundkorttillägget för Dynamics 365**
-
-  De enhetliga aktiviteterna i tillägget Customer Card visar nu klickbara URL:er om sådana URL:er har definierats under konfigurationen av aktiviteter.    
-  Mer information finns i [Tillägg för kundkort](customer-card-add-in.md).
-
-- **Samhörigheter med varumärke och intresse som är tillgängliga på kundkortstillägget för Dynamics 365**
-
-  Med en ny kontroll på kundkortstillägget för Dynamics 365 kan du visa dina kontakters berikningar av varumärke och intresse i appar för kundengagemang i Dynamics 365.    
-  Mer information finns i [Tillägg för kundkort](customer-card-add-in.md).
-
-- **Ytterligare Power Automate utlösare**
-
-  Vi har utökat våra utlösare för Power Automate och lagt till följande utlösare:
-  - Hämta ett meddelande eller utföra en åtgärd när en automatisk fullständig uppdatering (datakällor, sammanslagning, segment, mått, export) har slutförts
-  - Definiera ett tröskelvärde för ett affärsmått. Du kan till exempel skapa ett meddelande som skickas när det angivna tröskelvärdet passeras. Dessutom ger utlösaren information som gör det möjligt att bygga upp mer komplexa arbetsflöden i Power Automate.    
-  Mer information finns i [Power Automate anslutningsprogram](export-power-automate.md)
-
-- **Exportera till Facebook Ads Manager**
+- **Guidad konfigurationsupplevelse för utökande**    
   
-  Med den här funktionen kan du exportera segment till Facebook Ads Manager. Segment exporteras som anpassade målgrupper för att använda enhetliga kundprofiler i marknadsföringskampanjer och annonser på Facebook. De anpassade målgrupperna kan också användas för att skapa kampanjer på Instagram via Facebook Ads Manager.    
-  Mer information finns i [anslutningsprogram för Facebook Ads Manager](export-facebook.md).
+   Vi förde fram konfigurationsupplevelsen för förbättringar med en enkel, guidad upplevelse. Nu har du en tydlig steg-för-steg-process för att skapa och redigera berikningar.
+ 
+   Dessutom separerade vi konfigurationen av anslutningar för tillägg från tredje part för att göra det möjligt att använda samma anslutning vid flera tillägg. Endast administratörer kan konfigurera nya anslutningar, men de skapade anslutningarna är alltid tillgängliga för både administratörer och deltagare.    
+
+   Mer information finns i [Anslutningsöversikt](connections.md).
+
+- **Flera berikningar av samma typ**    
+  
+   Nu tillåter vi användare att skapa och hantera flera berikningar av samma berikningstyp. Nu kan du till exempel skapa två separata adressberikningar för att utöka två olika kundsegment. Gränser gäller för hur många berikningar av samma typ som kan skapas och varierar beroende på berikningstyp.
+  
+   Mer information finns i [berikning av kundprofiler](enrichment-hub.md).
+
+## <a name="march-2021-updates"></a>Uppdateringar i mars 2021
+
+Uppdateringarna i mars 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="activities"></a>Aktiviteter
+
+- **Aktivitetsguiden och typer av aktivitetstyper**
+
+   Vi har nu förbättrat och uppdaterat vår aktivitetsmappningserfarenhet för att vägleda och förenkla skapandet av aktivitetsmappning. I den här nya upplevelsen får användarna en guidad upplevelse som hjälper dig att slutföra varje steg i processen. Vid aktivitetsmappningssteget kan användaren, förutom att välja bland många aktivitetstyper, välja att semantiskt mappa data för *Prenumeration* och/eller *SalesOrderLine* till branschstandardscheman, som kan användas för nedströmsförbrukning.   
+
+   Mer information finns i [Kundaktiviteter](activities.md).
+
+### <a name="data-ingestion"></a>Datainsamling
+
+- **Anslut till lokala datakällor med Power Platform dataflöden och gateways** Vi ser fram till att kunna presentera förhandsgranskning av Power Platform dataflöden och lokal anslutning via gateways i Customer Insights med en associerad Power Platform eller Dataverse miljö. Alla nya datakällor som skapas i en Customer Insights-miljö med en länkad Dataverse-miljö kommer att standardinställas till Power Platform dataflöden och ta med lokal dataanslutning och en mängd anslutnings- och omvandlingsfunktioner.
+
+### <a name="extensibility"></a>Utbyggbar
+
+- **Exporter ordnade i anslutningar och exporter** Vi har bytt namn på sidan **Exportera destinationer** till **Anslutningar** och lagt till en separat sida för **Exporter**. Som en del av den här uppdateringen övergår vi befintlig export till par i en anslutning och en export med den anslutningen. Administratörerna har nu större tydlighet i fråga om utgående data på sidan **Anslutningar**. Alla användarroller har åtkomst till sidan **Export**, men bara administratörer kan välja att tillåta deltagare att redigera specifik export med delade anslutningar.     
+  Mer information finns i [Översikt över anslutningar](connections.md) och [Exportöversikt](export-destinations.md).
+
+- **Exportera segment till Campaign Monitor** Nu har exportmålen utökats till att omfatta Campaign Monitor. Nu kan du exportera segment från Customer Insights till listor med Campaign Monitor och använda dem som grund för dina marknadsföringskampanjer.    
+   Mer information finns i [Exportera data till Campaign Monitor](export-campaign-monitor.md).
+
+- **Exportera segment till Constant Contact** Nu har exportmålen utökats till att omfatta Constant Contact. Nu kan du exportera segment från Customer Insights till listor med Constant Contact och använda dem som grund för dina marknadsföringskampanjer.   
+   Mer information finns i [Exportera data till Constant Contact](export-constant-contact.md).
+
+- **Exportera segment till RollWorks** Nu har exportmålen utökats till att omfatta RollWorks. Nu kan du exportera segment från Customer Insights till RollWorks-målgrupper och använda dem som baslinje för din B2B-annonsering.    
+   Mer information finns i [Exportera data till RollWorks](export-rollworks.md).
+
+- **Exportera segment till Snapchat** Nu har exportmålen utökats till att omfatta Snapchat. Nu kan du exportera segment från Customer Insights till listor med Snapchat och använda dem som grund för din reklam.     
+   Mer information finns i [Exportera data till Snapchat](export-snapchat.md).
+
+### <a name="predictions"></a>Prediktioner
+
+- **Använd produktfilter i rekommenderade produktrekommendationer** Vi har lagt till möjligheten att använda produktfilter i vår produktrekommendationsmodell. Nu kan du skapa en prediktion som endast använder en delmängd av dina produkter.    
+   Mer information finns i [Konfigurera produktfilter](predict-product-recommendation.md#configure-product-filters).
+
+- **Skapa segment utifrån modellprognoser** Vi har lagt till ett snabbt sätt att skapa segment med resultatet av en prediktionsmodell. På resultatsidan för modellen kan du enkelt skapa ett nytt segment genom att välja det nya alternativet **Skapa segment**.    
+  Mer information finns i [Skapa ett segment utifrån en prediktion modell](prediction-based-segment.md).
+
+- **Förklaringar för produktrekommendationer** Vi har lagt till information som förklarar de nyckelfaktorer som AI-modellen har lärt sig för att generera produktrekommendationer och i vilken grad dessa faktorer bidrar till produktrekommendationerna. Den här informationen läggs till i resultatskärmen för modellen.    
+   Mer information finns i [Granska en förutsägelsestatus och resultat](predict-product-recommendation.md#review-a-prediction-status-and-results).
+
+## <a name="february-2021-updates"></a>Uppdateringar i februari 2021
+
+Uppdateringarna i februari 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
+
+#### <a name="extensibility"></a>Utbyggbar
+
+- **Exportera segment till AdRoll**
+
+  Vi har utökat våra exportmål för att inkludera AdRoll. Nu kan du exportera segment från Customer Insights till AdRoll-målgrupper och använda dem som baslinje för din annonsering. Mer information finns i [Anslutningsprogram för AdRoll](export-adroll.md).
+
+#### <a name="segments"></a>Segment
+ 
+- **Duplicera ett segment**
+  
+  Om du vill skapa ett nytt segment utifrån ett befintligt segment kan du nu duplicera ett segment och redigera det duplicerade segmentet för att förfina det ytterligare. 
+
+- **Lägga till ytterligare attribut till ett segment**
+
+  Nu kan du ta med attribut i ditt segment även om de här attributen inte är en del av kundprofilen. Du kan till exempel inkludera prenumerations-ID i ett segment även om det är en del av prenumerationsentiteten som har en M:1-relation med kundentiteten. Så länge attributet tillhör en entitet som relaterar till kundentiteten kan du nu ta med dessa attribut.  
 
 #### <a name="predictions"></a>Prediktioner
 
-- **Omsättningsprediktion för abonnemang**
+- **Skapa prediktiva produktrekommendationer**
 
-  Följ en guidad upplevelse för att skapa omsättningsprediktion i prenumerationsområden som molntjänster, kundmedlemskap och andra sektorer. 
+  Att förstå vad kunderna är intresserade av att köpa är ett av de första stegen för att förbättra affärsintäkterna och öka kundlojaliteten genom personlig anpassning och kontakt. Genom att tillhandahålla rekommendationer för produkter som inte är anpassade efter kundens intressen kan du skapa en känsla av avstånd mellan kunden och din verksamhet, och slutligen begränsa den övergripande potentiella omsättningen och upplevelsen för en kund. 
 
-  Med funktionen för omsättningsprediktion för abonnemang kan du förutse sannolikheten för att en kund stoppar användningen av prenumerationsprodukter eller tjänster utan att behöva en datatekniker. Med hjälp av prediktionspoängen kan du kombinera annan information om kunderna för att skapa segment av hög omsättningsrisk. Med hjälp av det här segmentet kan du direkt rikta dig till kunder i marknadsföring, kundsupport och andra scenarier för att minska risken för omsättning för specifika kunder för att förbättra intäkterna och minska kostnaderna.
+  Med hjälp av dina egna data kan du nu skapa prognoser för vilka produkter kunderna kommer att köpa i framtiden. Mer information finns i [Produktrekommendationsförutsägelse](predict-product-recommendation.md).
 
-  I upplevelsen kan du konfigurera definitionen av omsättningen som ett tidsbaserat fönster som är specifikt för din verksamhet. En verksamhet för videoströmning som har en månatlig prenumerationsprocess kanske vill anse till att en kund har omsatts efter 15 dagar efter det att prenumerationen gått ut.
+#### <a name="system-administration"></a>Systemadministration
 
-  När du fortsätter igenom prediktion guidar vi dig igenom vilka data som behövs och du kan mappa data om företaget till fält som krävs för att förutse omsättningen för kunderna. När affärsinformationen ändras kan du också ange ett schema för att omutbilda den nya informationen i systemet för att anpassa sig efter föränderliga affärssituationer.    
-  Mer information finns i [Omsättningsprediktion för abonnemang (förhandsversion)](predict-subscription-churn.md).
+- **Kopiera miljöstöd för fler typer av datakällor**
 
-#### <a name="segments"></a>Segments
+  Administratörer kan kopiera miljökonfigurationer till en ny miljö i samma organisation. Med den här funktionen utvidgas kopieringsmiljöns funktioner för ärenden där datakällor som bygger på en Microsoft Dataverse-hanterad datasjö eller Common Data Model-mapp används.
 
-- **Sök efter liknande kunder**
-  
-  Hitta liknande kunder i kundbasen med hjälp av artificiell intelligens. En maskininlärningsmodell för binär klassificering tilldelar en likhetspoäng för kunderna i det expanderade segmentet. Poängen baseras på likheten med kunder i källsegmentet. Beroende på likhetspoängen läggs kundprofilerna till i ett nyskapat segment.
+## <a name="january-2021-updates"></a>Uppdateringar januari 2021
 
-  I vissa fall kallas för den för dubbelgångarmodell i digital marknadsföring, en AI-modell som hjälper dig att hitta kunder som liknar ett annat segment av dina kunder genom att använda ytterligare attribut. Du kan inte bara välja attributen, men du kan också ange det maximala antalet kunder som ska finnas i det nya segmentet. AI-modellen beräknar sedan likhetspoäng för varje kund utifrån de valda attributen och söker efter kunder med det övre medelvärdet för likhetspoäng. Det resulterande segmentet omfattar kunder som ser ut ungefär som kunden i det ursprungliga segmentet.    
-  Mer information finns i [Liknande kunder](find-similar-customer-segments.md).
+Uppdateringarna i januari 2021 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
 
-- **Överlappningar och differentieringar av segment**
+#### <a name="extensibility"></a>Utbyggbar
 
-  Med överlappning kan du se hur många och vilka kunder som är gemensamma för två eller flera segment. Exempelvis överlappar ett högt utgiftssegment med ett segment av hög tillfredsställelse eller hur ett överlappande kundsegment överlappar ett segment med kunder som inte är speciellt nöjda. Dessutom kan du analysera hur överlappningen ändras utifrån ett ytterligare attribut som du väljer.
-
-  Segmentdifferentieringar avslöjar vad som skiljer ett segment från övriga kunder eller från ett annat segment. Allt du behöver göra är att identifiera ett segment och systemet identifierar profilmappar och mått som särskiljer segmentet i form av en rangordnad lista med differentieringar, från den starkaste differentieringen till den svagaste.    
-  Mer information finns i [Segmentinsikter (förhandsversion)](segment-insights.md).
-
-- **Segment livstid**
-  
-  Definiera ett schema för aktivering eller inaktivering av ett segment.    
-  Mer information finns i [Hantera befintliga segment](segments.md#manage-existing-segments).
-
-## <a name="may-2020-updates"></a>Uppdateringar maj 2020
-
-Uppdateringarna i maj 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="new-and-updated-features-in-may-2020"></a>Nya och uppdaterade funktioner i maj 2020
-
-#### <a name="data-ingestion"></a>Datainsamling
-
-- **Datainmatning i realtid: historikvyer**
-
-  När du använder vår API för att inmatning av uppdateringar i realtid kan du se upp till 30 dagars samlad historik för uppdateringarna. Du har tillgång till mängder av alla lyckade eller misslyckade API-anrop, inklusive resultat, källsystem och andra användbara metadata.    
-  Mer information finns i [Datainmatning i realtid](real-time-data-ingestion.md).
-
-- **Datainmatning i realtid: profiluppdateringar**
-
-  Med det här tillägget av datainmatning i realtid kan du se de olika fält för användarprofil inom några sekunder.    
-  Förutom realtidsfunktionen för aktiviteter stöder systemet uppdateringar med låg latens av profilfält. Uppdatering i realtid för profil fält har en förfallotid och är därför inte en ersättning för schemalagda uppdateringar.    
-  Mer information finns i [Datainmatning i realtid](real-time-data-ingestion.md).
-
-#### <a name="extensibility"></a>Utökningsbarhet
-
-- **Tidslinje och sidbrytning har uppdaterats i tillägget för kundkortet**
-
-  Tidslinjen för tilläggslösningen Customer Card matchar aktivitetens tidslinje. Sidnumreringen förbättras och visar upp till 50 aktiviteter på samma gång. Det går också att läsa in ytterligare aktiviteter på tidslinjen.    
-  Mer information finns i [Tillägg för kundkort](customer-card-add-in.md).
-
-- **Power Automate utlösare för segmentändringar**
-
-  Utlösare för Power Automate definierar vad du kan skapa ett flöde från. Den nyligen tillagda utlösaren kan definiera ett tröskelvärde för ett segment. Du kan till exempel skapa ett meddelande som skickas när det angivna tröskelvärdet passeras.    
-  Mer information finns i [Power Automate anslutningsprogram](export-power-automate.md).
-
-- **Stöd för fler innehavare för anpassade modeller**
-
-  Konfigurera arbetsflöden för anpassade modeller med en webbtjänst för en annan Azure Machine Learning-klientorganisation. Du kan logga in på Azure Machine Learning-klientorganisationen när du skapar ett nytt arbetsflöde för anpassade modeller. Den här funktionen är ett tillägg till den befintliga funktionen för integrering med din egen anpassade Azure Machine Learning-webbtjänst.    
-  Mer information finns i [anpassade maskininlärningsmodeller](custom-models.md).
+- **Utökade funktioner och förbättrade prestanda för SFTP-export** Du kan nu exportera alla utdataentiteter från Customer Insights till en SFTP-värd. Tidigare begränsades exporten till segmententiteter. Dessutom tillåter prestanda för SFTP-export mer datavolym på kortare tid, beroende på prestanda för din SFTP-värd.    
+  Mer information finns i [Anslutningsprogram för SFTP (förhandsversion)](export-sftp.md).  
 
 #### <a name="segments"></a>Segment
 
-- **Automatisering av entitetens sökväg**
+- **Segment som föreslås genom maskininlärning för att förbättra mått** Det finns ett nytt sätt att identifiera och skapa segment. Systemet använder en AI-modell för att föreslå segment som kan hjälpa till att förbättra KPI:et (måttet) som du redan spårar. Vi visar i vilken utsträckning attribut som du väljer för ett mått eller ett annat primärt attribut. Med hjälp av den här informationen kan du hitta potentiella affärsmöjligheter.    
+  Mer information finns i [Föreslagna segment (förhandsversion)](suggested-segments.md).
 
-  När du skapar ett segment behöver användarna definiera entitetssökvägen. Den här funktionen tar ett första steg genom att automatisera definitionen av entitetens sökväg så att du kan fokusera på de segmentkriterier du har i åtanke.    
-  Om den entitet som du vill segmentera dina kunder efter är direkt relaterad till entiteten för Enhetlig kund, behöver du inte ange entitetens sökväg längre. Men om det finns mer än en möjlig entitets sökväg måste du definiera den manuellt.
+#### <a name="data-unification"></a>Dataförening
 
-- **Åtgärder på flera segment**
-  
-  Du kan markera flera segment och utföra åtgärder på dem, t.ex. om du vill uppdatera segmenten, med en enkel klickning.    
+- **Förbättrad matchningsupplevelse** I dataföreningsområdet uppdaterades matchningsupplevelsen. Du kan konfigurera och visa matchningsreglerna, inklusive detaljerad information om hur matchning fungerar. Det finns alternativ för att inaktivera en matchningsregel så att den inte längre är aktiv samtidigt som du behåller konfigurationen, drar och släpper matchningsregler med mera.
+  För mer information se [Matcha entiteter](match-entities.md).
 
-- **Uppdatera segment**
-
-  Användare kan uppdatera ett enskilt segment eller endast markera de segment som de vill uppdatera.    
-
-  
-- **Förbättringar av sammansatta segment**
-
-  Användare kan skapa, redigera och ta bort segment som bygger på andra segment. Till exempel ett segment som är konstruerat på ett annat segment och byggts på ett tredje segment.    
-
-- **Listsida för segment**
-
-  Den nya designen av sidan segment har ett listformat som gör att du kan visa fler segment samtidigt. Ett sökfält läggs till för att hitta segment snabbt. Användarna kan nu tillämpa åtgärder som att ladda ned eller ta bort flera segment samtidigt. En ny trendupplevelse införs för att snabbt identifiera viktiga förändringar i segment.    
-  Mer information finns i [Skapa och hantera segment](segments.md).
+- **Dedupliceringsutdata från matchningsprocessen är tillgänglig som en entitet** Utdata från dedupliceringsprocessen från matchningsprocessen skrivs nu i en separat entitet för vidare analys. Entiteten består av fälten som används i dedupliceringsprocessen och den vinnande posten och motsvarande alternativa poster som slås samman med den vinnande posten.
+  Mer information finns i [Dedupliceringsutdata som en entitet](match-entities.md#deduplication-output-as-an-entity).
 
 #### <a name="system-administration"></a>Systemadministration
 
-- **Customer Insights tillgänglig i Microsoft Dynamics 365 Online Government**
-
-  Med fler och fler kanaler för interaktioner är medborgarna i ett utspritt system i myriad system som leder till silor och en fragmenterad vy med information om medborgarnas interaktioner. Utan en komplett bild av de olika medborgarnas interaktioner mellan olika kanaler är det omöjligt för regeringarna att modernisera i skala. Microsoft värnar om att stödja de tekniska behoven hos myndigheter för att kunna hålla sig uppdaterade med medborgarnas förväntningar.    
-  Med 2020 utgivningsvåg 1 blir Dynamics 365 Customer Insights tillgänglig för Government Community Cloud (GCC), en miljö byggd för att uppfylla de högre kraven för Förenta staternas myndigheter. Organen får en enhetlig vy över medborgarna och använder inbyggd AI för att få insikter som förbättrar samverkan, ger personalen och omvandlar gemenskaperna, samtidigt som det minskar IT-komplexiteten och uppfyller de krav som gäller för USA och säkerhetsnormer. Dynamics 365 Government uppfyller de krävande kraven för det amerikanska federala riskhanteringsprogrammet (FedRAMP), vilket gör det möjligt för USA federala myndigheter att dra nytta av kostnadsbesparingar och rigorös säkerhet i Microsoft Cloud.
-
-## <a name="april-2020-updates"></a>Uppdatering april 2020
-
-Uppdateringarna i april 2020 innehåller flera funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="new-and-updated-features-in-april-2020"></a>Nya och uppdaterade funktioner i april 2020
-
-#### <a name="activities"></a>Aktiviteter
-
-- **Mappa aktivitetsentitet till standard aktivitetstyp**
-  
-  Aktivitetskonfiguration och lagringsutrymme baseras för närvarande på en statisk design för att visa dem på en tidslinje. En semantisk betydelse för aktiviteter, som har potential för flera användnings fall i AI-modeller, används inte fullt ut just nu. Du planerar att göra aktivitetstidslinjen mer dynamisk, utifrån aktivitetstypen och bättre semantisk förståelse för aktiviteterna. Med den här funktionen kan du identifiera aktivitetstypen enligt definitionen i Common Data Model för eventuell insamlingsaktivitet.
-  Mer information finns i [Kundaktiviteter](activities.md).
-
-#### <a name="data-ingestion"></a>Datainsamling
-
-- **Datainmatning i realtid: aktiviteter**
-  
-  Datainmatning i realtid ger data omedelbart för förbrukning, tills den efterföljande schemalagda uppdateringen hämtar dessa data från datakällan.    
-  Mer information finns i [Datainmatning i realtid](real-time-data-ingestion.md).
-
-- **Förbättringar av förberedelse av data**
-  
-  Läs mer om datainmatning i en entitet. Med hjälp av datasammanfattningen kan du förstå de datakvalitetsegenskaper som kan vara till hjälp för att vidta lämpliga åtgärder.    
-  Mer information finns i [Utforska entitetsdata](entities.md#exploring-a-specific-entitys-data).
-
-- **Mata in analysdata från Dynamics 365 med Common Data Service**
-  
-  Common Data Service finns som ett sätt att skapa datakällor. Befintliga Dynamics 365-kunder kan mata in analysentiteter från Common Data Service till Customer Insights. En enda datakälla åt gången kan använda samma Common Data Service-hanterade sjö i en Customer Insights-miljö.    
-  Mer information finns i [ansluta till data i en Common Data Service hanterad datasjö](connect-common-data-service-lake.md).
-
-#### <a name="extensibility"></a>Utökningsbarhet
-
-- **Exportera till LiveRamp**
-
-  Aktivera dina data i LiveRamp® om du vill ansluta med över 500 plattformar över digitala, sociala och TV-ekosystem. Använd dina data i LiveRamp för att rikta, utelämna och anpassa annonskampanjer.    
-  Mer information finns i [LiveRamp&reg; anslutningsprogram](export-liveramp.md).
-
-- **Tillägget Customer Insights Teams**
-  
-  Roboten har uppslagsfunktioner för enhetliga kundprofiler. Ett kort med upp till 15 fält visas i den resulterande kundprofilen. Flera matchningar returnerar en resultatlista där du kan välja en profil.    
-  Mer information finns i [Teams-robot för Customer Insights](export-teams-bot.md).
-
-#### <a name="measures"></a>Mått
-
-- **Listsidan Mått**
-  
-  Förbättringarna av sidan mått är stöd för åtgärder på ett och samma mått och på flera mått samtidigt. Dessutom hittar du ett sökfält för att snabbt hitta och spåra mått.    
-  Mer information finns i [Skapa och hantera segment](segments.md).
-
-- **Förbättringar av sammansatta mått**
-  
-  Användare kan skapa, redigera och ta bort mått som bygger på andra mått. Till exempel ett mått som är konstruerat på ett annat mått och byggts på ett tredje mått.
-
-#### <a name="segments"></a>Segments
-
-- **Ytterligare operator**
-  
-  Den infällda operatorn gör det möjligt att segmentera för kunder efter flera möjliga strängvärden. Innan operatorn lades till var du tvungen att konstruera sådana segment med flera OR-villkor. Med den infällda operatorn kan du göra det med ett enda villkor.    
-  Mer information finns i [Skapa och hantera segment](segments.md).
-
-#### <a name="system-administration"></a>Systemadministration
-
-- **Kopiera konfigurationsinställningar till en ny miljö**
-  
-  Kopiera konfigurationen från en miljö till en annan. När du skapar en ny miljö kan du välja en befintlig miljö som du vill kopiera konfigurationen från. Vi stöder för närvarande datakällor, dataförening, relationer, mått och segment som ska kopieras. Datakälla autentiseringsuppgifter och verkliga data kopieras inte.    
+- **Dela data sömlöst till Microsoft Dataverse** Du kan nu dela Customer Insights-utdata med Microsoft Dataverse-program med hjälp av Microsoft Dataverse-hanterad Data Lake. När du har kopplat en Dataverse-miljö till Customer Insights har du möjlighet att aktivera datadelning.
   Mer information finns i [Hantera miljöer](manage-environments.md).
+
+
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,22 +1,24 @@
 ---
 title: Semantiska mappningar (förhandsgranskning)
 description: Översikt över semantiska mappningar och hur man använder dem.
-ms.date: 09/28/2021
-ms.service: customer-insights
+ms.date: 12/01/2021
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+searchScope:
+- ci-semantic-mapping
+- customerInsights
+ms.openlocfilehash: 37696f3e82eb9b75fbf9f78363adc890891efcc3
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622957"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353979"
 ---
-# <a name="semantic-mappings"></a>Semantiska mappningar
+# <a name="semantic-mappings-preview"></a>Semantiska mappningar (förhandsgranskning)
 
 Med hjälp av en semantisk mappning kan du mappa icke-aktivitetsdata till fördefinierade scheman. Med de här schemana kan målgruppsinsikter för att få en bättre bild av dina dataattribut. En bildningsmappning och medföljande data möjliggör nya insikter och funktioner målgruppsinsikter. Om du vill mappa dina aktivitetsdata till scheman kan du läsa [dokumentationen](activities.md) för aktiviteter.
 
@@ -75,8 +77,7 @@ Med hjälp av en semantisk mappning kan du mappa icke-aktivitetsdata till förde
 
 1. Om du vill köra en mappning senare markerar du semantisk mappning och väljer **Uppdatera**.
 
-> [!TIP]
-> Det finns [sex typer av status](system.md#status-types) för uppgifter/processer. Dessutom är de flesta processer [beroende av andra efterföljande processer](system.md#refresh-policies). Du kan välja status för en process om du vill visa information om förloppet för hela jobbet. När du har valt **Se detaljer** för en av jobbets uppgifter hittar du ytterligare information: bearbetningstid, det senaste behandlingsdatumet och alla fel och varningar som är kopplade till uppgiften.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Hantera befintliga semantiska mappningar
 
@@ -91,5 +92,41 @@ I **Data** > **semantisk mappning (förhandsversion)**, kan du se alla dina spar
 - **Byt namn**: Öppnar en dialogruta där du kan ange ett annat namn för den valda semantiska mappningen. Välj **Spara** för att införa ändringarna.
 
 - **Ta bort**: Öppnar en dialog för att bekräfta borttagningen av den valda semantiska mappningen. Du kan också ta bort fler än en semantisk mappning på samma gång genom att välja de olika semantiska mappningarna och borttagningsikonen. Välj **Ta bort** för att borttagningen.
+
+## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Skapa aktiviteter på kontaktnivå med hjälp av en ContactProfile-mappning för entitetsbildning
+
+När du har skapat en *ContactProfile*-mappning för entiteter kan du samla in kontakters aktiviteter. Det gör att du kan se i aktivitetstidslinjen för ett konto vilken kontakt som ansvarade för varje aktivitet. De flesta steg följer den typiska aktivitetsmappningskonfigurationen.
+
+   > [!NOTE]
+   > För att kontaktnivåaktiviteter ska fungera måste du ha både **AccountID**- och **ContactID**-attribut för varje post i dina aktivitetsdata.
+
+1. [Definiera en *ContactProfile* semantisk entitetsmappning.](#define-a-contactprofile-semantic-entity-mapping) och kör semantiska mappningen.
+
+1. I målgruppsinsikter går du till **Data** > **Aktiviteter**.
+
+1. Välj **Lägg till aktivitet** för att skapa en ny aktivitet.
+
+1. Ge aktiviteten ett namn, välj entiteten för källaktiviteten och välj den primära nyckeln för aktivitetsentiteten.
+
+1. I steget **Relationer**, skapa en indirekt relation mellan din aktivitetskällas data till konton, genom att använda din kontaktdata som en mellanliggande enhet. Mer information finns i [direkta och indirekta relationssökvägar](relationships.md#relationship-paths). 
+   - Exempelrelation för en aktivitet med namnet *Inköp*:
+      - **Aktivitetsdata för inköpskälla** > **Kontaktdata** på attributet **ContactID**
+      - **Kontaktdata** > **Kontodata** i attributet **AccountID**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Inställning av exempelrelation.":::
+
+1. När du har Relationer väljer du **Nästa** och slutför konfiguration av aktivitetsmappning. Detaljerade steg när du skapar en aktivitet finns i [definiera en aktivitet](activities.md).
+
+1. Kör dina aktivitetsmappningar.
+
+1. Dina aktiviteter på kontaktnivå visas nu på din kundtidslinje.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Slutresultat efter konfigurering av kontaktaktiviteter":::
+
+### <a name="contact-level-activity-timeline-filtering"></a>Tidslinjefiltrering på kontaktnivå
+
+När du har konfigurerat en aktivitetsmappning på kontaktnivå och kör den uppdateras aktivitetstidslinjen för dina kunder. Det inkluderar deras ID eller namn, beroende på ditt *ContactProfile* konfiguration, för de aktiviteter de agerat på. Du kan filtrera aktiviteter efter kontakter i tidslinjen om du vill se specifika kontakter som du är intresserad av. Dessutom kan du visa alla aktiviteter som inte har tilldelats en viss kontakt genom att välja **Aktiviteter som inte är mappade till en kontakt**.
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="Tillgängliga filtreringsalternativ för aktiviteter på kontaktnivå.":::
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
