@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/04/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 5e301b4ff0a7586fb143b154b773791b3bd645b7
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: 1f82ff588c2ffbe82c3ee7df2498ac2cca2bad31
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648139"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225469"
 ---
 # <a name="create-a-new-environment"></a>Skapa en ny miljö 
 
@@ -46,7 +45,7 @@ En miljö är ett utrymme där du hanterar arbetsytor och anslutningar. Hur du a
 
 1. Välj **Visa avancerade inställningar** om du vill aktivera eller inaktivera dessa valfria inställningar:
 
-   - Växla **okänd till känd** som aktiverad för att associera webbhändelser med användare som tidigare autentiserats. Mer information finns i [Identifiera webbhändelser från tidigare autentiserade besökare](unknown-to-known.md)
+   - Växla **okänd till känd** som aktiverad för att associera webbhändelser med användare som tidigare autentiserats. Mer information finns i [Identifiera webbhändelser från tidigare autentiserade besökare](unknown-to-known.md).
    - Växla **Filtrera robottrafik** till "aktiverad" för att ta bort webbtrafiken genom att lägga till filter för den här arbetsytan. 
 
 1. Välj **Slutför** när du är klar. 

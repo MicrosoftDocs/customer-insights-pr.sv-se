@@ -4,17 +4,16 @@ metadata:
   author: m-hartmann
   description: Hitta relevanta artiklar för att börja med hjälpinnehåll.
   ms.author: mhart
-  ms.date: 10/29/2020
-  ms.service: customer-insights
+  ms.date: 03/02/2022
   ms.topic: landing-page
-  ms.openlocfilehash: e9c4aa3347d6f477751804790bd3dc9b20eb5dbe
-  ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+  ms.openlocfilehash: 5efa266dfe8d70812f4c668b04cee2f93f206f7b
+  ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 03/15/2021
-  ms.locfileid: "5598498"
+  ms.lasthandoff: 02/25/2022
+  ms.locfileid: "8350491"
 title: Dynamics 365 Customer Insights-dokumentation
-summary: Hitta användbara resurser för att komma igång och lära dig om funktioner och egenskaper i Customer Insights.
+summary: Hitta användbara resurser som hjälper dig att komma igång och lär dig mer om funktioner och funktioner i Customer Insights.
 landingContent:
 - title: Upplev Customer Insights
   linkLists:
@@ -23,50 +22,28 @@ landingContent:
     - text: Översikt över Customer Insights
       url: overview.md
     - text: Lanseringsplaner
-      url: /dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
-    - text: Öppna din miljö
-      url: https://home.ci.ai.dynamics.com/
-- title: Kom igång med målgruppsinsikter
+      url: /dynamics365/release-plans/
+    - text: Utforska CDP
+      url: https://dynamics.microsoft.com/ai/customer-insights/
+  - linkListType: learn
+    links:
+    - text: Utbildningsväg för Customer Insights
+      url: /learn/paths/build-customer-insights/
+- title: Komma igång med Customer Insights
   linkLists:
   - linkListType: get-started
     links:
     - text: Registrera dig för en utvärderingsversion
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: Nyheter
+    - text: Nyheter i målgruppsinsikter
       url: audience-insights/whats-new-audience-insights.md
-    - text: Dokumentation om målgruppsinsikter
-      url: audience-insights/index.yml
-- title: Ta kontakt
-  linkLists:
-  - linkListType: overview
+    - text: Snabbstartguide
+      url: audience-insights/get-started.md
+  - linkListType: learn
     links:
-    - text: Gå med i Dynamics 365-communityn
-      url: https://go.microsoft.com/fwlink/?linkid=2073991
-    - text: Dela med dig av dina idéer
-      url: https://go.microsoft.com/fwlink/?linkid=2074172
-    - text: Rapportera ett problem
-      url: https://go.microsoft.com/fwlink/?linkid=2079641
-- title: Självstudier i målgruppsinsikter
-  linkLists:
-  - linkListType: tutorial
-    links:
-    - text: Skapa en ny miljö
-      url: audience-insights/home.md
-    - text: Skapa en enhetlig kundprofil
-      url: /learn/modules/unified-customer-profile/
-    - text: Arbeta med appar
-      url: /learn/modules/working-with-customer-insights/
-- title: Exportera data om målgruppsinsikter
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Ange exportmål
-      url: audience-insights/export-destinations.md
-    - text: Kundkort i Dynamics 365-appar
-      url: audience-insights/customer-card-add-in.md
-    - text: Anslutningsapp för Power BI
-      url: audience-insights/export-power-bi.md
-- title: Administrera målgruppinsikter
+    - text: Kom i gång
+      url: /learn/modules/get-started-customer-data-platform/
+- title: Administrera Customer Insights
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -76,33 +53,17 @@ landingContent:
       url: audience-insights/permissions.md
     - text: Hantera flera miljöer
       url: audience-insights/manage-environments.md
-- title: Om engagemangsinsikter (förhandsversion)
+  - linkListType: learn
+    links:
+    - text: Administrera Customer Insights
+      url: /learn/modules/administer-customer-data-platform/
+- title: Ta kontakt
   linkLists:
   - linkListType: overview
     links:
-    - text: Kapacitetsöversikt
-      url: engagement-insights/overview.md
-    - text: Villkor och koncept
-      url: engagement-insights/glossary.md
-    - text: Kom igång
-      url: engagement-insights/get-started.md
-- title: Rapporter för insikter om engagemang (förhandsversion)
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Visa rapporter
-      url: engagement-insights/view-reports.md
-    - text: Skapa anpassade rapporter
-      url: engagement-insights/custom-reports.md
-    - text: Visa rapporten enhetliga profiler
-      url: engagement-insights/profile-reports.md
-- title: Händelser för insikter om engagemang (förhandsversion)
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Skapa förfinade händelser
-      url: engagement-insights/refined-events.md
-    - text: Exportera händelser
-      url: engagement-insights/export-events.md
-    - text: Ta bort och exportera personuppgifter
-      url: engagement-insights/delete-export-personal-data.md
+    - text: Gå med i Dynamics 365-communityn
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+    - text: Dela med dig av dina förslag
+      url: https://go.microsoft.com/fwlink/?linkid=2074172
+    - text: Rapportera ett problem
+      url: https://go.microsoft.com/fwlink/?linkid=2079641

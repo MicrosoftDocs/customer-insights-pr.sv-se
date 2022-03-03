@@ -3,18 +3,20 @@ title: Granska Dynamics 365 Customer Insights med Azure Monitor
 description: Lär dig hur du skickar loggar till Microsoft Azure Monitor.
 ms.date: 12/14/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: article
 author: brndkfr
 ms.author: bkief
 manager: shellyha
-ms.openlocfilehash: d962c359d70a068fcf939b61e340f86de088b419
-ms.sourcegitcommit: 0c3c473e0220de9ee3c1f1ee1825de0b3b3663c3
+searchScope:
+- ci-system-diagnostic
+- customerInsights
+ms.openlocfilehash: 2e0801c2b6af591e48a7df485a8523903c07617c
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2021
-ms.locfileid: "7920843"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354430"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsgranskning)
 

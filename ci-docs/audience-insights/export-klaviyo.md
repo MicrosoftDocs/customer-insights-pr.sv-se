@@ -1,20 +1,19 @@
 ---
 title: Exportera Customer Insights-data till Klaviyo
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Klaviyo.
-ms.date: 08/13/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7c1297fd5381c00c07d6501186c51fe4798773d1
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
+ms.openlocfilehash: 027aee70d9fdab0a92d7fd99209a6ac2ca3cc361
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7385810"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225490"
 ---
 # <a name="export-segment-lists-to-klaviyo-preview"></a>Exportera segmentlistor till Klaviyo (förhandsgranskning)
 
@@ -28,10 +27,10 @@ Exportera segment med enhetliga kundprofiler till Klaviyo och använd dem för m
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till 100 000 profiler per export till Klaviyo.
+- Du kan exportera upp till 100 000 kundprofiler per export till Klaviyo.
 - Exporten till Klaviyo är begränsad till segment.
-- Det kan ta upp till 1 miljon att exportera upp till 20 minuter till Klaviyo. 
-- Antalet profiler du kan exportera till Klaviyo beror på och begränsas efter ditt kontrakt med Klaviyo.
+- Det kan ta upp till 20 minuter innan du exporterar upp till 1 miljon kundprofiler till Klaviyo. 
+- Hur många kundprofiler du kan exportera till Klaviyo är beroende av och begränsas av ditt kontrakt med Klaviyo.
 
 ## <a name="set-up-connection-to-klaviyo"></a>Upprätta anslutningen till Klaviyo
 
@@ -67,7 +66,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Ange ditt [**List-ID för Klaviyo**](https://help.klaviyo.com/hc/articles/115005078647-How-to-Find-a-List-ID).     
 
-3. I avsnittet **Datamatchning**, i fältet **E-post**, väljer du det fält i din enhetliga kundprofil som representerar en kunds e-postadress. Detta krävs för att kunna exporter segment till Klaviyo.
+3. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Detta krävs för att kunna exporter segment till Klaviyo.
 
 1. Välj **Spara**.
 

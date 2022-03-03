@@ -2,19 +2,21 @@
 title: Datainmatning och begränsningar i realtid
 description: Allmän information om realtidsfunktioner i målgruppsinsikter.
 ms.date: 10/27/2020
-ms.reviewer: nikeller
-ms.service: customer-insights
+ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+searchScope:
+- ci-system-api-usage
+- customerInsights
+ms.openlocfilehash: 2fe5279eee1b3b30f5bc21464c85fe5f86d342a0
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689197"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355497"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainmatning i realtid (förhandsversion)
 
@@ -54,7 +56,7 @@ Med realtids-API kan du publicera en ny aktivitet från ditt källsystem (en ens
 
 Du kan ansluta till realtids-API:et på två sätt:
 
-- [indirekt](#connect-via-the-dynamics-365-customer-insights-connector) med hjälp av [Dynamics 365 Customer Insights koppling](https://docs.microsoft.com/connectors/customerinsights/)
+- [indirekt](#connect-via-the-dynamics-365-customer-insights-connector) med hjälp av [Dynamics 365 Customer Insights koppling](/connectors/customerinsights/)
 - [direkt](#connect-directly-to-the-real-time-api), med kod
 
 Båda sätten delar följande förutsättningar:
@@ -66,13 +68,13 @@ Båda sätten delar följande förutsättningar:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Anslut via Dynamics 365 Customer Insights kopplingen
 
-API i realtid kan hämta data från en dedikerad Power Platform-koppling, [Dynamics 365 Customer Insights-koppling](https://docs.microsoft.com/connectors/customerinsights/) utan att någon kod behöver skrivas och distribueras.    
-Kopplingen kan utföra samma realtidsåtgärder som API. Du behöver en giltig licens för Premium-anslutningar. Mer information finns i [Vanliga frågor om licensiering för Power Apps och Power Automate](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+API i realtid kan hämta data från en dedikerad Power Platform-koppling, [Dynamics 365 Customer Insights-koppling](/connectors/customerinsights/) utan att någon kod behöver skrivas och distribueras.    
+Kopplingen kan utföra samma realtidsåtgärder som API. Du behöver en giltig licens för Premium-anslutningar. Mer information finns i [Vanliga frågor om licensiering för Power Apps och Power Automate](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps och/eller Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps och/eller Power Automate](/connectors/)
+- Azure [Logic Apps](/azure/connectors/apis-list)
 
-Mer information om hur du skapar flöden finns i [Power Automate-dokumentationen](https://docs.microsoft.com/power-automate/).
+Mer information om hur du skapar flöden finns i [Power Automate-dokumentationen](/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Anslut direkt till API i realtid
 
@@ -83,6 +85,7 @@ Detaljer om detta API, inklusive parametrar och svar, finns i avsnittet **Entity
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Förstå din realtidsförbrukning med telemetri
 
-Få en översikt över volymen av begäranden till realtids-API och information om problem som systemet kan stöta på. Du kan [använda realtidstelemetrin](system.md#api-usage-tab) genom att gå till **Admin** > **System** > **API-användning**. I tabellen **Operationer** innehåller rader för API-åtgärder som använder realtidsmetoderna en knapp för att visa realtids-API-användning. Knappen visualiseras med en kikarsymbol. Välj knappen för att öppna en sidoruta som innehåller användningsdetaljer för API-användningen i realtid i den aktuella miljön.
+Få en översikt över volymen av begäranden till realtids-API och information om problem som systemet kan stöta på. Du kan [komma åt telemetri i realtid](system.md#api-usage-tab). 
 
-Använd väljaren **Gruppera efter** för att välja hur du bäst vill presentera dina realtidsinteraktioner på en tidslinje mellan de senaste 24 timmarna och de senaste 30 dagarna. Du kan gruppera data efter API-metod, kvalificerade namn för entiteter (upptagen entitet), skapade av (händelsens källa), resultat (lyckade eller misslyckade) eller felkoder. Informationen är tillgänglig som ett historikdiagram och som en tabell.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -3,18 +3,17 @@ title: Kundens livstidsvärde prediktion exempelguide
 description: Använd den här exempelguiden för att testa kundens livstidsvärde prediktionsmodellen.
 ms.date: 05/25/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: c130e5f699f7eb921b69a20bc6d4ba9eab5b2779
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306371"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354853"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Kundens livstidsvärde (CLV) prediktion exempelguide
 
@@ -22,7 +21,7 @@ Den här guiden förklarar för dig ett slutexempel på CLV-prediktion i Custome
 
 ## <a name="scenario"></a>Scenario
 
-Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner. De säljer produkterna via sin Contoso Coffee-webbplats. Företaget vill förstå värdet (intäkterna) som deras kunder kan generera under de kommande 12 månaderna. Att veta det förväntade värdet på sina kunder under de kommande 12 månaderna kommer att hjälpa dem att styra sina marknadsföringsinsatser på kunder med högt värde.
+Contoso är ett företag som tillverkar kaffe och kaffeautomater av hög kvalitet. De säljer produkterna via Contoso Coffees webbplats. Företaget vill förstå värdet (intäkterna) som deras kunder kan generera under de kommande 12 månaderna. Att veta det förväntade värdet på sina kunder under de kommande 12 månaderna kommer att hjälpa dem att styra sina marknadsföringsinsatser på kunder med högt värde.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -31,7 +30,7 @@ Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner.
 
 ## <a name="task-1---ingest-data"></a>Uppgift 1 – Mata in data
 
-Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällor med Power Query-kopplingar](connect-power-query.md). Följande information förutsätter att du bekantat dig med inmatningsdata i allmänhet.
+Läs artiklarna [om datainmatning](data-sources.md) och [import av datakällor med hjälp av Power Query-anslutningar](connect-power-query.md). Följande information förutsätter att du bekantat dig med inmatningsdata i allmänhet.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Mata in kunddata från e-handelsplattformen
 
@@ -164,7 +163,7 @@ När vi har matat in data börjar vi nu datasammanföringsprocessen för att ska
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>Uppgift 3 – Konfigurera kundens livstidsvärdesprediktion
 
-Med de enhetliga kundprofilerna på plats kan vi nu köra kundens livstidsvärdesprediktion. Detaljerade steg finns i [Kundens livstidsvärdesprediktion (förhandsversion)](predict-customer-lifetime-value.md).
+Med de enhetliga kundprofilerna på plats kan vi nu köra kundens livstidsvärdesprediktion. Detaljerade steg finns i [Förutsägelse av Kundlivstidsvärde](predict-customer-lifetime-value.md).
 
 1. Gå till **Intelligens**  > **Förutsägelser** och välj **Kundens livstidsvärdesmodell**.
 

@@ -3,26 +3,25 @@ title: Exempelguide för förutsägelse om transaktionell omsättning
 description: Använd exempelguiden för att prova den medföljande modellen för förutsägelse om transaktionell omsättning.
 ms.date: 11/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 19befa17524aba4543f0d8a5f5f7d6f5a88b2322f1264b88fa0b31641610592a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 93841358d110bd16c7b7f8beb079bed704b22260
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7029467"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354623"
 ---
-# <a name="transactional-churn-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse om transaktionell omsättning (förhandsversion)
+# <a name="transactional-churn-prediction-sample-guide"></a>Exempelguide för förutsägelse om transaktionell omsättning
 
-Den här guiden ger dig ett komplett exempel på förutsägelse av transaktionell omsättning i Customer Insights med hjälp av de data som anges nedan. Alla data som används i den här guiden är inte verkliga kunddata och är en del av den Contoso-datauppsättning som finns i *demomiljön* i din Customer Insights-prenumeration.
+Den här guiden ger dig ett komplett exempel på förutsägelse av transaktionell omsättning i Customer Insights med hjälp av de data som anges nedan. Inga data som används i den här guiden är riktiga kunddata och är en del av Contoso-datauppsättningen som finns i miljön *Demo* i din Customer Insights-prenumeration.
 
 ## <a name="scenario"></a>Scenario
 
-Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner, som de säljer via sin Contoso Coffee-webbplats. Deras mål är att veta vilka kunder som vanligtvis köper deras produkter regelbundet kommer att sluta vara aktiva kunder under de närmaste 60 dagarna. Att veta vilka av deras kunder som **sannolikt kommer att omsättas** kan hjälpa dem att spara marknadsföringsinsatser genom att fokusera på att behålla dem.
+Contoso är ett företag som producerar kaffe och kaffemaskiner av hög kvalitet, som de säljer via Contoso Coffee-webbplatsen. Deras mål är att veta vilka kunder som vanligtvis köper deras produkter regelbundet kommer att sluta vara aktiva kunder under de närmaste 60 dagarna. Att veta vilka av deras kunder som **sannolikt kommer att omsättas** kan hjälpa dem att spara marknadsföringsinsatser genom att fokusera på att behålla dem.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -31,7 +30,7 @@ Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner,
 
 ## <a name="task-1---ingest-data"></a>Uppgift 1 – Mata in data
 
-Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällor med hjälp av Power Query-anslutningsprogram](connect-power-query.md) specifikt. Följande information förutsätter att du bekantat dig med inmatningsdata i allmänhet. 
+Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av datakällor med hjälp av Power Query-anslutningar](connect-power-query.md). Följande information förutsätter att du bekantat dig med inmatningsdata i allmänhet. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Mata in kunddata från e-handelsplattformen
 
@@ -149,7 +148,7 @@ Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** 
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>Uppgift 3 – Konfigurera förutsägelsen om transaktionell omsättning
 
-Med de enhetliga kundprofilerna på plats kan vi nu köra förutsägelsen om prenumerationsomsättning. Detaljerade steg finns i artikeln [Förutsägelse om prenumerationsomsättning (förhandsversion)](predict-subscription-churn.md). 
+Med de enhetliga kundprofilerna på plats kan vi nu köra förutsägelsen om prenumerationsomsättning. Detaljerade anvisningar finns i artikeln [Förutsägelse av prenumerationsomsättning](predict-subscription-churn.md). 
 
 1. Gå till **Intelligens** > **Utforska** och välj att använda **modellen Kundomsättning**.
 

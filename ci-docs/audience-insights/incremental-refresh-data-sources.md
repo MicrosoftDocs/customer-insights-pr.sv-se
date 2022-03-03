@@ -1,24 +1,26 @@
 ---
 title: Inkrementell uppdatering för Power Query-baserade datakällor
-description: Uppdatera nya och uppdaterade data för stora datakällor baserat på Power Query.
+description: Uppdatera nya och uppdaterade data för stordatakällor baserat på Power Query.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-system-schedule
+- customerInsights
+ms.openlocfilehash: 62632efda3c0c7e53fcdd8864b053ba93e2918bc
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900307"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353727"
 ---
-# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Inkrementell uppdatering för datakällor baserad Power Query
+# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Inkrementell uppdatering för datakällor baserade på Power Query
 
-I den här artikeln beskrivs hur du konfigurerar uppdateringar för uppdateringar av uppdateringar för Power Query.
+I den här artikeln beskrivs hur du konfigurerar inkrementella uppdateringar datakällor som är baserade på Power Query.
 
 Stegvis uppdatering för datakällor har följande fördelar:
 
@@ -28,9 +30,9 @@ Stegvis uppdatering för datakällor har följande fördelar:
 
 ## <a name="configure-incremental-refresh"></a>Konfigurera stegvis uppdatering
 
-Målgruppsinsikter möjliggör inkrementell uppdatering av datakällor som importeras via Power Query som stöder stegvis inmatning. Till exempel Azure SQL-databaser med datum- och tidsfält som anger när dataposter senast uppdaterades.
+Målgruppsinsikter gör det möjligt att göra inkrementella uppdateringar för datakällor som importeras genom Power Query som stöder inkrementell inmatning. Till exempel Azure SQL-databaser med datum- och tidsfält som anger när dataposter senast uppdaterades.
 
-1. [Skapa en ny datakälla utifrån Power Query](connect-power-query.md).
+1. [Skapa en ny datakälla som är baserad på Power Query](connect-power-query.md).
 
 1. Ange ett **namn** på datakällan.
 

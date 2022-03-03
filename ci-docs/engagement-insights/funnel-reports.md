@@ -5,16 +5,15 @@ ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
 ms.date: 09/21/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: efb10f2664630a5851d9582ff09c378c01777b96
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: 7bb961c5ba8d42f704eefe0dcb22e561367f3efb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7558964"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226283"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Skapa, distribuera och hantera trattrapporter
 

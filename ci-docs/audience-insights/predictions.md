@@ -1,24 +1,28 @@
 ---
 title: Slutför partiella data med hjälp av förutsägelser
 description: Använd förutsägelser för att fylla i ofullständiga kunddata.
-ms.date: 05/05/2020
-ms.service: customer-insights
+ms.date: 11/01/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+searchScope:
+- ci-predictions
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 9634523f61e27a0ed183186a788ab0cef3c0491b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692549"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354025"
 ---
-# <a name="complete-your-partial-data-with-predictions"></a>Komplettera dina ofullständiga data med förutsägelser
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fyll i ofullständiga data med hjälp av prediktioner (inaktuella)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+> [!IMPORTANT]
+> Den här funktionen är **inaktuell** från den **5 november 2021**.  De aktuella implementeringarna fortsätter tills funktionen har tagits bort, men du kommer inte att kunna skapa nya integreringar enligt anvisningarna nedan.
 
 Med hjälp av prediktioner kan du enkelt skapa förutsagda värden som förbättrar förståelsen av en kund. På sidan **Intelligens** > **Förutsägelser** kan du välja **Mina förutsägelser** för att se förutsägelser som du har konfigurerat i andra delar av målgruppinsikter och anpassa dem ytterligare.
 
@@ -35,7 +39,7 @@ Innan du kan använda funktionen prediktioner i organisationen bör du kontrolle
 
 2. Din miljö för målgruppsinsikter bifogas till din Dataverse-instans.
 
-Om du [skapar en ny miljö](get-started-paid.md) konfigurerar du den i dialogrutan **Skapa en miljö** och väljer **Avancerat**. Om du redan har skapat en miljö går du till dess inställningar och väljer **Avancerat**. Oavsett vilket anger du i avsnittet **Använd förutsägelser** Dataverse-instansens URL som du vill koppla din miljö till.
+Mer information finns i [Skapa en ny miljö](create-environment.md).
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Skapa en förutsägelse i entiteten Kund
 
@@ -60,6 +64,8 @@ Om du [skapar en ny miljö](get-started-paid.md) konfigurerar du den i dialogrut
    > ![Exempel som visar mappade fältvärden för kategorier.](media/intelligence-categorymapping.png "Exempel som visar mappade fältvärden för kategorier")
 
 8. Välj **klart** och prediktionen kommer att bearbetas. Bearbetningen kan ta en stund, beroende på datastorlek och komplexitet. Resultatet blir tillgängligt i en ny entitet baserat på **Utdataenhetens namn** för den prediktion du skapade.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Skapa en prediktion när du skapar ett segment
 
@@ -110,7 +116,7 @@ Som en del av detta flöde kan du välja ett specifikt attribut som du vill base
 
 ## <a name="edit-a-prediction"></a>Redigera en prediktion
 
-När du har skapat en prediktion kan du anpassa modellen i AI Builder för att öka modellens effektivitet.  
+När du har skapat en förutsägelse kan du anpassa modellen i AI Builder så att modellen blir effektivare.  
 
 1. I målgruppsinsikter går du till **Intelligens** > **Förutsägelser** > **Mina förutsägelser**.
 
@@ -125,7 +131,7 @@ När du har skapat en prediktion kan du anpassa modellen i AI Builder för att �
 Nästa gång du kör din prediktion används den uppdaterade modell som du har skapat.
 
 > [!NOTE]
-> Nya modeller som skapats i AI Builder kommer inte att visas i målgruppsinsikter om inte modellen skapades från de upplevelser som anges ovan.
+> Nya modeller som skapas i AI Builder visas inte i målgruppsinsikter såvida inte modellen har skapats från de erfarenheter som anges ovan.
 
 ## <a name="remove-a-prediction"></a>Ta bort en prediktion
 

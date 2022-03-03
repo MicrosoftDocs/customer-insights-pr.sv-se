@@ -2,18 +2,17 @@
 title: Använd demografiska dimensioner för att dela upp beteendedata (modererad dimension)
 description: Använd enhetliga profilerade mått för att kundprofil egenskaper för målgruppsinsikter.
 ms.date: 07/27/2021
-ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50bb800c9e097d03cc6f26f79819c741ab5e8baf
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 95395e09bc0ba5ba93138957c62105f31c709e91
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461125"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8233069"
 ---
 # <a name="use-demographic-dimensions-for-splitting-behavioral-data"></a>Använd demografiska mått för att dela beteendedata
 
@@ -29,7 +28,7 @@ Genom att använda en enhetlig profil för demografisk storlek kan användarna f
 - En miljö med engagemangsinsikter där du har kundprofildata kopplade till miljöer med målgruppsinsikter där kundprofilerna skapas. Mer information finns i [Skapa en länk mellan målgruppsinsikter och engagemangsinsikter](integrate-audience-insights-engagement-insights.md)
 
 > [!NOTE]
-> När du har skapat en länk mellan miljöer för målgruppsinsikter och engagemangsinsikter kanske du bara vill ha data specifika för kundprofilegenskaper, som kan vara användbara som mått i engagemangsinsikter. För mer information, gå till [Aktivera målgruppsinsikter, enhetliga profilattribut och segment](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).<!--note from editor: Suggested. -->
+> När du har skapat en länk mellan miljöer för målgruppsinsikter och engagemangsinsikter kanske du bara vill ha data specifika för kundprofilegenskaper, som kan vara användbara som mått i engagemangsinsikter. För mer information, gå till [Aktivera målgruppsinsikter, enhetliga profilattribut och segment](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).
 
 ## <a name="create-a-new-custom-report"></a>Skapa en ny anpassad rapport
 

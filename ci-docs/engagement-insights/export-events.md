@@ -4,23 +4,22 @@ description: Exportera förfinade händelser och bashändelser.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 04/30/2021
-ms.service: customer-insights
+ms.date: 10/01/2021
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: faa0c3afb08d1c0282b2164ed914637ce9aad88117af37ba44fdb81e7610e574
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: d062e2982c1041454b083630404f2b68f0da9669
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032407"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232910"
 ---
 # <a name="export-events"></a>Exportera händelser
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-En händelse representerar användarbeteende. Den registrerar när en användare visar en sida (visa händelse) eller interagerar med innehåll (åtgärdshändelse). När du kan bestämma vilka egenskaper för data som du vill visa i en rapport kallas denna virtuella vy av data a *förfinad händelse*. 
+En händelse representerar användarbeteende. Den registrerar när en användare visar en sida (visa händelse) eller interagerar med innehåll (åtgärdshändelse). När du kan bestämma vilka egenskaper för data som du vill visa i en rapport kallas denna virtuella vy av data a *förfinad händelse*. Mer information finns i [Skapa och ändra händelser](refined-events.md).
 
 - Du kan exportera händelser och förfinade händelser till extern lagring. 
 - Exporterna är ett dataflöde för vidarebefordran. Du kan inte fylla på strömmen. 
@@ -45,26 +44,28 @@ Innan du upprättar en export måste du ha åtkomst till och en aktiv prenumerat
 
 ## <a name="export-events"></a>Exportera händelser
 
-Det finns två sätt att exportera händelser: 
+Du kan visa dialogrutan **Exportera händelser** på två sätt: 
 - Gå till **Data** > **Exporter** och välj **Ny export**.
 - Gå till **Data** > **Händelser**, välj **Fler [...]** bredvid den händelse du vill exportera, och välj **Exportera** i listrutan. 
 
+:::image type="content" source="media/new-export.png" alt-text="Skapa en ny export.":::
+
 Här får du instruktioner om hur du skapar en export:
 
-1. Ange ett **Exportnamn**.
+1. Ange ett **exportnamn** och välj sedan **Nästa**.
 
 1. I listrutan **Händelseval** väljer du de bashändelser och förfinade händelser som ska inkluderas i exporten. 
 
-1. Under **Filstruktur** väljer du takt för att skapa nya filer i mållagringsplatsen. Händelser exporteras kontinuerligt när de inträffar.
+1. I avsnittet **Filstruktur** väljer du takt (timme eller dag) för att skapa nya filer i mållagringsplatsen och väljer **Nästa**. Händelser exporteras kontinuerligt när de inträffar.
 
-1. Välj format för exporten. Du kan välja mellan formaten **Common Data Model**, **CSV** och **JSON**. Om du vill använda exporten med andra Dynamics 365-program rekommenderar vi att du använder formatet Common Data Model.
+1. I dialogrutan **Välj format** välj formatet för din export. Välj mellan formaten **Common Data Model**, **CSV** och **JSON**. Om du vill använda exporten med andra Dynamics 365-program rekommenderar vi formatet **Common Data Model**.
 
-1. I steget **Välj destination**, ange Azure Data Lake Storage Gen 2 plats.
+1. I dialogrutan **Välj destination** ange Azure Data Lake Storage Gen 2 plats.
     1. **ADLS Gen 2 kontonamn** är namnet på det lagringskonto som du vill spara exporten till. 
     1. **Mappsökvägen** definierar var exporten ska lagras i lagringskontots filsystem och katalogstruktur.
     1. **Delad nyckel** är tillgänglig från Azure-portalen för lagringskontot.
 
-1. Granska och bekräfta dina val.
+1. Granska och bekräfta dina val för att slutföra.
 
 ## <a name="view-and-manage-exports"></a>Visa och hantera exporter
 

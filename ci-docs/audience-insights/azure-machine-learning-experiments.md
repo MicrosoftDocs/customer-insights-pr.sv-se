@@ -1,24 +1,23 @@
 ---
 title: Azure Machine Learning-experiment
 description: Använd Azure Machine Learning-baserade modeller i Dynamics 365 Customer Insights.
-ms.date: 11/30/2020
-ms.service: customer-insights
+ms.date: 12/02/2021
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3f97e22687ae4f5536d492bac83bdf9c711e2c94
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: 3c3bed3dca40be748140a8b339191e6a42725714
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554457"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8228910"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Använd Azure Machine Learning-baserade modeller
 
-Enhetliga data i Dynamics 365 Customer Insights är en källa för maskininlärningsmodeller som kan generera ytterligare affärsinsikter. Customer Insights integreras med Machine Learning Studio (klassisk) och Azure Machine Learning för att använda dina egna anpassade modeller. Se [Machine Learning Studio-experiment (klassisk)](machine-learning-studio-experiments.md) för exempel på experiment som byggts på Machine Learning Studio (klassisk). 
+Enhetliga data i Dynamics 365 Customer Insights är en källa för maskininlärningsmodeller som kan generera ytterligare affärsinsikter. Customer Insights integreras med Azure Machine Learning för att använda dina egna anpassade modeller.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -35,7 +34,7 @@ Enhetliga data i Dynamics 365 Customer Insights är en källa för maskininlärn
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Arbeta med Azure Machine Learning-designer
 
-Azure Machine Learning-designern tillhandahåller en visuell arbetsyta där du kan dra och släppa datauppsättningar och moduler, liknande Machine Learning Studio (klassisk). En batch-pipeline som skapats från designern kan integreras i Customer Insights om de konfigureras i enlighet med detta. 
+Azure Machine Learning designer är en visuell designdesigner där du kan dra och släppa datauppsättningar och moduler. En batch-pipeline som skapats från designern kan integreras i Customer Insights om de konfigureras i enlighet med detta. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Arbeta med Azure Machine Learning SDK
 

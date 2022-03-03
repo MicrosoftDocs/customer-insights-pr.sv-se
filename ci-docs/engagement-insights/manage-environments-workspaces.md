@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/01/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 279af24358a1d6ea2b4cc75d5496042af73a7cae
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: ded9e98f06109b7cdc27f449455b7f58d633722f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645468"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350659"
 ---
 # <a name="manage-environments-and-workspaces"></a>Hantera miljöer och arbetsytor
 
@@ -24,7 +23,7 @@ ms.locfileid: "7645468"
 
 Detta ämne beskriver hur du hanterar arbetsytor och miljöer när de redan har skapats. 
 
-- En *arbetsyta* är ett utrymme för att lagra och hantera händelser och rapporter. Det är här som du kan visa användaraktiviteter i realtid. När du skapar en arbetsyta väljer du vilken typ av data du vill skicka till arbetsyta. För närvarande stöds webbdata och mobilappar. Mer information finns i [Skapa en arbetsyta och lägga till medlemmar](create-workspace.md).
+- En *arbetsyta* är ett utrymme för att lagra och hantera händelser och rapporter. Det är här som du kan visa användaraktiviteter i realtid. När du skapar en arbetsyta väljer du vilken typ av data du vill skicka till arbetsyta. För närvarande stöds webbdata och mobilappar. Mer information finns i [Skapa en ny arbetsyta och lägga till medlemmar](create-workspace.md).
 
 - En *miljö* är ett utrymme där du hanterar arbetsytor och anslutningar. Mer information finns i [Skapa en ny miljö](create-new-environment.md).
 
@@ -71,19 +70,11 @@ Som miljöadministratör kan du komma åt en miljö från det vänstra navigerin
 
 :::image type="content" source="media/environment-edit.png" alt-text="Administrationscenter för miljö.":::
 
-### <a name="rename-an-environment"></a>Ge miljön ett nytt namn
+### <a name="edit-an-environment-name"></a>Redigera ett miljönamn
 
 1. Gå till fliken **Administratör** > **Miljö** och välj **Inställningar**.
 
 1. Uppdatera **Miljönamn** och välj **Spara** för att tillämpa dina ändringar.
-
-### <a name="manage-environment-members"></a>Hantera till miljömedlemmar
-
-1. Gå till fliken **Administratör** > **Miljö** och välj **Medlemmar**.
-
-1. Välj **Lägg till medlemmar** för att uppdatera medlemmar och [tilldela roller](user-roles.md). För tillfället är endast **Miljöadministratör** tillgänglig.
-
-1. Välj **Lägg till medlemmar** om du vill lägga till dem i miljön.
 
 ### <a name="delete-an-environment"></a>Ta bort en miljö
 
@@ -97,6 +88,14 @@ Miljöadministratörer kan ta bort miljöer. Innan du kan ta bort en miljö mås
 
 1. Välj **Ta bort** för att ta bort miljön permanent.
 
+### <a name="manage-environment-members"></a>Hantera till miljömedlemmar
+
+1. Gå till fliken **Administratör** > **Miljö** och välj **Medlemmar**.
+
+1. Välj **Lägg till medlemmar** för att uppdatera medlemmar och [tilldela roller](user-roles.md). För tillfället är endast **Miljöadministratör** tillgänglig.
+
+1. Välj **Lägg till medlemmar** om du vill lägga till dem i miljön.
+
 ## <a name="manage-connections"></a>Hantera anslutningar
 
 Genom att upprätta anslutningar för målgruppinsikter kan du se rapporter i engagemangsinsikter baserade på enhetliga kundprofiler. 
@@ -107,7 +106,6 @@ Mer information finns i [Skapa en länk mellan målgruppsinsikter och engagemang
 
 För att skydda kundens personliga data kan du ta bort eller exportera identifierbara data från slutanvändaren.
 
-För mer information, se [Ta bort och exporterar händelsedata som innehåller personuppgifter](delete-export-personal-data.md).
-
+För mer information, se [Ta bort och exporterar händelsedata som innehåller personuppgifter](../dsr-rights-requests.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

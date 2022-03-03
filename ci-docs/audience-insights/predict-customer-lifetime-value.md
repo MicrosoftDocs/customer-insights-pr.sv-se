@@ -3,20 +3,24 @@ title: Förutsägelse av kundens livstidsvärde
 description: Förutse potentiell intäkt för aktiva kunder i framtiden.
 ms.date: 02/05/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 740d6a5a749e156414b0e80193334051b7f2632fe4d1f4291d74b99250f35bc2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-predictions
+- ci-create-prediction
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 07790604b06f21095a9220a6f57727cac80789c5
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035391"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355811"
 ---
-# <a name="customer-lifetime-value-clv-prediction-preview"></a>Förutsägelse av kundens livstidsvärde (förhandsversion)
+# <a name="customer-lifetime-value-clv-prediction"></a>Förutsägelse av kundens livstidsvärde
 
 Förutse potentiellt värde (intäkt) som enskilda aktiva kunder ger verksamheten under en angiven tidsperiod i framtiden. Med den här funktionen kan du uppnå olika mål: 
 - Identifiera kunder med högt värde och bearbeta den här insikten
@@ -65,7 +69,7 @@ Följande data krävs och där de är markerade som valfria rekommenderas de fö
     - Datafullständighet: Mindre än 20 % saknade värden i obligatoriska fält i indata   
 
 > [!NOTE]
-> - För modellen krävs kundens transaktionshistorik. Det går bara att konfigurera en entitet för transaktionshistorik för tillfället. Om det finns flera köp-/transaktionsentiteter kan du Power Query innan datainmatning.
+> - För modellen krävs kundens transaktionshistorik. Det går bara att konfigurera en entitet för transaktionshistorik för tillfället. Om det finns flera entiteter för inköp/transaktion kan du sammanföra dem i Power Query före datainmatningen.
 > - Om du vill ha ytterligare aktivitetsdata (valfritt) kan du lägga till så många kundaktivitetsentiteter du vill ha med i modellen.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Skapa en förutsägelse av kundens livstidsvärde
@@ -74,7 +78,7 @@ Följande data krävs och där de är markerade som valfria rekommenderas de fö
 
 1. Välj panelen **Kundens livstidsvärde** och välj **Använd modell**. 
 
-1. I rutan **Kundens livstidsvärde (förhandsversion)** väljer du **Kom igång**.
+1. I rutan **Kundlivstidsvärde** väljer du **Kom igång**.
 
 1. **Ge modellen** och **utdataentiteten ett namn** för att särskilja dem från andra modeller eller entiteter.
 

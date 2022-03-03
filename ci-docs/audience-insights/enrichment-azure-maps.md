@@ -3,18 +3,17 @@ title: Utöka kundprofiler med platsdata från Azure Maps
 description: Allmän information om förstapartsberikande för Azure Maps.
 ms.date: 08/31/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 63f241c27ec86f357c83a301d6797f9ff87c2241
-ms.sourcegitcommit: 2acda3c5adf40bc3f5bbb4b2b4b6c22f84371da7
+ms.openlocfilehash: cb1c0778a398ef6d338ce6cf9e199eae0c344a5c
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2021
-ms.locfileid: "7466784"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226471"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Utökande av kundprofiler med Azure Maps (förhandsversion)
 
@@ -86,7 +85,7 @@ Du kan få tillgång till en detaljerad vy över respektive utökad profil genom
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa ovanpå dina utökade kunddata. Skapa [segment](segments.md), [mått](measures.md)och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 

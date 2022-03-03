@@ -5,16 +5,15 @@ author: mochimochi016
 ms.reviewer: mhart
 ms.author: jefhar
 ms.date: 11/05/2020
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 95caaa1f67a7740328b67face00acaea65452eb0
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: 6690b016be4ad26faa797e5f87aba60caa48ddff
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494494"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232997"
 ---
 # <a name="first-run-experience"></a>Välkomstprogram
 

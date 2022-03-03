@@ -4,26 +4,25 @@ description: Läs mer om de regioner och geografiska områden som tjänsten dist
 author: mkisel11
 ms.reviewer: mhart
 ms.author: mkisel
-ms.date: 09/01/2021
-ms.service: customer-insights
+ms.date: 09/28/2021
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: c89637cbbe6626f95bcadb1f69831a1647f448a4
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: 08435e651c3706257b8c0548e6e9bbf98f39dce9
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483319"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8228128"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Regional tillgänglighet för Dynamics 365 Customer Insights
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Interaktionsinsikter, en Dynamics 365 Customer Insights-funktion, introducerar gradvis fler regioner, där kunderna kan välja att lagra sina data. Administratörer kan välja en region när de [skapar en ny miljö](manage-environments-workspaces.md#create-an-environment). 
+Interaktionsinsikter, en Dynamics 365 Customer Insights-funktion, introducerar gradvis fler regioner, där kunderna kan välja att lagra sina data. Administratörer kan välja en region när de [skapar en ny miljö](create-new-environment.md). 
 
-När du konfigurerar engagemangsinsikter för första gången kan du välja regionen samtidigt som du går igenom den [guidade förstagångsupplevelsen](quickstart.md). Senare låter samtliga nya miljöer dig välja i vilken region som datan ska lagras i.
+När du konfigurerar engagemangsinsikter för första gången kan du välja regionen samtidigt som du går igenom den [guidade förstagångsupplevelsen](quickstart.md). Senare kan du välja i vilken region data ska lagras för varje ny miljö.
 
-För närvarande finns det två geografiska områden: USA och Europa. Användarna kan välja mellan regionen Västra USA och regionen Nordeuropa.
+För närvarande har vi stöd USA och Europa. Användare kan välja mellan dessa regioner: västra USA, östra USA, norra Europa och västra Europa.
 
 En organisation kan upprätthålla miljöer i olika regioner. I Miljö A lagras till exempel data i västra USA och i miljö B lagras den i norra Frankrike.
 

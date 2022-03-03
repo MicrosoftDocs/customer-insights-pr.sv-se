@@ -1,29 +1,31 @@
 ---
 title: Arbeta med API:er
 description: Använd API:er och förstå begränsningar.
-ms.date: 12/04/2020
+ms.date: 05/10/2021
 ms.reviewer: wimohabb
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
-ms.author: mhart
+ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 5a03e916676800afdd8692da865a1060952d5c4f
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+searchScope:
+- ci-system-api-usage
+- customerInsights
+ms.openlocfilehash: b1e022f8afb8b7dbb707636009b6a25ee242a4e0
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689152"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354807"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbeta med API:er i Customer Insights
 
-Dynamics 365 Customer Insights tillhandahåller API:er för att bygga egna program baserat på data från dig i Customer Insights.
+Dynamics 365 Customer Insights tillhandahåller API:er för att bygga egna program baserat på dina data i Customer Insights.
 
 > [!IMPORTANT]
-> Detaljer om dessa API:er anges i [referens om Customer Insights API:er](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). De innehåller ytterligare information om operationer, parametrar och svar.
+> Detaljer om dessa API:er anges i [API-referens för Customer Insights](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). De innehåller ytterligare information om operationer, parametrar och svar.
 
-Den här artikeln guidar dig till åtkomst till Customer Insights-API:erna, till hur du skapar en Azure App-registrering och hjälper dig att komma igång med de tillgängliga klientbiblioteken.
+I den här artikeln beskrivs hur du öppnar API för Customer Insights, skapar en Azure-appregistrering och kommer igång med de tillgängliga klientbiblioteken.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Kom igång med att prova API:erna för Customer Insights
 
@@ -32,15 +34,16 @@ Den här artikeln guidar dig till åtkomst till Customer Insights-API:erna, till
 1. Om du vill aktivera API:er på Customer Insights-miljön går du till **Admin** > **Behörigheter**. Du behöver administratörsbehörighet för att kunna göra det.
 
 1. Gå till fliken **API:er** och välj knappen **Aktivera**.    
+ 
    Att aktivera API:erna skapar en primär och sekundär prenumerationsnyckel för din instans som används i API-begäranden. Du kan återskapa nycklarna genom att välja **Återskapa primär** eller **Återskapa sekundär** på **Admin** > **Behörigheter** > **API:er**.
 
-   :::image type="content" source="media/enable-apis.gif" alt-text="Aktivera Customer Insights-API:er":::
+<!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
-1. Välj **Utforska våra API:er** för att prova API:erna.
+1. Välj **Utforska våra API:er** för att [prova API:erna](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
 
 1. Välj en API-åtgärd och välj **Prova den**.
 
-1. I sidorutan anger du värdet i listmenyn **Auktorisering** till **implicit**. Rubriken `Authorization` får med ett ägartoken tillagt. Din prenumerationsnyckel kommer att fyllas i automatiskt.
+1. I sidpanelen anger du värdet för listrutan **Auktorisering** till **implicit**. Sidhuvudet `Authorization` läggs till med en ägartoken. Din prenumerationsnyckel kommer att fyllas i automatiskt.
   
 1. Lägg alternativt till alla nödvändiga frågeparametrar.
 
@@ -48,22 +51,27 @@ Den här artikeln guidar dig till åtkomst till Customer Insights-API:erna, till
 
 HTTP-svaret visas snart nedan.
 
+<!--   :::image type="content" source="media/try-apis.gif" alt-text="How to test the APIs."::: -->
+
 ## <a name="create-a-new-app-registration-in-the-azure-portal"></a>Skapa en ny appregistrering i Azure-portalen
 
-Med hjälp av de här stegen kan du komma igång med att använda Customer Insights-API:erna i ett Azure-program med hjälp av delegerade behörigheter. Se till att ha slutfört [Komma igång-avsnittet](#get-started-trying-the-customer-insights-apis) först.
+Dessa steg hjälper dig att komma igång med API:er för Customer Insights i ett Azure-program med delegerade behörigheter. Se till att du slutför [avsnittet Komma igång](#get-started-trying-the-customer-insights-apis) först.
 
 1. Logga in på [Azure-portalen](https://portal.azure.com) med det konto som kan komma åt Customer Insights-data.
 
 1. Till vänster väljer du **Appregistreringar**.
 
 1. Välj **Ny registrering**, tillhandahåll ett programnamn och välj kontotyp.
+ 
    Lägg alternativt till en omdirigerings-URL. http://localhost är tillräcklig för att utveckla ett program på din lokala dator.
 
 1. På din nya App-registrering går du till **API-behörigheter**.
 
+<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
+
 1. Välj **Lägg till en behörighet** och välj **Customer Insights** i sidorutan.
 
-1. För **Behörighetstyp** väljer du **Delegerade behörigheter** och väljer behörigheten **user_impersonation**.
+1. För **Behörighetstyp** väljer du **Delegerad behörighet** och sedan behörigheten **användarpersonifiering**.
 
 1. Välj **Lägg till behörigheter**. Om du behöver komma åt API:et utan att någon användare loggat in granskar du avsnittet [Server-till-server-programbehörigheter](#server-to-server-application-permissions).
 
@@ -71,11 +79,13 @@ Med hjälp av de här stegen kan du komma igång med att använda Customer Insig
 
 Du kan använda Program-/klient-ID för den här appregistreringen med Microsoft Authentication Library (MSAL) för att få ett ägartoken att skicka med din begäran till API:et.
 
-Mer information om MSAL finns i [Översikt över MSAL (Microsoft Authentication Library)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview).
+<!-- :::image type="content" source="media/grant-admin-consent.gif" alt-text="How to grant admin consent."::: -->
 
-Mer information om appregistrering i Azure finns i [den nya upplevelsen av registrering av Azure Portal-appen](https://docs.microsoft.com/azure/active-directory/develop/app-registration-portal-training-guide).
+Mer information om MSAL finns i [Översikt över MSAL (Microsoft Authentication Library)](/azure/active-directory/develop/msal-overview).
 
-Information om hur du använder API:er som våra klientbibliotek finns i [Customer Insights-klientbibliotek](#customer-insights-client-libraries).
+Mer information om appregistrering i Azure finns i [Registrera ett program](/azure/active-directory/develop/quickstart-register-app.md#register-an-application).
+
+Information om hur du använder API:er i våra klientbibliotek finns i [Customer Insights-klientbibliotek](#customer-insights-client-libraries).
 
 ### <a name="server-to-server-application-permissions"></a>Programbehörigheter för server till server
 
@@ -83,32 +93,29 @@ Avsnittet för [registrering av appar](#create-a-new-app-registration-in-the-azu
 
 1. På din app-registrering i Azure Portal går du till **API-behörigheter**.
 
-1. Välj **Lägg till en behörighet** och välj **Customer Insights** i sidorutan.
+1. Välj **Lägg till behörighet**. 
 
-1. För **Behörighetstyp** väljer du **Programbehörigheter** och väljer behörigheten **CustomerInsights.Api.All**.
+1. Välj fliken **API:er som min organisation använder** och välj **Dynamics 365 AI för Customer Insights** från listan. 
+
+1. För **Behörighetstyp** väljer du **Programbehörighet** och sedan behörigheten **CustomerInsights.Api.All**.
 
 1. Välj **Lägg till behörigheter**.
-
-1. För att ge administratörsmedgivande på denna programbehörighet måste du lägga till ett Service Principal.
-
-   1. Installera Azure Active Directory PowerShell-modulen (AD): `Install-Module -Name AzureAD -AllowClobber -Scope AllUsers`
-   1. Anslut till ditt AD-konto: `Connect-AzureAD -TenantId <your tenant id>`. Du hittar klientorganisationens ID på **Översikt** > **Azure Active Directory**.
-   1. Kör följande kommando för att lägga till Azure AD Service Principal `New-AzureADServicePrincipal -AppId "38c77d00-5fcb-4cce-9d93-af4738258e3c" -DisplayName "Microsoft Dynamics 365 Customer Insights"` Parametern AppId gäller API-appen Customer Insights.
-
-   :::image type="content" source="media/azureAD-service-principal.png" alt-text="Exempel på huvudkonto för tjänsten":::
 
 1. Gå tillbaka till **API-behörigheter** för din app-registrering.
 
 1. Välj **Bevilja admin-godkännande för...** för att slutföra registreringen av appen.
 
-1. Slutligen måste vi lägga till namnet på appregistreringen som användare i Customer Insights.    
+ <!--  :::image type="content" source="media/grant-admin-consent.gif" alt-text="How to grant admin consent."::: -->
+
+1. Slutligen måste vi lägga till namnet på appregistreringen som användare i Customer Insights.  
+   
    Öppna Customer Insights, gå till **Admin** > **Behörigheter** och välj **Lägg till användare**.
 
 1. Sök efter namnet på din appregistrering, välj den bland sökresultaten och välj **Spara**.
 
 ## <a name="customer-insights-client-libraries"></a>Klientbibliotek för Customer Insights
 
-Det här avsnittet hjälper dig att komma igång med att använda klientbiblioteken som är tillgängliga för Customer Insights-API:erna.
+Det här avsnittet hjälper dig att komma igång med att använda klientbiblioteken som är tillgängliga för Customer Insights-API:erna. All bibliotekskällkod och alla exempelprogram finns på sidan [Customer Insights GitHub](https://github.com/microsoft/Dynamics365-CustomerInsights-Client-Libraries). 
 
 ### <a name="c-nuget"></a>C# NuGet
 
@@ -121,22 +128,35 @@ Lär dig hur du kommer igång med att använda C#-klientbiblioteken från NuGet.
 1. Sök efter **Microsoft.Dynamics.CustomerInsights.Api**.
 
 1. Välj **Installera** för att lägga till paketet i projektet.
+ 
    Alternativt kan du köra det här kommandot i **pakethanterarkonsolen för NuGet**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
-   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Lägg till NuGet-paket i Visual Studio-projekt":::
+ <!--  :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Add NuGet package to Visual Studio project."::: -->
 
 #### <a name="use-the-c-client-library"></a>Använda klientbiblioteket C#
 
-1. Använd [Microsoft Authentication Library (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) för att få ett `AccessToken` med hjälp av din befintliga [Azure-appregistrering](#create-a-new-app-registration-in-the-azure-portal).
+1. Använd [Microsoft Authentication Library (MSAL)](/azure/active-directory/develop/msal-overview) för att få ett `AccessToken` med hjälp av din befintliga [Azure-appregistrering](#create-a-new-app-registration-in-the-azure-portal).
 
-1. När du har autentiserat och fått ett token skapar du en ny eller använder en befintlig `HttpClient` med **DefaultRequestHeaders "Auktorisering"** inställd på **Ägare <access token>** och **Ocp-Apim-Subscription-Key** inställd på [**prenumerationsnyckel** från din Customer Insights-miljö](#get-started-trying-the-customer-insights-apis).    
+1. Efter att ha lyckats autentisera och skaffa en token, konstruera en ny eller använd en befintlig `HttpClient` med den ytterligare **DefaultRequestHeaders "Authorization"** anges till **Bearer "access token"** och **Ocp-Apim-Subscription-Key** anges till [**prenumerationsnyckeln** från Customer Insights-miljö](#get-started-trying-the-customer-insights-apis).   
+ 
    Återställ rubriken **Auktorisering** när det är lämpligt. Till exempel när token löpt ut.
 
 1. Skicka denna `HttpClient` i konstruktionen av `CustomerInsights`-klienten.
 
-   :::image type="content" source="media/httpclient-sample.png" alt-text="Exempel på httpclient":::
+<!--   :::image type="content" source="media/httpclient-sample.png" alt-text="Sample of httpclient."::: -->
 
-1. Ringa samtal med klienten till "tilläggsmetoderna", till exempel `GetAllInstancesAsync`. Om tillgång till underliggande `Microsoft.Rest.HttpOperationResponse` är att föredra, använd "http-meddelandemetoderna", till exempel `GetAllInstancesWithHttpMessagesAsync`.
+1. Gör anrop med klienten till "tilläggsmetoderna", till exempel `GetAllInstancesAsync`. Om tillgång till underliggande `Microsoft.Rest.HttpOperationResponse` är att föredra, använd "http-meddelandemetoderna", till exempel `GetAllInstancesWithHttpMessagesAsync`.
 
 1. Svaret kommer sannolikt att vara av typen `object` eftersom metoden kan returnera flera typer (till exempel `IList<InstanceInfo>` och `ApiErrorResult`). Om du vill kontrollera returtypen kan du säkert typkonvertera objekten i de svarstyper som anges på [API-informationssidan](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) för den åtgärden.    
+   
    Om mer information om begäran behövs använder du **metoderna för http-meddelande** för att komma åt råsvarsobjekt.
+
+### <a name="nodejs-package"></a>NodeJS-paket
+
+Använd NodeJS-klientbiblioteken som är tillgängliga via NPM: https://www.npmjs.com/package/@microsoft/customerinsights
+
+### <a name="python-package"></a>Python-paket
+
+Använd Python-klientbiblioteken som är tillgängliga via PyPi: https://pypi.org/project/customerinsights/
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

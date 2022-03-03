@@ -1,20 +1,23 @@
 ---
-title: Mappa entiteter för datasammanslutningen
-description: Mappa data för att skapa enhetliga kundprofiler.
-ms.date: 09/25/2020
-ms.service: customer-insights
+title: Mappa entiteter och attribut för samordning av data
+description: Välj entiteter, attribut, primära nycklar och typer av attribut för mappning av data till den enhetliga kundprofilen.
+ms.date: 10/18/2020
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: adkuppa
+ms.topic: tutorial
+author: adkuppa
+ms.author: adkuppa
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e98c7717f7707d43a9fd1fc6f6b0e9c49e4e7ee0
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+searchScope:
+- ci-map
+- ci-match
+- customerInsights
+ms.openlocfilehash: 81f1e97dfbecd9292c50529ca21da8dab9295b5d
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407098"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354980"
 ---
 # <a name="map-entities-and-attributes"></a>Mappa entiteter och attribut
 
@@ -35,14 +38,14 @@ Mer information om det allmänna flödet av dataförening finns i [förena](data
 3. Välj de entiteter och attribut du vill använda i faserna *matchning* och *koppla*. Du kan välja de attribut som krävs separat från en entitet eller ta med alla attribut från en entitet genom att markera kryssrutan **Inkludera alla fält** på entitetsnivån. Vi rekommenderar att du väljer minst två entiteter att dra nytta av föreningsprocessen för data.
 
    > [!div class="mx-imgBorder"]
-   > ![Lägg till entitetsexempel](media/data-manager-configure-map-add-entities-example.png "Lägg till entitetsexempel")
+   > ![Lägg till entitetsexempel.](media/data-manager-configure-map-add-entities-example.png "Lägg till entitetsexempel")
 
    I det här exemplet lägger vi till entiteterna **eCommerceContacts** och **loyCustomers**. Genom att välja de här entiteterna kan du få insikter om vilka av de online-kunder som är medlemmar i ett förmånsprogram.
    
    Du kan söka på nyckelord för alla attribut och entiteter för att välja vilka attribut som ska mappas.
    
      > [!div class="mx-imgBorder"]
-   > ![Exempel på sökfält](media/data-manager-configure-map-search-fields-example.png "Exempel på sökfält")
+   > ![Exempel på sökfält.](media/data-manager-configure-map-search-fields-example.png "Exempel på sökfält")
 
 4. Välj **Bekräfta** för att bekräfta dina val.
 
@@ -55,7 +58,7 @@ När du har valt entiteter **Karta** visas de valda entiteterna i översiktssida
 - **Attribut semantisk typ**: kategorier för attribut, t.ex. e-postadress eller namn. Om du vill använda AI-modeller för smart prediktion av semantik, spara tid och förbättra precisionen, anger du **Intelligent mappning** till **PÅ**. Intelligent mappningen visar rekommendation av AI-baserad semantik i fältet **Typ**. Om du väljer **AV** ser du våra rekommendationer för regelbunden mappning. Du kan välja valfri semantisk typ i listan med tillgängliga alternativ och ersätta det föreslagna urvalet.
 
 > [!div class="mx-imgBorder"]
-> ![Attributtyp och semantisk prediktion](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtyp och semantisk prediktion")
+> ![Attributtyp och semantisk förutsägelse.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtyp och semantisk prediktion")
 
 Det går också att lägga till en anpassad entitetstyp. Välj typfältet för ett attribut och ange namnet på den anpassade semantiska typen. PÅ så sätt kan du också ändra vilka attributtyper som identifieras av systemet.
 
@@ -64,7 +67,7 @@ Alla attribut för vilka en semantisk typ identifieras identifieras automatiskt 
 Attribut som inte mappas automatiskt till en semantisk typ grupperas i **definiera data i avsnittet omappade fält**. Välj fältet semantisk typ för de omappade attributen eller ange ett eget namn för attributtypen.
 
 > [!div class="mx-imgBorder"]
-> ![Primärnyckel och attributtyp](media/data-manager-configure-map-add-attributes.png "Primärnyckel och attributtyp")
+> ![Primärnyckel och attributtyp.](media/data-manager-configure-map-add-attributes.png "Primärnyckel och attributtyp")
 
 > [!NOTE]
 > Ett fält ska mappas till den semantiska typen Person.FullName som fyller i kundnamnet på kundkortet. Annars visas inget namn på kundkorten. 
@@ -76,7 +79,7 @@ Attribut som inte mappas automatiskt till en semantisk typ grupperas i **definie
 2. I rutan **Redigera fält** lägger du till eller tar bort attribut och entiteter. Använd sökningen eller bläddra för att hitta och välja dina attribut och enheter av intresse. Du kan inte ta bort ett attribut eller en entitet om de redan har matchats.
 
    > [!div class="mx-imgBorder"]
-   > ![Lägg till eller ta bort attribut](media/configure-data-map-edit.png "Lägg till eller ta bort attribut")
+   > ![Lägg till eller ta bort attribut.](media/configure-data-map-edit.png "Lägg till eller ta bort attribut")
 
 3. Välj **tillämpa**.
 
@@ -94,7 +97,7 @@ Fortsätt med föreningsstegen och se till att attributet som innehåller bild-U
 
 För organisationer (förhandsgranskning) ska attributtypen mappas till "Organization.Name"
 > [!div class="mx-imgBorder"]
-> ![Primärnyckel och attributtyp B2B](media/configure-data-map-edit-b2b.png "Primärnyckel och attributtyp B2B")
+> ![Primärnyckel och attributtyp B2B.](media/configure-data-map-edit-b2b.png "Primärnyckel och attributtyp B2B")
 
 ## <a name="next-step"></a>Nästa steg
 
@@ -102,3 +105,6 @@ Som en del av föreningsprocessen för dat går du till sidan **matchning**. Bes
 
 > [!TIP]
 > Se följande videoklipp: [komma igång: skapa en enhetlig kundprofil](https://youtu.be/oBfGEhucAxs).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -3,18 +3,20 @@ title: Anslutningar till andra tjänster från Customer Insights.
 description: Dela data till andra tjänster.
 ms.date: 04/09/2021
 ms.reviewer: nikeller
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+searchScope:
+- ci-connections
+- customerInsights
+ms.openlocfilehash: ccad090d3bf6eab96eff37f7a96289ca2882d369
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304994"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354439"
 ---
 # <a name="connections-preview-overview"></a>Översikt över anslutningar (förhandsversion)
 
@@ -47,6 +49,7 @@ Om du vill lägga till anslutningar måste du ha [administratörsbehörighet](pe
 1. I fönstret **Konfigurera anslutning** ange de uppgifter som krävs. 
    1. En **Visningsnamn** och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
    1. Exakt vilka fält som är beroende av vilken tjänst du ansluter till. Mer information om en specifik anslutningstyp finns i artikeln om måltjänsten.
+   1. Om du [använder ditt eget Key Vault](use-azure-key-vault.md) för att lagra hemligheter aktiverar du **Använd Key Vault** och väljer hemligheten i listan.
 
 1. Välj för att skapa anslutningen **Spara**.
 
@@ -93,3 +96,6 @@ Fristående berikningar och export blir inaktiva. Du aktiverar dem på nytt geno
 
 1. Bekräfta borttagningen genom att markera **Ta bort**.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Upprätta anslutningar med hemligheter som hanteras av ditt eget Key Vault
+
+Vissa anslutningar behöver hemligheter som API-nycklar eller lösenord. Vissa anslutningar stöder hemligheter som lagras i ditt eget Key Vault. Läs mer om anslutningar som stöds och hur du upprättar en [egen Key Vault för målgruppsinsikter](use-azure-key-vault.md).

@@ -1,25 +1,24 @@
 ---
 title: Komma igång med en betald licens på Dynamics 365 Customer Insights
 author: m-hartmann
-description: Bekanta dig med den första upplevelsen Dynamics 365 Customer Insights och utforska funktionerna.
+description: Bekanta dig med den välkomstupplevelsen i Dynamics 365 Customer Insights och utforska funktionerna.
 ms.author: mhart
 ms.date: 10/05/2021
-ms.service: customer-insights
-ms.topic: overview
+ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: b4228a36069f4adb8098ea96cefec0eef81a6560
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: c9517ed2b50ff37e361a27538dfb9f9ccbf3df8f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645733"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350153"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Komma igång efter att ha köpt Customer Insights
 
 I den här artikeln får du lära dig hur du tar dig till Dynamics 365 Customer Insights efter de första stegen efter att organisationen har köpt en prenumeration. Om du vill köpa Customer Insights listas våra kontaktalternativ på [Dynamics 365 Customer Insights-webbplatsen](https://dynamics.microsoft.com/ai/customer-insights/). 
 
-När du har köpt en prenumerationslicens för Customer Insights får den globala administratören för Microsoft 365-klientorganisationen ett e-postmeddelande som bjuder in denne att skapa miljön. 
+När du har köpt en prenumerationslicens för Customer Insights får den globala administratören av Microsoft 365-klientorganisationen ett e-postmeddelande som bjuder in denne till att skapa miljön. 
 
 Customer Insights licensieras per klientorganisation och innehåller flera funktioner. Du kan öka standardbudgeten genom att köpa fler kapaciteter och licenser. 
 - [Prissättningsöversikt](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
@@ -29,7 +28,7 @@ Om du vill prova tjänsten och funktionerna finns mer information i [Konfigurera
 
 ## <a name="start-with-customer-insights"></a>Starta med Customer Insights
 
-Den första körningen hjälper dig att välja inledande fokus med Customer Insights och utforska funktionerna med exempeldata. I nästa steg kan du skapa din egen miljö och arbeta med dina egna data.
+Den välkomstupplevelsen hjälper dig att välja inledande fokus med Customer Insights och utforska funktionerna med exempeldata. I nästa steg kan du skapa din egen miljö och arbeta med dina egna data.
 
 **Logga in första gången**:
 
@@ -40,10 +39,7 @@ Den första körningen hjälper dig att välja inledande fokus med Customer Insi
 
 ## <a name="create-your-own-environment"></a>Skapa din egen miljö
 
-När du har loggat in första gången visas en miljö med exempeldata. Med hjälp av den informationen kan du utforska funktionerna och bekanta dig med appen. Om du vill använda dina egna data måste du skapa en miljö för den funktion du vill arbeta i.
-
-- [Skapa en miljö i målgruppsinsikter.](audience-insights/get-started-paid.md)
-- [Skapa en miljö i engagemangsinsikter.](engagement-insights/create-new-environment.md) 
+När du har loggat in första gången visas en miljö med exempeldata. Med hjälp av den informationen kan du utforska funktionerna och bekanta dig med appen. Om du vill använda dina egna data måste du [skapa en miljö](audience-insights/get-started-paid.md).
 
 
 

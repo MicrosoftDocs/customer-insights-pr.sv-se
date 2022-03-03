@@ -3,18 +3,20 @@ title: Entiteter och datauppsättningar
 description: Visa data på sidan Entiteter.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-entities
+- customerInsight
+ms.openlocfilehash: 1e1abdf49a3c1fe6f9fdd2cf5353a7723454f47b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900449"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355355"
 ---
 # <a name="entities-in-audience-insights"></a>Entiteter i målgruppsinsikter
 
@@ -41,7 +43,7 @@ Sidan **Entiteter** anger entiteter och innehåller följande kolumner:
 > ![Fälttabell.](media/data-manager-entities-fields.PNG "Fälttabell")
 
 > [!NOTE]
-> På den här sidan visas endast ett exempel på entitetens data. Om du vill visa hela datauppsättningen går du till sidan **Datakällor**, väljer en entitet och sedan **redigera** och visar sedan entitetens data med Power Query redigeraren som förklaras i [Datakällor](data-sources.md).
+> På den här sidan visas endast ett exempel på entitetens data. Om du vill visa hela datauppsättningen går du till sidan **Datakällor**, väljer en entitet och sedan **Redigera** och visar sedan entitetens data med Power Query-redigeraren som förklaras i [Datakällor](data-sources.md).
 
 Om du vill lära dig mer om data som tas med i entiteten kan du få en del viktiga egenskaper för informationen, t.ex. nullvärden, saknade värden, unika värden, antal och fördelningar, som kan användas för dina data i kolumnen **Sammanfattning**. Välj diagramikonen om du vill visa en sammanfattning av data.
 
@@ -71,7 +73,9 @@ Fält från en inmatad datakälla kan innehålla skadade data. Poster med skadad
 
 Exempelvis har datatypen &quot;datum&quot; angetts för kolumnen &quot;födelsedag&quot;. En kundpost har födelsedagen angiven som &quot;1977-01-01&quot;. Systemet flaggar då denna post som skadad. Någon kan nu ändra födelsedagen i källsystemet till &quot;1977&quot;. Efter en automatisk uppdatering av datakällor har fältet nu ett giltigt format och posten tas bort från den skadade entiteten. 
 
-Gå till **Data** > **Entiteter** och leta efter skadade entiteter i avsnittet **System**. Namnschema för skadade entiteter: &quot;DataSourceName_EntityName_corrupt&quot;.
+Gå till **Data** > **Entiteter** och leta efter skadade entiteter i avsnittet **System**. Namnschema för skadade entiteter: &quot;DataSourceName_EntityName_corrupt&quot;. Välj en skadad entitet om du vill identifiera alla skadade fält och orsaken på individuell postnivå.
+> [!div class="mx-imgBorder"]
+> ![Orsak till fel.](media/corruption-reason.png "Orsak till fel")
 
 Customer Insights behandlar fortfarande skadade poster. Däremot kan de orsaka problem när du arbetar med enhetliga data.
 

@@ -1,20 +1,19 @@
 ---
-title: Semantisk analys för kundfeedback
+title: Attitydanalys för kundfeedback
 description: Lär dig hur du använder en modell för attitydanalys på kundfeedback i Dynamics 365 Customer Insights.
 ms.date: 12/23/2021
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 05e530a1bc96c5fd9c7a3bc0197563d8fe330387
-ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
+ms.openlocfilehash: b06613b00a512a31479f9d30d539a010e17d33ba
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2022
-ms.locfileid: "7951091"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231487"
 ---
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Analysera sentiment i kundfeedback (förhandsversion)
 
@@ -38,7 +37,7 @@ För att säkerställa att du kan betrodda resultat från dessa modeller ger vi 
 
 Vi använder två **modeller för bearbetning av naturligt språk (NLP)**: Den första tilldelar varje feedbackkommentar en sentimentpoäng. Den andra modellen kopplar varje feedback till alla tillämpliga affärsaspekter. Modellen är utbildad i offentliga data från källor i sociala medier, återförsäljning, restaurang, konsumentprodukter och branscher.    
   
-- Fördefinierade affärsaspekter som modellen kan associera med feedbackdata är:
+Fördefinierade affärsaspekter som modellen kan associera med feedbackdata är:
 -   Kontohantering
 -   Utcheckning och betalning
 -   Kundsupport

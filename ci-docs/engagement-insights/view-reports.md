@@ -4,17 +4,16 @@ description: Använd de tillgängliga rapporterna om du vill visa aktiviteten i 
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 06/18/2021
-ms.service: customer-insights
+ms.date: 10/01/2021
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: cb6d9ab75b95a5f677d2267f5412a55327930987b2fc3a1a21958633a8116bd2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 03b0b4bab0d5d9c2ae641c85aac8174ec1668d45
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036670"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229762"
 ---
 # <a name="view-reports"></a>Visa rapporter
 
@@ -92,12 +91,18 @@ Mobilrapporter grupperas i realtidsanvändning, app och användarkategorier. Du 
 
 - **Platser** visar information om appanvändare efter land, region och ort.
 
-## <a name="filter-by-time-or-value"></a>Filtrera efter tid eller värde
+## <a name="filter-by-time-or-date-range"></a>Filtrera efter tid eller datumintervall
 
-Du kan välja tidsramen eller värdet i en webb- eller mobilrapport om du vill fokusera på ett värde eller en tidsperiod. 
+Du kan välja tidsram eller datumintervall i en webb- eller mobilrapport om du vill fokusera på ett värde eller en tidsperiod. 
 
-- Välj en tidsram genom att välj **Mer [...]** i listrutan i rapporten. Val av tidsintervall är inaktiverat för en användningsrapport i realtid. Tidsintervallet för en användningsrapport i realtid är "nu".
+- Välj en tidsram genom att välja ett värde i den nedrullningsbara listan i rapporten längst upp till höger i rapportvyn. Du kan också välja ett **Fast datumintervall**. 
 
-- I de flesta rapporter väljer du ett värde i ett diagram eller en lista för att filtrera rapporten för det valda värdet.
+  :::image type="content" source="media/filter-by-time.png" alt-text="Filtrera efter tid eller datumintervall.":::   
+
+- I de flesta rapporter väljer du ett värde i ett diagram eller en lista för att filtrera rapporten.
+
+> [!NOTE]
+> Val av tidsintervall är inaktiverat för en användningsrapport i realtid. Tidsintervallet för en användningsrapport i realtid är "nu".
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,62 +1,73 @@
 ---
-title: Ansluta till ett Azure Data Lake Storage Gen 2-konto med ett huvudkonto för tjänsten
-description: Använd ett huvudkonto för Azure-tjänsten för målgruppsinsikter för att ansluta till din egen datasjö när de bifogas till målgruppsinsikter.
-ms.date: 02/10/2021
-ms.service: customer-insights
+title: Ansluta till ett Azure Data Lake Storage konto med hjälp av ett tjänstobjekt
+description: Använd en Azure-huvudkonto för tjänsten och anslut till din egen datasjö.
+ms.date: 12/06/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: cc94ad49f12067d513db4663bff60620d6501eb0
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+searchScope:
+- ci-system-security
+- customerInsights
+ms.openlocfilehash: d593880b06bd21e96826039a67382b75a4296a87
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692135"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354212"
 ---
-# <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Anslut till ett Azure Data Lake Storage Gen2-konto med ett huvudkonto för Azure-tjänsten för målgruppsinsikter
+# <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Ansluta till ett Azure Data Lake Storage konto med hjälp av ett Azure-tjänstobjekt
 
-Automatiserade verktyg som använder Azure-tjänster bör alltid ha begränsade behörigheter. I stället för att låta program logga in som en fullt privilegierad användare erbjuder Azure huvudkonton för tjänsten. Läs mer om hur du kan ansluta målgruppsinsikter med ett Azure Data Lake Storage Gen2-konto med hjälp av ett huvudkonto för Azure-tjänsten i stället för lagringskontonycklar. 
+Denna artikel diskuterar hur du ansluter Dynamics 365 Customer Insights med ett Azure Data Lake Storage konto med ett Azure huvudkonto för tjänsten istället för lagringskontonycklar. 
 
-Du kan använda tjänstens huvudkonto för att säkert [lägga till eller redigera en Common Data Model-mapp som en datakälla](connect-common-data-model.md) eller [skapa en ny eller uppdatera en befintlig miljö](get-started-paid.md).
+Automatiserade verktyg som använder Azure-tjänster bör alltid ha begränsade behörigheter. I stället för att låta program logga in som en fullt privilegierad användare erbjuder Azure huvudkonton för tjänsten. Du kan använda tjänstens huvudkonto för att säkert [lägga till eller redigera en mapp för Common Data Model som datakälla](connect-common-data-model.md) eller [skapa eller uppdatera en miljö](create-environment.md).
 
 > [!IMPORTANT]
-> - Lagringskontot Azure Data Lake Gen2 som ska använda huvudkontot för tjänsten måste ha [Hierarkiskt namnområde (HNS) aktiverat](/azure/storage/blobs/data-lake-storage-namespace).
-> - Du måste ha administratörsbehörighet för din Azure-prenumeration för att skapa huvudkontot för tjänsten.
+> - Data Lake-lagringskontot som använder tjänstens huvudkonto måste vara Gen2 och ha [hierarkiskt namnområde aktiverat](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagringskonton stöds inte.
+> - Du behöver administratörsbehörighet för din Azure-prenumeration för att skapa ett huvudkonto för tjänsten.
 
-## <a name="create-azure-service-principal-for-audience-insights"></a>Skapa Azure-tjänstens huvudkonto för målgruppsinsikter
+## <a name="create-an-azure-service-principal-for-customer-insights"></a>Skapa ett Azure-huvudkonto för tjänsten för Customer Insights
 
-Innan du skapar ett nytt huvudkonto för tjänsten för målgruppsinsikter bör du kontroller om det redan finns ett inom organisationen.
+Innan du skapar ett nytt tjänstens huvudkonto för Customer Insights bör du kontrollera om det redan finns i organisationen.
 
 ### <a name="look-for-an-existing-service-principal"></a>Leta efter ett befintligt huvudkonto för tjänsten
 
 1. Gå till [Azure admin-portalen](https://portal.azure.com) och logga in på din organisation.
 
-2. Välj **Azure Active Directory** från Azure-tjänsterna.
+2. Från **Azure-tjänster**, välj **Azure Active Directory**.
 
 3. Under **Hantera** väljer du **Företagsprogram**.
 
-4. Sök efter första parts program-ID för målgruppsinsikter `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` eller namnet `Dynamics 365 AI for Customer Insights`.
+4. Sök efter ID:t för Microsoft-program:
+   - Målgruppsinsikter: `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` med namnet`Dynamics 365 AI for Customer Insights`
+   - Engagemangsinsikter: `ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd` med namnet `Dynamics 365 AI for Customer Insights engagement insights`
 
-5. Om du hittar en matchande post innebär det att huvudkontot för tjänsten för målgruppsinsikter existerar. Du behöver inte skapa det igen.
+5. Om du hittar en matchande post betyder det att huvudkonto för tjänsten redan finns. 
    
-   :::image type="content" source="media/ADLS-SP-AlreadyProvisioned.png" alt-text="Skärmbild som visar det befintliga huvudkontot för tjänsten.":::
+   :::image type="content" source="media/ADLS-SP-AlreadyProvisioned.png" alt-text="Skärmbild med ett befintligt huvudkonto för tjänsten.":::
    
 6. Om inga resultat returneras skapar du ett nytt huvudkonto för tjänsten.
 
+>[!NOTE]
+>För att utnyttja den kompletta kraften Dynamics 365 Customer Insights föreslår vi att du lägger till båda apparna i huvudkonto för tjänsten.
+
 ### <a name="create-a-new-service-principal"></a>Skapa ett nytt huvudkonto för tjänsten
 
-1. Installera den senaste versionen av **Azure Active Directory PowerShell för Graph**. Mer information finns i [Installera Azure Active Directory PowerShell för Graph](/powershell/azure/active-directory/install-adv2).
-   - På datorn väljer du Windows-tangenten på tangentbordet och söker efter **Windows PowerShell** och **Kör som administratör**.
-   
-   - I PowerShell-fönstret som öppnas anger du `Install-Module AzureAD`.
+1. Installera den senaste versionen av Azure Active Directory PowerShell for Graph. Mer information finns i [Installera Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
 
-2. Skapa huvudkontot för tjänsten för målgruppsinsikter med Azure AD PowerShell-modulen.
-   - I PowerShell-fönstret anger du `Connect-AzureAD -TenantId "[your tenant ID]" -AzureEnvironmentName Azure`. Ersätt "klientorganisationens ID" med klientorganisationens faktiska ID där du vill skapa huvudkontot för tjänsten. Parametern för miljönamn `AzureEnvironmentName` är valfri.
+   1. På datorn väljer du Windows-tangenten på tangentbordet och söker efter **Windows PowerShell** och väljer **Kör som administratör**.
+   
+   1. I PowerShell-fönstret som öppnas anger du `Install-Module AzureAD`.
+
+2. Skapa huvudkonto för tjänsten för Customer Insights med Azure AD PowerShell-modulen.
+
+   1. I PowerShell-fönstret anger du `Connect-AzureAD -TenantId "[your tenant ID]" -AzureEnvironmentName Azure`. Ersätt *[ditt ID för klientorganisation]* med klientorganisationens faktiska ID där du vill skapa huvudkontot för tjänsten. Parametern för miljönamn `AzureEnvironmentName` är valfri.
   
-   - Ange `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Det här kommandot skapar huvudkontot för tjänsten för målgruppsinsikter på den valda klientorganisationen.  
+   1. Ange `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Det här kommandot skapar huvudkontot för tjänsten för målgruppsinsikter på den valda klientorganisationen. 
+
+   1. Ange `New-AzureADServicePrincipal -AppId "ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd" -DisplayName "Dynamics 365 AI for Customer Insights engagement insights"`. Detta kommando skapar huvudkontot för tjänsten för engagemangsinsikter i vald klientorganisation.
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Bevilja behörighet till huvudkontot för tjänsten för åtkomst till lagringskontot
 
@@ -66,51 +77,49 @@ Gå till Azure Portal och bevilja behörighet till huvudkontot för tjänsten f�
 
 1. Öppna det lagringskonto du vill att tjänstens huvudkonto för målgruppsinsikter ska ha tillgång till.
 
-1. Välj **Åtkomstkontroll (IAM)** från navigeringsfönstret och välj **Lägg till** > **Lägg till rolltilldelning**.
-   
-   :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Skärmbild som visar Azure Portal när du lägger till en rolltilldelning.":::
-   
-1. I fönstret **Lägg till rolltilldelning** anger du följande egenskaper:
-   - Roll: *Storage Blob-datadeltagare*
-   - Tilldela åtkomst till: *användare, grupp eller huvudkonto för tjänsten*
-   - Välj: *Dynamics 365 AI för Customer Insights* (det [huvudkonto för tjänsten du skapade](#create-a-new-service-principal))
+1. I den vänstra ruta, välj **Åtkomstkontroll (IAM)** och välj sedan **Lägg till** > **Lägg till rolltilldelning**.
+
+   :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Skärmbild som visar Azure-portalen och lägger till en rolltilldelning.":::
+
+1. I fönstret **Lägg till rolltilldelning** ange följande egenskaper:
+   - Roll: **Storage Blob-datadeltagare**
+   - Tilldela åtkomst till: **användare, grupp eller huvudkonto för tjänsten**
+   - Välj: **Dynamics 365 AI for Customer Insights** och **Dynamics 365 AI for Customer Insights engagemangsinsikter** (de två [huvudkonto](#create-a-new-service-principal) du skapade tidigare i den här proceduren)
 
 1.  Välj **Spara**.
 
 Det kan ta upp till 15 minuter att distribuera ändringarna.
 
-## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Ange Azure-resurs-ID eller Azure-prenumerationens information i lagringskontot som är bifogat målgruppsinsikter.
+## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Ange Azure-resurs-ID eller Azure-prenumerationens information i lagringskontot som är bifogat målgruppsinsikter
 
-Bifoga ett Azure Data Lake-lagringskonto i målgruppsinsikter för att [lagra utdata](manage-environments.md) eller [använda det som en datakälla](connect-dataverse-managed-lake.md). Om du väljer alternativet Azure Data Lake kan du välja mellan en resurs- eller en prenumerationsbaserad metod.
-
-Följ stegen nedan för att ange den information som krävs för den valda metoden.
+Du kan bifoga ett Data Lake Storage-konto i målgruppsinsikter för att [lagra utdata](manage-environments.md) eller [använda det som en datakälla](/dynamics365/customer-insights/audience-insights/connect-dataverse-managed-lake). Med det här alternativet kan du välja mellan en resursbaserad metod eller en prenumerationsbaserad metod. Beroende på vilken metod du väljer följer du proceduren i något av följande avsnitt.
 
 ### <a name="resource-based-storage-account-connection"></a>Resursbaserad anslutning till lagringskonto
 
 1. Gå till [Azure admin-portalen](https://portal.azure.com), logga in till din prenumeration och öppna lagringskontot.
 
-1. Gå till **Inställningar** > **Egenskaper** i navigeringsfönstret.
+1. I den vänstra rutan, gå till **Inställningar** > **Egenskaper**.
 
 1. Kopiera resurs-ID för lagringskonto.
 
    :::image type="content" source="media/ADLS-SP-ResourceId.png" alt-text="Kopiera resurs-ID för lagringskonto.":::
 
-1. I målgruppsinsikter infogar du resurs-ID i resursfältet som visas i fönstret för anslutning till lagringskonto.
+1. I målgruppsinsikter infogar du resurs-ID:t i resursfältet som visas på skärmen för anslutning till lagringskonto.
 
    :::image type="content" source="media/ADLS-SP-ResourceIdConnection.png" alt-text="Ange resurs-ID för lagringskonto.":::   
-   
+
 1. Fortsätt med de återstående stegen i målgruppsinsikter för att bifoga lagringskontot.
 
 ### <a name="subscription-based-storage-account-connection"></a>Prenumerationsbaserad anslutning till lagringskonto
 
 1. Gå till [Azure admin-portalen](https://portal.azure.com), logga in till din prenumeration och öppna lagringskontot.
 
-1. Gå till **Inställningar** > **Egenskaper** i navigeringsfönstret.
+1. I den vänstra rutan, gå till **Inställningar** > **Egenskaper**.
 
 1. Granska **Prenumeration**, **Resursgrupp** och **Namn** på lagringskontot för att se till att du väljer rätt värden i målgruppsinsikter.
 
-1. I målgruppsinsikter väljer du värdena eller för motsvarande fält när du ansluter lagringskontot.
-   
+1. I målgruppsinsikter väljer du värden för motsvarande fält när du bifogar ett lagringskonto.
+
 1. Fortsätt med de återstående stegen i målgruppsinsikter för att bifoga lagringskontot.
 
 

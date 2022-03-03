@@ -3,18 +3,20 @@ title: Anpassade maskininlärningsmodeller | Microsoft Docs
 description: Arbeta med anpassade modeller från Azure Machine Learning i Dynamics 365 Customer Insights.
 ms.date: 12/01/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 47e2e5109ef8f21a782f6c8f87088009f8a40fdf
-ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
+searchScope:
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 460b68e1e65b3033af0a03d1bcc27e718c79d7aa
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/02/2021
-ms.locfileid: "7881806"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355108"
 ---
 # <a name="custom-machine-learning-models"></a>Anpassade maskininlärningsmodeller
 
@@ -40,6 +42,8 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 
    > [!NOTE]
    > Data överförs mellan dina Customer Insights-instanser och valda Azure-webbtjänster eller -pipelines i arbetsflödet. När du överför data till en Azure-tjänst måste du se till att tjänsten är konfigurerad för att bearbeta data på det sätt och den plats som krävs för att uppfylla alla juridiska eller nödvändiga krav för att hantera dessa data för din organisation.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElk]
 
 ## <a name="add-a-new-workflow"></a>Lägg till ett nytt arbetsflöde
 

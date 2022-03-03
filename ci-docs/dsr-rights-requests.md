@@ -3,18 +3,17 @@ title: Registrerades begäran (DSR) under GDPR | Microsoft Docs
 description: Besvara registrerades begäran om funktionen målgruppsinsikter i Dynamics 365 Customer Insights.
 ms.date: 08/11/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: e095eb4f8e194f314d7d6baf6fa6a7a319319d2a
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483712"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350291"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Registrerades begäran (DSR) under GDPR
 
@@ -79,71 +78,78 @@ Klientorganisationens administratör följer de här stegen för att exportera d
 2. Bekräfta bekräftelsen av att exportera data för den begärda användaren.
 3. Ta emot exporterade data via e-postadressen för innehavaradministration.
 
-## <a name="engagement-insights"></a>Engagemangsinsikter
+## <a name="consent-management-preview"></a>Samtyckeshantering (förhandsversion)
 
-### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Ta bort och exportera händelsedata som innehåller identifierbar användarinformation
+Med funktionen för samtyckeshantering samlas inte användardata in direkt. Den importerar och bearbetar endast samtyckesdata som tillhandahålls av användare i andra program.
 
-I följande avsnitt beskrivs hur du tar bort och exporterar händelsedata som kan innehålla personliga data.
+Ta bort samtyckesdata om specifika användare genom att ta bort dem i datakällorna som inte har funktioner för samtyckeshantering. När du har datakälla informationen tas även de bort i Samtyckescenter. Program som använder samtyckesentiteten tar även bort data som har tagits bort på källan efter en [uppdatering](audience-insights/system.md#refresh-processes). Vi rekommenderar att du uppdaterar datakällor snabbt när du har besvarat en förfrågan om dataämne för att ta bort användarens data från alla andra processer och program.
 
-Att ta bort eller exportera data:
 
-1. Tagga händelseegenskaper som innehåller data med personlig information.
-2. Ta bort eller exportera data som är associerade med specifika värden (till exempel: ett angivet användar-ID).
+<!-- ## Engagement insights (preview)
 
-#### <a name="tag-and-update-event-properties"></a>Tagga och uppdatera händelseegenskaper
+### Deleting and exporting event data containing end user identifiable information
 
-Personliga data taggas på egenskapsnivå för en händelse. Först taggar du de egenskaper som ska tas bort eller exporteras.
+The following sections describe how to delete and export event data that might contain personal data.
 
-Om du vill tagga en händelseegenskap som innehåller personlig information gör du följande:
+To delete or export data:
 
-1. Öppna arbetsytan som innehåller händelsen.
+1. Tag event properties that contain data with personal information.
+2. Delete or export data associated with specific values (for example: a specified user ID).
 
-1. Gå till **Data** > **Händelser** om du vill visa listan med händelser på den valda arbetsytan.
+#### Tag and update event properties
+
+Personal data is tagged on an event property level. First, tag the properties being considered for deletion or export.
+
+To tag an event property as containing personal information, follow these steps:
+
+1. Open the workspace containing the event.
+
+1. Go to **Data** > **Events** to see the list of events in the selected workspace.
   
-1. Välj den händelse du vill tagga.
+1. Select the event you want to tag.
 
-1. Välj **Redigera egenskaper** om du vill öppna fönstret med alla egenskaper för den markerade händelsen.
+1. Select **Edit properties** to open the pane listing all properties of the selected event.
      
-1. Välj **…** och välj sedan **Redigera** för att nå dialogrutan **Uppdatera egenskap** dialog.
+1. Select **...** and then choose **Edit** to reach the **Update property** dialog.
 
-   ![Redigera händelse.](engagement-insights/media/edit-event.png "Redigera händelse")
+   ![Edit event.](engagement-insights/media/edit-event.png "Edit event")
 
-1. I fönstret **Uppdatera egenskap**, välj **…** längst upp till höger och välj rutan **Innehåller EUII**. Välj **Uppdatera** för att spara ändringarna.
+1. In the **Update Property** window, choose **...** in the upper right corner, and then choose the **Contains EUII** box. Choose **Update** to save your changes.
 
-   ![Spara dina ändringar.](engagement-insights/media/update-property.png "Spara dina ändringar")
+   ![Save your changes.](engagement-insights/media/update-property.png "Save your changes")
 
    > [!NOTE]
-   > Varje gång händelseschemat ändras eller du skapar en ny händelse bör du utvärdera de associerade händelseegenskaperna och tagga eller avtagga dem som innehåller personliga data om det behövs.
+   > Every time the event schema changes or you create a new event, it's recommended that you evaluate the associated event properties and tag or untag them as containing personal data, if necessary.
 
-#### <a name="delete-or-export-tagged-event-data"></a>Ta bort eller exportera taggade händelsedata
+#### Delete or export tagged event data
 
-Om alla händelseegenskaper har taggats korrekt enligt beskrivningen i föregående steg kan en miljöadministratör utfärda en borttagningsbegäran för taggade händelsedata.
+If all event properties have been tagged appropriately as described in the previous step, an environment admin can issue a deletion request against the tagged event data.
 
-Hantera förfrågningar om borttagning eller export av EUII
+To manage EUII deletion or export requests
 
-1. Gå till **Administratör** > **Miljö** > **Inställningar**.
+1. Go to **Admin** > **Environment** > **Settings**.
 
-1. I avsnittet **Hantera slutanvändarens identifierbara information (EUII)**, välj **Hantera EUII**.
+1. In the **Manage end user identifiable information (EUII)** section, select **Manage EUII**.
 
-##### <a name="deletion"></a>Borttagning
+##### Deletion
 
-För borttagning kan du ange en lista med kommaavgränsade användar-ID i avsnittet **Ta bort slutanvändarens identifierbara information (EUII)**. Dessa ID jämförs sedan med alla taggade händelseegenskaper för alla projekt i den aktuella miljön via exakt strängmatchning. 
+For deletion, you can enter a list of comma-separated user IDs in the **Delete end user identifiable information (EUII)** section. These IDs will then be compared with all tagged event properties of all projects in the current environment via exact string matching. 
 
-Om ett egenskapsvärde matchar ett av de medföljande ID:na tas den associerade händelsen bort permanent. På grund av att åtgärden är fel måste du bekräfta borttagningen efter att du har valt **Ta bort**.
+If a property value matches one of the provided IDs, the associated event will be permanently deleted. Due to the irreversibility of this action, you must confirm the deletion after selecting **Delete**.
 
-##### <a name="export"></a>Export
+##### Export
 
-Exportprocessen är identisk med borttagningsprocessen när det gäller att definiera händelseegenskapsvärden i avsnittet **Exportera slutanvändarens identifierbara information (EUII)** section. Dessutom måste du ange en **Azure blobblagrings-URL** för att ange exportmålet. Azures blobb-URL måste innehålla en [signatur för delad åtkomst (SAS)](/azure/storage/common/storage-sas-overview).
+The export process is identical to the deletion process when it comes to defining event property values in the **Export end user identifiable information (EUII)** section. Additionally, you'll need to provide an **Azure blob storage URL** to specify the export destination. The Azure Blob URL must include a [Shared Access Signature (SAS)](/azure/storage/common/storage-sas-overview).
 
-När du har valt **Exportera** exporteras alla händelser för det aktuella teamet som innehåller matchande taggade egenskaper i CSV-format till exportmålet.
+After selecting **Export**, all events of the current team that contain matching tagged properties will be exported in CSV format to the export destination.
 
-### <a name="good-practices"></a>Bra lösningar
+### Good practices
 
-* Försök att undvika att skicka händelser som innehåller personliga data.
-* Om du behöver skicka händelser som innehåller EUII-data begränsar du antalet händelser och händelseegenskaper som innehåller EUII-data. Då begränsar du dig själv till en sådan händelse.
-* Se till att så få personer som möjligt har tillgång till de skickade personuppgifterna.
-* Vid händelser som innehåller personliga data bör du ange att en egenskap ska innehålla en unik identifierare som enkelt kan länkas till en viss användare (till exempel ett användar-ID). Det gör det enklare att separera data och att exportera eller ta bort rätt data.
-* Tagga endast en egenskap per händelse som innehåller personliga data. En som endast innehåller en unik identifierare.
-* Tagga inte egenskaper som innehåller utförlig värden (till exempel hela begärandetexten). För engagemangsinsikter används exakt strängmatchning när du bestämmer vilka händelser som ska tas bort eller exporteras.
+* Try to avoid sending any events that contain personal data.
+* If you need to send events containing EUII data, limit the number of events and event properties that contain EUII data. Ideally, limit yourself to one such event.
+* Make sure that as few people as possible have access to the sent personal data.
+* For events containing personal data, make sure that you set one property to emit a unique identifier that can easily be linked to a specific user (for example, a user ID). This makes it easier to segregate data and to export or delete the right data.
+* Only tag one property per event as containing personal data. Ideally one that only contains a unique identifier.
+* Do not tag properties containing verbose values (for example, an entire request body). Engagement insights capability uses exact string matching when deciding which events to delete or export. -->
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]
