@@ -1,76 +1,56 @@
 ---
 title: Berikning med anpassad SFTP-import
 description: Allmän information om berikning med anpassad SFTP-import.
-ms.date: 04/09/2021
-ms.reviewer: mhart
+ms.date: 11/18/2020
+ms.reviewer: kishorem
+ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: jodahlMSFT
-ms.author: jodahl
+ms.topic: conceptual
+author: jdahl
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: e4b9a65eb50f75e0243fabfc10b501cf7acf4490
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 59f7f05ca0825ba147e9e93f10fa3508ec3a16dd
+ms.sourcegitcommit: ff824bbbd31fd666ab0da682bf48ea31580d242c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229660"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "4568510"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Berika kundprofiler med anpassade data (förhandsversion)
 
-Anpassad SFTP-import (Secure File Transfer Protocol) gör det möjligt att importera data som inte behöver gå igenom dataförening. Det är ett flexibelt, säkert och enkelt sätt att ta med dina data. Anpassad SFTP-import kan användas i kombination med [SFTP-export](export-sftp.md), som gör att du kan exportera de kundprofildata som behövs för berikning. Datan kan sedan bearbetas och berikas, och SFTP-anpassad import kan användas för att återföra berikade data till målgruppsinsiktsfunktionen i Dynamics 365 Customer Insights.
+Anpassad SFTP-import (Secure File Transfer Protocol) gör det möjligt att importera data som inte behöver gå igenom dataförening. Det är ett flexibelt, säkert och enkelt sätt att ta med dina data. Anpassad SFTP-import kan användas i kombination med [SFTP-export](export-sftp.md), som gör att du kan exportera de kundprofildata som behövs för berikning. Data kan sedan bearbetas, berikas och med anpassad SFTP-import användas för att återställa berikade data till målgruppsinsiktskapaciteten i Dynamics 365 Customer Insights.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
 Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera anpassad SFTP-import:
 
-- Du har filnamn och sökväg för den fil som ska importeras på SFTP-värddatorn.
-- Det finns en *model.json*-fil som anger schemat för [Common Data Model-schema](/common-data-model/) för data att importeras. Filen måste finnas i samma katalog som filen som ska importeras.
-- En SFTP-anslutning har redan konfigurerats av en administratör *eller* eller så har du [administratör](permissions.md#administrator) behörigheter. Du behöver autentiseringsuppgifterna, URL:en och portnumret för den SFTP-plats där du vill importera data från.
+- Du har användarautentiseringsuppgifter (användarnamn och löseord) för den SFTP-plats som data ska importeras från.
+- Du har en URL och ett portnummer (vanligtvis 22) för STF-värden.
+- Du har filnamn och plats för filen som ska importeras till SFTP-värden.
+- Det finns en *model.json*-fil som anger schemat för de data som ska importeras. Filen måste finnas i samma katalog som filen som ska importeras.
+- Du har [administratörs](permissions.md#administrator)behörighet.
 
-
-## <a name="configure-the-import"></a>Konfigurera importen
+## <a name="configuration"></a>Konfiguration
 
 1. Gå till **Data** > **Berikning** och välj fliken **Upptäcka**.
 
-1. På **Anpassad SFTP-importpanel**, välj **Utöka mina data** och välj **Kom igång**.
-
-   :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Anpassad SFTP-importpanelen.":::
-
-1. Välj en [anslutning](connections.md) i listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning** och välja **Anpassad SFTP-import** i listrutan.
-
-1. Välj **Anslut till anpassad import** för att bekräfta anslutningen.
-
-1.  Välj **Nästa** och ange **Sökväg** och **Filnamn** för den datafil som du vill importera.
-
-    :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Skärmbild när dataplats matas in.":::
-
-1. Välj **Nästa** och välj kunddatauppsättningen. Det kan vara antingen alla kundprofiler eller ett segment.
-
-1. Välj **Nästa** och ange ett namn på utdataenheten och ett namn för utdataenheten. 
-
-1. Välj **Spara berikning** när du har granskat dina val.
-
-## <a name="configure-the-connection-for-sftp-custom-import"></a>Konfigurera anslutningen för anpassad SFTP-import 
-
-Du måste vara en administratör för att konfigurera anslutningar. Välj **Lägg till anslutning** när du konfigurerar ett tillägg *eller* gå till **Admin** > **Anslutningar** och välj **Konfigurera** på panelen för anpassad import.
-
-1. Ange ett namn för anslutningen i rutan **visningsnamn**.
-
-1. Ange ett giltigt användarnamn, lösenord och en värd-URL för den SFTP-server där den data som ska importeras finns.
-
-1. Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**.
-
-1. Välj **Verifiera** om konfigurationen ska verifieras.
-
-1. När verifieringen är klar går det att spara anslutningen genom att välja **Spara**.
+1. I panelen **Anpassad SFTP-import** väljer du **Berika mina data**.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfigurationssida för Experian-anslutning.](media/enrichment-SFTP-connection.png "Konfigurationssida för Experian-anslutning")
+   > ![Panelen Anpassad SFTP-import](media/SFTP_Custom_Import_tile.png "Panelen Anpassad SFTP-import")
 
+1. Välj **Kom igång** och ange autentiseringsuppgifterna och adressen för SFTP-servern. Till exempel sftp://mysftpserver.com:22.
+
+1. Ange namnet på den fil som innehåller data och sökvägen till filen på SFTP-servern om den inte finns i rotmappen.
+
+1. Bekräfta alla indata genom att välja **Anslut till anpassad import**.
+
+   > [!div class="mx-imgBorder"]
+   > ![Utfällbar meny Konfiguration av anpassad SFTP-import](media/SFTP_Custom_Import_Configuration_flyout.png "Utfällbar meny Konfiguration av anpassad SFTP-import")
 
 ## <a name="defining-field-mappings"></a>Definiera fältmappningar 
 
-Katalogen som innehåller den fil som ska importeras på SFTP-servern måste också innehålla en *model.json*-fil. Den här filen definierar schemat som ska användas för att importera data. Schemat måste använda [Common Data Model](/common-data-model/) för att ange fältmappningen. Ett enkelt exempel på en model.json-fil ser ut så här:
+Katalogen som innehåller den fil som ska importeras på SFTP-servern måste också innehålla en *model.json*-fil. Den här filen definierar schemat som ska användas för att importera data. Schemat måste använda [Common Data Model](https://docs.microsoft.com/common-data-model/) för att ange fältmappningen. Ett enkelt exempel på en model.json-fil ser ut så här:
 
 ```
 {
@@ -120,10 +100,10 @@ Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du k
 
 När en berikningsprocess har slutförts kan du granska dina nyligen importerade anpassade berikningsdata under **Mina berikningar**. Du hittar också tid för den senaste uppdateringen och antalet utökat profilnamn.
 
-Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
+Du kan få tillgång till en detaljerad vy över respektive berikad profil genom att markera **Visa berikade data**.
 
 ## <a name="next-steps"></a>Nästa steg
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Skapa ovanpå dina berikade kunddata. Skapa [segmen](segments.md), [mått](measures.md) och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
 
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+

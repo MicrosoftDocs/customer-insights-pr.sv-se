@@ -1,23 +1,24 @@
 ---
 title: Nya och kommande funktioner
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 03/02/2022
+ms.date: 08/31/2021
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 667a984f1a2287456f4e6324eafe628fba957bf5
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232726"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606140"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Vi är glada över att kunna meddela våra senaste uppdateringar! Denna artikel sammanfattar funktioner för allmänt tillgänglig förhandsversion, förbättringar av allmän tillgänglighet och funktionsuppdateringar. Om du vill se de långsiktiga funktionsplanerna, se [utgivningsplaner för Dynamics 365 och Power Platform](/dynamics365/release-plans/).
 
@@ -25,108 +26,6 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
-
-
-## <a name="january-2022-updates"></a>Uppdateringar januari 2022
-
-Uppdateringarna i januari 2022 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="sentiment-analysis-of-your-customers-feedback"></a>Attitydanalys av din kunds feedback
-
-Customer Insights innehåller en ny AI-driven funktion som kan syntetisera kundattityder och identifiera specifika affärsaspekter som affärsmöjligheter för målinriktade förbättringar. Genom att analysera den skriftliga feedbacken från dina kunder kan du få korrekta insikter till låg kostnad. Attitydanalys med NLP-modeller (Natural Language Processing) som genererar två härledda insikter för varje kund-ID. En attitydpoäng (från –5 till 5) och en lista över tillämpliga affärsaspekter. 
-
-Mer information finns i [Analysera attityd i kundfeedback (förhandsversion)](sentiment-analysis.md).
-
-
-## <a name="december-2021-updates"></a>Uppdateringar i december 2021
-
-Uppdateringarna i december 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Vidarebefordra Customer Insights-loggar till Azure Monitor
-
-Customer Insights ger en direkt integrering med Azure Monitor. Den här funktionen omfattar granskningshändelser och verksamhetshändelser. Azure Monitor resursloggar gör att du kan övervaka och skicka loggar till Azure Storage, Azure Log Analytics eller strömma dem till Azure händelsehubben.
-
-Mer information finns i [Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsversion)](diagnostics.md).
-
-### <a name="enrich-customer-profiles-with-engagement-data"></a>Utöka kundprofiler med data från kontaktdata
-
-Använd data från Microsoft Office 365 för att utöka dina kundkontoprofiler med insikter om åtaganden via Office 365 appar. Kontaktdata består av e-post- och mötesaktiviteter som samlas in på kontonivån. Till exempel antalet e-postmeddelanden från ett affärskonto eller antalet möten med kontot. Inga data om enskilda användare delas. Den här berikningen finns i följande regioner, Storbritannien, Europa och Nordamerika.
-
-Mer information finns i [Berika kundprofiler med kontaktdata (förhandsversion)](enrichment-office.md).
-
-### <a name="advanced-data-unification-features"></a>Avancerade funktioner för samordning av data
-
-#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Aktivera konfliktlösningsprinciper på enskild attributnivå
-
-När du deduplicerar kundregister inom en enhet kanske du inte vill behöva välja en fullständig post som vinnare. Nu kan du koppla de bästa fälten från olika poster utifrån regler för varje attribut. Du kan till exempel välja att behålla den senaste e-postadressen OCH den mest fullständiga adressen från olika poster. 
-
-Nu kan du definiera separata kopplade regler för enskilda attribut samtidigt som du inaktiverar och kopplar poster inom en enskild entitet. Tidigare kunde du bara välja en enskild kopplingsregel (hålla poster baserade på korrekt data slutförda) och den regeln tillämpas på postnivån på alla attribut. Det är inte bra om en del av de data du vill behålla finns i post A och andra bra data som finns i post B.
-
-Mer information finns i [Definiera deduplicering på en matchningsentitet](match-entities.md#define-deduplication-on-a-match-entity).
-
-#### <a name="custom-rules-for-matching"></a>Anpassade regler för matchning
-
-Det finns tillfällen då du måste ange ett undantag till allmänna regler för att INTE matcha poster. Detta kan inträffa om flera personer delar tillräckligt med information så att systemet matchar dem som enskilda personer. Till exempel tvillingar med samma efternamn, som bor i samma stad och delar födelsedatum.
-
-Med undantag säkerställs att felaktiga data kan åtgärdas i reglerna. Du kan lägga till flera undantag för en regel.
-
-Mer information finns i [Lägg till undantag till en regel](match-entities.md#add-exceptions-to-a-rule).
-
-#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>Tillhandahåll ytterligare konfliktlösningsprinciper och aktivera gruppering av attribut
-
-Med den här funktionen kan du skapa en grupp fält som en enskild enhet. Till exempel om våra poster innehåller fälten Adress1, Adress2, Ort, Delstat och Postnummer. Troligtvis vill vi inte koppla ihop Adress 2 i en annan post, eftersom vi tror att det skulle göra våra data mer fullständiga.
-
-Nu kan du kombinera en grupp med relaterade fält och använda en enskild kopplingsprincip för gruppen. 
-
-Mer information finns i [Kombinera en grupp fält](merge-entities.md#combine-a-group-of-fields).
-
-
-## <a name="november-2021-updates"></a>Uppdateringar i november 2021
-
-Uppdateringarna i november 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="segment-membership-now-available-in-dataverse"></a>Nu är segmentmedlemskapet tillgängligt i Dataverse
-
-Information om segmentmedlemskap för kundprofiler finns nu tillgänglig Dataverse tillsammans med kundprofilerna och insikterna. Dynamics 365-åtgärdsappar och modellstyrda appar kan använda den här informationen när du söker efter information om segmentmedlemskap för en viss kund.
-
-### <a name="activities-support-contact-level-details-for-business-accounts"></a>Aktiviteter stöder kontaktnivåinformation för företagskonton
-
-Nu kan du konfigurera, visa och filtrera aktiviteter för kontakter i tidslinjen för din affärskontoaktivitet för att få en bättre bild av vilka kontokontakter som deltog i specifika aktiviteter.
-
-## <a name="october-2021-updates"></a>Uppdateringar i oktober 2021
-
-Uppdateringarna i oktober 2021 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
-
-### <a name="b-to-b"></a>B2B
-
-Från och med oktober 2021 kan du arbeta med affärskonton och deras relaterade kontakter i Customer Insights. Tidigare har appen främst skräddarsytts för enskilda användare. Flera funktionsområden har uppdaterats för att stödja B2B-scenarier utöver den nya miljötypen. En översikt över B2B-funktioner som stöds finns i [Arbeta med affärskonton i målgruppinsikter](work-with-business-accounts.md).
-
-I följande avsnitt framhävs några av de viktigaste områdena som har anpassats för att stödja verksamhetskonton och enskilda åtgärder.
-
-#### <a name="export-segments-based-on-business-accounts"></a>Exportera segment utifrån affärskonton
-
-Alla segmentexporter i målgruppinsikter är tillgängliga när det gäller affärskonton. De flesta segmentexporter kräver extra konfigurations- och [kontaktinformation som projiceras](segment-builder.md#create-a-new-segment) i de underliggande segmenten för att kunna användas för affärskonton. Mer information finns i [Exportera segments](export-destinations.md#export-segments).
-
-#### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>Använd export av LinkedIn-annonser med affärskonton
-
-Exporten av LinkedIn-annonser kan nu göras tillgänglig för målgruppsanpassning för kontakter och företag i samband med affärskonton. När du väljer målgrupp för företag som primärt fokus i LinkedIn-exporten kan du exportera segment som bygger på affärskonton utan att det krävs någon projektkontaktinformation. Mer information finns i dokumentet om [export av LinkedIn-annonser](export-linkedin-ads.md) och skillnaden mellan [kontaktanpassning](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) och [företagsanpassning](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). 
-
-#### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Skapa åtgärder utifrån affärskonton och deras hierarki
-
-Med måttverktyget kan du skapa mått runt affärskonton och om du vill kan du använda hierarkiinformationen. Hierarkiinformation används för att skapa en måttberäkning för ett konto och alla dess relaterade underkonton. Du kan till exempel skapa mått som totalintäkt för varje grupp affärskonton som identifieras med hjälp av deras hierarki. Mer information finns i [Definiera och hantera mått](measures.md).
-
-#### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Skapa segment utifrån affärskonton och deras hierarki
-
-Med segmentverktyget kan du skapa segment av affärskonton som eventuellt innehåller kontaktinformation för varje konto i ett segment. Om du har ställt in kontohierarkin kan du använda kontohierarkiinformation när du skapar ett segment. Mer information finns i [Skapa ett nytt segment](segment-builder.md#create-a-new-segment).
-
-#### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Behåll dina affärskonton med djupare insikter för deras förakt
-
-Nu har prediktionsmodell för kundomsättning också stöd för affärskonton. Du kan utvärdera risken för att det inte bara gäller ett konto utan även för en kombination av ett konto och en produkt eller tjänstkategori som de köper från dig. Detta gör det lättare att förstå om det är troligare att ett konto slutar köpa från dig i allmänhet eller bara för en viss kategori varor eller tjänster. För att ytterligare hjälpa dig att använda den här AI-modellen anger den också orsaker till varför ett konto sannolikt kommer att förlora. Mer information finns i [Prediktion av transaktionsomsättning (förhandsversion)](predict-transactional-churn.md).
-
-#### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Visa kontakter för ett affärskonto i kundvyn
-
-Om affärskonton är mappade till relaterade konton visas dessa relaterade kontakter i appen Customer Insights som en del av vyn med kundinformation. Mer information finns i [Kundprofiler](customer-profiles.md).
-
 
 ## <a name="september-2021-updates"></a>Uppdatering i september 2021
 
@@ -267,7 +166,7 @@ Uppdateringarna i mars 2021 innehåller flera funktioner, prestandauppgraderinga
 - **Exportera segment till Constant Contact** Nu har exportmålen utökats till att omfatta Constant Contact. Nu kan du exportera segment från Customer Insights till listor med Constant Contact och använda dem som grund för dina marknadsföringskampanjer.   
    Mer information finns i [Exportera data till Constant Contact](export-constant-contact.md).
 
-- **Exportera segment till RollWorks** Nu har exportmålen utökats till att omfatta RollWorks. Nu kan du exportera segment från Customer Insights till RollWorks-målgrupper och använda dem som baslinje för din B2B-annonsering.    
+- **Exportera segment till RollWorks** Nu har exportmålen utökats till att omfatta RollWorks. Nu kan du exportera segment från Customer Insights till listor med RollWorks och använda dem som grund för din B2B-reklam.    
    Mer information finns i [Exportera data till RollWorks](export-rollworks.md).
 
 - **Exportera segment till Snapchat** Nu har exportmålen utökats till att omfatta Snapchat. Nu kan du exportera segment från Customer Insights till listor med Snapchat och använda dem som grund för din reklam.     

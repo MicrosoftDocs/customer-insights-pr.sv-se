@@ -1,22 +1,20 @@
 ---
 title: Customer Insights-data i Microsoft Dataverse
 description: Använd Customer Insights-entiteter som tabeller i Microsoft Dataverse.
-ms.date: 11/25/2021
+ms.date: 06/15/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-searchScope:
-- ci-system-diagnostic
-- customerInsights
-ms.openlocfilehash: 9f730f5856221592cddf34b714beeaca24c52130
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 220e01a06711a5d35b8df09e265017a6d8fd0490
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355451"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650064"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeta med Customer Insights-data i Microsoft Dataverse
 
@@ -26,7 +24,11 @@ Customer Insights ger möjlighet att göra utdataenheter tillgängliga i [Micros
 
 **Organisationer med befintliga Dataverse-miljöer**
 
-Organisationer som redan använder Dataverse kan [använda en av deras befintliga Dataverse-miljöer](create-environment.md) när en administratör konfigurerar målgruppsinsikter. Genom att tillhandahålla webbadressen till Dataverse-miljön kopplas den till deras nya målgruppsinsiktsmiljö. För att säkerställa bästa möjliga prestanda måste Customer Insights- och Dataverse-miljöer finnas i samma region.
+Organisationer som redan använder Dataverse kan [använda en av deras befintliga Dataverse-miljöer](get-started-paid.md) när en administratör konfigurerar målgruppsinsikter. Genom att tillhandahålla webbadressen till Dataverse-miljön kopplas den till deras nya målgruppsinsiktsmiljö. För att säkerställa bästa möjliga prestanda måste Customer Insights- och Dataverse-miljöer finnas i samma region.
+
+Om du vill koppla en Dataverse-miljö expanderar du **Avancerade inställningar** när du skapar målgruppsinsiktsmiljö. Ange **webbadressen till Microsoft Dataverse-miljön** och markera kryssrutan **Aktivera datadelning**.
+
+:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt.":::
 
 **Ny organisation**
 
@@ -47,7 +49,6 @@ Vissa utdataentiteter från målgruppsinsikter är tillgängliga som tabeller i 
 - [CustomerMeasure](#customermeasure)
 - [Berikning](#enrichment)
 - [Prediktion](#prediction)
-- [Segmentmedlemskap](#segment-membership)
 
 
 ### <a name="customerprofile"></a>CustomerProfile
@@ -124,16 +125,3 @@ Den här tabellen innehåller utdata från modellförutsägelser.
 | Värden               | JSON-sträng | Lista över attribut som produceras av modellen |
 | msdynci_predictionid | GUID        | Deterministiskt GUID genererat från msdynci_identifier | 
 | msdynci_identifier   | String      |  `Model|ModelProvider|CustomerId`                      |
-
-### <a name="segment-membership"></a>Segmentmedlemskap
-
-Den här tabellen innehåller kundprofilernas information om segmentmedlemskap.
-
-| Column        | Type | Description                        |
-|--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Kundprofil-ID        |
-| SegmentProvider      | String       | App som publicerar segmenten. Standard: Målgruppsinsikter         |
-| SegmentMembershipType | String       | Kundtyp som det här segmentmedlemskapet registrerar. Stöder flera typer, såsom kund, kontakt eller konto. Standard: kund  |
-| Segment       | JSON-sträng  | Lista med unika segment där kundprofilen är medlem      |
-| msdynci_identifier  | String   | Unik identifierare för det här segmentmedlemskapets post. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID      | Deterministiskt GUID genererat från `msdynci_identifier`          |

@@ -3,17 +3,18 @@ title: Utöka kundprofiler med data från Microsoft Office 365
 description: Använd tillverkarspecifika data från Microsoft Office för att utöka dina kundprofiler med kontaktdata.
 ms.date: 12/03/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 938a9de83fd8f5ff0c9ae815d626cdfa35228aba
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: a30e09b5ed491c8d36019b5f0d35e0a2f7a0199c
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228496"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7889763"
 ---
 # <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Utöka kundprofiler med data från kontaktdata (förhandsgranska)
 

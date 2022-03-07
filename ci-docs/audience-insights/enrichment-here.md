@@ -3,17 +3,18 @@ title: Berikande med tredjepartsberikande HERE Technologies
 description: Allmän information om tredjepartsberikningen HERE Technologies.
 ms.date: 04/09/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 1b46e8913c6d288b93cdf32e195b5e9387916e70
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230404"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305316"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Berikning av kundprofiler med HERE Technologies (förhandsversion)
 
@@ -34,7 +35,7 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera H
 1. Välj **Utöka mina data** på panelen HERE Technologies och välj **Kom igång**.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies-panel.](media/HERE-tile.png "HERE Technologies-panel")
+   > ![HERE Technologies-panel](media/HERE-tile.png "HERE Technologies-panel")
 
 1. Välj en [anslutning](connections.md) i listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning**. Välj **HERE Technologies** i listrutan. 
 
@@ -49,7 +50,7 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera H
 1. Definiera vilka fält från dina enhetliga profiler som ska användas för att söka efter matchande platsdata från HERE Technologies. Fälten **Gata 1** och **Postnummer** är obligatoriska för den valda primära och/eller sekundära adressen. För en högre matchningsnoggrannhet kan fler fält läggas till.
 
    > [!div class="mx-imgBorder"]
-   > ![Sida för förbättringskonfiguration av HERE Technologies-](media/enrichment-HERE-configuration.png "Sida för konfiguration av HERE Technologies-berikning")
+   > ![Sida för konfiguration av HERE Technologies-berikning](media/enrichment-HERE-configuration.png "Sida för konfiguration av HERE Technologies-berikning")
 
 1. Välj **Nästa** för att slutföra fältmappningen.
 
@@ -72,7 +73,7 @@ Du måste vara en administratör för att konfigurera anslutningar. Välj **Läg
 1. Välj **Spara** när verifieringen har slutförts.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfigurationssida för HERE technologies-anslutning.](media/enrichment-HERE-connection.png "Konfigurationssida för HERE technologies-anslutning")
+   > ![Konfigurationssida för HERE technologies-anslutning](media/enrichment-HERE-connection.png "Konfigurationssida för HERE technologies-anslutning")
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 
@@ -80,11 +81,11 @@ Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du k
 
 När en berikningsprocessen har slutförts kan du granska de nyligen utsatta kundprofildata under **Mina berikningar**. Du hittar också tid för den senaste uppdateringen och antalet utökat profilnamn.
 
-Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
+Du kan få tillgång till en detaljerad vy över respektive berikad profil genom att markera **Visa berikade data**.
 
 ## <a name="next-steps"></a>Nästa steg
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md) och [mått](measures.md) och till och med [exportera datan](export-destinations.md) för att leverera anpassade upplevelser till dina kunder.
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 

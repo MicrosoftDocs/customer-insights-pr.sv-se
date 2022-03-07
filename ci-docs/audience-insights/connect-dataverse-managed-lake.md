@@ -1,35 +1,30 @@
 ---
 title: Anslut till tabeller i Microsoft Dataverse
 description: Importera data från en Microsoft Dataverse hanterad datasjö.
-ms.date: 12/06/2021
+ms.date: 07/23/2021
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
-searchScope:
-- ci-dataverse
-- customerInsights
-ms.openlocfilehash: 8e11b60295fa5c187b1ac4877fb347e2d9bb41a1
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: ffeccffd0e353cb5490b537552d585c184ad672f9c806e673bd04743214ad068
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354164"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7033102"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Anslut till data i en Microsoft Dataverse hanterad datasjö
 
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-
-Den här artikeln innehåller information om hur Dataverse användare snabbt kan ansluta till analysentiteter i en Microsoft Dataverse hanterad sjö. 
-
-> [!NOTE]
-> Du måste vara administratör i Dataverse organisationen för att kunna fortsätta och visa listan över entiteter som är tillgängliga i den hanterade organisationen.
+Denna artikel innehåller information om hur Dataverse-användare snabbt kan ansluta till sina analysentiteter i en Dataverse-hanterad datasjö. Du måste vara administratör i Dataverse organisationen för att kunna fortsätta och visa en lista över tillgängliga entiteter i den hanterade sjän.
 
 ## <a name="important-considerations"></a>Viktigt!
 
-Data som lagras i en onlinetjänster, t.ex. Azure Data Lake Storage kan lagras på en annan plats än där data bearbetas eller lagras i Dynamics 365 Customer Insights.Genom att importera eller ansluta till data som lagras på en onlinetjänst, t.ex. godkänner du att data kan överföras till och lagras med Dynamics 365 Customer Insights. [Läs mer i Microsoft säkerhetscenter](https://www.microsoft.com/trust-center).
+Data som lagras i en onlinetjänster, t.ex. Azure Data Lake Storage kan lagras på en annan plats än där data bearbetas eller lagras i Dynamics 365 Customer Insights.Genom att importera eller ansluta till data som lagras på en onlinetjänst, t.ex. godkänner du att data kan överföras till och lagras med Dynamics 365 Customer Insights. [Läs mer i Microsoft säkerhetscenter.](https://www.microsoft.com/trust-center)
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Ansluta till en Dataverse hanterad sjö
 
@@ -37,9 +32,12 @@ Data som lagras i en onlinetjänster, t.ex. Azure Data Lake Storage kan lagras p
 
 2. Välj **Lägg till datakälla**.
 
-3. Välj **Microsoft Dataverse** och välj **Nästa**.
+3. Välj **Anslut till Microsoft Dataverse-hanterad datasjö** och välj **Nästa**.
 
-4. Ange ett **namn** för datakällan och välj sedan **Nästa**. 
+4. Ange ett **namn** för datakällan och välj sedan **Nästa**. Namnge riktlinjer: 
+   - Inled med en bokstav.
+   - Använd endast bokstäver och siffror. Specialtecken och blanksteg är inte tillåtna.
+   - Använd mellan 3 och 64 tecken.
 
 5. Ange **serveradressen** för Dataverse-organisationen och välj sedan **Logga in**.
 

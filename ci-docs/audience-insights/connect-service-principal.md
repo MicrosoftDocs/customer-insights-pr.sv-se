@@ -2,21 +2,19 @@
 title: Ansluta till ett Azure Data Lake Storage konto med hjälp av ett tjänstobjekt
 description: Använd en Azure-huvudkonto för tjänsten och anslut till din egen datasjö.
 ms.date: 12/06/2021
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-searchScope:
-- ci-system-security
-- customerInsights
-ms.openlocfilehash: d593880b06bd21e96826039a67382b75a4296a87
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354212"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900297"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Ansluta till ett Azure Data Lake Storage konto med hjälp av ett Azure-tjänstobjekt
 
@@ -25,7 +23,7 @@ Denna artikel diskuterar hur du ansluter Dynamics 365 Customer Insights med ett 
 Automatiserade verktyg som använder Azure-tjänster bör alltid ha begränsade behörigheter. I stället för att låta program logga in som en fullt privilegierad användare erbjuder Azure huvudkonton för tjänsten. Du kan använda tjänstens huvudkonto för att säkert [lägga till eller redigera en mapp för Common Data Model som datakälla](connect-common-data-model.md) eller [skapa eller uppdatera en miljö](create-environment.md).
 
 > [!IMPORTANT]
-> - Data Lake-lagringskontot som använder tjänstens huvudkonto måste vara Gen2 och ha [hierarkiskt namnområde aktiverat](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagringskonton stöds inte.
+> - Det Data Lake Storage-konto som använder tjänstens huvudkonto måste ha [aktiverat hierarkisk namnrymd](/azure/storage/blobs/data-lake-storage-namespace).
 > - Du behöver administratörsbehörighet för din Azure-prenumeration för att skapa ett huvudkonto för tjänsten.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Skapa ett Azure-huvudkonto för tjänsten för Customer Insights
@@ -92,7 +90,7 @@ Det kan ta upp till 15 minuter att distribuera ändringarna.
 
 ## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Ange Azure-resurs-ID eller Azure-prenumerationens information i lagringskontot som är bifogat målgruppsinsikter
 
-Du kan bifoga ett Data Lake Storage-konto i målgruppsinsikter för att [lagra utdata](manage-environments.md) eller [använda det som en datakälla](/dynamics365/customer-insights/audience-insights/connect-dataverse-managed-lake). Med det här alternativet kan du välja mellan en resursbaserad metod eller en prenumerationsbaserad metod. Beroende på vilken metod du väljer följer du proceduren i något av följande avsnitt.
+Du kan bifoga ett Data Lake Storage-konto i målgruppsinsikter för att [lagra utdata](manage-environments.md) eller [använda det som en datakälla](connect-common-data-service-lake.md). Med det här alternativet kan du välja mellan en resursbaserad metod eller en prenumerationsbaserad metod. Beroende på vilken metod du väljer följer du proceduren i något av följande avsnitt.
 
 ### <a name="resource-based-storage-account-connection"></a>Resursbaserad anslutning till lagringskonto
 

@@ -1,30 +1,27 @@
 ---
 title: Sök och filtrera kundprofiler
 description: Hitta snabbt information om enhetliga kundprofiler och filter för angivna attribut.
-ms.date: 11/01/2021
+ms.date: 01/19/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-searchScope:
-- ci-search-filter
-- customerInsights
-ms.openlocfilehash: 4445f44b87a5947c3dfcf43ddb49dca9f25b69aa
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: a6131d4dddce48b0fba153bcefe5631e0d22d808
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354531"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554043"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundprofiler: Sök- och filterindex
 
 Resultatet av att förena kunddata är en kundprofils entitet som tillhandahåller en enhetlig vy till den totala kundbasen. Om du snabbt vill [hitta information om en viss kund eller grupp](customer-profiles.md) kan du konfigurera funktionerna **Sök** och **Filter** på sidan **Kunder**. Läs vidare om du vill veta hur administratörer kan redigera attributen på sidan **Sök och filtrera index** som är tillgängliga för användare för sökning och filtrering.
 
-   :::image type="content" source="media/search-filter.png" alt-text="Sökfilter":::
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+> [!div class="mx-imgBorder"]
+> ![Sökfilter.](media/search-filter.png "Sökfilter")
 
 ## <a name="add-fields-and-specify-attributes"></a>Lägg till fält och ange attribut
 
@@ -59,11 +56,11 @@ Menyn **filtrera** på sidan **kunder** kan innehålla ett varierande antal attr
 
 2. Välj **Spara** för att införa ändringarna.
 
-3. Välj **kör** när du är redo att tillämpa inställningarna. När ändringarna har bearbetats hittar du dem i [kundkorten på sidan Kund](customer-profiles.md). 
+3. Välj **kör** när du är redo att tillämpa inställningarna.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Gå igenom [sidan med enhetliga profiler](customer-profiles.md) om du vill söka efter profiler eller använd de indexerade fälten för att se en deluppsättning av alla enhetliga profiler.
+Gå till sidan **Kunder** om du vill söka efter kundprofiler eller använda de indexerade fälten och visa en deluppsättning av alla kundprofiler.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

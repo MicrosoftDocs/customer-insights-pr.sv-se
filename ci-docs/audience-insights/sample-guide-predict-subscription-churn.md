@@ -2,23 +2,21 @@
 title: Exempelguide för förutsägelse om prenumerationsomsättning
 description: Använd exempelguiden för att prova den medföljande modellen för förutsägelse om prenumerationsomsättning.
 ms.date: 11/19/2020
-ms.reviewer: mhart
+ms.reviewer: digranad
+ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: tutorial
+ms.topic: conceptual
 author: m-hartmann
-ms.author: wameng
+ms.author: mhart
 manager: shellyha
-searchScope:
-- ci-create-prediction
-- customerInsights
-ms.openlocfilehash: 5de57155b47b74efa4c5ef2fe63a3c87505644be
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
+ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355635"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "4654002"
 ---
-# <a name="subscription-churn-prediction-sample-guide"></a>Exempelguide för förutsägelse om prenumerationsomsättning
+# <a name="subscription-churn-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse om prenumerationsomsättning (förhandsversion)
 
 Vi ger dig ett komplett exempel på förutsägelse av prenumerationsomsättning med hjälp av de exempeldata som anges nedan. 
 
@@ -33,7 +31,7 @@ Contoso är ett företag som producerar kaffe och kaffemaskiner av hög kvalitet
 
 ## <a name="task-1---ingest-data"></a>Uppgift 1 – Mata in data
 
-Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av datakällor med hjälp av Power Query-anslutningar](connect-power-query.md). Följande information förutsätter att du bekantat dig med inmatningsdata i allmänhet. 
+Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällor med hjälp av Power Query-anslutningsprogram](connect-power-query.md) specifikt. Följande information förutsätter att du bekantat dig med inmatningsdata i allmänhet. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Mata in kunddata från e-handelsplattformen
 
@@ -48,9 +46,10 @@ Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av dat
    - **DateOfBirth**: Datum
    - **CreatedOn**: Datum/Tid/Zon
 
-   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Transformera födelsedatum till datum.":::
+   [!div class="mx-imgBorder"]
+   ![Transformera födelsedatum till datum](media/ecommerce-dob-date.PNG "transformera födelsedatum till datum")
 
-1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **eCommerceContacts**
+1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **eCommerceContacts**
 
 1. Spara datakällan.
 
@@ -68,7 +67,7 @@ Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av dat
    - **RewardsPoints**: Heltal
    - **CreatedOn**: Datum/Tid
 
-1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **loyCustomers**.
+1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **loyCustomers**.
 
 1. Spara datakällan.
 
@@ -91,7 +90,7 @@ Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av dat
    - **Is_auto_renew**: Sant/falskt
    - **RecurringFrequencyInMonths**: Hela numret
 
-1. I fältet **Namn** i fönstret till höger byter du namn på din datakälla från **Fråga** till **SubscriptionHistory**.
+1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **SubscriptionHistory**.
 
 1. Spara datakällan.
 
@@ -130,9 +129,9 @@ Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** 
 
 1. Gå till fliken **Matcha** och välj **Ange ordning**.
 
-1. I listrutan **Primär** väljer du **eCommerceContacts : eCommerce** som primär källa och inkluderar samtliga poster.
+1. I listrutan **Primär** väljer du **eCommerceContacts: e-handel** som primär källa och inkluderar alla poster.
 
-1. I listrutan **Entitet 2** väljer du **loyCustomers : LoyaltyScheme** och inkluderar alla poster.
+1. I listrutan **Entitet 2** väljer du **loyCustomers: LoyaltyScheme** och inkluderar alla poster.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Förena matchande e-handel och lojalitet.":::
 
@@ -140,16 +139,16 @@ Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** 
 
 1. Lägg till ditt första villkor med hjälp av FullName.
 
-   * För eCommerceContacts väljer du **FullName** i listrutan.
-   * För loyCustomers väljer du **FullName** i listrutan.
+   * För eCommerceContacts välj **FullName** i listrutan.
+   * För loyCustomers välj **FullName** i listrutan.
    * Välj listrutan **Normalisera** och välj **Typ (telefon, namn, adress ...)**.
    * Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 
 1. Ange namnet **FullName, E-post** för den nya regeln.
 
    * Lägg till ett andra villkor för e-postadress genom att välja **Lägg till villkor**
-   * För entiteten eCommerceContacts väljer du **EMail** i listrutan.
-   * För entiteten loyCustomers väljer du **EMail** i listrutan. 
+   * För entitet eCommerceContacts väljer du **EMail** i listrutan.
+   * För entitet loyCustomers väljer du **EMail** i listrutan. 
    * Lämna Normalisera tomt. 
    * Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
 
@@ -170,7 +169,7 @@ Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** 
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Uppgift 3 – Konfigurera förutsägelsen om prenumerationsomsättning
 
-Med de enhetliga kundprofilerna på plats kan vi nu köra förutsägelsen om prenumerationsomsättning. Detaljerade anvisningar finns i artikeln [Förutsägelse av prenumerationsomsättning](predict-subscription-churn.md). 
+Med de enhetliga kundprofilerna på plats kan vi nu köra förutsägelsen om prenumerationsomsättning. Detaljerade steg finns i artikeln [Förutsägelse om prenumerationsomsättning (förhandsversion)](predict-subscription-churn.md). 
 
 1. Gå till **Intelligens** > **Utforska** och välj att använda **modellen Kundomsättning**.
 
@@ -231,6 +230,3 @@ Du kan skapa ett nytt segment baserat på entiteten som skapats av modellen.
 Du har nu ett segment som uppdateras dynamiskt som identifierar kunder med hög omsättningsrisk för den här prenumerationsverksamheten.
 
 Mer information finns i [Skapa och hantera segment](segments.md).
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

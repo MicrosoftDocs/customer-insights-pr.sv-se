@@ -3,17 +3,19 @@ title: Målgruppsinsikter för översikt över Dynamics 365 Customer Insights
 description: Översikt över målgruppsinsikter för Dynamics 365 Customer Insights.
 ms.date: 08/04/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: overview
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: b0fd10ca6f79bfec35c8a238179ba7e26e4dad98
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.custom: intro-internal
+ms.openlocfilehash: 15cc495359af1faefe32225ae490fd7e7b6b08cc7a411e0a9804da6ec704099c
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230758"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7034382"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Målgruppsinsikter för översikt över Dynamics 365 Customer Insights
 
@@ -26,7 +28,7 @@ ms.locfileid: "8230758"
   - Anslut och förena dina data med lätthet, hämta transaktions-, observations- och beteendedata från populära [datakällor genom att använda förbyggda anslutningsprogram](data-sources.md).
   - Omvandla kunddata på ett intelligent sätt – bygga enhetliga kundprofiler som överensstämmer [Common Data Model](/common-data-model/). Lösa kundidentiteter med AI/ML-drivna rekommendationer.
 
-- **Utöka med målgruppsinformation**
+- **Berika med målgruppsinformation**
 
   - Skapa bättre kundprofiler genom att [införliva utökade data](enrichment-hub.md).  
 
@@ -55,5 +57,11 @@ ms.locfileid: "8230758"
 
   - Skapa anpassningsbara profiler, definiera mått, skapa segment och dra nytta av förutsägelseanalyser för att visa en heltäckande vy av kunden, specifikt för din organisation.  
   - Använd färdiga anslutningsprogram för flera Microsoft- och tredjepartsprogram eller API:er för att bearbeta insikterna.
+
+## <a name="pricing-and-licensing"></a>Priser och licenser
+
+Customer Insights licensieras per klientorganisation och innehåller flera funktioner. Den berättigade kapaciteten omfattar en uppsättning profiler, dagliga systemuppdateringar, Power Platform förfrågningar och två miljöer. Du kan öka standardbudgeten genom att köpa ytterligare kapacitet och licens. 
+- Detaljerad kapacitet och berättiganden: [Licensguide till Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544)
+- Prisöversikt: [Dynamics 365-prissättning](https://dynamics.microsoft.com/pricing/#CustomerDataPlatform)
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
