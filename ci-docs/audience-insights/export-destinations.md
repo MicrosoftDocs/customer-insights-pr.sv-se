@@ -1,34 +1,59 @@
 ---
 title: Exportera data från Customer Insights
 description: 'Hantera dataexport för att dela data. '
-ms.date: 06/14/2021
+ms.date: 11/01/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.custom: intro-internal
-ms.openlocfilehash: 47bdcc5bb38587063e4414377568943f868107a3
-ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
+searchScope:
+- ci-export
+- ci-connections
+- customerInsights
+ms.openlocfilehash: 33f59c62565560517c480be63e581465605c5f7b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "6539365"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354347"
 ---
 # <a name="exports-preview-overview"></a>Exporter (förhandsversion) översikt
 
-På sidan **Exporter** visas alla konfigurerade exporter. Med exporter delar du specifika data med olika program. De kan inkludera kundprofiler eller entiteter, scheman och mappningsdetaljer. För varje export krävs en [anslutning, konfigurerad av en administratör, för att hantera autentisering och åtkomst](connections.md).
+På sidan **Exporter** visas alla konfigurerade exporter. Med exporter delar du specifika data med olika program. De kan innehålla kundprofiler, entiteter, scheman och mappningsdetaljer. För varje export krävs en [anslutning, konfigurerad av en administratör, för att hantera autentisering och åtkomst](connections.md).
 
 Gå till **Data** > **Exporter** om du vill visa exportsidan. Alla användarroller kan visa konfigurerade exporter. Använd sökfältet i kommandofältet om du vill söka efter exporter efter namn, anslutningsnamn eller anslutningstyp.
 
-## <a name="set-up-a-new-export"></a>Ställ in en ny export
+## <a name="export-types"></a>Exporttyper
 
+Det finns två huvudtyper av export:  
+
+- **Export av utdata** låter dig exportera alla typer av entiteter som är målgruppsinsikter. De entiteter du väljer för export exporteras med alla datafält, metadata, scheman och mappningsdetaljer. 
+- Med **segmentexport** kan du exportera segmententiteter från målgruppsinsikter. Segment representerar en lista över kundprofiler. När du konfigurerar exporten väljer du de datafält som ingår, beroende på vilket målsystem du exporterar data till. 
+
+### <a name="export-segments"></a>Exportera segment
+
+**Exportera segment i miljöer för affärskonton (B2B) eller enskilda konsumenter (B2C)**  
+De flesta exportalternativ har stöd för båda typerna av miljöer. Det finns särskilda krav för att exportera segment till olika målsystem. Vanligtvis innehåller segmentmedlem, kundprofilen, kontaktinformation. Detta är vanligt i segment som bygger på enskilda konsumenter (B2C), men det behöver inte vara fallet för segment som bygger på affärskonton (B2B). 
+
+**Segmentexportmiljöer för affärskonton (B2B)**  
+- Segment i samband med miljöer för affärskonton bygger på entiteten *konto*. För att kunna exportera kontosegment i sin form måste målsystemet ha stöd för kontosegment. Detta gäller för [LinkedIn](export-linkedin-ads.md) när du väljer alternativet **företag** när du definierar exporten.
+- Alla andra målsystem kräver fält från kontaktentiteten. För att säkerställa att kontosegment kan hämta data från relaterade kontakter måste segmentdefinitionen projektattribut för kontaktentiteten. Läs mer om hur du [konfigurerar segment och projektattribut](segment-builder.md).
+
+**Segmentexport i miljöer för enskilda konsumenter (B2C)**  
+- Segment i samband med miljöer för individuella kunder bygger på entiteten *Unified Customer Profile*. Alla segment som uppfyller målsystemens krav (till exempel en e-postadress) kan exporteras.
+
+**Begränsningar för segmentexport**  
+- Målsystem från tredje part kan begränsa antalet kundprofiler som du kan exportera. 
+- För enskilda kunder visas det faktiska antalet segmentmedlemmar när du väljer ett segment för export. Du får en varning om ett segment är för stort. 
+- För affärskonton visas antalet konton i ett segment. Antalet kontakter som kan projiceras visas emellertid inte. I vissa fall kan det leda till att det exporterade segmentet verkligen innehåller fler kundprofiler än vad målsystemet accepterar. Att överskrida gränserna för målsystemresultaten kommer att hoppa över exporten. 
+
+## <a name="set-up-a-new-export"></a>Ställ in en ny export  
 Om du vill konfigurera eller redigera en export måste anslutningarna vara tillgängliga för dig. Anslutningarna beror på din [användarroll](permissions.md):
-- Administratörer har åtkomst till alla anslutningar. De kan också skapa nya anslutningar när de upprättar en export.
-- Deltagare kan ha åtkomst till specifika anslutningar. De är beroende av administratörer för att konfigurera och dela anslutningar. I exportlistan visas deltagare om de kan redigera eller bara visa en export i kolumnen **Dina behörigheter**. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
-- Det går bara att visa befintlig export men inte skapa den.
+- **Administratörer** har åtkomst till alla anslutningar. De kan också skapa nya anslutningar när de upprättar en export.
+- **Deltagare** kan ha åtkomst till specifika anslutningar. De är beroende av administratörer för att konfigurera och dela anslutningar. I exportlistan visas deltagare om de kan redigera eller bara visa en export i kolumnen **Dina behörigheter**. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- **Visningsprogram** kan bara visa befintlig export - inte skapa dem.
 
 ### <a name="define-a-new-export"></a>Definiera en ny export
 
@@ -74,7 +99,9 @@ Efter att ha skapat exportdestinationer listas de på **Data** > **Exporter**. A
 
 Varje export som du konfigurerar har ett uppdateringsschema. Vid en uppdatering söker systemet efter nya eller uppdaterade data som ska ingå i en export. Som standard körs exporter som en del av alla [schemalagda systemuppdateringar](system.md#schedule-tab). Du kan anpassa uppdateringsschemat eller inaktivera det om du vill köra exporten manuellt.
 
-Exportscheman beror på tillståndet för miljön. Om det pågår uppdateringar för [beroenden](system.md#refresh-policies) när en schemalagd export ska starta, slutför systemet först uppdateringarna och kör sedan exporten. Du kan se när en export senast uppdaterades i kolumnen **Uppdaterad**.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+Exportscheman beror på tillståndet för miljön. Om det pågår uppdateringar för [beroenden](system.md#refresh-processes) när en schemalagd export ska starta, slutför systemet först uppdateringarna och kör sedan exporten. Du kan se när en export senast uppdaterades i kolumnen **Uppdaterad**.
 
 ### <a name="schedule-exports"></a>Schemalägg exporter
 

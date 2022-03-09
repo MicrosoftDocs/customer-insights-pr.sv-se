@@ -1,22 +1,30 @@
 ---
 title: Systemkonfiguration i målgruppsinsikter
 description: Läs om systeminställningar för funktionen målgruppsinsikter i Dynamics 365 Customer Insights.
-ms.date: 02/12/2021
-ms.service: customer-insights
+ms.date: 11/01/2021
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2af8728009b4f1d53ebc2557bab8c79537a0dc5dda54477493ab1ad16f3f9a8a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-system-status
+- ci-system-schedule
+- ci-system-about
+- ci-system-general
+- ci-system-api-usage
+- customerInsights
+ms.openlocfilehash: 2c52f7b8a7d41ae4a985745c7b79bbc62f59bb5a
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035938"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354255"
 ---
 # <a name="system-configuration"></a>Systemkonfiguration
+
+För att komma åt systemkonfigurationer i målgruppsinsikter, välj i det vänstra navigeringsfältet **Admin** > **System** för att se en lista över systemuppgifter och processer.
 
 På sidan **System** finns följande flikar:
 - [Status](#status-tab)
@@ -24,49 +32,69 @@ På sidan **System** finns följande flikar:
 - [API-användning](#api-usage-tab)
 - [Om](#about-tab)
 - [Allmänt](#general-tab)
+- [Säkerhet](#security-tab)
 
-> [!div class="mx-imgBorder"]
-> ![Systemsida.](media/system-tabs.png "Systemsida")
+:::image type="content" source="media/system-tabs.png" alt-text="Inställningsflikar på systemsidan.":::
 
 ## <a name="status-tab"></a>Fliken status
 
-Under **fliken Status** kan du spåra förloppet för datainmatning, dataexport och många andra viktiga produktprocesser. Granska informationen på den här fliken för att säkerställa fullständigheten av aktiva processer.
+På fliken **Status** kan du spåra allt som har med uppgifter, dataexporter och flera andra viktiga produktprocesser att göra. Granska informationen på den här fliken för att säkerställa att dina aktiva uppgifter och processer är fullständiga.
 
-Den här fliken innehåller tabeller med status och bearbetningsinformation för olika processer. I varje tabell spåras **namnet** på uppgiften och tillhörande entitet, **statusen** för dess senaste körning och när den **senast uppdaterades**.
+Den här fliken innehåller tabeller med status och bearbetningsinformation för olika processer. I varje tabell spåras **namnet** på uppgiften och tillhörande entitet, **statusen** för dess senaste körning och när den **senast uppdaterades**. Du kan visa information om de senaste flera körningarna genom att välja uppgifts- eller processnamnet. 
 
-Visa information om de senaste körningarna av en uppgift genom att välja dess namn.
+Välj status bredvid uppgiften eller kolumnen **Status** för att öppna rutan **Förloppsinformation**.
 
-### <a name="status-types"></a>Statustyper
+   :::image type="content" source="media/system-progress-details.png" alt-text="Informationsfönstret Systemförlopp":::
 
-Det finns sex typer av status för uppgifter. Följande statustyper visas även på sidorna *Matchning*, *Sammanslagning*, *Datakällor*, *Segment*, *Mått*, *Bberikning*, *Aktiviteter* och *Förutsägelser*:
+### <a name="status-definitions"></a>Statusdefinitioner
 
-- **Pågår**: uppgiften pågår. Status kan ändras till lyckat eller misslyckat.
-- **Klart:** uppgiften har slutförts.
-- **Hoppades över:** Uppgiften hoppades över. En eller flera processer längre fram som denna uppgift är beroende av fallerar eller hoppas över.
-- **Fel:** Det gick inte att bearbeta uppgiften.
-- **Avbruten:** bearbetningen avbröts av användaren innan den avslutades.
-- **Köad**: Bearbetningen köas och startar när alla överordnade uppgifter har slutförts. Mer information finns i [uppdatera principer](#refresh-policies).
+I systemet används följande statusar för uppgifter och processer:
 
-### <a name="refresh-policies"></a>Uppdateringsprinciper
+|Status  |Definition  |
+|---------|---------|
+|Annullerad |Bearbetningen avbröts av användaren innan den slutfördes.   |
+|Misslyckad   |Datahämtning har stött på fel.         |
+|Misslyckades  |Bearbetningen misslyckades.  |
+|Inte startat   |Datakällan har inga inmatade data än eller är fortfarande i utkastläge.         |
+|Bearbetas  |Uppgift eller process pågår.  |
+|Uppdaterar    |Datainmatning pågår. Du kan avbryta åtgärden genom att välja **Avbryt uppdatering** i kolumnen **åtgärder**. Om du stoppar uppdateringen av en datakälla återställs den till dess senaste uppdateringstillstånd.       |
+|Hoppades över  |Uppgift eller process har hoppats över. En eller flera processer längre fram som denna uppgift är beroende av fallerar eller hoppas över.|
+|Klart  |Uppgiften eller förloppet har slutförts. För datakällor anger du att data har tagits bort om en tid anges i kolumnen **Uppdaterad**.|
+|I kö | Bearbetningen köas och startar när alla uppgifter och processer har slutförts. Mer information, se [uppdatera förlopp](#refresh-processes).|
 
-Den här listan visar uppdateringsprinciperna för var och en av huvudprocesserna:
+### <a name="refresh-processes"></a>Uppdatera förlopp
 
-- **Datakällor:** körs enligt det [konfigurerade schemat](#schedule-tab). Är inte beroende av någon annan process. Matchningen beror på att processen har slutförts.
-- **Matchning:** körs enligt det [konfigurerade schemat](#schedule-tab). Är beroende av behandlingen av datakällor som används i matchningsdefinitionen. Sammanslagning beror på att processen har slutförts.
-- **Sammanslagning**: körs enligt det [konfigurerade schemat](#schedule-tab). Beror på att matchningsprocessen har slutförts. Segment, mått, berikning, sökning, aktiviteter, prediktion och dataförberedelse är beroende av att processen har slutförts.
-- **Segment**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning. Insikter beror på behandlingen.
-- **Mått**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Aktiviteter**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Berikning**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Sök**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Dataförberedelse**: körs enligt det [konfigurerade schemat](#schedule-tab). Är beroende av sammanslagning.
-- **Insikter**: körs manuellt (enkel uppdatering) och enligt det [konfigurerade schemat](#schedule-tab). Är beroende av segment.
+Uppdatering för uppgifter och processer körs enligt det [konfigurerade schemat](#schedule-tab). 
 
-Välj status för en uppgift om du vill visa information om förloppet för hela jobbet. Med uppdateringsprinciperna ovan kan du få en uppfattning om vad du kan göra för att ta itu med en **överhoppad** eller **köad** uppgift.
+|Bearbeta  |Beskrivning  |
+|---------|---------|
+|Aktivitet  |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. Insikter beror på behandlingen.|
+|Analyskoppling |Körs manuellt (engångsuppdatering). Är beroende av segment.  |
+|Analysförberedelse |Körs manuellt (engångsuppdatering). Är beroende av segment.  |
+|Dataförberedelse   |Är beroende av sammanslagning.   |
+|Datakällor   |Är inte beroende av någon annan process. Matchningen beror på att processen har slutförts.  |
+|Berikningar   |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. |
+|Exporterar mål |Körs manuellt (engångsuppdatering). Är beroende av segment.  |
+|Insikter |Körs manuellt (engångsuppdatering). Är beroende av segment.  |
+|Intelligens   |Är beroende av sammanslagning.   |
+|Matchning |Är beroende av behandlingen av datakällor som används i matchningsdefinitionen.      |
+|Mått  |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen.  |
+|Sammanslå   |Beror på att matchningsprocessen har slutförts. Segment, mått, berikning, sökning, aktiviteter, prediktion och dataförberedelse är beroende av att processen har slutförts.   |
+|Profiler   |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. |
+|Search   |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. |
+|Segment  |Körs manuellt (engångsuppdatering). Beror på sammanfogningsprocessen. Insikter beror på behandlingen.|
+|System   |Beror på att matchningsprocessen har slutförts. Segment, mått, berikning, sökning, aktiviteter, prediktion och dataförberedelse är beroende av att processen har slutförts.   |
+|Användare  |Körs manuellt (engångsuppdatering). Beroende av entiteter.  |
+
+Markera status för en process om du vill visa förloppsinformationen för hela jobbet som den fanns i. Uppdateringsprocesserna ovan kan hjälpa dig att förstå vad du kan göra för att ta itu med en **Hoppades över** eller **Köad** uppgift eller process.
 
 ## <a name="schedule-tab"></a>Fliken Schemalägg
 
 Använd fliken **Schema** för att schemalägga automatiska uppdateringar av alla dina [inmatade datakällor](data-sources.md). Automatiska uppdateringar hjälper till att se till att uppdateringarna från dina datakällor återspeglas i dina enhetliga kundprofiler.
+
+> [!NOTE]
+> Datakällor som hanteras av dig uppdateras enligt egna scheman. Om du vill schemalägga uppdatering av datakällor som hanteras av dig konfigurerar du uppdateringsinställningarna för den specifika datakällan från sidan **Datakällor**.
+> :::image type="content" source="media/PPDF-edit-refresh.png" alt-text="Power Platform Inställningar för dataflödesuppdatering":::
 
 1. I målgruppsinsikter går du till **Admin** > **System** och väljer fliken **Schema**.
 
@@ -84,9 +112,15 @@ Fliken **Om** innehåller organisationens **Visningsnamn**, aktivt **Miljö-ID**
 
 ## <a name="general-tab"></a>Fliken Allmänt
 
-Det finns två alternativ på fliken **Allmänt**, **Språk** och **Land/region-format**.
+Du kan ändra språk och land/region-format på fliken **Allmänt**.
 
-Appen [stöder ett antal språk](supported-languages.md). Om du vill ändra önskat språk väljer du ett **språk** i listrutan.
+Customer Insights [har stöd för många språk](/dynamics365/get-started/availability). Appen använder din språkinställning för att visa element som menyn, etikettext och systemmeddelanden på det språk du föredrar.
+
+Importerade data och information som du har angett manuellt översätts inte.
+
+### <a name="update-the-settings"></a>Uppdatera inställningarna
+
+Om du vill ändra önskat språk väljer du ett **språk** i listrutan.
 
 Om du vill ändra förvald formatering för datum, tid och tal använder du listrutan **Land/region-format**. En förhandsgranskning av formatering visas under det här fältet. Systemet kommer automatiskt att föreslå ett urval när du väljer ett nytt språk.
 
@@ -105,6 +139,13 @@ Hitta information om API-användningen i realtid och se vilka händelser som har
 
    Åtgärder som använder [datainmatning i realtid](real-time-data-ingestion.md) innehåller en knapp med en kikarsymbol för att visa API-användning i realtid. Välj knappen för att öppna en sidoruta som innehåller användningsdetaljer för API-användningen i realtid i den aktuella miljön.   
    Använd rutan **Gruppera efter** i fönstret **API-användning i realtid** för att välja hur realtidsinteraktioner bäst ska presenteras. Du kan gruppera data efter API-metod, kvalificerade namn för entiteter (upptagen entitet), skapade av (händelsens källa), resultat (lyckade eller misslyckade) eller felkoder. Informationen är tillgänglig som ett historikdiagram och som en tabell.
+
+## <a name="security-tab"></a>Fliken Säkerhet
+
+På fliken **Säkerhet** kan du länka och hantera ditt eget [Azure Key Vault](/azure/key-vault/general/basic-concepts) till miljön.
+Dedikerade nyckelvalv kan användas för att arrangera och använda hemligheter i en organisations efterlevnadsgräns. Målgruppsinsikter kan använda hemligheterna i Azure Key Vault för att [konfigurera anslutningar](connections.md) till system från tredje part.
+
+Mer information finns i [Använd ditt eget Azure Key Vault](use-azure-key-vault.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

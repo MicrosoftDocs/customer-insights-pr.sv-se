@@ -1,24 +1,25 @@
 ---
-title: Omsättningsprediktion för abonnemang
+title: Prediktion för omsättning av prenumeration (innehåller video)
 description: Förutsäg huruvida en kund löper risk att inte längre kunna använda företagets prenumerationsprodukter eller -tjänster.
 ms.date: 08/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 9eb0593f93d713124e4113dcb62c588819f5b97b
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: b61e87ad833dd7a8e51c6619945a9e216d85f221
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6556329"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354719"
 ---
-# <a name="subscription-churn-prediction-preview"></a>Förutsäga abonnemangsomsättning (förhandsversion)
+# <a name="subscription-churn-prediction"></a>Omsättningsprediktion för abonnemang
 
 Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida en kund löper risk att inte längre kunna använda företagets prenumerationsprodukter eller -tjänster. Du kan skapa nya förutsägelser om abonnemangsomsättning via sidan **Intelligens** > **Förutsägelser**. Välj **Mina förutsägelser** för att se andra förutsägelser som du har skapat.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOKNQ]
 
 > [!TIP]
 > Testa självstudierna för en förutsägelse av prenumerationsomsättning med exempeldata: [Guide för förutsägelse av prenumerationsomsättning](sample-guide-predict-subscription-churn.md).
@@ -61,7 +62,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
 ## <a name="create-a-subscription-churn-prediction"></a>Skapa en förutsägelse om abonnemangsomsättning
 
 1. I målgruppsinsikter går du till **Intelligens** > **Förutsägelser**.
-1. Välj ikonen **Modell för prenumerationsomsättning (förhandsversion)** och välj sedan **Använd denna modell**.
+1. Välj panelen **Prenumerationsomsättningsmodell** och välj **Använd den här modellen**.
    > [!div class="mx-imgBorder"]
    > ![Ikon för prenumerationsomsättningsmodell med knappen Använd denna modell.](media/subscription-churn-usethismodel.PNG "Ikon för prenumerationsomsättningsmodell med knappen Använd denna modell")
 
@@ -75,7 +76,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
 1. Ange antalet **Dagar sedan prenumerationen avslutades** som företaget betraktar en kund som varandes i omsättningstillstånd. Denna period används vanligtvis för affärsaktiviteter som erbjudanden och andra marknadsföringsåtgärder som försöker förhindra att kunden går förlorad.
 1. Ange antalet **dagar för att undersöka framtid för att förutse omsättningen** och ställ in ett fönster för att förutse omsättningen för. Om du till exempel vill förutsäga risken för omsättning för dina kunder under de kommande 90 dagarna för att anpassa sig efter dina marknadsföringsåtgärder. Om risken ökar för längre eller kortare tidsperioder kan det bli svårare att ta sig an faktorerna i riskprofilen, beroende på företagets specifika behov. Fortsätt **Nästa** för att fortsätta
    >[!TIP]
-   > Du kan välja att **Spara och stänga** när som helst när du vill spara förutsägelsen som ett utkast. Du hittar utkastförutsägelsen i fliken **Mina förutsägelser** om du vill fortsätta med den.
+   > Du kan när som helst välja **Spara utkast** om du vill prediktion utkast. Du hittar utkastförutsägelsen i fliken **Mina förutsägelser** om du vill fortsätta med den.
 
 ### <a name="add-required-data"></a>Lägg till obligatoriska data
 

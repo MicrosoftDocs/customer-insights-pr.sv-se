@@ -2,19 +2,21 @@
 title: Segmentinsikter för befintliga segment
 description: Få insikter om befintliga segment för att se skillnader och likheter.
 ms.date: 06/10/2020
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: article
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: jimsonc
+ms.topic: how-to
+author: JimsonChalissery
+ms.author: jimsonc
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 92e1b05dd08588a5da446af5b17b2d6ce57490ce
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+searchScope:
+- ci-segment-insights
+- customerInsights
+ms.openlocfilehash: 8ae832c69c89bee08b8ef36ed99233b6e8e5a0f4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4407106"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355589"
 ---
 # <a name="segment-insights-preview"></a>Segmentinsikter (förhandsversion)
 
@@ -44,13 +46,13 @@ Du kan också analysera hur överlappningen ändras för vissa attribut.
 När du har genomfört analysen hittar du detaljerad information om den här insikten på **Segment** > **Insikter (förhandsversion)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Överlappande segmentinformation om insikter":::
+> :::image type="content" source="media/segment-overlap.png" alt-text="Överlappande segmentinformation om insikter.":::
 
 Välj en insikt för att se resultatet av analysen:
 
 - Antalet medlemmar som överlappar de segment som valts för analys.
 - Antalet medlemmar som ingår i ett av segmenten men inte i resten av segmentet.
-- Om du valde fält när du konfigurerade överlappningsanalysen hittar du dem på motsvarande flikar. Du kan använda listrutan för filter för att välja en autentiseringsnivå och tabellen längst ned visar motsvarande data.
+- Om du valde fält när du konfigurerade överlappningsanalysen hittar du dem på motsvarande flikar. Du kan använda filterlistrutan för att välja en attributnivå, så visas motsvarande data i tabellen längst ned.
 
 ## <a name="segment-differentiators"></a>Differentiatorer för segment
 
@@ -77,7 +79,7 @@ Segmentdifferentieringar hjälper dig att ta reda på vad som skiljer ett segmen
 När du har genomfört analysen hittar du detaljerad information om den här insikten på **Segment** > **Insikter (förhandsversion)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentdifferentieringar om insikter":::
+> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentdifferentiering för insiktsinformation.":::
 
 Välj en insikt för att se resultatet av analysen. En differentieringsanalys innehåller två flikar. På fliken **attribut** anges de profilmappar som betraktas som differentieringar. På fliken **mått** en lista över differentieringarna. Varje flik innehåller följande detaljer:
 
@@ -91,3 +93,6 @@ Du kan använda följande alternativ för dina insikter från kommandofältet:
 - **Tillbaka** för att returnera listan med insikter
 - **Uppdatera** om du vill köra analysen igen
 - **Ta bort** och ta bort insikt
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

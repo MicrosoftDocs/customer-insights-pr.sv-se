@@ -1,73 +1,101 @@
 ---
-title: Berikning med tredjepartsberikningen Experian
-description: Allmän information om tredjepartsberikningen Experian.
-ms.date: 09/17/2020
-ms.reviewer: kishorem
-ms.service: customer-insights
+title: Berikande med tredjepartsberikande Experian
+description: Allmän information om tredjepartsberikande Experian.
+ms.date: 04/09/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+ms.topic: how-to
+author: kishorem-ms
+ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 60fc49734e54740e83b47a7028be216a0eb81e49
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: ad1023135516ca9c49818d19aa84df68d16b2e3c
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668835"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229991"
 ---
-# <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Berika kundprofiler med demografisk information från Experian (förhandsversion)
+# <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Berika kundprofiler med demografisk information från Experian (förhandsgranskning)
 
-Experian är en global ledare inom konsument- och affärskreditrapportering och marknadsföringstjänster. Med Experians databerikningstjänster kan du skapa en djupare förståelse för dina kunder genom att berika dina kundprofiler med demografiska uppgifter som hushållsstorlek, inkomst och mer.
+Experian är en global ledare inom rapporterings- och marknadsföringstjänster för konsument- och affärskreditföretag. Med hjälp av tjänsterna för datatillägg från Experian kan du öka förståelsen för dina kunder genom att berika dina kundprofiler med demografisk information, t.ex. storlek, inkomst och mycket annat.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
 För att konfigurera Experian måste följande villkor vara uppfyllda:
 
-- Du har en aktiv Experian-prenumeration. Om du vill få en prenumeration [kontaktar du Experian](https://www.experian.com/marketing-services/contact) direkt. [Läs mer om Experian databerikande](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
-- Du har användar-ID, part-ID och modellnummer för ditt SSH-aktiverade Secure Transport-konto (ST) som Experian skapat åt dig.
-- Du har [administratörs](permissions.md#administrator)behörigheter i målgruppsinsikter.
+- Du måste ha en aktiv prenumeration på Experian. Om du vill få en prenumeration [kontaktar du Experian](https://www.experian.com/marketing-services/contact) direkt. [Läs mer om Experian-databerikande](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
 
-## <a name="configuration"></a>Konfiguration
+- En Experian-anslutning har redan konfigurerats av en administratör, *eller* också har du [administratärs](permissions.md#administrator)behörighet. Du behöver också användar-ID, part-ID och modellnummer för ditt SSH-aktiverade ST-konto (Secure Transport) som Experian skapat åt dig.
+
+## <a name="supported-countriesregions"></a>Länder/regioner som stöds
+
+Vi stöder för närvarande endast berikande av kundprofiler i USA.
+
+## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 
 1. Gå till **Data** > **Berikning** och välj fliken **Upptäcka**.
 
-1. Välj **Berika mina data** på Experian-panelen.
+1. Välj **Berika mina data** i Experian-panelen.
 
    > [!div class="mx-imgBorder"]
-   > ![Experian-panel](media/experian-tile.png "Experian-panel")
+   > ![Experian-ikon.](media/experian-tile.png "Experian tile")
+   > 
 
-1. Välj **komma igång** och ange användar-ID, part-ID och modellnummer för ditt Experian Secure Transport-konto. Granska och ge ditt medgivande för **Datasekretess och regelefterlevnad** genom att markera kryssrutan **Jag godkänner**. Bekräfta alla indata genom att välja **tillämpa**.
+1. Välj en [anslutning](connections.md) i listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning** och välja Experian i listrutan. 
 
-## <a name="map-your-fields"></a>Mappa dina fält
+1. Bekräfta **Anslut till Experian** genom att bekräfta anslutningsvalet.
 
-1. Välj **Lägg till data** och välj dina nyckelidentifierare från **namn och adress**, **e-post** eller **telefon** för att skicka till Experian för identitetsmatchning.
+1.  Välj **Nästa** och välj **kunddatauppsättning** som du vill berika med demografisk information från Experian. Du kan välja entiteten **Kund** för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
 
-   > [!TIP]
-   > Fler nyckel-ID-attribut som skickas till Experian ger troligen en högre matchningsfrekvens.
+    :::image type="content" source="media/enrichment-Experian-configuration-customer-data-set.png" alt-text="Bild när du väljer kunddatauppsättningen.":::
 
-1. Välj **Nästa** och mappa motsvarande attribut från entiteten Enhetlig kund för de valda nyckel-ID-fälten.
+1. Välj **Nästa** och definiera vilken typ av fält från dina enhetliga profiler som ska användas för att söka efter matchande data från Experian. Minst ett av fälten **Namn och adress**, **Telefon** eller **E-post** krävs. För en bättre matchning kan du lägga till upp till två andra fält. Det här valet påverkar mappningsfälten du har åtkomst till i nästa steg.
 
-1. Välj **Lägg till attribut** för att mappa ytterligare attribut som du vill skicka till Experian.
+    > [!TIP]
+    > Fler attribut för nyckelidentifierare som skickas till Experian leder troligen till en högre matchningskvot.
 
-1.  Välj **Spara** för att slutföra fältmappningen.
+1. Välj **Nästa** för att starta fältmappningen.
 
-   > [!div class="mx-imgBorder"]
-   > ![Experian fältmappning](media/experian-field-mapping.png "Experian fältmappning")
+1. Definiera vilka fält i dina enhetliga profiler som ska användas för att söka efter matchande demografiska data från Experian. Behövliga fält är markerade.
+
+1. Ange ett namn för berikningen och ett namn för den utgående enheten.
+
+1. Välj **Spara berikning** när du har granskat dina val.
+
+## <a name="configure-the-connection-for-experian"></a>Konfigurera anslutningen för Experian 
+
+Du måste vara en administratör för att konfigurera anslutningar. Välj **Lägg till anslutning** när du konfigurerar ett berikande *eller* gå till **Administratör** > **Anslutningar** och välj **Konfigurera** i Experian-panelen.
+
+1. Välj **Komma igång**.
+
+1. Ange ett namn för anslutningen i rutan **visningsnamn**.
+
+1. Ange giltigt användar-ID, part-ID och modellnummer för ditt Experian-konto för säker transport.
+
+1. Granska och ge ditt samtycke till **Data sekretess och efterlevnad** genom att välja **Jag godkänner**.
+
+1. Välj **Verifiera** om konfigurationen ska verifieras.
+
+1. Välj **Spara** när verifieringen har slutförts.
+   
+   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Konfigurationsruta för Experian-anslutning.":::
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 
-Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du kan också låta systemet köra anrikningen automatiskt som en del av en [schemalagd uppdatering](system.md#schedule-tab). Bearbetningstiden beror på storleken på kundens data och de eventuella processer som har konfigurerats för ditt konto av Experian.
+Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du kan också låta systemet köra anrikningen automatiskt som en del av en [schemalagd uppdatering](system.md#schedule-tab). Bearbetningstiden beror på storleken på dina kunddata och de berikningsprocesser som konfigurerats för ditt konto av Experian.
 
 När en berikningsprocessen har slutförts kan du granska de nyligen utsatta kundprofildata under **Mina berikningar**. Du hittar också tid för den senaste uppdateringen och antalet utökat profilnamn.
 
-Du kan få tillgång till en detaljerad vy över respektive berikad profil genom att markera **Visa berikade data**.
+Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa ovanpå dina berikade kunddata. Skapa [segment](segments.md), [mått](measures.md)och [exportera data](export-destinations.md) för att leverera anpassade funktioner till kunderna.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 
-När du aktiverar Dynamics 365 Customer Insights för att överföra data till Experian tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data i din instruktion, men du ansvarar för att Experian uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.
+När du gör det möjligt för Dynamics 365 Customer Insights att överföra data till Experian tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att säkerställa att Experian uppfyller dina eventuella sekretess- och säkerhetskrav. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
+Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort denna berikningen i syfte att avbryta användningen av den här funktionen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

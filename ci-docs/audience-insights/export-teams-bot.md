@@ -1,20 +1,19 @@
 ---
 title: Robot for Microsoft Teams
 description: Slå upp enhetliga kundprofiler i Microsoft Teams med hjälp av en robot.
-ms.date: 04/21/2020
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e563619f40be859f3f02638adbd60b80423182b3
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: d6b016c1ec35e26ce6449333234edfd218bc9354
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554410"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232124"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Teamrobot för Dynamics 365 Customer Insights (förhandsversion)
 
@@ -31,7 +30,10 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera o
 - [Föreningsprocessen](data-unification.md) har slutförts.
 - Fält läggs till i [Sök- och filterindex](search-filter-index.md).
 - Customer Insights och Teams finns i samma organisation.
+- Din miljö har den primära målgruppen inställd på enskilda kunder. Affärskonton stöds inte.
 
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElj]
 ## <a name="configure-the-bot"></a>Konfigurera roboten
 
 1. I målgruppsinsikter går du till **Admin** > **Exportdestinationer**.

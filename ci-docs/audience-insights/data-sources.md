@@ -1,42 +1,49 @@
 ---
 title: Använd datakällor för att mata in data
 description: Lär dig hur du importerar data från olika källor.
-ms.date: 04/12/2021
-ms.service: customer-insights
+ms.date: 12/06/2021
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54dd7b629d4b4e7f640b932b0f9246e0602f46bd
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+searchScope:
+- ci-data-sources
+- ci-create-data-source
+- customerInsights
+ms.openlocfilehash: e7bcf82c4fe3625ef791ec2b0a7651be0356a006
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304718"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354071"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Kapaciteten för målgruppsinsikter i Dynamics 365 Customer Insights ansluter till data från en bred uppsättning källor. Anslutning till en datakälla kallas ofta för *datainmatning*. När du har inmatat dina data kan du [ena](data-unification.md) och vidta åtgärder.
 
 ## <a name="add-a-data-source"></a>Lägg till en datakälla
 
-Se de detaljerade artiklarna om hur du lägger till en datakälla beroende på vilket alternativ du väljer.
+Detaljerade artiklar innehåller information om hur du lägger till datakälla, beroende på vilket alternativ du väljer.
 
-Du kan lägga till en datakälla på tre huvudsakliga sätt:
+Du kan lägga till följande datakällor:
 
-- [Efter dussintals Power Query-anslutningar](connect-power-query.md)
+- [Genom dussintals Power Query-anslutningar](connect-power-query.md)
 - [Från en Common Data Model-mapp](connect-common-data-model.md)
-- [Från din egen Microsoft Dataverse sjö](connect-common-data-service-lake.md)
+- [Från din egen Microsoft Dataverse sjö](connect-dataverse-managed-lake.md)
+- [Från en Azure Synapse Analytics-databas](connect-synapse.md)
+
+> [!NOTE]
+> Om du använder provversionen innehåller avsnittet importmetoder ett **databibliotek för Customer Insights**.  Välj det här alternativet om du vill datauppsättning exempel för olika branscher. Mer information finns i [Dynamics 365 Customer Insights-utvärdering](../trial-signup.md).
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Lägga till data lokala datakällor
 
-Inmatning av data från lokala datakällor i målgruppinsikter stöds baserat på Microsoft Power Platform-dataflöden. Dataflöden kan aktiveras i Customer Insights av [ange Microsoft Dataverse miljö-URL](manage-environments.md#create-an-environment-in-an-existing-organization) när du ställer in miljön.
+Inmatning av data från lokala datakällor i målgruppinsikter stöds baserat på Microsoft Power Platform-dataflöden. Du kan aktivera dataflöden i Customer Insights genom att [ange Microsoft Dataverse miljö-URL](create-environment.md) när du ställer in miljön.
 
-Datakällor som skapas efter att ha associerat en Dataverse-miljö med Customer Insights kommer att använda [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) by default. Dataflöden stöder lokal anslutning med datagateway. Ta bort och återskapa datakällor som fanns innan en Dataverse-miljö associerades för att [använda lokal datagateways](/data-integration/gateway/service-gateway-app.md).
+Datakällor som skapas efter att en Dataverse miljö associerats med Customer Insights använder du [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflöden stöder lokal anslutning med datagateway. Du kan ta bort och återskapa datakällor som fanns innan en Dataverse miljö associerades med [använda lokala datagateway](/data-integration/gateway/service-gateway-app).
 
 Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att synas och du kan återanvända i Customer Insights. På sidan för datakällor visas länkar som går till den Microsoft Power Platform-miljö där du kan visa och konfigurera lokal data-gateways.
 
@@ -45,16 +52,9 @@ Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att syna
 Du ser namnet på varje inmatad datakälla, dess status och sista gången data uppdaterades för källan. Du kan sortera listan över datakällor efter varje kolumn.
 
 > [!div class="mx-imgBorder"]
-> ![Tillagd datakälla](media/configure-data-datasource-added.png "Tillagd datakälla")
+> ![Tillagd datakälla.](media/configure-data-datasource-added.png "Tillagd datakälla")
 
-|Status  |Beskrivning  |
-|---------|---------|
-|Lyckades   |Datakälla har matats in om en tidpunkt nämns i kolumnen **Uppdaterad**.
-|Inte startad   |Datakällan har inga inmatade data än eller är fortfarande i utkastläge.         |
-|Uppdaterar    |Datainmatning pågår. Du kan avbryta åtgärden genom att välja **Avbryt uppdatering** i kolumnen **åtgärder**. Om du stoppar uppdateringen av en datakälla återställs den till dess senaste uppdateringstillstånd.       |
-|Misslyckad     |Datahämtning har stött på fel.         |
-
-Välj värdet i kolumnen **Status** för en datakälla för att se mer information. I rutan **Förloppsinformation** visar du **Datakällor**. Välj **Se information** för mer information om uppdateringsstatusen, inklusive felinformation och uppdateringar om nedströmsprocesser.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 Det kan ta lång tid att läsa in data. Efter en lyckad uppdatering kan hämtade data granskas från sidan **entiteter**. Mer information finns i [Entiteter](entities.md).
 

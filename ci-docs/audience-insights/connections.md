@@ -3,18 +3,20 @@ title: Anslutningar till andra tjänster från Customer Insights.
 description: Dela data till andra tjänster.
 ms.date: 04/09/2021
 ms.reviewer: nikeller
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 3689c7016454ed44e22b4d4ff5a338836a8fe288
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+searchScope:
+- ci-connections
+- customerInsights
+ms.openlocfilehash: ccad090d3bf6eab96eff37f7a96289ca2882d369
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7605971"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354439"
 ---
 # <a name="connections-preview-overview"></a>Översikt över anslutningar (förhandsversion)
 

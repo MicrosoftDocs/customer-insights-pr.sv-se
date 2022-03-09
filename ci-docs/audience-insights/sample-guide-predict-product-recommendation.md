@@ -3,26 +3,29 @@ title: Exempelguide för förutsägelse av produktrekommendationer
 description: Använd exempelguiden för att prova den medföljande modellen för förutsägelse om produktrekommendation.
 ms.date: 02/10/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: diegogranados117
-ms.author: digranad
+author: m-hartmann
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: a85ee598ec747d0594755314e83a127ce0f2af95
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+searchScope:
+- ci-predictions
+- ci-create-prediction
+- customerInsights
+ms.openlocfilehash: 8ba54cfd466049c8df99c15f34626ab1914234f1
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306188"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354669"
 ---
-# <a name="product-recommendation-prediction-preview-sample-guide"></a>Exempelguide för förutsägelse av produktrekommendationer (förhandsversion)
+# <a name="product-recommendation-prediction-sample-guide"></a>Exempelguide för förutsägelse av produktrekommendationer
 
 Vi ger dig ett komplett exempel på förutsägelse av produktrekommendation med hjälp av de exempeldata som anges nedan.
 
 ## <a name="scenario"></a>Scenario
 
-Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner, som de säljer via sin Contoso Coffee-webbplats. Målet är att förstå vilka produkter de ska rekommendera till sina återkommande kunder. Om du vet vilka kunder som **sannolikt kommer att köpa**, kan du göra besparingar på marknadsföring genom att fokusera på specifika objekt.
+Contoso är ett företag som producerar kaffe och kaffemaskiner av hög kvalitet, som de säljer via Contoso Coffee-webbplatsen. Målet är att förstå vilka produkter de ska rekommendera till sina återkommande kunder. Om du vet vilka kunder som **sannolikt kommer att köpa**, kan du göra besparingar på marknadsföring genom att fokusera på specifika objekt.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -31,7 +34,7 @@ Contoso är ett företag som producerar högkvalitativt kaffe och kaffemaskiner,
 
 ## <a name="task-1---ingest-data"></a>Uppgift 1 – Mata in data
 
-Granska artiklarna [om datainmatning](data-sources.md) och [import av datakällor med hjälp av Power Query-anslutningsprogram](connect-power-query.md) specifikt. Följande information förutsätter att du bekantat dig med inmatningsdata i allmänhet.
+Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av datakällor med hjälp av Power Query-anslutningar](connect-power-query.md). Följande information förutsätter att du bekantat dig med inmatningsdata i allmänhet.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Mata in kunddata från e-handelsplattformen
 
