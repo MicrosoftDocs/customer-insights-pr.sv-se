@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f89ef6842c21cf6b78154586f818beffbcdcffb9
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 0db0c984f6bf9f7ded0704b6fa0caf39c7dace3a
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230656"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376806"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Berikning av företagsprofiler med Leadspace (förhandsversion)
 
@@ -25,7 +25,7 @@ Följande krav måste vara uppfyllda för att du ska kunna konfigurera Leadspace
 
 - Du har en aktiv Leadspace-licens.
 - Du har [enhetliga kundprofiler](customer-profiles.md) som bygger på konton.
-- En Leadspace-anslutning har redan konfigurerats av en administratör eller så har du behörigheterna [administratör](permissions.md#administrator) och “evig nyckel” (kallas för **Leadspace-token**). Kontakta [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/) direkt för mer information om produkten.
+- En Leadspace-anslutning har redan konfigurerats av en administratör eller så har du behörigheterna [administratör](permissions.md#admin) och “evig nyckel” (kallas för **Leadspace-token**). Kontakta [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/) direkt för mer information om produkten.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-export
 - customerInsights
-ms.openlocfilehash: d3254bf13b843fe8e1b6e6db49dd6ee1dc22290c
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 0bd2bfa7402ed19cb92ff1f35208b150cfec48c3
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353933"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455856"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Använd segment i Dynamics 365 Marketing (förhandsvisning)
 
@@ -28,7 +28,7 @@ Om du använder de nya funktionerna i Dynamics 365 Marketing för kundens färd 
 
 ## <a name="prerequisite-for-a-connection"></a>Krav för anslutning
 
-- Kontaktposter måste finnas i Dynamics 365 Marketing innan du kan exportera ett segment från Customer Insights till Marketing. Läs mer om hur du matar in kontakter i [Dynamics 365 Marketing med Microsoft Dataverse](connect-power-query.md).
+- Kontaktposter måste finnas i Dynamics 365 Marketing innan du kan exportera ett segment från Customer Insights till Marketing. Läs mer om hur du matar in kontakter i [Dynamics 365 Marketing med Microsoft Dataverse](connect-dataverse-managed-lake.md).
 
   > [!NOTE]
   > Om du exporterar segment från målgruppsinsikter till Marketing skapas inte nya kontaktposter i Marketing-instanserna. Kontaktposterna från Marketing måste matas in i målgruppsinsikter och användas som en datakälla. De måste också finnas med i den enhetliga entiteten Kund för att mappa kund-ID till kontakt-ID innan segment kan exporteras.

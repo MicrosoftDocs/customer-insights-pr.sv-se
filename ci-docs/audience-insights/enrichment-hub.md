@@ -1,7 +1,7 @@
 ---
 title: Utöka enhetliga kundprofiler
 description: Använd kapaciteter för att utöka dina kunddata.
-ms.date: 02/07/2022
+ms.date: 02/18/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: e8cac35ccf7012524dc22cb4a499dc605dd66346
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
+ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355405"
+ms.lasthandoff: 03/02/2022
+ms.locfileid: "8372741"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
@@ -42,6 +42,7 @@ På fliken **Upptäck** hittar du alla alternativ för berikning som stöds.
 - [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol) 
 - [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
 - [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies 
+- [Identitet](enrichment-liveramp.md) från LiveRamp AbiliTec
 
 # <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
@@ -80,6 +81,10 @@ Tredjepartsutslag konfigureras med hjälp av [anslutningar](connections.md), som
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flera berikningar av samma typ
 
 Entiteten som ska utökas anges under konfiguration för berikning, vilket gör att du endast kan utöka en delmängd av dina profiler. Utöka till exempel endast data för ett visst segment. Du kan konfigurera flera anrop av samma typ och återanvända samma anslutning. För vissa berikningar begränsas antalet berikningar av samma typ som kan skapas. Begränsningarna och den aktuella användningen visas på sidan **Berikningar**.
+
+## <a name="enrich-data-sources-before-unification"></a>Utöka datakällor innan de används
+
+Du kan utöka kunddata innan data för att förbättra kvaliteten på en datamatchning. Mer information: [Berikande för datakällor](data-sources-enrichment.md).
 
 ## <a name="see-the-progress-of-the-enrichment-process"></a>Se utökandeprocessens förlopp
 

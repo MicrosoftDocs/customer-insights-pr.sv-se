@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 1b46e8913c6d288b93cdf32e195b5e9387916e70
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 1cbbad9bfe559bcb15b23894fc7475507aae8add
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230404"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376392"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Berikning av kundprofiler med HERE Technologies (förhandsversion)
 
@@ -25,7 +25,7 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera H
 
 - Du har en aktiv HERE Technologies-prenumeration. Om du vill få en prenumeration kan du [registrera dig här](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakta HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkt. [Läs mer om HERE Technologies platsberikning.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- En HERE-[anslutning](connections.md) är tillgänglig *eller* också har du [administratörs](permissions.md#administrator)behörigheter och API-nyckel för HERE Technologies.
+- En HERE-[anslutning](connections.md) är tillgänglig *eller* också har du [administratörs](permissions.md#admin)behörigheter och API-nyckel för HERE Technologies.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 

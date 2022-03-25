@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: e4b9a65eb50f75e0243fabfc10b501cf7acf4490
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 042558af801a1d1fc365939d9aa42c09b98b2679
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229660"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376622"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Berika kundprofiler med anpassade data (förhandsversion)
 
@@ -25,7 +25,7 @@ Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera a
 
 - Du har filnamn och sökväg för den fil som ska importeras på SFTP-värddatorn.
 - Det finns en *model.json*-fil som anger schemat för [Common Data Model-schema](/common-data-model/) för data att importeras. Filen måste finnas i samma katalog som filen som ska importeras.
-- En SFTP-anslutning har redan konfigurerats av en administratör *eller* eller så har du [administratör](permissions.md#administrator) behörigheter. Du behöver autentiseringsuppgifterna, URL:en och portnumret för den SFTP-plats där du vill importera data från.
+- En SFTP-anslutning har redan konfigurerats av en administratör *eller* eller så har du [administratör](permissions.md#admin) behörigheter. Du behöver autentiseringsuppgifterna, URL:en och portnumret för den SFTP-plats där du vill importera data från.
 
 
 ## <a name="configure-the-import"></a>Konfigurera importen

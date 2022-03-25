@@ -58,6 +58,8 @@
           href: audience-insights/connect-dataverse-managed-lake.md
         - name: Lägga till Azure Synapse Analytics
           href: audience-insights/connect-synapse.md
+        - name: Berika för datakällor
+          href: audience-insights/data-sources-enrichment.md
         - name: Inkrementell uppdatering av datakällor
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Datainmatning i realtid
@@ -100,6 +102,8 @@
           href: audience-insights/enrichment-here.md
         - name: Utöka med Leadspace
           href: audience-insights/enrichment-leadspace.md
+        - name: Utöka med LiveRamp
+          href: audience-insights/enrichment-liveramp.md
         - name: Utöka med Experian
           href: audience-insights/enrichment-experian.md
         - name: Berika med Office 365-data

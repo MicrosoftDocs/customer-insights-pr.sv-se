@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 2e0801c2b6af591e48a7df485a8523903c07617c
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354430"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376438"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsgranskning)
 
@@ -37,7 +37,7 @@ Customer Insights skickar följande händelseloggar:
 Om du vill konfigurera diagnos Customer Insights, måste följande krav uppfyllas:
 
 - Du måste ha en aktiv [Azure-prenumeration](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- Du har [Administratör](permissions.md#administrator) behörighet i Customer Insights..
+- Du har [Administratör](permissions.md#admin) behörighet i Customer Insights..
 - Du har rollen **Deltagare** och **Administratör för användaråtkomst** på destinationsresursen på Azure. Resursen kan vara ett Azure Storage-konto, ett Azure händelsehubben eller en Azure Log Analytics-arbetsyta. Mer information finns i [Lägga till eller ta bort Azure-rolltilldelningar via Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
 - [Destinationskraven](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) för Azure Storage, Azure Event eller Azure Hub eller Azure Log Analytics har uppfyllts.
 - Du har minst rollen **Läsare** i den resursgrupp resursen tillhör.
@@ -132,7 +132,7 @@ API-händelser och arbetsflödeshändelser har en gemensam struktur och informat
 | `resultSignature` | String    | Valfri          | Resultatstatus för händelsen. Om åtgärden motsvarar ett REST-API är det HTTP-statuskoden.        | `200`             |
 | `durationMs`      | Long      | Valfri          | Varaktigheten för åtgärd i milisekunder.     | `133`     |
 | `callerIpAddress` | String    | Valfri          | IP-adress för uppringare, om åtgärden motsvarar ett API-anrop som kommer från en offentlig IP-adress.                                                 | `144.318.99.233`         |
-| `identity`        | String    | Valfri          | JSON-objekt som beskriver identiteten för den användare eller det program som har gjort åtgärden.       | Se avsnittet [Identitet](#identity-schema).     |  |
+| `identity`        | String    | Valfri          | JSON-objekt som beskriver identiteten för den användare eller det program som har gjort åtgärden.       | Se avsnittet [Identitet](#identity-schema).     |  
 | `properties`      | String    | Valfri          | JSON-objekt med fler egenskaper för den specifika händelsekategorin.      | Se avsnittet [Egenskaper](#api-properties-schema).    |
 | `level`           | String    | Obligatoriskt          | Händelsens allvarlighetsgrad.     | `Informational`, `Warning`, `Error` eller `Critical`.           |
 | `uri`             | String    | Valfri          | URI för absolut begäran.    |               |
@@ -239,7 +239,7 @@ Arbetsflödeshändelser har följande egenskaper.
 | `properties.startTimestamp`                  | Ja      | Ja  | UTC tidsstämpel`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.endTimestamp`                    | Ja      | Ja  | UTC tidsstämpel`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.submittedTimestamp`              | Ja      | Ja  | UTC tidsstämpel`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
-| `properties.instanceId`                      | Ja      | Ja  | Customer Insights `instanceId`                                                                                                                                                                                                                              |  |
+| `properties.instanceId`                      | Ja      | Ja  | Customer Insights `instanceId`                                                                                                                                                                                                                              |  
 | `properties.identifier`                      | No       | Ja  | - För OperationType = `Export` är identifieraren guid för exportkonfigurationen. <br> - För OperationType = `Enrichment` är det guid för berikande <br> - För OperationType `Measures` och `Segmentation` är identifieraren enhetsnamnet. |
 | `properties.friendlyName`                    | No       | Ja  | Användarvänligt namn på exporten eller den entitet som bearbetas.                                                                                                                                                                                           |
 | `properties.error`                           | No       | Ja  | Valfritt. Felmeddelande med mer information.                                                                                                                                                                                                                  |

@@ -8,16 +8,20 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: dc9bbe22b7f10cf92f06cae18fbece9808b87dce
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: dd90ef4576246b49d4a9c74005196ee9813a6744
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8226736"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455933"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate anslutningsprogram (förhandsversion)
 
 Utlös specifika händelser automatiskt när data ändras och hantera mer komplicerade flöden direkt i [Power Automate](https://flow.microsoft.com/).
+
+## <a name="known-limitations"></a>Kända begränsningar
+
+- Du kan göra maximalt 100 samtal per 60 sekunder. Du kan anropa API-slutpunkt flera gånger med hjälp $skip parametern. [Läs mer om parametern $skip](/connectors/customerinsights/#get-items-from-an-entity).
 
 ## <a name="power-automate-triggers"></a>Power Automate-utlösare
 

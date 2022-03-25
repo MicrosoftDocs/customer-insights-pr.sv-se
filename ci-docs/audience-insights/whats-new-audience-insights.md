@@ -8,16 +8,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 667a984f1a2287456f4e6324eafe628fba957bf5
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 9195770255bd798636b9532d6e1ca928345b3708
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232726"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376484"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Vad är nytt i funktionen målgruppsinsikter i Dynamics 365 Customer Insights
-
-
 
 Vi är glada över att kunna meddela våra senaste uppdateringar! Denna artikel sammanfattar funktioner för allmänt tillgänglig förhandsversion, förbättringar av allmän tillgänglighet och funktionsuppdateringar. Om du vill se de långsiktiga funktionsplanerna, se [utgivningsplaner för Dynamics 365 och Power Platform](/dynamics365/release-plans/).
 
@@ -26,6 +24,62 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
+
+## <a name="february-2022-updates"></a>Uppdateringar i februari 2022
+
+Uppdateringarna i februari 2022 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="general-availability-for-prediction-models"></a>Allmän tillgänglighet för prediktionsmodeller
+
+Färdiga prediktionsmodeller, inklusive **prenumerationsomsättning**, **transaktionell omsättning** och **Kundens livstidsvärde (CLV)** bli allmänt tillgänglig som en del av Customer Insights. 
+
+Mer information finns i [Översikt över prediktioner](predictions-overview.md).
+
+### <a name="new-data-source-integration-with-azure-synapse-analytics-preview"></a>Ny datakälla: Integrering med Azure Synapse Analytics (förhandsgranskning)
+
+Azure Synapse Analytics är en företagsanalystjänst som skyndar på tiden till insikter i datalager och stordatasystem.
+
+Om din organisation redan använder avancerade analysfunktioner av Azure Synapse Analytics och lagrar utdata i databaserna i Data Lake, kan du enkelt samla in dessa data i Customer Insights. Mer information, se [Ansluta en Azure Synapse datakälla (förhandsversion)](connect-synapse.md).
+
+### <a name="liveramp-enrichment-preview"></a>Berikning av LiveRamp (förhandsversion)
+
+LiveRamp anger identitetsmatchning offline och konsoliderar kunddata. Du kan mappa personliga identifierare i dina kunddata till identitetsdiagrammet AbiliTec och ta emot AbiliTec ID. Därefter kan du använda de här ID:erna för att bättre ta fram kunddata.
+
+Mer information finns i [Berika kundprofiler med identitetsdata för LiveRamp (förhandsversion)](enrichment-liveramp.md).
+
+### <a name="enrichment-for-data-sources-preview"></a>Berika för datakällor (förhandsversion)
+
+Använd data från källor som Microsoft och andra partner för att utöka dina kunddata innan data förenas. Berikning av datakälla ger bättre dataresultat och högre kvalitet som kan hjälpa till att uppnå bättre resultat när dina data har förenats.
+
+Mer information: [Berikande för datakällor (förhandsversion)](data-sources-enrichment.md).
+
+### <a name="change-owner-of-environment"></a>Byt ägare till miljön
+
+Flera användare kan ha administratörsbehörigheter i Customer Insights, men bara en användare är ägare till en miljö. En bättre upplevelse innebär att du kan byta ägare till en miljö och göra anspråk på ägarskap om en tidigare ägare har lämnat organisationen. 
+
+Mer information finns i [Ändra ägaren till en miljö](manage-environments.md#change-the-owner-of-an-environment).
+
+### <a name="data-preparation-process-lists-corruption-reason-for-corrupted-records"></a>Dataförberedelseprocessen visar orsaker till skadade poster
+
+I förberedelseprocessen för data har det nu visat sig att det är lätt att identifiera fält med skadade data på den enskilda postnivån. 
+
+Mer information: [Skadad datakälla](entities.md#corrupted-data-sources).
+
+### <a name="end-of-preview-for-reporting-features-in-the-engagement-insights-capability"></a>Slutet på förhandsgranskning för rapportfunktioner i funktionerna för engagemangsinsikter
+
+Förhandsversionen med engagemangsinsikter i Dynamics 365 Customer Insights tog slut den 15 februari 2022.  
+Den här förändringen innebär att utvärderingsversionen av Customer Insights inte längre omfattar möjligheten att skapa trattar eller andra rapporteringsfunktioner.
+
+Vi bjuder in dig att utforska och utvärdera de många andra funktionerna i [Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/), Microsofts plattform för kunddata (CDP).    
+ 
+Under en övergångsperiod har befintliga förhandsversionsdeltagare fortfarande tillgång till vissa förhandsversionsfunktioner:
+
+- Hämta kod till instrument för en webbplats eller mobilapp 
+- Visa händelser och händelseegenskaper 
+- Förbättra enhetliga profiler med inmatade och förfinade händelser för att dra nytta av det fullständiga värdet av deras kunddata
+  
+Under övergångsperioden strömmas händelser fortfarande till ansluten Data Lake. När den här funktionen är inaktiverad stoppas datadelning mellan engagemangsinsikter och målgruppsinsikter och inga nya händelser skickas till det anslutna lagringsutrymmet.
+Kontakta ditt Microsoft-kontoteam direkt om du har frågor om slutet på förhandsversionen av funktionerna. Ditt kontoteam håller dig uppdaterad om kommande lanseringar. 
 
 ## <a name="january-2022-updates"></a>Uppdateringar januari 2022
 

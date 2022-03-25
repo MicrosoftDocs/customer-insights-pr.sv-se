@@ -1,7 +1,7 @@
 ---
 title: Skapa och hantera miljöer
 description: Läs om hur du registrerar dig för tjänsten och hur du hanterar miljöer.
-ms.date: 12/06/2021
+ms.date: 02/09/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 ms.reviewer: mhart
@@ -11,16 +11,14 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: d9e0ee726dbbfcf330022c4d95747551d3114e7e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 4f4e5a8415f6c2128b0480edf67f317124eeeba9
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354301"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376898"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
-
-
 
 ## <a name="switch-environments"></a>Växla miljö
 
@@ -98,9 +96,29 @@ När datakällorna har uppdaterats går du till **Data** > **Förena**. Här hit
 
 När dataföreningen är klar, gå till **Mått** och **Segment** för att uppdatera dem.
 
+## <a name="change-the-owner-of-an-environment"></a>Byt ägare till miljön
+
+Flera användare kan ha administratörsbehörigheter i Customer Insights, men bara en användare är ägare till en miljö. Som standard är det administratören som ursprungligen skapar en miljö. Som administratör för en miljö kan du tilldela ägarskap till en annan användare med administratörsbehörighet.
+
+1. Välj **Miljö**-väljaren i apphuvudet.
+
+1. Välj ikonen **Redigera**.
+
+1. I rutan **Redigera miljö**, gå till steget **Grundläggande information**.
+
+1. I fältet **Ändra miljöns ägare**, välj ny ägare för miljön.  
+
+1. Välj **Granska och slutför**, sedan **Uppdatera** för att tillämpa ändringarna. 
+
+## <a name="claim-ownership-of-an-environment"></a>Begära ägarskap för en miljö
+
+Om ägaren till en miljö lämnar organisationen eller om användarkontot tas bort, har miljön ingen ägare. En användare med administratörsbehörighet kan begära ägarskapet och bli den nya ägaren. De kan fortsätta äga miljön eller [ändra ägarskapet till en annan administratör](#change-the-owner-of-an-environment). 
+
+Om du vill begära ägarskap väljer du knappen **Ta ägarskap** som visas överst på varje sida i Customer Insights när den ursprungliga ägaren lämnar organisationen.
+
 ## <a name="reset-an-existing-environment"></a>Återställa en befintlig miljö
 
-Som en administratör kan du återställa en miljö till ett tomt tillstånd om du vill ta bort alla konfigurationer och ta bort de inmatade data.
+Som ägare av en miljö kan du återställa en miljö till ett tomt tillstånd om du vill ta bort alla konfigurationer och ta bort inrättade data.
 
 1.  Välj **Miljö**-väljaren i apphuvudet. 
 
@@ -112,7 +130,7 @@ Som en administratör kan du återställa en miljö till ett tomt tillstånd om 
 
 ## <a name="delete-an-existing-environment"></a>Ta bort en befintlig miljö
 
-Som en administratör kan du ta bort en miljö som du administrerar.
+Som ägare av en miljö kan du ta bort en miljö som du administrerar.
 
 1.  Välj **Miljö**-väljaren i apphuvudet.
 

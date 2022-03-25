@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: 49729a13d26885c30039f9fa426eaee92c172424
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: ab4ab0dba1bd91b1893cd4b16b8d51381d5b6ef8
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355175"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376944"
 ---
 # <a name="match-entities"></a>Matcha entiteter
 
@@ -180,7 +180,19 @@ En utdataenhet för deduplicering innehåller följande information:
   - Deduplication_WinnerId: Det här fältet innehåller vinnande ID från de identifierade grupperna eller klustren. Om Deduplication_WinnerId är samma värde som primärnyckeln för en post innebär det att posten är vinnarposten.
 - Fält som används för att definiera dedupliceringsreglerna.
 - Regel- och poängfält som anger vilka av dedupliceringsregler som tillämpats och poängen som returneras av den matchande algoritmen.
-   
+ 
+## <a name="include-enriched-entities-preview"></a>Inkludera utökade entiteter (förhandsgranskning)
+
+Om du har utökat entiteter på datakälla nivå markerar du dem innan du kör matchningsprocessen. De utökade entiteterna kan förbättra sammanslagningsresultaten. Mer information: [Berikande för datakällor](data-sources-enrichment.md). 
+
+Den utökade entiteten innehåller de ursprungliga datakälla och de utökade fälten. Om du väljer att arbeta med den utökade entiteten påverkas inte den befintliga konfigurationen. Du kan dock behöva uppdatera matchningsreglerna så att de utökade fälten används i stället.
+
+1. Gå till **Data** > **Ena** > **Match** och välj **Använd utökade entiteter** överst på sidan.
+
+1. Från rutan **Använd berikade entiteter** välj en eller flera berikade entiteter.
+
+1. Välj **Utfört**. Oavsett var källentiteten används (till exempel matchningsordning eller regler) ändras den automatiskt till den utökade entiteten.
+  
 ## <a name="run-the-match-process"></a>Kör matchningsprocessen
 
 Med konfigurerade matchningsregler, inklusive regler för entitetsöverskridande matchning och deduplicering, kan du köra matchningsprocessen. 

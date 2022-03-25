@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 5b22c1464b3f089551f485f98d6d93840ff77136
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 418575f724090628da8bd01e2569a4cb9e646337
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355913"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376530"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Hämta ditt eget Azure Key Vault (förhandsgranskning)
 
@@ -31,7 +31,7 @@ Om du vill konfigurera nyckelvalv i målgruppinsikter måste följande krav uppf
 
 - Du måste ha en aktiv Azure-prenumeration.
 
-- Du har rollen [Administratör](permissions.md#administrator) i målgruppinsikter. Läs mer om [användarbehörigheter i målgruppsinsikter](permissions.md#assign-roles-and-permissions).
+- Du har rollen [Administratör](permissions.md#admin) i målgruppinsikter. Läs mer om [användarbehörigheter i målgruppsinsikter](permissions.md#assign-roles-and-permissions).
 
 - Du har rollerna [Deltagare](/azure/role-based-access-control/built-in-roles#contributor) och [Administratör för användaråtkomst](/azure/role-based-access-control/built-in-roles#user-access-administrator) på nyckelvalvet eller resursgruppen som nyckelvalvet tillhör. Mer information finns i [Lägga till eller ta bort Azure-rolltilldelningar via Azure-portalen](/azure/role-based-access-control/role-assignments-portal). Om du inte har rollen administratör för användaråtkomst i nyckelvalvet måste du konfigurera den rollbaserade åtkomstkontrollbehörigheten för Azure-tjänstens huvudnamn Dynamics 365 Customer Insights separat. Följ anvisningarna för att [använda Azure-tjänstens huvudkonto](connect-service-principal.md) för det nyckelvalv som ska länkas.
 

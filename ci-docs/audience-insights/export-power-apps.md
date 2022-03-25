@@ -8,12 +8,12 @@ ms.topic: how-to
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: ae2a3b7c05e9ed860da31853c47af2aec8634e7a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 18cc32a169e79794d2d3203d462620ab41efaafe
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229054"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455974"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps anslutningsprogram (förhandsversion)
 
@@ -38,6 +38,8 @@ När du har lagt till Customer Insights som en dataanslutning kan du välja föl
 ### <a name="retrievable-entities"></a>Hämtningsbara entiteter
 
 Du kan bara hämta entiteterna **Kund**, **UnifiedActivity**, **Segment** och **ContactProfile** via Power Apps anslutningsprogram. ContactProfile är endast tillgänglig i målgruppsinsikter-instansen för företagskonton. Andra entiteter visas eftersom den underliggande anslutningen stöder dem via utlösare i Power Automate.
+
+Du kan göra maximalt 100 samtal per 60 sekunder. Du kan anropa API-slutpunkt flera gånger med hjälp $skip parametern. [Läs mer om parametern $skip](/connectors/customerinsights/#get-items-from-an-entity).
 
 ### <a name="delegation"></a>Delegering
 

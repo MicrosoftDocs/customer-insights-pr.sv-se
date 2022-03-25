@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 938a9de83fd8f5ff0c9ae815d626cdfa35228aba
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 47239bd7f0c89742cf9c673bb2ebe4c41d853233
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228496"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376852"
 ---
 # <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Utöka kundprofiler med data från kontaktdata (förhandsgranska)
 
@@ -28,7 +28,7 @@ För att konfigurera berikningen måste följande villkor vara uppfyllda:
 - Du måste ha en aktiv Office 365-molnlicens.
 - Du har [enhetliga kundprofiler](customer-profiles.md) som bygger på [affärskonton](work-with-business-accounts.md).
 - Din Customer Insights-miljö måste ha en [Microsoft Dataverse organisation bifogad](create-environment.md#step-3-connect-to-microsoft-dataverse).
-- Du har [administratör](permissions.md#administrator) behörigheter.
+- Du har [administratör](permissions.md#admin) behörigheter.
 - Du har, eller kan få, godkännande från din Office 365 klientorganisationsadministratör för att använda Office 365 data för att ge **Insikter för organisation** inom Dynamics 365-appar.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
