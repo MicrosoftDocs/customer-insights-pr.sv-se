@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ec286bb6a90fb4d18e89caf9166aa659b29d668e
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: d56ed779c342bb0855ee84d949f8d3ca604b92c1
+ms.sourcegitcommit: a5e4503cf9ce0cea562bab9389748d8ca1451f9d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232013"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "8487537"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Exportera segment till Marketo (förhandsgranskning)
 
@@ -63,7 +63,7 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Ange ditt **[ID för Marketo-lista](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. List-ID:t är ett endast numeriskt värde. Om ditt Marketo-list-ID är ST12345A7 tar du bort tecknet före och efter numeriska tecken och anger `12345`. 
 
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. 
+1. I avsnittet **Datamatchning** väljer du minst ett fält som representerar en kunds e-postadress eller en kunds Marketo-ID. 
 
 1. Alternativt kan du exportera **Förnamn**, **Efternamn**, **Ort**, **Delstat** och **Land/Region** för att skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
 

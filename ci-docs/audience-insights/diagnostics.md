@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
-ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/03/2022
-ms.locfileid: "8376438"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523691"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsgranskning)
 
@@ -134,7 +134,7 @@ API-händelser och arbetsflödeshändelser har en gemensam struktur och informat
 | `callerIpAddress` | String    | Valfri          | IP-adress för uppringare, om åtgärden motsvarar ett API-anrop som kommer från en offentlig IP-adress.                                                 | `144.318.99.233`         |
 | `identity`        | String    | Valfri          | JSON-objekt som beskriver identiteten för den användare eller det program som har gjort åtgärden.       | Se avsnittet [Identitet](#identity-schema).     |  
 | `properties`      | String    | Valfri          | JSON-objekt med fler egenskaper för den specifika händelsekategorin.      | Se avsnittet [Egenskaper](#api-properties-schema).    |
-| `level`           | String    | Obligatoriskt          | Händelsens allvarlighetsgrad.     | `Informational`, `Warning`, `Error` eller `Critical`.           |
+| `level`           | String    | Obligatoriskt          | Händelsens allvarlighetsgrad.    | `Informational`, `Warning`, `Error` eller `Critical`.           |
 | `uri`             | String    | Valfri          | URI för absolut begäran.    |               |
 
 #### <a name="identity-schema"></a>Identitetsschema
@@ -219,7 +219,7 @@ Arbetsflödet innehåller flera steg. [Mata in datakällor](data-sources.md), [e
 | `resultType`    | String    | Obligatoriskt          | Status för händelsen. `Running`, `Skipped`, `Successful`, `Failure`                                                                                            |                                                                                                                                                                          |
 | `durationMs`    | Long      | Valfri          | Varaktigheten för åtgärd i milisekunder.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Valfri          | JSON-objekt med fler egenskaper för den specifika händelsekategorin.                                                                                        | Se underavsnitt [Arbetsflödesegenskaper](#workflow-properties-schema)                                                                                                       |
-| `level`         | String    | Obligatoriskt          | Händelsens allvarlighetsgrad.                                                                                                                                   | `Informational`, `Warning` eller `Error`                                                                                                                                   |
+| `level`         | String    | Obligatoriskt          | Händelsens allvarlighetsgrad.                                                                                                                                  | `Informational`, `Warning` eller `Error`                                                                                                                                   |
 |                 |
 
 #### <a name="workflow-properties-schema"></a>Schema för arbetsflödesegenskaper
@@ -230,7 +230,7 @@ Arbetsflödeshändelser har följande egenskaper.
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Ja      | Ja  | Markera alltid `WorkflowEvent` logghändelsen som arbetsflödeshändelse.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Ja      | Ja  | Identifierare för arbetsflödet som körs. Alla arbetsflödes- och uppgiftshändelser i arbetsflödeskörningen har samma `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Ja      | Ja  | Identifierare för åtgärden finns i [Operation types].(#operation-types)                                                                                                                                                                                       |
+| `properties.operationType`                   | Ja      | Ja  | Identifierare för åtgärden finns i [Åtgärdstyper](#operation-types).                                                                                                                                                                               |
 | `properties.tasksCount`                      | Ja      | No   | Endast arbetsflöde. Antal uppgifter för arbetsflödesutlösare.                                                                                                                                                                                                       |
 | `properties.submittedBy`                     | Ja      | No   | Valfritt. Endast arbetsflödeshändelse. Azure Active Directory [objectId för användaren](/azure/marketplace/find-tenant-object-id#find-user-object-id) som utlöste arbetsflödet, se även `properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Ja      | No   | `full` eller `incremental` uppdatera.                                                                                                                                                                                                                            |

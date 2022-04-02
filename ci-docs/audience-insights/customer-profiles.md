@@ -14,18 +14,20 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 3a17716508a14020c56640c7d68f300a9d721af4
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 074d84eff65d52b083fff6c161282d4fafa1af85
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354912"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523759"
 ---
 # <a name="customer-profiles"></a>Kundprofiler
 
 Sidan **Kunder** visar en kombinationsvy över dina enhetliga kundprofiler. Kundprofilerna är tillgängliga när du har skapat [entiteten enhetlig kund](data-unification.md). På sidan kan du söka efter kunder och definiera index för den sökningen.
 
-Kunderna kan vara enskilda personer eller organisationer. Varje kundprofil representeras av en panel. Hämta fler poster med sidnumreringskontrollerna. Kortet visar fält från entiteten *Kund* enligt definitionen i **Sök- och filterindex**.  Välj en panel om du vill visa data för den valda kunden på en dedicerad sida med namnet [Kundinformationssida](customer-profiles.md#customer-details-page).
+Kunderna kan vara enskilda personer eller organisationer. Varje kundprofil representeras av en panel. Hämta fler poster med sidnumreringskontrollerna. Kortet visar fält från entiteten *Kund* enligt definitionen i **Sök- och filterindex**. Ordningen på fälten inom varje kort väljs av systemet.
+
+Välj en panel om du vill visa data för den valda kunden på en dedicerad sida med namnet [Kundinformationssida](customer-profiles.md#customer-details-page).
 
 > [!div class="mx-imgBorder"] 
 > ![Sidan Kunder som visar resultatpaneler](media/customers-page-result-tiles-B2C.png "Sidan Kunder som visar resultatpaneler")

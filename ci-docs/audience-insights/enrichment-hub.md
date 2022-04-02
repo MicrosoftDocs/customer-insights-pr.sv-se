@@ -1,7 +1,7 @@
 ---
 title: Utöka enhetliga kundprofiler
 description: Använd kapaciteter för att utöka dina kunddata.
-ms.date: 02/18/2022
+ms.date: 03/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
+ms.openlocfilehash: 510a20306e793a5ba522a6ac0d9c7194f03472d2
+ms.sourcegitcommit: ae02ac950810242e2505d7d371b80210dc8a0777
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8372741"
+ms.lasthandoff: 03/29/2022
+ms.locfileid: "8491981"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
@@ -97,5 +97,19 @@ Så här ser du statusen för ett utökande
 1. I fönstret **Förloppsinformation** expanderar du avsnittet **Utökanden**. 
 1. Under det utökande du vill visa förloppet för väljer du **Visa information**. 
 1. I fönstret **Uppgiftsinformation** väljer du **Visa information** om du vill se vilka processer som är involverade i att uppdatera utökandet samt statusen för dessa. 
+
+## <a name="enrichment-results"></a>Berikningsresultat
+
+När du har slutfört berikandekörningen kan du granska berikanderesultatet.
+
+1. Gå till **Data** > **Berikning**. 
+1. Välj det berikande som du vill ha information om.
+
+Alla berikanden anger grundläggande information, t.ex. antalet profiler, en förhandsgranskning av den genererade entiteten för berikande, samt antalet berikade profiler över tid. Om tillgängligt ger **Antal berikade kunder efter fält** detaljerad information om omfattningen för respektive berikat fält.
+
+:::image type="content" source="media/enrichments-results.png" alt-text="Resultatsida för berikande.":::
+
+I vissa berikanden visas också information som är specifik för den typen av berikande. Mer information finns i dokumentationen för den relevanta informationen.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

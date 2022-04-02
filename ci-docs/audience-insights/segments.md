@@ -1,7 +1,7 @@
 ---
 title: Segments i målgruppsinsikter
 description: Översikt över segment och hur du skapar och hanterar dem.
-ms.date: 11/01/2021
+ms.date: 03/30/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: c58f79c2beda1083d19bd36d94549ff1a46b096e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 340a7b7326f5b4a8cbde8683b8d41cb53dc557b0
+ms.sourcegitcommit: 0bd5f53e4e7e37359afd087ee16b779a6b3a9183
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8356005"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "8508588"
 ---
 # <a name="segments-overview"></a>Segment – översikt
 
@@ -68,7 +68,9 @@ Följande åtgärd är tillgänglig när du väljer ett segment:
 
 ## <a name="refresh-segments"></a>Uppdatera segment
 
-Du kan uppdatera alla segment på en gång genom att markera **Uppdatera alla** på sidan **Segment**, eller också kan du uppdatera ett eller flera segment när du markerar dem och väljer **Uppdatera** bland alternativen. Du kan även konfigurera en återkommande uppdatering på **Administratör** > **System** > **Schemalägg**.
+Du kan uppdatera alla segment på en gång genom att markera **Uppdatera alla** på sidan **Segment**, eller också kan du uppdatera ett eller flera segment när du markerar dem och väljer **Uppdatera** bland alternativen. Du kan även konfigurera en återkommande uppdatering på **Administratör** > **System** > **Schemalägg**. När en återkommande uppdatering konfigureras gäller följande regler:
+- Alla segment med typen **Dynamisk** eller **Expansion** uppdateras automatiskt med angiven takt. När uppdateringen är slutförd anger **Status** om det fanns några problem med att uppdatera segmentet. **Senast uppdaterade** visar en tidsstämpel för den senaste lyckade uppdateringen. Om ett fel inträffar markerar du felet för att visa information om vad som har hänt.
+- Segment med typen **Statisk** kommer *inte* att uppdateras automatiskt. **Senast uppdaterade** visar en tidsstämpel för sista gången de statiska segmenten kördes eller uppdaterades manuellt.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 

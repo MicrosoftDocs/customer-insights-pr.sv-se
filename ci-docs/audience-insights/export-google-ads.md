@@ -1,42 +1,37 @@
 ---
 title: Exportera Customer Insights-data till Google Ads
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Google Ads.
-ms.date: 09/27/2021
+ms.date: 03/31/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 28e2b35c5a47a025b8cdcccdb3f61c79878bf056
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 7a85237f7aff564d6b540b2c11553a52f875fac4
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8227032"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523827"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Exportera segment till Google Ads (förhandsgranskning)
 
 Exportera segment med enhetliga kundprofiler till en Google Ads-målgruppslista och använd dem för att annonsera på Google Search, Gmail, YouTube och Google Display Network. 
 
-> [!IMPORTANT]
-> För närvarande kan du bara skapa en ny anslutning och exportera data till Google Ads om du redan har en godkänd Google Ads utvecklartoken. På grund av policyändringar uppdaterar vi Google Ads-export inom kort och tillhandahåller ett exportalternativ som inte kräver någon utvecklartoken. Det är för att säkerställa kontinuiteten i din upplevelse och förenkla export till Google Ads. Vi rekommenderar att du inte skapar fler anslutningar till Google Ads så att det blir enklare att byta till det nya exportalternativet.
 
 ## <a name="prerequisites-for-connection"></a>Krav för anslutning
 
 -   Du har ett [Google Ads-konto](https://ads.google.com/) och motsvarande administratörsautentiseringsuppgifter.
--   Du har en [godkänd token för Google Ads-utvecklare](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
 -   Du uppfyller kraven i [policyn för kundmatchning](https://support.google.com/adspolicy/answer/6299717).
 -   Du uppfyller kraven i [storlekar för återmarknadsföringslista](https://support.google.com/google-ads/answer/7558048).
--   Det finns befintliga målgrupper i Google Ads och motsvarande ID. Mer information finns i [Målgrupper för Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
 -   Du har [konfigurerat segment](segments.md).
--   Enhetliga kundprofiler i de exporterade segmenten innehåller fält som representerar en e-postadress, ett förnamn och ett efternamn.
+-   Enhetliga kundprofiler i de exporterade segmenten innehåller fält som representerar e-postadress, telefonnummer, ID för mobilannonsör, användar-ID för tredje part, samt adress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Upp till 1 miljoner kundprofiler per export till Google Ads.
 - Export till Google Ads är begränsad till segment.
-- Det kan ta upp till fem minuter att exportera segment med totalt 1 miljoner kundprofiler på grund av begränsningar på leverantörssidan. 
+- Det kan ta upp till 30 minuter att exportera segment med totalt 1 miljoner kundprofiler, detta på grund av begränsningar på leverantörssidan. 
 - Matchningen i Google Ads kan ta upp till 48 timmar.
 
 ## <a name="set-up-connection-to-google-ads"></a>Konfigurera anslutningen Google Ads
@@ -50,8 +45,6 @@ Exportera segment med enhetliga kundprofiler till en Google Ads-målgruppslista 
 1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Ange ditt **[kund-ID för Google Ads](https://support.google.com/google-ads/answer/1704344)**.
-
-1. Ange ditt **[Google Ads-godkända utvecklartoken](https://developers.google.com/google-ads/api/docs/first-call/dev-token)**.
 
 1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
 
@@ -71,11 +64,11 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Google Ads. Om avsnittets namn inte visas är inga anslutningar av den här typen tillgängliga för dig.
 
-1. Ange ditt **[målgrupps-ID för Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)** och välj **Anslut** för att initiera anslutningen till Google Ads.
+1. Om du vill skapa en ny målgrupp låter du fältet ID för Google-målgrupp vara tomt. Vi skapar automatiskt en ny målgrupp på ditt Google Ads-konto och använder namnet på det exporterade segmentet. Om du vill uppdatera en befintlig Google Ads-målgrupp anger du ditt [målgrupps-ID för Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)
 
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress.
+1. I avsnittet **Datamatchning** väljer du ett eller flera datafält som ska exporteras, och markerar sedan det fält som representerar motsvarande datafält i Customer Insights.
 
-1. Välj de segment som du vill exportera. Du kan exportera upp till totalt 1 000 000 kundprofiler till Google Ads.
+1. Välj de segment som du vill exportera. 
 
 När du sparar en export körs inte exporten omedelbart.
 

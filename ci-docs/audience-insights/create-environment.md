@@ -1,23 +1,23 @@
 ---
 title: Skapa miljöer i Customer Insights
 description: Steg för att skapa miljöer med en licensierad prenumeration för Dynamics 365 Customer Insights.
-ms.date: 02/24/2022
+ms.date: 03/28/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: MichelleDevaney
-ms.author: midevane
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
 ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: c37afd5649f8cf40d5379f3d39d0cbd96cde3bd3
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: a538237322615f69f0a5cb43d394275bf79af00b
+ms.sourcegitcommit: ae02ac950810242e2505d7d371b80210dc8a0777
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354117"
+ms.lasthandoff: 03/29/2022
+ms.locfileid: "8491940"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Skapa en miljö i målgruppsinsikter
 
@@ -26,7 +26,7 @@ I den här artikeln finns information om hur du skapar en ny miljö när organis
 Organisationer kan skapa *två* miljöer för varje Customer Insights-licens. Om din organisation köper fler än en licens [kontaktar du vårt supportteam](https://go.microsoft.com/fwlink/?linkid=2079641) för att öka antalet tillgängliga miljöer. Om du vill ha mer information om kapacitet och tilläggskapacitet hämtar du [Licensguiden för Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544).
 
 > [!NOTE]
-> Om du vill prova tjänsten finns mer information i [Konfigurera en utvärderingsmiljö](../trial-signup.md). 
+> Om du vill prova tjänsten finns mer information i [Konfigurera en utvärderingsmiljö](../trial-signup.md).
 
 ## <a name="create-a-new-environment"></a>Skapa en ny miljö
 
@@ -56,7 +56,7 @@ Ange följande information:
 
 I steget **Datalagring** välj var du vill lagra data från målgruppsinsikter.
 
-Du har två alternativ: **Customer Insights-lagring** (en Azure-datasjö som hanteras av Customer Insights-teamet) och **Azure Data Lake Storage** (din egen Azure Data Lake Storage). Som standard är alternativet för Customer Insights-lagring markerat.
+Du har två alternativ: **Customer Insights-lagring** (en Azure-data lake som hanteras av Customer Insights-teamet) och **Azure Data Lake Storage** (din egen Azure Data Lake Storage). Som standard är alternativet för Customer Insights-lagring markerat.
 
 :::image type="content" source="media/data-storage-environment.png" alt-text="Välj Azure Data Lake Storage om du vill lagra målgruppsinsikter.":::
 
@@ -83,14 +83,16 @@ Tillhandahåll din egen Microsoft Dataverse-miljö för att dela data (profiler 
 Om du ansluter till din Dataverse-miljö kan du [även hämta data från lokala datakällor med Power Platform-dataflöden och gateways](data-sources.md#add-data-from-on-premises-data-sources). Du kan också använda [färdiga prediktionsmodeller](predictions-overview.md?tabs=b2c#out-of-box-models) genom att ansluta till en Dataverse-miljö.
 
 > [!IMPORTANT]
-> Customer Insights och Dataverse måste finnas i samma region för att kunna dela data.
+> 1. Customer Insights och Dataverse måste finnas i samma region för att kunna dela data.
+> 1. Du måste ha en global administratörsroll i Dataverse-miljön. Kontrollera att denna [Dataverse-miljö är associerad](/power-platform/admin/control-user-access#associate-a-security-group-with-a-dataverse-environment) med vissa säkerhetsgrupper, samt kontrollera att du har lagts till i dessa säkerhetsgrupper.
+> 1. Ingen befintlig Customer Insights-miljö har redan associerats med den Dataverse-miljön. Lär dig hur du [tar bort en befintlig anslutning till en Dataverse-miljö](manage-environments.md#remove-an-existing-connection-to-a-dataverse-environment).
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="datadelning med Microsoft Dataverse automatisk aktiverad för nya instanser.":::
 
-> [!NOTE]
-> Customer Insights stöder inte följande datadelningsscenarier:
-> - Om du sparar alla data till din egen Azure Data Lake Storage kommer du inte att kunna aktivera datadelning med en Dataverse-hanterad datasjö.
-> - Om du aktiverar datadelning med Dataverse kommer du inte kunna [skapa förutsagda eller saknade värden i en entitet](predictions.md).
+Mer information om hur du aktiverar datadelning med Microsoft Dataverse från en egen Azure Data Lake Storage finns i [Ansluta till Microsoft Dataverse](manage-environments.md#connect-to-microsoft-dataverse).
+
+Customer Insights stöder inte följande datadelningsscenarier:
+- Om du aktiverar datadelning med Dataverse kommer du inte kunna [skapa förutsagda eller saknade värden i en entitet](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>Steg 4: Slutför inställningarna
 

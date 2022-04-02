@@ -1,19 +1,19 @@
 ---
 title: Översikt över prediktionsscenarier som stöds
 description: Prediktionsscenarier och alternativ som omfattas av Dynamics 365 Customer Insights-programmet.
-ms.date: 12/21/2021
+ms.date: 03/24/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: c692785c7d81ab660ba2e07411e986c67c1a5d0a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 11b0efeecf8bea893272e67d29b1c6622771110c
+ms.sourcegitcommit: a5e4503cf9ce0cea562bab9389748d8ca1451f9d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228266"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "8487557"
 ---
 # <a name="predictions-overview"></a>Preditionsöversikt
 
@@ -36,6 +36,11 @@ Det enklaste sättet att börja med att förutsäga data är fördefinierade mod
 - [Transaktionsbortfall](predict-transactional-churn.md): Förutsäger om en kund inte längre kommer att köpa dina produkter eller tjänster inom en viss tidsram.
 
 ---
+
+> [!TIP]
+> Vi rekommenderar att du regelbundet uppdaterar färdiga modeller med uppdaterade data i syfte att se till att de informerar ditt affärsanvändningsfall på ett korrekt sätt. Data uppdateras ad hoc när systemet matar in nya eller uppdaterade datakällor. I det här fallet kommer modeller emellertid endast att omutvärdera och fortsätta använda befintliga utbildningsdata.
+> 
+> Du kan konfigurera ett **uppdateringsschema** genom att ange modellschema för omprogrammering i konfigurationsupplevelsen. Modellen omprogrammeras och omutvärderas i detta schema, som du kan ändra när som helst.
 
 
 ## <a name="azure-machine-learning-integration"></a>Integration av Azure Machine Learning

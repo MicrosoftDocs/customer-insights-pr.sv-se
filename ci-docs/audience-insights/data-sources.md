@@ -1,7 +1,7 @@
 ---
 title: Använd datakällor för att mata in data
 description: Lär dig hur du importerar data från olika källor.
-ms.date: 12/06/2021
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: adkuppa
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: e7bcf82c4fe3625ef791ec2b0a7651be0356a006
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 9cf97c3e30d7501ba1f188a0e25a1a103299aa7f
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354071"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464096"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
@@ -37,7 +37,7 @@ Du kan lägga till följande datakällor:
 - [Från en Azure Synapse Analytics-databas](connect-synapse.md)
 
 > [!NOTE]
-> Om du använder provversionen innehåller avsnittet importmetoder ett **databibliotek för Customer Insights**.  Välj det här alternativet om du vill datauppsättning exempel för olika branscher. Mer information finns i [Dynamics 365 Customer Insights-utvärdering](../trial-signup.md).
+> Om du använder provversionen innehåller avsnittet importmetoder ett **databibliotek för Customer Insights**. Välj det här alternativet om du vill datauppsättning exempel för olika branscher. Mer information finns i [Dynamics 365 Customer Insights-utvärdering](../trial-signup.md).
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Lägga till data lokala datakällor
 
@@ -47,7 +47,18 @@ Datakällor som skapas efter att en Dataverse miljö associerats med Customer In
 
 Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att synas och du kan återanvända i Customer Insights. På sidan för datakällor visas länkar som går till den Microsoft Power Platform-miljö där du kan visa och konfigurera lokal data-gateways.
 
+> [!IMPORTANT]
+> Kontrollera att dina gateways är uppdaterade till den senaste versionen. Du kan installera en uppdatering och konfigurera om en gateway från en fråga som visas på skärmen gateway direkt, eller också [hämta den senaste versionen](https://powerapps.microsoft.com/downloads/). Om du inte använder den senaste gateway-versionen misslyckas uppdateringen av dataflödet med felmeddelanden som **Nyckelordet stödsinte: konfigurationsegenskaper. Parameternamn: nyckelord**.
+
 ## <a name="review-ingested-data"></a>Granska inmatade data
+Om miljön innehåller Power Platform-dataflöden visas tre avsnitt på sidan **Datakällor**: 
+- **Delad**: Datakällor som kan hanteras av alla Customer Insights-administratörer. Power BI-dataflöden, ditt eget lagringskonto och bifogande till Dataverse-hanterad datakälla är exempel på delade datakällor.
+- **Hanteras av mig**: Power Platform-dataflöden som skapats och bara kan hanteras av dig. Andra Customer Insights-administratörer kan visa dessa dataflöden men inte redigera, uppdatera eller ta bort dem.
+- **Hanteras av andra**: Power Platform-dataflöden som skapats av andra administratörer. Du kan bara visa dem. Här finns en lista över ägarna av dataflödet som ska kontaktas för hjälp.
+> [!NOTE]
+> Alla entiteter kan visas och användas av andra användare. Användarens kontextualitet gäller endast datakällorna och inte entiteterna som är resultatet av dessa dataflöden.
+
+Om inga Power Platform-dataflöden används, visas inga grupper eller avsnitt. Sidan **Datakällor** innehåller endast en lista över alla datakällor.
 
 Du ser namnet på varje inmatad datakälla, dess status och sista gången data uppdaterades för källan. Du kan sortera listan över datakällor efter varje kolumn.
 
