@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-data i Microsoft Dataverse
 description: Använd Customer Insights-entiteter som tabeller i Microsoft Dataverse.
-ms.date: 11/25/2021
+ms.date: 04/05/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,31 +11,33 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 9f730f5856221592cddf34b714beeaca24c52130
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: bbbbf2a7f5edb81ee75f6e33988cd4721134b6e7
+ms.sourcegitcommit: 0363559a1af7ae16da2a96b09d6a4a8a53a8cbb8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355451"
+ms.lasthandoff: 04/05/2022
+ms.locfileid: "8547648"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeta med Customer Insights-data i Microsoft Dataverse
 
-Customer Insights ger möjlighet att göra utdataenheter tillgängliga i [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md). Denna integration möjliggör enkel datadelning och anpassad utveckling genom en metod med lite kod/ingen kod. Utdataenheterna kommer att vara tillgängliga som tabeller i Dataverse. Dessa tabeller aktiverar scenarier som [automatiserade arbetsflöden genom Power Automate](/power-automate/getting-started), [modellbaserade appar](/powerapps/maker/model-driven-apps/) och [arbetsyteappar](/powerapps/maker/canvas-apps/) via Power Apps. Du kan använda data för alla andra program som baseras på Dataverse-tabeller. Den aktuella implementeringen stöder främst uppslag där data från tillgängliga målgruppsinsikter kan hämtas för ett visst kund-ID.
+Customer Insights ger möjlighet att göra utdataenheter tillgängliga i [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro). Denna integration möjliggör enkel datadelning och anpassad utveckling genom en metod med lite kod/ingen kod. [Utdataentiteterna](#output-entities) är tillgängliga som tabeller i en Dataverse-miljö. Du kan använda data för val annat program baserat på Dataverse-tabeller. Dessa tabeller möjliggör scenarier som automatiserade arbetsflöden genom Power Automate eller att skapa appar med Power Apps. Den aktuella implementeringen stöder i huvudsak uppslag där data från tillgängliga entiteter för Customer Insights kan hämtas för ett visst kund-ID.
 
 ## <a name="attach-a-dataverse-environment-to-customer-insights"></a>Koppla en Dataverse-miljö till Customer Insights
 
-**Organisationer med befintliga Dataverse-miljöer**
+**Befintlig organisation**
 
-Organisationer som redan använder Dataverse kan [använda en av deras befintliga Dataverse-miljöer](create-environment.md) när en administratör konfigurerar målgruppsinsikter. Genom att tillhandahålla webbadressen till Dataverse-miljön kopplas den till deras nya målgruppsinsiktsmiljö. För att säkerställa bästa möjliga prestanda måste Customer Insights- och Dataverse-miljöer finnas i samma region.
+Administratörer kan konfigurera Customer Insights för [att använda en befintlig Dataverse-miljö](create-environment.md) när de skapar en Customer Insights-miljö. Genom att tillhandahålla webbadressen till Dataverse-miljön kopplas den till deras nya målgruppsinsiktsmiljö. Customer Insights och Dataverse-miljöer måste finnas i samma region. 
+
+Om du inte vill använda en befintlig Dataverse-miljö skapar systemet en ny miljö för Customer Insights data i din klientorganisation. 
+
+> [!NOTE]
+> Om dina organisationer redan använder Dataverse i klientorganisationen är det viktigt att komma ihåg att [Dataverse-miljöskapande kontrolleras av en administratör](/power-platform/admin/control-environment-creation). Om du till exempel konfigurerar en ny målgruppsinsiktsmiljö med ditt organisationskonto och administratören har inaktiverat skapande av Dataverse-utvärderingsmiljöer för alla utom administratörer, kan du inte skapa en ny utvärderingsmiljö.
+> 
+> Dataverse-utvärderingsmiljöerna som skapats i Customer Insights har 3 GB lagringsutrymme som inte räknas in i den totala kapaciteten för klientorganisationen. Betalda prenumerationer ger Dataverse-berättigande till 15 GB för databas och 20 GB för fillagring.
 
 **Ny organisation**
 
-Om du skapar en ny organisation när du konfigurerar Customer Insights får du automatiskt en ny Dataverse-miljö.
-
-> [!NOTE]
-> Om dina organisationer redan använder Dataverse i klientorganisationen är det viktigt att komma ihåg att [Dataverse-miljöskapande kontrolleras av en administratör](/power-platform/admin/control-environment-creation.md). Om du till exempel konfigurerar en ny målgruppsinsiktsmiljö med ditt organisationskonto och administratören har inaktiverat skapande av Dataverse-utvärderingsmiljöer för alla utom administratörer, kan du inte skapa en ny utvärderingsmiljö.
-> 
-> Dataverse-utvärderingsmiljöerna som skapats i Customer Insights har 3 GB lagringsutrymme som inte räknas in i den totala kapaciteten för klientorganisationen. Betalda prenumerationer ger Dataverse-berättigande till 15 GB för databas och 20 GB för fillagring.
+Om du skapar en ny organisation när du ställer in Customer Insights skapas automatiskt en ny Dataverse-miljö i din organisation åt dig.
 
 ## <a name="output-entities"></a>Utdataentiteter
 
@@ -129,11 +131,11 @@ Den här tabellen innehåller utdata från modellförutsägelser.
 
 Den här tabellen innehåller kundprofilernas information om segmentmedlemskap.
 
-| Column        | Type | Description                        |
+| Column        | Type | Description                        |
 |--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Kundprofil-ID        |
-| SegmentProvider      | String       | App som publicerar segmenten. Standard: Målgruppsinsikter         |
-| SegmentMembershipType | String       | Kundtyp som det här segmentmedlemskapet registrerar. Stöder flera typer, såsom kund, kontakt eller konto. Standard: kund  |
-| Segment       | JSON-sträng  | Lista med unika segment där kundprofilen är medlem      |
-| msdynci_identifier  | String   | Unik identifierare för det här segmentmedlemskapets post. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| CustomerId        | String       | Kundprofil-ID        |
+| SegmentProvider      | String       | App som publicerar segmenten. Standard: Målgruppsinsikter         |
+| SegmentMembershipType | String       | Kundtyp som det här segmentmedlemskapet registrerar. Stöder flera typer, såsom kund, kontakt eller konto. Standard: kund  |
+| Segment       | JSON-sträng  | Lista med unika segment där kundprofilen är medlem      |
+| msdynci_identifier  | String   | Unik identifierare för det här segmentmedlemskapets post. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
 | msdynci_segmentmembershipid | GUID      | Deterministiskt GUID genererat från `msdynci_identifier`          |

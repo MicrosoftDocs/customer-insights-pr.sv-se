@@ -6,7 +6,7 @@ ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-customers-page
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 340a7b7326f5b4a8cbde8683b8d41cb53dc557b0
-ms.sourcegitcommit: 0bd5f53e4e7e37359afd087ee16b779a6b3a9183
+ms.openlocfilehash: 68e71df3853470af47228c7365f25db3a71d15b0
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "8508588"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529561"
 ---
 # <a name="segments-overview"></a>Segment – översikt
 
@@ -51,20 +51,26 @@ Gå till sidan **Segment** om du vill visa alla sparade segment och hantera dem.
 
 Varje segment representeras av en rad som innehåller ytterligare information om segmentet.
 
-:::image type="content" source="media/segments-selected-segment.png" alt-text="Valt segment med alternativlistrutan och tillgängliga alternativ.":::
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Valt segment med alternativlistrutan och tillgängliga alternativ." lightbox="media/segments-selected-segment.png":::
 
-Följande åtgärd är tillgänglig när du väljer ett segment:
+Följande åtgärder är tillgängliga när du väljer ett segment:
 
 - **Visa** information om segmentet, inklusive trend för antal medlemmar en förhandsgranskning av segmentmedlemmar.
+- **Hämta** listan över medlemmar som en .CSV-fil.
 - **Redigera** segmentet om du vill ändra dess egenskaper.
 - **Skapa dubblett** av ett segment. Du kan välja att redigera egenskaperna direkt eller bara spara dubbletten.
 - **Uppdatera** segmentet så att det omfattar senaste data.
-- **Aktivera** eller **Inaktivera** segmentet. Segment har två möjliga tillstånd - aktiva eller inaktiva. Dessa tillstånd har praktiskt taget när de redigerar ett segment. För inaktiva segment finns segmentdefinitionen, men den innehåller inga kunder ännu. När du aktiverar ett segment ändras dess status från "inaktivt" till "aktivt" och sökningen börjar söka efter kunder som matchar segmentdefinitionen. Om en [schemalagd uppdatering](system.md#schedule-tab) har konfigurerats har inaktiva segment **Status** anges som **Överhoppad**, vilket tyder på att en uppdatering inte ens provats. När ett inaktivt segment aktiveras uppdateras och tas med i schemalagda uppdateringar.
+- **Aktivera** eller **Inaktivera** segmentet. För inaktiva segment finns segmentdefinitionen, men den innehåller inga kunder ännu. Ett aktivt segment söker efter kunder som matchar segmentdefinitionen. Om en [schemalagd uppdatering](system.md#schedule-tab) har konfigurerats har inaktiva segment **Status** anges som **Överhoppad**, vilket tyder på att en uppdatering inte ens provats. När ett inaktivt segment aktiveras uppdateras och tas med i schemalagda uppdateringar.
   Du kan också använda funktionen **Schemalägg senare** i listrutan **Aktivera/inaktivera** för att ange ett framtida datum och tid för aktivering och inaktivering av ett visst segment.
+- **[Hitta liknande kunder](find-similar-customer-segments.md)** från segmenten.
 - **Byt namn** på segment.
+- **Tagg** för att [hantera taggar](work-with-tags-columns.md#manage-tags) för segmentet.
 - **Hämta** listan över medlemmar som en .CSV-fil.
 - **Hantera export** för att se exportrelaterade segment och hantera dem. [Läs mer om exporter.](export-destinations.md)
 - **Ta bort** segment.
+- **Kolumner** för att [anpassa vilka kolumner](work-with-tags-columns.md#customize-columns) som visas.
+- **Filtrera** om du vill [filtrera på taggar](work-with-tags-columns.md#filter-on-tags).
+- **Söknamn** för att söka efter segmentnamn.
 
 ## <a name="refresh-segments"></a>Uppdatera segment
 

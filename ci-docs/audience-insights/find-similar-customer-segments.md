@@ -1,23 +1,23 @@
 ---
 title: Hitta liknande kunder med AI (innehåller video)
 description: Hitta liknande kundsegment med artificiell intelligens.
-ms.date: 06/25/2020
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 851ea2c3388de603c1beef4a58e359aa989c9c46
+ms.sourcegitcommit: e129a1fa8b020b6bfb6efc3c53fa9d89e1614ad1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355267"
+ms.lasthandoff: 04/12/2022
+ms.locfileid: "8561592"
 ---
 # <a name="similar-customers-preview"></a>Liknande kunder (förhandsversion)
 
@@ -36,6 +36,8 @@ Med den här funktionen kan du söka efter liknande kunder i kundbasen med hjäl
 
 1. Granska det föreslagna namnet för det nya segmentet och ändra det vid behov.
 
+1. Alternativt kan du lägga till [taggar](work-with-tags-columns.md#manage-tags) i det nya segmentet.
+
 1. Granska fälten som definierar det nya segmentet. Dessa fält definierar grunden för hur systemet ska försöka hitta liknande kunder i källsegmentet. Rekommenderade fält väljs som standard i systemet.
   Fält som avsevärt kan minska modellens prestanda utesluts automatiskt:
   
@@ -44,9 +46,9 @@ Med den här funktionen kan du söka efter liknande kunder i kundbasen med hjäl
 
 1. Välj om du vill ta med **Alla kunder** eller endast kunder i ett **specifikt befintligt segment** i det nya segmentet.
 
-1. Exkludera kunder i källsegmentet genom att markera kryssrutan **exkludera alla i källsegment**.
-
 1. Som standard föreslår systemet även 20 % av målpublik storlek i resultatet. Redigera tröskelvärdet efter behov. Om du ökar tröskelvärdet minskas precisionen.
+
+1. Ta med kunder i källsegmentet genom att markera kryssrutan **Inkludera medlemmar från källsegmentet utöver kunder med likartade attribut**.
 
 1. Klicka på **kör** längst ned på sidan om du vill starta en binär klassificeringsaktivitet (en metod för maskininlärning) som analyserar datauppsättning.
 
@@ -67,7 +69,7 @@ Du kan [arbeta med resultatet av samma segment](segments.md) som med andra segme
 
 Om du vill uppdatera ett liknande segment markerar du det på sidan **Segment** och välj **Uppdatera** i åtgärdsfältet.
 
-Om du redigerar ett liknande segment bearbetas dina data på samma sätt. Det segment som skapades tidigare uppdateras med uppdaterade data.    
+Om du redigerar ett liknande segment bearbetas dina data på samma sätt. Det segment som skapades tidigare uppdateras med uppdaterade data.
 Om du vill redigera ett liknande segment markerar du det på sidan **Segment** och välj **redigera** i åtgärdsfältet. Tillämpa ändringarna och välj **kör** för att starta bearbetningen.
 
 ## <a name="delete-a-similar-segment"></a>Ta bort ett liknande segment
@@ -84,6 +86,5 @@ Den binära klassificering maskininlärningsmodellen tilldelar en poäng till ku
 - Likhetsresultat mellan 0,85 – 1 är kunder systemet klassificerat lika *mycket likt*
 
 Kunder med likhetspoäng under 0,4 ingår inte i modellens utdata. Systemet anser inte att det är lika tillräckligt för källsegmentet.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
