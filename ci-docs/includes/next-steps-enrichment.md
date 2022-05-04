@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 98c7bd1cec20481874681e98bda050846c760e45
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: f92dc5c662af39a5a4393f15ac48b50af81f8f4d
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7619355"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641492"
 ---
-Skapa ovanpå dina utökade kunddata. Skapa [segment](../audience-insights/segments.md) och [mått](../audience-insights/measures.md) genom att välja ikonerna i kommandofältet. Du kan också [exportera data](../audience-insights/export-destinations.md) för att leverera anpassade erfarenheter till dina kunder.
+Skapa ovanpå dina utökade kunddata. Skapa [segment](../segments.md) och [mått](../measures.md) genom att välja ikonerna i kommandofältet. Du kan också [exportera data](../export-destinations.md) för att leverera anpassade erfarenheter till dina kunder.

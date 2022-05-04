@@ -6,12 +6,12 @@ metadata:
   ms.author: mhart
   ms.date: 03/02/2022
   ms.topic: landing-page
-  ms.openlocfilehash: 5efa266dfe8d70812f4c668b04cee2f93f206f7b
-  ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+  ms.openlocfilehash: e3a9f6d5f4d23ca3e85fa3f69272a0162ca7bd2d
+  ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 02/25/2022
-  ms.locfileid: "8350491"
+  ms.lasthandoff: 04/27/2022
+  ms.locfileid: "8641678"
 title: Dynamics 365 Customer Insights-dokumentation
 summary: Hitta användbara resurser som hjälper dig att komma igång och lär dig mer om funktioner och funktioner i Customer Insights.
 landingContent:
@@ -23,8 +23,8 @@ landingContent:
       url: overview.md
     - text: Lanseringsplaner
       url: /dynamics365/release-plans/
-    - text: Utforska CDP
-      url: https://dynamics.microsoft.com/ai/customer-insights/
+    - text: Nya och uppdaterade funktioner
+      url: whats-new-customer-insights.md
   - linkListType: learn
     links:
     - text: Utbildningsväg för Customer Insights
@@ -35,24 +35,94 @@ landingContent:
     links:
     - text: Registrera dig för en utvärderingsversion
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: Nyheter i målgruppsinsikter
-      url: audience-insights/whats-new-audience-insights.md
-    - text: Snabbstartguide
-      url: audience-insights/get-started.md
+    - text: Börja med utvärderingsversionen
+      url: trial-signup.md
+    - text: Komma igång med Customer Insights
+      url: get-started.md
   - linkListType: learn
     links:
     - text: Kom i gång
       url: /learn/modules/get-started-customer-data-platform/
+- title: Förena data
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Översikt över datakällor
+      url: data-sources.md
+    - text: Översikt över förening
+      url: data-unification.md
+    - text: Förstå entiteter
+      url: entities.md
+  - linkListType: learn
+    links:
+    - text: Skapa en enhetlig profil
+      url: /learn/modules/unified-customer-profile/
+- title: Skaffa insikter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Utöka kundprofiler
+      url: enrichment-hub.md
+    - text: Konfigurera relationer
+      url: relationships.md
+    - text: Fullständiga data med förutsägelser
+      url: predictions.md
+  - linkListType: learn
+    links:
+    - text: Berika och förutspå data
+      url: /learn/modules/enrich-data/
+- title: Bygg på dina data
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Skapa segment
+      url: segments.md
+    - text: Skapa mått
+      url: measures.md
+    - text: Definiera kundaktiviteter
+      url: activities.md
+  - linkListType: learn
+    links:
+    - text: Arbeta med appar
+      url: /learn/modules/working-with-customer-insights/
+- title: Exportera data
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Ange exportmål
+      url: export-destinations.md
+    - text: Kundkort i Dynamics 365-appar
+      url: customer-card-add-in.md
+    - text: Anslutningsapp för Power BI
+      url: export-power-bi.md
+  - linkListType: learn
+    links:
+    - text: Hantera externa anslutningar
+      url: /learn/modules/configure-third-party-connections/
+- title: Administrera appen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurera systemet
+      url: system.md
+    - text: Definiera användarbehörigheter
+      url: permissions.md
+    - text: Hantera flera miljöer
+      url: manage-environments.md
+  - linkListType: learn
+    links:
+    - text: Administrera Customer Insights
+      url: /learn/modules/administer-customer-data-platform/
 - title: Administrera Customer Insights
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Konfigurera systemet
-      url: audience-insights/system.md
+      url: system.md
     - text: Definiera användarbehörigheter
-      url: audience-insights/permissions.md
+      url: permissions.md
     - text: Hantera flera miljöer
-      url: audience-insights/manage-environments.md
+      url: manage-environments.md
   - linkListType: learn
     links:
     - text: Administrera Customer Insights

@@ -3,17 +3,17 @@ title: Registrera dig för en kostnadsfri utvärderingsversion Dynamics 365 Cust
 description: Lär dig hur du snabbt registrerar dig för och startar en kostnadsfri Customer Insights utvärderingsversion. Utforska appen och hitta ytterligare utbildningsresurser.
 author: m-hartmann
 ms.author: mhart
-ms.date: 09/30/2021
+ms.date: 04/12/2022
 ms.topic: get-started
 ms.custom: template-trial-setup
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 1b50da077cb0584ca9f277b276d0e9ebb46b2c5d
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.openlocfilehash: 2f27dd4fd9df679696d72f2eccde262de3e4afc4
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350245"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641738"
 ---
 # <a name="sign-up-for-a-free-dynamics-365-customer-insights-trial"></a>Registrera dig för en kostnadsfri Dynamics 365 Customer Insights-utvärderingsversion
 
@@ -21,7 +21,7 @@ Customer Insights erbjuder en kostnadsfri 30-dagars provperiod. Efter en snabb r
 
 **För att registrera dig för utvärderingsversionen**:
 
-1. Gå till [sidan utvärderingsöversikt](https://dynamics.microsoft.com/get-started/?appname=customerinsights) och välj **Registrera dig nu**.
+1. Gå till [översiktssidan för utvärderingsversionen](https://dynamics.microsoft.com/ai/customer-insights/) och välj **Prova Customer Insights kostnadsfritt**.
 1. Följ vägledningen på skärmen för att ange den [e-postadress som är kopplad till ditt Microsoft-konto](https://support.microsoft.com/windows/what-is-a-microsoft-account-4a7c48e9-ff5a-e9c6-5a5c-1a57d66c3bfa) och din kontaktinformation.
 1. Välj alternativ och fokusera tills du kommer till startsidan för den valda funktionen.
 
@@ -31,12 +31,12 @@ Utvärderingsversionen tar en stund att ladda, då kan du börja använda appar.
 
 Testmiljön innehåller samma funktioner som den betalda versionen. Följande länkar vägleder dig genom användningen av några av de viktigaste funktionerna.
 
-- [Snabbstart för målgruppsinsikter.](audience-insights/get-started.md)
-- [Lägg till fler användare och tilldela behörigheter.](audience-insights/permissions.md)
-- [Mata in dina datakällor](audience-insights/data-sources.md) och kör dem genom [samordningsprocessen för data](audience-insights/data-unification.md) för att får [enhetliga kundprofiler](audience-insights/customer-profiles.md).
-- [Utöka de enhetliga kundprofilerna](audience-insights/enrichment-hub.md) eller [kör prediktiva modeller](audience-insights/predictions-overview.md).
-- Skapa [segment](audience-insights/segments.md) för att gruppera kunder och [mått](audience-insights/measures.md) granska KPI:er.
-- Konfigurera [anslutningar](audience-insights/connections.md) och [exporter](audience-insights/export-destinations.md) för att bearbeta underuppsättningar av dina data i andra program.
+- [Komma igång med Customer Insights.](get-started.md)
+- [Lägg till fler användare och tilldela behörigheter.](permissions.md)
+- [Mata in dina datakällor](data-sources.md) och kör dem genom [samordningsprocessen för data](data-unification.md) för att får [enhetliga kundprofiler](customer-profiles.md).
+- [Utöka de enhetliga kundprofilerna](enrichment-hub.md) eller [kör prediktiva modeller](predictions-overview.md).
+- Skapa [segment](segments.md) för att gruppera kunder och [mått](measures.md) granska KPI:er.
+- Konfigurera [anslutningar](connections.md) och [exporter](export-destinations.md) för att bearbeta underuppsättningar av dina data i andra program.
 
 ## <a name="additional-resources"></a>Ytterligare resurser
 

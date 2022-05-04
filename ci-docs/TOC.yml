@@ -2,6 +2,8 @@
   href: index.yml
 - name: Produktöversikt
   href: overview.md
+- name: Nya och uppdaterade funktioner
+  href: whats-new-customer-insights.md
 - name: Utbildningskatalog
   items:
     - name: Kom i gång
@@ -10,7 +12,7 @@
       href: /learn/modules/ingest-data-customer-insights/
     - name: Skapa en enhetlig kundprofil
       href: /learn/modules/unified-customer-profile/
-    - name: Arbeta med målgruppsinsikter
+    - name: Arbeta med Customer Insights
       href: /learn/modules/working-with-customer-insights/
     - name: Berika data och gör förutsägelser
       href: /learn/modules/enrich-data/
@@ -26,275 +28,269 @@
       href: trial-FAQ.md
 - name: Öppna din miljö
   href: 'https://home.ci.ai.dynamics.com/'
-- name: Målgruppsinsikter
+- name: Kom i gång
   items:
-    - name: Hjälphubb
-      href: audience-insights/index.yml
-    - name: Kapacitetsöversikt
-      href: audience-insights/overview.md
-    - name: Nya och uppdaterade funktioner
-      href: audience-insights/whats-new-audience-insights.md
-    - name: Kom i gång
+    - name: Snabbstartguide
+      href: get-started.md
+    - name: Börja med en betald licens
+      href: paid-license.md
+    - name: Skapa en ny miljö
+      href: create-environment.md
+    - name: Utforska Customer Insights
+      href: home.md
+    - name: Arbeta med taggar och kolumner
+      href: work-with-tags-columns.md
+    - name: Arbeta med affärskonton
+      href: work-with-business-accounts.md
+    - name: Integrera med Dynamics 365 Marketing
+      href: marketing-get-started.md
+- name: Datakällor
+  items:
+    - name: Översikt över datakällor
+      href: data-sources.md
+    - name: Lägg till datakällor via Power Query-kopplingar
+      href: connect-power-query.md
+    - name: Lägg till en Common Data Model-mapp som en datakälla
+      href: connect-common-data-model.md
+    - name: Lägg till Dataverse hanterad Data Lake
+      href: connect-dataverse-managed-lake.md
+    - name: Lägga till Azure Synapse Analytics
+      href: connect-synapse.md
+    - name: Berika för datakällor
+      href: data-sources-enrichment.md
+    - name: Inkrementell uppdatering av datakällor
+      href: incremental-refresh-data-sources.md
+    - name: Datainmatning i realtid
+      href: real-time-data-ingestion.md
+- name: Dataförening
+  items:
+    - name: Översikt över dataförening
+      href: data-unification.md
+    - name: Mappa entiteter och attribut
+      href: map-entities.md
+    - name: Matcha entiteter
+      href: match-entities.md
+    - name: Slå samman entiteter
+      href: merge-entities.md
+- name: Datautökande
+  items:
+    - name: Utöka kundprofiler
+      href: enrichment-hub.md
+    - name: Varumärken och intressen
+      href: enrichment-microsoft.md
+    - name: Utökade adresser
+      href: enrichment-enhanced-addresses.md
+    - name: Berikade företagsdata
+      href: enrichment-enhanced-company-data.md
+    - name: Utöka med Azure Maps
+      href: enrichment-azure-maps.md
+    - name: Berika med Dun & Bradstreet
+      href: enrichment-dnb.md
+    - name: Utöka med HERE Technologies
+      href: enrichment-here.md
+    - name: Utöka med Leadspace
+      href: enrichment-leadspace.md
+    - name: Utöka med LiveRamp
+      href: enrichment-liveramp.md
+    - name: Utöka med Experian
+      href: enrichment-experian.md
+    - name: Berika med Office 365-data
+      href: enrichment-office.md
+    - name: Utöka med anpassad SFTP-import
+      href: enrichment-SFTP-custom-import.md
+- name: Enhetliga profiler
+  items:
+    - name: Granska för enhetlig kundprofiler
+      href: customer-profiles.md
+    - name: Filtrera enhetlig kundprofiler
+      href: search-filter-index.md
+    - name: Definiera kundaktiviteter
+      href: activities.md
+- name: Segment
+  items:
+    - name: Segment – översikt
+      href: segments.md
+    - name: Skapa segment
+      href: segment-builder.md
+    - name: Föreslagna segment baserade på mått
+      href: suggested-segments.md
+    - name: Föreslagna segment baserade på aktivitet
+      href: suggested-segments-activity.md
+    - name: Skaffa insikter för segment
+      href: segment-insights.md
+    - name: Sök efter liknande kunder
+      href: find-similar-customer-segments.md
+- name: Mått
+  items:
+    - name: Måttöversikt
+      href: measures.md
+    - name: Skapa ett nytt mått
+      href: measure-builder.md
+    - name: Använd en måttmall
+      href: measure-templates.md
+- name: Prediktioner
+  items:
+    - name: Förutsäga data med hjälp av AI
       items:
-        - name: Snabbstartguide
-          href: audience-insights/get-started.md
-        - name: Börja med en betald licens
-          href: paid-license.md
-        - name: Skapa en ny miljö
-          href: audience-insights/create-environment.md
-        - name: Utforska målgruppinsikter
-          href: audience-insights/home.md
-        - name: Arbeta med taggar och kolumner
-          href: audience-insights/work-with-tags-columns.md
-        - name: Arbeta med affärskonton
-          href: audience-insights/work-with-business-accounts.md
-    - name: Datakällor
+        - name: Översikt över förutsägelsemodell
+          href: predictions-overview.md
+        - name: Förutse kundens livstidsvärde
+          href: predict-customer-lifetime-value.md
+        - name: Förutse produktrekommendationer
+          href: predict-product-recommendation.md
+        - name: Förutsäga prenumerationsomsättning
+          href: predict-subscription-churn.md
+        - name: Prediktion för transaktionsomsättning
+          href: predict-transactional-churn.md
+        - name: Analysera sentiment i kundfeedback
+          href: sentiment-analysis.md
+        - name: Använd anpassade modeller från Azure Machine Learning
+          href: custom-models.md
+        - name: Fullständiga data som delvis saknas
+          href: predictions.md
+    - name: Exempelguider
       items:
-        - name: Översikt över datakällor
-          href: audience-insights/data-sources.md
-        - name: Lägg till datakällor via Power Query-kopplingar
-          href: audience-insights/connect-power-query.md
-        - name: Lägg till en Common Data Model-mapp som en datakälla
-          href: audience-insights/connect-common-data-model.md
-        - name: Lägg till Dataverse hanterad Data Lake
-          href: audience-insights/connect-dataverse-managed-lake.md
-        - name: Lägga till Azure Synapse Analytics
-          href: audience-insights/connect-synapse.md
-        - name: Berika för datakällor
-          href: audience-insights/data-sources-enrichment.md
-        - name: Inkrementell uppdatering av datakällor
-          href: audience-insights/incremental-refresh-data-sources.md
-        - name: Datainmatning i realtid
-          href: audience-insights/real-time-data-ingestion.md
-    - name: Dataförening
+        - name: Exempelguide för CLV-prediktion
+          href: sample-guide-predict-clv.md
+        - name: Exempelguide för förutsägelse om prenumerationsomsättning
+          href: sample-guide-predict-subscription-churn.md
+        - name: Exempelguide för prediktion för transaktionsomsättning
+          href: sample-guide-predict-transactional-churn.md
+        - name: Exempelguide för förutsägelse av produktrekommendationer
+          href: sample-guide-predict-product-recommendation.md
+        - name: Experiment med Azure Machine Learning
+          href: azure-machine-learning-experiments.md
+    - name: Hantera förutsägelser
+      href: manage-predictions.md
+    - name: Skapa segment grundade på prediktioner
+      href: prediction-based-segment.md
+- name: Exportalternativ
+  items:
+    - name: Exporter
       items:
-        - name: Översikt över dataförening
-          href: audience-insights/data-unification.md
-        - name: Mappa entiteter och attribut
-          href: audience-insights/map-entities.md
-        - name: Matcha entiteter
-          href: audience-insights/match-entities.md
-        - name: Slå samman entiteter
-          href: audience-insights/merge-entities.md
-    - name: Datautökande
+        - name: Exportera översikt
+          href: export-destinations.md
+        - name: Aktiv kampanj
+          href: export-active-campaign.md
+        - name: AdRoll
+          href: export-adroll.md
+        - name: Autopilot
+          href: export-autopilot.md
+        - name: Azure Blob Storage
+          href: export-azure-blob-storage.md
+        - name: Azure Data Lake Storage Gen2
+          href: export-azure-data-lake-storage-gen2.md
+        - name: Azure Synapse Analytics
+          href: export-azure-synapse-analytics.md
+        - name: Adobe Campaign Standard
+          href: export-adobe-campaign-standard.md
+        - name: Adobe Experience Platform
+          href: export-adobe-experience-platform.md
+        - name: Braze
+          href: export-braze.md
+        - name: Campaign Monitor
+          href: export-campaign-monitor.md
+        - name: Constant Contact
+          href: export-constant-contact.md
+        - name: DotDigital
+          href: export-dotdigital.md
+        - name: Dynamics 365 Marketing
+          href: export-dynamics365-marketing.md
+        - name: Dynamics 365 Sales
+          href: export-dynamics365-sales.md
+        - name: Facebook Ads Manager
+          href: export-facebook.md
+        - name: Google Ads
+          href: export-google-ads.md
+        - name: Iterable
+          href: export-iterable.md
+        - name: Klaviyo
+          href: export-klaviyo.md
+        - name: LinkedIn Ads
+          href: export-linkedin-ads.md
+        - name: LiveRamp
+          href: export-liveramp.md
+        - name: Mailchimp
+          href: export-mailchimp.md
+        - name: Marketo
+          href: export-marketo.md
+        - name: Microsoft Advertising
+          href: export-microsoft-advertising.md
+        - name: Omnisend
+          href: export-omnisend.md
+        - name: RollWorks
+          href: export-rollworks.md
+        - name: Salesforce Marketing Cloud
+          href: export-salesforce.md
+        - name: SendGrid
+          href: export-sendgrid.md
+        - name: SendInBlue
+          href: export-sendinblue.md
+        - name: Snapchat
+          href: export-snapchat.md
+        - name: SFTP
+          href: export-sftp.md
+    - name: Annan användning
       items:
-        - name: Utöka kundprofiler
-          href: audience-insights/enrichment-hub.md
-        - name: Varumärken och intressen
-          href: audience-insights/enrichment-microsoft.md
-        - name: Utökade adresser
-          href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Berikade företagsdata
-          href: audience-insights/enrichment-enhanced-company-data.md
-        - name: Utöka med Azure Maps
-          href: audience-insights/enrichment-azure-maps.md
-        - name: Utöka med HERE Technologies
-          href: audience-insights/enrichment-here.md
-        - name: Utöka med Leadspace
-          href: audience-insights/enrichment-leadspace.md
-        - name: Utöka med LiveRamp
-          href: audience-insights/enrichment-liveramp.md
-        - name: Utöka med Experian
-          href: audience-insights/enrichment-experian.md
-        - name: Berika med Office 365-data
-          href: audience-insights/enrichment-office.md
-        - name: Utöka med anpassad SFTP-import
-          href: audience-insights/enrichment-SFTP-custom-import.md
-    - name: Enhetliga profiler
-      items:
-        - name: Granska för enhetlig kundprofiler
-          href: audience-insights/customer-profiles.md
-        - name: Filtrera enhetlig kundprofiler
-          href: audience-insights/search-filter-index.md
-        - name: Definiera kundaktiviteter
-          href: audience-insights/activities.md
-    - name: Segment
-      items:
-        - name: Segment – översikt
-          href: audience-insights/segments.md
-        - name: Skapa segment
-          href: audience-insights/segment-builder.md
-        - name: Föreslagna segment baserade på mått
-          href: audience-insights/suggested-segments.md
-        - name: Föreslagna segment baserade på aktivitet
-          href: audience-insights/suggested-segments-activity.md
-        - name: Skaffa insikter för segment
-          href: audience-insights/segment-insights.md
-        - name: Sök efter liknande kunder
-          href: audience-insights/find-similar-customer-segments.md
-    - name: Mått
-      items:
-        - name: Måttöversikt
-          href: audience-insights/measures.md
-        - name: Skapa ett nytt mått
-          href: audience-insights/measure-builder.md
-        - name: Använd en måttmall
-          href: audience-insights/measure-templates.md
-    - name: Prediktioner
-      items:
-        - name: Förutsäga data med hjälp av AI
-          items:
-            - name: Översikt över förutsägelsemodell
-              href: audience-insights/predictions-overview.md
-            - name: Förutse kundens livstidsvärde
-              href: audience-insights/predict-customer-lifetime-value.md
-            - name: Förutse produktrekommendationer
-              href: audience-insights/predict-product-recommendation.md
-            - name: Förutsäga prenumerationsomsättning
-              href: audience-insights/predict-subscription-churn.md
-            - name: Prediktion för transaktionsomsättning
-              href: audience-insights/predict-transactional-churn.md
-            - name: Analysera sentiment i kundfeedback
-              href: audience-insights/sentiment-analysis.md
-            - name: Använd anpassade modeller från Azure Machine Learning
-              href: audience-insights/custom-models.md
-            - name: Fullständiga data som delvis saknas
-              href: audience-insights/predictions.md
-        - name: Exempelguider
-          items:
-            - name: Exempelguide för CLV-prediktion
-              href: audience-insights/sample-guide-predict-clv.md
-            - name: Exempelguide för förutsägelse om prenumerationsomsättning
-              href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Exempelguide för prediktion för transaktionsomsättning
-              href: audience-insights/sample-guide-predict-transactional-churn.md
-            - name: Exempelguide för förutsägelse av produktrekommendationer
-              href: audience-insights/sample-guide-predict-product-recommendation.md
-            - name: Experiment med Azure Machine Learning
-              href: audience-insights/azure-machine-learning-experiments.md
-        - name: Hantera förutsägelser
-          href: audience-insights/manage-predictions.md
-        - name: Skapa segment grundade på prediktioner
-          href: audience-insights/prediction-based-segment.md
-    - name: Exportalternativ
-      items:
-        - name: Exporter
-          items:
-            - name: Exportera översikt
-              href: audience-insights/export-destinations.md
-            - name: Aktiv kampanj
-              href: audience-insights/export-active-campaign.md
-            - name: AdRoll
-              href: audience-insights/export-adroll.md
-            - name: Autopilot
-              href: audience-insights/export-autopilot.md
-            - name: Azure Blob Storage
-              href: audience-insights/export-azure-blob-storage.md
-            - name: Azure Data Lake Storage Gen2
-              href: audience-insights/export-azure-data-lake-storage-gen2.md
-            - name: Azure Synapse Analytics
-              href: audience-insights/export-azure-synapse-analytics.md
-            - name: Adobe Campaign Standard
-              href: audience-insights/export-adobe-campaign-standard.md
-            - name: Adobe Experience Platform
-              href: audience-insights/export-adobe-experience-platform.md
-            - name: Braze
-              href: audience-insights/export-braze.md
-            - name: Campaign Monitor
-              href: audience-insights/export-campaign-monitor.md
-            - name: Constant Contact
-              href: audience-insights/export-constant-contact.md
-            - name: DotDigital
-              href: audience-insights/export-dotdigital.md
-            - name: Dynamics 365 Marketing
-              href: audience-insights/export-dynamics365-marketing.md
-            - name: Dynamics 365 Sales
-              href: audience-insights/export-dynamics365-sales.md
-            - name: Facebook Ads Manager
-              href: audience-insights/export-facebook.md
-            - name: Google Ads
-              href: audience-insights/export-google-ads.md
-            - name: Iterable
-              href: audience-insights/export-iterable.md
-            - name: Klaviyo
-              href: audience-insights/export-klaviyo.md
-            - name: LinkedIn Ads
-              href: audience-insights/export-linkedin-ads.md
-            - name: LiveRamp
-              href: audience-insights/export-liveramp.md
-            - name: Mailchimp
-              href: audience-insights/export-mailchimp.md
-            - name: Marketo
-              href: audience-insights/export-marketo.md
-            - name: Microsoft Advertising
-              href: audience-insights/export-microsoft-advertising.md
-            - name: Omnisend
-              href: audience-insights/export-omnisend.md
-            - name: RollWorks
-              href: audience-insights/export-rollworks.md
-            - name: Salesforce Marketing Cloud
-              href: audience-insights/export-salesforce.md
-            - name: SendGrid
-              href: audience-insights/export-sendgrid.md
-            - name: SendInBlue
-              href: audience-insights/export-sendinblue.md
-            - name: Snapchat
-              href: audience-insights/export-snapchat.md
-            - name: SFTP
-              href: audience-insights/export-sftp.md
-        - name: Annan användning
-          items:
-            - name: Tillägget för kundkort i Dynamics 365
-              href: audience-insights/customer-card-add-in.md
-            - name: Microsoft Teams (robot)
-              href: audience-insights/export-teams-bot.md
-            - name: Power Apps
-              href: audience-insights/export-power-apps.md
-            - name: Power Automate
-              href: audience-insights/export-power-automate.md
-            - name: Power BI
-              href: audience-insights/export-power-bi.md
-    - name: Entiteter
-      items:
-        - name: Förstå entiteter
-          href: audience-insights/entities.md
-        - name: Granska entitetsscheman i Common Data Model
-          href: audience-insights/entity-schemas.md
-        - name: Customer Insights-data i Dataverse
-          href: audience-insights/customer-insights-dataverse.md
-        - name: Bygg relationer och anslutna entiteter
-          href: audience-insights/relationships.md
-        - name: Definiera semantiska mappningar
-          href: audience-insights/semantic-mappings.md
-    - name: Administration
-      items:
-        - name: Ställa in systemet för konfiguration
-          href: audience-insights/system.md
-        - name: Tilldela användarbehörigheter
-          href: audience-insights/permissions.md
-        - name: Översikt över anslutningar
-          href: audience-insights/connections.md
-        - name: Hantera flera miljöer
-          href: audience-insights/manage-environments.md
-        - name: Ta med din egen Key Vault
-          href: audience-insights/use-azure-key-vault.md
-        - name: Anslut till ett lagringskonto med tjänstens huvudnamn
-          href: audience-insights/connect-service-principal.md
-        - name: Exportera diagnostikloggar
-          href: audience-insights/diagnostics.md
-        - name: Tjänstbegränsningar
-          href: service-limits.md
-        - name: DSR-rättigheter och -förfrågningar
-          href: dsr-rights-requests.md
-    - name: 'API:er'
-      items:
-        - name: Granska entitetsscheman i Common Data Model
-          href: audience-insights/entity-schemas.md
-        - name: Customer Insights-data i Dataverse
-          href: audience-insights/customer-insights-dataverse.md
-        - name: 'Arbeta med API:er'
-          href: audience-insights/apis.md
-        - name: API-referenser
-          href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+        - name: Tillägget för kundkort i Dynamics 365
+          href: customer-card-add-in.md
+        - name: Microsoft Teams (robot)
+          href: export-teams-bot.md
+        - name: Power Apps
+          href: export-power-apps.md
+        - name: Power Automate
+          href: export-power-automate.md
+        - name: Power BI
+          href: export-power-bi.md
+- name: Entiteter
+  items:
+    - name: Förstå entiteter
+      href: entities.md
+    - name: Granska entitetsscheman i Common Data Model
+      href: entity-schemas.md
+    - name: Customer Insights-data i Dataverse
+      href: customer-insights-dataverse.md
+    - name: Bygg relationer och anslutna entiteter
+      href: relationships.md
+    - name: Definiera semantiska mappningar
+      href: semantic-mappings.md
+- name: Administration
+  items:
+    - name: Ställa in systemet för konfiguration
+      href: system.md
+    - name: Konfigurera säkerhetsinställningar
+      href: security-overview.md
+    - name: Tilldela användarbehörigheter
+      href: permissions.md
+    - name: Översikt över anslutningar
+      href: connections.md
+    - name: Hantera flera miljöer
+      href: manage-environments.md
+    - name: Ta med din egen Key Vault
+      href: use-azure-key-vault.md
+    - name: Anslut till ett lagringskonto med tjänstens huvudnamn
+      href: connect-service-principal.md
+    - name: Exportera diagnostikloggar
+      href: diagnostics.md
+    - name: Tjänstbegränsningar
+      href: service-limits.md
+    - name: DSR-rättigheter och -förfrågningar
+      href: dsr-rights-requests.md
+- name: 'API:er'
+  items:
+    - name: 'Arbeta med API:er'
+      href: apis.md
+    - name: API-referenser
+      href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
 - name: Samtyckeshantering (förhandsversion)
   items:
     - name: Hjälphubb
       href: consent-management/index.yml
     - name: Kapacitetsöversikt
       href: consent-management/overview.md
-    - name: Kom igång
+    - name: Kom i gång
       items:
-        - name: Kom igång
+        - name: Kom i gång
           href: consent-management/get-started.md
         - name: Begrepp och terminologi
           href: consent-management/glossary.md
@@ -306,10 +302,10 @@
           href: consent-management/set-consent-rules.md
     - name: Hantera samtyckesdata
       items:
-        - name: Aktivera samtyckesregler i målgruppinsikter
-          href: audience-insights/activate-consent.md
-        - name: Hantera standardregler för samtycke i segment för målgruppinsikter
-          href: audience-insights/change-default-consent-rules.md
+        - name: Aktivera samtyckesregler i Customer Insights
+          href: activate-consent.md
+        - name: 'Hantera standardregler för samtycke med segment för Customer Insights '
+          href: change-default-consent-rules.md
     - name: Hantera inställningar och användare
       items:
         - name: Konfigurera systeminställningar
@@ -320,7 +316,5 @@
       items:
         - name: Skapa prediktioner med samtyckesdata
           href: consent-management/predictions-consent-data.md
-- name: Engagemangsinsikter (förhandsversion)
-  href: engagement-insights/overview.md
 - name: Få support
   href: /power-platform/admin/get-help-support

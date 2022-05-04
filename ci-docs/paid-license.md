@@ -7,12 +7,12 @@ ms.date: 10/05/2021
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: fa6ea6e96de3d382c1426b383a057c8ce4f67ccf
-ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
+ms.openlocfilehash: 8fcc1c97be87afe942aa3b5e23d1eb68008aa873
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/17/2022
-ms.locfileid: "8456020"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641876"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Komma igång efter att ha köpt Customer Insights
 
@@ -34,9 +34,8 @@ Den välkomstupplevelsen hjälper dig att välja inledande fokus med Customer In
 
 1. Gå till [Customer Insights app URL](https://home.ci.ai.dynamics.com).
 1. Logga in på ditt arbets- eller skolkonto. 
-1. Godkänn användarvillkoren och ange innehållsinställningar för din Customer Insights-instans.
-1. Välj förmågan att fokusera på tills du kommer till startsidan för den valda funktionen.
+1. Godkänn användarvillkoren och ange innehållsinställningar för din Customer Insights-miljö.
 
 ## <a name="create-your-own-environment"></a>Skapa din egen miljö
 
-När du har loggat in första gången visas en miljö med exempeldata. Med hjälp av den informationen kan du utforska funktionerna och bekanta dig med appen. Om du vill använda dina egna data måste du [skapa en miljö](/dynamics365/customer-insights/audience-insights/create-environment).
+När du har loggat in första gången visas en miljö med exempeldata. Med hjälp av den informationen kan du utforska funktionerna och bekanta dig med appen. Om du vill använda dina egna data måste du [skapa en miljö](create-environment.md).
