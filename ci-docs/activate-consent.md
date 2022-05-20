@@ -1,23 +1,22 @@
 ---
 title: Aktivera samtyckesregler för segment
 description: Följ stegen för att länka samtyckesdata och aktivera samtyckeskontroller i Dynamics 365 Customer Insights. En administratör kan även inaktivera samtyckeskontroller.
-ms.date: 11/12/2021
-ms.subservice: audience-insights
+ms.date: 04/27/2022
 ms.topic: how-to
-author: smithy7
-ms.author: smithc
+author: anubhav-t
+ms.author: antando
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: bfa03f4b7b56b300a74ebd04721cd64b893879f1
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f82e3a4031fee8bcaa88575cbd68b37385a7fffb
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647570"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755192"
 ---
 # <a name="activate-consent-rules"></a>Aktivera samtyckesregler
 
-Med [Samtyckescenter (förhandsversion)](consent-management/overview.md) kan du godkänna samtyckesuppgifter från olika källor. Använd den enhetliga entiteten *Samtycke* för att tillämpa standard samtyckeskontroller. När du har importerat samtyckesdata i Samtyckescenter och konfigurerat reglerna för data synkroniseras entiteten *Samtycke* automatiskt Dynamics 365 Customer Insights.
+Med [Samtyckescenter (förhandsversion)](consent-management/overview.md) kan du godkänna samtyckesuppgifter från olika källor. Använd den enhetliga entiteten *Samtycke* för att tillämpa standard samtyckeskontroller. När du har importerat samtyckesdata och konfigurerat mappningsregler kommer entiteten *Samtycke* synkroniseras automatiskt till Dynamics 365 Customer Insights.
 
 ## <a name="enable-consent-checks"></a>Aktivera samtyckeskontroller
 

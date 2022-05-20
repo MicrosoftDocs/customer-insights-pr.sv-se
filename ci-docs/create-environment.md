@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 0efda9d2997bcfd069b6d2445b69d159d7d3e59b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c64ac94a7e0e743d3c13e32e394cc5d409420622
+ms.sourcegitcommit: c00441bc60b978e25f930b06c9d97b46fe462538
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647560"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "8712924"
 ---
 # <a name="create-an-environment-in-customer-insights"></a>Skapa en miljö i Customer Insights
 
@@ -63,8 +63,7 @@ Du har två alternativ: **Customer Insights-lagring** (en Azure-data lake som ha
 Genom att spara data Azure Data Lake Storage till godkänner du att data överförs till och lagras på rätt geografiska plats för det Azure-lagringskontot. Den här platsen kan skilja sig från platsen där data lagras i Dynamics 365 Customer Insights. Läs mer i [Microsoft Trust Center](https://www.microsoft.com/trust-center).
 
 > [!NOTE]
-> Customer Insights stöder för närvarande följande:
-> - Inmatad entiteter Power BI dataflöden som lagras i en Microsoft Dataverse hanterad Data Lake.  
+> Customer Insights stöder för närvarande följande:  
 > - Azure Data Lake Storage-konton från samma Azure-region som du valde när du skapade miljön.
 > - Azure Data Lake Storage-konton som är Gen2 och har *hierarkiskt namnområde* aktiverat. Azure Data Lake Gen1-lagringskonton stöds inte.
 
@@ -80,7 +79,7 @@ I **Microsoft Dataverse** steget kan du koppla Customer Insights till din Datave
 
 Tillhandahåll din egen Microsoft Dataverse-miljö för att dela data (profiler och insikter) med företagsprogram baserade på Dataverse, som Dynamics 365 Marketing eller modellbaserade program i Power Apps. Lämna fältet tomt om du inte har din egen Dataverse-miljö så tillhandahåller vi en.
 
-Om du ansluter till din Dataverse-miljö kan du [även hämta data från lokala datakällor med Power Platform-dataflöden och gateways](data-sources.md#add-data-from-on-premises-data-sources). Du kan också använda [färdiga prediktionsmodeller](predictions-overview.md?tabs=b2c#out-of-box-models) genom att ansluta till en Dataverse-miljö.
+Om du ansluter till din Dataverse-miljö kan du [även hämta data från lokala datakällor med Power Platform-dataflöden och gateways](data-sources.md#add-data-from-on-premises-data-sources).
 
 > [!IMPORTANT]
 > 1. Customer Insights och Dataverse måste finnas i samma region för att kunna dela data.

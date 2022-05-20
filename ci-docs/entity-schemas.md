@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: e155f75ffbc2c1bb228bece1b3e34846df794543
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 33a0562854e97b9ac5218e060f965996305627fd
+ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647710"
+ms.lasthandoff: 05/15/2022
+ms.locfileid: "8757454"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitetsscheman i Common Data Model
 
@@ -23,7 +23,7 @@ ms.locfileid: "8647710"
 
 Det här är en delad datamodell som gör att program och dataintegrerare kan samarbeta enklare genom att skapa en enhetlig definition av data. Common Data Model innehåller ett avancerat metadatasystem med standardentiteter, relationer, hierarkier, egenskaper och mycket mer. Det härstammar från Dynamics 365-appar och har öppnats på GitHub med över 260 standardentiteter. Ett stort system för interna och externa partner bidrar branschspecifika koncept till den Common Data Model.
 
-Flera system och plattformar implementerar samma Common Data Model, inkludera Power BI dataflöden och Azure Data Services. Stöd finns redan i Microsoft Dataverse, Dynamics 365, Power Apps, Power BI och kommande Azure-datatjänster och ansamlar omgående värden till [initiativet Open Data](https://www.microsoft.com/open-data-initiative).
+Flera system och plattformar implementerar samma Common Data Model, inkludera Power BI dataflöden och Azure Data Services. Stöd finns redan i Microsoft Dataverse, Dynamics 365, Power Apps, Power BI och kommande Azure-datatjänster och ansamlar omgående värden till [initiativet Open Data](https://dynamics.microsoft.com/en-us/open-data-initiative/).
 
 ## <a name="customer-insights-entity-schemas"></a>Entitetsscheman för Customer Insights
 

@@ -1,19 +1,19 @@
 ---
 title: Kundens livstidsvärde prediktion exempelguide
 description: Använd den här exempelguiden för att testa kundens livstidsvärde prediktionsmodellen.
-ms.date: 05/25/2021
-ms.reviewer: mhart
+ms.date: 03/31/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 9f8d1d0f0757d8003ad3859fab75362f3988cd00
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 351946c734f5a1054eb3769b2d9cced3bed48e15
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647830"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740833"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Kundens livstidsvärde (CLV) prediktion exempelguide
 
@@ -102,64 +102,7 @@ Läs artiklarna [om datainmatning](data-sources.md) och [import av datakällor m
 
 ## <a name="task-2---data-unification"></a>Uppgift 2 – Dataförening
 
-När vi har matat in data börjar vi nu datasammanföringsprocessen för att skapa en enhetlig kundprofil. Mer information finns i [Dataförening](data-unification.md).
-
-### <a name="map"></a>Mappa
-
-1. Efter inmatande av data mappar du kontakter från e-handels- och lojalitetsdata till vanliga datatyper. Gå till **Data** > **Förena** > **Mappa**.
-
-1. Välj de entiteter som representerar kundprofilen – **eCommerceContacts** och **loyCustomers**. Välj därefter **Tillämpa**.
-
-   ![förena e-handels- och lojalitetsdatakällor.](media/unify-ecommerce-loyalty.png)
-
-1. Välj **ContactId** som primärnyckel för **eCommerceContacts** och **LoyaltyID** som primärnyckel för **loyCustomers**.
-
-   ![Förena LoyaltyId som primärnyckel.](media/unify-loyaltyid.png)
-
-1. Välj **Spara**.
-
-### <a name="match"></a>Matchning
-
-1. Gå till fliken **Matcha** och välj **Ange ordning**.
-
-1. I listrutan **Primär** väljer du **eCommerceContacts : eCommerce** som primär källa och inkluderar samtliga poster.
-
-1. I listrutan **Entitet 2** väljer du **loyCustomers : LoyaltyScheme** och inkluderar alla poster.
-
-   ![Förena matchande e-handel och lojalitet.](media/unify-match-order.png)
-
-1. Välj **Lägg till regel**
-
-1. Lägg till ditt första villkor med hjälp av FullName.
-
-   - För eCommerceContacts väljer du **FullName** i listrutan.
-   - För loyCustomers väljer du **FullName** i listrutan.
-   - Välj listrutan **Normalisera** och välj sedan **Typ (telefonnummer, namn, adress...)**.
-   - Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
-
-1. Ange namnet **FullName, E-post** för den nya regeln.
-
-   - Lägg till ett andra villkor för e-postadress genom att välja **Lägg till villkor**
-   - För entiteten eCommerceContacts väljer du **EMail** i listrutan.
-   - För entiteten loyCustomers väljer du **EMail** i listrutan.
-   - Lämna Normalisera tomt.
-   - Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
-
-   ![Förena matchningsregel för namn och e-post.](media/unify-match-rule.png)
-
-1. Välj **Utfört**.
-
-1. Välj **Spara** och **Kör**.
-
-### <a name="merge"></a>Sammanslå
-
-1. Gå till fliken **Sammanslå**.
-
-1. På **ContactId** för entiteten **loyCustomers** ändrar du visningsnamnet till **ContactIdLOYALTY** för att särskilja den från andra inmatade ID.
-
-   ![byta namn på contactid från lojalitets-id.](media/unify-merge-contactid.png)
-
-1. Välj **Spara** och **Kör sammanslagnings- och nedströmsprocesser**.
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>Uppgift 3 – Konfigurera kundens livstidsvärdesprediktion
 

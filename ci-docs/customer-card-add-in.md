@@ -13,16 +13,14 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 2dfa6c643cbe9a8531a085d8ce01b0f64776476f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 8508880bb3274bb491a314a043a5222d4d381073
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647557"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755658"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillägget för kundkort (förhandsversion)
-
-
 
 Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tillägget Kundkort installerat i en Dynamics 365-app som stöds kan du välja att visa fält för kundprofil, insikter och aktivitetstidstid. Tillägget hämtar data från Customer Insights utan att det påverkar data i den anslutna Dynamics 365-appen.
 
@@ -31,7 +29,7 @@ Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tilläg
 ## <a name="prerequisites"></a>Förutsättningar
 
 - Tillägget fungerar bara med Dynamics 365 modellbaserade appar, till exempel Sales eller kundtjänst, version 9.0 och senare.
-- För att dina Dynamics 365-data ska mappas till Customer Insights kundprofiler rekommenderar vi att de [tas in i appen Dynamics 365 med hjälp av kopplingen Microsoft Dataverse](connect-power-query.md). Om du använder en annan metod för att mata in Dynamics 365-kontakter (eller konton), måste du se till att fält `contactid` (eller `accountid`) anges som [primärnyckeln för den datakällan i kartsteget i datasammanslutningsprocessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
+- För att dina Dynamics 365-data ska mappas till Customer Insights kundprofiler rekommenderar vi att de [tas in i appen Dynamics 365 med hjälp av kopplingen Microsoft Dataverse](connect-power-query.md). Om du använder en annan metod för att mata in Dynamics 365-kontakter (eller konton), måste du se till att fält `contactid` (eller `accountid`) anges som [primärnyckeln för den datakällan i kartsteget i datasammanslutningsprocessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Alla Dynamics 365-användare av tillägget kundkort måste [läggas till som användare](permissions.md) i Customer Insights för att kunna se dessa data.
 - [Konfigurerade sök- och filterfunktioner](search-filter-index.md) i Customer Insights krävs för att slå upp data som ska fungera.
 - För varje tilläggskontroll används specifika data i Customer Insights. Vissa data och kontroller är endast tillgängliga i miljöer av specifika typer. Tilläggets konfiguration meddelar dig om en kontroll inte är tillgänglig på grund av den valda miljötypen. Läs mer om [miljöanvändningsfall](work-with-business-accounts.md).
@@ -132,16 +130,16 @@ Kundkortstillägget uppgraderas inte automatiskt. Uppgradera till den senaste ve
 
 **Lösning:**
 
-1. Se till att du har konfigurerat korttillägget enligt instruktionerna: [Konfigurera tillägget Kundkort](#configure-the-customer-card-add-in) 
+1. Se till att du har konfigurerat korttillägget enligt instruktionerna: [Konfigurera tillägget Kundkort](#configure-the-customer-card-add-in)
 
-1. Granska konfigurationen av datainmatningen. Redigera datakälla för Dynamics 365-systemet som innehåller kontakt-ID GUID. Om kontakt-ID GUID visas med versaler i Power Query-redigeraren gör du följande: 
+1. Granska konfigurationen av datainmatningen. Redigera datakälla för Dynamics 365-systemet som innehåller kontakt-ID GUID. Om kontakt-ID GUID visas med versaler i Power Query-redigeraren gör du följande steg:
     1. Redigera datakällan för att öppna datakällan i Power Query-redigeraren.
     1. Välj kolumnen för kontakt-ID.
     1. Välj **Omvandla** i rubrikfältet om du vill visa tillgängliga åtgärder.
     1. Markera **gemener**. Kontrollera att GUID i tabellen nu är i gemener.
     1. Spara datakällan.
-    1. Kör datainmatning, förening och nedströmsprocesser för att föra över ändringarna till GUID. 
+    1. Kör datainmatning, förening och nedströmsprocesser för att föra över ändringarna till GUID.
 
-När den fullständiga uppdateringen har slutförts ska de förväntade data visas i kontrollerna för tillägget Kundkort. 
+När systemet har slutfört den fullständiga uppdateringen ska de förväntade data visas i kontrollerna för tillägget Kundkort.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

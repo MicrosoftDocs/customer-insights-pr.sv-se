@@ -1,8 +1,8 @@
 ---
 title: Exempelguide för förutsägelse om prenumerationsomsättning
 description: Använd exempelguiden för att prova den medföljande modellen för förutsägelse om prenumerationsomsättning.
-ms.date: 11/19/2020
-ms.reviewer: mhart
+ms.date: 03/31/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 2aea6c62421b308705899e4f8af64f64bfcb2d3d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5a8eeafecacef3d0bb4a798b698cf490423ca98d
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647820"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741433"
 ---
 # <a name="subscription-churn-prediction-sample-guide"></a>Exempelguide för förutsägelse om prenumerationsomsättning
 
@@ -112,61 +112,7 @@ Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av dat
 
 ## <a name="task-2---data-unification"></a>Uppgift 2 – Dataförening
 
-Efter inmatning av datan börjar vi nu processen **mappa, matcha, slå samman** för att skapa en enhetlig kundprofil. Mer information finns i [Dataförening](data-unification.md).
-
-### <a name="map"></a>Mappa
-
-1. Efter inmatande av data mappar du kontakter från e-handels- och lojalitetsdata till vanliga datatyper. Gå till **Data** > **Förena** > **Mappa**.
-
-1. Välj de entiteter som representerar kundprofilen – **eCommerceContacts** och **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="förena e-handels- och lojalitetsdatakällor.":::
-
-1. Välj **ContactId** som primärnyckel för **eCommerceContacts** och **LoyaltyID** som primärnyckel för **loyCustomers**.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="Förena LoyaltyId som primärnyckel.":::
-
-### <a name="match"></a>Matchning
-
-1. Gå till fliken **Matcha** och välj **Ange ordning**.
-
-1. I listrutan **Primär** väljer du **eCommerceContacts : eCommerce** som primär källa och inkluderar samtliga poster.
-
-1. I listrutan **Entitet 2** väljer du **loyCustomers : LoyaltyScheme** och inkluderar alla poster.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="Förena matchande e-handel och lojalitet.":::
-
-1. Välj **Skapa en ny regel**
-
-1. Lägg till ditt första villkor med hjälp av FullName.
-
-   * För eCommerceContacts väljer du **FullName** i listrutan.
-   * För loyCustomers väljer du **FullName** i listrutan.
-   * Välj listrutan **Normalisera** och välj **Typ (telefon, namn, adress ...)**.
-   * Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
-
-1. Ange namnet **FullName, E-post** för den nya regeln.
-
-   * Lägg till ett andra villkor för e-postadress genom att välja **Lägg till villkor**
-   * För entiteten eCommerceContacts väljer du **EMail** i listrutan.
-   * För entiteten loyCustomers väljer du **EMail** i listrutan. 
-   * Lämna Normalisera tomt. 
-   * Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Förena matchningsregel för namn och e-post.":::
-
-7. Välj **Spara** och **Kör**.
-
-### <a name="merge"></a>Slå ihop
-
-1. Gå till fliken **Sammanslå**.
-
-1. På **ContactId** för entiteten **loyCustomers** ändrar du visningsnamnet till **ContactIdLOYALTY** för att särskilja den från andra inmatade ID.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="byta namn på contactid från lojalitets-id.":::
-
-1. Välj **Spara** och **Kör** för att starta sammanslagningsprocessen.
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Uppgift 3 – Konfigurera förutsägelsen om prenumerationsomsättning
 

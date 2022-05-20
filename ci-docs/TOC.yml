@@ -66,12 +66,18 @@
   items:
     - name: Översikt över dataförening
       href: data-unification.md
-    - name: Mappa entiteter och attribut
+    - name: Välj källfält
       href: map-entities.md
-    - name: Matcha entiteter
+    - name: Ta bort dubblettposter
+      href: remove-duplicates.md
+    - name: Matchningsvillkor
       href: match-entities.md
-    - name: Slå samman entiteter
+    - name: Förenade kundfält
       href: merge-entities.md
+    - name: Granska dataförening
+      href: review-unification.md
+    - name: Uppdatera föreningsinställningarna
+      href: data-unification-update.md
 - name: Datautökande
   items:
     - name: Utöka kundprofiler
@@ -282,6 +288,8 @@
       href: apis.md
     - name: API-referenser
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+    - name: Exempelfrågor för OData
+      href: odata-examples.md
 - name: Samtyckeshantering (förhandsversion)
   items:
     - name: Hjälphubb

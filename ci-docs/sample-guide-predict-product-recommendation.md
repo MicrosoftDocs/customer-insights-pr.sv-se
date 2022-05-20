@@ -1,7 +1,7 @@
 ---
 title: Exempelguide för förutsägelse av produktrekommendationer
 description: Använd exempelguiden för att prova den medföljande modellen för förutsägelse om produktrekommendation.
-ms.date: 02/10/2021
+ms.date: 05/16/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 1115bab13bdca4a308a8d9eb5a1dc270801d16be
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: cc72cce15fa0c9e92dbf202c803e99514c9ce2b1
+ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647827"
+ms.lasthandoff: 05/16/2022
+ms.locfileid: "8762708"
 ---
 # <a name="product-recommendation-prediction-sample-guide"></a>Exempelguide för förutsägelse av produktrekommendationer
 
@@ -40,7 +40,7 @@ Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av dat
 
 1. Skapa en datakälla med namnet **eCommerce**, välj importalternativet och välj anslutningsprogrammet **Text/CSV**.
 
-1. Ange URL för e-handelskontakter https://aka.ms/ciadclasscontacts.
+1. Ange URL för eCommerce: [https://aka.ms/ciadclasscontacts](https://aka.ms/ciadclasscontacts).
 
 1. Medan du redigerar data väljer du **Transformera** och sedan **Använd första raden som rubriker**.
 
@@ -50,15 +50,15 @@ Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av dat
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Transformera födelsedatum till datum.":::
 
-5. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **eCommerceContacts**
+1. I fältet "Namn" i fönstret till höger byter du namn på din datakälla från **Query** till **eCommerceContacts**
 
-6. **Spara** datakällan.
+1. **Spara** datakällan.
 
 ### <a name="ingest-online-purchase-data"></a>Mata in inköpsdata online
 
 1. Lägg till ytterligare en datauppsättning till samma **e-handelskälla**. Välj anslutningsprogrammet **Text/CSV** igen.
 
-1. Ange URL för **Onlineköpsdata** https://aka.ms/ciadclassonline.
+1. Ange URL för **Onlineköp** data [https://aka.ms/ciadclassonline](https://aka.ms/ciadclassonline).
 
 1. Medan du redigerar data väljer du **Transformera** och sedan **Använd första raden som rubriker**.
 
@@ -70,12 +70,11 @@ Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av dat
 
 1. **Spara** datakällan.
 
-
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Mata in kunddata från lojalitetsschema
 
 1. Skapa en datakälla med namnet **LoyaltyScheme**, välj importalternativet och välj anslutningsprogrammet **Text/CSV**.
 
-1. Ange URL för e-handelskontakter https://aka.ms/ciadclasscustomerloyalty.
+1. Ange URL för eCommerce [https://aka.ms/ciadclasscustomerloyalty](https://aka.ms/ciadclasscustomerloyalty).
 
 1. Medan du redigerar data väljer du **Transformera** och sedan **Använd första raden som rubriker**.
 
@@ -90,64 +89,11 @@ Läs specifikt artiklarna [om datainmatning](data-sources.md) och [import av dat
 
 ## <a name="task-2---data-unification"></a>Uppgift 2 – Dataförening
 
-När vi har matat in data börjar vi nu datasammanföringsprocessen för att skapa en enhetlig kundprofil. Mer information finns i [Dataförening](data-unification.md).
-
-### <a name="map"></a>Mappa
-
-1. Efter inmatande av data mappar du kontakter från e-handels- och lojalitetsdata till vanliga datatyper. Gå till **Data** > **Förena** > **Mappa**.
-
-2. Välj de entiteter som representerar kundprofilen – **eCommerceContacts** och **loyCustomers**.
-
-   ![förena e-handels- och lojalitetsdatakällor.](media/unify-ecommerce-loyalty.png)
-
-3. Välj **ContactId** som primärnyckel för **eCommerceContacts** och **LoyaltyID** som primärnyckel för **loyCustomers**.
-
-   ![Förena LoyaltyId som primärnyckel.](media/unify-loyaltyid.png)
-
-### <a name="match"></a>Matchning
-
-1. Gå till fliken **Matcha** och välj **Ange ordning**.
-
-2. I listrutan **Primär** väljer du **eCommerceContacts : eCommerce** som primär källa och inkluderar samtliga poster.
-
-3. I listrutan **Entitet 2** väljer du **loyCustomers : LoyaltyScheme** och inkluderar alla poster.
-
-   ![Förena matchande e-handel och lojalitet.](media/unify-match-order.png)
-
-4. Välj **Skapa en ny regel**
-
-5. Lägg till ditt första villkor med hjälp av FullName.
-
-   - För eCommerceContacts väljer du **FullName** i listrutan.
-   - För loyCustomers väljer du **FullName** i listrutan.
-   - Välj listrutan **Normalisera** och välj **Typ (telefon, namn, adress ...)**.
-   - Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
-
-6. Ange namnet **FullName, E-post** för den nya regeln.
-
-   - Lägg till ett andra villkor för e-postadress genom att välja **Lägg till villkor**
-   - För entiteten eCommerceContacts väljer du **EMail** i listrutan.
-   - För entiteten loyCustomers väljer du **EMail** i listrutan.
-   - Lämna Normalisera tomt.
-   - Ange **Precisionsnivå**: **Basic** och **Värde**: **Hög**.
-
-   ![Förena matchningsregel för namn och e-post.](media/unify-match-rule.png)
-
-7. Välj **Spara** och **Kör**.
-
-### <a name="merge"></a>Slå ihop
-
-1. Gå till fliken **Sammanslå**.
-
-1. På **ContactId** för entiteten **loyCustomers** ändrar du visningsnamnet till **ContactIdLOYALTY** för att särskilja den från andra inmatade ID.
-
-   ![byta namn på contactid från lojalitets-id.](media/unify-merge-contactid.png)
-
-1. Välj **Spara** och **Kör** för att starta sammanslagningsprocessen.
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-product-recommendation-prediction"></a>Uppgift 3 – Konfigurera förutsägelse av produktrekommendation
 
-Med de enhetliga kundprofilerna på plats kan vi nu köra förutsägelsen om prenumerationsomsättning.
+Med Unified customer profile på plats kan vi nu köra produktrekommendationen prediktion.
 
 1. Gå till **Intelligens** > **Förutsägelse** välj **Produktrekommendation**.
 
@@ -162,27 +108,36 @@ Med de enhetliga kundprofilerna på plats kan vi nu köra förutsägelsen om pre
    - **Upprepade köp förväntas**: Välj **Ja** för att ange att du vill inkludera produkter i rekommendationen som dina kunder har köpt tidigare.
 
    - **Fönstret Titta bakåt:** Välj minst **365 dagar**. Den här inställningen definierar hur långt bak i tiden som modellen tittar på kundens aktivitet för att använda den som indata i rekommendationerna.
-   
+
    :::image type="content" source="media/product-recommendation-model-preferences.png" alt-text="Modellinställningar för produktrekommendationsmodellen.":::
 
-1. Välj **Data som krävs** och välj **Lägg till data** för köphistorik.
+1. I **Lägg till obligatoriska data**, välj **Lägg till data**.
 
-1. Lägg till entiteten **eCommercePurchases: e-handel** och mappa fälten från e-handel till motsvarande fält som krävs av modellen.
+1. I fönstret **Lägg till data**, välj **SalesOrderLine** som entitet för inköpshistorik. Så här dags är det troligen inte konfigurerat ännu. Öppna länken i fönstret om du vill skapa aktiviteten med följande steg:
+   1. Ange ett **Aktivitetsnamn** och välj *eCommercePurchases:eCommerce* som **Entiteten aktivitet**. Den **primära nyckeln** är *PurchaseId*.
+   1. Definiera och namnge relationen till *eCommerceContacts:eCommerce entity* och välj **ContactId** som utländsk nyckel.
+   1. För Aktivitetssammanslagning, ställ in **Händelseaktivitet** som *TotalPrice* och tidsstämpel till *PurchasedOn*. Du kan ange fler fält enligt beskrivningen i [kundaktiviteter](activities.md).
+   1. För **aktivitetstyp**, välj *SalesOrderLine*. Mappa följande aktivitetsfält:
+      - Orderrad-ID: PurchaseId
+      - Inköpsorder-ID: PurchaseId
+      - Orderdata: PurchasedOn
+      - Produkt-ID: ProductId
+      - Summa: TotalPrice
+   1. Granska och slutför aktiviteten innan du går tillbaka till modellkonfigurationen.
 
-1. Anslut till entiteten **eCommercePurchases: e-handel** med **eCommerceContacts: e-handel**.
+1. Tillbaka i steget **Välj aktiviteter**, välj den nyligen skapade aktiviteten i avsnittet **Aktiviteter**. Välj **Nästa** så fylls attributmappningen i. Välj **Spara**.
 
-   ![Anslut e-handelsentiteter.](media/model-purchase-join.png)
+1. I denna exempelguide hoppar vi över ange **Lägg till produktinformation** och **Produktfilter** eftersom det inte finns några produktinformationsdata.
 
-1. Välj **Nästa** för att ange modellschemat.
+1. I steget **Datauppdateringar**, ange modellschemat.
 
    Modellen måste träna regelbundet för att lära sig nya mönster när det finns nya data inmatade. För det här exemplet väljer du **Månadsvis**.
 
-1. När du har granskat alla detaljer väljer du **Spara och kör**.
-
+1. När du har granskat alla detaljer väljer du **Spara och kör**. Det tar några minuter att köra modellen första gången.
 
 ## <a name="task-4---review-model-results-and-explanations"></a>Uppgift 4 – Granska modellresultat och förklaringar
 
-Låt modellen slutföra träningen och bedömningen av data. Du kan nu granska förklaringar av modellen för produktrekommendationer. Mer information finns i [Granska en förutsägelsestatus och resultat](predict-subscription-churn.md#review-a-prediction-status-and-results).
+Låt modellen slutföra träningen och bedömningen av data. Du kan nu granska förklaringar av modellen för produktrekommendationer. Mer information finns i [Granska en förutsägelsestatus och resultat](predict-transactional-churn.md#review-a-prediction-status-and-results).
 
 ## <a name="task-5---create-a-segment-of-high-purchased-products"></a>Uppgift 5 – Skapa ett segment med ofta köpta produkter
 
@@ -190,21 +145,19 @@ Om du kör produktionsmodellen skapas en ny entitet som du kan se i **Data** > *
 
 Du kan skapa ett nytt segment baserat på entiteten som skapats av modellen.
 
-1. Gå till **Segment**. Välj **Nytt** och välj **Skapa från** > **Intelligens**.
+1. Gå till **Segment**. Välj **Nytt** och välj **Skapa från Intelligens**.
 
    ![Skapa ett segment med modellutdata.](media/segment-intelligence.png)
 
 1. Välj slutpunkten **OOBProductRecommendationModelPrediction** och definiera segmentet:
 
    - Fält: Produkt-ID
-   - Operator: Värde
    - Värde: Välj de tre översta produkt-ID
 
    :::image type="content" source="media/product-recommendation-quick-segment.png" alt-text="Skapa ett segment utifrån modellresultatet.":::
 
-Nu har du ett segment som uppdateras dynamiskt och identifierar de kunder som är mer villiga att köpa de tre mest rekommenderade produkterna 
+Nu har du ett segment som uppdateras dynamiskt och identifierar de kunder som kan vara intresserade av att köpa de tre mest rekommenderade produkterna.
 
 Mer information finns i [Skapa och hantera segment](segments.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

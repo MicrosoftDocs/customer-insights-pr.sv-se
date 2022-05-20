@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647533"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755284"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsgranskning)
 
@@ -27,7 +27,7 @@ Customer Insights skickar följande händelseloggar:
 - **Granskningshändelser**
   - **APIEvent** - aktiverar ändringsspårning som görs via Dynamics 365 Customer Insights användargränssnittet.
 - **Verksamhetsevenemang**
-  - **WorkflowEvent** - Med arbetsflödet kan du konfigurera [Datakällor](data-sources.md), [ena](data-unification.md) och [berika](enrichment-hub.md) och slutligen [exportera](export-destinations.md) data till andra system. Alla dessa steg kan göras enskilt (t.ex. utlösa en enda export) eller göras om (t.ex. uppdatera data från datakällor som utlöser frekvensen som hämtar ytterligare tillägg och sedan har exporterat alla data till ett annat system). För mer information [WorkflowEvent-schema](#workflow-event-schema).
+  - **WorkflowEvent** - Med arbetsflödet kan du konfigurera [Datakällor](data-sources.md), [ena](data-unification.md) och [berika](enrichment-hub.md) och slutligen [exportera](export-destinations.md) data till andra system. Alla de stegen kan göras enskilt (t.ex. utlösa en enskild export). Kan också köras organiserade (till exempel uppdatera data från datakällor som utlöser föreningsprocessen, som hämtar utdata och sedan har exporterat alla data till ett annat system). För mer information [WorkflowEvent-schema](#workflow-event-schema).
   - **APIEvent** - alla API-anrop till kundinstansen till Dynamics 365 Customer Insights. För mer information [APIEvent-schema](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>Konfigurera diagnosinställningar
@@ -182,7 +182,7 @@ API-händelser och arbetsflödeshändelser har en gemensam struktur och informat
 
 ### <a name="workflow-event-schema"></a>Händelseschema för arbetsflöde
 
-Arbetsflödet innehåller flera steg. [Mata in datakällor](data-sources.md), [ena](data-unification.md), [berika](enrichment-hub.md) och [exportera](export-destinations.md) data. Alla dessa steg kan köras enskilt eller enligt följande processer. 
+Arbetsflödet innehåller flera steg. [Mata in datakällor](data-sources.md), [ena](data-unification.md), [berika](enrichment-hub.md) och [exportera](export-destinations.md) data. Alla dessa steg kan köras enskilt eller enligt följande processer.
 
 #### <a name="operation-types"></a>Åtgärdstyper
 
@@ -215,7 +215,7 @@ Arbetsflödet innehåller flera steg. [Mata in datakällor](data-sources.md), [e
 | `time`          | Tidsstämpel | Obligatoriskt          | Tidsstämpel för händelsen (UTC).                                                                                                                                 | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
 | `resourceId`    | String    | Obligatoriskt          | ResourceId för den instans som genererade händelsen.                                                                                                            | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX` |
 | `operationName` | String    | Obligatoriskt          | Namnet på den åtgärd som händelsen representerar. `{OperationType}.[WorkFlow|Task][Started|Completed]`. Se [Åtgärdstyper](#operation-types) för referens. | `Segmentation.WorkflowStarted`,<br> `Segmentation.TaskStarted`, <br> `Segmentation.TaskCompleted`, <br> `Segmentation.WorkflowCompleted`                                 |
-| `category`      | String    | Obligatoriskt          | Loggkategori för händelsen. Alltid `Operational` för arbetsflödeshändelser                                                                                           | `Operational`                                                                                                                                                            | 
+| `category`      | String    | Obligatoriskt          | Loggkategori för händelsen. Alltid `Operational` för arbetsflödeshändelser                                                                                           | `Operational`                                                                                                                                                            |
 | `resultType`    | String    | Obligatoriskt          | Status för händelsen. `Running`, `Skipped`, `Successful`, `Failure`                                                                                            |                                                                                                                                                                          |
 | `durationMs`    | Long      | Valfri          | Varaktigheten för åtgärd i milisekunder.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Valfri          | JSON-objekt med fler egenskaper för den specifika händelsekategorin.                                                                                        | Se underavsnitt [Arbetsflödesegenskaper](#workflow-properties-schema)                                                                                                       |

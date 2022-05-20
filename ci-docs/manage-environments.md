@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: fcdb7f073ff73322ff69d0a8684391819a809d00
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 599cbaf4e19c3a7331e92bfc54c701fefe6c69b3
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647840"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741063"
 ---
 # <a name="manage-environments"></a>Hantera miljöer
 
@@ -127,8 +127,8 @@ Du ser en lista över alla tillgängliga miljöer i organisationen som du kan ko
 Följande konfigurationsinställningar kan kopieras:
 
 - Inmatade/importerade datakällor
-- Dataföreningskonfiguration (mappning, matchning, sammanslagning)
-- Segments
+- Konfiguration av datasammanslutning
+- Segment
 - Mått
 - Relationer
 - Aktiviteter

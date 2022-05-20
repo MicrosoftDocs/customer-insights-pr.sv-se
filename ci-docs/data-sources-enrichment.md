@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: 56f6a8ad20224922f9968f0ad3b6a0e0a400214b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d1e14d2d4e718d71ccbd2afd259a350ad5c9e69a
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647541"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755708"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Berika för datakällor (förhandsversion)
 
@@ -26,7 +26,7 @@ Du måste ha deltagar- eller administratörsbehörighet att skapa eller redigera
 1. Gå till **Data** > **Förena**. Välj den entitet du vill utöka och välj ett attribut som primärnyckel för entiteten. För mer information, se [Välj primärnyckel](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 
 1. Gå till **Data** > **Datakällor**.
- 
+
 1. Välj den vertikala ellipsen bredvid datakälla du vill utöka och markera **Berika**.
 
    :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Sida för berikande av datakällor.":::

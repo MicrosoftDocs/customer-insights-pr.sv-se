@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: cca91f2bbe2fc64554199082a79c1b388a01ab52
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647837"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740741"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fyll i ofullständiga data med hjälp av prediktioner (inaktuella)
 
@@ -37,7 +37,7 @@ Innan du kan använda funktionen prediktioner i organisationen bör du kontrolle
 
 1. Din organisation har en instans [konfigurerad i Microsoft Dataverse](/ai-builder/build-model#prerequisites) och finns i samma organisation som Customer Insights.
 
-2. Din miljö för målgruppsinsikter bifogas till din Dataverse-instans.
+2. Kund Customer Insights-miljö är kopplad till din Dataverse-instans.
 
 Mer information finns i [Skapa en ny miljö](create-environment.md).
 

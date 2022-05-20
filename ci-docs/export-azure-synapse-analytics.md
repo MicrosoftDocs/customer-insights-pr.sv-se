@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e77227e1e353c02cfb13e26a8ecbe0768ba6c0fa
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647597"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741525"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Exportera till Azure Synapse Analytics (förhandsversion)
 
@@ -34,7 +34,7 @@ i Azure:
 
 - En aktiv Azure-prenumeration.
 
-- Om du använder ett nytt Azure Data Lake Storage Gen2-konto måste *tjänsthuvudmannen för Customer Insights* ha behörigheter för **Storage Blob-datadeltagare**. Läs mer om att [ansluta till ett Azure Data Lake Storage Gen2-konto med Azure-huvudkonto för tjänsten för målinsikter](connect-service-principal.md). Data Lake Storage Gen2 **måste ha** [hierarkiskt namnutrymme](/azure/storage/blobs/data-lake-storage-namespace) aktiverat.
+- Om du använder ett nytt Azure Data Lake Storage Gen2-konto måste *tjänsthuvudmannen för Customer Insights* ha behörigheter för **Storage Blob-datadeltagare**. Lär dig mer om [att ansluta till Azure Data Lake Storage Gen2-konto med huvudkontoför Azure för Customer Insights](connect-service-principal.md). Data Lake Storage Gen2 **måste ha** [hierarkiskt namnutrymme](/azure/storage/blobs/data-lake-storage-namespace) aktiverat.
 
 - I resursgruppen där Azure Synapse workspace finns måste *tjänstens huvudkonto* och *Azure AD-användare med administratörsbehörighet i Customer Insights* tilldelas behörigheter för **Läsare**. Mer information finns i [Tilldela Azure-roller med Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
 

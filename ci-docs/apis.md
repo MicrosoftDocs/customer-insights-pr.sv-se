@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: ecc8bb3dbec1d4583c4bf2a58058145343945299
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647657"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755472"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbeta med API:er i Customer Insights
 
@@ -25,7 +25,7 @@ Dynamics 365 Customer Insights tillhandahåller API:er för att bygga egna progr
 > [!IMPORTANT]
 > Detaljer om dessa API:er anges i [API-referens för Customer Insights](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). De innehåller ytterligare information om operationer, parametrar och svar.
 
-I den här artikeln beskrivs hur du öppnar API för Customer Insights, skapar en Azure-appregistrering och kommer igång med de tillgängliga klientbiblioteken.
+I den här artikeln beskrivs hur du öppnar Customer Insights API:er, skapar en Azure-appregistrering och kommer igång med klientbibliotek.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Kom igång med att prova API:erna för Customer Insights
 
@@ -83,7 +83,7 @@ Du kan använda Program-/klient-ID för den här appregistreringen med Microsoft
 
 Mer information om MSAL finns i [Översikt över MSAL (Microsoft Authentication Library)](/azure/active-directory/develop/msal-overview).
 
-Mer information om appregistrering i Azure finns i [Registrera ett program](/azure/active-directory/develop/quickstart-register-app.md#register-an-application).
+Mer information om appregistrering i Azure finns i [Registrera ett program](/graph/auth-register-app-v2).
 
 Information om hur du använder API:er i våra klientbibliotek finns i [Customer Insights-klientbibliotek](#customer-insights-client-libraries).
 
@@ -113,6 +113,10 @@ Avsnittet för [registrering av appar](#create-a-new-app-registration-in-the-azu
 
 1. Sök efter namnet på din appregistrering, välj den bland sökresultaten och välj **Spara**.
 
+## <a name="sample-queries"></a>Exempelfrågor
+
+Vi har sammanställt en kort lista med OData-exempelfrågor som fungerar med API:er: [Exempel på OData-frågor](odata-examples.md).
+
 ## <a name="customer-insights-client-libraries"></a>Klientbibliotek för Customer Insights
 
 Det här avsnittet hjälper dig att komma igång med att använda klientbiblioteken som är tillgängliga för Customer Insights-API:erna. All bibliotekskällkod och alla exempelprogram finns på sidan [Customer Insights GitHub](https://github.com/microsoft/Dynamics365-CustomerInsights-Client-Libraries). 
@@ -137,7 +141,7 @@ Lär dig hur du kommer igång med att använda C#-klientbiblioteken från NuGet.
 
 1. Använd [Microsoft Authentication Library (MSAL)](/azure/active-directory/develop/msal-overview) för att få ett `AccessToken` med hjälp av din befintliga [Azure-appregistrering](#create-a-new-app-registration-in-the-azure-portal).
 
-1. Efter att ha lyckats autentisera och skaffa en token, konstruera en ny eller använd en befintlig `HttpClient` med den ytterligare **DefaultRequestHeaders "Authorization"** anges till **Bearer "access token"** och **Ocp-Apim-Subscription-Key** anges till [**prenumerationsnyckeln** från Customer Insights-miljö](#get-started-trying-the-customer-insights-apis).   
+1. Efter att ha lyckats autentisera och skaffa en token, konstruera en ny eller använd en befintlig `HttpClient` med **DefaultRequestHeaders "Authorization"** anges till **Bearer "access token"** och **Ocp-Apim-Subscription-Key** anges till [**prenumerationsnyckeln** från Customer Insights-miljö](#get-started-trying-the-customer-insights-apis).   
  
    Återställ rubriken **Auktorisering** när det är lämpligt. Till exempel när token löpt ut.
 
@@ -147,7 +151,7 @@ Lär dig hur du kommer igång med att använda C#-klientbiblioteken från NuGet.
 
 1. Gör anrop med klienten till "tilläggsmetoderna", till exempel `GetAllInstancesAsync`. Om tillgång till underliggande `Microsoft.Rest.HttpOperationResponse` är att föredra, använd "http-meddelandemetoderna", till exempel `GetAllInstancesWithHttpMessagesAsync`.
 
-1. Svaret kommer sannolikt att vara av typen `object` eftersom metoden kan returnera flera typer (till exempel `IList<InstanceInfo>` och `ApiErrorResult`). Om du vill kontrollera returtypen kan du säkert typkonvertera objekten i de svarstyper som anges på [API-informationssidan](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) för den åtgärden.    
+1. Svaret kommer sannolikt att vara av typen `object` eftersom metoden kan returnera flera typer (till exempel `IList<InstanceInfo>` och `ApiErrorResult`). För att kontrollera returtypen använder du objekten i de svarstyper som anges på [API-informationssidan](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) för den åtgärden.    
    
    Om mer information om begäran behövs använder du **metoderna för http-meddelande** för att komma åt råsvarsobjekt.
 

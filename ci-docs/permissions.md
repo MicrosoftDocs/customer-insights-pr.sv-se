@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b80f07dfa734f4dd762bd711151a7045f24bed7d
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 74c7ff7cda8431c04dd34713becefa7e346331b4
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653590"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740925"
 ---
 # <a name="user-permissions"></a>Användarbehörigheter
 
@@ -41,7 +41,7 @@ Det finns tre typer av roller:
 
 - Alla behörigheter som är tillgängliga för visningsprogrammet.
 - Läsa in och transformera data från sidan **Datakällor**.
-- Slutför avsnitten *Dataförening* (**Mappa**, **Matcha** och **Sammanslå**) som resulterar i den enhetliga entiteten för kundprofilen.
+- Slutför **föreningsprocessen** för entiteten Unified customer profile.
 - Definiera **Relationer** och **Aktiviteter**.
 - Skapa segment med hjälp sidan **Segment**.
 - Skapa mått med hjälp av sidan **Mått**.

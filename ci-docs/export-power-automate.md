@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 409792bc3f12fca451ef038e3300758bdf9ecf3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d22c4c785695b23a257a89f1ffa519fdc18b443e
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647880"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741201"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate anslutningsprogram (förhandsversion)
 
@@ -25,14 +25,14 @@ Utlös specifika händelser automatiskt när data ändras och hantera mer kompli
 
 ## <a name="power-automate-triggers"></a>Power Automate-utlösare
 
-Med utlösare kan du skapa molnflöden och automatisera repetitiva uppgifter, till exempel meddelanden eller mer avancerade åtgärder. 
+Med utlösare kan du skapa molnflöden och automatisera repetitiva uppgifter, till exempel meddelanden eller mer avancerade åtgärder.
 
-- Utlöses när en uppdatering av en datakälla misslyckas. 
+- Utlöses när en uppdatering av en datakälla misslyckas.
 - Utlöses när en uppdatering av en datakälla lyckas.
 - Utlöses när ett tröskelvärde passeras i ett segment. Utlösaren begränsas till att passera över tröskelvärdet.
 - Utlöses när ett tröskelvärde passeras i ett affärsmått. Endast affärsmått utan dimension stöds. Utlösaren begränsas till att passera över tröskelvärdet.
 - Utlösa när en fullständig uppdatering av (datakällor, segment, mått ...) har slutförts.
-- Utlöses när en uppdatering av föreningsprocessen (mappning, matchning, sammanslagning) har slutförts.
+- Utlöses när en uppdatering av föreningsprocessen är klar.
 
 [Konfigurera utlösarna i Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 
