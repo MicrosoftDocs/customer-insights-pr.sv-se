@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 15ae772617efa4c64cf79d0bac10a0c3cb28ca30
+ms.sourcegitcommit: a92bf5985263240fd07bad98d8e119b88cf2c9d9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755284"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "8807603"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsgranskning)
 
@@ -38,7 +38,7 @@ Om du vill konfigurera diagnos Customer Insights, måste följande krav uppfylla
 
 - Du måste ha en aktiv [Azure-prenumeration](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - Du har [Administratör](permissions.md#admin) behörighet i Customer Insights..
-- Du har rollen **Deltagare** och **Administratör för användaråtkomst** på destinationsresursen på Azure. Resursen kan vara ett Azure Storage-konto, ett Azure händelsehubben eller en Azure Log Analytics-arbetsyta. Mer information finns i [Lägga till eller ta bort Azure-rolltilldelningar via Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
+- Du har rollen **Deltagare** och **Administratör för användaråtkomst** på destinationsresursen på Azure. Resursen kan vara ett Azure Data Lake Storage-konto, en händelsehubb för Azure eller en Azure Log Analytics-arbetsyta. Mer information finns i [Lägga till eller ta bort Azure-rolltilldelningar via Azure-portalen](/azure/role-based-access-control/role-assignments-portal). Denna behörighet är nödvändig när du konfigurerar diagnostikinställningarna i Customer Insights och kan ändras efter installation.
 - [Destinationskraven](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) för Azure Storage, Azure Event eller Azure Hub eller Azure Log Analytics har uppfyllts.
 - Du har minst rollen **Läsare** i den resursgrupp resursen tillhör.
 

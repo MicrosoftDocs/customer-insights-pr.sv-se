@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 5c14e6c96d2f907ba161331b6f92277191cbdbef
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: abc1b6af80e8854ee3bc930453634ef67376c4af
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653545"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800627"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
@@ -63,7 +63,7 @@ På fliken **Mina berikningar** kan du se vilka berikningar du har konfigurerat 
 
 Gå till fliken **Mina berikningar** om du vill visa alla konfigurerade berikningar. Varje berikning representeras som en rad som innehåller ytterligare information om berikningen.
 
-Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja ellips (…) på ett listobjekt om du vill visa alternativen. Om du har konfigurerat flera förbättringar kan du använda sökrutan för att hitta den snabbt.
+Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja den stående ellipsen (&vellip;) för ett listobjekt om du vill visa alternativen för. Om du har konfigurerat flera förbättringar kan du använda sökrutan för att hitta den snabbt.
 
 :::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Alternativ för hantering av listan över förbättringar.":::
 

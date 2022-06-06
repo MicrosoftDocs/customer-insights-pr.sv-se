@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: 6370df0287362a5512a837cdb588f5d20ef03d3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647917"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800348"
 ---
 # <a name="use-measure-builder-to-create-measures-from-scratch"></a>Med måttverktyget kan du skapa mått från grunden
 
@@ -40,7 +40,7 @@ Du kan skapa mått på nivån för enskilda kunder (kundattribut, kundmått) ell
 
 1. Välj **Ny** och välj **Skapa din egen**.
 
-   :::image type="content" source="media/measure-b2c.png" alt-text="Tom konfigurationsskärm för ett B2C-mått. " lightbox="media/measure-b2c.png":::
+   :::image type="content" source="media/measure-b2c.png" alt-text="Tom konfigurationsskärm för ett B2C-mått." lightbox="media/measure-b2c.png":::
 
 1. Om du vill spåra prestanda på företagsnivå växlar du **Måttyp** till **Företagsnivå**. Som standard är **Kundnivå** valt. **Kundnivå** lägger automatiskt till attributet *CustomerId* i Mått medan **affärsnivå** automatiskt tar bort det.
 
@@ -88,7 +88,7 @@ Du kan skapa mått på nivån för enskilda kunder (kundattribut, kundmått) ell
 
 1. Om du vill lägga till fler beräkningar för måttet väljer du **Ny beräkning**. Du kan endast använda entiteter på samma entitetssökväg för nya beräkningar. Fler beräkningar visas som nya kolumner i måttutdataentiteten.
 
-1. Välj **...** i beräkningen för att **duplicera**, **byta namn på** eller **ta bort** en beräkning från ett mått.
+1. Välj den vertikala ellipsen (&vellip;) i beräkningen för att **Duplicera**, **Byta namn** på eller **Ta bort** en beräkning från ett mått.
 
 1. I området **Förhandsgranskning** ser du dataschemat för måttutdataentiteten, inklusive filter och dimensioner. Förhandsgranskningen reagerar dynamiskt på ändringar i konfigurationen.
 
@@ -158,7 +158,7 @@ Du kan skapa mått på nivån för enskilda konton (kundmått) eller på nivån 
    1. Välj **Relationssökväg** och välj den entitetsväg som ska användas för att identifiera ditt mått. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
    1. Välj **Klart** för att tillämpa dina val.
 
-1. Välj **...** i beräkningen för att **duplicera**, **byta namn på** eller **ta bort** en beräkning från ett mått.
+1. Välj den vertikala ellipsen (&vellip;) i beräkningen för att **Duplicera**, **Byta namn** på eller **Ta bort** en beräkning från ett mått.
 
 1. I området **Förhandsgranskning** ser du dataschemat för måttutdataentiteten, inklusive filter och dimensioner. Förhandsgranskningen reagerar dynamiskt på ändringar i konfigurationen.
 

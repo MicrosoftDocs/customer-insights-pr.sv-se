@@ -1,19 +1,19 @@
 ---
 title: Berikande av datakällor
 description: Berika datakällor innan du går igenom dataföreningsprocess.
-ms.date: 03/02/2022
+ms.date: 05/20/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: d1e14d2d4e718d71ccbd2afd259a350ad5c9e69a
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1225482c4bf432ed747537b2c9bec9ab0e692a51
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755708"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800303"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Berika för datakällor (förhandsversion)
 
@@ -27,7 +27,7 @@ Du måste ha deltagar- eller administratörsbehörighet att skapa eller redigera
 
 1. Gå till **Data** > **Datakällor**.
 
-1. Välj den vertikala ellipsen bredvid datakälla du vill utöka och markera **Berika**.
+1. Välj den vertikala ellipsen (&vellip;) bredvid datakälla du vill berika och markera **Berika**.
 
    :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Sida för berikande av datakällor.":::
 
@@ -41,11 +41,12 @@ Följande berikningar är för närvarande tillgängliga för datakällor. Detal
 
 - [Utökade adresser](enrichment-enhanced-addresses.md)
 - [Berikade företagsdata](enrichment-enhanced-company-data.md)
+- [Identifiera data från LiveRamp](enrichment-liveramp.md)
 
 ## <a name="manage-existing-data-source-enrichments"></a>Hantera befintliga berikningar för datakällor
 
 Gå till fliken **Mina berikningar** om du vill visa alla konfigurerade berikningar.
 
-Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja ellips (…) på ett listobjekt om du vill visa alternativen. Om du har konfigurerat flera förbättringar kan du använda sökrutan för att hitta den snabbt.
+Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja den stående ellipsen (&vellip;) för ett listobjekt om du vill visa alternativen för. Om du har konfigurerat flera förbättringar kan du använda sökrutan för att hitta den snabbt.
 
 Du kan visa, redigera, köra eller ta bort berika datakälla. Mer information finns i [Hantera befintliga berikningar](enrichment-hub.md).

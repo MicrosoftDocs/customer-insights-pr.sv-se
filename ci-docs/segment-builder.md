@@ -13,12 +13,12 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: c8e9e4976ade36c1c3c4f688a667b329bfde6e3e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e1a9cd0e3c0347285026d937ca7d951a602e7160
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647810"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800118"
 ---
 # <a name="create-segments"></a>Skapa segment
 
@@ -134,8 +134,9 @@ När du skapar ett segment kan du spara ett utkast. I utkaststadiet sparas ett s
 > - Segmentverktyget föreslår inga giltiga värden från entiteter när operatorerna anges för villkoren. Du kan gå till **Data** > **Entiteter** och ladda ned entitetsdata för att se vilka värden som är tillgängliga.
 > - Med villkor baserade på datumen kan du växla mellan fasta datum och ett flexibelt datumintervall.
 > - Om du har flera regler för ditt segment har regeln du redigerar en stående blå linje bredvid den.
-> - Du kan flytta regler och villkor till andra platser i segmentdefinitionen. Välj […] bredvid en regel eller ett villkor och välj hur och var den/det ska flyttas.
+> - Du kan flytta regler och villkor till andra platser i segmentdefinitionen. Välj den stående ellipsen (&vellip;) bredvid en regel eller ett villkor och välj hur och var den ska flyttas.
 > - Med kontrollerna **Ångra** och **Gör om** i kommandofältet kan du återställa ändringar.
+> - När du har skapat ett segment kan du använda vissa segment för att [spåra användningen av segmentet](segments.md#track-usage-of-a-segment).
 
 ## <a name="quick-segments"></a>Snabbsegment
 

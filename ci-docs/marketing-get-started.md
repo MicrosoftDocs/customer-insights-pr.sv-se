@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 45c59465771e4ad25ed36d5da1568e67b94cf994
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 4cc3cbde97d0f9da198652e86c0843476393b646
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653762"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833330"
 ---
 # <a name="work-with-unified-customer-profiles-in-dynamics-365-marketing"></a>Arbeta med enhetliga kundprofiler i Dynamics 365 Marketing
 
@@ -23,7 +23,6 @@ Genom att ansluta Customer Insights-data till Marketing kan du:
 - Basera dynamiskt innehåll (till exempel anpassade token) i e-postmeddelanden, SMS och push-meddelanden om åtgärder som lojalitetsstatus, datum för prenumerationsförnyelse, överordnat konto eller något annat mått som du har hämtat i den enhetliga Customer Insights-profilen.
 - Läsa in data från Marketing till Customer Insights och kombinera dem med kunddata från andra källor.
 - Använda Customer Insights verktyg för datarensning, berikning och fuzzy-matchning.
-
 
 ## <a name="use-rich-customer-profiles-in-real-time-marketing"></a>Använd rika kundprofiler och segment i realtidsmarknadsföring
 
@@ -41,4 +40,4 @@ Läs mer: [Använd segment från Dynamics 365 Customer Insights med Dynamics 365
 
 Du är inte begränsad till molnlagring om du vill använda Customer Insights-data med Marketing. Om du redan har din egen Azure Data Lake Storage-konfiguration kan du ansluta till Customer Insights och sedan dela data med Marketing-appen precis som du skulle göra med en molnbaserad installation.
 
-Läs mer: [Aktivera datadelning med Dataverse från din egen Azure Data Lake Storage](manage-environments.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview)
+Läs mer: [Aktivera datadelning med Dataverse från din egen Azure Data Lake Storage](customer-insights-dataverse.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview)

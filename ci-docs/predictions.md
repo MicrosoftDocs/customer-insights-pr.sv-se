@@ -12,17 +12,17 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 57ef46416db0a11cde9f9d7650a0b502a01bf0ab
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740741"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800672"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fyll i ofullständiga data med hjälp av prediktioner (inaktuella)
 
 > [!IMPORTANT]
-> Den här funktionen är **inaktuell** från den **5 november 2021**.  De aktuella implementeringarna fortsätter tills funktionen har tagits bort, men du kommer inte att kunna skapa nya integreringar enligt anvisningarna nedan.
+> Den här funktionen är **inaktuell** från den **5 november 2021**. De aktuella implementeringarna fortsätter tills funktionen har tagits bort, men du kommer inte att kunna skapa nya integreringar enligt anvisningarna nedan.
 
 Med hjälp av prediktioner kan du enkelt skapa förutsagda värden som förbättrar förståelsen av en kund. På sidan **Intelligens** > **Prediktioner** kan du välja **Mina prediktioner** för att se vilka prediktioner som du har konfigurerat i andra delar av Customer Insights och göra det möjligt att anpassa dem ytterligare.
 
@@ -95,7 +95,7 @@ Som en del av detta flöde kan du välja ett specifikt attribut som du vill base
 
 2. Välj den prediktion du vill granska.
 
-3. Välj en ellips i kolumnen **Åtgärder** och välj **Visa**.
+3. Markera den stående ellipsen (&vellip;) i kolumnen **Åtgärder** och välj **Visa**.
 
 4. Du ser flera datapunkter i vyn av din prediktion.
    > [!div class="mx-imgBorder"]
@@ -122,7 +122,7 @@ När du har skapat en förutsägelse kan du anpassa modellen i AI Builder så at
 
 2. Markera den prediktion du vill redigera.
 
-3. Välj en ellips i kolumnen **Åtgärder** och välj **Visa**.
+3. Markera den stående ellipsen (&vellip;) i kolumnen **Åtgärder** och välj **Visa**.
 
 4. Välj **Anpassa i AI Builder**.
 
@@ -139,7 +139,7 @@ Nästa gång du kör din prediktion används den uppdaterade modell som du har s
 
 2. Markera den prediktion du vill ta bort.
 
-3. Välj en ellips i kolumnen **Åtgärder** och välj **Ta bort**.
+3. Markera den stående ellipsen (&vellip;) i kolumnen **Åtgärder** och välj **Ta bort**.
 
 4. Bekräfta borttagningen.
 
@@ -153,7 +153,7 @@ Om du inte kan slutföra anslutna Dataverse-processen på grund av ett fel kan d
 - Appbehörighet beviljas inte.
     1. Gå till [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com).
     1. Välj **Miljöer**.
-    1. Markera ellipsknappen bredvid den miljö där du vill lägga till behörighet och markera **inställningar**.
+    1. Välj den stående ellipsen (&vellip;) bredvid den miljö där du vill lägga till behörigheten och välj **Inställningar**.
     1. Expandera **användare + behörigheter** och välj **användare**.
     1. Välj **+ ny** och välj **användare**.
     1. Välj **programanvändare** om den inte redan är vald och ange följande information:

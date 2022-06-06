@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 4a269a223efa08f71db09eef2ec9a8f8a077f7a7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c0db75afdde91bbd60fbece77eb2660a38b84860
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641830"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833790"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Vanliga frågor och svar om Dynamics 365 Customer Insights utvärderingsversion
 
@@ -62,13 +62,13 @@ Du kan utöka utvärderingsversionen direkt i appen. Du kan förlänga utvärder
 
 Vanligtvis rekommenderar vi att du börjar om från början med dina egna data när du uppgraderar till betalversionen av Customer Insights. 
 
-Alternativt, om du bara använder Customer Insights, kan du kopiera dina data från en utvärderingsmiljö om du köper Customer Insights. Du måste vara administratör av utvärderingsversionen av Customer Insights och den globala administratören av Microsoft 365-klientorganisationen, eller Dynamics 365-administratör i organisationen om du vill migrera inställningarna från en utvärderingsmiljö till en betald miljö. 
+Alternativt, om du bara använder Customer Insights, kan du kopiera dina data från en utvärderingsmiljö om du köper Customer Insights. Du måste vara administratör av utvärderingsversionen av Customer Insights och den globala administratören av Microsoft 365-klientorganisationen, eller Dynamics 365-administratör i organisationen om du vill migrera inställningarna från en utvärderingsmiljö till en betald miljö.
 
-När du har loggat in på din betalinstans av Customer Insights för första gången uppmanas du att skapa en ny miljö. I den här processen kan du välja att kopiera konfigurationen från en befintlig miljö och migrera de flesta inställningar. Om du har de behörigheter som anges ovan visas utvärderingsmiljön i den här listan. Mer information finns i [Kopiera miljökonfigurationen](manage-environments.md#copy-the-environment-configuration).
+När du har loggat in på din betalinstans av Customer Insights för första gången uppmanas du att skapa en ny miljö. I den här processen kan du välja att kopiera konfigurationen från en befintlig miljö och migrera de flesta inställningar. Om du har de behörigheter som anges ovan visas utvärderingsmiljön i den här listan. Mer information finns i [Kopiera miljökonfigurationen](create-environment.md#copy-the-environment-configuration).
 
 ### <a name="what-are-the-trial-limits-and-quotas"></a>Vilka är begränsningarna och kvoterna för utvärderingen?
 
-- Du kan inte använda ditt eget Azure Data Lake Storage-konto för att lagra utdata under en provversion av Customer Insights. Du kan däremot mata in data från ett Data Lake-lagringskonto.
+- Du kan inte använda ditt eget Azure Data Lake Storage-konto för att lagra utdata under en provversion av Customer Insights. Du kan däremot mata in data från ett Data Lake Storage-konto.
 - Du kan spara upp till 3 GB data i den Dataverse-miljö som tillhandahålls automatiskt när du startar en utvärderingsversion av Customer Insights.
 
 ## <a name="customer-insights-specific-questions"></a>Customer Insights-frågor
@@ -81,9 +81,10 @@ När du har registrerat dig för provperioden kommer du fram till appens huvudsk
 
 De flesta funktionerna i Customer Insights är tillgängliga under utvärderingsperioden.
 
-Följande funktioner är **inte tillgängliga**: 
+Följande funktioner är **inte tillgängliga**:
+
 - Du kan inte skapa nya miljöer som använder ditt eget Azure Data Lake Storage-konto.
-- Du kan inte ta bort utvärderingsmiljön. 
+- Du kan inte ta bort utvärderingsmiljön.
 
 ### <a name="how-long-does-the-trial-last"></a>Hur länge varar utvärderingsversionen?
 

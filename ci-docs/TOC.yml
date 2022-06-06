@@ -6,7 +6,9 @@
   href: whats-new-customer-insights.md
 - name: Utbildningskatalog
   items:
-    - name: Kom i gång
+    - name: Certifiera som Microsoft-specialist för kunddataplattformer
+      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+    - name: Komma igång med Customer Insights
       href: /learn/modules/get-started-customer-data-platform/
     - name: Mata in data
       href: /learn/modules/ingest-data-customer-insights/
@@ -34,8 +36,6 @@
       href: get-started.md
     - name: Börja med en betald licens
       href: paid-license.md
-    - name: Skapa en ny miljö
-      href: create-environment.md
     - name: Utforska Customer Insights
       href: home.md
     - name: Arbeta med taggar och kolumner
@@ -198,6 +198,8 @@
           href: export-campaign-monitor.md
         - name: Constant Contact
           href: export-constant-contact.md
+        - name: Criteo
+          href: export-criteo.md
         - name: DotDigital
           href: export-dotdigital.md
         - name: Dynamics 365 Marketing
@@ -254,12 +256,22 @@
       href: entities.md
     - name: Granska entitetsscheman i Common Data Model
       href: entity-schemas.md
-    - name: Customer Insights-data i Dataverse
-      href: customer-insights-dataverse.md
     - name: Bygg relationer och anslutna entiteter
       href: relationships.md
     - name: Definiera semantiska mappningar
       href: semantic-mappings.md
+- name: Miljöer
+  items:
+    - name: Skapa en ny miljö
+      href: create-environment.md
+    - name: Anslut till Microsoft Dataverse
+      href: customer-insights-dataverse.md
+    - name: Använd din egen Azure Data Lake Storage
+      href: own-data-lake-storage.md
+    - name: Hantera miljöinställningar
+      href: manage-environments.md
+    - name: Anslut till ett lagringskonto med tjänstens huvudnamn
+      href: connect-service-principal.md
 - name: Administration
   items:
     - name: Ställa in systemet för konfiguration
@@ -268,20 +280,12 @@
       href: security-overview.md
     - name: Tilldela användarbehörigheter
       href: permissions.md
-    - name: Översikt över anslutningar
-      href: connections.md
-    - name: Hantera flera miljöer
-      href: manage-environments.md
     - name: Ta med din egen Key Vault
       href: use-azure-key-vault.md
-    - name: Anslut till ett lagringskonto med tjänstens huvudnamn
-      href: connect-service-principal.md
     - name: Exportera diagnostikloggar
       href: diagnostics.md
-    - name: Tjänstbegränsningar
-      href: service-limits.md
-    - name: DSR-rättigheter och -förfrågningar
-      href: dsr-rights-requests.md
+    - name: Översikt över anslutningar
+      href: connections.md
 - name: 'API:er'
   items:
     - name: 'Arbeta med API:er'
@@ -312,7 +316,7 @@
       items:
         - name: Aktivera samtyckesregler i Customer Insights
           href: activate-consent.md
-        - name: 'Hantera standardregler för samtycke med segment för Customer Insights '
+        - name: Hantera standardregler för samtycke med segment för Customer Insights
           href: change-default-consent-rules.md
     - name: Hantera inställningar och användare
       items:
@@ -324,5 +328,9 @@
       items:
         - name: Skapa prediktioner med samtyckesdata
           href: consent-management/predictions-consent-data.md
+- name: Tjänstbegränsningar
+  href: service-limits.md
+- name: DSR-rättigheter och -förfrågningar
+  href: dsr-rights-requests.md
 - name: Få support
   href: /power-platform/admin/get-help-support

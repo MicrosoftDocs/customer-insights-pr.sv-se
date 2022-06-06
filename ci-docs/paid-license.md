@@ -1,41 +1,33 @@
 ---
-title: Komma igång med en betald licens på Dynamics 365 Customer Insights
+title: Köp en licens för Dynamics 365 Customer Insights
 author: m-hartmann
-description: Bekanta dig med den välkomstupplevelsen i Dynamics 365 Customer Insights och utforska funktionerna.
+description: Köp en licens för Dynamics 365 Customer Insights, logga in och bekanta dig med appen.
 ms.author: mhart
 ms.date: 10/05/2021
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 8fcc1c97be87afe942aa3b5e23d1eb68008aa873
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9c83dc6716abd5f81eb7851d462d7d61791f542b
+ms.sourcegitcommit: ba29fd7c89bdeba7260b4783662d8da8e1e1e30e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641876"
+ms.lasthandoff: 05/18/2022
+ms.locfileid: "8768444"
 ---
-# <a name="get-started-after-purchasing-customer-insights"></a>Komma igång efter att ha köpt Customer Insights
+# <a name="purchase-customer-insights"></a>Köp Customer Insights
 
-I den här artikeln får du lära dig hur du tar dig till Dynamics 365 Customer Insights efter de första stegen efter att organisationen har köpt en prenumeration. Om du vill köpa Customer Insights listas våra kontaktalternativ på [Dynamics 365 Customer Insights-webbplatsen](https://dynamics.microsoft.com/ai/customer-insights/). 
-
-När du har köpt en prenumerationslicens för Customer Insights får den globala administratören av Microsoft 365-klientorganisationen ett e-postmeddelande som bjuder in denne till att skapa miljön. 
-
-Customer Insights licensieras per klientorganisation och innehåller flera funktioner. Du kan öka standardbudgeten genom att köpa fler kapaciteter och licenser. 
-- [Prissättningsöversikt](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
-- Kapacitet och berättiganden: [Licensguide för Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544)
+Se våra kontaktalternativ på [Dynamics 365 Customer Insights-webbplatsen](https://dynamics.microsoft.com/ai/customer-insights/) om du vill köpa Dynamics 365 Customer Insights.
 
 Om du vill prova tjänsten och funktionerna finns mer information i [Konfigurera en utvärderingsmiljö](trial-signup.md).
 
-## <a name="start-with-customer-insights"></a>Starta med Customer Insights
+Customer Insights licensieras per klientorganisation och innehåller flera funktioner. Du kan öka standardbudgeten genom att köpa fler kapaciteter och licenser.
+- [Prissättningsöversikt](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
+- Kapacitet och berättiganden: [Licensguide för Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544)
 
-Den välkomstupplevelsen hjälper dig att välja inledande fokus med Customer Insights och utforska funktionerna med exempeldata. I nästa steg kan du skapa din egen miljö och arbeta med dina egna data.
-
-**Logga in första gången**:
+## <a name="sign-in-for-the-first-time"></a>Logga in första gången
 
 1. Gå till [Customer Insights app URL](https://home.ci.ai.dynamics.com).
-1. Logga in på ditt arbets- eller skolkonto. 
+1. Logga in på ditt arbets- eller skolkonto.
 1. Godkänn användarvillkoren och ange innehållsinställningar för din Customer Insights-miljö.
 
-## <a name="create-your-own-environment"></a>Skapa din egen miljö
-
-När du har loggat in första gången visas en miljö med exempeldata. Med hjälp av den informationen kan du utforska funktionerna och bekanta dig med appen. Om du vill använda dina egna data måste du [skapa en miljö](create-environment.md).
+När du har loggat in första gången visas en miljö med exempeldata. Med hjälp av den datan kan du utforska funktionerna och bekanta dig med appen. Om du vill använda dina egna data måste du [skapa en miljö](create-environment.md).

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 5b39452d7a4612242739e8000e57217954c71289
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641538"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808589"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Registrerades begäran (DSR) under GDPR
 
@@ -41,7 +41,7 @@ En administratör för Customer Insights kan följa stegen nedan för att ta bor
 1. Logga in på Dynamics 365 Customer Insights.
 2. Gå till **Data** > **Datakällor**
 3. För respektive datakälla i listan som innehåller borttagna kunduppgifter:
-   1. Välj (…) och sedan **Uppdatera**.
+   1. Markera den stående ellipsen (&vellip;) och välj sedan **Uppdatera**.
    2. Kontrollera status för datakälla under **Status**. En bockmarkering betyder att uppdateringen har slutförts. En varningstriangel betyder att något har gått fel. Om en varningstriangel visas kontaktar du D365CI@microsoft.com.
 
 > [!div class="mx-imgBorder"]
@@ -52,7 +52,7 @@ En administratör för Customer Insights kan följa stegen nedan för att ta bor
 En Customer Insights-administratör kan följa stegen nedan för att ta bort Customer Insights-användardata:
 
 1. Logga in på Dynamics 365 Customer Insights.
-2. Gå till **Admin** > **Behörigheter**.
+2. Gå till **Administratör** > **Säkerhet** > **Behörigheter**.
 3. Markera kryssrutan för den användare du vill ta bort.
 4. Välj **Ta bort**.
 

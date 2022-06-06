@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 9a04276f7326533cd389cba6554f468123463bac
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755472"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808549"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbeta med API:er i Customer Insights
 
@@ -31,11 +31,11 @@ I den här artikeln beskrivs hur du öppnar Customer Insights API:er, skapar en 
 
 1. [Logga in](https://home.ci.ai.dynamics.com) på Customer Insights. Om du inte har någon prenumeration ännu [registrerar du dig för en utvärderingsversion av Customer Insights](https://aka.ms/tryci).
 
-1. Om du vill aktivera API:er på Customer Insights-miljön går du till **Admin** > **Behörigheter**. Du behöver administratörsbehörighet för att kunna göra det.
+1. Om du vill aktivera API:er i din Customer Insights-miljö går du till **Administratör** > **Säkerhet**. Du behöver administratörsbehörighet för att kunna göra det.
 
 1. Gå till fliken **API:er** och välj knappen **Aktivera**.    
  
-   Att aktivera API:erna skapar en primär och sekundär prenumerationsnyckel för din instans som används i API-begäranden. Du kan återskapa nycklarna genom att välja **Återskapa primär** eller **Återskapa sekundär** på **Admin** > **Behörigheter** > **API:er**.
+   Att aktivera API:erna skapar en primär och sekundär prenumerationsnyckel för din instans som används i API-begäranden. Du kan återskapa nycklarna genom att välja **Återskapa primär** eller **Återskapa sekundär** i **Administratör** > **Säkerhet** > **API:er**.
 
 <!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
@@ -62,14 +62,12 @@ Dessa steg hjälper dig att komma igång med API:er för Customer Insights i ett
 1. Till vänster väljer du **Appregistreringar**.
 
 1. Välj **Ny registrering**, tillhandahåll ett programnamn och välj kontotyp.
- 
+
    Lägg alternativt till en omdirigerings-URL. http://localhost är tillräcklig för att utveckla ett program på din lokala dator.
 
 1. På din nya App-registrering går du till **API-behörigheter**.
 
-<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
-
-1. Välj **Lägg till en behörighet** och välj **Customer Insights** i sidorutan.
+1. Välj **Lägg till en behörighet** och välj **Dynamics 365 AI för Customer Insights** i sidofönstret.
 
 1. För **Behörighetstyp** väljer du **Delegerad behörighet** och sedan behörigheten **användarpersonifiering**.
 
@@ -109,7 +107,7 @@ Avsnittet för [registrering av appar](#create-a-new-app-registration-in-the-azu
 
 1. Slutligen måste vi lägga till namnet på appregistreringen som användare i Customer Insights.  
    
-   Öppna Customer Insights, gå till **Admin** > **Behörigheter** och välj **Lägg till användare**.
+   Öppna Customer Insights, gå till **Admin** > **Security** och välj **Lägg till användare**.
 
 1. Sök efter namnet på din appregistrering, välj den bland sökresultaten och välj **Spara**.
 

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 9eb06a1190fe4e8012ecd3d6742b8b3f5f4d6349
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: d4f2d5ebc828053c40e22065f4915c4d0f84153f
+ms.sourcegitcommit: 6ec4626a185892dfb781d3c7af4384f9c13f3723
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653499"
+ms.lasthandoff: 05/17/2022
+ms.locfileid: "8763601"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Hämta ditt eget Azure Key Vault (förhandsgranskning)
 
@@ -89,9 +89,9 @@ Följande behörigheter beviljas Customer Insights om ett länkat nyckelvalv om 
 
 | Type        | Behörigheter          |
 | ----------- | -------------------- |
-| Tangent         | [Hämta nycklar](/rest/api/keyvault/get-keys), [Hämta nycklar](/rest/api/keyvault/get-key)                                 |
-| Hemlig      | [Hämta hemligheter](/rest/api/keyvault/get-secrets), [Hämta hemligheter](/rest/api/keyvault/get-secret)                     |
-| Certifikat | [Hämta certifikat](/rest/api/keyvault/get-certificates), [Hämta certifikat](/rest/api/keyvault/get-certificate) |
+| Tangent         | [Hämta nycklar](/rest/api/keyvault/keys/get-keys/get-keys), [Hämta nycklar](/rest/api/keyvault/keys/get-key/get-key)                                 |
+| Hemlig      | [Hämta hemligheter](/rest/api/keyvault/secrets/get-secrets/get-secrets), [Hämta hemligheter](/rest/api/keyvault/secrets/get-secret/get-secret)                     |
+| Certifikat | [Hämta certifikat](/rest/api/keyvault/certificates/get-certificates/get-certificates), [Hämta certifikat](/rest/api/keyvault/certificates/get-certificate/get-certificate) |
 
 De föregående värdena är minimivärdena som ska visas och läsas under körningen.
 

@@ -1,7 +1,7 @@
 ---
 title: Ansluta till ett Azure Data Lake Storage konto med hjälp av ett tjänstobjekt
 description: Använd en Azure-huvudkonto för tjänsten och anslut till din egen datasjö.
-ms.date: 04/26/2022
+ms.date: 05/31/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,22 +11,23 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 776eee79c25edbd40ed119510a314f5126933c3e
-ms.sourcegitcommit: a50c5e70d2baf4db41a349162fd1b1f84c3e03b6
+ms.openlocfilehash: b18d1f42b9510ebf23f0666322819865d132173b
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8739184"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833419"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Ansluta till ett Azure Data Lake Storage konto med hjälp av ett Azure-tjänstobjekt
 
-Denna artikel diskuterar hur du ansluter Dynamics 365 Customer Insights med ett Azure Data Lake Storage konto med ett Azure huvudkonto för tjänsten istället för lagringskontonycklar. 
+Denna artikel diskuterar hur du ansluter Dynamics 365 Customer Insights med ett Azure Data Lake Storage konto med ett Azure huvudkonto för tjänsten istället för lagringskontonycklar.
 
 Automatiserade verktyg som använder Azure-tjänster bör alltid ha begränsade behörigheter. I stället för att låta program logga in som en fullt privilegierad användare erbjuder Azure huvudkonton för tjänsten. Du kan använda tjänstens huvudkonto för att säkert [lägga till eller redigera en mapp för Common Data Model som datakälla](connect-common-data-model.md) eller [skapa eller uppdatera en miljö](create-environment.md).
 
 > [!IMPORTANT]
-> - Data Lake-lagringskontot som använder tjänstens huvudkonto måste vara Gen2 och ha [hierarkiskt namnområde aktiverat](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagringskonton stöds inte.
-> - Du behöver administratörsbehörighet för din Azure-prenumeration för att skapa ett huvudkonto för tjänsten.
+>
+> - Data Lake Storage-kontot som använder tjänstens huvudkonto måste vara Gen2 och ha [hierarkiskt namnområde aktiverat](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagringskonton stöds inte.
+> - Du behöver administratörsbehörighet för din Azure-klientorganisation för att skapa ett huvudkonto för tjänsten.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Skapa ett Azure-huvudkonto för tjänsten för Customer Insights
 
@@ -38,29 +39,15 @@ Innan du skapar ett nytt tjänstens huvudkonto för Customer Insights bör du ko
 
 2. Från **Azure-tjänster**, välj **Azure Active Directory**.
 
-3. Under **Hantera** väljer du **Företagsprogram**.
+3. Under **Hantera** väljer du **Microsoft-program**.
 
 4. Lägg till ett filter för **Program-ID som startar med**`0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` eller sök efter namnet `Dynamics 365 AI for Customer Insights`.
 
-5. Om du hittar en matchande post betyder det att huvudkonto för tjänsten redan finns. 
-   
+5. Om du hittar en matchande post betyder det att huvudkonto för tjänsten redan finns.
+
    :::image type="content" source="media/ADLS-SP-AlreadyProvisioned.png" alt-text="Skärmbild med ett befintligt huvudkonto för tjänsten.":::
-   
-6. Om inga resultat returneras skapar du ett nytt huvudkonto för tjänsten.
 
-### <a name="create-a-new-service-principal"></a>Skapa ett nytt huvudkonto för tjänsten
-
-1. Installera den senaste versionen av Azure Active Directory PowerShell for Graph. Mer information finns i [Installera Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
-
-   1. På datorn väljer du Windows-tangenten på tangentbordet och söker efter **Windows PowerShell** och väljer **Kör som administratör**.
-   
-   1. I PowerShell-fönstret som öppnas anger du `Install-Module AzureAD`.
-
-2. Skapa huvudkonto för tjänsten för Customer Insights med Azure AD PowerShell-modulen.
-
-   1. I PowerShell-fönstret anger du `Connect-AzureAD -TenantId "[your Directory ID]" -AzureEnvironmentName Azure`. Ersätt *[ditt katalog-ID]* med det faktiska Katalog-ID för din Azure-prenumeration där du vill skapa tjänstens huvudnamn. Parametern för miljönamn `AzureEnvironmentName` är valfri.
-  
-   1. Ange `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Det här kommandot skapar tjänsthuvudman för Customer Insights på den valda Azure-prenumerationen. 
+6. Om inga resultat returneras kan du [skapa ett nytt huvudnamn för tjänsten](#create-a-new-service-principal). I de flesta fall finns detta redan, och du behöver då bara ge tjänstehuvudkontot behörighet till lagringskontot.
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Bevilja behörighet till huvudkontot för tjänsten för åtkomst till lagringskontot
 
@@ -75,11 +62,11 @@ Gå till Azure-portalen och ge behörigheter till tjänstehuvudmannen för det l
    :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Skärmbild som visar Azure-portalen och lägger till en rolltilldelning.":::
 
 1. I fönstret **Lägg till rolltilldelning** ange följande egenskaper:
-   - Roll: **Storage Blob-datadeltagare**
+   - Roll: **Storage Blob Data-deltagare**
    - Tilldela åtkomst till: **användare, grupp eller huvudkonto för tjänsten**
-   - Välj medlemmar: **Dynamics 365 AI for Customer Insights** ([huvudkonto för tjänsten](#create-a-new-service-principal) du skapade tidigare i den här proceduren)
+   - Välj medlemmar: **Dynamics 365 AI for Customer Insights** ([huvudkontot för tjänsten](#create-a-new-service-principal) du sökte tidigare i den här proceduren)
 
-1.  Välj **Granska + tilldela**.
+1. Välj **Granska + tilldela**.
 
 Det kan ta upp till 15 minuter att distribuera ändringarna.
 
@@ -91,7 +78,7 @@ Du kan bifoga ett Data Lake Storage-konton i Customer Insights för att [lagra u
 
 1. Gå till [Azure admin-portalen](https://portal.azure.com), logga in till din prenumeration och öppna lagringskontot.
 
-1. I den vänstra rutan, gå till **Inställningar** > **Egenskaper**.
+1. I det vänstra fönstret går du till **Inställningar** > **Slutpunkter**.
 
 1. Kopiera resurs-ID för lagringskonto.
 
@@ -115,5 +102,18 @@ Du kan bifoga ett Data Lake Storage-konton i Customer Insights för att [lagra u
 
 1. Fortsätt med de återstående stegen i Customer Insights för att bifoga lagringskontot.
 
+### <a name="create-a-new-service-principal"></a>Skapa ett nytt huvudkonto för tjänsten
+
+1. Installera den senaste versionen av Azure Active Directory PowerShell for Graph. Mer information finns i [Installera Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
+
+   1. På datorn trycker du på Windows-tangenten på tangentbordet och söker efter **Windows PowerShell** och väljer **Kör som administratör**.
+
+   1. I PowerShell-fönstret som öppnas anger du `Install-Module AzureAD`.
+
+2. Skapa huvudkonto för tjänsten för Customer Insights med Azure AD PowerShell-modulen.
+
+   1. I PowerShell-fönstret anger du `Connect-AzureAD -TenantId "[your Directory ID]" -AzureEnvironmentName Azure`. Ersätt *[ditt katalog-ID]* med det faktiska Katalog-ID för din Azure-prenumeration där du vill skapa tjänstens huvudnamn. Parametern för miljönamn `AzureEnvironmentName` är valfri.
+  
+   1. Ange `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Det här kommandot skapar tjänsthuvudman för Customer Insights på den valda Azure-prenumerationen.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

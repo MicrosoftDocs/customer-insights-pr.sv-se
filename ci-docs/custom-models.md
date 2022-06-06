@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: f392c5cc5ac88a971565f0ccaf309ce89ce12660
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a44d1f2c00c90de3ed5a9425e3a197e109cb28e0
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647617"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800442"
 ---
 # <a name="custom-machine-learning-models"></a>Anpassade maskininlärningsmodeller
 
@@ -92,7 +92,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 
 ## <a name="edit-a-workflow"></a>Redigera arbetsflöde
 
-1. På sidan **anpassade modeller** markerar du den vertikala ellipsen i kolumnen **Åtgärder** bredvid ett arbetsflöde som du har skapat och väljer **Redigera**.
+1. På sidan **Anpassade modeller** markerar du den stående ellipsen (&vellip;) i kolumnen **Åtgärder** bredvid ett arbetsflöde som du tidigare skapat och väljer **Redigera**.
 
 1. Du kan uppdatera arbetsflödets igenkännbara namn i fältet **Visningsnamn**, men du kan inte ändra den konfigurerade webbtjänsten eller pipelinen. Välj **Nästa**.
 
@@ -108,7 +108,7 @@ Förutsägelser erbjuder funktioner för att skapa bättre kundupplevelser, för
 
 ## <a name="run-a-workflow"></a>Köra ett arbetsflöde
 
-1. På sidan **anpassade modeller** markerar du den vertikala ellipsen i kolumnen **Åtgärder** bredvid ett arbetsflöde som du har skapat.
+1. På sidan **Anpassade modeller** markerar du den stående ellipsen (&vellip;) i kolumnen **Åtgärder** bredvid ett arbetsflöde som du har skapat.
 
 1. Markera **Kör**.
 
@@ -116,7 +116,7 @@ Arbetsflödet körs också automatiskt tillsammans med alla schemalagda uppdater
 
 ## <a name="delete-a-workflow"></a>Ta bort arbetsflödet
 
-1. På sidan **anpassade modeller** markerar du den vertikala ellipsen i kolumnen **Åtgärder** bredvid ett arbetsflöde som du har skapat.
+1. På sidan **Anpassade modeller** markerar du den stående ellipsen (&vellip;) i kolumnen **Åtgärder** bredvid ett arbetsflöde som du har skapat.
 
 1. Välj **Ta bort** och bekräfta borttagningen.
 
