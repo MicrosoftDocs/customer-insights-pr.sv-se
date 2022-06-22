@@ -1,7 +1,7 @@
 ---
 title: Visa kundprofiler
 description: Få en kombinerad vy över dina enhetliga kunddata.
-ms.date: 05/13/2022
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 9bb7abc04afe38d73e1df9b252e1864fa6570d7e
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1e9e59d7ae6c16ed8b33f2ea482563c3520ab885
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755804"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947068"
 ---
 # <a name="customer-profiles"></a>Kundprofiler
 
@@ -55,9 +55,9 @@ Du kan filtrera kunder efter entitetsfälten *Kund*. Precis som du söker måste
 
 Välj någon av kundpanelerna för att öppna **kundinformationsfönstret**. Den här vyn innehåller enhetlig information för den valda kunden. Kundinformationen innehåller följande innehåll:
 
-**Panelen kundprofil**: Den här panelen visar de olika värdena från entiteten enhetlig *kund*. Om ett fält inte har något värde för den valda kundprofilen visas inte det. Panelen är strukturerad i avsnitt:
+**Panelen kundprofil**: Den här panelen visar de olika värdena från entiteten enhetlig *kund*. Om ett fält inte har något värde för den valda kundprofilen visas inte det förutom adressfältet. Panelen är strukturerad i avsnitt:
 
-- I det första avsnittet visas en fördefinierad uppsättning fält som följs av alla fält som ingår i sök- och filterindex. Alla adressrelaterade fält kombineras till en enskild rad om profilen innehåller sådana fält.
+- I det första avsnittet visas en fördefinierad uppsättning fält som följs av alla fält som ingår i sök- och filterindex. Alla adressrelaterade fält kombineras till en enda rad, som visar även om profilen inte innehåller någon adressinformation.
 - **Kontaktpersoner för den här kunden**: I miljöer för affärskonton ser du alla relaterade kontakter för den här kunden som det andra avsnittet. Varje kontakt visas med sina fält. Tomma fält är dolda.
 - **Ytterligare fält**: Visar återstående fält för den valda kunden, förutom ID.
 - **ID**: Anger alla ID under deras motsvarande entitetsnamn. Fält identifieras som ID med hjälp av deras semantik, som kategoriserar dem som sådana.

@@ -1,19 +1,19 @@
 ---
 title: Registrerades begäran (DSR) under GDPR | Microsoft Docs
 description: Besvara registrerades begäran för Dynamics 365 Customer Insights.
-ms.date: 08/11/2021
+ms.date: 05/23/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
-ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.openlocfilehash: c71305ab835b0f4f75adcce716e795959f898e47
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "8808589"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947390"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Registrerades begäran (DSR) under GDPR
 
@@ -77,11 +77,5 @@ Klientorganisationens administratör följer de här stegen för att exportera d
 1. Skicka ett e-postmeddelande till D365CI@microsoft.com för att ange användarens e-postadress i förfrågan. Customer Insights-teamet skickar ett e-postmeddelande till den registrerade administratörens e-postadress och ber om bekräftelse för att exportera data.
 2. Bekräfta bekräftelsen av att exportera data för den begärda användaren.
 3. Ta emot exporterade data via e-postadressen för innehavaradministration.
-
-## <a name="consent-management-preview"></a>Samtyckeshantering (förhandsversion)
-
-Med funktionen för samtyckeshantering samlas inte användardata in direkt. Den importerar och bearbetar endast samtyckesdata som tillhandahålls av användare i andra program.
-
-Ta bort samtyckesdata om specifika användare genom att ta bort dem i datakällorna som inte har funktioner för samtyckeshantering. När du har datakälla informationen tas även de bort i Samtyckescenter. Program som använder samtyckesentiteten tar även bort data som har tagits bort på källan efter en [uppdatering](system.md#refresh-processes). Vi rekommenderar att du uppdaterar datakällor snabbt när du har besvarat en förfrågan om dataämne för att ta bort användarens data från alla andra processer och program.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Uppdatera föreningsinställningarna
 description: Uppdatera dubblettregler, matchningsregler eller förenade fält i inställningarna för dubbletter.
-ms.date: 05/04/2022
+ms.date: 06/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: be399da9b98d8803d7d1a90f44a40e0d638a8d47
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 590a2996cf8b2b1c6def59b78583169ec1910b59
+ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755612"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8844062"
 ---
 # <a name="update-the-unification-settings"></a>Uppdatera föreningsinställningarna
 
@@ -43,8 +43,9 @@ Granska eller ändra eventuella inställningar när en förenad profil har skapa
 
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Skärmbild på sidan Data förena med alternativen för förena.":::
 
-   - Information om hur du uppdaterar Unified customer profile (med eller utan beroenden ) finns i [Köra uppdateringar av kundprofilen](#run-updates-to-the-unified-customer-profile).
-   - Information om hur du utvärderar kvaliteten på dina matchningsvillkor utan att uppdatera den förenade profilen finns i [Kör matchande villkor](#run-matching-conditions). Alternativet **Kör endast matchande villkor** visas inte för en entitet.
+   - [Kör matchande villkor](#run-matching-conditions) för att snabbt utvärdera kvaliteten på dina matchningsvillkor (deduplicering och matchningsregler) utan att uppdatera den enhetliga profilen. Alternativet **Kör endast matchande villkor** visas inte för en entitet.
+   - [Unified customer profile](#run-updates-to-the-unified-customer-profile) för att köra matchningsvillkor och uppdatera entiteten för Unified customer profile utan att påverka beroenden (till exempel utöka, segment eller mått). Beroende processer körs inte, men uppdateras enligt vad som [anges i uppdateringsschemat](system.md#schedule-tab).
+   - [Unified customer profile och beroenden](#run-updates-to-the-unified-customer-profile) för att köra matchningsvillkor och uppdatera entiteten för Unified customer profile och alla beroenden (till exempel utöka, segment eller mått). Alla processer körs automatiskt om.
 
 ## <a name="edit-source-fields"></a>Redigera källfält
 
@@ -135,11 +136,13 @@ Du kan konfigurera om och finjustera de flesta matchningsparametrarna. Du kan in
 
 ## <a name="run-matching-conditions"></a>Kör matchningsvillkor
 
+Kör matchningsvillkor kör endast deduplicering och matchningsregler och uppdaterar entiteterna *deduplicering_* och *ConflationMatchPair*.
+
 1. Från sidan **Data** > **Förena** välj **Kör endast matchningsvillkor**.
 
-   Panelerna **Dubblettposter** och **Matchande villkor** visar **Köad** eller **Uppdatering**.
+   Panelerna **Dubblettposter** och **Matchande villkor** visar status **Köad** eller **Uppdatering**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
 
 1. När matchningsprocessen är klar väljer du **Redigera** på panelen **Matchande villkor**.
 
@@ -153,10 +156,12 @@ Du kan konfigurera om och finjustera de flesta matchningsparametrarna. Du kan in
 
 1. Från sidan **Data** > **Förena**, välj:
 
-   - **Unified customer profile**: Uppdaterar entiteten för Unified customer profile utan att påverka beroenden (till exempel utöka, segment eller mått). Beroende processer körs inte, men uppdateras enligt vad som [anges i uppdateringsschemat](system.md#schedule-tab).
+   - **Unified customer profile**: kör matchningsvillkor och uppdatera entiteten för Unified customer profile utan att påverka beroenden (till exempel utöka, segment eller mått). Beroende processer körs inte, men uppdateras enligt vad som [anges i uppdateringsschemat](system.md#schedule-tab).
 
-   - **Unified customer profile och beroenden**: Uppdaterar den förenade profilen och alla beroenden. Alla processer körs automatiskt om. När alla processer nedströms har slutförts återspeglar kundprofilen uppdaterade data.
+   - **Unified customer profile och beroenden**: Kör matchande villkor och uppdaterar den enhetliga profilen och alla beroenden. Alla processer körs automatiskt om. När alla processer nedströms har slutförts återspeglar kundprofilen uppdaterade data.
 
-   Panelerna **Dubblettposter**, **Matchande villkor** och **Förenade kundfält** visar **Köad** eller **Uppdatering**.
+   Panelerna **Dubblettposter**, **Matchande villkor** och **Förenade kundfält** visar status **Köad** eller **Uppdatering**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
+
+Resultatet av en lyckad körning visas på sidan **Förena** med antalet Unified customer profile.

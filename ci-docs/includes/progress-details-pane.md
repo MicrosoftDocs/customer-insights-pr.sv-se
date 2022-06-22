@@ -1,10 +1,14 @@
 ---
-ms.openlocfilehash: ee56c4635e3de03a7962366bdfcb6dc1fe7326a7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3b474972e142359414edd8f7effb96597eea274c
+ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641584"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8844016"
 ---
 > [!TIP] 
-> Det finns [statusar](../system.md#status-definitions) för uppgifter och processer. De flesta processer är beroende av andra processförlopp, t.ex. datakällor och [uppdateringar](../system.md#refresh-processes) av dataprofiler. Välj status för att öppna rutan **Förloppsinformation** och se framstegen för uppgifter. Under varje uppgift kan du välja **Visa information** om du vill ha mer förloppsinformation, till exempel bearbetningstid, senaste bearbetningsdatum och eventuella tillämpliga fel och varningar för uppgiften eller processen. Du kan växla mellan **hela arbetsflödet** längst ned i panelen och se andra processer i systemet.
+> Det finns [statusar](../system.md#status-definitions) för uppgifter och processer. De flesta processer är beroende av andra processförlopp, t.ex. datakällor och [uppdateringar](../system.md#refresh-processes) av dataprofiler. 
+> 
+> Välj status för att öppna rutan **Förloppsinformation** och se framstegen för uppgifter. Om du vill avbryta jobbet väljer du **Avbryt jobbet** längst ned i fönstret. 
+> 
+> Under varje uppgift kan du välja **Visa information** om du vill ha mer förloppsinformation, till exempel bearbetningstid, senaste bearbetningsdatum och eventuella tillämpliga fel och varningar för uppgiften eller processen. Välj **Visa systemstatus** längst ned i panelen om du vill se andra processer i systemet.

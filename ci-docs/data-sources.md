@@ -1,88 +1,80 @@
 ---
 title: Använd datakällor för att mata in data
 description: Lär dig hur du importerar data från olika källor.
-ms.date: 03/18/2022
+ms.date: 05/31/2022
 ms.subservice: audience-insights
 ms.topic: overview
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+author: mukeshpo
+ms.author: mukeshpo
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 355d52eabde90e0764817cf479821264ebb2e5eb
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: e22977107565a0b28b74f41576a1c7ccc74f6dc1
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800488"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011771"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
+Dynamics 365 Customer Insights ger anslutningar för att hämta data från en mängd olika källor. Anslutning till en datakälla kallas ofta för *datainmatning*. När du har fört in data kan du [ena](data-unification.md), skapa insikter och aktivera data för att skapa anpassade erfarenheter.
 
+## <a name="add-data-sources"></a>Lägg till datakällor
 
-Dynamics 365 Customer Insights ansluter till data från en mängd olika källor. Anslutning till en datakälla kallas ofta för *datainmatning*. När du har inmatat dina data kan du [ena](data-unification.md) och vidta åtgärder.
+Du kan bifoga eller importera datakällor till Customer Insights. Länkarna nedan innehåller instruktioner om hur du lägger till datakällor.
 
-## <a name="add-a-data-source"></a>Lägg till en datakälla
+**Bifoga en datakälla**
 
-Detaljerade artiklar innehåller information om hur du lägger till datakälla, beroende på vilket alternativ du väljer.
+Om du har förberett data i en av Microsofts Azure-datatjänster kan Customer Insights enkelt ansluta till datakälla utan att behöva mata in data igen. Välj ett av följande alternativ:
+- [Azure Data Lake Storage (csv- eller parquet-filer i mappen Common Data Model)](connect-common-data-model.md)
+- [Azure Synapse Analytics (Lake databaser)](connect-synapse.md)
+- [Microsoft Dataverse Data Lake](connect-dataverse-managed-lake.md)
 
-Du kan lägga till följande datakällor:
+**Importera och omvandla**
 
-- [Genom dussintals Power Query-anslutningar](connect-power-query.md)
-- [Från en Common Data Model-mapp](connect-common-data-model.md)
-- [Från din egen Microsoft Dataverse sjö](connect-dataverse-managed-lake.md)
-- [Från en Azure Synapse Analytics-databas](connect-synapse.md)
+Om du använder lokala datakällor, Microsoft eller data från tredje part importerar du och omvandlar data med hjälp av Power Query anslutningar.
+- [Power Query-anslutningsprogram](connect-power-query.md)
 
-## <a name="add-data-from-on-premises-data-sources"></a>Lägga till data lokala datakällor
+## <a name="review-data-sources"></a>Granska datakällor
 
-Det finns stöd för lokal datakällor som bygger på Microsoft Power Platform dataflöden. Du kan aktivera dataflöden i Customer Insights genom att [ange Microsoft Dataverse miljö-URL](create-environment.md) när du ställer in miljön.
-
-Datakällor som skapas efter att en Dataverse miljö associerats med Customer Insights använder du [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflöden stöder lokal anslutning med datagateway. Du kan ta bort och återskapa datakällor som fanns innan en Dataverse miljö associerades med [använda lokala datagateway](/data-integration/gateway/service-gateway-app).
-
-Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att synas och du kan återanvända i Customer Insights. På sidan för datakällor visas länkar som går till den Microsoft Power Platform-miljö där du kan visa och konfigurera lokal data-gateways.
-
-> [!IMPORTANT]
-> Kontrollera att dina gateways är uppdaterade till den senaste versionen. Du kan installera en uppdatering och konfigurera om en gateway från en fråga som visas på skärmen gateway direkt, eller också [hämta den senaste versionen](https://powerapps.microsoft.com/downloads/). Om du inte använder den senaste gateway-versionen misslyckas uppdateringen av dataflödet med felmeddelanden som **Nyckelordet stödsinte: konfigurationsegenskaper. Parameternamn: nyckelord**.
-
-## <a name="review-ingested-data"></a>Granska inmatade data
-Om miljön innehåller Power Platform-dataflöden visas tre avsnitt på sidan **Datakällor**: 
-- **Delad**: Datakällor som kan hanteras av alla Customer Insights-administratörer. Power BI-dataflöden, ditt eget lagringskonto och bifogande till Dataverse-hanterad datakälla är exempel på delade datakällor.
+Om din miljö har konfigurerats att använda lagringsutrymmet för Customer Insights och du använder lokala datakällor använder du Power Platform dataflöden. Med Power Platform dataflöden kan du visa delade datakällor och datakällor som hanterats av andra. På sidan **Datakällor** visas datakällorna i tre avsnitt:
+- **Delad**: Datakällor som kan hanteras av alla Customer Insights-administratörer. Power Platform-dataflöden, ditt eget lagringskonto och bifogande till Dataverse-hanterad datakälla är exempel på delade datakällor.
 - **Hanteras av mig**: Power Platform-dataflöden som skapats och bara kan hanteras av dig. Andra Customer Insights-administratörer kan visa dessa dataflöden men inte redigera, uppdatera eller ta bort dem.
 - **Hanteras av andra**: Power Platform-dataflöden som skapats av andra administratörer. Du kan bara visa dem. Här finns en lista över ägarna av dataflödet som ska kontaktas för hjälp.
 > [!NOTE]
-> Alla entiteter kan visas och användas av andra användare. Användarens kontextualitet gäller endast datakällorna och inte entiteterna som är resultatet av dessa dataflöden.
+> Alla entiteter kan visas och användas av andra användare. Medan datakällor ägs av den användare som skapade dem kan alla användare av Customer Insights använda de entiteter som skapas utifrån informationen.
 
-Om inga Power Platform-dataflöden används, visas inga grupper eller avsnitt. Sidan **Datakällor** innehåller endast en lista över alla datakällor.
+Om dataflöden inte används i Power Platform miljön innehåller sidan **Datakällor** endast en lista över alla datakällor. Inga avsnitt visas.
 
-Du ser namnet på varje inmatad datakälla, dess status och sista gången data uppdaterades för källan. Du kan sortera listan över datakällor efter varje kolumn.
+Gå till **Data** > **Datakällor** för att visa namnet på varje inmatad datakälla, dess status och senaste gången data uppdaterades för den källan. Du kan sortera listan över datakällor efter varje kolumn.
 
-> [!div class="mx-imgBorder"]
-> ![Tillagd datakälla.](media/configure-data-datasource-added.png "Tillagd datakälla")
+:::image type="content" source="media/configure-data-datasource-added.png" alt-text="Tillagd datakälla.":::
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
 Det kan ta lång tid att läsa in data. Efter en lyckad uppdatering kan hämtade data granskas från sidan **entiteter**. Mer information finns i [Entiteter](entities.md).
 
-## <a name="refresh-a-data-source"></a>Uppdatera en datakälla
+## <a name="refresh-data-sources"></a>Uppdatera datakällor
 
-Datakällor kan uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran. 
+Datakällor kan uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran. [Lokala datakällor](connect-power-query.md#add-data-from-on-premises-data-sources) uppdateras enligt sina egna scheman som konfigureras vid datainmatning. För bifogade datakällor används senaste data från den aktuella datakälla.
 
-Gå till **Admin** > **System** > [**Schema**](system.md#schedule-tab) för att konfigurera schemalagda uppdateringar av alla dina inmatade datakällor.
+Gå till **Admin** > **System** > [**Schema**](system.md#schedule-tab) om du vill konfigurera system schemalagda uppdateringar för de inmatade datakällorna.
 
 Uppdatera en datakälla på begäran så här:
 
 1. Gå till **Data** > **Datakällor**.
 
-2. Välj den stående ellipsen (&vellip;) bredvid den datakälla du vill uppdatera och välj sedan **Uppdatera** i listrutan.
+1. Välj den stående ellipsen (&vellip;) bredvid den datakälla du vill uppdatera och välj sedan **Uppdatera** i listrutan. Datakällan aktiveras nu för en manuell uppdatering. Om du uppdaterar datakälla uppdateras både entitetsschemat och data för alla entiteter som anges i datakälla.
 
-3. Datakällan aktiveras nu för en manuell uppdatering. Om du uppdaterar datakälla uppdateras både entitetsschemat och data för alla entiteter som anges i datakälla.
-
-4. Välj **Avbryt uppdatering** om du vill avbryta en pågående uppdatering, så återgår datakällan till den senaste uppdateringsstatusen.
+1. Välj **Avbryt uppdatering** om du vill avbryta en pågående uppdatering, så återgår datakällan till den senaste uppdateringsstatusen.
 
 ## <a name="delete-a-data-source"></a>Ta bort datakällan
+
+En datakälla kan endast raderas om informationen inte används i någon bearbetning som förening, insikter, aktivering eller export.
 
 1. Gå till **Data** > **Datakällor**.
 

@@ -1,7 +1,7 @@
 ---
 title: Granska dataförening
 description: Granska datasynderna, skapa Unified customer profile och granska resultatet
-ms.date: 05/04/2022
+ms.date: 06/02/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4c709dfb55bf079dd2fe99e41adb4c77c2bece4b
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 0f7b2e9af65796c4d304dbd9893a21617e847620
+ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741714"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8844108"
 ---
 # <a name="review-data-unification"></a>Granska dataförening
 
@@ -32,11 +32,13 @@ Det sista steget i processen visar en sammanfattning av stegen i processen och g
 
 1. Välj **Redigera** för de data som ska granskas och göra ändringarna.
 
-1. Om du är nöjd med dina val väljer du **Skapa kundprofiler**. Sidan **Förena** visas medan Unified customer profile skapas. Algoritmen tar en stund att slutföra och du kan inte ändra konfigurationen förrän den är klar.
+1. Om du är nöjd med dina val väljer du **Skapa kundprofiler**. Sidan **Förena** visas medan Unified customer profile skapas. Alla paneler utom **källfält** visar **kö** eller **uppdatering** status.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   :::image type="content" source="media/m3_unify_refreshing.png" alt-text="Skärmbild på sidan förena med paneler som visar Köad eller Uppdatera.":::
 
-När processen är klar visas entiteten för entiteten Unified customer profile, kallad *kund* anges på sidan **Entiteter** i avsnittet **Profiler**. Vid den första lyckade körningen skapas enhetlig entitet *Kund*. Alla efterföljande körningar visar den entiteten.
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
+
+Algoritmen tar en stund att slutföra och du kan inte ändra konfigurationen förrän den är klar. När processen är klar visas entiteten för entiteten Unified customer profile, kallad *kund* anges på sidan **Entiteter** i avsnittet **Profiler**. Vid den första lyckade körningen skapas enhetlig entitet *Kund*. Alla efterföljande körningar visar den entiteten.
 
 ## <a name="review-the-results-of-data-unification"></a>Granska resultat för datasamordning
 

@@ -48,14 +48,14 @@
   items:
     - name: Översikt över datakällor
       href: data-sources.md
+    - name: Ansluta till data i Azure Data Lake Storage
+      href: connect-common-data-model.md
+    - name: Ansluta till Azure Synapse Analytics
+      href: connect-synapse.md
+    - name: Anslut till data i en Microsoft Dataverse hanterad data lake
+      href: connect-dataverse-managed-lake.md
     - name: Lägg till datakällor via Power Query-kopplingar
       href: connect-power-query.md
-    - name: Lägg till en Common Data Model-mapp som en datakälla
-      href: connect-common-data-model.md
-    - name: Lägg till Dataverse hanterad Data Lake
-      href: connect-dataverse-managed-lake.md
-    - name: Lägga till Azure Synapse Analytics
-      href: connect-synapse.md
     - name: Berika för datakällor
       href: data-sources-enrichment.md
     - name: Inkrementell uppdatering av datakällor
@@ -82,27 +82,27 @@
   items:
     - name: Utöka kundprofiler
       href: enrichment-hub.md
+    - name: Konton från Office 365 data
+      href: enrichment-office.md
     - name: Varumärken och intressen
       href: enrichment-microsoft.md
+    - name: Företagsdata från Dun & Bradstreet
+      href: enrichment-dnb.md
+    - name: Företagsdata från Leadspace
+      href: enrichment-leadspace.md
+    - name: Demografi med Experian
+      href: enrichment-experian.md
     - name: Utökade adresser
       href: enrichment-enhanced-addresses.md
     - name: Berikade företagsdata
       href: enrichment-enhanced-company-data.md
-    - name: Utöka med Azure Maps
-      href: enrichment-azure-maps.md
-    - name: Berika med Dun & Bradstreet
-      href: enrichment-dnb.md
-    - name: Utöka med HERE Technologies
-      href: enrichment-here.md
-    - name: Utöka med Leadspace
-      href: enrichment-leadspace.md
-    - name: Utöka med LiveRamp
+    - name: Identitet med LiveRamp
       href: enrichment-liveramp.md
-    - name: Utöka med Experian
-      href: enrichment-experian.md
-    - name: Berika med Office 365-data
-      href: enrichment-office.md
-    - name: Utöka med anpassad SFTP-import
+    - name: Plats från Azure Maps
+      href: enrichment-azure-maps.md
+    - name: Plats från HERE Technologies
+      href: enrichment-here.md
+    - name: SFTP anpassad import
       href: enrichment-SFTP-custom-import.md
 - name: Enhetliga profiler
   items:
@@ -112,6 +112,8 @@
       href: search-filter-index.md
     - name: Definiera kundaktiviteter
       href: activities.md
+    - name: Godkännandehantering för Customer Insights
+      href: consent-management.md
 - name: Segment
   items:
     - name: Segment – översikt
@@ -294,40 +296,6 @@
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
     - name: Exempelfrågor för OData
       href: odata-examples.md
-- name: Samtyckeshantering (förhandsversion)
-  items:
-    - name: Hjälphubb
-      href: consent-management/index.yml
-    - name: Kapacitetsöversikt
-      href: consent-management/overview.md
-    - name: Kom i gång
-      items:
-        - name: Kom i gång
-          href: consent-management/get-started.md
-        - name: Begrepp och terminologi
-          href: consent-management/glossary.md
-    - name: Importera samtyckesdata
-      items:
-        - name: Importera samtyckesdata
-          href: consent-management/import-consent-data.md
-        - name: Ange samtyckesdata och tillämpa samtyckesinställningar
-          href: consent-management/set-consent-rules.md
-    - name: Hantera samtyckesdata
-      items:
-        - name: Aktivera samtyckesregler i Customer Insights
-          href: activate-consent.md
-        - name: Hantera standardregler för samtycke med segment för Customer Insights
-          href: change-default-consent-rules.md
-    - name: Hantera inställningar och användare
-      items:
-        - name: Konfigurera systeminställningar
-          href: consent-management/system-settings.md
-        - name: Hantera användare och behörigheter
-          href: consent-management/manage-users.md
-    - name: Använd samtyckesdata
-      items:
-        - name: Skapa prediktioner med samtyckesdata
-          href: consent-management/predictions-consent-data.md
 - name: Tjänstbegränsningar
   href: service-limits.md
 - name: DSR-rättigheter och -förfrågningar

@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: 1225482c4bf432ed747537b2c9bec9ab0e692a51
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: b34b83d7a73dbdf21984f626174524188f0f1dc1
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800303"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011495"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Berika för datakällor (förhandsversion)
 
@@ -29,9 +29,11 @@ Du måste ha deltagar- eller administratörsbehörighet att skapa eller redigera
 
 1. Välj den vertikala ellipsen (&vellip;) bredvid datakälla du vill berika och markera **Berika**.
 
-   :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Sida för berikande av datakällor.":::
+   :::image type="content" source="media/data_sources_enrich.png" alt-text="Sidan Datakällor med berika markerad":::
 
    Fliken **Upptäck** visar [alternativ för berikning av datakälla som stöds](#supported-data-source-enrichments).
+
+   :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Sida för berikande av datakällor.":::
 
 1. Välj **Berika mina data** om du vill konfigurera berikande av datakällor. Namn på utdataentitet fylls i automatiskt.
 

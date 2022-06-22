@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 8b14992f8312d333d8a12501e8a28496c8434779
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 22eee11666752459a1750d728c4e254ab0c59e58
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647647"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947252"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Exportera segmentlista och andra data till Azure Data Lake Storage Gen2 (förhandsgranskning)
 
@@ -21,11 +21,9 @@ Lagra Customer Insights-data i Data Lake Storage Gen2-konto eller använd det f�
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-1. För Azure Data Lake Storage Gen2 kan du välja mellan [nivåerna Standard-prestanda och Premium-prestanda](/azure/storage/blobs/create-data-lake-storage-account) när du skapar ett lagringskonto för din datasjö. Om du väljer prestandanivån Premium väljer du premium blockblobb som kontotyp. 
+1. För Azure Data Lake Storage Gen2 kan du välja mellan [nivåerna Standard-prestanda och Premium-prestanda](/azure/storage/blobs/create-data-lake-storage-account) när du skapar ett lagringskonto för din datasjö. Om du väljer prestandanivån Premium väljer du premium blockblobb som kontotyp.
 
-
-## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Upprätta anslutningen till Azure Data Lake Storage Gen2 
-
+## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Upprätta anslutningen till Azure Data Lake Storage Gen2
 
 1. Gå till **Admin** > **Anslutningar**.
 
@@ -39,7 +37,7 @@ Lagra Customer Insights-data i Data Lake Storage Gen2-konto eller använd det f�
     - Mer information om hur du skapar ett lagringskonto att använda med Azure Data Lake Storage Gen2 finns i [Skapa lagringskonto](/azure/storage/blobs/create-data-lake-storage-account). 
     - Mer information om hur du hittar Azure Data Lake Gen 2-kontonamn och kontonyckel finns i [Hantera inställningar för lagringskonto på Azure-portalen](/azure/storage/common/storage-account-manage).
 
-1. Välj **Spara** för att slutföra anslutningen. 
+1. Välj **Spara** för att slutföra anslutningen.
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
@@ -57,8 +55,12 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 När du sparar en export körs inte exporten omedelbart.
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
+Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab).
+Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand).
 
-Exporterade data lagras i den Azure Data Lake Gen 2-behållare som du konfigurerade. 
+Exporterade data lagras i den Azure Data Lake Gen 2-behållare som du konfigurerade.
+
+> [!TIP]
+> Export av entiteter som innehåller en stor mängd data kan leda till flera CSV-filer i samma mapp för varje export. Att dela upp exporter sker av effektivitets skäl för att minimera den tid det tar för en export att slutföras.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

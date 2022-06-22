@@ -1,19 +1,19 @@
 ---
 title: Exportera Customer Insights-data till SFTP-värd (innehåller video)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till SFTP-plats.
-ms.date: 03/03/2021
+ms.date: 06/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5170ec4ca35ad2a94f02e9d696c44a32da888120
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b56d628c8286ba6697cccc9b002f609aa929951b
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647637"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947206"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Exportera segment och annan data till SFTP (förhandsversion)
 
@@ -28,8 +28,8 @@ Använd kunddata i program från tredje part genom att exportera dem till en SFT
 ## <a name="known-limitations"></a>Kända begränsningar
 
 - SFTP-destinationer bakom brandväggar stöds för närvarande inte. 
-- Hur länge en export körs beror på systemprestanda. Vi rekommenderar två processorkärnor och 1 Gb minne som minimal konfiguration av servern. 
-- Det kan ta 90 minuter att exportera entiteter med upp till 100 miljoner kundprofiler om du använder den rekommenderade minimikonfigurationen på två processorkärnor och 1 Gb minne. 
+- Hur länge en export körs beror på systemprestanda. Vi rekommenderar två processorkärnor och 1 Gb minne som minimal konfiguration av servern.
+- Det kan ta 90 minuter att exportera entiteter med upp till 100 miljoner kundprofiler om du använder den rekommenderade minimikonfigurationen på två processorkärnor och 1 Gb minne.
 
 ## <a name="set-up-connection-to-sftp"></a>Konfigurera anslutningar till SFTP
 
@@ -64,13 +64,17 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 1. Markera de entiteter, till exempel segment, som du vill exportera.
 
    > [!NOTE]
-   > Varje vald entitet delas upp i upp till fem utdatafiler när de exporteras. 
+   > Varje vald entitet delas upp i upp till fem utdatafiler när de exporteras.
 
 1. Välj **Spara**.
 
 När du sparar en export körs inte exporten omedelbart.
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
+Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab).
+Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand).
+
+> [!TIP]
+> Export av entiteter som innehåller en stor mängd data kan leda till flera CSV-filer i samma mapp för varje export. Att dela upp exporter sker av effektivitets skäl för att minimera den tid det tar för en export att slutföras.
 
 ## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b18d1f42b9510ebf23f0666322819865d132173b
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 36ad957f59b23df6ee83d9d90898ef03ddfd320a
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833419"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011863"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Ansluta till ett Azure Data Lake Storage konto med hjälp av ett Azure-tjänstobjekt
 
@@ -51,7 +51,13 @@ Innan du skapar ett nytt tjänstens huvudkonto för Customer Insights bör du ko
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Bevilja behörighet till huvudkontot för tjänsten för åtkomst till lagringskontot
 
-Gå till Azure-portalen och ge behörigheter till tjänstehuvudmannen för det lagringskonto du vill använda i Customer Insights.
+Gå till Azure-portalen och ge behörigheter till tjänstehuvudmannen för det lagringskonto du vill använda i Customer Insights. En av följande roller måste tilldelas till lagringskontot eller -behållare:
+
+|Autentiseringsuppgift|Krav|
+|----------|------------|
+|För närvarande inloggad användare|**Roll**: Storage Blob Data-läsare, Storage Blob-deltagare eller Storage Blob-ägare.<br>**Nivå**: Behörigheter kan ges för lagringskontot eller behållare.</br>|
+|Customer Insights huvudkonto -<br>Använda Azure Data Lake Storage som datakälla</br>|Alternativ 1<ul><li>**Roll**: Storage Blob Data-läsare, Storage Blob Data-deltagare eller Storage Blob Data-ägare.</li><li>**Nivå**: Behörigheter ska ges för lagringskontot.</li></ul>Alternativ 2 *(utan att dela tjänstobjekt åtkomst till lagringskontot)*<ul><li>**Roll 1**: Storage Blob Data-läsare, Storage Blob Data-deltagare eller Storage Blob Data-ägare.</li><li>**Nivå**: Behörigheter ska ges för behållare.</li><li>**Roll 2**: Storage Blob Data-delegerare.</li><li>**Nivå**: Behörigheter ska ges för lagringskontot.</li></ul>|
+|Customer Insights huvudkonto - <br>Använda Azure Data Lake Storage som utdata eller destination</br>|Alternativ 1<ul><li>**Roll**: Storage Blob Data-deltagare eller Storage Blob-ägare.</li><li>**Nivå**: Behörigheter ska ges för lagringskontot.</li></ul>Alternativ 2 *(utan att dela tjänstobjekt åtkomst till lagringskontot)*<ul><li>**Roll**: Storage Blob Data-deltagare eller Storage Blob-ägare.</li><li>**Nivå**: Behörigheter ska ges för behållare.</li><li>**Roll 2**: Storage Blob-delegerare.</li><li>**Nivå**: Behörigheter ska ges för lagringskontot.</li></ul>|
 
 1. Gå till [Azure admin-portalen](https://portal.azure.com) och logga in på din organisation.
 
@@ -62,7 +68,7 @@ Gå till Azure-portalen och ge behörigheter till tjänstehuvudmannen för det l
    :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Skärmbild som visar Azure-portalen och lägger till en rolltilldelning.":::
 
 1. I fönstret **Lägg till rolltilldelning** ange följande egenskaper:
-   - Roll: **Storage Blob Data-deltagare**
+   - Roll: Storage Blob Data-läsare, Storage Blob-deltagare eller Storage Blob Data-ägare baserad på de autentiseringsuppgifter ovan.
    - Tilldela åtkomst till: **användare, grupp eller huvudkonto för tjänsten**
    - Välj medlemmar: **Dynamics 365 AI for Customer Insights** ([huvudkontot för tjänsten](#create-a-new-service-principal) du sökte tidigare i den här proceduren)
 

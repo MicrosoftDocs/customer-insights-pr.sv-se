@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 68c26eb0ad0da787a9f594b4aebe679588b0d6bf
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 1c925110f40319df77940d1c32f24a99504d6ec6
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833597"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9012001"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights"></a>Komma igång med Dynamics 365 Customer Insights
 
@@ -39,7 +39,7 @@ Första gången du loggar in i Customer Insights kan du konfigurera inställning
 
 Enhetliga profiler är grunden till att få insikter och vidta åtgärder för dessa data. Hämta data från olika källor och kör processen för datasamordning för att kombinera enhetliga profiler. Ange relationer mellan införlivade entiteter och lägg till information i profilerna med hjälp av tilläggsfunktioner.
 
-1. Mata in data genom att skapa datakällor från flera alternativ. Välj mellan [Power Query-anslutningar](connect-power-query.md), en [Common Data Model-mapp](connect-common-data-model.md) eller [Microsoft Dataverse](connect-dataverse-managed-lake.md).
+1. Mata in data genom att skapa datakällor från flera alternativ. Välj mellan [Azure Data Lake Storage, inklusive Common Data Model](connect-common-data-model.md), [Azure Synapse Analytics](connect-synapse.md), [Microsoft Dataverse](connect-dataverse-managed-lake.md) eller [Power Query anslutningar](connect-power-query.md).
 
 1. Kör [föreningsprocessen för data](data-unification.md) genom att identifiera [källfälten](map-entities.md), ta bort [dubbletter](remove-duplicates.md), [matchningsvillkor](match-entities.md), och [förenande fält](merge-entities.md)
 

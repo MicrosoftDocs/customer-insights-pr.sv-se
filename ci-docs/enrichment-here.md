@@ -1,95 +1,85 @@
 ---
 title: Berikande med tredjepartsberikande HERE Technologies
 description: Allmän information om tredjepartsberikningen HERE Technologies.
-ms.date: 04/09/2021
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c131ffb230a62b76e123334ff3c6776c8f9aa06e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 171ead92427924083a13e2a3d52e7a7da417c801
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647670"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953695"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Berikning av kundprofiler med HERE Technologies (förhandsversion)
 
-HERE Technologies är ett plattformsföretag som tillhandahåller platsrelaterade data och tjänster. Med HERE Technologies databerikande tjänster kan du få en mer exakt förståelse för kundens plats, med adress, latitud och longitud och så vidare.
+HERE Technologies är ett plattformsföretag som tillhandahåller platsrelaterade data och tjänster. HERE Technologies tjänster för databerikande förbättrar precisionen för platsinformation om dina kunder. Den tillhandahåller adresser för normalisering, extraktion av longitud med mera.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-Följande förutsättningar måste uppfyllas för att du ska kunna konfigurera HERE Technologies-berikning:
+- En aktiv HERE Technologies-prenumeration. För att skaffa en prenumeration, [registrera dig](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakta HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkt. [Läs mer om HERE Technologies platsberikning.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Du har en aktiv HERE Technologies-prenumeration. Om du vill få en prenumeration kan du [registrera dig här](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakta HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkt. [Läs mer om HERE Technologies platsberikning.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
+- En HERE [anslutning](connections.md) är [konfigurerad](#configure-the-connection-for-here-technologies) av en administratör.
 
-- En HERE-[anslutning](connections.md) är tillgänglig *eller* också har du [administratörs](permissions.md#admin)behörigheter och API-nyckel för HERE Technologies.
+## <a name="configure-the-connection-for-here-technologies"></a>Konfigurera anslutningen för HERE Technologies
 
-## <a name="configure-the-enrichment"></a>Konfiguration av berikning
+Du måste vara en [Administratör](permissions.md#admin) i Customer Insights och ha en aktiv HERE Technologies API-nyckel.
 
-1. Gå till **Data** > **Berikning**. 
+1. Välj **Lägg till anslutning** när du konfigurerar ett tillägg eller gå till **Admin**  > **Anslutningar** och välj **Konfigurera** på HERE technologies.
 
-1. Välj **Utöka mina data** på panelen HERE Technologies och välj **Kom igång**.
+1. Ange ett namn för anslutningen och en giltig HERE Technologies API-nyckel.
 
-   > [!div class="mx-imgBorder"]
-   > ![HERE Technologies-panel.](media/HERE-tile.png "HERE Technologies-panel")
+1. Granska och ge ditt samtycke till [Data sekretess och efterlevnad](#data-privacy-and-compliance) genom att välja **Jag godkänner**.
 
-1. Välj en [anslutning](connections.md) i listrutan. Kontakta en administratör om det inte finns någon anslutning. Om du är administratör kan du skapa en anslutning genom att välja **Lägg till anslutning**. Välj **HERE Technologies** i listrutan. 
+1. Välj **Verifiera** om konfigurationen ska verifieras och välj sedan **Spara**.
 
-1. Välj **Anslut till HERE Technologies** för att bekräfta anslutningsvalet.
+   :::image type="content" source="media/enrichment-HERE-connection.png" alt-text="Konfigurationssida för HERE technologies-anslutning.":::
 
-1.  Välj **Nästa** och välj den **kunddatauppsättning** du vill utöka med platsdata från HERE Technologies. Du kan välja entiteten **Kund** för att berika alla dina kundprofiler eller välja en segmentsentitet för att endast berika kundprofiler i det segmentet.
-
-    :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Bild när du väljer kunddatauppsättningen.":::
-
-1. Välj om du vill mappa fält till den primära och/eller sekundära adressen. Du kan ange en fältmappning för både adresser och utöka profilerna för båda adresserna separat. Till exempel om det finns ett hem och en affärsadress. Välj **Nästa**.
-
-1. Definiera vilka fält från dina enhetliga profiler som ska användas för att söka efter matchande platsdata från HERE Technologies. Fälten **Gata 1** och **Postnummer** är obligatoriska för den valda primära och/eller sekundära adressen. För en högre matchningsnoggrannhet kan fler fält läggas till.
-
-   > [!div class="mx-imgBorder"]
-   > ![Sida för förbättringskonfiguration av HERE Technologies-](media/enrichment-HERE-configuration.png "Sida för konfiguration av HERE Technologies-berikning")
-
-1. Välj **Nästa** för att slutföra fältmappningen.
-
-1. Ange ett namn för anrikningen. 
-
-1. Välj **Spara berikning** när du har granskat dina val.
-
-## <a name="configure-the-connection-for-here-technologies"></a>Konfigurera anslutningen för HERE Technologies 
-
-Du måste vara en administratör för att konfigurera anslutningar. Välj **Lägg till anslutning** när du konfigurerar ett tillägg *eller* gå till **Admin** > **Anslutningar** och välj **Konfigurera** på HERE technologies.
-
-1. Ange ett namn för anslutningen i rutan **visningsnamn**.
-
-1. Ange en giltig API-nyckel för HERE Technologies.
-
-1. Granska och ge ditt samtycke till **Data sekretess och efterlevnad** genom att välja **Jag godkänner**.
-
-1. Välj **Verifiera** om konfigurationen ska verifieras.
-
-1. Välj **Spara** när verifieringen har slutförts.
-
-   > [!div class="mx-imgBorder"]
-   > ![Konfigurationssida för HERE technologies-anslutning.](media/enrichment-HERE-connection.png "Konfigurationssida för HERE technologies-anslutning")
-
-## <a name="enrichment-results"></a>Berikningsresultat
-
-Starta berikningsprocessen genom att välja **kör** från kommandofältet. Du kan också låta systemet köra anrikningen automatiskt som en del av en [schemalagd uppdatering](system.md#schedule-tab). Bearbetningstiden beror på storleken på kunddata och API-svarstiderna från HERE Technologies.
-
-När en berikningsprocessen har slutförts kan du granska de nyligen utsatta kundprofildata under **Mina berikningar**. Du hittar också tid för den senaste uppdateringen och antalet utökat profilnamn.
-
-Du kan få tillgång till en detaljerad vy över respektive utökad profil genom att markera **Visa utökade data**.
-
-## <a name="next-steps"></a>Nästa steg
-
-[!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
+### <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
 
 När du aktiverar Dynamics 365 Customer Insights för att överföra data till HERE Technologies tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data på din instruktion, men du ansvarar för att HERE Technologies uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort denna berikningen i syfte att avbryta användningen av den här funktionen.
 
+## <a name="configure-the-enrichment"></a>Konfiguration av berikning
+
+1. Gå till **Data** > **Berikning** och välj fliken **Upptäcka**.
+
+1. Välj **Utöka mina data** på panelen **Plats** från panelen HERE Technologies.
+
+   :::image type="content" source="media/HERE-tile.png" alt-text="HERE Technologies-panel.":::
+
+1. Gå igenom översikten och välj sedan **Nästa**.
+
+1. Välj anslutning. Kontakta en administratör om ingen är tillgänglig.
+
+1. Välj **Nästa**.
+
+1. Välj **Kunddatauppsättning** och välj profilen eller segmentet du vill berika med data från HERE Technologies. Entiteten *Kund* berikar alla dina kundprofiler medan ett segment endast berikar kundprofiler som finns i det segmentet.
+
+1. Ange vilken typ av fält från dina enhetliga profiler som ska användas för matchning: den primära och/eller sekundära adressen. Du kan ange en fältmappning för både adresser och utöka profilerna för båda adresserna separat. Till exempel för en hemadress och en affärsadress. Välj **Nästa**.
+
+1. Mappa fälten till information från HERE Technologies. Fälten **Gata 1** och **Postnummer** är obligatoriska för den valda primära och/eller sekundära adressen. Lägg till fler fält för bättre matchningsnoghet.
+
+1. Välj **Nästa** för att slutföra fältmappningen.
+
+1. Ange ett **Namn** för berikningen och **utgående enhetsnamn**.
+
+1. Välj **Spara berikning** när du har granskat dina val.
+
+1. Välj **Kör** om du vill starta anrichment-processen eller stäng för att återgå till sidan för **berikande**.
+
+## <a name="enrichment-results"></a>Berikningsresultat
+
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
+
+**Antal berikade kunder efter fält** ger detaljerad information om omfattningen för respektive berikat fält.
+
+## <a name="next-steps"></a>Nästa steg
+
+[!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

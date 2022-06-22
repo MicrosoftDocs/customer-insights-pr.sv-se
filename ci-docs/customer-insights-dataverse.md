@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 3848e143bc7cb2f345bc698a274b92148ef00669
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 252723b8c174cb1ec488388c26fd2a1d398e9002
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833698"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011576"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeta med Customer Insights-data i Microsoft Dataverse
 
 Med Customer Insights kan du göra utdataentiteter tillgängliga som [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro). Denna integration möjliggör enkel datadelning och anpassad utveckling genom en metod med lite kod/ingen kod. [Utdataentiteterna](#output-entities) är tillgängliga som tabeller i en Dataverse-miljö. Du kan använda data för val annat program baserat på Dataverse-tabeller. Dessa tabeller möjliggör scenarier som automatiserade arbetsflöden genom Power Automate eller att skapa appar med Power Apps.
 
-Om du ansluter till din Dataverse-miljö kan du [även hämta data från lokala datakällor med Power Platform-dataflöden och gateways](data-sources.md#add-data-from-on-premises-data-sources).
+Om du ansluter till din Dataverse-miljö kan du [även hämta data från lokala datakällor med Power Platform-dataflöden och gateways](connect-power-query.md#add-data-from-on-premises-data-sources).
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -57,7 +57,7 @@ Att aktivera datadelning med Microsoft Dataverse när din miljö [använder ditt
 Det finns två begränsningar för hur du använder Dataverse med ditt eget Azure Data Lake Storage-konto:
 
 - Det finns en till en-mappning mellan en Dataverse-organisation och ett Azure Data Lake Storage-konto. När en Dataverse-organisation väl är ansluten till ett lagringskonto går det inte att ansluta den till ett annat lagringskonto. Denns begränsning förhindrar att Dataverse fyller i flera olika lagringskonton.
-- Datadelning fungerar inte om en Azure Private Link krävs för att få åtkomst till ditt Azure Data Lake-lagringskonto eftersom detta finns bakom en brandvägg. Dataverse stöder för närvarande inte anslutningen till privata slutpunkter via Private Link.
+- Datadelning fungerar inte om en Azure Private Link krävs för att få åtkomst till ditt Azure Data Lake Storage-lagringskonto eftersom detta finns bakom en brandvägg. Dataverse stöder för närvarande inte anslutningen till privata slutpunkter via Private Link.
 
 ### <a name="set-up-powershell"></a>Konfigurera PowerShell
 

@@ -1,7 +1,7 @@
 ---
 title: Utöka enhetliga kundprofiler
 description: Använd kapaciteter för att utöka dina kunddata.
-ms.date: 03/29/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: abc1b6af80e8854ee3bc930453634ef67376c4af
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: 3bbe8b829a6698da55d84709dbab6c36aa76792a
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800627"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8954063"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Berikning för kundprofiler (förhandsversion)
 
@@ -35,29 +35,29 @@ På fliken **Upptäck** hittar du alla alternativ för berikning som stöds.
 
 # <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
 
+- [AbiliTec-identitet](enrichment-liveramp.md) från LiveRamp AbiliTec
 - [Varumärken](enrichment-microsoft.md) som tillhandahålls av Microsoft
-- [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft
-- [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft 
 - [Demografiska uppgifter](enrichment-experian.md) tillhandahålls av Experian
-- [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol) 
-- [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
-- [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies 
-- [Identitet](enrichment-liveramp.md) från LiveRamp AbiliTec
+- [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft
+- [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft
+- [Platsdata](enrichment-azure-maps.md) tillhandahålls av Microsoft Azure Maps
+- [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies
+- [SFTP anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol)
 
 # <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
-- [Företagsdata](enrichment-leadspace.md) tillhandahålls av Leadspace
-- [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft 
-- [Berikade företagsdata ](enrichment-enhanced-company-data.md) från Microsoft
-- [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies 
-- [Anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol) 
-- [Azure Maps](enrichment-azure-maps.md) som tillhandahålls av Microsoft
-- [Företagsdata](enrichment-dnb.md) som tillhandahålls från Dun & Bradstreet
 - [Data för kontoengagemang](enrichment-office.md) som tillhandahålls av Microsoft
+- [Företagsdata](enrichment-dnb.md) som tillhandahålls från Dun & Bradstreet
+- [Företagsdata](enrichment-leadspace.md) tillhandahålls av Leadspace
+- [Förbättrade adresser](enrichment-enhanced-addresses.md) från Microsoft
+- [Berikade företagsdata ](enrichment-enhanced-company-data.md) från Microsoft
+- [Platsdata](enrichment-azure-maps.md) tillhandahålls av Microsoft Azure Maps
+- [Platsdata](enrichment-here.md) tillhandahålls av HERE Technologies
+- [SFTP anpassade data](enrichment-SFTP-custom-import.md) genom SFTP (Secure File Transfer Protocol)
 
 ---
 
-På fliken **Mina berikningar** kan du se vilka berikningar du har konfigurerat och redigera deras egenskaper.
+På fliken **Mina berikningar** kan du se vilka berikningar du har konfigurerat och redigera deras egenskaper. Du kan också skapa [segment](segments.md) eller [mått](measures.md) utifrån berikande.
 
 ## <a name="manage-existing-enrichments"></a>Hantera befintliga berikningar
 
@@ -81,36 +81,45 @@ Tredjepartsutslag konfigureras med hjälp av [anslutningar](connections.md), som
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flera berikningar av samma typ
 
-Entiteten som ska utökas anges under konfiguration för berikning, vilket gör att du endast kan utöka en delmängd av dina profiler. Utöka till exempel endast data för ett visst segment. Du kan konfigurera flera anrop av samma typ och återanvända samma anslutning. För vissa berikningar begränsas antalet berikningar av samma typ som kan skapas. Begränsningarna och den aktuella användningen visas på sidan **Berikningar**.
+Entiteten som ska utökas anges under konfiguration för berikning, vilket gör att du endast kan utöka en delmängd av dina profiler. Utöka till exempel endast data för ett visst segment. Du kan konfigurera flera anrop av samma typ och återanvända samma anslutning. För vissa berikningar begränsas antalet berikningar av samma typ som kan skapas. Begränsningarna och den aktuella användningen visas på varje panel på fliken **Upptäck** på sidan **berikande**.
 
 ## <a name="enrich-data-sources-before-unification"></a>Utöka datakällor innan de används
 
 Du kan utöka kunddata innan data för att förbättra kvaliteten på en datamatchning. Mer information: [Berikande för datakällor](data-sources-enrichment.md).
 
-## <a name="see-the-progress-of-the-enrichment-process"></a>Se utökandeprocessens förlopp
+## <a name="run-or-refresh-enrichments"></a>Köra eller uppdatera berikande
+
+1. För att starta berikandeprocessen, välj **Kör**. Du kan också låta systemet köra anrikningen automatiskt som en del av en [schemalagd uppdatering](system.md#schedule-tab). Bearbetningstiden beror på storleken på dina kunddata.
+
+1. Alternativt kan du [se förloppet av berikandeprocessen](#see-the-progress-of-the-enrichment-process).
+
+1. När berikningsprocessen är klar, gå till **Min berikning** för att granska de nyligen berikade kundprofilernas data, tidpunkten för den senaste uppdateringen och antalet berikade profiler.
+
+1. Markera berikande om du vill visa [berikande-resultat](#enrichment-results).
+
+### <a name="see-the-progress-of-the-enrichment-process"></a>Se utökandeprocessens förlopp
 
 Du kan hitta information om bearbetningen av ett utökande, inklusive status och möjliga problem i samband med uppdatering eller efter det att en uppdatering har slutförts. Ta reda på vilka processer som är inblandade för att uppdatera ett utökande och hur lång tid det tog att köra processerna. Utökandestatusen stöds för Experian, Leadspace, HERE Technologies, SFTP-import och Azure Maps.
 
-Så här ser du statusen för ett utökande
-
-1. Gå till **Data** > **Berikning**. 
-1. På fliken **Mina utökanden** väljer du statusen för ett utökande om du vill öppna ett sidofönster. 
-1. I fönstret **Förloppsinformation** expanderar du avsnittet **Utökanden**. 
-1. Under det utökande du vill visa förloppet för väljer du **Visa information**. 
-1. I fönstret **Uppgiftsinformation** väljer du **Visa information** om du vill se vilka processer som är involverade i att uppdatera utökandet samt statusen för dessa. 
+1. Gå till **Data** > **Berikning**.
+1. På fliken **Mina berikanden**, välj status för berikande för att öppna en sidoruta.
+1. I fönstret **Förloppsinformation** expanderar du avsnittet **Utökanden**.
+1. Under det utökande du vill visa förloppet för väljer du **Visa information**.
+1. I fönstret **Uppgiftsinformation** väljer du **Visa information** om du vill se vilka processer som är involverade i att uppdatera utökandet samt statusen för dessa.
 
 ## <a name="enrichment-results"></a>Berikningsresultat
 
 När du har slutfört berikandekörningen kan du granska berikanderesultatet.
 
-1. Gå till **Data** > **Berikning**. 
-1. Välj det berikande som du vill ha information om.
+1. Gå till **Data** > **Berikning**.
+1. På fliken **Mina berikanden** markerar du det berikande som du vill ha information om.
 
-Alla berikanden anger grundläggande information, t.ex. antalet profiler, en förhandsgranskning av den genererade entiteten för berikande, samt antalet berikade profiler över tid. Om tillgängligt ger **Antal berikade kunder efter fält** detaljerad information om omfattningen för respektive berikat fält.
+Alla berikanden anger grundläggande information, t.ex. antalet profiler, samt antalet berikade profiler över tid. Panelen **Förhandsgranskning av berikade kunder** visar ett urval av den genererade berikande enheten. För att se en detaljerad vy, välj **Se mer** och välj **Data**.
 
 :::image type="content" source="media/enrichments-results.png" alt-text="Resultatsida för berikande.":::
 
-I vissa berikanden visas också information som är specifik för den typen av berikande. Mer information finns i dokumentationen för den relevanta informationen.
+Om tillgängligt ger **Antal berikade kunder efter fält** detaljerad information om omfattningen för respektive berikat fält.
 
+I vissa berikanden visas också information som är specifik för den typen av berikande. Mer information finns i relaterad dokumentationen.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
