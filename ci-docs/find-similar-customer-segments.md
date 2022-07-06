@@ -1,5 +1,5 @@
 ---
-title: Hitta liknande kunder med AI (innehåller video)
+title: Hitta liknande kunder med AI (förhandsversion) (innehåller video)
 description: Hitta liknande kundsegment med artificiell intelligens.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
@@ -12,14 +12,14 @@ searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 7877349817829f7486a63a1355a81361e1cb2c13
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d58b2e424fd81ad691db4b2576bdf5655038ed89
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647720"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054832"
 ---
-# <a name="similar-customers-preview"></a>Liknande kunder (förhandsversion)
+# <a name="find-similar-customers-with-ai-preview"></a>Hitta liknande kunder med AI (förhandsversion)
 
 Med den här funktionen kan du söka efter liknande kunder i kundbasen med hjälp av artificiell intelligens. Du måste ha minst ett segment skapat för att kunna använda den här funktionen. Om du utvidgar villkoren för ett befintligt segment kan du hitta kunder som liknar det segmentet.
 

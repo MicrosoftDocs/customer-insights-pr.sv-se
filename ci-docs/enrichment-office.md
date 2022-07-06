@@ -1,5 +1,5 @@
 ---
-title: Utöka kundprofiler med data från Microsoft Office 365
+title: Utöka kundprofiler med data från Microsoft Office 365 (förhandsversion)
 description: Använd tillverkarspecifika data från Microsoft Office för att utöka dina kundprofiler med kontaktdata.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 7192b7680e73a581dd603de174c57b20bec996dd
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 75762afb70814c8a81c1574ee7ea1553a2048737
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954155"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055696"
 ---
-# <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Utöka kundprofiler med data från kontaktdata (förhandsgranska)
+# <a name="enrich-customer-profiles-with-data-from-microsoft-office-365-preview"></a>Utöka kundprofiler med data från Microsoft Office 365 (förhandsversion)
 
 Använd data från Microsoft Office 365 för att utöka dina kundkontoprofiler med insikter om åtaganden via Office 365 appar. Kontaktdata består av e-post- och mötesaktiviteter som samlas in på kontonivån. Till exempel antalet e-postmeddelanden från ett affärskonto eller antalet möten med kontot. Inga data om enskilda användare görs tillgängliga.
 
@@ -75,7 +75,7 @@ Välj **Kör** för att starta berikandeprocessen.
 
 [!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)] Det här är entiteten *Kontor*. *Office_UserEntity* innehåller Active Directory-ID:erna för de e-postadresser som valdes vid konfiguration av berikande
 

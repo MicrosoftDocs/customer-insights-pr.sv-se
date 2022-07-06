@@ -1,5 +1,5 @@
 ---
-title: Segment som föreslås genom maskininlärning
+title: Föreslagna segment (förhandsversion)
 description: Låt maskininlärning hjälpa dig att hitta nya och intressant segment baserat på kundattribut.
 ms.date: 10/15/2021
 ms.reviewer: mhart
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: 5c7c6cc8231f758713b989bbe782aa03a4b78fa9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9229bef1c5df06de973aa671ca70c6c8462d51cf
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647787"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081896"
 ---
 # <a name="suggested-segments-preview"></a>Föreslagna segment (förhandsversion)
 

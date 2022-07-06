@@ -1,19 +1,19 @@
 ---
-title: Exportera Customer Insights-data till Azure Synapse Analytics
+title: Exportera till Azure Synapse Analytics (förhandsversion)
 description: Lär dig att konfigurera anslutningen till Azure Synapse Analytics.
-ms.date: 04/11/2022
+ms.date: 06/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 60bacb313e0426564310f3c1339bf3b732e17489
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741525"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081926"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Exportera till Azure Synapse Analytics (förhandsversion)
 
@@ -72,13 +72,13 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. I fältet **Anslutning för export** väljer du en anslutning från avsnittet **Azure Synapse Analytics**. Om avsnittets namn inte visas finns det inga tillgängliga [anslutningar](connections.md) av den här typen.
 
-1. Ange ett igenkännande **Visningsnamn** för exporten och ett **Databasnamn** .
+1. Ange ett igenkännande **Visningsnamn** för exporten och ett **Databasnamn** . Vid exporten skapas en ny [Azure Synapse lake databas](/azure/synapse-analytics/database-designer/concepts-lake-database) i arbetsytan som definieras i anslutningen.
 
 1. Välj vilka entiteter du vill exportera till Azure Synapse Analytics.
    > [!NOTE]
    > Datakällor som bygger på en [Common Data Model-mapp](connect-common-data-model.md) stöds inte.
 
-2. Välj **Spara**.
+1. Välj **Spara**.
 
 När du sparar en export körs inte exporten omedelbart.
 

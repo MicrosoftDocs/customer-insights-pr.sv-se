@@ -1,5 +1,5 @@
 ---
-title: Utöka företagsprofiler med Dun & Bradstreet
+title: Berika företagsprofiler med Dun & Bradstreet (förhandsversion)
 description: Allmän information om utökning från tredje part Dun & Bradstreet.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -9,14 +9,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b1038970b6aee3bbdd7f79cc457f79aaf1c38222
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953913"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081853"
 ---
-# <a name="enrichment-of-company-profiles-with-dun--bradstreet-preview"></a>Utöka företagsprofiler med Dun & Bradstreet (förhandsversion)
+# <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Berika företagsprofiler med Dun & Bradstreet (förhandsversion)
 
 Dun & Bradstreet tillhandahåller kommersiella data, analyser och insikter för företag. Det gör det möjligt för kunder med enhetliga kundprofiler för företag att berika sina data. Utöka inkluderar attribut, till exempel DUNS-nummer, företagsstorlek, plats, bransch med mera.
 
@@ -102,7 +102,7 @@ Vi stöder för närvarande följande landsalternativ: Kanada (engelska) eller U
 
 1. Välj **Kör** om du vill starta anrichment-processen eller stäng för att återgå till sidan för **berikande**.
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

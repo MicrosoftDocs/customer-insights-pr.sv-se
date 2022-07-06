@@ -1,5 +1,5 @@
 ---
-title: Robot for Microsoft Teams
+title: Teamrobot för Dynamics 365 Customer Insights (förhandsversion)
 description: Slå upp enhetliga kundprofiler i Microsoft Teams med hjälp av en robot.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 89a293d5b6f9f5452b2ccba495d2475002806019
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 62a0216de848b5a3a81fdd6ac078feb551fcfec6
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647987"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081863"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Teamrobot för Dynamics 365 Customer Insights (förhandsversion)
 

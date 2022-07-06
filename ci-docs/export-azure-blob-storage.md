@@ -1,5 +1,5 @@
 ---
-title: Exportera Customer Insights-data till Azure Blob Storage
+title: Exportera data till en Azure Blob Storage (förhandsgranskning)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Blob Storage.
 ms.date: 06/09/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 623926bf520b19ee4156b7a05e953241cd819e9e
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: 059c8364ca0f3740bc0e4ffeeeba94246c9e5696
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947160"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055512"
 ---
-# <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Exportera segmentlista och andra data till Azure Blob Storage (förhandsgranskning)
+# <a name="export-data-to-an-azure-blob-storage-preview"></a>Exportera data till en Azure Blob Storage (förhandsgranskning)
 
 Lagra Customer Insights-data i Blob Storage eller använd det för att överföra data till andra appar.
 

@@ -1,5 +1,5 @@
 ---
-title: Entitetsschema i Customer Insights i Common Data Model
+title: Entitetsscheman i Common Data Model
 description: Arbeta med entiteter i Common Data Model.
 ms.date: 08/13/2021
 ms.reviewer: mhart
@@ -8,16 +8,14 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 33a0562854e97b9ac5218e060f965996305627fd
-ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
+ms.openlocfilehash: 92d37fc0950fefcb5c2a5d26214a469d3693980d
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2022
-ms.locfileid: "8757454"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054776"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitetsscheman i Common Data Model
-
-
 
 [Common Data Model](/common-data-model/) är en deklarativ specifikation och en definition av standardenheter som representerar vanligt använda koncept och aktiviteter i olika affärs- och produktivitetsapplikationer. Denna modell utökas till att även omfatta observations- och analysuppgifter. Common Data Service tillhandahåller väldefinierade, modulära och utökningsbara affärsentiteter som Konto, Affärsenhet, Ärende, Kontakt, Lead, Affärsmöjlighet och Produkt, samt interaktioner mellan leverantörer, anställda och kunder (till exempel aktiviteter och serviceavtal). Alla kan bygga på och utöka Common Data Model-definitioner för att samla in fler affärsspecifika idéer.
 

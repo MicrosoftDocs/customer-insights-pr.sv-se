@@ -1,5 +1,5 @@
 ---
-title: Berikande med tredjepartsberikande Experian
+title: Berika kundprofiler med demografisk information från Experian (förhandsgranskning)
 description: Allmän information om tredjepartsberikande Experian.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 735da18e584b0d9db76b557f4d16dbdf1757f33c
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: a30e98b06ed07590ab95cae1d8db8023e49ff7f9
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954109"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9053043"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Berika kundprofiler med demografisk information från Experian (förhandsgranskning)
 
@@ -79,7 +79,7 @@ När du gör det möjligt för Dynamics 365 Customer Insights att överföra dat
 
 1. Välj **Kör** om du vill starta anrichment-processen eller stäng för att återgå till sidan för **berikande**.
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

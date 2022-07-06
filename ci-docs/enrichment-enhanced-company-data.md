@@ -1,5 +1,5 @@
 ---
-title: Berikning av företagsdata
+title: Berika företagsprofiler med berikade företagsdata
 description: Utöka och normalisera företagsdata med Microsoft-modeller.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4247d59806468907d93fc7848231ec5a2985580e
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 131ef3d1e123628779609ddec368cfef8f4d607e
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953971"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054270"
 ---
-# <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Berika företagsprofiler med berikade företagsdata
+# <a name="enrich-company-profiles-with-enhanced-company-data"></a>Berika företagsprofiler med berikade företagsdata
 
 Använd Microsoft-modeller och kompilerade företagsdata för att korrigera, komplettera och standardisera dina företagsprofiler. Vi använder [formatet Common Data Model](/common-data-model/schema/core/applicationcommon/account) för bättre precision och insikter.
 
@@ -84,7 +84,7 @@ Modellen kommer inte att:
 
 1. Välj **Kör** om du vill starta anrichment-processen eller stäng för att återgå till sidan för **berikande**.
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

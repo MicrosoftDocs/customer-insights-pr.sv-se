@@ -1,5 +1,5 @@
 ---
-title: Mata in data från Azure Synapse Analytics
+title: Anslut en Azure Synapse-datakälla (förhandsversion)
 description: Använda en databas i Azure Synapse som en datakälla i Dynamics 365 Customer Insights.
 ms.date: 03/25/2022
 ms.reviewer: v-wendysmith
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6f94cdbcc203fc4518544f7a945bd80e871b36c1
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: c4ae65613a02df38a30f907dae72d413bf1a702f
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011449"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052721"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Anslut en Azure Synapse Analytics-datakälla (förhandsversion)
 
@@ -59,7 +59,7 @@ Mer information finns i [Azure Synapse översikt](/azure/synapse-analytics/overv
 
 1. Välj en [tillgänglig anslutning](connections.md) till Azure Synapse Analytics eller skapa en ny.
 
-1. Välj en **databas** från arbetsytan som är ansluten till vald Azure Synapse Analytics-anslutning och välj **Nästa**.
+1. Välj en **databas** från arbetsytan som är ansluten till vald Azure Synapse Analytics-anslutning och välj **Nästa**. För tillfället har vi bara stöd för databastypen *lake databas*.
 
 1. Välj vilka entiteter som ska matas in från den anslutna databasen och välj **Nästa**.
 

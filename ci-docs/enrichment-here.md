@@ -1,5 +1,5 @@
 ---
-title: Berikande med tredjepartsberikande HERE Technologies
+title: Utöka kundprofiler med data från HERE Technologies (förhandsgranska)
 description: Allmän information om tredjepartsberikningen HERE Technologies.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 171ead92427924083a13e2a3d52e7a7da417c801
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: d88085b6be156dd1c895e9e5b38cc9d77acbdb95
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953695"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052073"
 ---
-# <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Berikning av kundprofiler med HERE Technologies (förhandsversion)
+# <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Utöka kundprofiler med data från HERE Technologies (förhandsgranska)
 
 HERE Technologies är ett plattformsföretag som tillhandahåller platsrelaterade data och tjänster. HERE Technologies tjänster för databerikande förbättrar precisionen för platsinformation om dina kunder. Den tillhandahåller adresser för normalisering, extraktion av longitud med mera.
 
@@ -72,7 +72,7 @@ Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den
 
 1. Välj **Kör** om du vill starta anrichment-processen eller stäng för att återgå till sidan för **berikande**.
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

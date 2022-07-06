@@ -1,5 +1,5 @@
 ---
-title: Exportera Customer Insights-data till AdRoll
+title: Exportera segment till AdRoll (förhandsgranskning)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till AdRoll.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ec7d2d4d137f2f0e3e1ff2ec0d09bff8ac4f28ea
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 13c7dd3b8556ad807fba6c537525b463480e860b
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647607"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081916"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Exportera segment till AdRoll (förhandsgranskning)
 
@@ -21,9 +21,9 @@ Exportera segment med enhetliga kundprofiler till AdRoll och använd dem för an
 
 ## <a name="prerequisites-for-a-connection"></a>Krav för anslutning
 
--   Du har ett [AdRoll-konto](https://www.adroll.com/) och motsvarande administratörsautentiseringsuppgifter.
--   Du har [konfigurerade segments](segments.md) i Customer Insights.
--   Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
+- Du har ett [AdRoll-konto](https://www.adroll.com/) och motsvarande administratörsautentiseringsuppgifter.
+- Du har [konfigurerade segments](segments.md) i Customer Insights.
+- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 

@@ -1,5 +1,5 @@
 ---
-title: Berikning med anpassad SFTP-import
+title: Utöka kundprofiler med data från SFTP anpassad import (förhandsgranska)
 description: Allmän information om berikning med anpassad SFTP-import.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 657afb6fcb68429680eb677734b4115e69769008
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 88fc366ab9478c3b67034af794e237ff4573da7c
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953741"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081796"
 ---
-# <a name="enrich-customer-profiles-with-custom-data-preview"></a>Berika kundprofiler med anpassade data (förhandsversion)
+# <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Utöka kundprofiler med data från SFTP anpassad import (förhandsgranska)
 
 Anpassad SFTP-import (Secure File Transfer Protocol) gör det möjligt att importera data som inte behöver gå igenom dataförening. Det är ett flexibelt, säkert och enkelt sätt att ta med dina data. Anpassad SFTP-import kan användas i kombination med [SFTP-export](export-sftp.md), som gör att du kan exportera de kundprofildata som behövs för berikning. Data kan sedan bearbetas och berikas, och SFTP-anpassad import kan användas för att föra tillbaka utökade data till Dynamics 365 Customer Insights.
 
@@ -120,7 +120,7 @@ Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den
 
 1. Välj **Kör** om du vill starta anrichment-processen eller stäng för att återgå till sidan för **berikande**.
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

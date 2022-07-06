@@ -6,14 +6,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 4cc3cbde97d0f9da198652e86c0843476393b646
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 99ec463299a24ea81cfe26bb785e36bdefdcd080
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833330"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054454"
 ---
-# <a name="work-with-unified-customer-profiles-in-dynamics-365-marketing"></a>Arbeta med enhetliga kundprofiler i Dynamics 365 Marketing
+# <a name="use-unified-customer-profiles-in-dynamics-365-marketing"></a>Använda enhetliga kundprofiler i Dynamics 365 Marketing
 
 [Dynamics 365 Marketing](/dynamics365/marketing/overview) förhöjer kundupplevelsen, så att du kan orkestrera personliga resor över alla beröringspunkter för att stärka relationer och tjäna lojalitet. Dynamics 365 Marketing-appen fungerar sömlöst med Dynamics 365 Sales, Dynamics 365 Customer Insights, Microsoft Teams och andra produkter, och låter dig fatta snabbare och bättre beslut med hjälp av kraften i data och AI.
 

@@ -80,7 +80,7 @@
       href: data-unification-update.md
 - name: Datautökande
   items:
-    - name: Utöka kundprofiler
+    - name: Översikt över databerikande
       href: enrichment-hub.md
     - name: Konton från Office 365 data
       href: enrichment-office.md
@@ -112,7 +112,7 @@
       href: search-filter-index.md
     - name: Definiera kundaktiviteter
       href: activities.md
-    - name: Godkännandehantering för Customer Insights
+    - name: Använda medgivandehantering
       href: consent-management.md
 - name: Segment
   items:
@@ -212,6 +212,8 @@
           href: export-facebook.md
         - name: Google Ads
           href: export-google-ads.md
+        - name: InMobi
+          href: export-inmobi.md
         - name: Iterable
           href: export-iterable.md
         - name: Klaviyo

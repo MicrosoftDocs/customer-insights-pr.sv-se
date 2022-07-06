@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: f3ec86806074a12c1107648303ed2d65e97ebc69
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800348"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081963"
 ---
-# <a name="use-measure-builder-to-create-measures-from-scratch"></a>Med måttverktyget kan du skapa mått från grunden
+# <a name="create-new-measures-with-the-measure-builder"></a>Skapa nya mått med måttverktyget
 
 I den här artikeln förklaras hur du skapar ett nytt [mått](measures.md) från grunden. Med måttverktyget kan du definiera beräkningar med hjälp av operatörer, sammansättningsfunktioner och filter. Du kan skapa ett mått med attribut från entiteter som är relaterade till den enhetliga *kund*-entiteten.
 

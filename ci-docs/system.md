@@ -1,5 +1,5 @@
 ---
-title: Systemkonfiguration av Customer Insights
+title: Systemkonfiguration
 description: Läs mer om systeminställningar i Dynamics 365 Customer Insights.
 ms.date: 04/21/2022
 ms.subservice: audience-insights
@@ -15,12 +15,12 @@ searchScope:
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 3aa4c6529d705698e612adad86587e3c3a4db35b
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 0ef84d8e286d8135eb8938e72f1319925e948bed
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653638"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9050693"
 ---
 # <a name="system-configuration"></a>Systemkonfiguration
 

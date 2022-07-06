@@ -1,5 +1,5 @@
 ---
-title: Utöka kundprofiler med platsdata från Azure Maps
+title: Utöka kundprofiler med platsdata från Azure Maps (förhandsversion)
 description: Allmän information om förstapartsberikande för Azure Maps.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: a806b2d0c791972c967c90694527608b4def9f3f
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: dfadc08f67beac3fded1a97e557ee9e1880664e0
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953650"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052629"
 ---
-# <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Utökande av kundprofiler med Azure Maps (förhandsversion)
+# <a name="enrich-customer-profiles-with-location-data-from-azure-maps-preview"></a>Utöka kundprofiler med platsdata från Azure Maps (förhandsversion)
 
 Azure Maps tillhandahåller platscentrerade data och tjänster för att leverera erfarenheter baserade på data med inbyggd platsintelligens. Datautökandetjänster för Azure Maps förbättrar precisionen för platsinformation om dina kunder. Detta inkluderar funktioner som exempelvis adressnormalisering samt latitud och longitudextraktion till Dynamics 365 Customer Insights.
 
@@ -82,7 +82,7 @@ Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den
 
 1. Välj **Kör** om du vill starta anrichment-processen eller stäng för att återgå till sidan för **berikande**.
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

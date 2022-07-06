@@ -1,5 +1,5 @@
 ---
-title: Exportera Customer Insights-data till SendGrid
+title: Exportera segment till SendGrid (förhandsgranskning)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till SendGrid.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 38dd782fdf06d5970e79e6deb6e8fc94252da585
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 669f0fb48b095f6a9faeebf257ee9df3d1c580c7
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647877"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081966"
 ---
 # <a name="export-segments-to-sendgrid-preview"></a>Exportera segment till SendGrid (förhandsgranskning)
 

@@ -13,16 +13,16 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: 3e1b1ce00eeda1cead9ba05beae65b6903d0b9cf
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647947"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055236"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Förutsägelse av kundens livstidsvärde
 
-Förutse potentiellt värde (intäkt) som enskilda aktiva kunder ger verksamheten under en angiven tidsperiod i framtiden. Med den här funktionen kan du uppnå olika mål: 
+Förutse potentiellt värde (intäkt) som enskilda aktiva kunder ger verksamheten under en angiven tidsperiod i framtiden. Med den här funktionen kan du uppnå olika mål:
 - Identifiera kunder med högt värde och bearbeta den här insikten
 - Skapa strategiska kundsegment utifrån deras potentiella värde för att köra anpassade kampanjer med riktad försäljning, marknadsföring och support
 - Vägleder produktutveckling genom att fokusera på funktioner som ökar kundvärdet

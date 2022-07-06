@@ -21,14 +21,14 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: a7b10d985d5cba64b25595a3d7c101d6cb5c62a5
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647937"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081856"
 ---
-# <a name="relationships-between-entities"></a>Relationer mellan entiteter
+# <a name="relationships-between-entities-and-entity-paths"></a>Relationer mellan entiteter och entiteters sökvägar
 
 Relationer ansluter entiteter och definierar ett diagram över dina data när entiteter delar en gemensam identifierare, en utländsk nyckel. Den här utländska nyckeln kan refereras från en entitet till en annan. Med anslutna entiteter kan du definiera segment och mått baserat på flera datakällor.
 

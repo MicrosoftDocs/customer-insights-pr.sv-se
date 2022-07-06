@@ -1,5 +1,5 @@
 ---
-title: Berikning av företagsprofiler med tredjepartsberikning från Leadspace
+title: Berika företagsprofiler med Leadspace (förhandsversion)
 description: Allmän information om tredjepartsberikningen Leadspace.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: ca53f15bd7c71b3b4acb396c4daf52d7c7aff9eb
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: b58532a541ee22a5e34d0af1a3334ccbd53627b2
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954201"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081806"
 ---
-# <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Berikning av företagsprofiler med Leadspace (förhandsversion)
+# <a name="enrich-company-profiles-with-leadspace-preview"></a>Berika företagsprofiler med Leadspace (förhandsversion)
 
 Leadspace är ett dataföretag som tillhandahåller en B2B-kunddataplattform. Det gör att miljöer med enhetliga kundprofiler baserade på konton kan utöka sina data. Utöka *kundprofiler* med attribut som företagsstorlek, plats eller bransch. Utöka *kontaktprofiler* med attribut som rubrik-, persona- eller e-postverifiering.
 
@@ -82,7 +82,7 @@ Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den
 
 1. Välj **Kör** om du vill starta anrichment-processen eller stäng för att återgå till sidan för **berikande**.
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

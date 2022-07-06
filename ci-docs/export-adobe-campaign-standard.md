@@ -1,5 +1,5 @@
 ---
-title: Exportera Customer Insights-data till Adobe Campaign Standard
+title: Exportera segmenten Customer Insights i Adobe Campaign Standard (förhandsversion)
 description: Lär dig hur du använder segmenten Customer Insights i Adobe Campaign Standard.
 ms.date: 03/29/2021
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 2a62d2f889f199222eeb8cc969fce62fa89fa6f0
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9915591cd969bf825f5d1669de43ed4f9953f898
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647757"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081803"
 ---
-# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Använda Customer Insights-segment i Adobe Campaign Standard (förhandsgranskning)
+# <a name="export-customer-insights-segments-to-adobe-campaign-standard-preview"></a>Exportera segmenten Customer Insights i Adobe Campaign Standard (förhandsversion)
 
 Som användare av Dynamics 365 Customer Insights kan du ha skapat segment för att göra dina marknadsföringskampanjer effektivare genom att rikta dig till relevanta målgrupper. Om du vill använda ett segment från Customer Insights i Adobe Experience Platform och program som Adobe Campaign Standard måste du följa några steg som beskrivs i den här artikeln.
 
@@ -23,9 +23,9 @@ Som användare av Dynamics 365 Customer Insights kan du ha skapat segment för a
 
 ## <a name="prerequisites"></a>Förutsättningar
 
--   Dynamics 365 Customer Insights-licens
--   Adobe Campaign Standard licens
--   Azure Blob Storage-konto
+- Dynamics 365 Customer Insights-licens
+- Adobe Campaign Standard licens
+- Azure Blob Storage-konto
 
 ## <a name="campaign-overview"></a>Kampanjöversikt
 

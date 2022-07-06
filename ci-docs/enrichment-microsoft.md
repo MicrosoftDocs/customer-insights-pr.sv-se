@@ -1,5 +1,5 @@
 ---
-title: Utöka kundprofiler med data om företagsintressen och intressen från Microsoft
+title: Utöka kundprofiler med data om företagsintressen och intressen från Microsoft (förhandsversion)
 description: Använd tillverkarspecifika data från Microsoft för att utöka dina kunddata med samhörigheter och Share of Voice.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,14 +12,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: e1827adca10a3b193c02a20c4abccacf73194a77
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953787"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081886"
 ---
-# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Utöka kundprofiler med samhörigheter och Share of Voice (förhandsversion)
+# <a name="enrich-customer-profiles-with-brands-and-interests-data-from-microsoft-preview"></a>Utöka kundprofiler med data om företagsintressen och intressen från Microsoft (förhandsversion)
 
 Använd tillverkarspecifika data från Microsoft för att utöka dina kunddata med varumärkesaffiniteter, intresseaffiniteter och Share of Voice (SoV). Dessa samhörigheter och SoV baseras på data från personer med demografi som liknar dina kunder. Denna information hjälper dig att bättre förstå och segmentera dina kunder baserat på deras affinitet eller SoV till specifika varumärken och intressen.
 
@@ -104,7 +104,7 @@ Vi stöder för närvarande följande alternativ för land: Australien, Kanada (
 
    När profiler utökas utökar vi alla kundprofiler för vilka vi får data för valda varumärken och intressen, inklusive profiler som inte finns i valt land eller vald region. Om du till exempel valde Tyskland utökar vi profiler i USA om det finns tillgängliga data för valda tillverkare och intressen i USA.
 
-## <a name="enrichment-results"></a>Berikningsresultat
+## <a name="view-enrichment-results"></a>Visa resultat för berikande
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
