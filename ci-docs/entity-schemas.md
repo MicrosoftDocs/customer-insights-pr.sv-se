@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 92d37fc0950fefcb5c2a5d26214a469d3693980d
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: cc65314f1b083694b60ac0a2625bea906be7272b
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054776"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183515"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitetsscheman i Common Data Model
 
@@ -39,9 +39,8 @@ Mer information finns i dokumentationen om [Entitetsscheman för Customer Insigh
 
 ## <a name="view-entities-using-the-common-data-model-entity-navigator"></a>Visa entiteter med hjälp av entitetsnavigering för Common Data Model
 
-Du kan visa entiteter i [Common Data Models entitetsnavigeringsverktyg](https://microsoft.github.io/CDM/). Välj en entitet i avsnittet Insights-programmet om du vill visa listan över entiteter för Customer Insights och deras definitioner.
-> [!div class="mx-imgBorder"]
-> ![Navigeringsverktyget för CDM-entitet som visar entiteten CustomerActivity.](media/CDM-entity-navigator.png "CDM entitetsnavigeringsverktyget visar entiteten CustomerActivity")
+Visa entiteter i [Common Data Models entitetsnavigeringsverktyg](https://microsoft.github.io/CDM/). Välj en entitet i avsnittet Insights-programmet om du vill visa listan över entiteter för Customer Insights och deras definitioner.
 
+:::image type="content" source="media/CDM-entity-navigator.png" alt-text="Navigeringsverktyget för CDM-entitet som visar entiteten CustomerActivity.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

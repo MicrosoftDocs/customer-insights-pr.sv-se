@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 88fc366ab9478c3b67034af794e237ff4573da7c
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 81ef6c62240e26cb5c9475e6306e08edc7e5eb31
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081796"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195818"
 ---
 # <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Utöka kundprofiler med data från SFTP anpassad import (förhandsgranska)
 
@@ -104,7 +104,7 @@ Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den
 
 1. Gå igenom översikten och välj sedan **Nästa**.
 
-1. Välj anslutning. Kontakta en administratör om ingen är tillgänglig.
+1. Välj anslutning. Kontakta en administratör om det inte finns någon anslutning.
 
 1. Välj **Kunddatauppsättning** och välj den profil eller det segment du vill berika. Entiteten *Kund* berikar alla dina kundprofiler medan ett segment endast berikar kundprofiler som finns i det segmentet.
 

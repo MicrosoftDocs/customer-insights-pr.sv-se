@@ -11,25 +11,24 @@ manager: shellyha
 searchScope:
 - ci-measure-template
 - customerInsights
-ms.openlocfilehash: f6bcdfc45a49c36f22d6ebc6e919f43b27f899d8
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6dc7fce78d10ba91de4b2abf54c6c6ab1c919d3a
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051706"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170795"
 ---
 # <a name="create-measures-from-templates"></a>Skapa mått från mallar
 
-Du kan använda fördefinierade mallar med vanliga [åtgärder](measures.md) för att skapa dem. Detaljerade beskrivningar av mallarna och en guidad upplevelse hjälper dig att skapa effektiva mått. Mallar bygger på mappade data från entiteten *Enhetlig aktivitet*. Kontrollera därför att du har konfigurerat [kundaktiviteter](activities.md) innan du skapar ett mått från en mall.
+Du kan använda fördefinierade mallar med vanliga [åtgärder](measures.md) för att skapa dem. Mallar bygger på mappade data från entiteten *Enhetlig aktivitet*. Kontrollera därför att du har konfigurerat [kundaktiviteter](activities.md) innan du skapar ett mått från en mall.
 
-Mer information om hur du skapar anpassade mått finns i [Använda måttverktyget för att skapa mått från grunden](measure-builder.md).
+Måttmalla stöds endast i miljöer för **enskilda kunder**. Mer information om hur du skapar B2B finns i [Använda måttverktyget för att skapa mått från grunden](measure-builder.md).
 
-# <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
-
-Tillgängliga mätmallar: 
+Tillgängliga mätmallar:
 - Genomsnittligt transaktionsvärde
 - Totalt transaktionsvärde
 - Genomsnittlig daglig intäkt
+- Genomsnittlig månadsintäkt
 - Genomsnittlig årlig intäkt
 - Transaktionsantal
 - Intjänade lojalitetspoäng
@@ -57,21 +56,22 @@ Tillgängliga mätmallar:
 
 1. Välj **Utfört**.
 
-1. I avsnittet **Ange tidsperiod** definierar du tidsram för de data som ska användas. Välj om du vill att det nya måttet ska täcka hela datauppsättningen genom att välja **Hela tiden** eller att måttet ska fokusera på en **Speficik tidsperiod**.
+1. I avsnittet **Ange tidsperiod** definierar du tidsram för de data. Välj om du vill att det nya måttet ska täcka hela datauppsättningen genom att välja **Hela tiden** eller att måttet ska fokusera på en **Speficik tidsperiod**.
 
    :::image type="content" source="media/measure-set-time-period.png" alt-text="Skärmbild som visar avsnittet tidsperiod när du konfigurerar ett mått från en mall.":::
 
 1. Välj **Lägg till data** i nästa avsnitt om du vill välja aktiviteter och mappa motsvarande data från entiteten *Enhetlig aktivitet*.
 
-    1. Steg 1 av 2: Under **Aktivitetstyp** väljer du vilken typ av entitet du vill använda. Välj de **Aktiviteter** väljer du de entiteter du vill mappa.
-    1. Steg 2 av 2: Välj attributet från entiteten *Enhetlig aktivitet* för den komponent som krävs av formeln. För genomsnittstransaktionsvärdet är det till exempel attributet som representerar transaktionsvärdet. För **tidsstämpeln för aktivitet** väljer du attributet från entiteten Enhetlig aktivitet som representerar datum och tid för aktiviteten.
-   
-1. När datamappningen är klar kan du se statusen **Slutförd** och namnet på de mappade aktiviteterna och attributen.
+    1. Steg 1 av 2: Under **Aktivitetstyp** väljer du vilken typ av entitet du vill använda. För **Aktiviteter**, välj de enheter du vill mappa och välj sedan **Näst**.
+    1. Steg 2 av 2: Välj attributet från entiteten *Enhetlig aktivitet* för den komponent som krävs av formeln. För genomsnittstransaktionsvärdet är det till exempel attributet som representerar transaktionsvärdet. För **tidsstämpeln för aktivitet** väljer du attributet från entiteten *Enhetlig aktivitet* som representerar datum och tid för aktiviteten.
+    1. Välj **Spara**.
 
-1. Nu kan du välja **Kör** för att beräkna resultatet av åtgärden. Om du vill förfina den senare markerar du **Spara utkast**.
+    När datamappningen är klar kan du se statusen **Slutförd** och namnet på de mappade aktiviteterna och attributen.
 
-# <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
+1. Nu kan du välja **Kör** för att beräkna resultatet av åtgärden. Välj **Spara utkast** om du vill behålla den aktuella konfigurationen och köra måttet senare. Sidan **Mått** visas.
 
-Den här funktionen är endast tillgänglig för åtgärder som har skapats i miljöer med enskilda kunder som primär målgrupp.
+## <a name="next-step"></a>Gå vidare
 
----
+Du kan använda befintliga åtgärder för att skapa [ett kundsegment](segments.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

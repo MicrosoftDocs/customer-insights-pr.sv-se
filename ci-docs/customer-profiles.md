@@ -1,5 +1,5 @@
 ---
-title: Kundprofiler
+title: Visa kundprofiler
 description: Visa enhetliga kunddata, bland annat söka och filtrera
 ms.date: 06/08/2022
 ms.reviewer: mhart
@@ -14,63 +14,83 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 279c8e1291c6449005d593244f1979e871610a77
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6cdf47e6997f230811dcb0f2cf5542f3a6db2367
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052211"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9188115"
 ---
-# <a name="customer-profiles"></a>Kundprofiler
+# <a name="view-customer-profiles"></a>Visa kundprofiler
 
-Sidan **Kunder** visar en kombinationsvy över dina enhetliga kundprofiler. Kundprofilerna är tillgängliga när du har skapat [entiteten enhetlig kund](data-unification.md). På sidan kan du söka efter kunder och definiera index för den sökningen.
+Kundprofiler är tillgängliga när du har [skapat en enhetlig entitet *kund*](data-unification.md). Den kombinerade vyn av dina enhetliga kundprofiler visas på sidan **Kunder**. Kunderna kan vara enskilda personer eller organisationer.
 
-Kunderna kan vara enskilda personer eller organisationer. Varje kundprofil representeras av en panel. Hämta fler poster med sidnumreringskontrollerna. Kortet visar fält från entiteten *Kund* enligt definitionen i **Sök- och filterindex**. Ordningen på fälten inom varje kort väljs av systemet.
-
-Välj en panel om du vill visa data för den valda kunden på en dedicerad sida med namnet [Kundinformationssida](customer-profiles.md#customer-details-page).
-
-> [!div class="mx-imgBorder"]
-> ![Sidan Kunder som visar resultatpaneler](media/customers-page-result-tiles-B2C.png "Sidan Kunder som visar resultatpaneler")
+Gå till sidan **Kunder** om du vill visa dina kunder och deras profiler. Varje kundprofil representeras av en panel. Hämta fler poster med sidnumreringskontrollerna. Kortet visar fält från entiteten *Kund* enligt definitionen i **Sök- och filterindex**. Ordningen på fälten inom varje kort väljs av systemet.
 
 > [!NOTE]
-> Om du inte kan se panelerna när du väljer **Kunder** i navigeringen måste administratörer [definiera minst ett sökbart attribut](search-filter-index.md) i **Sök och filtrera index**.
+> Om du inte kan se panelerna när du väljer **Kunder** måste administratörer [definiera minst ett sökbart attribut](search-filter-index.md) i **Sök och filtrera index**.
+
+:::image type="content" source="media/customers-page-result-tiles-B2C.png" alt-text="Sidan Kunder som visar resultatpaneler.":::
+
+Välj en av följande åtgärder:
+- [Visa kundinformation](#view-customer-details)
+- [Hantera sök- och filterindex](search-filter-index.md) (endast administratörer)
+- [Filtrera kunder](#filter-customers)
+- **Visa kort** eller **dölj kort** för att visa eller dölja den information som visas på kundpanelen
+- **Sortera efter** ett visst attribut
+- [Sök efter kunder](#search-for-customers)
+
+  > [!NOTE]
+  > För att kunna använda sökning och filter måste administratören konfigurera de sökbara attributen och definiera de filterbara fälten med hjälp av sök- och filterindex.
 
 ## <a name="search-for-customers"></a>Sök efter kunder
 
-Sök efter kunder genom att ange ett namn eller ett annat attribut i sökrutan. Sökningen fungerar bara inom entiteten *Kund* som skapas under föreningsprocessen för data.
+Sök efter kunder genom att ange ett namn eller ett annat attribut i **Sök kunder**. De sökbara attributen definieras av administratören och kommer från entiteten enhetlig *kund*.
 
-Som administratör kan du konfigurera de sökbara attributen med hjälp av sidan **Sök- och filterindex**. Mer information finns i [Hantera sökning och filtrera index](search-filter-index.md).
+> [!NOTE]
+> **Sträng** är den enda datatyp som ingår i sökningen. Använd den i fältet **Sök efter kunder** på sidan Kunder om du vill söka efter kunder.
 
 ## <a name="filter-customers"></a>Filtrera kunder
 
-Du kan filtrera kunder efter entitetsfälten *Kund*. Precis som du söker måste din administratör först definiera fälten som filtrerbar med hjälp av sida **Sök- och filtrera index**.
+Filtrera kunder efter entitetsfälten *Kund*. Filterbara fält definieras av administratören.
 
-1. Välj **Visa filter** på sidan **Kunder**.
+1. På sidan **Kunder**, välj **Visa filter**. Filterrutan visas.
 
 1. Markera rutorna bredvid attribut som du vill filtrera kunder efter.
 
-1. Ta bort dina filter genom att välja **Rensa filter** på sidan **Kunder**.
+1. Ta bort alla filter genom att markera **Avmarkera filter** eller avmarkera en kryssruta bredvid ett markerat attribut.
 
-## <a name="customer-details-page"></a>Kundinformationsfönstret
+1. Välj **Dölj filter** för att stänga filterfönstret.
 
-Välj någon av kundpanelerna för att öppna **kundinformationsfönstret**. Den här vyn innehåller enhetlig information för den valda kunden. Kundinformationen innehåller följande innehåll:
+1. Om du vill spara filterresultatet som ett [segment](segments.md) väljer du **Spara filter som segment**.
+   1. Ange ett namn för segment.
+   1. Välj **Spara** för att spara segment.
+   1. Välj om du vill köra segmentet nu genom att välja **Aktivera** eller köra det **senare**.
 
-**Panelen kundprofil**: Den här panelen visar de olika värdena från entiteten enhetlig *kund*. Om ett fält inte har något värde för den valda kundprofilen visas inte det förutom adressfältet. Panelen är strukturerad i avsnitt:
+## <a name="view-customer-details"></a>Visa kundinformation
+
+På sidan **Kunder** väljer du en kundpanel om du vill visa information för den valda kunden.
+
+:::image type="content" source="media/customers-details-B2C.png" alt-text="Kundinformationsfönstret.":::
+
+Kundinformation innefattar:
+
+**Panelen kundprofil**: visar de olika värdena från entiteten enhetlig *kund*. Om ett fält inte har något värde för den valda kundprofilen visas inte det förutom adressfältet. Panelen är strukturerad i avsnitt:
 
 - I det första avsnittet visas en fördefinierad uppsättning fält som följs av alla fält som ingår i sök- och filterindex. Alla adressrelaterade fält kombineras till en enda rad, som visar även om profilen inte innehåller någon adressinformation.
-- **Kontaktpersoner för den här kunden**: I miljöer för affärskonton ser du alla relaterade kontakter för den här kunden som det andra avsnittet. Varje kontakt visas med sina fält. Tomma fält är dolda.
-- **Ytterligare fält**: Visar återstående fält för den valda kunden, förutom ID.
-- **ID**: Anger alla ID under deras motsvarande entitetsnamn. Fält identifieras som ID med hjälp av deras semantik, som kategoriserar dem som sådana.
+- **Kontaktpersoner för den här kunden** visas i miljöer för affärskonton. Varje kontakt visas med sina fält. Tomma fält är dolda.
+- **Ytterligare fält** visar återstående fält för den valda kunden, förutom ID.
+- **ID** anger alla ID under deras motsvarande entitetsnamn. Fält identifieras som ID med hjälp av sina uppsättningar med fält.
 
-**Aktivitetstidslinje**: Visar data om du har konfigurerat aktiviteter. Tidslinjevyn innehåller kronologiskt sorterade aktiviteter för den valda kunden, med den senaste aktiviteten som utgångspunkt. Mer information finns i [Kundaktiviteter](activities.md).
+**Aktivitetstidslinje** visar data om du har konfigurerat [aktiviteter](activities.md). Tidslinjevyn innehåller kronologiskt sorterade aktiviteter för den valda kunden, med den senaste aktiviteten som utgångspunkt.
 
 **Insikter**:
 
-- **Mått**: Visar om du konfigurerat en eller flera mått på kundattribut. De inkluderar beräknade KPI:er runt dina kunder på den enskilda kundnivån. Mer information finns i [Definiera och hantera åtgärder](measures.md).
+- **Mått** visar om du har konfigurerat [mått på kundattribut](measures.md). De inkluderar beräknade KPI:er runt dina kunder på den enskilda kundnivån.
 
-- **Potentiella intressen, potentiella varumärken**: Visar om du har konfigurerat ett varumärke eller en intressetilldelning. Den representerar potentiella intressen och samhörigheter med varumärken baserade på andra kunder vars profil liknar den valda kundprofilen. Mer information finns i [Utöka kundprofiler med samhörigheter med varumärken och intressen](enrichment-microsoft.md).
+- **Potentiella intressen, potentiella varumärken** visar om du har konfigurerat ett [varumärke eller en intressetilldelning](enrichment-microsoft.md). Den representerar potentiella intressen och samhörigheter med varumärken baserade på andra kunder vars profil liknar den valda kundprofilen.
 
-Gå tillbaka till kundsöksidan genom att välja **Tillbaka till kunder**.
+För att gå tillbaka **Kunder** välj **Tillbaka till kunder**.
 
 ## <a name="next-steps"></a>Nästa steg
 

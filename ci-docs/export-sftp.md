@@ -1,65 +1,78 @@
 ---
 title: Exportera SFTP-värd (förhandsversion) (innehåller video)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till SFTP-plats.
-ms.date: 06/09/2022
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 67789a87cf0ff1b0d9933f2c0adde37762c83476
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: b12d25ecbd2e5fb31d7d5a6bb775dc3e7c1bf007
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081903"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207251"
 ---
-# <a name="export-data-to-sftp-preview"></a>Exportera till SFTP (förhandsversion)
+# <a name="export-data-to-sftp-hosts-preview"></a>Exportera till SFTP-värdar (förhandsversion)
 
 Använd kunddata i program från tredje part genom att exportera dem till en SFTP-plats (Secure File Transfer Protocol).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWO94X]
 
-## <a name="prerequisites-for-connection"></a>Krav för anslutning
+## <a name="prerequisites"></a>Förutsättningar
 
 - Tillgänglighet för en STP-värd och motsvarande autentiseringsuppgifter.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- SFTP-destinationer bakom brandväggar stöds för närvarande inte. 
+- SFTP-destinationer bakom brandväggar stöds för närvarande inte.
 - Hur länge en export körs beror på systemprestanda. Vi rekommenderar två processorkärnor och 1 Gb minne som minimal konfiguration av servern.
-- Det kan ta 90 minuter att exportera entiteter med upp till 100 miljoner kundprofiler om du använder den rekommenderade minimikonfigurationen på två processorkärnor och 1 Gb minne.
+- Upp till 100 miljoner kundprofiler, vilket kan ta 90 minuter om du använder den rekommenderade minimikonfigurationen på två processorkärnor och 1 Gb minne.
+- Om du använder en SSH-nyckel för autentisering ska du se till att du [skapar din privata nyckel](/azure/virtual-machines/linux/create-ssh-keys-detailed#basic-example) som PEM eller SSH.COM format. Om du använder Putty konverterar du din privata nyckel genom att exportera is as Open SSH. Följande privata nyckelformat stöds:
+  - RSA i OpenSSL PEM och ssh.com format
+  - DSA i OpenSSL PEM och ssh.com format
+  - ECDSA 256/384/521 i OpenSSL PEM-format
+  - ED25519 och RSA i OpenSSH-nyckelformat
 
 ## <a name="set-up-connection-to-sftp"></a>Konfigurera anslutningar till SFTP
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **SFTP** för att konfigurera anslutningen.
+1. Välj **Lägg till anslutning** och välj **SFTP**.
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
-1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Välj vem som kan använda anslutningen. Som standard är det bara administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Tillhandahåll **Användarnamn**, **Lösenord**, **Värdnamn** och **Exportmapp** för ditt SFTP-konto.
+1. Välj om du vill autentisera via SSH eller användarnamn/lösenord för anslutningen och ange nödvändig information. Om du använder en SSH-nyckel för autentisering ska du se till att du [skapar din privata nyckel](/azure/virtual-machines/linux/create-ssh-keys-detailed#basic-example) som PEM eller SSH.COM format. Om du använder Putty konverterar du din privata nyckel genom att exportera is as Open SSH. Följande privata nyckelformat stöds:
+   - RSA i OpenSSL PEM och ssh.com format
+   - DSA i OpenSSL PEM och ssh.com format
+   - ECDSA 256/384/521 i OpenSSL PEM-format
+   - ED25519 och RSA i OpenSSH-nyckelformat
 
 1. Välj **Verifiera** för att testa anslutningen.
 
-1. Välj om du vill exportera dina data **Komprimerad** eller **Uppackad** och **fältavgränsaren** för de exporterade filerna.
-
-1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
 1. Välj **Spara** för att slutföra anslutningen.
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå till **Data** > **Exporter**.
 
-1. Välj för att skapa en ny export **Lägg till destination**.
+1. Välj **Lägg till export**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet SFTP. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet SFTP. Kontakta en administratör om det inte finns någon anslutning.
+
+1. Ange ett namn för exporten.
+
+1. Välj om du vill exportera dina data **Komprimerad** eller **Uppackad** och **fältavgränsaren** för de exporterade filerna.
 
 1. Markera de entiteter, till exempel segment, som du vill exportera.
 
@@ -68,17 +81,9 @@ Du kan konfigurera den här exporten om du har åtkomst till en anslutning av de
 
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
-
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab).
-Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand).
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 > [!TIP]
 > Export av entiteter som innehåller en stor mängd data kan leda till flera CSV-filer i samma mapp för varje export. Att dela upp exporter sker av effektivitets skäl för att minimera den tid det tar för en export att slutföras.
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du aktiverar Dynamics 365 Customer Insights för att överföra data via SFTP tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att exportdestinationen uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

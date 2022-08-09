@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 415cd5d675512b4f434998afaa8265c8e45c562b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 72aa38242df21181f142833db03c825574455986
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647940"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171071"
 ---
 # <a name="subscription-churn-prediction"></a>Omsättningsprediktion för abonnemang
 
@@ -121,7 +121,7 @@ Förutsägelse av abonnemangsomsättning hjälper dig att förutsäga huruvida e
    - **Namn på förutsägelse:** Det namn på förutsägelsen som angavs när den skapades.
    - **Förutsägelsetyp:** Den typ av modell som används för förutsägelsen
    - **Utdataentitet:** Namnet på den entitet där utflödet för förutsägelsen ska lagras. Du kan söka efter en entitet med det här namnet på **Data** > **Entiteter**.    
-     I utdataentiteten är *ChurnScore* är den förutsagda sannolikheten för omsättning och *IsChurn* är en binär etikett baserad på *ChurnScore* med 0,5 tröskel. Standardtröskeln kanske inte fungerar för ditt scenario. [Skapa ett nytt segment](segments.md#create-a-new-segment) med önskad tröskel.
+     I utdataentiteten är *ChurnScore* är den förutsagda sannolikheten för omsättning och *IsChurn* är en binär etikett baserad på *ChurnScore* med 0,5 tröskel. Standardtröskeln kanske inte fungerar för ditt scenario. [Skapa ett nytt segment](segments.md#create-a-segment) med önskad tröskel.
    - **Förutsagt fält:** Det här fältet fylls endast i för vissa typer av förutsägelser och används inte i förutsägelse om prenumerationsomsättning.
    - **Status:** Aktuell status för förutsägelsens körning.
         - **Köade:** Förutsägelsen väntar för närvarande på att andra processer ska köras.

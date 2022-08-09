@@ -1,19 +1,19 @@
 ---
 title: Exportera segment till Campaign Monitor (förhandsversion)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Campaign Monitor.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ea7431d4df5143724b5ecf2a2d747ed164fe2c29
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 3c04fc26dc690cf32b45913257e82b9a0f617185
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081933"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196324"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Exportera segment till Campaign Monitor (förhandsversion)
 
@@ -21,28 +21,30 @@ Exportera segment med enhetliga kundprofiler till Campaign Monitor och använd d
 
 ## <a name="prerequisites"></a>Förutsättningar
 
--   Du har ett [Campaign Monitor-konto](https://www.campaignmonitor.com/) och motsvarande autentiseringsuppgifter för administratör.
--   Du har [konfigurerade segments](segments.md) i Customer Insights.
--   Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
+- [Campaign Monitor-konto](https://www.campaignmonitor.com/) och motsvarande autentiseringsuppgifter för administratör.
+- En [Campaign Monitor list-ID](https://www.campaignmonitor.com/api/getting-started/#your-list-id).
+- En [generera API-nyckeln](https://www.campaignmonitor.com/api/getting-started/) från **Kontoinställningar** i Campaign Monitor för att hämta API-list-ID:t.
+- [Konfigurerade segments](segments.md) i Customer Insights.
+- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till 1 miljon kundprofiler per export till Campaign Monitor.
-- Export till Campaign Monitor är begränsad till segment.
-- Det kan ta upp till 20 minuter innan du exporterar upp till 1 miljon kundprofiler till Campaign Monitor. 
-- Hur många kundprofiler du kan exportera till Campaign Monitor är beroende av och begränsas av ditt kontrakt med Campaign Monitor.
+- Det kan ta upp till 20 minuter innan du exporterar upp till 1 miljon kundprofiler till Campaign Monitor. Hur många kundprofiler du kan exportera till Campaign Monitor är beroende av ditt kontrakt med Campaign Monitor.
+- Endast segment.
 
 ## <a name="set-up-connection-to-campaign-monitor"></a>Konfigurera anslutning till Campaign Monitor 
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **Campaign Monitor** för att konfigurera anslutningen.
+1. Välj **Lägg till anslutning** och välj **Campaign Monitor**.
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
-1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Välj vem som kan använda anslutningen. Som standard är det bara administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
 1. Välj **Anslut** om du vill initiera anslutningen till Campaign Monitor.
 
@@ -54,28 +56,24 @@ Exportera segment med enhetliga kundprofiler till Campaign Monitor och använd d
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå till **Data** > **Exporter**.
 
-1. Välj för att skapa en ny export **Lägg till destination**.
+1. Välj för att skapa en ny export **Lägg till export**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Campaign Monitor. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Campaign Monitor. Kontakta en administratör om det inte finns någon anslutning.
 
-1. Ange [**Campaign Monitor list-ID**](https://www.campaignmonitor.com/api/getting-started/#your-list-id).    
-   [Generera API-nyckeln](https://www.campaignmonitor.com/api/getting-started/) från **Kontoinställningar** i Campaign Monitor  först för att visa API-list-ID:t.  
+1. Ange ett namn för exporten.
+
+1. Ange **Campaign Monitor list-ID**.
 
 1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Det krävs att exportera segment till Campaign Monitor.
 
+1. Välj de segment som du vill exportera.
+
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du aktiverar Dynamics 365 Customer Insights för att överföra data till Campaign Monitor, du tillåter överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga uppgifter såsom personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att säkerställa att Campaign Monitor uppfyller alla eventuella sekretess- eller säkerhetskrav. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

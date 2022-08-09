@@ -1,51 +1,54 @@
 ---
 title: Exportera segment till Sendinblue (förhandsversion)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Sendinblue.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 9f6550b5c57866702631b4c294bb059279461bd6
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 816a3b242fadaa5a75db878adf0a76baf638e41c
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081976"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196968"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Exportera segment till Sendinblue (förhandsversion)
 
 Exportera segment från enhetliga kundprofiler i syfte att generera kampanjer, skapa e-postmarknadsföring och använda specifika kundgrupper med Sendinblue.
 
-## <a name="prerequisites-for-connection"></a>Krav för anslutning
+## <a name="prerequisites"></a>Förutsättningar
 
--   Du har ett [Sendinblue-konto](https://www.sendinblue.com/) och motsvarande autentiseringsuppgifter för administratör.
--   Det finns befintliga listor i Sendinblue och motsvarande ID.
--   Du har [konfigurerat segment](segments.md).
--   Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
+- Ett [Sendinblue-konto](https://www.sendinblue.com/) och motsvarande autentiseringsuppgifter för administratör.
+- En [SendinBlue API-nyckel](https://developers.sendinblue.com/docs/getting-started#:~:text=Get%20your%20API%20key&text=You%20can%20create%20one%20from,your%20settings%20This%20API%20key).
+- Befintliga listor i Sendinblue och motsvarande ID.
+- [Konfigurerat segment](segments.md).
+- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Upp till 1 miljoner kundprofiler per export till Sendinblue.
-- Exporten till Sendinblue är begränsad till segment.
-- Det kan ta upp till 90 minuter att exportera segment med totalt miljoner kundprofiler. 
-- Hur många kundprofiler du kan exportera till Sendinblue är beroende av och begränsas av ditt kontrakt med Sendinblue.
+- Upp till 1 miljon kundprofiler per export till Sendinblue, vilket kan ta upp till 90 minuter att slutföra. Hur många kundprofiler du kan exportera till Sendinblue är beroende av ditt kontrakt med Sendinblue.
+- Endast segment.
 
 ## <a name="set-up-connection-to-sendinblue"></a>Konfigurera anslutning till Sendinblue
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **Sendinblue** om du vill konfigurera anslutningen.
+1. Välj **Lägg till anslutning** och välj **Sendinblue**.
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
 1. Välj vem som kan använda anslutningen. Som standard är det bara administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Ange din **[SendinBlue API-nyckel](https://developers.sendinblue.com/docs/getting-started#:~:text=Get%20your%20API%20key&text=You%20can%20create%20one%20from,your%20settings%20This%20API%20key)**.
+1. Ange din **SendinBlue API-nyckel**.
 
-1. Välj **Jag godkänner** för att bekräfta **Datasekretess och efterlevnad** och välj **Anslut** för att initiera anslutningen till Sendinblue.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
+
+1. Välj **Anslut** om du vill initiera anslutningen.
 
 1. Välj **Lägg till dig själv som exportanvändare** och ange dina autentiseringsuppgifter för Customer Insights.
 
@@ -53,33 +56,26 @@ Exportera segment från enhetliga kundprofiler i syfte att generera kampanjer, s
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå till **Data** > **Exporter**.
 
-1. Välj för att skapa en ny export **Lägg till destination**.
+1. Välj **Lägg till export**.
 
-1. I fältet **Anslutning för export** väljer du en anslutning från avsnittet Sendinblue. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export** väljer du en anslutning från avsnittet Sendinblue. Kontakta en administratör om det inte finns någon anslutning.
 
-1. Ange ditt **List-ID för Sendinblue** 
+1. Ange ett namn för exporten.
 
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. 
+1. Ange ditt **List-ID för Sendinblue**.
+
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress.
 
 1. Alternativt kan du exportera **Förnamn**, **Efternamn** och **Telefonnummer** om du vill skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
 
-1. Välj de segment som du vill exportera. 
+1. Välj de segment som du vill exportera.
 
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
-
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du gör det möjligt för Dynamics 365 Customer Insights att överföra data till Sendinblue tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att säkerställa att Sendinblue uppfyller dina eventuella sekretess- och säkerhetskrav. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
-
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

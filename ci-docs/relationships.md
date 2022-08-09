@@ -21,12 +21,12 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e622e5fa0b5738e31db1c668d95312adbc4f7d36
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081856"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183594"
 ---
 # <a name="relationships-between-entities-and-entity-paths"></a>Relationer mellan entiteter och entiteters sökvägar
 
@@ -34,7 +34,7 @@ Relationer ansluter entiteter och definierar ett diagram över dina data när en
 
 Det finns tre typer av relationer: 
 - Icke-redigerbara systemrelationer, skapat av systemet som en del av datasammansättningsprocessen
-- Icke-redigerbara relationer, som skapas automatiskt från att mata in datakällor 
+- Icke-redigerbara relationer, som skapas automatiskt från att mata in datakällor
 - Redigerbara anpassade relationer, skapad och konfigurerad av användare
 
 ## <a name="non-editable-system-relationships"></a>Icke-redigerbara systemrelationer
@@ -67,69 +67,66 @@ Relationen består av en *källentitet* som innehåller den utländska nyckeln o
    - **Beskrivning**: Beskrivning av relationsrollen.
    - **Källentitet**: Entitet som används som källa i relationen. Exempel: SupportCase.
    - **Målentitet**: Entitet som används som mål i relationen. Exempel: Kund.
-   - **Källkardinalitet**: Ange källentitetens kardinalitet. Kardinalitet beskriver antalet möjliga element i en uppsättning. Det har alltid att göra med målkardinaliteten. Du kan välja mellan **En** och **Många**. Det går bara att använda många till en-relationer och en till en-relationer.  
+   - **Källkardinalitet**: källentitetens kardinalitet. Kardinalitet beskriver antalet möjliga element i en uppsättning. Det har alltid att göra med målkardinaliteten. Du kan välja mellan **En** och **Många**. Det går bara att använda många till en-relationer och en till en-relationer.  
      - Många till en: Flera källposter kan relatera till en målpost. Exempel: Flera supportärenden från en enskild kund.
      - En-till-en: En enda källpost relaterar till en målpost. Exempel: Ett lojalitets-ID för en enskild kund.
 
      > [!NOTE]
      > Många till många-relationer kan skapas med två många-till-en-relationer och en länkande entitet, som förbinder källentiteten och målentiteten.
 
-   - **Målets kardinalitet**: Välj kardinalitet för målentitetsposterna. 
-   - **Källnyckelfält**: Fältet för främmande nyckel i källentiteten. Exempel: SupportCase kan använda CaseID som ett fält med främmande nyckel.
-   - **Fältet Målnyckel**: nyckelfältet för målentiteten. Exempel: Kund kan använda nyckelfältet **CustomerID**.
+   - **Målets kardinalitet**: kardinalitet för målentitetsposterna.
+   - **Källnyckelfält**: Fältet för främmande nyckel i källentiteten. Exempel: SupportCase använder **CaseID** som ett fält med främmande nyckel.
+   - **Fältet Målnyckel**: nyckelfältet för målentiteten. Exempel: Kund använder **CustomerID** som nyckelfältet.
 
 4. Välj **Spara** för att skapa den anpassade relationen.
 
 ## <a name="set-up-account-hierarchies"></a>Ange kontohierarkier
 
-Miljöer som är konfigurerade att använda affärskonton som primär målgrupp kan konfigurera kontohierarkier för relaterade affärskonton. Till exempel ett företag som har separata affärsenheter. 
+Miljöer som är konfigurerade att använda affärskonton som primär målgrupp kan konfigurera kontohierarkier för relaterade affärskonton. Till exempel ett företag som har separata affärsenheter.
 
 Organisationer skapar kontohierarkier för att bättre hantera konton och deras relationer med varandra. Customer Insights stöder hierarkier för överordnade och underordnade konton som redan finns i hämtade kunddata. Exempelvis konton från Dynamics 365 Sales. De här hierarkierna kan konfigureras på **Relationer** sidan.
 
 1. Gå till **Data** > **Relationer**.
 1. Välj fliken **kontohierarki**.
-1. Välj **Ny kontohierarki**. 
-1. Ange ett namn på hierarkin i rutan **Kontohierarki**. Systemet skapar ett namn på utdataentiteten. Du kan ändra namnet på entiteten för utdatanamnet.
+1. Välj **Ny kontohierarki**.
+1. Ange ett namn på hierarkin i rutan **Kontohierarki**. Systemet skapar ett namn på utdataentiteten, men du kan ändra det.
 1. Välj den entitet som innehåller kontohierarkin. Vanligtvis finns den i samma entitet som innehåller kontona.
-1. Välj **Konto-ID** och **ID för överordnat konto** från den valda entiteten 
-1. Välj **Spara** om du vill tillämpa inställningarna och slutföra kontohierarkin.
+1. Välj **Konto-UID** och **UID för överordnat konto** från den valda entiteten.
+1. Välj **Spara** för att slutföra kontohierarkin.
 
-## <a name="view-relationships"></a>Visa relationer
+## <a name="manage-existing-relationships"></a>Hantera befintliga relationer
 
-På Relationer-sidan visas alla relationer som har skapats. Varje rad representerar en relation, som också innehåller information om källentiteten, målentiteten och kardinaliteten. 
+Gå till **Relationer** om du vill visa alla relationer som har skapats, deras källentitet, målentiteten och komplexiteten.
 
 :::image type="content" source="media/relationships-list.png" alt-text="Lista över relationer och alternativ i åtgärdsfältet på Relationer-sidan.":::
 
-Den här sidan innehåller en uppsättning alternativ för befintliga och nya relationer: 
-- **Ny relation**: [Skapa en anpassad relation](#create-a-custom-relationship).
-- **Visualiserare**: [Utforska relationsvisualiseraren](#explore-the-relationship-visualizer) för att se ett nätverksdiagram över befintliga relationer och deras kardinalitet.
-- **Filtrera efter**: Välj vilken typ av relationer som ska visas i listan.
-- **Sök relationer**: Använd en textbaserad sökning efter egenskaper för relationer.
+Använd alternativen **Filtrera efter** eller **Sök relationer** för att söka efter en viss relation. För att se ett nätverksdiagram över befintliga relationer och deras kardinalitet, välj [**Visualiserare**](#explore-the-relationship-visualizer).
+
+Välj en relation om du vill visa tillgängliga åtgärder:
+- **Redigera**: Uppdatera egenskaper för anpassade relationer i redigeringsfönstret och spara ändringar.
+- **Ta bort**: Ta bort anpassade relationer.
+- **Visa**: Visa systemskapade och ärvda relationer.
 
 ### <a name="explore-the-relationship-visualizer"></a>Utforska relationsvisualiseraren
 
 Relationsvisualiseraren visar ett nätverksdiagram över befintliga relationer mellan anslutna entiteter och deras kardinalitet. Det visualiserar också relationssökvägen.
 
-Om du vill anpassa vyn kan du ändra rutornas placering genom att dra dem på arbetsytan.
-
 :::image type="content" source="media/relationship-visualizer.png" alt-text="Skärmbild av relationsvisualiseringsnätverksdiagrammet med anslutningar mellan relaterade entiteter.":::
 
-Tillgängliga alternativ: 
+Om du vill anpassa vyn kan du ändra rutornas placering genom att dra dem på arbetsytan. Andra alternativ inkluderar: 
 - **Exportera som bild**: Spara den aktuella vyn som en bildfil.
 - **Ändra till vågrät/lodrät layout**: Ändra justeringen för entiteterna och relationer.
 - **Redigera**: Uppdatera egenskaper för anpassade relationer i redigeringsfönstret och spara ändringar.
 
 ## <a name="relationship-paths"></a>Relationsvägar
 
-En relationsväg beskriver de entiteter som är kopplade genom relationer mellan en källentitet och en målentitet. Den används när du skapar ett segment eller ett mått som innehåller andra entiteter än entiteten för en enhetlig profil och det finns flera alternativ för att nå entiteten för en enhetlig profil. 
-
-En relationsväg informerar systemet om vilka relationer som har åtkomst till den sammanslagna profilentiteten. Olika relationssökvägar kan ge olika resultat.
+En relationsväg beskriver de entiteter som är kopplade genom relationer mellan en källentitet och en målentitet. Den används när du skapar ett segment eller ett mått som innehåller andra entiteter än entiteten för en enhetlig profil och det finns flera alternativ för att nå entiteten för en enhetlig profil. Olika relationssökvägar kan ge olika resultat.
 
 Entiteten har till exempel *eCommerce_eCommercePurchases* har följande information för enhetliga profil *Kund*:
 
 - eCommerce_eCommercePurchases > kund
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kund
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kund 
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kund
 
 En relationsväg avgör vilka entiteter du kan använda när du skapar regler för åtgärder eller segment. Om du väljer alternativet med den längsta relationssökvägen ger det troligen färre resultat eftersom matchande poster måste vara en del av alla entiteter. I det här exemplet måste en kund ha köpt varor via e-handeln (eCommerce_eCommercePurchases), vid en försäljningsställe(POS_posPurchases) och delta i vårt lojalitetsprogram (loyaltyScheme_loyCustomers). När du väljer det första alternativet får du förmodligen fler resultat eftersom kunderna bara behöver finnas i en ytterligare entitet.
 
@@ -155,7 +152,7 @@ En relation klassificeras som en **indirekt relation** då en källentitet relat
 
 #### <a name="multi-hop-relationship"></a>Multi-hop-relation
 
-En *multi-hop-relation* är en *indirekt relation* som gör att du kan ansluta en källentitet till en målentitet via en eller flera andra mellanliggande entiteter.
+En **multi-hop-relation** är en *indirekt relation* som gör att du kan ansluta en källentitet till en målentitet via en eller flera andra mellanliggande entiteter.
 
 Om exempelvis en aktivitetsentitet med namnet *eCommerce_eCommercePurchasesWest* ansluter till en mellanliggande entitet med namnet *eCommerce_eCommercePurchasesEast* och sedan ansluter till en målentitet med namnet *eCommerce_eCommerceContacts* är det multi-hop-relation.
 
@@ -169,17 +166,7 @@ Om exempelvis en aktivitetsentitet med namnet *eCommerce_eCommercePurchasesWest*
 
 :::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Källentiteten ansluter direkt till en målentitet och ansluter till en annan målentitet via en mellanliggande entitet.":::
 
-## <a name="manage-existing-relationships"></a>Hantera befintliga relationer 
-
-På sidan Relationer representeras varje relation av en rad. 
-
-Välj en relation och välj något av följande alternativ: 
- 
-- **Redigera**: Uppdatera egenskaper för anpassade relationer i redigeringsfönstret och spara ändringar.
-- **Ta bort**: Ta bort anpassade relationer.
-- **Visa**: Visa systemskapade och ärvda relationer. 
-
-## <a name="next-step"></a>Nästa steg
+## <a name="next-step"></a>Gå vidare
 
 System och anpassade relationer används för att [skapa segment](segments.md) och [mått](measures.md) baserade på flera datakällor som inte längre är silo.
 

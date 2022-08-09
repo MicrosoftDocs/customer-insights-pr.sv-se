@@ -1,7 +1,7 @@
 ---
 title: Översikt över datakällor
 description: Lär dig hur du importerar eller importerar data från olika källor.
-ms.date: 05/18/2022
+ms.date: 07/26/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,20 +12,20 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: fbe44f655bdbc20ef7f0956022395e2dcb570adf
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051475"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207113"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
 Dynamics 365 Customer Insights ger anslutningar för att hämta data från en mängd olika källor. Anslutning till en datakälla kallas ofta för *datainmatning*. När du har fört in data kan du [ena](data-unification.md), skapa insikter och aktivera data för att skapa anpassade erfarenheter.
 
-## <a name="add-data-sources"></a>Lägg till datakällor
+## <a name="add-or-edit-data-sources"></a>Lägg till eller redigera datakällor
 
-Du kan bifoga eller importera datakällor till Customer Insights. Länkarna nedan innehåller instruktioner om hur du lägger till datakällor.
+Du kan bifoga eller importera datakällor till Customer Insights. Länkarna nedan ger instruktioner om hur du lägger till och redigerar datakällor.
 
 **Bifoga en datakälla**
 
@@ -50,13 +50,18 @@ Om din miljö har konfigurerats att använda lagringsutrymmet för Customer Insi
 
 Om dataflöden inte används i Power Platform miljön innehåller sidan **Datakällor** endast en lista över alla datakällor. Inga avsnitt visas.
 
-Gå till **Data** > **Datakällor** för att visa namnet på varje inmatad datakälla, dess status och senaste gången data uppdaterades för den källan. Du kan sortera listan över datakällor efter varje kolumn.
+## <a name="manage-existing-data-sources"></a>Hantera befintliga datakällor
 
-:::image type="content" source="media/configure-data-datasource-added.png" alt-text="Tillagd datakälla.":::
+Gå till **Data** > **Datakällor** för att visa namnet på varje inmatad datakälla, dess status och senaste gången data uppdaterades för den källan. Du kan sortera listan datakällor efter valfri kolumn eller använda sökrutan för att hitta det datakälla du vill hantera.
 
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+Välj en datakälla om du vill visa tillgängliga åtgärder.
 
-Det kan ta lång tid att läsa in data. Efter en lyckad uppdatering kan hämtade data granskas från sidan **entiteter**. Mer information finns i [Entiteter](entities.md).
+:::image type="content" source="media/data_sources_showmore.png" alt-text="Tillagd datakälla.":::
+
+- [**Redigera**](#add-or-edit-data-sources) datakällan för att ändra dess egenskaper.
+- [**Uppdatera**](#refresh-data-sources) datakällan för att inkludera de senaste uppgifterna.
+- [**Utöka**](data-sources-enrichment.md) datakällan innan sammanslagningen.
+- **Ta bort** datakällan. En datakälla kan endast raderas om informationen inte används i någon bearbetning som förening, insikter, aktivering eller export.
 
 ## <a name="refresh-data-sources"></a>Uppdatera datakällor
 
@@ -64,23 +69,12 @@ Datakällor kan uppdateras på ett automatiskt schema eller uppdateras manuellt 
 
 Gå till **Admin** > **System** > [**Schema**](system.md#schedule-tab) om du vill konfigurera system schemalagda uppdateringar för de inmatade datakällorna.
 
-Uppdatera en datakälla på begäran så här:
+Så här uppdaterar du en datakälla på begäran:
 
 1. Gå till **Data** > **Datakällor**.
 
-1. Välj den stående ellipsen (&vellip;) bredvid den datakälla du vill uppdatera och välj sedan **Uppdatera** i listrutan. Datakällan aktiveras nu för en manuell uppdatering. Om du uppdaterar datakälla uppdateras både entitetsschemat och data för alla entiteter som anges i datakälla.
+1. Markera datakälla du vill uppdatera och välj **Uppdatera**. Datakällan aktiveras nu för en manuell uppdatering. Om du uppdaterar datakälla uppdateras både entitetsschemat och data för alla entiteter som anges i datakälla.
 
-1. Välj **Avbryt uppdatering** om du vill avbryta en pågående uppdatering, så återgår datakällan till den senaste uppdateringsstatusen.
-
-## <a name="delete-a-data-source"></a>Ta bort datakällan
-
-En datakälla kan endast raderas om informationen inte används i någon bearbetning som förening, insikter, aktivering eller export.
-
-1. Gå till **Data** > **Datakällor**.
-
-2. Välj den stående ellipsen (&vellip;) bredvid den datakälla du vill ta bort och välj sedan **Ta bort** i listrutan.
-
-3. Bekräfta borttagningen.
-
+1. Välj status för att öppna rutan **Förloppsinformation** och se framstegen. Om du vill avbryta jobbet väljer du **Avbryt jobbet** längst ned i fönstret.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

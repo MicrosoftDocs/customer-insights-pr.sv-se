@@ -1,7 +1,7 @@
 ---
 title: Förutsägelse av kundens livstidsvärde
 description: Förutse potentiell intäkt för aktiva kunder i framtiden.
-ms.date: 02/05/2021
+ms.date: 07/21/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,21 +13,22 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: b6f6665d906cc96688efe84035336f64d2a39303
+ms.sourcegitcommit: 80d8436d8c940f1267e6f26b221b8d7ce02ed26b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9055236"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9186462"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Förutsägelse av kundens livstidsvärde
 
 Förutse potentiellt värde (intäkt) som enskilda aktiva kunder ger verksamheten under en angiven tidsperiod i framtiden. Med den här funktionen kan du uppnå olika mål:
+
 - Identifiera kunder med högt värde och bearbeta den här insikten
 - Skapa strategiska kundsegment utifrån deras potentiella värde för att köra anpassade kampanjer med riktad försäljning, marknadsföring och support
 - Vägleder produktutveckling genom att fokusera på funktioner som ökar kundvärdet
 - Optimera försäljnings- eller marknadsföringsstrategin och fördela budgeten på ett bättre sätt för att nå kunderna
-- Identifiera och uppmärksamma kunder med högt värde genom lojalitets- eller belöningsprogram 
+- Identifiera och uppmärksamma kunder med högt värde genom lojalitets- eller belöningsprogram
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -35,7 +36,7 @@ Innan du börjar bör du fundera över vad kundens livstidsvärde betyder för d
 
 Eftersom det inte tar lång tid att konfigurera och köra en modell för kundens livstidsvärde bör du överväga att skapa flera modeller med olika indatainställningar och jämföra modellresultat för att se vilket modellscenario som passar dina affärsbehov bäst.
 
-###  <a name="data-requirements"></a>Datakrav
+### <a name="data-requirements"></a>Datakrav
 
 Följande data krävs och där de är markerade som valfria rekommenderas de för ökad prestanda för modellen. Ju fler data modellen kan bearbeta, desto exaktare blir förutsägelsen. Därför rekommenderar vi att du matar in fler aktivitetsdata för kunderna, om de finns tillgängliga.
 
@@ -52,11 +53,12 @@ Följande data krävs och där de är markerade som valfria rekommenderas de fö
     - Webbaktiviteter: webbplatsbesökshistorik, e-posthistorik
     - Lojalitetsaktiviteter: insamlade lojalitetspoäng och inlösningshistorik
     - Kundtjänstlogg, servicesamtal, klagomål eller returhistorik
+    - Information om kundprofil
 - Data om kundaktiviteter (valfritt):
     - Aktivitetsidentifierare för att särskilja aktiviteter av samma typ
     - Kundidentifierare för att mappa aktiviteter till dina kunder
     - Aktivitetsinformation som innehåller namnet och datumet för aktiviteten
-    - Ett dataschema för aktiviteter inkluderar: 
+    - Ett dataschema för aktiviteter inkluderar:
         - **Primärnyckel**: En unik identifierare för en aktivitet
         - **Tidsstämpel**: Datum och tid för händelsen som identifierats av primärnyckeln
         - **Händelse (aktivitetsnamn)**: Namnet på händelsen som du vill använda
@@ -66,7 +68,7 @@ Följande data krävs och där de är markerade som valfria rekommenderas de fö
     - Tillräckliga tidigare data: Minst ett år med transaktionsdata. Helst två till tre års transaktionsdata för att få CLV att använda ett år.
     - Flera köp per kund: Vilket minst två till tre transaktioner per kund-ID, helst över flera datum.
     - Antal kunder: Minst 100 kunder, helst fler än 10 000 kunder. Modellen fungerar inte med färre än 100 kunder och det finns för få tidigare data
-    - Datafullständighet: Mindre än 20 % saknade värden i obligatoriska fält i indata   
+    - Datafullständighet: Mindre än 20 % saknade värden i obligatoriska fält i indata
 
 > [!NOTE]
 > - För modellen krävs kundens transaktionshistorik. Det går bara att konfigurera en entitet för transaktionshistorik för tillfället. Om det finns flera entiteter för inköp/transaktion kan du sammanföra dem i Power Query före datainmatningen.
@@ -122,11 +124,11 @@ Följande data krävs och där de är markerade som valfria rekommenderas de fö
 
 1. Välj **Nästa**.
 
-### <a name="add-optional-data"></a>Lägg till valfria data
+### <a name="add-optional-activity-data"></a>Lägg till valfri aktivitetsdata
 
-För data som återspeglar viktiga kundinteraktioner (som webb-, kundtjänst- och händelseloggar) läggs sammanhang till i transaktionsposter. Fler mönster i dina kundaktivitetsdata kan förbättra precisionen för förutsägelserna. 
+För data som återspeglar viktiga kundinteraktioner (som webb-, kundtjänst- och händelseloggar) läggs sammanhang till i transaktionsposter. Fler mönster i dina kundaktivitetsdata kan förbättra precisionen för förutsägelserna.
 
-1. I steget **Ytterligare data (valfritt)** väljer du **Lägg till data**. Välj den kundaktivitetsentitet som tillhandahåller information om kundaktivitet enligt beskrivningen i [kraven](#prerequisites).
+1. I steget **Ytterligare data (valfritt)** väljer du **Lägg till data** under **Skapa bättre modellinsikter med ytterligare aktivitetsdata**. Välj den kundaktivitetsentitet som tillhandahåller information om kundaktivitet enligt beskrivningen i [kraven](#prerequisites).
 
 1. Mappa de semantiska fälten till attribut i entiteten för kundaktivitet och välj **Nästa**.
 
@@ -135,15 +137,34 @@ För data som återspeglar viktiga kundinteraktioner (som webb-, kundtjänst- oc
 1. Välj en aktivitetstyp som överensstämmer med den typ av kundaktivitet du lägger till. Välj bland befintliga aktivitetstyper eller lägg till en ny aktivitetstyp.
 
 1. Konfigurera relationen från kundaktivitetsentiteten till entiteten *Kund*.
-    
+
     1. Välj det fält som identifierar kunden i tabellen för kundaktivitet. Den kan vara direkt relaterad till det primära kund-ID för entiteten *Kund*.
     1. Välj den *Kundentitet* som matchar den primära *Kundentiteten*.
     1. Ange ett namn som beskriver relationen.
 
    :::image type="content" source="media/clv-additional-data.png" alt-text="Bild på steget i konfigurationsflödet för att lägga till ytterligare data och konfigurera aktiviteten med ifyllda exempel.":::
 
-1. Välj **Spara**.    
+1. Välj **Spara**.
     Lägg till ytterligare data om det finns andra kundaktiviteter du vill ta med.
+
+1. Lägg till valfria kunddata eller välj **Nästa**.
+
+### <a name="add-optional-customer-data"></a>Lägg till ytterligare kunddata
+
+Välj bland de 18 vanliga kundprofilattribut som ska ingå som indata i modellen. De här attributen kan leda till mer anpassade, relevanta och användbara modellresultat för ärenden som används i företaget.
+
+Exempel: Contoso Coffee vill rikta kundens livstidsvärde till kunder med ett anpassat erbjudande om lanseringen av den nya automaten. Contoso använder CLV-modellen och lägger till alla 18 kundprofilattribut för att se vilka faktorer som påverkar kundernas högsta värde. De tycker att kundens plats är den mest inflytelserika faktorn för dessa kunder.
+Med den här informationen ordnar de en lokal händelse för lanseringen av maskinen och samarbetar med lokala leverantörer för personliga erbjudanden och en speciell upplevelse på händelse. Utan den här informationen kanske Contoso bara har skickat generiska marknadsföringsmeddelanden och missade möjligheten att anpassa för detta lokala segment av deras kunder med högt värde.
+
+1. I steget **Ytterligare data (valfritt)** väljer du **Lägg till data** under **Skapa bättre modellinsikter med ytterligare kunddata**.
+
+1. För **Entitet**, välj **Kund : CustomerInsights** för att välja den enhetliga kundprofiltabellen som mappas till kundattributdata. För **Kund-ID**, välj **System.Customer.CustomerId**.
+
+1. Mappa fler fält om data är tillgängliga i dina enhetliga kundprofiler.
+
+   :::image type="content" source="media/clv-optional-customer-profile-mapping.png" alt-text="Exempel på mappade fält för kundprofildata.":::
+
+1. Välj **Spara** efter att ha mappat de attribut som modellen ska använda för att hjälpa kundernas livstidsvärde.
 
 1. Välj **Nästa**.
 

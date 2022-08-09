@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: e90bdc523c3f8857c150ccba9d81f055d39f9feb
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: ccb33594a3a92e87d307f3300c77772ef8b4a82f
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051613"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171025"
 ---
 # <a name="segment-insights-preview"></a>Segmentinsikter (förhandsversion)
 
@@ -43,26 +43,25 @@ Du kan också analysera hur överlappningen ändras för vissa attribut.
 
 ### <a name="view-and-optimize-an-overlap-analysis"></a>Visa och optimera en överlappningsanalys
 
-När du har genomfört analysen hittar du detaljerad information om den här insikten på **Segment** > **Insikter (förhandsversion)**.
+1. När du har genomfört analysen hittar du detaljerad information om den här insikten på **Segment** > **Insikter (förhandsversion)**.
 
-> [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Överlappande segmentinformation om insikter.":::
+   :::image type="content" source="media/segment-overlap.png" alt-text="Överlappande segmentinformation om insikter.":::
 
-Välj en insikt för att se resultatet av analysen:
+1. Välj en insikt för att se resultatet av analysen:
 
-- Antalet medlemmar som överlappar de segment som valts för analys.
-- Antalet medlemmar som ingår i ett av segmenten men inte i resten av segmentet.
-- Om du valde fält när du konfigurerade överlappningsanalysen hittar du dem på motsvarande flikar. Du kan använda filterlistrutan för att välja en attributnivå, så visas motsvarande data i tabellen längst ned.
+   - Antalet medlemmar som överlappar de segment som valts för analys.
+   - Antalet medlemmar som ingår i ett av segmenten men inte i resten av segmentet.
+   - Om du valde fält när du konfigurerade överlappningsanalysen hittar du dem på motsvarande flikar. Du kan använda filterlistrutan för att välja en attributnivå, så visas motsvarande data i tabellen längst ned.
 
 ## <a name="segment-differentiators"></a>Differentiatorer för segment
 
-Segmentdifferentieringar hjälper dig att ta reda på vad som skiljer ett segment från övriga kunder eller från ett annat segment. Du behöver bara välja ett segment så identifierar systemet med de profilmappar och mått som kännetecknar det valda segmentet.
+Segmentdifferentieringar hjälper dig att ta reda på vad som skiljer ett segment från övriga kunder eller från ett annat segment. Välj ett segment och systemet identifierar profilattribut och mått som särskiljer det valda segmentet.
 
 ### <a name="run-a-differentiator-analysis"></a>Köra en differentieringsanalys
 
 1. Gå till **segment** och välj fliken **insikter (förhandsversion)**.
 
-1. Välj **Nytt** och välj alternativet **Överlappa** i fönstret **Välj insiktstyp**.
+1. Välj **Nytt** och välj alternativet **Differentiatorer** i fönstret **Välj insiktstyp**.
 
 1. Välj det segment du vill analysera som ett **primärt segment** och välj **Nästa**.
 
@@ -70,29 +69,29 @@ Segmentdifferentieringar hjälper dig att ta reda på vad som skiljer ett segmen
 
 1. Alternativt kan du välja ett eller flera intresseområden för att fokusera analysen på specifika attribut och välja **Nästa**.
 
-1. Ange ett namn för den överlappande analysen, ett valfritt visningsnamn och en beskrivning.
+1. Ange ett namn för differentieringsanalys, ett valfritt visningsnamn och en beskrivning.
 
-1. Välj **Spara** för att starta analysen. Den överlappande analysen är klar när status ändras från uppdatering till lyckad.
+1. Välj **Spara** för att starta analysen. Differentieringsanalys är klar när status ändras från uppdatering till lyckad.
 
 ### <a name="view-and-optimize-a-differentiators-analysis"></a>Visa och optimera en differentieringsanalys
 
-När du har genomfört analysen hittar du detaljerad information om den här insikten på **Segment** > **Insikter (förhandsversion)**.
+1. När du har genomfört analysen på **Segment** > **Insikter (förhandsversion)**.
 
-> [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentdifferentiering för insiktsinformation.":::
+   :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentdifferentiering för insiktsinformation.":::
 
-Välj en insikt för att se resultatet av analysen. En differentieringsanalys innehåller två flikar. På fliken **attribut** anges de profilmappar som betraktas som differentieringar. På fliken **mått** en lista över differentieringarna. Varje flik innehåller följande detaljer:
+1. Välj en insikt för att se resultatet av analysen. En differentieringsanalys innehåller två flikar. På fliken **attribut** anges de profilmappar som betraktas som differentieringar. På fliken **mått** en lista över differentieringarna. Varje flik innehåller följande detaljer:
 
-- Rangordnad lista med differentieringar sorterade efter poäng.
-- **Differenspoängen** för varje differentiering. Differensenspoäng representerar graden av skillnad på ett attribut mellan två segment. Ju högre differenspoängen är, desto fler attribut skiljer sig mellan de två segmenten. Välj en poäng om du vill öppna fönster **differensenspoäng** med fördelningarna för de attributen.
+   - Rangordnad lista med differentieringar sorterade efter poäng.
+   - **Differenspoängen** för varje differentiering. Differensenspoäng representerar graden av skillnad på ett attribut mellan två segment. Ju högre differenspoängen är, desto fler attribut skiljer sig mellan de två segmenten. Välj en poäng om du vill öppna fönster **differensenspoäng** med fördelningarna för de attributen.
 
 ## <a name="manage-segment-insights"></a>Hantera segmentinsikter
 
-Du kan använda följande alternativ för dina insikter från kommandofältet:
+Gå till **Segment** > **Insikter (förhandsgranskning)** för att se dina segmentinsikter och hantera dem. Välj segmentinsikt om du vill visa tillgängliga åtgärder.
 
-- **Tillbaka** för att returnera listan med insikter
-- **Uppdatera** om du vill köra analysen igen
-- **Ta bort** och ta bort insikt
-
+- **Visa** insiktsanalysen
+- **Redigera** insikt om du vill ändra dess egenskaper
+- **Uppdatera** insikt om du vill köra analysen igen
+- **Byt namn** på insikt
+- **Ta bort** insikt
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: ead18963959f94fd07912384cf61802f83523e2f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081753"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9194945"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Tillägget för kundkort för Dynamics 365-appar (förhandsversion)
 
@@ -28,21 +28,25 @@ Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tilläg
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-- Tillägget fungerar bara med Dynamics 365 modellbaserade appar, till exempel Sales eller kundtjänst, version 9.0 och senare.
-- För att dina Dynamics 365-data ska mappas till Customer Insights kundprofiler rekommenderar vi att de [tas in i appen Dynamics 365 med hjälp av kopplingen Microsoft Dataverse](connect-power-query.md). Om du använder en annan metod för att mata in Dynamics 365-kontakter (eller konton), måste du se till att fält `contactid` (eller `accountid`) anges som [primärnyckeln för den datakällan i kartsteget i datasammanslutningsprocessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+- Dynamics 365 modellbaserade appar, till exempel Sales eller kundtjänst, version 9.0 och senare.
+- För att dina Dynamics 365-data ska mappas till Customer Insights kundprofiler rekommenderar vi att de [tas in i appen Dynamics 365 med hjälp av kopplingen Microsoft Dataverse](connect-power-query.md). Om du använder en annan metod för att mata in Dynamics 365-kontakter (eller konton), måste du se till att fält `contactid` (eller `accountid`) anges som [primärnyckeln för den datakällan i datasammanslutningsprocessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Alla Dynamics 365-användare av tillägget kundkort måste [läggas till som användare](permissions.md) i Customer Insights för att kunna se dessa data.
-- [Konfigurerade sök- och filterfunktioner](search-filter-index.md) i Customer Insights krävs för att slå upp data som ska fungera.
+- [Konfigurerade sök- och filterfunktioner](search-filter-index.md) i Customer Insights.
 - För varje tilläggskontroll används specifika data i Customer Insights. Vissa data och kontroller är endast tillgängliga i miljöer av specifika typer. Tilläggets konfiguration meddelar dig om en kontroll inte är tillgänglig på grund av den valda miljötypen. Läs mer om [miljöanvändningsfall](work-with-business-accounts.md).
-  - **Måttkontroll**: Kräver [konfigurerade mått](measures.md) för typen kundattribut.
-  - **Intelligent kontroll**: Kräver data som genereras med hjälp av [prediktioner eller anpassade modeller](predictions-overview.md).
-  - **Kontroll för kundinformation**: Alla fält från profilen är tillgängliga i den enhetliga kundprofilen.
-  - **Berikningskontroll**: kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler. Korttillägget stöder dessa berikningar: [Varumärken](enrichment-microsoft.md) som tillhandahålls av Microsoft, [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft och [Office engagemangsdata](enrichment-office.md) som tillhandahålls av Microsoft.
-  - **Kontaktkontroll**: Kräver definition av entitet för utformning av typkontakter.
-  - **Tidslinjekontroll**: Kräver [konfigurerade aktiviteter](activities.md).
+  - **Måttkontroll** kräver [konfigurerade kundattributmått](measures.md).
+  - **Intelligent kontroll** kräver data som genereras med hjälp av [prediktioner eller anpassade modeller](predictions-overview.md).
+  - **Kontroll för kundinformation** visar alla fält från profilen är tillgängliga i den enhetliga kundprofilen.
+  - **Berikningskontroll** kräver aktiva [berikningar](enrichment-hub.md) som tillämpas på kundprofiler. Korttillägget stöder dessa berikningar: [Varumärken](enrichment-microsoft.md) som tillhandahålls av Microsoft, [Intressen](enrichment-microsoft.md) som tillhandahålls av Microsoft och [Office engagemangsdata](enrichment-office.md) som tillhandahålls av Microsoft.
+  - **Kontaktkontroll** kräver definition av entitet för utformning av typ.
+  - **Tidslinjekontroll** kräver [konfigurerade aktiviteter](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Installera tillägget för kundkort
 
-Kundkort-tillägget är en lösning för Customer Engagement-appar i Dynamics 365. Om du vill installera lösningen går du till AppSource och söker efter **Dynamics kundkort**. Välj [Tillägget för kundkort i AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) och välj **Skaffa det nu**.
+Kundkort-tillägget är en lösning för Customer Engagement-appar i Dynamics 365. Installera lösningen:
+
+1. Gå till AppSource och sök efter **Dynamics kundkort**.
+
+1. Välj [Tillägget för kundkort i AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) och välj **Skaffa det nu**.
 
 Du kan behöva logga in med administratörsautentiseringsuppgifter för Dynamics 365-appen för att installera lösningen. Det kan ta en stund innan lösningen har installerats i din miljö.
 

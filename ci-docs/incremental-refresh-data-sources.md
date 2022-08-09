@@ -11,18 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-schedule
 - customerInsights
-ms.openlocfilehash: bff27bf7fec2bcb741846ae76bb1f616f459136c
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: de39743eb8728fac34e417724c5f73bf44309c89
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9012047"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207159"
 ---
 # <a name="incremental-refresh-for-power-query-and-azure-data-lake-data-sources"></a>Uppdatera uppdateringar för Power Query och för Azure Data Lake datakällor
 
-I den här artikeln beskrivs hur du konfigurerar inkrementella uppdateringar datakällor som är baserade på Power Query eller Azure Data Lake.
-
-Stegvis uppdatering för datakällor har följande fördelar:
+Inkrementell uppdatering för datakällor i Power Query eller Azure Data Lake ger följande fördelar:
 
 - **Snabbare uppdateringar** – endast data som har ändrats uppdateras. Du kan till exempel endast uppdatera de fem senaste dagarna av en historisk datauppsättning.
 - **Ökad pålitlighet** – med mindre uppdateringar behöver du inte upprätthålla anslutningar till temporärt källsystem så länge som minskar risken för anslutningsproblem.
@@ -73,6 +71,7 @@ Customer Insights tillåter inkrementell uppdatering för datakällor som är an
 
    1. Bläddra till rotmappen som innehåller .csv- eller .parquet-filerna för fullständig data, inkrementella data upserts och inkrementella dataraderingar.
    1. Ange filnamnstillägget för fullständiga data och båda filerna (\.csv or \.parquet).
+   1. Om .csv filer markerar du kolumnavgränsaren och om du vill ha den första raden i filen som en kolumnrubrik.
    1. Välj **Spara**.
 
 1. För **Senaste uppdatering** väljer du attributet datumtidsstämpel.

@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: fb97b721cc82ccd23cfd1df74a0712b8fc277b8a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 98e9e330e7ef9cf085caa94a506fa788cebdd67b
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081746"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207205"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Berika för datakällor (förhandsversion)
 
@@ -21,9 +21,9 @@ Använd data från källor som Microsoft och andra partner för att utöka dina 
 
 ## <a name="enrich-a-data-source"></a>Berika en datakälla
 
-Du måste ha deltagar- eller administratörsbehörighet att skapa eller redigera utökar. Mer information finns under [Behörigheter](permissions.md).  
+Du måste har [behörigheter](permissions.md) för deltagare eller administratör för att skapa eller redigera utökar.  
 
-1. Gå till **Data** > **Förena**. Välj den entitet du vill utöka och välj ett attribut som primärnyckel för entiteten. För mer information, se [Välj primärnyckel](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+1. Gå till **Data** > **Förena**. Välj den entitet du vill utöka och välj ett attribut som [primärnyckel](map-entities.md#select-primary-key-and-semantic-type-for-attributes) för entiteten.
 
 1. Gå till **Data** > **Datakällor**.
 
@@ -47,8 +47,8 @@ Följande berikningar är för närvarande tillgängliga för datakällor. Detal
 
 ## <a name="manage-existing-data-source-enrichments"></a>Hantera befintliga berikningar för datakällor
 
-Gå till fliken **Mina berikningar** om du vill visa alla konfigurerade berikningar.
+Gå till **Data** > **Berikning**. På fliken **Mina berikningar** visar du de konfigurerade berikningar, deras status, antal utökade kunder och sista gången data uppdaterades. Du kan sortera listan med utökar efter valfri kolumn eller använda sökrutan för att hitta det utökande du vill hantera.
 
-Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja den stående ellipsen (&vellip;) för ett listobjekt om du vill visa alternativen för. Om du har konfigurerat flera förbättringar kan du använda sökrutan för att hitta den snabbt.
+Markera förbättringen om du vill visa tillgängliga alternativ. Du kan också välja den stående ellipsen (&vellip;) för ett listobjekt om du vill visa alternativen för.
 
-Du kan visa, redigera, köra eller ta bort berika datakälla. Mer information finns i [Hantera befintliga berikningar](enrichment-hub.md).
+Du kan visa, redigera, köra eller ta bort berika datakälla. Mer information finns i [Hantera befintliga berikningar](enrichment-hub.md#manage-existing-enrichments).

@@ -1,19 +1,19 @@
 ---
 title: Exportera segment till ActiveCampaign
 description: Lär dig hur du konfigurerar anslutningen och exporterar till ActiveCampaign.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: eb6f2bb69bb30c319e17390562b3f33512f33ff1
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 178d2df8edf1abcec72664e19d73a88f2b97f12d
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054730"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195590"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Exportera segment till ActiveCampaign (förhandsversion)
 
@@ -21,31 +21,34 @@ Exportera segment med enhetliga kundprofiler till ActiveCampaign och använd dem
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-- Du har ett [ActiveCampaign-konto](https://www.activecampaign.com/) och motsvarande autentiseringsuppgifter för administratör.
-- Du har [konfigurerade segments](segments.md) i Customer Insights.
-- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält med en e-postadress.
+- Ett [ActiveCampaign-konto](https://www.activecampaign.com/) och motsvarande autentiseringsuppgifter för administratör.
+- En [ActiveCampaign list-ID](https://help.activecampaign.com/hc/articles/360000030559-How-to-create-a-list-in-ActiveCampaign).
+- En [ActiveCampaign API-nyckel](https://help.activecampaign.com/hc/articles/207317590-Getting-started-with-the-API#how-to-obtain-your-activecampaign-api-url-and-key) och värdnamn för REST-slutpunkt.
+- [Konfigurerade segments](segments.md) i Customer Insights.
+- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera ta upp till 1 miljon kundprofiler per export till ActiveCampaign och det kan ta 90 minuter att genomföra.
-- Exporten till ActiveCampaign är begränsad till segment.
-- Hur många kundprofiler du kan exportera till ActiveCampaign är beroende av ditt kontrakt med ActiveCampaign.
+- Upp till 1 miljon kundprofiler per export till ActiveCampaign, vilket kan ta upp till 90 minuter att slutföra. Hur många kundprofiler du kan exportera till ActiveCampaign är beroende av ditt kontrakt med ActiveCampaign.
+- Endast segment.
 
 ## <a name="set-up-connection-to-activecampaign"></a>Upprätta anslutning till ActiveCampaign
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och völj **ActiveCampaign** om du vill konfigurera anslutningen.
+1. Välj **Lägg till anslutning** och välj **ActiveCampaign**.
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
 1. Välj vem som kan använda anslutningen. Som standard är det bara administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Ange din [API-nyckel för ActiveCampaign och ditt värdnamn för REST-slutpunkt](https://help.activecampaign.com/hc/articles/207317590-Getting-started-with-the-API#how-to-obtain-your-activecampaign-api-url-and-key). Endast slutpunktsvärdnamn för REST utan https://. 
+1. Ange din API-nyckel för ActiveCampaign och ditt värdnamn för REST-slutpunkt. Endast slutpunktsvärdnamn för REST utan https://.
 
-1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
-1. Välj **Anslut** för att initiera anslutningen till ActiveCampaign.
+1. Välj **Anslut** om du vill initiera anslutningen.
 
 1. Välj **Lägg till dig själv som exportanvändare** och ange dina autentiseringsuppgifter för Customer Insights.
 
@@ -53,27 +56,26 @@ Exportera segment med enhetliga kundprofiler till ActiveCampaign och använd dem
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera en export om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå till **Data** > **Exporter**.
 
-1. Välj för att skapa en ny export **Lägg till destination**.
+1. Välj **Lägg till export**.
 
-1. I fältet **Anslutning för export** väljer du en anslutning från avsnittet ActiveCampaign. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export** väljer du en anslutning från avsnittet ActiveCampaign. Kontakta en administratör om det inte finns någon anslutning.
 
-1. Ange ditt [**List-ID för ActiveCampaign**](https://help.activecampaign.com/hc/articles/360000030559-How-to-create-a-list-in-ActiveCampaign).    
+1. Ange ett namn för exporten.
 
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Detta krävs för att kunna exporter segment till ActiveCampaign. Alternativt kan du exportera förnamn, efternamn och telefonnummer om du vill skapa mer anpassade e-postmeddelanden. Välj Lägg till attribut för att mappa dessa fält.
+1. Ange ditt **List-ID för ActiveCampaign**.
+
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress.
+
+1. Alternativt kan du exportera **Förnamn**, **Efternamn** och **Telefonnummer** om du vill skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
+
+1. Välj de segment som du vill exportera.
 
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du gör det möjligt för Dynamics 365 Customer Insights att överföra data till ActiveCampaign tillåter du överföringen av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att säkerställa att ActiveCampaign uppfyller eventuella sekretess- och säkerhetskrav. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,53 +1,54 @@
 ---
 title: Exportera segment till SendGrid (förhandsgranskning)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till SendGrid.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 669f0fb48b095f6a9faeebf257ee9df3d1c580c7
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: f2990ad410dda0cbf952f82f3fc30b3a53a7bcd4
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081966"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9197014"
 ---
 # <a name="export-segments-to-sendgrid-preview"></a>Exportera segment till SendGrid (förhandsgranskning)
 
-Exportera segment med enhetliga kundprofiler till SendGrid-kontaktlistor och använd dem för kampanjer och e-postmarknadsföring i SendGrid. 
+Exportera segment med enhetliga kundprofiler till SendGrid-kontaktlistor och använd dem för kampanjer och e-postmarknadsföring i SendGrid.
 
-## <a name="prerequisites-for-a-connection"></a>Krav för anslutning
+## <a name="prerequisites"></a>Förutsättningar
 
--   Du har ett [SendGrid-konto](https://sendgrid.com/) och motsvarande administratörsautentiseringsuppgifter.
--   Det finns befintliga kontaktlistor i SendGrid och motsvarande ID. Mer information finns i [SendGrid – Hantera kontakter](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts).
--   Du har [konfigurerade segments](segments.md) i Customer Insights.
--   Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
+- [SendGrid-konto](https://sendgrid.com/) och motsvarande administratörsautentiseringsuppgifter.
+- [Befintliga kontaktlistor i SendGrid](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts) och motsvarande ID.
+- [SendGrid API-nyckel](https://sendgrid.com/docs/ui/account-and-settings/api-keys/).
+- [Konfigurerade segments](segments.md) i Customer Insights.
+- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Upp till 100 000 kundprofiler totalt till SendGrid.
-- Export till SendGrid är begränsad till segment.
-- Det kan ta upp till några timmar innan du exporterar upp till 100 000 kundprofiler till SendGrid. 
-- Hur många kundprofiler du kan exportera till SendGrid är beroende av och begränsas av ditt kontrakt med SendGrid.
+- Det kan ta upp till några timmar innan du exporterar upp till 100 000 kundprofiler till SendGrid. Hur många kundprofiler du kan exportera till SendGrid är beroende av ditt kontrakt med SendGrid.
+- Endast segment.
 
 ## <a name="set-up-connection-to-sendgrid"></a>Konfigurera anslutningen SendGrid
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **SendGrid** för att konfigurera anslutningen.
+1. Välj **Lägg till anslutning** och välj **SendGrid**.
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
-1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Välj vem som kan använda anslutningen. Som standard är det bara administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Ange **SendGrids API-nyckel** [SendGrids API-nyckel](https://sendgrid.com/docs/ui/account-and-settings/api-keys/).
+1. Ange din **SendGrid API-nyckel**.
 
-1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
-1. Välj **Anslut** om du vill initiera anslutningen till SendGrid.
+1. Välj **Anslut** om du vill initiera anslutningen.
 
 1. Välj **Lägg till dig själv som exportanvändare** och ange dina autentiseringsuppgifter för Customer Insights.
 
@@ -55,30 +56,26 @@ Exportera segment med enhetliga kundprofiler till SendGrid-kontaktlistor och anv
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå till **Data** > **Exporter**.
 
-1. Välj för att skapa en ny export **Lägg till destination**.
+1. Välj **Lägg till export**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet SendGrid. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet SendGrid. Kontakta en administratör om det inte finns någon anslutning.
 
-1. Ange ditt **[ID för SendGrid-lista](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts)**.
+1. Ange ett namn för exporten.
 
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Upprepa samma steg för andra valfria fält, t.ex. **Förnamn**, **Efternamn**, **Land/region**, **Delstat**, **Stad** och **Postnummer**.
+1. Ange ditt **ID för SendGrid-lista**.
 
-1. Välj de segment som du vill exportera. Vi **rekommenderar starkt att du inte exporterar fler än 100 000 kundprofiler totalt** till SendGrid. 
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress.
+
+1. Välj valfritt fält som t.ex. **Förnamn**, **Efternamn**, **Land/region**, **Delstat**, **Stad** och **Postnummer**.
+
+1. Välj de segment du vill exportera med de kända begränsningarna.
 
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
-
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du aktiverar Dynamics 365 Customer Insights för att överföra data till SendGrid tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att SendGrid uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
-
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

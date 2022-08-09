@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 77b09b6eb0a916e724542d503d96d19c5581aca1
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 99fe24cb47a8c20f629182d9a1c6adfd36a1eaf7
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "8947509"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9188070"
 ---
 # <a name="use-customer-consent"></a>Använd kundmedgivande
 
@@ -45,12 +45,12 @@ Exempeltabell för en enkel samtyckesdatabas med flera samtyckesalternativ:
 |---------|---------|---------|---------|
 |1    |  holly@contoso.com       |  Nyhetsbrev       |  Falsk       |
 |2    |  holly@contoso.com       |  Produktuppdateringar       |  Sann       |
-|3    |  frank@contoso.com       |  Nyhetsbrev       | Sann        |
+|3    |  frank@contoso.com       |  Nyhetsbrev       | Sant        |
 |4    |  frank@contoso.com       |  Produktuppdateringar       |  Falsk       |
 
 ## <a name="import-and-unify-consent-data"></a>Importera och ena samtyckesdata
 
-Du kan importera samtyckesdata på samma sätt som andra datakällor till Customer Insights. Mer information om datakällor som stöds och hur du importerar dem finns i [översikt över datakällor](data-sources.md).
+Importera samtyckesdata på samma sätt som andra datakällor till Customer Insights. Mer information om datakällor som stöds och hur du importerar dem finns i [översikt över datakällor](data-sources.md).
 
 Mer information om att ena dina datakällor finns i [Översikt över datasammanslutning](data-unification.md).
 
@@ -71,3 +71,5 @@ Det är viktigt att du håller kundens samtyckesstatus uppdaterad. Den schemalag
 Med andra ord bör du se till att de källdata som importeras till Customer Insights alltid har den senaste informationen.
 
 Mer information finns i [Uppdatera segment manuellt](segments.md#refresh-segments) eller [konfigurera en schemalagd uppdatering](system.md#schedule-tab).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

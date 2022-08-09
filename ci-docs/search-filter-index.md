@@ -1,7 +1,7 @@
 ---
-title: 'Kundprofiler: Sök- och filterindex'
+title: Hantera sök- och filterindex för kundprofiler
 description: Hitta snabbt information om enhetliga kundprofiler och filter för angivna attribut.
-ms.date: 11/01/2021
+ms.date: 07/22/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,59 +11,64 @@ manager: shellyha
 searchScope:
 - ci-search-filter
 - customerInsights
-ms.openlocfilehash: fc076e341f744ac2922dcacdf5f20ae8ecbdbaa0
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: dfbfcbff3ffb3e4483252377e591229631d38556
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050831"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9187931"
 ---
-# <a name="customer-profiles-search--filter-index"></a>Kundprofiler: Sök- och filterindex
+# <a name="manage-the-search--filter-index-for-customer-profiles"></a>Hantera sök- och filterindex för kundprofiler
 
-Resultatet av att förena kunddata är en kundprofils entitet som tillhandahåller en enhetlig vy till den totala kundbasen. Om du snabbt vill [hitta information om en viss kund eller grupp](customer-profiles.md) kan du konfigurera funktionerna **Sök** och **Filter** på sidan **Kunder**. Läs vidare om du vill veta hur administratörer kan redigera attributen på sidan **Sök och filtrera index** som är tillgängliga för användare för sökning och filtrering.
+Resultatet av att förena kunddata är entitet *kund* som tillhandahåller en enhetlig vy till den totala kundbasen. För användare som snabbt vill [hitta information om en viss kund eller grupp](customer-profiles.md) måste administratören konfigurera funktionerna **Sök** och **Filter** på sidan **Kunder**.
 
    :::image type="content" source="media/search-filter.png" alt-text="Sökfilter":::
 
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+## <a name="define-searchable-attributes-and-indexed-fields"></a>Definiera sökbara attribut och indexerade fält
 
-## <a name="add-fields-and-specify-attributes"></a>Lägg till fält och ange attribut
+Om det är första gången du definierar sökbara attribut som en administratör måste du definiera indexerade fält först. Vi föreslår att du väljer alla attribut som användarna kan söka i och filtrera kunder på i sidan **kunder**. Du kan endast ange attribut som finns i entiteten *kund* som du skapade under dataföreningsprocessen.
 
-Om det är första gången du definierar sökbara attribut som en administratör måste du definiera indexerade fält först. Vi föreslår att du väljer alla attribut som användarna kan söka i och filtrera kunder på i sidan **kunder**. Du kan endast ange attribut som finns i entiteten kundprofil som du skapade under dataföreningsprocessen.
+1. Gå till **Kunder** och välj **Sök & filtrera index**.
 
-1. Öppna sidan **Kunder** och välj **Sök & filtrera index**.
+1. Markera **+ Lägg till**.
 
-2. Välj **+ Lägg till** för att ange indexerade fält.
+1. Välj attribut i listan som du vill lägga till som indexerade fält och klicka på **Tillämpa**.
 
-3. Välj attribut i listan som du vill lägga till som indexerade fält. Du kan alltid lägga till fler attribut genom att välja **Lägg till**. Du kan även ta bort valda attribut genom att välja symbolen **Ta bort**.
+1. Om du vill lägga till fler attribut väljer du **Lägg till**. Om du vill ta bort en ett valt attribut markerar du attribut och väljer **Ta bort**.
 
-## <a name="explore-the-indexed-customer-fields-table"></a>Utforska tabellen indexerade kundfält
+   :::image type="content" source="media/search-filter-index.png" alt-text="Sök och filtrera indexsida":::
 
-Följande information presenteras i tabellen.
+1. Välj **kör** när du är redo att tillämpa sök- och filtreringsinställningarna. När ändringarna har bearbetats hittar du dem i [kundkorten på sidan Kund](customer-profiles.md).
 
-- **Namn**: representerar attributets namn som det visas i entiteten kundprofil.
+## <a name="define-filtering-options-for-a-given-attribute"></a>Definiera filtreringsalternativ för ett givet attribut
+
+Ställ in fälten som kan användas för att filtrera kunder på sidan **Kunder**.
+
+1. Gå till **Kunder** och välj **Sök & filtrera index**.
+
+1. Välj ett attribut och **Lägg till filter**. Definiera antalet resultat och i vilken ordning de ska ordnas. Beroende på attributets datatyp visas någon av följande rutor.
+
+   - Attribut av strängtyp: ange antalet önskade resultat i fönstret **strängfilter** och den ordning som de ska ordnas efter.
+
+   - Attribut av numerisk typ: ange intervaller som ingår i fönstret **nummerfilter** och den ordning som de ska ordnas efter.
+
+   - Attribut av datumtyp: ange intervaller som ingår i fönstret **datumfilter** och den ordning som de ska ordnas efter.
+
+1. Välj **OK**. Upprepa för alla attribut som du vill filtrera efter.
+
+1. Välj **kör** när du är redo att tillämpa sök- och filtreringsinställningarna. När ändringarna har bearbetats hittar du dem i [kundkorten på sidan Kund](customer-profiles.md).
+
+## <a name="view-indexed-customer-fields"></a>Visa indexerade kundfält
+
+På sidan **Sök och filtrera index** visas följande information:
+
+- **Namn**: representerar attributets namn som det visas i entiteten *kund*.
 - **Datatyp**: anger om datatypen är en sträng, ett tal eller ett datum.
 - **Ingår i sökningen**: anger om det här attributet kan användas för att söka efter kunder på sidan **Kunder** med hjälp av fältet **Sök**.
 - **Lägg till filter**: kontroll för att definiera hur det här attributet kan användas för filtrering på sidan **kunder**.
 
-## <a name="editing-filtering-options-for-a-given-attribute"></a>Redigera filtreringsalternativ för ett givet attribut
-
-Menyn **filtrera** på sidan **kunder** kan innehålla ett varierande antal attributvärden (t.ex. olika åldersgrupper för att filtrera kunder).
-
-1. Välj **Lägg till filter** för ett givet attribut på sidan **Sök och filtrera index**. Du kan ange antalet resultat och i vilken ordning de ska ordnas. Beroende på attributets datatyp visas någon av följande rutor.
-
-- Attribut av strängtyp: ange antalet önskade resultat i fönstret **Alternativ för strängfilter** och den ordning som de ska ordnas efter.
-
-- Attribut av numerisk typ: ange intervaller som ingår i fönstret **Alternativ för nummerfilter** och den ordning som de ska ordnas efter.
-
-- Attribut av datumtyp: ange intervaller som ingår i fönstret **Alternativ för datumfilter** och den ordning som de ska ordnas efter.
-
-2. Välj **Spara** för att införa ändringarna.
-
-3. Välj **kör** när du är redo att tillämpa inställningarna. När ändringarna har bearbetats hittar du dem i [kundkorten på sidan Kund](customer-profiles.md). 
-
 ## <a name="next-steps"></a>Nästa steg
 
 Gå igenom [sidan med enhetliga profiler](customer-profiles.md) om du vill söka efter profiler eller använd de indexerade fälten för att se en deluppsättning av alla enhetliga profiler.
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

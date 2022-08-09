@@ -1,7 +1,7 @@
 ---
 title: Anslut till en Common Data Model-mapp som använder Azure Data Lake-konto
 description: Arbeta med Common Data Model-data med hjälp av Azure Data Lake Storage.
-ms.date: 05/30/2022
+ms.date: 07/27/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b1cdcb46df17d722ad49d361ae4c7ab34c83eeb1
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081783"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207021"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Ansluta till data i Azure Data Lake Storage
 
@@ -82,7 +82,7 @@ Hämta data till Dynamics 365 Customer Insights med ditt Azure Data Lake Storage
    :::image type="content" source="media/ADLS_required.png" alt-text="Dialogruta som visar Obligatoriskt för primärnyckel":::
 
    > [!TIP]
-   > Om du vill redigera entiteterna i ett JSON-redigeringsgränssnitt väljer du **Visa fler** > **Redigera schemafil**. Gör ändringar och välj **Spara**.
+   > Om du vill redigera en entitet i ett JSON-redigeringsgränssnitt väljer entiteten och sedan **Redigera schemafil**. Gör ändringar och välj **Spara**.
 
 1. För valda entiteter som kräver inkrementell inmatning visas **obligatoriska** skärmar under **inkrementell uppdatering**. För var och en av dessa entiteter se [Konfigurera en inkrementell uppdatering för Azure Data Lake datakällor](incremental-refresh-data-sources.md).
 
@@ -101,6 +101,10 @@ Hämta data till Dynamics 365 Customer Insights med ditt Azure Data Lake Storage
    1. Välj **Utfört**.
 
 1. Välj **Spara**. Sidan **Datakällor** öppnas där den nya datakälla visas i status **uppdateras**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan ta lång tid att läsa in data. Efter en lyckad uppdatering kan hämtade data granskas från sidan [**Entiteter**](entities.md).
 
 ### <a name="create-a-new-schema-file"></a>Skapa en ny schemafil
 
@@ -148,6 +152,9 @@ Hämta data till Dynamics 365 Customer Insights med ditt Azure Data Lake Storage
 
 1. Välj **Spara**. Sidan **Datakällor** öppnas där den nya datakälla visas i status **uppdateras**.
 
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan ta lång tid att läsa in data. Efter en lyckad uppdatering kan hämtade data granskas från sidan [**Entiteter**](entities.md).
 
 ## <a name="edit-an-azure-data-lake-storage-data-source"></a>Redigera en Azure Data Lake Storage datakälla
 
@@ -179,8 +186,16 @@ Du kan uppdatera alternativet *Anslut till ett lagringskonto med*. Mer informati
       > [!IMPORTANT]
       > Om det finns beroenden på den befintliga filen model.json eller manifest.json och entitetsuppsättningen visas ett felmeddelande och det går inte att välja en annan model.json- eller manifest.json-fil. Ta bort dessa beroenden innan du ändrar filen model.json eller manifest.json, eller skapa en ny datakälla med den model.json- eller manifest.json-fil som du vill använda för att undvika att ta bort beroendena.
    - Om du vill ändra platsen för datafilen eller den primära nyckeln väljer du **Redigera**.
-   - Information om inkrementell uppdatering av data finns i [Konfigurera en inkrementell uppdatering för Azure Data Lake datakällor](incremental-refresh-data-sources.md)
+   - Information om inkrementell uppdatering av data finns i [Konfigurera en inkrementell uppdatering för Azure Data Lake datakällor](incremental-refresh-data-sources.md).
+   - Ändra endast entitetsnamnet så att det matchar entitetsnamnet i .json-filen.
+
+     > [!NOTE]
+     > Behåll alltid enhetsnamnet i Customer Insights samma som enhetsnamnet i filen model.json eller manifest.json efter inmatning. Customer Insights verifierar alla entitetsnamn med model.json eller manifest.json vid varje systemuppdatering. Om ett entitetsnamn ändras antingen i Customer Insights eller utanför, uppstår ett fel eftersom Customer Insights inte kan hitta det nya entitetsnamnet i .json-filen. Om ett inmatade entitetsnamn har ändrats av misstag redigerar du entitetsnamnet i Customer Insights så att det matchar namnet i .json-filen.
 
 1. Välj **Attribut** om du vill lägga till eller ändra attribut eller för att aktivera dataprofilering. Markera sedan **Klar**.
 
 1. Klicka på **Spara** om du vill tillämpa ändringarna och återgå till sidan **Datakällor**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

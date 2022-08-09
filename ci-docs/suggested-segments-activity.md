@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: e98aea3b3f3a2c4788346deab1b7ad7d1167110d
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: df4f5f4b5c9a3ad66d57a6b349e18a0d714aff62
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054362"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170611"
 ---
-# <a name="suggested-segments-based-on-activity-data-preview"></a>Föreslagna segment baserade på aktivitetsdata (förhandsversion)
+# <a name="suggested-segments-based-on-activity-preview"></a>Förslag på segment baserat på aktivitet (förhandsgranskning)
 
 Upptäck kundsegment som är intressanta och baserade på kundaktivitetsdata som är baserade på Customer Insights. Exempel på aktivitetsdata är transaktioner, varaktighet för supportsamtal, köp eller returer. Om du vill föreslå segment analyseras aktivitetsdata efter recency, frekvens och monetärt värde (eller varaktighet). Du kan också skapa [segment som föreslås för att förbättra ett mått eller förstå vad som påverkar ett attribut](suggested-segments.md).
 
@@ -35,29 +35,27 @@ Med [aktivitetsdata](activities.md) som är tillgängliga i Customer Insights ka
 - kunder som ofta interagerar med ditt företag  
 
 Om du har ett återförsäljningsföretag kan du ta reda på vilka kunder som genererar mest intäkter och ge dem en rabatt. Du kan även identifiera enstaka kunder och erbjuda dem att gå med i ett program för att besöka din verksamhet oftare.
-Om du är i hälso- och sjukvårdsbranschen och erbjuder offentlig hälso- och sjukvård och ditt mål är att minimera utgifter för enskilda utgifter. Ett sätt att göra detta kan vara att minska antalet återkommande besök genom att erbjuda bästa möjliga vård i så få besök som möjligt. I det här fallet är målet att hålla besöksfrekvensen låg och minimera återkommande kostnader för besöket. Du kan också identifiera grupper med personer som ofta har avtalade tider och stora återkommande kostnader, och analysera dessa ärenden för att förbättra den enskildes behov. 
+Om du tillhandahåller offentlig hälso- och sjukvård och har som mål att minimera kostnaderna för den enskilda personen, kan du försöka minska antalet återkommande besök genom att erbjuda bästa möjliga vård på så få besök som möjligt. I det här fallet är målet att hålla besöksfrekvensen låg och minimera återkommande kostnader för besöket. Du kan också identifiera grupper med personer som ofta har avtalade tider och stora återkommande kostnader, och analysera dessa ärenden för att förbättra den enskildes behov.
 
 ## <a name="required-data"></a>Obligatoriska data
 
-Förslag skapas utifrån valda indata. 
+Förslag skapas utifrån valda indata.
 
-- Kundprofiler: Alla kunder eller medlemmar i ett visst segment. 
+- Kundprofiler: Alla kunder eller medlemmar i ett visst segment.
 
 - Tidsperiod: Senaste månaden, förra året eller eventuella anpassade tidsram.
 
 - Aktivitetstyp: inköp, återförsäljningstransaktioner, onlinetransaktioner, kundsupportärenden, prenumerationer och så vidare.  
 
-- Entitet i Customer Insights som innehåller aktivitetsdata: Entiteten UnifiedActivity eller entiteten för en viss aktivitet. 
+- Entitet i Customer Insights som innehåller aktivitetsdata: Entiteten UnifiedActivity eller entiteten för en viss aktivitet.
 
 - Mått som ska inkludera: Recency, frekvens eller monetärt, beroende på dina affärsbehov.
 
 ## <a name="generate-suggested-segments"></a>Generera föreslagna segment
 
-1. Gå till **Segment**.
+1. Gå till **segment** och välj fliken **Förslag (förhandsversion)**.
 
-1. Välj fliken **Förslag (förhandsversion)**.
-
-1. Välj **Sök efter nya förslag** och välj **Visa eller förutse kundbeteende**. Välj **Start** om du vill köra den guidade upplevelsen.
+1. Välj **Sök efter nya förslag** och välj **Visa eller förutse kundbeteende**. Välj **start**.
 
    :::image type="content" source="media/suggested-segments-activity-wizard.png" alt-text="Första steget i konfigurationsguiden för ett föreslaget segment baserat på aktivitet.":::
 
@@ -69,32 +67,17 @@ Förslag skapas utifrån valda indata.
 
 1. Granska indata och välj **Kör** för att köra modellen och generera förslag.
 
-1. Beroende på antalet kundprofiler och valda aktiviteter kan det ta några minuter att slutföra. 
+Beroende på antalet kundprofiler och valda aktiviteter kan det ta några minuter att slutföra.
 
-När du har genererat förslagen kan du filtrera dem efter det värde du är mest intresserad av. 
+När du har genererat förslagen kan du filtrera dem efter det värde du är mest intresserad av.
 
-## <a name="view-details-of-a-suggested-segment"></a>Visa information om föreslaget segment
+## <a name="manage-suggested-segments"></a>Hantera föreslagna segment
 
-När förslagen har genererats hittar du dem listade i **Segment** > **Förslag (förhandsversion)** i avsnittet **Aktivitetsbaserade förslag**.
+Gå till **Segment** och välj fliken **Förslag (förhandsgranskning**). I avsnittet **Aktivitetsbaserade förslag** välj ett föreslaget segment för att visa tillgängliga åtgärder.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="Den expanderade rutan på sidan visar detaljerade data för ett föreslaget segment.":::
-
-Välj **Visa förslag** på ett föreslaget segment för att visa information om det avsnittet. I den vänstra rutan visas information om i vilken omfattning varje ruta visas i jämförelse med målgruppen. Det visar också antalet potentiella medlemmar i segmenten och den motsvarande procentandelen av de totala kunderna. Om du vill behålla förslaget som ett segment väljer du **Skapa segment**.    
-
-## <a name="save-a-suggestion-as-a-segment"></a>Spara ett förslag som ett segment
-
-1. Gå till **Segment** > **Förslag (förhandsgranskning)**.
-
-1. Välj det segment som du vill spara. 
-
-1. I den vänstra rutan, välj **Skapa segment**. 
-
-1. När du har sparat segmenten visas det i listan med segment på fliken **Alla segment**. Det kan nu [uppdateras eller tas bort på samma sätt som i andra segment](segments.md). Du kan inte redigera segmentinformationen. Du kan emellertid ändra indatavillkoren för förslagen och generera olika förslag.
-
-## <a name="refresh-or-edit-a-set-of-suggestions"></a>Uppdatera eller redigera en uppsättning förslag
-
-1. Gå till **Segment** > **Förslag (förhandsversion)** och leta upp avsnittet **Aktivitetsbaserade förslag**.
-
-1. Välj **Uppdatera förslag** för att uppdatera förslagen samtidigt som du behåller konfigurerade attribut. Eller välj **Redigera förslag** om du vill ändra de konfigurerade attributen. Systemet kör processen på nytt, genererar segmentförslag utifrån senaste data och ersätter de aktuella förslagen.
+- **Visa förslag** för att se detaljerna för det segmentet som omfattningen av varje dimension i jämförelse med målgruppen. Det visar också antalet potentiella medlemmar i segmenten och den motsvarande procentandelen av de totala kunderna.
+- **Skapa segment** för att spara det föreslagna som ett segment. Den visas på fliken **Alla segment** och kan [uppdateras eller tas bort](segments.md). Du kan inte redigera segmentinformationen. Du kan emellertid ändra indatavillkoren för förslagen och generera olika förslag.
+- **Redigera förslag** och ändra de konfigurerade attributen som ersätter de aktuella förslagen.
+- **Uppdatera förslag** för att uppdatera förslagen samtidigt som du behåller konfigurerade attribut.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

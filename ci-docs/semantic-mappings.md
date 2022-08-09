@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - customerInsights
-ms.openlocfilehash: b3a0643ab71c98ce212f4e4581a584d8382c67eb
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 7c9588ac7a132ca6f43cf26ea3a744109a0dd2b8
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081995"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183653"
 ---
 # <a name="semantic-mappings-preview"></a>Semantiska mappningar (förhandsgranskning)
 
@@ -32,13 +32,13 @@ Med hjälp av en semantisk mappning kan du mappa icke-aktivitetsdata till förde
 
 1. I steget **Entitetsdata**, ange värdena för följande fält
 
-   - **Mappningsnamn för semantisk entitet**: Ange ett namn för din semantiska mappning av entiteter.
-   - **Källentitet**: Välj en enhet som innehåller kontaktdata.
-   - **Primärnyckel**: Välj fältet som används för unik identifiering av en kontaktpost. Den ska inte innehålla några dubblettvärden, tomma värden eller värden som saknas.
+   - **Mappningsnamn för semantisk entitet**: Namn för din semantiska mappning av entiteter.
+   - **Källentitet**: enhet som innehåller kontaktdata.
+   - **Primärnyckel**: fältet som används för unik identifiering av en kontaktpost. Den ska inte innehålla några dubblettvärden, tomma värden eller värden som saknas.
 
    :::image type="content" source="media/Semantic_Mapping_Wizard1.png" alt-text="Konfigurera mappningen för entiteten med namn, källentitet och primärnyckel.":::
 
-1. Fortsätt genom att klicka på **Nästa**.
+1. Välj **Nästa**.
 
 1. I **Relationer**, konfigurera detaljerna för att ansluta dina kontaktuppgifter till motsvarande kontodata. Det här steget visualiserar anslutningen mellan entiteter.  
 
@@ -46,7 +46,7 @@ Med hjälp av en semantisk mappning kan du mappa icke-aktivitetsdata till förde
 
    1. Välj **Lägg till relation** och konfigurera relationen.
    1. Välj attributet från din källenhet som ansluter din kontaktenhet till en annan enhet.
-   1. Välj den entitet som kontaktens entitet ska anslutas till. Du kan välja en entitet från avsnittet **Kontoentiteter** eller **Mellanliggande entitet**. Om du väljer en mellanliggande entitet måste du definiera en andra relation för att ansluta till målkontoentiteten.
+   1. Välj den entitet som kontaktens entitet ska anslutas till. Välj entitet från avsnittet **Kontoentiteter** eller **Mellanliggande entitet**. Om du väljer en mellanliggande entitet måste du definiera en andra relation för att ansluta till målkontoentiteten.
 
       :::image type="content" source="media/Semantic_Mapping_Wizard2.png" alt-text="Välj antingen en kontoentitet eller en mellanliggande entitet.":::
 
@@ -55,43 +55,38 @@ Med hjälp av en semantisk mappning kan du mappa icke-aktivitetsdata till förde
 
    > [!NOTE]
    > Du kan konfigurera fler relationer mellan kontaktentiteten och andra kontoentiteter med mellanliggande entiteter.
-   >  :::image type="content" source="media/Semantic_Mapping_Wizard4.png" alt-text="Visualisering av olika relationer ansluter kontaktpersoner till kontoentiteter.":::
+   
+     :::image type="content" source="media/Semantic_Mapping_Wizard4.png" alt-text="Visualisering av olika relationer ansluter kontaktpersoner till kontoentiteter.":::
 
-1. Välj **Nästa** när du är klar med relationskonfigurationen.
+1. Välj **Nästa**.
 
 1. I steget **Ange semantiktyp**, välj en **Semantisk typ**. För tillfället finns det en **Semantisk typ** kallas *ContactProfile*.
 
-1. Mappa dina data till *ContactProfile* **Semantisk typ** för fälten som visas.
-   - Obligatoriskt fält: kontakt-ID
-   - Valfria fält: Förnamn, Efternamn, Födelsedatum, Kön, Primär e-postadress och Primär telefon
+1. Mappa ditt kontakt-id till *ContactProfile* semantisk typ **Kontakt-ID**. Om du vill kan du mappa andra fält som förnamn, efternamn, kön eller e-post.
 
    :::image type="content" source="media/Semantic_Mapping_Wizard5.png" alt-text="Mappa dina kontaktdataattribut till de obligatoriska och valfria fälten.":::
 
-1. Fortsätt genom att klicka på **Nästa**.
+1. Välj **Nästa**.
 
-1. I steget **granskning** tar du en titt på konfigurationen av sematiska mappningen. Välj **Redigera** för motsvarande avsnitt om du vill göra ändringar.
+1. I steget **granskning** tar du en titt på konfigurationen av semantiska mappningen. Välj **Redigera** för motsvarande avsnitt om du vill göra ändringar.
 
-1. Välj **Spara** om du vill spara den nya **Semantiska mappningen**.
+1. Välj **Spara**.
 
-1. När du har sparat kan du välja **Kör** processen semantisk mappning eller du kan välja **Stäng** för att spara din semantiska mappning utan att bearbeta den.
-
-1. Om du vill köra en mappning senare markerar du semantisk mappning och väljer **Uppdatera**.
+1. För att bearbeta den semantiska mappningen, välj **Kör**. Eller välj **Stäng** om du vill spara mappningen utan att bearbeta den. Om du vill köra den senare markerar du semantisk mappning och väljer **Uppdatera**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Hantera befintliga semantiska mappningar
 
-I **Data** > **semantisk mappning (förhandsversion)**, kan du se alla dina sparade semantiska mappningar och hantera dem. Varje semantisk mappning representeras av en separat rad. Här finns information om källentiteten, typ av språk, mappningstyp och dess status.
+Gå till **Data** > **Semantiska mappningar (förhandsgranskning)** för att visa dina sparade semantiska mappningar, deras källenhet, semantiska typ, mappningstyp och status.
 
 :::image type="content" source="media/semantic-mapping-options.png" alt-text="Alternativ för hantering av semantiska mappningar.":::
 
-- **Redigera**: Öppnar konfigurationen av den semantiska mappningsinställningen i granskningssteget. Du kan ändra den aktuella konfigurationen. Välj **Spara** och **Kör** för att bearbeta ändringarna.
-
-- **Uppdatera**: Uppdaterar den valda semantiska mappningen med den mest uppdaterade data från de enheter som ingår i dess konfiguration. Om du uppdaterar en viss semantisk mappning uppdateras alla semantiska mappningar av samma typ.
-
-- **Byt namn**: Öppnar en dialogruta där du kan ange ett annat namn för den valda semantiska mappningen. Välj **Spara** för att införa ändringarna.
-
-- **Ta bort**: Öppnar en dialog för att bekräfta borttagningen av den valda semantiska mappningen. Du kan också ta bort fler än en semantisk mappning på samma gång genom att välja de olika semantiska mappningarna och borttagningsikonen. Välj **Ta bort** för att borttagningen.
+Välj den semantiska mappningen om du vill visa tillgängliga åtgärder.
+- **Redigera** den aktuella konfigurationen. Välj **Spara** och **Kör** för att bearbeta ändringarna.
+- **Uppdatera** den semantiska mappningen så att det omfattar senaste data. Om du uppdaterar en viss semantisk mappning uppdateras alla semantiska mappningar av samma typ.
+- **Byt namn** på den semantiska mappningen. Välj **Spara**.
+- **Ta bort** den semantiska mappningen. Du kan ta bort fler än en semantisk mappning på samma gång genom att välja de olika semantiska mappningarna och borttagningsikonen. Välj **Ta bort** för att borttagningen.
 
 ## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Skapa aktiviteter på kontaktnivå med hjälp av en ContactProfile-mappning för entitetsbildning
 
@@ -100,7 +95,7 @@ När du har skapat en *ContactProfile*-mappning för entiteter kan du samla in k
    > [!NOTE]
    > För att kontaktnivåaktiviteter ska fungera måste du ha både **AccountID**- och **ContactID**-attribut för varje post i dina aktivitetsdata.
 
-1. [Definiera en *ContactProfile* semantisk entitetsmappning.](#define-a-contactprofile-semantic-entity-mapping) och kör semantiska mappningen.
+1. [Definiera en *ContactProfile* semantisk enhetsmappning](#define-a-contactprofile-semantic-entity-mapping) och kör den semantiska mappningen.
 
 1. Gå till **Data** > **Aktiviteter**.
 
@@ -119,14 +114,14 @@ När du har skapat en *ContactProfile*-mappning för entiteter kan du samla in k
 
 1. Kör dina aktivitetsmappningar.
 
-1. Dina aktiviteter på kontaktnivå visas nu på din kundtidslinje.
+1. När en aktivitetsmappning på kontaktnivå har körts väljer du **Kunder**. Dina aktiviteter på kontaktnivå visas nu på din kundtidslinje.
 
    :::image type="content" source="media/Contact_Activities2.png" alt-text="Slutresultat efter konfigurering av kontaktaktiviteter":::
 
 ### <a name="contact-level-activity-timeline-filtering"></a>Tidslinjefiltrering på kontaktnivå
 
-När du har konfigurerat en aktivitetsmappning på kontaktnivå och kör den uppdateras aktivitetstidslinjen för dina kunder. Det inkluderar deras ID eller namn, beroende på ditt *ContactProfile* konfiguration, för de aktiviteter de agerat på. Du kan filtrera aktiviteter efter kontakter i tidslinjen om du vill se specifika kontakter som du är intresserad av. Dessutom kan du visa alla aktiviteter som inte har tilldelats en viss kontakt genom att välja **Aktiviteter som inte är mappade till en kontakt**.
+Aktivitetens tidslinje för dina kunder inkluderar deras ID eller namn, beroende på ditt *ContactProfile* konfiguration, för de aktiviteter de agerat på. Filtrera aktiviteter efter kontakter i tidslinjen om du vill se specifika kontakter som du är intresserad av. För att visa alla aktiviteter som inte har tilldelats en viss kontakt väljer du **Aktiviteter som inte är mappade till en kontakt**.
 
-   :::image type="content" source="media/Contact_Activities3.png" alt-text="Tillgängliga filtreringsalternativ för aktiviteter på kontaktnivå.":::
+:::image type="content" source="media/Contact_Activities3.png" alt-text="Tillgängliga filtreringsalternativ för aktiviteter på kontaktnivå.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

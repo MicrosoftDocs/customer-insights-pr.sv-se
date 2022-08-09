@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a8b4b8a9bdcf7cf43c47a67d547405dd20dad60d
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081743"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195196"
 ---
 # <a name="connections-preview-overview"></a>Översikt över anslutningar (förhandsversion)
 
@@ -27,6 +27,12 @@ Gå till **Admin** > **Anslutningar** för att skapa och visa anslutningar.
 På fliken **Anslutningar** visas alla aktiva anslutningar. I listan visas en rad för varje anslutning.
 
 Få en snabb översikt, beskrivning och ta reda på vad du kan göra med varje utbyggbarhetsalternativ på fliken **Upptäck**.
+
+## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
+
+När du aktiverar Dynamics 365 Customer Insights för att överföra data till tredje part eller andra Microsoft-produkter tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga uppgifter såsom personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att tredjepart uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
+
+Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort anslutningen i syfte att avbryta användningen av den här funktionen.
 
 ## <a name="exports"></a>Exporter
 
@@ -41,8 +47,6 @@ Endast administratörer kan konfigurera nya anslutningar, men de skapade anslutn
 Om du vill lägga till anslutningar måste du ha [administratörsbehörighet](permissions.md). Om du ansluter till andra Microsoft-tjänster förutsätter vi att båda tjänsterna finns i samma organisation.
 
 1. Gå till **Admin** > **Anslutningar (förhandsversion)**.
-
-1. Gå till fliken **Anslutningar**.
 
 1. Välj **Lägg till kontakt** om du vill skapa en ny anslutning. Välj i listrutan vilken typ av anslutning du vill skapa.
 
@@ -99,3 +103,5 @@ Fristående berikningar och export blir inaktiva. Du aktiverar dem på nytt geno
 ## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Upprätta anslutningar med hemligheter som hanteras av ditt eget Key Vault
 
 Vissa anslutningar behöver hemligheter som API-nycklar eller lösenord. Vissa anslutningar stöder hemligheter som lagras i ditt eget Key Vault. Läs mer om anslutningar som stöds och hur du upprättar en [egen Key Vault för Customer Insights](use-azure-key-vault.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

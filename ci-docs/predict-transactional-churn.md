@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e55ca8c6926fa0bda05aaf52fd799ca25f7f585f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b8216b5a739964fdfff8cad7e6d6d7ce3f5308b5
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8648020"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171117"
 ---
 # <a name="transaction-churn-prediction"></a>Prediktion för transaktionsomsättning
 
@@ -240,7 +240,7 @@ Lägg till en lista över dina företagskunder och konton som du vill använda s
    - **Förutsägelsens namn**: Namnet på förutsägelsen som angavs när den skapades.
    - **Förutsägelsetyp**: Den modelltyp som används för förutsägelse
    - **Utdataentitet**: Namnet på den entitet där utdata för förutsägelsen ska lagras. Du kan söka efter en entitet med det här namnet på **Data** > **Entiteter**.
-     I utdataentiteten är *ChurnScore* är den förutsagda sannolikheten för omsättning och *IsChurn* är en binär etikett baserad på *ChurnScore* med 0,5 tröskel. Standardtröskeln kanske inte fungerar för ditt scenario. [Skapa ett nytt segment](segments.md#create-a-new-segment) med önskad tröskel.
+     I utdataentiteten är *ChurnScore* är den förutsagda sannolikheten för omsättning och *IsChurn* är en binär etikett baserad på *ChurnScore* med 0,5 tröskel. Standardtröskeln kanske inte fungerar för ditt scenario. [Skapa ett nytt segment](segments.md#create-a-segment) med önskad tröskel.
      Alla kunder behöver inte vara aktiva kunder. En del av dem kanske inte har haft någon aktivitet under en längre tid och betraktas som redan nedtonade, baserat på din definition. Det är inte bra att ta risken för kunder som redan har börjat använda programmet eftersom de inte är målgruppen av intresse.
    - **Förutsagt fält**: Det här fältet fylls endast i för vissa typer av förutsägelser och används inte i omsättningsförutsägelser.
    - **Status**: Status för förutsägelsekörningen.

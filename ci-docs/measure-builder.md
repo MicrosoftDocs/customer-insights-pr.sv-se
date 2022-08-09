@@ -1,5 +1,5 @@
 ---
-title: Skapa nya mått med måttverktyget
+title: Skapa mått med måttverktyget
 description: Skapa mått från grunden och analysera viktiga värden för din verksamhet.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
@@ -11,24 +11,22 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: f3ec86806074a12c1107648303ed2d65e97ebc69
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: fac00b8a1b4ca6e09dd29abe46dfe240adcc029e
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081963"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170887"
 ---
-# <a name="create-new-measures-with-the-measure-builder"></a>Skapa nya mått med måttverktyget
+# <a name="create-measures-with-measure-builder"></a>Skapa mått med måttverktyget
 
-I den här artikeln förklaras hur du skapar ett nytt [mått](measures.md) från grunden. Med måttverktyget kan du definiera beräkningar med hjälp av operatörer, sammansättningsfunktioner och filter. Du kan skapa ett mått med attribut från entiteter som är relaterade till den enhetliga *kund*-entiteten.
+Med måttverktyget kan du definiera beräkningar med hjälp av operatörer, sammansättningsfunktioner och filter. Du kan definiera mått med attribut från entiteter som är relaterade till den enhetliga *kund*-entiteten.
 
 Att skapa mått i B2C- och B2B-miljöer fungerar på samma sätt. Men om din B2B-miljö [använder konton med hierarkier](relationships.md#set-up-account-hierarchies) kan du välja att aggregera måttet över relaterade underkonton.
 
-Du kan också snabbt skapa ett mått genom att välja bland en uppsättning vanliga och fördefinierade mått. Mer information finns i [Använda en mall för att skapa ett mått](measure-templates.md).
-
 # <a name="individual-consumers-b-to-c"></a>[Enskilda konsumenter (B2C)](#tab/b2c)
 
-Du kan skapa mått på nivån för enskilda kunder (kundattribut, kundmått) eller på nivån för företaget/organisationen (affärsmått). Kundattribut och kundmått är två typer som du kan använda för att spåra prestanda per kund. Till exempel den totala kostnaden för varje kund. Med affärsåtgärder kan du spåra prestationer per verksamhet. Till exempel den totala omsättningen per företag.
+Skapa mått på nivån för enskilda kunder (kundattribut, kundmått) eller på nivån för företaget/organisationen (affärsmått). Du kan använda kundattribut och kundmått för att spåra prestanda per kund. Till exempel den totala kostnaden för varje kund. Med affärsåtgärder kan du spåra prestationer per verksamhet. Till exempel den totala omsättningen per företag.
 
 - Kundattribut: Genererar utdata som ett nytt attribut, som sparas som en ny kolumn i den systemgenererade entiteten med namnet *Customer_Measure*. När du uppdaterar ett kundattribut uppdateras alla andra kundattribut i entiteten *Customer_Measure* samtidigt. Dessutom visas kundattribut i kundprofilkort. När kundattributet har körts eller sparats kan du inte ändra det till ett kundmått.
 
@@ -38,9 +36,15 @@ Du kan skapa mått på nivån för enskilda kunder (kundattribut, kundmått) ell
 
 1. Gå till **Mått**.
 
-1. Välj **Ny** och välj **Skapa din egen**.
+1. Välj **Ny** > **Skapa din egen**.
 
    :::image type="content" source="media/measure-b2c.png" alt-text="Tom konfigurationsskärm för ett B2C-mått." lightbox="media/measure-b2c.png":::
+
+1. Välj **Redigera information** bredvid Namnlöst mått. Ange ett namn för måttet. Alternativt kan du lägga till [taggar](work-with-tags-columns.md#manage-tags) i måttet.
+
+   :::image type="content" source="media/measures_edit_details.png" alt-text="Dialogrutan Redigera information.":::
+
+1. Välj **Klar**.
 
 1. Om du vill spåra prestanda på företagsnivå växlar du **Måttyp** till **Företagsnivå**. Som standard är **Kundnivå** valt. **Kundnivå** lägger automatiskt till attributet *CustomerId* i Mått medan **affärsnivå** automatiskt tar bort det.
 
@@ -62,7 +66,7 @@ Du kan skapa mått på nivån för enskilda kunder (kundattribut, kundmått) ell
    1. Dataentitet: Välj den entitet som innehåller attributet du vill mäta.
    1. Dataattribut: Välj det attribut som du vill använda i sammansättningsfunktionen för att beräkna måttet. Du kan bara välja ett attribut åt gången.
    1. Du kan också välja ett dataattribut från ett befintligt mått genom att välja fliken **Mått**. Du kan också söka efter ett entitets- eller måttnamn.
-   1. Välj **Lägg till** för att lägga till det valda attributet till måttet.
+   1. Markera **Lägg till**.
 
 1. Om du vill skapa mer komplexa mått kan du lägga till fler attribut eller använda olika operatörer i måttfunktionen.
 
@@ -70,39 +74,33 @@ Du kan skapa mått på nivån för enskilda kunder (kundattribut, kundmått) ell
   
    1. I avsnittet **Lägg till attribut** i fönstret **Filter** väljer du det attribut som du vill använda för att skapa filter.
    1. Ange filteroperatörerna så att filtret definieras för varje markerat attribut.
-   1. Välj **Tillämpa** för att lägga till filtren till måttet.
+   1. Välj **Verkställ**.
 
 1. Välj **Dimension** för att välja fler fält som läggs till som kolumner i entiteten för måttutdata.
 
    1. Välj **Redigera dimensioner** för att lägga till dataattribut som du vill gruppera måttvärdena efter. Till exempel ort eller kön.
-   > [!TIP]
-   > Om du valde **Kundnivå** som **Måttyp** har attributet *CustomerId* redan lagts till. Om du tar bort attributet växlar **Måttyp** till **Affärsnivå**.
-   1. Välj **Klart** för att lägga till dimensionerna till måttet.
+      > [!TIP]
+      > Om du valde **Kundnivå** som **Måttyp** har attributet *CustomerId* redan lagts till. Om du tar bort attributet växlar **Måttyp** till **Affärsnivå**.
+   1. Välj **Klar**.
 
 1. Om det finns värden i dina data som du behöver byta ut mot ett heltal väljer du **Regler**. Konfigurera regeln och se till att du endast väljer heltal som ersättare. Ersätt till exempel *null* med *0*.
 
 1. Om det finns flera sökvägar mellan den dataentitet du mappade och entiteten *Kund* måste du välja någon av de identifierade [entitetsrelationssökvägarna](relationships.md). Resultaten av måtten kan variera beroende på den valda sökvägen.
 
    1. Välj **Relationssökväg** och välj den entitetsväg som ska användas för att identifiera ditt mått. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
-   1. Välj **Klart** för att tillämpa dina val.
+   1. Välj **Klar**.
 
-1. Om du vill lägga till fler beräkningar för måttet väljer du **Ny beräkning**. Du kan endast använda entiteter på samma entitetssökväg för nya beräkningar. Fler beräkningar visas som nya kolumner i måttutdataentiteten.
+1. Om du vill lägga till fler beräkningar för måttet väljer du **Ny beräkning**. Du kan endast använda entiteter på samma entitetssökväg för nya beräkningar. Fler beräkningar visas som nya kolumner i måttutdataentiteten. Alternativt väljer du **Redigera namn** om du vill skapa ett namn för beräkningen.
 
-1. Välj den vertikala ellipsen (&vellip;) i beräkningen för att **Duplicera**, **Byta namn** på eller **Ta bort** en beräkning från ett mått.
+1. Välj den vertikala ellipsen (&vellip;) i beräkningen för att **Duplicera** eller **Ta bort** en beräkning från ett mått.
 
 1. I området **Förhandsgranskning** ser du dataschemat för måttutdataentiteten, inklusive filter och dimensioner. Förhandsgranskningen reagerar dynamiskt på ändringar i konfigurationen.
 
-1. Välj **Redigera information** bredvid Namnlöst mått. Ange ett namn för måttet. Alternativt kan du lägga till [taggar](work-with-tags-columns.md#manage-tags) i måttet.
-
-   :::image type="content" source="media/measures_edit_details.png" alt-text="Dialogrutan Redigera information.":::
-
-1. Välj **Kör** för att beräkna resultaten för det konfigurerade måttet. Välj **Spara och stäng** om du vill behålla den aktuella konfigurationen och köra måttet senare.
-
-1. Gå till **Mått** för att se det nyskapade måttet i listan.
+1. Välj **Kör** för att beräkna resultaten för det konfigurerade måttet. Välj **Spara och stäng** om du vill behålla den aktuella konfigurationen och köra måttet senare. Sidan **Mått** visas.
 
 # <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
-Du kan skapa mått på nivån för enskilda konton (kundmått) eller på nivån för alla konton (affärsmått).
+Skapa mått på nivån för enskilda konton (kundmått) eller på nivån för alla konton (affärsmått).
 
 - Kundmått: Genererar utdata som sin egen entitet. Kundmått visas inte på kundprofilkort.
 
@@ -113,6 +111,11 @@ Du kan skapa mått på nivån för enskilda konton (kundmått) eller på nivån 
 1. Välj **Nytt**.
 
    :::image type="content" source="media/measure-b2b.png" alt-text="Tom konfigurationsskärm för ett B2B-mått. ":::
+
+1. Välj **Redigera information** bredvid Namnlöst mått. Ange ett namn för måttet. Alternativt kan du lägga till [taggar](work-with-tags-columns.md#manage-tags) i måttet. 
+   :::image type="content" source="media/measures_edit_details.png" alt-text="Dialogrutan Redigera information.":::
+
+1. Välj **Klar**.
 
 1. Välj en sammansättningsfunktion i listrutan **Välj funktion** i konfigurationsområdet. Sammansättningsfunktioner omfattar:
    - **Sum**
@@ -144,12 +147,12 @@ Du kan skapa mått på nivån för enskilda konton (kundmått) eller på nivån 
 
    1. Välj **Redigera dimensioner** för att lägga till dataattribut som du vill gruppera måttvärdena efter. Till exempel ort eller kön.
       > [!TIP]
-      > Om du valde **Kundnivå** som **Måttyp** har attributet *CustomerId* redan lagts till. Om du tar bort attributet växlar **Måttyp** till **Affärsnivå**.
+      > Attributet *CustomerId* har redan lagts till vilket indikerar att detta är en måttyp på kundnivå. Om du tar bort attributet växlar Måttyp till Affärsnivå.
    1. Välj **Klart** för att lägga till dimensionerna till måttet.
 
 1. Om det finns värden i dina data som du behöver byta ut mot ett heltal väljer du **Regler**. Konfigurera regeln och se till att du endast väljer heltal som ersättare. Ersätt till exempel *null* med *0*.
 
-1. Du kan använda växlingen **Sammanslagning av delkonton** om du [använder konton med hierarkier](relationships.md#set-up-account-hierarchies).
+1. Om du [använder konton med hierarkier](relationships.md#set-up-account-hierarchies), granska **Sammanslagning av delkonton**.
    - Om det är inställt på **Av** beräknas måttet för varje konto. Varje konto får sitt eget resultat.
    - Om den har angetts till **På** väljer du **Redigera** för att välja kontohierarkin enligt de hämtade hierarkierna. Måttet ger bara ett resultat eftersom det är aggregerat med underkonton.
 
@@ -158,14 +161,16 @@ Du kan skapa mått på nivån för enskilda konton (kundmått) eller på nivån 
    1. Välj **Relationssökväg** och välj den entitetsväg som ska användas för att identifiera ditt mått. Om det bara finns en enskild sökväg till entiteten *Kund* visas inte den här kontrollen.
    1. Välj **Klart** för att tillämpa dina val.
 
-1. Välj den vertikala ellipsen (&vellip;) i beräkningen för att **Duplicera**, **Byta namn** på eller **Ta bort** en beräkning från ett mått.
+1. Välj den vertikala ellipsen (&vellip;) i beräkningen för att **Duplicera** eller **Ta bort** en beräkning från ett mått.
 
 1. I området **Förhandsgranskning** ser du dataschemat för måttutdataentiteten, inklusive filter och dimensioner. Förhandsgranskningen reagerar dynamiskt på ändringar i konfigurationen.
 
-1. Välj **Redigera information** bredvid Namnlöst mått. Ange ett namn för måttet. Alternativt kan du lägga till [taggar](work-with-tags-columns.md#manage-tags) i måttet.
+1. Välj **Kör** för att beräkna resultaten för det konfigurerade måttet. Välj **Spara och stäng** om du vill behålla den aktuella konfigurationen och köra måttet senare. Sidan **Mått** visas.
 
-   :::image type="content" source="media/measures_edit_details.png" alt-text="Dialogrutan Redigera information.":::
+---
 
-1. Välj **Kör** för att beräkna resultaten för det konfigurerade måttet. Välj **Spara och stäng** om du vill behålla den aktuella konfigurationen och köra måttet senare.
+## <a name="next-step"></a>Gå vidare
 
-1. Gå till **Mått** för att se det nyskapade måttet i listan.
+Du kan använda befintliga åtgärder för att skapa [ett kundsegment](segments.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

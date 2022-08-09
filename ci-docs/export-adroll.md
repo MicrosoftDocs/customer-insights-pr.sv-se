@@ -1,53 +1,53 @@
 ---
 title: Exportera segment till AdRoll (förhandsgranskning)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till AdRoll.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 13c7dd3b8556ad807fba6c537525b463480e860b
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8110eab199920ab8fc2ea15678139faf264a242a
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081916"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195772"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Exportera segment till AdRoll (förhandsgranskning)
 
-Exportera segment med enhetliga kundprofiler till AdRoll och använd dem för annonsering. 
+Exportera segment med enhetliga kundprofiler till AdRoll och använd dem för annonsering.
 
-## <a name="prerequisites-for-a-connection"></a>Krav för anslutning
+## <a name="prerequisites"></a>Förutsättningar
 
-- Du har ett [AdRoll-konto](https://www.adroll.com/) och motsvarande administratörsautentiseringsuppgifter.
-- Du har [konfigurerade segments](segments.md) i Customer Insights.
+- Ett [AdRoll-konto](https://www.adroll.com/) och motsvarande administratörsautentiseringsuppgifter.
+- Ett [AdRoll annonsörs-ID](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+- [Konfigurerade segments](segments.md) i Customer Insights.
 - Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till 250 000 kundprofiler åt gången till AdRoll.
-- Du kan inte exportera segment med färre än 100 kundprofiler till AdRoll. 
-- Export till AdRoll är begränsad till segment.
-- Det kan ta upp till 10 minuter innan du exporterar upp till 250 000 kundprofiler till AdRoll. 
-- Hur många kundprofiler du kan exportera till AdRoll är beroende av ditt kontrakt med AdRoll.
+- Det kan ta upp till 10 minuter innan du exporterar upp till 250 000 kundprofiler till AdRoll. Hur många kundprofiler du kan exportera till AdRoll är beroende av ditt kontrakt med AdRoll.
+- Endast segment. Ett segment måste innehålla minst 100 kundprofiler.
 
 ## <a name="set-up-connection-to-adroll"></a>Upprätta anslutningen till AdRoll
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **AdRoll** för att konfigurera anslutningen.
+1. Välj **Lägg till anslutning** och välj **AdRoll**.
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
-1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Välj vem som kan använda anslutningen. Som standard är det bara administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
-1. Välj **Anslut** om du vill initiera anslutningen till AdRoll.
+1. Välj **Anslut** om du vill initiera anslutningen.
 
-1. Välj **Autentisera med AdRoll** och ange dina autentiseringsuppgifter som administratör för AdRoll. 
+1. Välj **Autentisera med AdRoll** och ange dina autentiseringsuppgifter som administratör för AdRoll.
 
 1. Välj **Lägg till dig själv som exportanvändare** och ange dina autentiseringsuppgifter för Customer Insights.
 
@@ -55,31 +55,24 @@ Exportera segment med enhetliga kundprofiler till AdRoll och använd dem för an
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå till **Data** > **Exporter**.
 
-1. Välj för att skapa en ny export **Lägg till destination**.
+1. Välj **Lägg till export**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet AdRoll. Om avsnittets namn inte visas är inga anslutningar av den här typen tillgängliga för dig.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet AdRoll. Kontakta en administratör om det inte finns någon anslutning.
 
-1. Ange ditt **Annonsörs-ID för AdRoll**. Mer information finns i [Annonsörsprofiler för AdRoll](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Ange ett namn för exporten.
 
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Det krävs för att exportera segment till AdRoll.
+1. Ange ditt **Annonsörs-ID för AdRoll**.
 
-1. Välj de segment som du vill exportera. Välj ett segment med minst 100 medlemmar. Det går inte att exportera mindre segment. Dessutom är det maximala värdet som ett segment kan exportera 250 000 medlemmar per export. 
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress.
+
+1. Välj de segment som du vill exportera.
 
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). 
-
-Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du aktiverar Dynamics 365 Customer Insights för att överföra data till AdRoll tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att AdRoll uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

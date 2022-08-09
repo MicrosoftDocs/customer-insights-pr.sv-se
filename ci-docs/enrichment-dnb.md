@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 71b35e4295e19c13edadc6548ac79715555e8183
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081853"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196048"
 ---
 # <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Berika företagsprofiler med Dun & Bradstreet (förhandsversion)
 
@@ -80,7 +80,7 @@ Vi stöder för närvarande följande landsalternativ: Kanada (engelska) eller U
 
 1. Gå igenom översikten och välj sedan **Nästa**.
 
-1. Välj anslutningen och bekräfta. Kontakta en administratör om ingen är tillgänglig.
+1. Välj anslutningen och bekräfta. Kontakta en administratör om det inte finns någon anslutning.
 
 1. Välj **Nästa**.
 

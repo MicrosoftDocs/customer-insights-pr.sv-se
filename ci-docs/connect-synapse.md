@@ -1,7 +1,7 @@
 ---
 title: Anslut en Azure Synapse-datakälla (förhandsversion)
 description: Använda en databas i Azure Synapse som en datakälla i Dynamics 365 Customer Insights.
-ms.date: 03/25/2022
+ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: c4ae65613a02df38a30f907dae72d413bf1a702f
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 54247fbcdc27f6ed8314e0755164083eb461aa64
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052721"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9206929"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Anslut en Azure Synapse Analytics-datakälla (förhandsversion)
 
@@ -66,3 +66,9 @@ Mer information finns i [Azure Synapse översikt](/azure/synapse-analytics/overv
 1. Alternativt kan du välja vilka dataentiteter som dataprofilering ska tillåtas för.
 
 1. Välj **Spara** om du vill tillämpa dina val och starta inmatningen av data från den nyligen skapade datakällan länkad till Lake-databastabellerna i Azure Synapse Analytics. Sidan **Datakällor** öppnas där den nya datakälla visas i status **uppdateras**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan ta lång tid att läsa in data. Efter en lyckad uppdatering kan hämtade data granskas från sidan [**Entiteter**](entities.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

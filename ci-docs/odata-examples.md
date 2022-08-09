@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54ba9f4e9baeb4b7021bb8c20a706bbb6eb1529f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
+ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081998"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "9121584"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>OData-frågeexempel för API:er för Customer Insights
 
@@ -23,7 +23,7 @@ Den här artikeln innehåller några exempelfrågor som efterfrågas ofta för a
 
 Du måste ändra frågeexempel så att de fungerar i målmiljöerna: 
 
-- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}` var {instanceId} är GUID för den Customer Insights-miljö du vill fråga. Med [åtgärden ListAllInstances](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) kan du hitta de {InstanceId} du har åtkomst till.
+- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` var {instanceId} är GUID för den Customer Insights-miljö du vill fråga. Med [åtgärden ListAllInstances](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) kan du hitta de {InstanceId} du har åtkomst till.
 - {CID}: GUID för en enhetlig kundpost. Exempel: `ce759201f786d590bf2134bff576c369`.
 - {AlternateKey}: Identifierare för den primära nyckeln för en kundpost i en datakälla. Exempel: `CNTID_1002`
 - {DSname}: Sträng med entitetsnamnet för en datakälla som förs in i Customer Insights. Exempel: `Website_contacts`.
@@ -39,9 +39,10 @@ Följande tabell innehåller en uppsättning exempelfrågor för entiteten *Kund
 |Alternativ nyckel    | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} eq '{AlternateKey}'`         |  Alternativa nycklar finns kvar i en enhetlig kundentitet       |
 |Markera   | `{serviceRoot}/Customer?$select=CustomerId,FullName&$filter=customerid eq '1'`        |         |
 |Om    | `{serviceRoot}/Customer?$filter=CustomerId in ('{CID1}',’{CID2}’)`        |         |
-|Alternativ nyckel + In   | `Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
+|Alternativ nyckel + In   | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
 |Sök  | `{serviceRoot}/Customer?$top=10&$skip=0&$search="string"`        |   Returnerar de tio översta resultaten för en söksträng      |
 |Segmentmedlemskap  | `{serviceRoot}/Customer?select=*&$filter=IsMemberOfSegment('{SegmentName}')&$top=10`     | Returnerar ett antal rader från segmenteringsentiteten.      |
+|Segmentmedlemskap för en kund | `{serviceRoot}/Customer?$filter=CustomerId eq '{CID}'&IsMemberOfSegment('{SegmentName}')`     | Returnerar kundprofilen om de är medlemmar i det angivna avsnittet     |
 
 ## <a name="unified-activity"></a>Enhetlig aktivitet
 

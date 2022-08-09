@@ -1,19 +1,19 @@
 ---
 title: Exportera segment till Klaviyo (förhandsgranskning)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Klaviyo.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e2b60d9818a753e81e69f2bee6b1663e1840cb10
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6e45ca5827afa29d97a746bd1a474c2346cc32d2
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051337"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196784"
 ---
 # <a name="export-segments-to-klaviyo-preview"></a>Exportera segment till Klaviyo (förhandsgranskning)
 
@@ -21,32 +21,34 @@ Exportera segment med enhetliga kundprofiler till Klaviyo och använd dem för m
 
 ## <a name="prerequisites"></a>Förutsättningar
 
--   Du har ett [Klaviyo-konto](https://www.klaviyo.com/) och motsvarande autentiseringsuppgifter för administratör.
--   Du har [konfigurerade segments](segments.md) i Customer Insights.
--   Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
+- Ett [Klaviyo-konto](https://www.klaviyo.com/) och motsvarande autentiseringsuppgifter för administratör.
+- En [Kluseyo-API-nyckel](https://help.klaviyo.com/hc/articles/115005062267-How-to-Manage-Your-Account-s-API-Keys).
+- Ett [Klaviyo list-ID](https://help.klaviyo.com/hc/articles/115005078647-How-to-Find-a-List-ID).
+- [Konfigurerade segments](segments.md) i Customer Insights.
+- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera upp till 100 000 kundprofiler per export till Klaviyo.
-- Exporten till Klaviyo är begränsad till segment.
-- Det kan ta upp till 20 minuter innan du exporterar upp till 1 miljon kundprofiler till Klaviyo. 
-- Hur många kundprofiler du kan exportera till Klaviyo är beroende av och begränsas av ditt kontrakt med Klaviyo.
+- Upp till 1 miljon kundprofiler per export till Klaviyo, vilket kan ta upp till 20 minuter att slutföra. Hur många kundprofiler du kan exportera till Klaviyo är beroende av ditt kontrakt med Klaviyo.
+- Endast segment.
 
 ## <a name="set-up-connection-to-klaviyo"></a>Upprätta anslutningen till Klaviyo
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **Klaviyo** om du vill konfigurera anslutningen.
+1. Välj **Lägg till anslutning** och välj **Klaviyo**.
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
-1. Välj vem som kan använda anslutningen. Om du inte gör något blir standardvärdet Administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Välj vem som kan använda anslutningen. Som standard är det bara administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Tillhandahåll din [Klaviyo API-nyckel](https://help.klaviyo.com/hc/articles/115005062267-How-to-Manage-Your-Account-s-API-Keys) för att fortsätta logga in. 
+1. Tillhandahåll din Klaviyo API-nyckel för att fortsätta logga in.
 
-1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
-1. Välj **Anslut** för att initiera anslutningen till Klaviyo.
+1. Välj **Anslut** om du vill initiera anslutningen.
 
 1. Välj **Autentisera med Klaviyo** och ange dina administratörsautentiseringsuppgifter för Klaviyo.
 
@@ -56,27 +58,24 @@ Exportera segment med enhetliga kundprofiler till Klaviyo och använd dem för m
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå till **Data** > **Exporter**.
 
-1. Välj för att skapa en ny export **Lägg till destination**.
+1. Välj **Lägg till export**.
 
-1. I fältet **Anslutning för export** väljer du en anslutning från avsnittet Klaviyo. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export** väljer du en anslutning från avsnittet Klaviyo. Kontakta en administratör om det inte finns någon anslutning.
 
-1. Ange ditt [**List-ID för Klaviyo**](https://help.klaviyo.com/hc/articles/115005078647-How-to-Find-a-List-ID).     
+1. Ange ett namn för exporten.
 
-3. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Detta krävs för att kunna exporter segment till Klaviyo.
+1. Ange ditt **List-ID för Klaviyo**.
+
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress.
+
+1. Välj de segment som du vill exportera.
 
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du gör det möjligt för Dynamics 365 Customer Insights att överföra data till Klaviyo tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att säkerställa att Klaviyo uppfyller dina eventuella sekretess- och säkerhetskrav. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

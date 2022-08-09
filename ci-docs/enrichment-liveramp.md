@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 334440493c50448005ec90d0cfac11358d677b73
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081766"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196370"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Utöka kundprofiler med identitetsdata från LiveRamp (förhandsversion)
 
@@ -59,7 +59,7 @@ När du aktiverar Dynamics 365 Customer Insights för att överföra data till L
 
 1. Gå igenom översikten och välj sedan **Nästa**.
 
-1. Välj anslutning. Kontakta en administratör om ingen är tillgänglig.
+1. Välj anslutning. Kontakta en administratör om det inte finns någon anslutning.
 
 1. Välj **Nästa**.
 

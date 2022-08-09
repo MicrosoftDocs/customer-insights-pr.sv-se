@@ -1,5 +1,5 @@
 ---
-title: Föreslagna segment (förhandsversion)
+title: Förslag på segment baserat på mått (förhandsgranskning)
 description: Låt maskininlärning hjälpa dig att hitta nya och intressant segment baserat på kundattribut.
 ms.date: 10/15/2021
 ms.reviewer: mhart
@@ -11,31 +11,33 @@ manager: shellyha
 searchScope:
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: 9229bef1c5df06de973aa671ca70c6c8462d51cf
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e3f504827029afa12c65ec6f065a62606aaa823f
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081896"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170979"
 ---
-# <a name="suggested-segments-preview"></a>Föreslagna segment (förhandsversion)
+# <a name="suggested-segments-based-on-measures-preview"></a>Förslag på segment baserat på mått (förhandsgranskning)
 
-Identifiera intressanta segment för dina kunder med hjälp av en AI-modell. Maskininlärningsfunktionen föreslår segment baserat på mått eller kundattribut. Den kan förbättra KPI:er eller ge dig en bättre förståelse av attributens påverkan på andra attribut. 
+Identifiera intressanta segment för dina kunder med hjälp av en AI-modell. Maskininlärningsfunktionen föreslår segment baserat på mått eller kundattribut. Den kan förbättra KPI:er eller ge dig en bättre förståelse av attributens påverkan på andra attribut.
 
 > [!NOTE]
-> Funktionen för föreslagna segment använder automatiserade metoder för att utvärdera data och göra förutsägelser utifrån dessa data och har därför möjlighet att användas som metod för profilering, eftersom den termen definieras av allmänna dataskyddsförordningen ("GDPR"). Din användning av den här funktionen för att bearbeta data kan omfattas av GDPR eller andra lagar och förordningar. Du ansvarar för att din användning av Dynamics 365 Customer Insights, inklusive denna funktion, följer alla tillämpliga lagar och förordningar, inklusive lagar som rör sekretess, personuppgifter, biometriska data, dataskydd och sekretess för kommunikation.
+> Funktionen för föreslagna segment använder automatiserade metoder för att utvärdera data och göra prognoser utifrån dessa data. Den kan därför användas som profileringsmetod, vilket den termen definieras av den allmänna dataskyddsordningen ("GDPR"). Din användning av den här funktionen för att bearbeta data kan omfattas av GDPR eller andra lagar och förordningar. Du ansvarar för att din användning av Dynamics 365 Customer Insights, inklusive denna funktion, följer alla tillämpliga lagar och förordningar, inklusive lagar som rör sekretess, personuppgifter, biometriska data, dataskydd och sekretess för kommunikation.
 
 :::image type="content" source="media/suggested-segments.png" alt-text="Sidan Föreslagna segment som visar information om ett förslag i en sidopanel.":::
 
 ## <a name="suggested-segments-to-improve-your-kpis"></a>Förslag på segment för att förbättra KPI:er
 
-Som användare av Customer Insights har du förmodligen skapat en serie [åtgärder](measures.md) som hjälper dig att spåra KPI:er (Key Performance Indicators). Det är viktigt att du förstår hur vissa attribut påverkar KPI:et när du skapar segment och kör en riktad kampanj.   
+Om du använder [mått som skapats](measures.md) för att hjälpa dig att spåra KPI:er skapar du segment för att visa påverkan på KPI:en. Du kan använda den här informationen för att köra en mycket riktad kampanj.
+
 Du spårar till exempel ett mått som kallas *TotalSpendPerCustomer*. Som ett företag skulle du vilja se det här antalet växa. Om du väljer ett mått som primärt attribut kan du välja vilka attribut du vill utvärdera för påverkan. Låt säga *medlemsskapsnivå*, *medlemsskapsperiod* och *arbete*. Customer Insights kan sedan föreslå ett segment som informerar dig om vem som har den största påverkan på måttet. Till exempel *revisorer* som är *Guld*-medlemmar och som har varit lojala till ditt företag i *minst fem år* är den största påverkaren för *TotalSpendPerCustomer*. Du får en beräknad segmentstorlek för varje förslag. Du kan använda den här informationen om du vill skapa kampanjer för en särskild målgrupp.
 
 ## <a name="understand-what-influences-a-customer-attribute"></a>Förstå vad som påverkar ett kundattribut
 
-Du kan välja ett kundattribut i stället för ett mått som det primära attributet. Baserat på ditt val av påverkande attribut skapar AI-modellen ett antal förslag som visar hur de valda attributen påverkar det primära attributet.   
-Du kan till exempel välja *Rewards-medlem (Ja/Nej)* som primärt attribut. *Fast anställning*, *Arbete* och *Antal supportärenden* anges som andra påverkande attribut. AI-modellen kan föreslå segment som pekar på att de flesta Rewards-medlemmar är IT-experter som har haft fast anställning i mer än två år. Ett annat förslag skulle kunna peka på att revisorer som har haft fast anställning i mer än ett år och har färre än tre supportärenden är Rewards-medlemmar. 
+Du kan välja ett kundattribut i stället för ett mått som det primära attributet. Baserat på ditt val av påverkande attribut skapar AI-modellen ett antal förslag som visar hur de valda attributen påverkar det primära attributet.
+
+Du kan till exempel välja *Rewards-medlem (Ja/Nej)* som primärt attribut. *Fast anställning*, *Arbete* och *Antal supportärenden* anges som andra påverkande attribut. AI-modellen kan föreslå segment som pekar på att de flesta Rewards-medlemmar är IT-experter som har haft fast anställning i mer än två år. Ett annat förslag skulle kunna peka på att revisorer som har haft fast anställning i mer än ett år och har färre än tre supportärenden är Rewards-medlemmar.
 
 ## <a name="artificial-intelligence-usage"></a>Användning av artificiell intelligens
 
@@ -58,53 +60,36 @@ Ett kategoriskt attribut som *kundnöjdhet* som primärt attribut leder till fö
 
 ## <a name="generate-suggested-segments"></a>Generera föreslagna segment
 
-1. Gå till **Segment**.
+1. Gå till **segment** och välj fliken **Förslag (förhandsversion)**.
 
-1. Välj fliken **Förslag (förhandsversion)**.
+1. Välj **Sök efter nya förslag** och välj **Förbättra ett mått/mätvärde**. Välj **start**.
 
-1. Välj **Få nya förslag** för att starta den guidade upplevelsen.
+   :::image type="content" source="media/suggested-segments-measure.png" alt-text="Välja att förbättra måttet i de segment som föreslås.":::
 
 1. Välj ett mått eller ett kundattribut som det primära attributet och välj **Nästa**.
 
-   :::image type="content" source="media/suggested-segments-primary-attribute.png" alt-text="Välja det primära attributet för förslag i de föreslagna segmenten.":::
+1. Välj de påverkande attributen och välj **Kör**.
 
-1. Välj de påverkande attributen och välj **Spara**.
-   
    > [!TIP]
    > Om du väljer flera påverkande attribut ökar chansen för att utvärdera hur de påverkar det primära attributet. Ta inte med attribut som inte påverkar det primära attributet. Om till exempel alla kunder är från ett visst land ska du inte ta med attributet *land* eftersom det inte påverkar utdata.
 
-1. Beroende på antalet kundprofiler och valda attribut kan det ta några minuter att bearbeta de valda attributen. 
+Beroende på antalet kundprofiler och valda attribut kan det ta några minuter att bearbeta de valda attributen.
 
-## <a name="view-details-of-a-suggested-segment"></a>Visa information om föreslaget segment
+## <a name="manage-suggested-segments"></a>Hantera föreslagna segment
 
-När AI-modellen har genererat förslagen hittar du dem i **Segment** > **Förslag (förhandsgranskning)**.
- 
-Välj ett föreslaget segment för att granska detaljerna för det förslaget. Du kan också granska attributvärdena eller reglerna som AI-modellen har lärt sig för att föreslå det valda segmentet.
+Gå till **Segment** och välj fliken **Förslag (förhandsgranskning**). I avsnittet **Attributbaserade segmentförslag** välj ett föreslaget segment för att visa tillgängliga åtgärder.
 
-## <a name="save-a-suggestion-as-a-segment"></a>Spara ett förslag som ett segment
-
-1. Gå till **Segment** > **Förslag (förhandsgranskning)**.
-
-1. Välj det segment som du vill spara. 
-
-1. I sidofönstret väljer du **Spara som segment**. 
-
-1. När du har sparat segmentet visas det i listan över segment under fliken **Alla segment**. Det kan nu [uppdateras, redigeras eller raderas precis som andra segment](segments.md).
-
-## <a name="refresh-or-edit-a-set-of-suggestions"></a>Uppdatera eller redigera en uppsättning förslag
-
-1. Gå till **Segment** > **Förslag (förhandsgranskning)**.
-
-1. Välj **Uppdatera förslag** för att uppdatera förslagen samtidigt som du behåller konfigurerade attribut. Eller välj **Redigera attribut** för att ändra de konfigurerade attributen. Systemet kör AI-modellen på nytt, genererar segmentförslag utifrån senaste data och ersätter de aktuella förslagen.
+- **Visa** de föreslagna segmentdetaljerna och de attributvärden eller regler som AI-modellen lärde sig.
+- **Spara som segment** förslaget som ett segment. Den visas på fliken **Alla segment** och kan [uppdateras, redigeras eller tas bort](segments.md).
+- **Redigera attribut** och ändra de konfigurerade attributen som ersätter de aktuella förslagen.
+- **Uppdatera förslag** för att uppdatera förslagen samtidigt som du behåller konfigurerade attribut.
 
 ## <a name="limitations"></a>Begränsningar
 
 1. Beräknad matchning för segmentstorlek: Om du väljer ett primärt attribut som innehåller tomma värden kan det påverka den beräknade segmentstorleken i segmentförslagen. När du sparar ett sådant segment kan den faktiska segmentstorleken vara annorlunda än den ursprungliga uppskattningen.
- 
+
 2. Primära attribut av boolesk typ fungerar inte: För närvarande har vi endast stöd för strängtyper och numeriska typer av data som primärt attribut.
 
 3. De föreslagna segmenten är inte tillräckligt olika: Tänk på att de valda attributen och fördelningen av värdena för dessa attribut påverkar resultatet. Du kan ändra dina påverkande attribut eller till och med det primära attributet om du vill få olika resultat.
-
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

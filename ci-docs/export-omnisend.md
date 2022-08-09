@@ -1,19 +1,19 @@
 ---
 title: Exportera segment till Omnisend (förhandsversion)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till Omnisend.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 15918b2e2550869115d30ea4d84b4549c3c7d1ca
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: c23d6d3538c4df6006c14064f95379169af06622
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052303"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196186"
 ---
 # <a name="export-segments-to-omnisend-preview"></a>Exportera segment till Omnisend (förhandsversion)
 
@@ -21,31 +21,33 @@ Exportera segment med enhetliga kundprofiler till Omnisend och använd dem för 
 
 ## <a name="prerequisites"></a>Förutsättningar
 
--   Du har ett [Omnisend-konto](https://www.omnisend.com/) och motsvarande autentiseringsuppgifter för administratör.
--   Du har [konfigurerade segments](segments.md) i Customer Insights.
--   Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
+- Ett [Omnisend-konto](https://www.omnisend.com/) och motsvarande autentiseringsuppgifter för administratör.
+- En [Omnisend API-nyckel](https://support.omnisend.com/en/articles/1061890-generating-api-key).
+- [Konfigurerade segments](segments.md) i Customer Insights.
+- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
-- Du kan exportera ta upp till 1 miljon kundprofiler per export till Omnisend och det kan ta 4 timmar att genomföra.
-- Export till Omnisend är begränsad till segment.
-- Hur många kundprofiler du kan exportera till Omnisend är beroende av ditt kontrakt med Omnisend.
+- Upp till 1 miljon kundprofiler per export till Omnisend, vilket kan ta upp till fyra timmar att slutföra. Hur många kundprofiler du kan exportera till Omnisend är beroende av ditt kontrakt med Omnisend.
+- Endast segment.
 
 ## <a name="set-up-connection-to-omnisend"></a>Konfigurera anslutningen till Omnisend
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Gå till **Admin** > **Anslutningar**.
 
-1. Välj **Lägg till anslutning** och välj **Omnisend** för att konfigurera anslutningen.
+1. Välj **Lägg till anslutning** och välj **Omnisend**.
 
 1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
 1. Välj vem som kan använda anslutningen. Som standard är det bara administratörer. Mer information finns i [Tillåt att deltagare använder en anslutning för export](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Ange din [Omnisend API-nyckel](https://support.omnisend.com/en/articles/1061890-generating-api-key).
+1. Ange din Omnisend API-nyckel.
 
-1. Välj **Jag accepterar** för att bekräfta **datasekretess och kompatibilitet**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
-1. Välj **Anslut** om du vill initiera anslutningen till Omnisend.
+1. Välj **Anslut** om du vill initiera anslutningen.
 
 1. Välj **Lägg till dig själv som exportanvändare** och ange dina autentiseringsuppgifter för Customer Insights.
 
@@ -53,25 +55,24 @@ Exportera segment med enhetliga kundprofiler till Omnisend och använd dem för 
 
 ## <a name="configure-an-export"></a>Konfigurera en export
 
-Du kan konfigurera den här exporten om du har åtkomst till en anslutning av den här typen. Mer information finns i [Behörigheter som behövs för att konfigurera en export](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå till **Data** > **Exporter**.
 
-1. Välj för att skapa en ny export **Lägg till destination**.
+1. Välj **Lägg till export**.
 
-1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Omnisend. Om avsnittets namn inte visas finns det inga tillgängliga anslutningar av den här typen.
+1. I fältet **Anslutning för export**, välj en anslutning från avsnittet Omnisend. Kontakta en administratör om det inte finns någon anslutning.
 
-1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress. Det krävs för att exportera segment till Omnisend. Alternativt kan du exportera Förnamn, Efternamn, Adress, Land/Region, Delstat, Ort och Postnummer för att skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
+1. Ange ett namn för exporten.
+
+1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress.
+
+1. Alternativt kan du exportera **Förnamn**, **Efternamn**, **Adress**, **Land/Region**, **Delstat**, **Ort** och **Postnummer** för att skapa mer anpassade e-postmeddelanden. Välj **Lägg till attribut** för att mappa dessa fält.
+
+1. Välj de segment som du vill exportera.
 
 1. Välj **Spara**.
 
-När du sparar en export körs inte exporten omedelbart.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Exporten körs med alla [schemalagda uppdateringar](system.md#schedule-tab). Du kan också [exportera data på begäran](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du aktiverar Dynamics 365 Customer Insights för att överföra data till Omnisend tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga uppgifter såsom personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att säkerställa att Omnisend uppfyller alla eventuella sekretess- eller säkerhetskrav. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Din administratör av Dynamics 365 Customer Insights kan när som helst ta bort det här exportmålet för att sluta använda den här funktionen.
+[!INCLUDE [footer-include](includes/footer-banner.md)]
