@@ -1,7 +1,7 @@
 ---
 title: Översikt över anslutningar (förhandsversion)
 description: Anslutningar till andra tjänster från Customer Insights.
-ms.date: 04/09/2021
+ms.date: 08/04/2022
 ms.reviewer: nikeller
 ms.subservice: audience-insights
 ms.topic: overview
@@ -11,91 +11,89 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 8580dc7d90c75f66f73efc15f8e38f5e10fbb8a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195196"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245533"
 ---
 # <a name="connections-preview-overview"></a>Översikt över anslutningar (förhandsversion)
 
-Anslutningar är nyckeln till datadelning till och från Customer Insights. Varje anslutning upprättar datadelning med en viss tjänst. Anslutningar utgör grunden för [konfigurera berikningar från tredje part](enrichment-hub.md) och [konfigurera exporter](export-destinations.md). Samma anslutning kan användas flera gånger. En anslutning till Dynamics 365 Marketing fungerar till exempel för flera exporter och en Leadspace-anslutning kan användas för flera utskick.
+Anslutningar är nyckeln till datadelning till och från Customer Insights. Varje anslutning upprättar datadelning med en viss tjänst. Använd anslutningar för att [konfigurera berikningar från tredje part](enrichment-hub.md) och [konfigurera exporter](export-destinations.md). Samma anslutning kan användas flera gånger. En anslutning till Dynamics 365 Marketing fungerar till exempel för flera exporter och en Leadspace-anslutning kan användas för flera utskick.
 
-Gå till **Admin** > **Anslutningar** för att skapa och visa anslutningar.
+## <a name="export-connections"></a>Exportera anslutningar
 
-På fliken **Anslutningar** visas alla aktiva anslutningar. I listan visas en rad för varje anslutning.
+Endast administratörer kan konfigurera nya anslutningar, men de kan [ge deltagare åtkomst](#allow-contributors-to-use-a-connection-for-exports) till befintliga anslutningar. Administratörer styr vart data kan ta vägen. Deltagare anger vilken nyttolast och frekvens som passar deras behov.
 
-Få en snabb översikt, beskrivning och ta reda på vad du kan göra med varje utbyggbarhetsalternativ på fliken **Upptäck**.
-
-## <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du aktiverar Dynamics 365 Customer Insights för att överföra data till tredje part eller andra Microsoft-produkter tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga uppgifter såsom personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att tredjepart uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort anslutningen i syfte att avbryta användningen av den här funktionen.
-
-## <a name="exports"></a>Exporter
-
-Endast administratörer kan konfigurera nya anslutningar, men de kan ge deltagare åtkomst till befintliga anslutningar. Administratörer styr vart data kan ta vägen. Deltagare anger vilken nyttolast och frekvens som passar deras behov. Mer information finns i [Tillåt att deltagare använder en anslutning för export](#allow-contributors-to-use-a-connection-for-exports).
-
-## <a name="enrichments"></a>Berikningar
+## <a name="enrichment-connections"></a>Berikningsanslutningar
 
 Endast administratörer kan konfigurera nya anslutningar, men de skapade anslutningarna är alltid tillgängliga för både administratörer och deltagare. Administratörer hanterar autentiseringsuppgifter och ger sitt godkännande till att använda data. Anslutningarna kan sedan användas för ut mer information av både administratörer och deltagare.
 
 ## <a name="add-a-new-connection"></a>Lägg till ny anslutning
 
-Om du vill lägga till anslutningar måste du ha [administratörsbehörighet](permissions.md). Om du ansluter till andra Microsoft-tjänster förutsätter vi att båda tjänsterna finns i samma organisation.
+### <a name="prerequisites"></a>Förutsättningar
 
-1. Gå till **Admin** > **Anslutningar (förhandsversion)**.
+- [Administratörsbehörighet](permissions.md)
+- Andra Microsoft-tjänster, om det finns några, finns i samma organisation
 
-1. Välj **Lägg till kontakt** om du vill skapa en ny anslutning. Välj i listrutan vilken typ av anslutning du vill skapa.
+1. Gå till **Admin** > **Anslutningar**.
 
-1. I fönstret **Konfigurera anslutning** ange de uppgifter som krävs.
-   1. En **Visningsnamn** och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
-   1. Exakt vilka fält som är beroende av vilken tjänst du ansluter till. Mer information om en specifik anslutningstyp finns i artikeln om måltjänsten.
-   1. Om du [använder ditt eget Key Vault](use-azure-key-vault.md) för att lagra hemligheter aktiverar du **Använd Key Vault** och väljer hemligheten i listan.
+1. Välj **Lägg till anslutning** och välj vilken typ av anslutning du vill skapa. Eller gå till fliken **Upptäck** och välj **Konfigurera** på en anslutningspanel.
 
-1. Välj för att skapa anslutningen **Spara**.
+1. Ge anslutningen ett beskrivande namn i fältet **visningsnamn**. Namn och typen av anslutning beskriver en anslutning. Vi rekommenderar att du väljer ett namn som förklarar syftet med och målet för anslutningen.
 
-Du kan också välja **Konfigurera** på panelen **Identifiering**.
+1. Ange den information som behövs. Exakt vilka fält som är beroende av vilken tjänst du ansluter till. Mer information om en specifik anslutningstyp finns i artikeln om måltjänsten.
 
-### <a name="allow-contributors-to-use-a-connection-for-exports"></a>Tillåt deltagare använda en anslutning för export
+1. Om du [använder ditt eget Key Vault](use-azure-key-vault.md) för att lagra hemligheter aktiverar du **Använd Key Vault** och väljer hemligheten i listan.
 
-När du ställer in eller redigerar en exportanslutning väljer du vilka användare som ska kunna använda den här specifika anslutningen för att definiera [exportera](export-destinations.md). Som standard är en anslutning tillgänglig för användare med administratörsroll. Du kan ändra den här inställningen under **Välj vem som kan använda den här anslutningen** och tillåta användare deltagare ska använda den här anslutningen.
+1. Granska datasekretess och efterlevnad och välj **Jag godkänner**.
+
+1. Välj **Spara** för att skapa anslutningen.
+
+### <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
+
+När du aktiverar Dynamics 365 Customer Insights för att överföra data till tredje part eller andra Microsoft-produkter tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga uppgifter såsom personuppgifter. Microsoft kommer att överföra dessa data enligt dina instruktioner, men du ansvarar för att tredjepart uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
+
+Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort anslutningen i syfte att avbryta användningen av den här funktionen.
+
+## <a name="allow-contributors-to-use-a-connection-for-exports"></a>Tillåt deltagare använda en anslutning för export
+
+När du ställer in eller redigerar en exportanslutning väljer du vilka användare som ska kunna använda den här specifika anslutningen för att definiera [exporter](export-destinations.md). Som standard är en anslutning tillgänglig för användare med administratörsroll. Ändra inställningen **Välj vem som kan använda den här anslutningen** för att låta användare med rollen deltagare använda den här anslutningen.
 
 - Deltagare kan inte visa eller redigera anslutningen. Här ser de endast visningsnamn och dess typ när en export skapas.
 - Genom att dela en anslutning tillåter du deltagare att använda en anslutning. Deltagare ser delade anslutningar när de upprättar exporter. De kan hantera alla exporter som använder den här specifika anslutningen.
 - Du kan ändra den här inställningen samtidigt som du behåller de exporter som redan har definierats av deltagare.
 
-## <a name="edit-a-connection"></a>Redigera en anslutning
+## <a name="manage-existing-connections"></a>Hantera befintliga anslutningar
 
-1. Gå till **Admin** > **Anslutningar (förhandsversion)**.
+1. Gå till **Admin** > **Anslutningar**.
 
-1. Gå till fliken **Anslutningar**.
+1. Välj fliken **Berikning** eller **Exporter** om du vill visa en lista med anslutningar för berikning eller export, anslutningstyp, när den skapades och vem som har åtkomst. Du kan sortera listan över anslutningar efter valfri kolumn.
 
-1. Markera den vertikala ellipsen (&vellip;) för anslutningen du vill redigera.
+1. Välj anslutningen om du vill visa tillgängliga åtgärder.
 
-1. Välj **Redigera**.
+   - **Redigera** anslutningen.
+   - [**Ta bort**](#remove-a-connection) en anslutning.
 
-1. Ändra de värden du vill uppdatera och välj **Spara**.
+### <a name="remove-a-connection"></a>Vill du ta bort anslutningen
 
-## <a name="remove-a-connection"></a>Vill du ta bort anslutningen
+Om anslutningen som du tar bort används för att utöka eller exportera måste du först koppla från eller ta bort den. I dialogrutan för borttagning guidas du till relevanta förbättringar eller exporter.
 
-Om anslutningen som du tar bort används för att utöka eller exportera måste du först ta bort eller ta bort den. I dialogrutan för borttagning guidas du till relevanta förbättringar eller exporter.
+> [!TIP]
+> Inaktiverade berikningar och frånkopplade exporter blir inaktiva. Du aktiverar dem på nytt genom att lägga till en ny anslutning till dem på sidan [Berikningar](enrichment-hub.md) eller [Exporter](export-destinations.md)..
 
-Fristående berikningar och export blir inaktiva. Du aktiverar dem på nytt genom att lägga till en ny anslutning till dem på sidan [Berikningar](enrichment-hub.md) eller [Exporter](export-destinations.md)..
+1. Gå till **Admin** > **Anslutningar**.
 
-1. Gå till **Admin** > **Anslutningar (förhandsversion)**.
+1. Välj fliken **Berikning** eller **Exporter**.
 
-1. Gå till fliken **Anslutningar**.
-
-1. Markera den vertikala ellipsen (&vellip;) för anslutningen du vill ta bort.
+1. Markera anslutningen du vill ta bort.
 
 1. Välj **Ta bort** från listrutan. En dialogruta för bekräftelse visas.
 
    1. Om det finns anläggningar eller exporter med hjälp av den här anslutningen markerar du knappen för att se vad som använder anslutningen.
-      - **Export:** Du kan välja att antingen ta bort eller koppla bort exporten för att kunna ta bort anslutningen. Administratörer kan använda åtgärden **Koppla från** för att koppla från export. Åtgärden är tillgänglig för enskilda och flera markerade exporter. Genom att koppla från behålls exportkonfigurationen, men den körs inte förrän en annan anslutning har lagts till i den.
-      - **Berikningar:** Du kan välja att antingen ta bort eller inaktivera berikningarna för att kunna ta bort anslutningen.
+      - **Exporter:** Välj att antingen **Ta bort** exporten eller **Koppla från anslutningen**. Genom att koppla från anslutningen behålls exportkonfigurationen, men den körs inte förrän en annan anslutning har lagts till i den.
+      - **Berikningar:** Välj att antingen **Ta bort** eller **Inaktivera** berikningarna.
    1. När anslutningen inte längre har några beroenden går du tillbaka till **Admin** > **Anslutningar** och försök att ta bort anslutningen igen.
 
 1. Bekräfta borttagningen genom att markera **Ta bort**.

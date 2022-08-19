@@ -1,7 +1,7 @@
 ---
-title: Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsgranskning)
+title: Exportera diagnostikloggar (förhandsversion)
 description: Lär dig hur du skickar loggar till Microsoft Azure Monitor.
-ms.date: 12/14/2021
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: article
@@ -11,87 +11,56 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 8c72df7054a682244215bbee54968d6aef4bbf59
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052675"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245947"
 ---
-# <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logga in i Dynamics 365 Customer Insights med Azure Monitor (förhandsgranskning)
+# <a name="export-diagnostic-logs-preview"></a>Exportera diagnostikloggar (förhandsversion)
 
-Dynamics 365 Customer Insights ger en direkt integrering med Azure Monitor. Azure Monitor resursloggar gör att du kan övervaka och skicka loggar till [Azure Storage](https://azure.microsoft.com/services/storage/), [Azure Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) eller strömma dem till [Azure händelsehubben](https://azure.microsoft.com/services/event-hubs/).
+Vidarebefordra loggar från Customer Insights med Azure Monitor. Azure Monitor resursloggar gör att du kan övervaka och skicka loggar till [Azure Storage](https://azure.microsoft.com/services/storage/), [Azure Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) eller strömma dem till [Azure händelsehubben](https://azure.microsoft.com/services/event-hubs/).
 
 Customer Insights skickar följande händelseloggar:
 
 - **Granskningshändelser**
-  - **APIEvent** - aktiverar ändringsspårning som görs via Dynamics 365 Customer Insights användargränssnittet.
+  - **APIEvent** – aktiverar ändringsspårning via Dynamics 365 Customer Insights-användargränssnittet.
 - **Verksamhetsevenemang**
-  - **WorkflowEvent** - Med arbetsflödet kan du konfigurera [Datakällor](data-sources.md), [ena](data-unification.md) och [berika](enrichment-hub.md) och slutligen [exportera](export-destinations.md) data till andra system. Alla de stegen kan göras enskilt (t.ex. utlösa en enskild export). Kan också köras organiserade (till exempel uppdatera data från datakällor som utlöser föreningsprocessen, som hämtar utdata och sedan har exporterat alla data till ett annat system). För mer information [WorkflowEvent-schema](#workflow-event-schema).
-  - **APIEvent** - alla API-anrop till kundinstansen till Dynamics 365 Customer Insights. För mer information [APIEvent-schema](#api-event-schema).
+  - **WorkflowEvent** – gör det möjligt att konfigurera [datakällor](data-sources.md), [ena](data-unification.md), [berika](enrichment-hub.md) och [exportera](export-destinations.md) data till andra system. Dessa steg kan göras enskilt (t.ex. utlösa en enskild export). De kan också köras organiserade (till exempel uppdatera data från datakällor som utlöser föreningsprocessen, som hämtar berikningar och exporterar alla data till ett annat system). För mer information [WorkflowEvent-schema](#workflow-event-schema).
+  - **APIEvent** – skickar alla API-anrop för kundinstansen till Dynamics 365 Customer Insights. För mer information [APIEvent-schema](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>Konfigurera diagnosinställningar
 
 ### <a name="prerequisites"></a>Förutsättningar
 
-Om du vill konfigurera diagnos Customer Insights, måste följande krav uppfyllas:
-
-- Du måste ha en aktiv [Azure-prenumeration](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- Du har [Administratör](permissions.md#admin) behörighet i Customer Insights..
-- Du har rollen **Deltagare** och **Administratör för användaråtkomst** på destinationsresursen på Azure. Resursen kan vara ett Azure Data Lake Storage-konto, en händelsehubb för Azure eller en Azure Log Analytics-arbetsyta. Mer information finns i [Lägga till eller ta bort Azure-rolltilldelningar via Azure-portalen](/azure/role-based-access-control/role-assignments-portal). Denna behörighet är nödvändig när du konfigurerar diagnostikinställningarna i Customer Insights och kan ändras efter installation.
-- [Destinationskraven](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) för Azure Storage, Azure Event eller Azure Hub eller Azure Log Analytics har uppfyllts.
-- Du har minst rollen **Läsare** i den resursgrupp resursen tillhör.
+- En aktiv [Azure-prenumeration](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- [Administratör](permissions.md#admin)-behörighet i Customer Insights..
+- [Rollen Deltagare och Administratör för användaråtkomst](/azure/role-based-access-control/role-assignments-portal) på destinationsresursen på Azure. Resursen kan vara ett Azure Data Lake Storage-konto, en händelsehubb för Azure eller en Azure Log Analytics-arbetsyta. Denna behörighet är nödvändig när du konfigurerar diagnostikinställningarna i Customer Insights, men den kan ändras efter installation.
+- [Destinationskraven](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) för Azure Storage, Azure Event eller Azure Hub eller Azure Log Analytics är uppfyllda.
+- Minst rollen **Läsare** i den resursgrupp resursen tillhör.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Konfigurera diagnostik med Azure Monitor
 
-1. I Customer Insights, välj **System** > **Diagnos** om du vill se diagnostikmålen som konfigurerat den här instansen.
+1. I Customer Insights, gå till **Admin** > **System** och välj fliken **Diagnostik**.
 
 1. Välj **Lägg till destination**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Diagnostikanslutning](media/diagnostics-pane.png "Diagnostikanslutning")
+   :::image type="content" source="media/diagnostics-pane.png" alt-text="Diagnostikanslutning.":::
 
 1. Ange ett namn i fältet **Namn för diagnostikdestination**.
 
-1. Välj en **klientorganisation** för Azure-prenumerationen med målresursen och välj **logga in**.
+1. Välj **Resurstyp** (lagringskonto, händelsehubben eller logganalys).
 
-1. Välj **resurstyp** (lagringskonto, händelsehubben eller logganalys).
+1. Välj **Prenumeration**, **Resursgrupp** och **Resurs** för målresursen. Se [Konfiguration för målresursen](#configuration-on-the-destination-resource) för behörighets- och logginformation.
 
-1. Välj **Prenumeration** för målresursen.
-
-1. Välj **Resursgrupp** för målresursen.
-
-1. Välj **Resurs**.
-
-1. Bekräfta **sekretesspolicyn för data och regelefterlevnad**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
 1. Välj **Anslut till system** om du vill ansluta till målresursen. Loggarna börjar visas i destinationen efter 15 minuter, om API:et används och genererar händelser.
 
-### <a name="remove-a-destination"></a>Flytta ett mål
-
-1. Gå till **System** > **Diagnos**.
-
-1. Välj diagnostikmålet i listan.
-
-1. I kolumnen **Åtgärder** välj ikonen **Ta bort**.
-
-1. Bekräfta borttagningen för att stoppa vidarebefordran av loggen. Resursen i Azure-prenumerationen tas inte bort. Du kan välja länken i kolumnen **Åtgärder** om du vill öppna Azure-portalen för den valda resursen och ta bort den där.
-
-## <a name="log-categories-and-event-schemas"></a>Loggkategorier och händelsescheman
-
-För närvarande stöds [API-händelser](apis.md) och arbetsflödeshändelser och följande kategorier och scheman gäller.
-Loggschemat följer [Azure Monitors vanliga schema](/azure/azure-monitor/platform/resource-logs-schema#top-level-common-schema).
-
-### <a name="categories"></a>Kategorier
-
-Customer Insights innehåller två kategorier:
-
-- **Granska händelser**: [API-händelser](#api-event-schema) för att spåra konfigurationsändringar för tjänsten. `POST|PUT|DELETE|PATCH`-åtgärder går in i den här kategorin.
-- **Verksamhetshändelser**: [API events](#api-event-schema) eller [arbetsflödeshändelser](#workflow-event-schema) som genereras när tjänsten används.  Exempelvis förfrågningar `GET` eller körningshändelser för ett arbetsflöde.
-
 ## <a name="configuration-on-the-destination-resource"></a>Konfiguration för målresursen
 
-Beroende på vilken resurstyp du väljer gäller följande steg automatiskt:
+Beroende på vilken resurstyp du väljer sker följande ändringar automatiskt:
 
 ### <a name="storage-account"></a>Storage account
 
@@ -109,16 +78,41 @@ Customer Insights-tjänstens huvudobjekt får **Azure händelsehubb dataägare**
 
 ### <a name="log-analytics"></a>Log Analytics
 
-Customer Insights-tjänstens huvudkonto får behörigheten **Logga analysdeltagare** för resursen. Loggarna kommer att vara tillgängliga under **Loggar** > **Tabeller** > **Hantering av loggar** på den valda Log Analytics-arbetsytan. Expandera lösningen **Logghantering** och leta upp tabellerna `CIEventsAudit` och `CIEventsOperational`.
+Customer Insights-tjänstens huvudkonto får behörigheten **Logga analysdeltagare** för resursen. Loggarna är tillgängliga under **Loggar** > **Tabeller** > **Hantering av loggar** på den valda Log Analytics-arbetsytan. Expandera lösningen **Logghantering** och leta upp tabellerna `CIEventsAudit` och `CIEventsOperational`.
 
 - `CIEventsAudit` innehåller **granskningshändelser**
 - `CIEventsOperational` som innehåller **verksamhetshändelser**
 
 Under fönstret **Frågor** expanderar du lösningen **Granskning** och letar upp exempelfrågor som tillhandahålls genom att söka efter `CIEvents`.
 
+## <a name="remove-a-diagnostics-destination"></a>Ta bort en diagnostikdestination
+
+1. Gå till **Admin** > **System** och välj fliken **Diagnostik**.
+
+1. Välj diagnostikmålet i listan.
+
+   > [!TIP]
+   > När du tar bort målet stoppas vidarebefordringen av loggar, men resursen tas inte bort i Azure-prenumerationen. Om du vill ta bort resursen i Azure, väljer du länken i kolumnen **Åtgärder** om du vill öppna Azure-portalen för den valda resursen och ta bort den där. Därefter tar du bort diagnostikmålet.
+
+1. I kolumnen **Åtgärder** välj ikonen **Ta bort**.
+
+1. Bekräfta borttagningen för att ta bort målet och stoppa vidarebefordringen av loggar.
+
+## <a name="log-categories-and-event-schemas"></a>Loggkategorier och händelsescheman
+
+För närvarande stöds [API-händelser](apis.md) och arbetsflödeshändelser och följande kategorier och scheman gäller.
+Loggschemat följer [Azure Monitors vanliga schema](/azure/azure-monitor/platform/resource-logs-schema#top-level-common-schema).
+
+### <a name="categories"></a>Kategorier
+
+Customer Insights innehåller två kategorier:
+
+- **Granska händelser**: [API-händelser](#api-event-schema) för att spåra konfigurationsändringar för tjänsten. `POST|PUT|DELETE|PATCH`-åtgärder går in i den här kategorin.
+- **Verksamhetshändelser**: [API events](#api-event-schema) eller [arbetsflödeshändelser](#workflow-event-schema) som genereras när tjänsten används.  Exempelvis förfrågningar `GET` eller körningshändelser för ett arbetsflöde.
+
 ## <a name="event-schemas"></a>Händelsescheman
 
-API-händelser och arbetsflödeshändelser har en gemensam struktur och information om var de skiljer sig, se [API-händelseschema](#api-event-schema) eller [schema för arbetsflödeshändelse](#workflow-event-schema).
+API-händelser och arbetsflödeshändelser har en gemensam struktur, men med några skillnader. Mer information finns i [händelseschema för API](#api-event-schema) eller [händelseschema för arbetsflöde](#workflow-event-schema).
 
 ### <a name="api-event-schema"></a>API-händelseschema
 
@@ -220,7 +214,6 @@ Arbetsflödet innehåller flera steg. [Mata in datakällor](data-sources.md), [e
 | `durationMs`    | Long      | Valfri          | Varaktigheten för åtgärd i milisekunder.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Valfri          | JSON-objekt med fler egenskaper för den specifika händelsekategorin.                                                                                        | Se underavsnitt [Arbetsflödesegenskaper](#workflow-properties-schema)                                                                                                       |
 | `level`         | String    | Obligatoriskt          | Händelsens allvarlighetsgrad.                                                                                                                                  | `Informational`, `Warning` eller `Error`                                                                                                                                   |
-|                 |
 
 #### <a name="workflow-properties-schema"></a>Schema för arbetsflödesegenskaper
 
@@ -247,3 +240,5 @@ Arbetsflödeshändelser har följande egenskaper.
 | `properties.additionalInfo.AffectedEntities` | No       | Ja  | Valfritt. Endast för `Export` OperationType. Innehåller en lista över konfigurerade entiteter under exporten.                                                                                                                                                            |
 | `properties.additionalInfo.MessageCode`      | No       | Ja  | Valfritt. Endast för `Export` OperationType. Detaljerat meddelande för exporten.                                                                                                                                                                                 |
 | `properties.additionalInfo.entityCount`      | No       | Ja  | Valfritt. Endast för `Segmentation` OperationType. Anger det totala antalet medlemmar som avsnittet har.                                                                                                                                                    |
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

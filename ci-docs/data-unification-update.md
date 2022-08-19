@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 1af7f018abd412c833ff22b3880f0e4508ff4953
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a7cf06c07e4b95b848a55dfe5fe0b09397fe744e
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139633"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245616"
 ---
 # <a name="update-the-unification-settings"></a>Uppdatera föreningsinställningarna
 
@@ -42,7 +42,7 @@ Granska eller ändra eventuella inställningar när en förenad profil har skapa
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Skärmbild på sidan Data förena med alternativen för förena.":::
 
    - [Kör matchande villkor](#run-matching-conditions) för att snabbt utvärdera kvaliteten på dina matchningsvillkor (deduplicering och matchningsregler) utan att uppdatera den enhetliga profilen. Alternativet **Kör endast matchande villkor** visas inte för en entitet.
-   - [Unified customer profile](#run-updates-to-the-unified-customer-profile) för att köra matchningsvillkor och uppdatera entiteten för Unified customer profile utan att påverka beroenden (till exempel utöka, segment eller mått). Beroende processer körs inte, men uppdateras enligt vad som [anges i uppdateringsschemat](system.md#schedule-tab).
+   - [Unified customer profile](#run-updates-to-the-unified-customer-profile) för att köra matchningsvillkor och uppdatera entiteten för Unified customer profile utan att påverka beroenden (till exempel utöka, segment eller mått). Beroende processer körs inte, men uppdateras enligt vad som [anges i uppdateringsschemat](schedule-refresh.md).
    - [Unified customer profile och beroenden](#run-updates-to-the-unified-customer-profile) för att köra matchningsvillkor och uppdatera entiteten för Unified customer profile och alla beroenden (till exempel utöka, segment eller mått). Alla processer körs automatiskt om.
 
 ## <a name="edit-source-fields"></a>Redigera källfält
@@ -154,7 +154,7 @@ Kör matchningsvillkor kör endast deduplicering och matchningsregler och uppdat
 
 1. Från sidan **Data** > **Förena**, välj:
 
-   - **Unified customer profile**: kör matchningsvillkor och uppdatera entiteten för Unified customer profile utan att påverka beroenden (till exempel utöka, segment eller mått). Beroende processer körs inte, men uppdateras enligt vad som [anges i uppdateringsschemat](system.md#schedule-tab).
+   - **Unified customer profile**: kör matchningsvillkor och uppdatera entiteten för Unified customer profile utan att påverka beroenden (till exempel utöka, segment eller mått). Beroende processer körs inte, men uppdateras enligt vad som [anges i uppdateringsschemat](schedule-refresh.md).
 
    - **Unified customer profile och beroenden**: Kör matchande villkor och uppdaterar den enhetliga profilen och alla beroenden. Alla processer körs automatiskt om. När alla processer nedströms har slutförts återspeglar kundprofilen uppdaterade data.
 

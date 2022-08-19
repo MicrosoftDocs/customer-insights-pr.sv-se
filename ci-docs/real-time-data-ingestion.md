@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2652e0868f5cc514ab6df9c150a9183cf95ae589
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195680"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246130"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainmatning i realtid (förhandsversion)
 
 Med funktionen nästan i realtid kan du se inom några sekunder de senaste interaktionerna som dina kunder har gjort med dina produkter eller tjänster.
 
-[Schemalagda uppdateringar](system.md#schedule-tab) omfattar ett stort antal poster och flera komplexa operationer. Först hämtas data från datakällan. Därefter är informationen enhetlig och sedan utökad med ytterligare information. Alla körningar av den här processen kan ta minuter till timmar.
+[Schemalagda uppdateringar](schedule-refresh.md) omfattar ett stort antal poster och flera komplexa operationer. Först hämtas data från datakällan. Därefter är informationen enhetlig och sedan utökad med ytterligare information. Alla körningar av den här processen kan ta minuter till timmar.
 
 Realtidsfunktionen ger data omedelbart för förbrukning, tills den efterföljande schemalagda uppdateringen hämtar dessa data från datakällan.
 
@@ -85,7 +85,7 @@ Detaljer om detta API, inklusive parametrar och svar, finns i avsnittet **Entity
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Förstå din realtidsförbrukning med telemetri
 
-Få en översikt över volymen av begäranden till realtids-API och information om problem som systemet kan stöta på. Du kan [komma åt telemetri i realtid](system.md#api-usage-tab). 
+Få en översikt över volymen av begäranden till realtids-API och information om problem som systemet kan stöta på. Du kan [komma åt telemetri i realtid](system.md#view-api-usage). 
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

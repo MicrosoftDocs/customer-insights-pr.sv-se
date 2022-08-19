@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 4bcfbb50b893ca7e6ec4607d3c156a3c6979f775
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170703"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246315"
 ---
 # <a name="segments-overview"></a>Segment – översikt
 
@@ -58,7 +58,7 @@ Välj segment om du vill visa tillgängliga åtgärder.
 - **Redigera** segmentet om du vill ändra dess egenskaper.
 - **Skapa dubblett** av ett segment. Du kan välja att redigera egenskaperna på en gång eller spara dubbletten.
 - [**Uppdatera**](#refresh-segments) segmentet så att det omfattar senaste data.
-- **Aktivera** eller **Inaktivera** segmentet. Inaktiva segment kommer inte att uppdateras under en [schemalagd uppdatering](system.md#schedule-tab) och ha **Status** som anges som **Överhoppad**, vilket tyder på att en uppdatering inte ens provats. Aktiva segment uppdateras baserat på typen statiska eller dynamiska.
+- **Aktivera** eller **Inaktivera** segmentet. Inaktiva segment kommer inte att uppdateras under en [schemalagd uppdatering](schedule-refresh.md) och ha **Status** som anges som **Överhoppad**, vilket tyder på att en uppdatering inte ens provats. Aktiva segment uppdateras baserat på typen statiska eller dynamiska.
 - **Gör statisk** eller **Gör dynamisk** segmenttypen. Du måste uppdatera statiska segment manuellt. Dynamiska segment uppdateras automatiskt under en systemuppdatering
 - [**Hitta liknande kunder**](find-similar-customer-segments.md) från segmenten.
 - **Byt namn** på segment.
@@ -88,7 +88,7 @@ Den nedre delen innehåller en lista över segmentets medlemmar.
 
 Segment kan uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran. Om du vill uppdatera en eller flera segment manuellt markerar du dem och väljer **Uppdatera**.
 
-Om du vill [schemalägga en automatisk uppdatering](system.md#schedule-tab) går du till **Admin** > **System** > **Schemalägg**. Följande regler gäller:
+Om du vill [schemalägga en automatisk uppdatering](schedule-refresh.md) går du till **Admin** > **System** > **Schemalägg**. Följande regler gäller:
 
 - Alla segment med typen **Dynamisk** eller **Expansion** uppdateras automatiskt med angiven takt. När uppdateringen väl är slutförd anger **Status** om det fanns några problem med att uppdatera segmentet. **Senast uppdaterade** visar en tidsstämpel för den senaste lyckade uppdateringen. Om ett fel inträffar markerar du felet för att visa information om vad som har hänt.
 - Segment med typen **Statisk** kommer *inte* att uppdateras automatiskt. **Senast uppdaterade** visar en tidsstämpel för sista gången de statiska segmenten kördes eller uppdaterades manuellt.

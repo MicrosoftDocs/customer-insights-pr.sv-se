@@ -8,12 +8,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: a180f6462452d9830d0daa150a35a9d0acad925a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 42abfb305efaccaeef48e32f2cc69f3d36fbe73d
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081923"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245487"
 ---
 # <a name="manage-predictions"></a>Hantera förutsägelser
 
@@ -58,7 +58,7 @@ Följande kolumner i rapporten innehåller användbar information för att förb
 
 ## <a name="refresh-a-prediction"></a>Uppdatera en förutsägelse
 
-Förutsägelser uppdateras automatiskt i samma [schema som dina data uppdaterar](system.md#schedule-tab) enligt konfigurationen i inställningarna. Du kan uppdatera dem manuellt.
+Förutsägelser uppdateras automatiskt i samma [schema som dina data uppdaterar](schedule-refresh.md) enligt konfigurationen i inställningarna. Du kan uppdatera dem manuellt.
 
 1. Gå till **Intelligens** > **Förutsägelser** och välj fliken **Mina förutsägelser**.
 

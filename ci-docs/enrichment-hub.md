@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 6b6daab480db5e37830ff58b71dcdd3bbdbe46da
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 0c2a900190b4ab6e93098d05a2fd66bcd2b847fd
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053902"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245901"
 ---
 # <a name="data-enrichment-preview-overview"></a>Översikt över berikning av data (förhandsversion)
 
@@ -76,7 +76,7 @@ Välj berikning om du vill visa tillgängliga åtgärder.
 - **Visa** detaljerad information om hur många kundprofiler som har utökats.
 - **Redigera** konfiguration för berikning.
 - [**Kör**](#run-or-refresh-enrichments) berikningen för att uppdatera kundprofiler med senaste data. Kör flera utökar samtidigt genom att markera dem i listan.
-- **Aktivera** eller **inaktivera** ett berikande. Inaktiva utökar uppdateras inte vid en [schemalagd uppdatering](system.md#schedule-tab).
+- **Aktivera** eller **inaktivera** ett berikande. Inaktiva utökar uppdateras inte vid en [schemalagd uppdatering](schedule-refresh.md).
 - **Ta bort** förbättringen.
 
 Du kan också skapa [segment](segments.md) eller [mått](measures.md) utifrån berikande.
@@ -85,7 +85,7 @@ Du kan också skapa [segment](segments.md) eller [mått](measures.md) utifrån b
 
 När de har körts kan berikningar uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran.
 
-1. Om du vill uppdatera en eller flera utökare manuellt markerar du dem och väljer **Kör**. Om du vill [schemalägga en automatisk uppdatering](system.md#schedule-tab) går du till **Admin** > **System** > **Schemalägg**. Bearbetningstiden beror på storleken på dina kunddata.
+1. Om du vill uppdatera en eller flera utökare manuellt markerar du dem och väljer **Kör**. Om du vill [schemalägga en automatisk uppdatering](schedule-refresh.md) går du till **Admin** > **System** > **Schemalägg**. Bearbetningstiden beror på storleken på dina kunddata.
 
 1. Alternativt kan du [se förloppet av berikandeprocessen](#see-the-progress-of-the-enrichment-process).
 
@@ -102,6 +102,8 @@ Du kan hitta information om bearbetningen av ett utökande, inklusive status och
 1. I fönstret **Förloppsinformation** expanderar du avsnittet **Utökanden**.
 1. Under det utökande du vill visa förloppet för väljer du **Visa information**.
 1. I fönstret **Uppgiftsinformation** väljer du **Visa information** om du vill se vilka processer som är involverade i att uppdatera utökandet samt statusen för dessa.
+
+[!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
 ## <a name="view-enrichment-results"></a>Visa resultat för berikande
 

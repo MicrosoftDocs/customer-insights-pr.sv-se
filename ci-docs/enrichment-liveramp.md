@@ -1,19 +1,19 @@
 ---
 title: Utöka kundprofiler med identitetsdata från LiveRamp (förhandsversion)
 description: Utöka kundprofiler med data från LiveRamp.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 0aa6dc144602741b87843a5373779855ee3e334c
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196370"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237835"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Utöka kundprofiler med identitetsdata från LiveRamp (förhandsversion)
 
@@ -41,13 +41,9 @@ Du måste vara en [administratör](permissions.md#admin) i Customer Insights och
 
 1. Ange ett namn för anslutningen och ett giltigt LiveRamp klient-ID och ett namn.
 
-1. Granska och ge ditt samtycke till [Data sekretess och efterlevnad](#data-privacy-and-compliance) genom att välja **Jag godkänner**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
 1. Välj **Verifiera** om konfigurationen ska verifieras och välj sedan **Spara**.
-
-### <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du aktiverar Dynamics 365 Customer Insights för att överföra data till LiveRamp tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att se till att LiveRamp uppfyller eventuella sekretess- eller säkerhetskrav. För mer information, läs [Microsoft sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732). Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 

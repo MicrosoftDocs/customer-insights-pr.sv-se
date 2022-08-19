@@ -11,16 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: ff99721bef0004bc8cae1ec14ff9df16cbb0682e
-ms.sourcegitcommit: ece8ff732490ecd3b3421ab273f331e6fd46a7f7
+ms.openlocfilehash: 8e3477750d82f965dc2d62174fb35554d9447b7b
+ms.sourcegitcommit: 52eca81c36e93d553140f5a37cf6013aaa42623a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/19/2022
-ms.locfileid: "9173804"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "9224317"
 ---
 # <a name="personalize-your-experiences-with-data-about-known-and-unknown-users"></a>Anpassa dina erfarenheter med data om kända och okända användare
 
-Att hantera kunddata är ingen ny utmaning, men det är allt svårare för användarna att navigera i de olika digitala kanalerbjudandet. En användare som är känd (autentiserad) i en kanal blir okänd (oautentisering) i en annan om den inte är inloggad. Problemet är ofta att oautentiserade (okända) användare inte har ett gemensamt ID. Den kan användas för att associera meningsfulla profilattribut och skapa enhetliga kundprofiler. Customer Insights hjälper dig att lösa det här problemet genom att samla in data från spårningsmetoder i dina källsystem. Konsoliderade, okända och kända profiler ger organisationer en fullständig vy över aktuella profiler och deras tidigare transaktioner, beteenden och demografi. Det går ännu ett steg längre genom att tillhandahålla identitetsmatchning som gör att du kan ena kundaktiviteten över flera kanaler, inklusive din webbplats, köp i butik, lojalitetsprogram etc.
+Att hantera kunddata är ingen ny utmaning, men det är allt svårare för användarna att navigera i de olika digitala kanalerbjudandet. En användare som är känd (autentiserad) i en kanal blir okänd (oautentisering) i en annan om den inte är inloggad. Problemet är ofta att oautentiserade (okända) användare inte har ett gemensamt ID. Den kan användas för att associera meningsfulla profilattribut och skapa enhetliga kundprofiler. Customer Insights hjälper dig att lösa det här problemet genom att samla in data från spårningsmetoder i dina källsystem. Genom att konsolidera okända och kända profiler får organisationer en fullständig vy över aktuella profiler och deras tidigare transaktioner, beteenden och demografi. Det går ännu ett steg längre genom att tillhandahålla identitetsmatchning som gör att du kan ena kundaktiviteten över flera kanaler, inklusive din webbplats, köp i butik, lojalitetsprogram etc.
 
 ## <a name="sample-scenario"></a>Exempelscenario
 

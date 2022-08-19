@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 33c8910b7a4dd8723c0d62f2e28228cd2d8df4b7
-ms.sourcegitcommit: 5716025eb4828425ca237377b02a892de8689f4a
+ms.openlocfilehash: 875cbbd095dfd239ab83c1c80db28ea7c0a04ed0
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "9142841"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245625"
 ---
 # <a name="how-to-create-a-new-environment"></a>Gör så här: Skapa en ny miljö
 
@@ -48,7 +48,7 @@ I steget **Grundläggande information** väljer du om du vill skapa en miljö fr
 
 Ange följande information:
 
-- **Namn**: Namnet på miljön. Detta fält är redan ifyllt om du har kopierat en befintlig miljö, men du kan ändra det.
+- **Namn**: Namnet på miljön. Detta fält är redan ifyllt om du har kopierat en befintlig miljö, men du kan ändra det. Om du har mer än en arbetsmiljö, ge var och en ett lätt identifierbart namn.
 - **Välj din verksamhet**: Välj den primära målgrupp för den nya miljön. Du kan arbeta med enskilda konsumenter (B2C) eller [affärskonton](work-with-business-accounts.md) (B2B). Om organisationen i huvudsak gör affärer med enskilda personer, till exempel en återförsäljare eller en kafé, väljer du enskilda kunder. Om din primära målgrupp är andra företag, till exempel en biltillverkare eller ett pappersföretag, väljer du företagskonton.
 - **Typ**: Välj om du vill skapa en produktions- eller sandbox-miljö. Sandbox-miljöer tillåter inte att schemalagda data uppdateras, och är avsedda för förimplementering och testning. I begränsat läge används samma primära målgrupp som den produktionsmiljö som för närvarande är markerad.
 - **Region**: Den region där tjänsten disribueras och förvaras Om du vill [använda ditt eget Azure Data Lake Storage-konto](own-data-lake-storage.md) eller [ansluta till en befintlig Microsoft Dataverse-organisation](customer-insights-dataverse.md) måste Customer Insights-miljön finnas i samma region.

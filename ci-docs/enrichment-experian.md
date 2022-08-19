@@ -1,19 +1,19 @@
 ---
 title: Berika kundprofiler med demografisk information från Experian (förhandsgranskning)
 description: Allmän information om tredjepartsberikande Experian.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 876853ab42e8c08ad1abacb8d8a205c0aadabcf7
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: fccb37cde3f05a70009c18b6c52db01a5ede094d
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195958"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9238018"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Berika kundprofiler med demografisk information från Experian (förhandsgranskning)
 
@@ -41,13 +41,9 @@ Du måste vara en [administratör](permissions.md#admin) i Customer Insights och
 
 1. Ange ett namn för anslutningen och ett giltigt användar-ID, party-ID och modellnummer för ditt konto Experian för säker transport.
 
-1. Granska och ge ditt samtycke till [Data sekretess och efterlevnad](#data-privacy-and-compliance) genom att välja **Jag godkänner**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
 1. Välj **Verifiera** om konfigurationen ska verifieras och välj sedan **Spara**.
-
-### <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du gör det möjligt för Dynamics 365 Customer Insights att överföra data till Experian tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att säkerställa att Experian uppfyller dina eventuella sekretess- och säkerhetskrav. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732). Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort denna berikningen i syfte att avbryta användningen av den här funktionen.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 

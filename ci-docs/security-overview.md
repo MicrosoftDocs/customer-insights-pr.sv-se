@@ -1,68 +1,39 @@
 ---
-title: Säkerhetsinställningar i Customer Insights
+title: Konfigurera säkerhetsinställningar
 description: Lär dig mer om säkerhetsinställningar i Dynamics 365 Customer Insights.
-ms.date: 06/08/2022
+ms.date: 08/02/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 163deb9bed4f82d742c46cace27dd128f0aca18b
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: ea21163d7dd05370de28ca8340ae9583846adb26
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947437"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246084"
 ---
-# <a name="security-settings-in-customer-insights"></a>Säkerhetsinställningar i Customer Insights
+# <a name="configure-security-settings"></a>Konfigurera säkerhetsinställningar
 
-På sidan **Säkerhet** visas alternativ för att konfigurera användarbehörigheter och funktioner som gör Dynamics 365 Customer Insights det säkrare. Endast administratörer kan komma åt den här sidan.
+Hantera API-nycklar, få åtkomst till kunddata och konfigurera en Azure Private Link.
 
-Gå till **Admin** > **Säkerhet** för att konfigurera inställningarna.
-
-Sidan **Säkerhet** innehåller följande flikar:
-
-- [Användare](#users-tab)
-- [API:er](#apis-tab)
-- [Privata länkar](#private-links-tab)
-- [Key Vault](#key-vault-tab)
-- [Få säker åtkomst till kunddata med Customer Lockbox (förhandsversion)](#securely-access-customer-data-with-customer-lockbox-preview)
-
-## <a name="users-tab"></a>Fliken Användare
-
-Åtkomst till Customer Insights är begränsad till användare i organisationen som har lagts till i programmet av en administratör. På fliken **Användare** kan du hantera användaråtkomst och deras behörigheter. Mer information finns i [Användarbehörigheter](permissions.md).
-
-## <a name="apis-tab"></a>Fliken API:er
+## <a name="manage-api-keys"></a>Hantera API-nycklar
 
 Visa och hantera nycklarna till att använda [Customer Insights API:er](apis.md) med data i miljön.
 
-Du kan skapa nya primära och sekundära nycklar genom att välja **Återskapa primär** eller **Återskapa sekundär**. 
+1. Gå till **System** > **Säkerhet** och välj fliken **API:er**.
 
-Om du vill blockera API-åtkomst till miljön väljer du **Inaktivera**. Om API:er är inaktiverade kan du välja **Aktivera** för att bevilja åtkomst igen.
+1. Om API-åtkomst till miljön inte har konfigurerats väljer du **Aktivera**. Eller om du vill blockera API-åtkomst till miljön väljer du **Inaktivera** och bekräftar.
 
-## <a name="private-links-tab"></a>Fliken Private Link
+1. Hantera primära och sekundära API-nycklar:
 
-[Azure Private Link](/azure/private-link/private-link-overview) låter Customer Insights ansluta till ditt Azure Data Lake Storage-konto via en privat slutpunkt i ditt virtuella nätverk. För data i ett lagringskonto, som inte är synligt för det offentliga Internet, aktiverar Private Link anslutningen till det begränsade nätverket.
+   1. Välj symbolen **Visa** om du vill visa den primära eller sekundära API-nyckeln.
 
-> [!IMPORTANT]
-> Krav på minimiroll för att konfigurera en Private Link-anslutning:
->
-> - Customer Insights: Administratör
-> - Azure inbyggd roll: [Lagringskonto deltagare](/azure/role-based-access-control/built-in-roles#storage-account-contributor)
-> - Behörigheter för anpassad Azure-roll: [Microsoft.Storage/storageAccounts/read och Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action](/azure/role-based-access-control/resource-provider-operations#microsoftstorage)
->
+   1. Välj symbolen **Kopiera** om du vill kopiera den primära eller sekundära API-nyckeln.
 
-Att konfigurera Private Link i Customer Insights är en process i två steg. Först startar du skapandet av en Private Link från **Admin** > **Säkerhet** > **Private Links** i Customer Insights. I rutan **Lägg till Private Link** visas de lagringskonton från din klientorganisation som du har behörighet att se. Välj ett lagringskonto och godkänn att skapa den Private Link.
-
-Nästa steg är att godkänna Private Link på kontosidan För Data Lake Storage. Öppna länken som visas på skärmen om du vill godkänna den nya Private Link.
-
-## <a name="key-vault-tab"></a>Fliken Key Vault
-
-På fliken **Key Vault** kan du länka och hantera ditt eget [Azure Key Vault](/azure/key-vault/general/basic-concepts) till miljön.
-Dedikerade nyckelvalv kan användas för att arrangera och använda hemligheter i en organisations efterlevnadsgräns. Customer Insights kan använda hemligheterna i Azure Key Vault för att [konfigurera anslutningar](connections.md) till system från tredje part.
-
-Mer information finns i [Använd ditt eget Azure Key Vault](use-azure-key-vault.md).
+   1. Välj **Återskapa primär** eller **Återskapa sekundär** om du vill skapa nya primära och sekundära API-nycklar.
 
 ## <a name="securely-access-customer-data-with-customer-lockbox-preview"></a>Få säker åtkomst till kunddata med Customer Lockbox (förhandsversion)
 
@@ -72,5 +43,33 @@ Mer information om Customer Lockbox finns i [sammanfattningen](/power-platform/a
 
 > [!IMPORTANT]
 > Globala administratörer för Power Platform eller Power Platform administratörer kan godkänna Customer Lockbox som utfärdas för Customer Insights.
+
+## <a name="set-up-an-azure-private-link"></a>Konfigurera en Azure Private Link
+
+[Azure Private Link](/azure/private-link/private-link-overview) låter Customer Insights ansluta till ditt Azure Data Lake Storage-konto via en privat slutpunkt i ditt virtuella nätverk. För data i ett lagringskonto, som inte är synligt för det offentliga Internet, aktiverar Private Link anslutningen till det begränsade nätverket.
+
+> [!IMPORTANT]
+> Krav på minimiroll för att konfigurera en Private Link-anslutning:
+>
+> - Customer Insights: Administratör
+> - Azure inbyggd roll: [Lagringskonto deltagare](/azure/role-based-access-control/built-in-roles#storage-account-contributor)
+> - Behörigheter för anpassad Azure-roll: [Microsoft.Storage/storageAccounts/read och Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action](/azure/role-based-access-control/resource-provider-operations#microsoftstorage)
+
+1. I Customer Insights, gå till **Admin** > **Säkerhet** och välj fliken **Private Links**.
+
+1. Välj **Lägg till Private Link**.
+
+   I rutan **Lägg till Private Link** visas de lagringskonton från din klientorganisation som du har behörighet att se.
+
+1. Välj prenumeration, resursgrupp och lagringskonto.
+
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
+
+1. Välj **Spara**.
+
+1. Gå till ditt lagringskonto för Data Lake och öppna länken som visas på skärmen.
+
+1. Godkänn Private Link.
+
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -2,7 +2,7 @@
 title: Ta bort dubbletter innan data samordnas
 description: Det andra steget i processen är att välja vilken post som ska behållas när dubbletter hittas.
 recommendations: false
-ms.date: 04/22/2022
+ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,16 +13,25 @@ searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: a838fbdabdb3bfffc6d3835a3f0e97306a43964a
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139451"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213649"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Ta bort dubbletter innan data samordnas
 
-Det här steget innebär eventuellt att du kan skapa regler för hantering av dubblettposter inom en entitet. Med *dedupliceringen* identifieras dubblettposter och kopplas till en post. Källposter länkas till den sammanslagna posten med alternativa ID. Om reglerna inte konfigureras tillämpas systemdefinierade regler.
+Det här valfria steget innebär att du kan skapa regler för eliminering av dubblettposter **inom** en entitet. Deduplicering identifierar flera poster för en kund och väljer den bästa posten att behålla (baserat på grundläggande inställningar för koppling) eller kopplar posterna till en (baserat på avancerade inställningar för koppling). Källposter länkas till den sammanslagna posten med alternativa ID. Om reglerna inte konfigureras tillämpas systemdefinierade regler.
+
+## <a name="default-deduplication"></a>Standard för deduplicering
+
+Om inga dedupliceringsregler läggs till tillämpas de systemdefinierade reglerna.
+
+- Den primära nyckeln är deduplicerad.
+  För alla poster med samma primära nyckel är den **Mest fyllda** posten (den med minst antal null-värden) den viktigaste posten.
+- Alla matchningsregler för flera entiteter tillämpas på entiteten.
+  Till exempel: Om entitet A matchas mot entitet B på *på FullName* och *DateofBirth* i matchningssteget, dedupliceras även entitet A av *FullName* och *DateofBirth*. Eftersom *FullName* och *DateofBirth* är giltiga nycklar för att identifiera en kund i entitet A, kan även dessa nycklar identifiera dubblettkunder i entitet A.
 
 ## <a name="include-enriched-entities-preview"></a>Inkludera utökade entiteter (förhandsgranskning)
 

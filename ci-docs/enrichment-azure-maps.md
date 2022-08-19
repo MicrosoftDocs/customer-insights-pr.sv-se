@@ -1,19 +1,19 @@
 ---
 title: Utöka kundprofiler med platsdata från Azure Maps (förhandsversion)
 description: Allmän information om förstapartsberikande för Azure Maps.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: dfadc08f67beac3fded1a97e557ee9e1880664e0
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: f14b4fc20a9a1d8842f42f9e0e656b3d8dcddcf4
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052629"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9238064"
 ---
 # <a name="enrich-customer-profiles-with-location-data-from-azure-maps-preview"></a>Utöka kundprofiler med platsdata från Azure Maps (förhandsversion)
 
@@ -35,14 +35,9 @@ Du måste vara en [Administratör](permissions.md#admin) i Customer Insights och
 
 1. Ange ett namn för anslutningen och en giltig Azure Maps API-nyckel.
 
-1. Granska och ge ditt samtycke till [Data sekretess och efterlevnad](#data-privacy-and-compliance) genom att välja **Jag godkänner**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
 1. Välj **Verifiera** om konfigurationen ska verifieras och välj sedan **Spara**.
-
-### <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du gör det möjligt för Dynamics 365 Customer Insights att överföra data till Azure Maps tillåter du överföringen av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data såsom personuppgifter. Microsoft överför sådana data enligt dina instruktioner, men du är ansvarig för att se till att Azure Maps uppfyller eventuella sekretess- eller säkerhetskrav. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort den här berikningen för att avbryta användningen av den här funktionen.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 

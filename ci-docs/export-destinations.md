@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a70aadda4fc0eff3ddb4c89665506762613c291a
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: fd234aff9021ded76d8226bf2f15e035cf75e7db
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9194990"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245349"
 ---
 # <a name="exports-preview-overview"></a>Exporter (förhandsversion) översikt
 
@@ -79,7 +79,7 @@ Välj export om du vill visa tillgängliga åtgärder.
 
 ## <a name="schedule-and-run-exports"></a>Schemalägg och kör exporter
 
-Varje export som du konfigurerar har ett uppdateringsschema. Vid en uppdatering söker systemet efter nya eller uppdaterade data som ska ingå i en export. Som standard körs exporter som en del av alla [schemalagda systemuppdateringar](system.md#schedule-tab). Du kan anpassa uppdateringsschemat eller inaktivera det om du vill köra exporten manuellt.
+Varje export som du konfigurerar har ett uppdateringsschema. Vid en uppdatering söker systemet efter nya eller uppdaterade data som ska ingå i en export. Som standard körs exporter som en del av alla [schemalagda systemuppdateringar](schedule-refresh.md). Du kan anpassa uppdateringsschemat eller inaktivera det om du vill köra exporten manuellt.
 
 Exportscheman beror på tillståndet för miljön. Om det pågår uppdateringar för [beroenden](system.md#refresh-processes) när en schemalagd export ska starta, slutför systemet först uppdateringarna och kör sedan exporten. Kolumnen **Uppdaterad** visar när en export senast uppdaterades.
 

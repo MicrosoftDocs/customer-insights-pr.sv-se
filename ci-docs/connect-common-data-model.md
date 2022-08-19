@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207021"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245855"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Ansluta till data i Azure Data Lake Storage
 
@@ -56,8 +56,8 @@ Hämta data till Dynamics 365 Customer Insights med ditt Azure Data Lake Storage
 
 1. Välj ett av följande alternativ för **Anslut lagringsutrymmet med**. Mer information finns i [Ansluta Customer Insights till ett Azure Data Lake Storage Gen2-konto med ett Azure-tjänsthuvudkonto](connect-service-principal.md).
 
-   - **Azure-resurs**: Ange **resurs-ID**. Om du vill hämta data från ett lagringskonto via en Azure Private Link väljer du **Aktivera Private Link**. Mer information finns i den här [Private Link](security-overview.md#private-links-tab).
-   - **Azure-prenumeration**: Välj **prenumeration** och sedan **resursgruppen** och **lagringskontot**. Om du vill hämta data från ett lagringskonto via en Azure Private Link väljer du **Aktivera Private Link**. Mer information finns i den här [Private Link](security-overview.md#private-links-tab).
+   - **Azure-resurs**: Ange **resurs-ID**. Om du vill hämta data från ett lagringskonto via en Azure Private Link väljer du **Aktivera Private Link**. Mer information finns i den här [Private Link](security-overview.md#set-up-an-azure-private-link).
+   - **Azure-prenumeration**: Välj **prenumeration** och sedan **resursgruppen** och **lagringskontot**. Om du vill hämta data från ett lagringskonto via en Azure Private Link väljer du **Aktivera Private Link**. Mer information finns i den här [Private Link](security-overview.md#set-up-an-azure-private-link).
   
    > [!NOTE]
    > Du behöver en av följande roller för antingen behållaren eller lagringskontot om du vill skapa datakällan:
@@ -176,7 +176,7 @@ Du kan uppdatera alternativet *Anslut till ett lagringskonto med*. Mer informati
         > - Storage Blob-dataägare
         > - Storage Blob-datadeltagare
 
-   - **Aktivera Private Link** Om du vill hämta data från ett lagringskonto via en Azure Private Link. Mer information finns i den här [Private Link](security-overview.md#private-links-tab).
+   - **Aktivera Private Link** Om du vill hämta data från ett lagringskonto via en Azure Private Link. Mer information finns i den här [Private Link](security-overview.md#set-up-an-azure-private-link).
 
 1. Välj **Nästa**.
 1. Ändra någon av följande:

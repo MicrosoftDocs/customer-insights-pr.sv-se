@@ -284,18 +284,20 @@
       href: connect-service-principal.md
 - name: Administration
   items:
-    - name: Ställa in systemet för konfiguration
-      href: system.md
-    - name: Konfigurera säkerhetsinställningar
-      href: security-overview.md
     - name: Tilldela användarbehörigheter
       href: permissions.md
     - name: Ta med din egen Key Vault
       href: use-azure-key-vault.md
+    - name: Konfigurera säkerhetsinställningar
+      href: security-overview.md
     - name: Exportera diagnostikloggar
       href: diagnostics.md
-    - name: Översikt över anslutningar
+    - name: Hantera anslutningar
       href: connections.md
+    - name: Uppdatera schemasystem
+      href: schedule-refresh.md
+    - name: Visa systemkonfiguration
+      href: system.md
 - name: 'API:er'
   items:
     - name: 'Arbeta med API:er'

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: f9c9ee55f2874ae1dcaf82f2ff17ed0fbbb7804d
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 0e953cfff12df433d033717d58b28c2834468916
+ms.sourcegitcommit: 086f75136132d561cd78a4c2cb1e1933e2301f32
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196416"
+ms.lasthandoff: 08/11/2022
+ms.locfileid: "9259866"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Exportera till Azure Synapse Analytics (förhandsversion)
 
@@ -24,7 +24,7 @@ Azure Synapse är en analystjänst som snabbare kan få överblick över datalag
 > [!NOTE]
 > Se till att ange alla **rolltilldelningar** enligt beskrivningen.
 
-- I Customer Insights måste Azure Active Directory (AD) användarkonto ha rollen [Administratörsroll](permissions.md#assign-roles-and-permissions).
+- I Customer Insights måste Azure Active Directory (AD) användarkonto ha rollen [Administratörsroll](permissions.md#add-users).
 
 i Azure:
 
@@ -39,6 +39,8 @@ i Azure:
 - *[Azure Synapse workspace hanterad identitet](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* behöver behörigheten **Storage Blob-datadeltagare** i kontot Azure Data Lake Storage Gen2 där data finns och kopplas till Azure Synapse arbetsytan. Läs mer om hur du [använder Azure-portalen för att tilldela en Azure-roll för åtkomst till blobb och ködata](/azure/storage/common/storage-auth-aad-rbac-portal) och [behörigheter för Storage Blob-datadeltagare](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
 - På Azure Synapse workspace, *tjänstens huvudkonto för Customer Insights* har **Synapse-administratör** [roll tilldelad](/azure/synapse-analytics/security/how-to-set-up-access-control).
+
+- Om din Customer Insights-miljö lagrar data i din [egen Azure Data Lake Storage](own-data-lake-storage.md), måste användaren som konfigurerar anslutningen till Azure Synapse Analytics minst ha den inbyggda rollen **Läsare** på Data Lake Storage-kontot. Mer information finns i [Tilldela Azure-roller med Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="set-up-connection-to-azure-synapse"></a>Konfigurera anslutningar till Azure Synapse
 

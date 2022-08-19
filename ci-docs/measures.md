@@ -14,12 +14,12 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 99368a7ab2e8d7b3e53c04fbf25bb23bd2e550a9
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170871"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245395"
 ---
 # <a name="measures-overview"></a>Måttöversikt
 
@@ -53,7 +53,7 @@ Välj bredvid ett mått om du vill visa tillgängliga åtgärder. Välj måttnam
 - **Redigera** mått om du vill ändra dess egenskaper.
 - **Uppdatera** mått så att det omfattar senaste data.
 - **Byt namn** på mått.
-- **Aktivera** eller **Inaktivera** måttet. Inaktiva mått kommer inte att uppdateras under en [schemalagd uppdatering](system.md#schedule-tab) och ha **Status** som anges som **Överhoppad**, vilket tyder på att en uppdatering inte ens provats.
+- **Aktivera** eller **Inaktivera** måttet. Inaktiva mått kommer inte att uppdateras under en [schemalagd uppdatering](schedule-refresh.md) och ha **Status** som anges som **Överhoppad**, vilket tyder på att en uppdatering inte ens provats.
 - **Tagg** för att [hantera taggar](work-with-tags-columns.md#manage-tags) för mått.
 - **Ta bort** måttet.
 - **Kolumner** för att [anpassa vilka kolumner](work-with-tags-columns.md#customize-columns) som visas.
@@ -62,7 +62,7 @@ Välj bredvid ett mått om du vill visa tillgängliga åtgärder. Välj måttnam
 
 ## <a name="refresh-measures"></a>Måttet har uppdaterats
 
-Mått kan uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran. Om du vill uppdatera en eller flera mått manuellt markerar du dem och väljer **Uppdatera**. Om du vill [schemalägga en automatisk uppdatering](system.md#schedule-tab) går du till **Admin** > **System** > **Schemalägg**.
+Mått kan uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran. Om du vill uppdatera en eller flera mått manuellt markerar du dem och väljer **Uppdatera**. Om du vill [schemalägga en automatisk uppdatering](schedule-refresh.md) går du till **Admin** > **System** > **Schemalägg**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

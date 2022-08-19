@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207113"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245671"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
@@ -67,7 +67,7 @@ Välj en datakälla om du vill visa tillgängliga åtgärder.
 
 Datakällor kan uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran. [Lokala datakällor](connect-power-query.md#add-data-from-on-premises-data-sources) uppdateras enligt sina egna scheman som konfigureras vid datainmatning. För bifogade datakällor används senaste data från den aktuella datakälla.
 
-Gå till **Admin** > **System** > [**Schema**](system.md#schedule-tab) om du vill konfigurera system schemalagda uppdateringar för de inmatade datakällorna.
+Gå till **Admin** > **System** > [**Schema**](schedule-refresh.md) om du vill konfigurera system schemalagda uppdateringar för de inmatade datakällorna.
 
 Så här uppdaterar du en datakälla på begäran:
 

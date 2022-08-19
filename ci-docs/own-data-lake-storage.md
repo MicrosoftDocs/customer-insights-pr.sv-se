@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
 ms.reviewer: mhart
-ms.openlocfilehash: 5acb58906c1a9db54337f3b4dc2ab7891db7954e
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: d2ff49c324c5c5c28213f362ff330d441fcb6052
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011955"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246223"
 ---
 # <a name="use-your-own-azure-data-lake-storage-gen2-account"></a>Använd ditt eget Azure Data Lake Storage Gen2-konto
 
@@ -37,7 +37,7 @@ När du skapar en ny miljö ska du se till att Data Lake Storage-kontot finns oc
 1. Välj hur du vill **ansluta ditt lagringsutrymme**. Du kan välja mellan ett resursbaserat och ett prenumerationsbaserat autentiseringsalternativ. Mer information finns i [Ansluta till ett Azure Data Lake Storage-konto med hjälp av ett huvudkonto för Azure-tjänster](connect-service-principal.md).
    - För **Azure-prenumeration** väljer du den **prenumeration**, den **resursgrupp** och det **lagringskonto** som innehåller behållaren `customerinsights`.
    - För **Kontonyckel** anger du **kontonamn** och **kontonyckel** för Data Lake Storage-kontot. Om du använder denna autentiseringsmetod antyder det att du känner till huruvida din organisation roterar nycklarna. Du måste [uppdatera miljökonfigurationen](manage-environments.md#edit-an-existing-environment) med den nya nyckeln när denna roteras.
-1. Välj om du vill använda Azure Private Link för att ansluta till lagringskontot och [skapa anslutningen till Privat Link](security-overview.md#private-links-tab) med en tvåstegsprocess.
+1. Välj om du vill använda Azure Private Link för att ansluta till lagringskontot och [skapa anslutningen till Privat Link](security-overview.md#set-up-an-azure-private-link) med en tvåstegsprocess.
 
 När systemprocesser såsom datainmatning är slutförd skapar systemet motsvarande kataloger på lagringskontot. Datafiler och *model.json*-filer skapas och läggs till i mappar baserat på processnamn.
 

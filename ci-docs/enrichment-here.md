@@ -1,19 +1,19 @@
 ---
 title: Utöka kundprofiler med data från HERE Technologies (förhandsgranska)
 description: Allmän information om tredjepartsberikningen HERE Technologies.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 26de9fce863c9832b70adf3ce39cb2ae0ce43d0e
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 86a070342193dd7afda38823d90f4bd28c8b862e
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196278"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237880"
 ---
 # <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Utöka kundprofiler med data från HERE Technologies (förhandsgranska)
 
@@ -33,16 +33,11 @@ Du måste vara en [Administratör](permissions.md#admin) i Customer Insights och
 
 1. Ange ett namn för anslutningen och en giltig HERE Technologies API-nyckel.
 
-1. Granska och ge ditt samtycke till [Data sekretess och efterlevnad](#data-privacy-and-compliance) genom att välja **Jag godkänner**.
+1. Granska [Datasekretess och överensstämmelse](connections.md#data-privacy-and-compliance) och välj **Jag godkänner**.
 
 1. Välj **Verifiera** om konfigurationen ska verifieras och välj sedan **Spara**.
 
    :::image type="content" source="media/enrichment-HERE-connection.png" alt-text="Konfigurationssida för HERE technologies-anslutning.":::
-
-### <a name="data-privacy-and-compliance"></a>Datasekretess och regelefterlevnad
-
-När du aktiverar Dynamics 365 Customer Insights för att överföra data till HERE Technologies tillåter du överföring av data utanför efterlevnadsgränsen för Dynamics 365 Customer Insights, inklusive potentiellt känsliga data som t.ex. personuppgifter. Microsoft kommer att överföra dessa data på din instruktion, men du ansvarar för att HERE Technologies uppfyller de sekretess- eller säkerhetskrav som du kan ha. Mer information finns i [Microsofts sekretesspolicy](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administratör kan när som helst ta bort denna berikningen i syfte att avbryta användningen av den här funktionen.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration av berikning
 

@@ -14,12 +14,12 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139679"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213604"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Gör kundfälten enhetliga för dataförening
 
@@ -58,6 +58,9 @@ I det här steget i processen väljer du och utesluter attribut som ska sammanfo
 
 1. Ange hur fälten ska kombineras eller slås samman från ett av tre alternativ:
     - **Betydelse**: Identifierar det vinnande värdet baserat på det prioritetsvärde som angetts för de deltagande fälten. Det här är standardalternativet för sammanfogning. Välj **Flytta upp/ned** för att ange prioritet.
+
+      > [!NOTE]
+      > Customer Insights använder det första icke-null-värdet. Om exempelvis entiteterna A, B och C är rankade i den ordningen, och A.Name och B.Name är null, då används värdet från C.Name.
 
       :::image type="content" source="media/importance-merge-option.png" alt-text="Alternativet Prioritet i dialogrutan för att slå samman fält.":::
 
