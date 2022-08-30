@@ -2,7 +2,7 @@
 title: Gör kundfälten enhetliga för dataförening
 description: Slå samman entiteter för att skapa enhetliga kundprofiler.
 recommendations: false
-ms.date: 05/04/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,18 +14,18 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 7ebd6ab8fa6ae141f33295a5d7723e96c8dc70ca
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213604"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304035"
 ---
-# <a name="unify-customer-fields-for-data-unification"></a>Gör kundfälten enhetliga för dataförening
+# <a name="unify-customer-fields"></a>Förenade kundfält
 
-I det här steget i processen väljer du och utesluter attribut som ska sammanfogas i din enhetliga profilentitet. Om det till exempel finns tre entiteter med e-postdata kanske du vill behålla alla tre separata e-postfält eller koppla dem till ett enda e-postfält för den enhetliga profilen. Vissa attribut kombineras automatiskt av systemet. Du kan skapa stabilt och unikt kund-ID och gruppera relaterade profiler i ett kluster.
+I det här steget i processen väljer du och utesluter attribut som ska sammanfogas i din enhetliga profilentitet. Om det till exempel finns tre entiteter med e-postdata kanske du vill behålla alla tre separata e-postfält eller koppla dem till ett enda e-postfält för den enhetliga profilen. Vissa attribut kombineras automatiskt av systemet. Du kan skapa ett stabilt och unikt kund-ID. För individuella kunder kan du gruppera relaterade profiler i ett kluster.
 
-:::image type="content" source="media/m3_unify.png" alt-text="Sammanslå sida i dataförlopp som visar tabell med kopplade fält som definierar den enhetliga kundprofilen.":::
+:::image type="content" source="media/m3_unify.png" alt-text="Sidan Förenade kundfält i dataföreningsprocessen som visar tabell med kopplade fält som definierar den enhetliga kundprofilen.":::
 
 ## <a name="review-and-update-the-customer-fields"></a>Granska och uppdatera kundfält
 
@@ -47,7 +47,7 @@ I det här steget i processen väljer du och utesluter attribut som ska sammanfo
 
 1. Alternativt, [generera kund-ID-konfigurationen](#configure-customer-id-generation).
 
-1. Alternativt, [gruppera profiler i hushåll eller kluster](#group-profiles-into-households-or-clusters).
+1. Alternativt för B2C, [gruppera profiler i hushåll eller kluster](#group-profiles-into-households-or-clusters).
 
 > [!div class="nextstepaction"]
 > [Nästa steg: Granska sammanslagningen](review-unification.md)
@@ -157,11 +157,11 @@ Genom att konfigurera ett stabilt kund-ID kan du undvika detta beteende.
 
 1. Välj upp till fem fält som ska utgöra ett unikt kund-ID och som är stabilare. För poster som inte överensstämmer med konfigurationen används ett systemkonfigurations-ID i stället.  
 
-1. Välj **Utfört**.
+1. Välj **Klar**.
 
 ## <a name="group-profiles-into-households-or-clusters"></a>Gruppera profiler i organisationer som är för sig eller i kluster
 
-Du kan definiera regler för att gruppera relaterade profiler i ett kluster. Det finns för närvarande två typer av kluster tillgängliga – förkluster och anpassade kluster. Systemet väljer automatiskt att använda fördefinierade regler om entiteten *Kund* innehåller de semantiska fälten *Person.LastName* och *Location.Address*. Du kan också skapa ett kluster med dina egna regler och villkor, på samma sätt som med [matchningsregler](match-entities.md#define-rules-for-match-pairs).
+För enskilda kunder kan du definiera regler för att gruppera relaterade profiler i ett kluster. Det finns för närvarande två typer av kluster tillgängliga – förkluster och anpassade kluster. Systemet väljer automatiskt att använda fördefinierade regler om entiteten *Kund* innehåller de semantiska fälten *Person.LastName* och *Location.Address*. Du kan också skapa ett kluster med dina egna regler och villkor, på samma sätt som med [matchningsregler](match-entities.md#define-rules-for-match-pairs).
 
 1. Välj **Avancerad** > **Skapa kluster**.
 

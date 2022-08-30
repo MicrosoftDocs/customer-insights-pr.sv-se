@@ -76,6 +76,8 @@
       href: merge-entities.md
     - name: Granska dataförening
       href: review-unification.md
+    - name: Skapa en enhetlig kontaktprofil
+      href: data-unification-contacts.md
     - name: Uppdatera föreningsinställningarna
       href: data-unification-update.md
 - name: Datautökande

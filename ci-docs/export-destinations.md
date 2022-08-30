@@ -1,7 +1,7 @@
 ---
 title: Exporter (förhandsversion) översikt
 description: 'Hantera dataexport för att dela data. '
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: fd234aff9021ded76d8226bf2f15e035cf75e7db
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245349"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304081"
 ---
 # <a name="exports-preview-overview"></a>Exporter (förhandsversion) översikt
 
@@ -27,8 +27,8 @@ ms.locfileid: "9245349"
 
 Det finns två huvudtyper av export:  
 
-- **Export av utdata**: exportera alla typer av entiteter som är Customer Insights. De entiteter du väljer för export exporteras med alla datafält, metadata, scheman och mappningsdetaljer.
-- **Segmentexport**: kan du exportera segmententiteter från Customer Insights. Segment representerar en lista över kundprofiler. När du konfigurerar exporten väljer du de datafält som ingår, beroende på vilket målsystem du exporterar data till.
+- **Export av utdata** låter dig exportera alla typer av entiteter som är Customer Insights. De entiteter du väljer för export exporteras med alla datafält, metadata, scheman och mappningsdetaljer.
+- Med **segmentexport** kan du exportera segmententiteter från Customer Insights. Segment som är för enskilda kunder (B2C) representerar en lista över kundprofiler. För företag (B2B) kan [segment motsvara en lista med konton eller kontakter](segment-builder.md#create-a-new-segment-with-segment-builder). När du konfigurerar exporten väljer du de datafält som ingår, beroende på vilket målsystem du exporterar data till.
 
 ### <a name="export-segments"></a>Exportera segment
 
@@ -38,14 +38,15 @@ De flesta exportalternativ har stöd för båda typerna av miljöer. Det finns s
 **Segmentexport i miljöer för enskilda konsumenter (B2C)**  
 - Segment i samband med miljöer för individuella kunder bygger på entiteten *Unified Customer Profile*. Alla segment som uppfyller målsystemens krav (till exempel en e-postadress) kan exporteras.
 
-**Segmentexportmiljöer för affärskonton (B2B)**  
-- Segment i samband med miljöer för affärskonton bygger på entiteten *konto*. För att kunna exportera kontosegment i sin form måste målsystemet ha stöd för kontosegment. Detta gäller för [LinkedIn](export-linkedin-ads.md) när du väljer alternativet **företag** när du definierar exporten.
-- Alla andra målsystem kräver fält från kontaktentiteten. För att säkerställa att kontosegment kan hämta data från relaterade kontakter måste segmentdefinitionen projektattribut för kontaktentiteten. Läs mer om hur du [konfigurerar segment och projektattribut](segment-builder.md).
+**Segmentexport i miljöer för affärskonton (B2B)**  
+- Segment i samband med miljöer för affärskonton bygger på entiteten *konto* eller *kontakt*. För att kunna exportera kontosegment i sin form måste målsystemet ha stöd för kontosegment. Detta gäller för [LinkedIn](export-linkedin-ads.md) när du väljer alternativet **företag** när du definierar exporten.
+- Alla andra målsystem kräver fält från kontaktentiteten.
+- Med två segmenttyper (kontakter och konton) identifierar Customer Insights automatiskt vilken typ av segment som kan exporteras baserat på målsystemet. Till exempel, för ett kontaktfokuserat målsystem som Mailchimp, låter Customer Insights dig bara välja kontaktsegment att exportera.
 
 **Begränsningar för segmentexport**  
 - Målsystem från tredje part kan begränsa antalet kundprofiler som du kan exportera. 
 - För enskilda kunder visas det faktiska antalet segmentmedlemmar när du väljer ett segment för export. Du får en varning om ett segment är för stort. 
-- För affärskonton visas antalet konton i ett segment. Antalet kontakter som kan projiceras visas emellertid inte. I vissa fall kan det leda till att det exporterade segmentet verkligen innehåller fler kundprofiler än vad målsystemet accepterar. Om gränserna för målsystemet överskrids, hoppas exporten över.
+- För affärskonton visas antalet konton eller kontaktpersoner beroende på segment. Du får en varning om ett segment är för stort. Att överskrida gränserna för målsystemresultaten kommer att hoppa över exporten.
 
 ## <a name="set-up-a-new-export"></a>Ställ in en ny export
 
@@ -110,6 +111,20 @@ För att exportera data utan att vänta på en schemalagd uppdatering, gå till 
 
 - Om du vill köra alla exporter väljer du **Kör alla** i kommandofältet. Endast exporter som har ett aktivt schema körs. Om du vill köra en export som inte är aktiv kör du en enda export.
 - Om du vill köra en enskild export markerar du den i listan och väljer **Kör** i kommandofältet.
+
+## <a name="troubleshooting"></a>Felsökning
+
+### <a name="segment-not-eligible-for-export"></a>Segment som inte är berättigande till export
+
+**Problem** I en miljö med företagskonton misslyckas exporten med felmeddelandet: "Följande segment är inte kvalificerat för den här exportmålet: "{Namn på segment}". Välj endast segment av typen ContactProfile och försök igen."
+
+**Lösning** Customer Insights-miljöer för affärskonton har uppdaterats för att stödja kontaktsegment förutom kontosegment. På grund av den förändringen fungerar export som behöver kontaktinformation endast med segment baserade på kontakter.
+
+1. [Skapa ett segment utifrån kontakter som överensstämmer](segment-builder.md) med ditt tidigare använda segment.
+
+1. När kontaktsegmentet har körts redigerar du respektive export och markerar det nya segmentet.
+
+1. Välj **Spara** om du vill spara konfigurationen eller **Spara och kör** för att testa exporten på en gång.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

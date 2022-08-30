@@ -2,7 +2,7 @@
 title: Matchningsvillkor för dataförening
 description: Matcha entiteter för att skapa enhetliga kundprofiler.
 recommendations: false
-ms.date: 05/05/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: e3e4e37d5b4c9caf2520a789d5f78ef33b491793
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139725"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304679"
 ---
 # <a name="match-conditions-for-data-unification"></a>Matchningsvillkor för dataförening
 
@@ -27,6 +27,8 @@ I det här steget definieras matchningsordningen och reglerna för matchning mel
 
 > [!NOTE]
 > När du har skapat matchningsvillkoren och valt **Nästa** kan du inte ta bort en markerad entitet eller ett markerat attribut. Välj **Tillbaka** om det behövs om du vill granska de valda entiteterna och attributen innan du går vidare.
+
+[!INCLUDE [m3-first-run-note](includes/m3-first-run-note.md)]
 
 ## <a name="include-enriched-entities-preview"></a>Inkludera utökade entiteter (förhandsgranskning)
 
@@ -43,14 +45,14 @@ Om du har förädlat entiteter på datakälla nivå för att förbättra resulta
 Varje matchning kombinerar två eller flera entiteter till en enda konsoliderad entitet. Samtidigt behålls de unika kundposterna. Matchningsordningen anger i vilken ordning systemet försöker matcha posterna.
 
 > [!IMPORTANT]
-> Den första entiteten i listan kallas den primära entiteten. Den primära entiteten fungerar som bas för dina enhetliga profiler datauppsättning. Ytterligare entiteter som är markerade läggs till i entiteten.
+> Den första entitet kallas primär entitet som är grund för dina förenade profiler. Ytterligare entiteter som är markerade läggs till i entiteten.
 >
 > Viktiga överväganden:
 >
 > - Välj entiteten med de mest fullständiga och tillförlitliga profildata om kunderna som primär entitet.
 > - Välj den entitet som har flera attribut som delas av andra entiteter (t.ex. namn, telefonnummer eller e-postadress) som primär entitet.
 
-1. På sidan **Matchande villkor** pilarna för att flytta upp och ner för att flytta enheterna i den ordning du vill, eller dra och släpp dem. Välj till exempel **Contacts:eCommerce** som primär entitet och **CustomerLoyalty:Loyalty** som sekundär entitet.
+1. På sidan **Matchande villkor** pilarna för att flytta upp och ner för att flytta enheterna i den ordning du vill, eller dra och släpp dem. Välj till exempel **eCommerceCustomers** som primär entitet och **loyCustomers** som sekundär entitet.
 
 1. Om du vill att alla poster i entiteten är en unik kund oavsett om en matchning hittas, välj **Inkludera alla poster**. Alla poster i entiteten som inte matchar med poster i andra entiteter ingår i den enhetliga profilen. Poster som inte har någon matchning kallas singleton-instans.
   
@@ -70,7 +72,7 @@ Varningen bredvid ett entitetsnamn innebär att ingen matchningsregel har defini
 
    :::image type="content" source="media/m3_add_rule.png" alt-text="Skärmbild av rutan Lägg till regel.":::
 
-   - **Välj entitet/fält (första raden)**: Välj en relaterad entitet och ett attribut för att ange en postegenskap som troligen är unik för en kund. Till exempel ett telefonnummer eller en e-postadress. Undvik att matcha efter aktivitetstypattribut. Ett köp-ID hittar troligen ingen matchning i andra posttyper.
+   - **Välj entitet/fält (första raden)**: Välj en relaterad entitet och ett attribut som troligen är unik för en kund. Till exempel ett telefonnummer eller en e-postadress. Undvik att matcha efter aktivitetstypattribut. Ett köp-ID hittar troligen ingen matchning i andra posttyper.
 
    - **Välj entitet/fält (andra raden)**: Välj ett attribut som är relaterat till attributet för entiteten som anges på den första raden.
 
@@ -116,7 +118,7 @@ Matchningsregler representerar uppsättningar av villkor. Om du vill matcha enti
 
 ### <a name="add-exceptions-to-a-rule"></a>Lägga till undantag för en regel
 
-I de flesta fall leder entitetsmatchningen till unika kundprofiler med konsoliderade data. Om du vill hantera undantagsfall med falskt positiva och falskt negativa resultat dynamiskt kan du definiera undantag för en matchningsregel. Undantag tillämpas efter bearbetning av matchningsreglerna och undviker att matcha alla poster som uppfyller undantagsvillkoren.
+I de flesta fall leder entitetsmatchningen till unika kundprofiler med konsoliderade data. Om du vill hantera undantagsfall med falskt positiva och falskt negativa resultat kan du definiera undantag för en matchningsregel. Undantag tillämpas efter bearbetning av matchningsreglerna och undviker att matcha alla poster som uppfyller undantagsvillkoren.
 
 Till exempel, om din matchningsregel kombinerar efternamn, stad och födelsedatum, identifierar systemet tvillingar med samma efternamn som bor i samma stad som samma profil. Du kan ange ett undantag som inte matchar profilerna om de förnamn i entiteterna du kombinerar inte är samma.
 
@@ -134,7 +136,7 @@ Det går att ange villkor som åsidosätter standardinställd matchningslogik. D
 |---------|---------|---------|
 |Matcha alltid     | Definiera värden som alltid matchas.         |  Matcha alltid *Mike* och *MikeR*.       |
 |Matcha aldrig     | Definiera värden som aldrig matchas.        | Matcha aldrig *John* och *Jonathan*.        |
-|Anpassad överhoppning     | Definierar värden som systemet alltid måste ignorera i matchningsfasen. |  Ignorera värdena *11111* och *Okänt* under matchning.        |
+|Åsidosätt            | Definierar värden som systemet alltid måste ignorera i matchningsfasen. |  Ignorera värdena *11111* och *Okänt* under matchning.        |
 |Aliasmappning    | Definierar värden som systemet måste anse vara samma värde.         | Anse att *Joe* är lika med *Joseph*.        |
 
 1. Välj **Kund**.

@@ -1,7 +1,7 @@
 ---
 title: Segment – översikt
 description: Översikt över segment och hur du skapar och hanterar dem.
-ms.date: 05/20/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,18 +14,18 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d4de3a6af6bc7d54305a23e3fbd3cc95d464d352
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246315"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304817"
 ---
 # <a name="segments-overview"></a>Segment – översikt
 
 Med segment kan du gruppera dina kunder baserat på demografiska attribut, transaktionella eller beteendemässiga attribut. Du kan använda segment för att rikta reklamkampanjer, säljaktiviteter och kundsupport för att uppnå dina affärsmål.
 
-Kundprofiler som överensstämmer med filter för en segmentdefinition kallas *medlemmar* i ett segment. Vissa [servicegränser](/dynamics365/customer-insights/service-limits) gäller.
+Kund- eller kontaktprofiler som överensstämmer med filter för en segmentdefinition kallas *medlemmar* i ett segment. Vissa [servicegränser](/dynamics365/customer-insights/service-limits) gäller.
 
 ## <a name="create-a-segment"></a>Skapa ett segment
 
@@ -41,13 +41,19 @@ Välj hur du vill skapa ett segment utifrån din målgrupp.
 
 # <a name="business-accounts-b-to-b"></a>[Företagskonton (B2B)](#tab/b2b)
 
-- Enkla eller komplexa segment med segmentverktyget: [Bygga ditt eget](segment-builder.md)
+Segment av konton eller kundsegment (förhandsgranskning) med segmentverktyget: [Skapa en egen](segment-builder.md)
+
+> [!NOTE]
+> De flesta exportmål kräver kontaktinformation för marknadsföringssyften. Därför kan du skapa kontaktsegment som ska användas för den exporten.
 
 ---
 
 ## <a name="manage-existing-segments"></a>Hantera befintliga segment
 
-Gå till sidan **Segment** om du vill visa de segment du skapade, deras status och status, antalet medlemmar och sista gången data uppdaterades. Du kan sortera listan med segment efter valfri kolumn eller använda sökrutan för att hitta det segment du vill hantera.
+Gå till sidan **Segment** om du vill visa de segment du skapade, deras status och status och sista gången data uppdaterades. Du kan sortera listan med segment efter valfri kolumn eller använda sökrutan för att hitta det segment du vill hantera.
+
+> [!TIP]
+> I B2B-miljöer identifierar kolumnen **målgruppstyp** om ett segment är baserat på konton eller kontakter.
 
 Välj segment om du vill visa tillgängliga åtgärder.
 
@@ -82,7 +88,7 @@ Den nedre delen innehåller en lista över segmentets medlemmar.
 > [!NOTE]
 > Fält som visas i listan bygger på attributen för segmentets entiteter.
 >
->Listan är en förhandsgranskning av de matchande segmentmedlemmarna och visar de första 100 posterna för ditt segment så att du snabbt kan utvärdera den och granska dess definitioner om det behövs. Om du vill visa alla matchande poster [exportera segmentet](export-destinations.md).
+> Listan är en förhandsgranskning av de matchande segmentmedlemmarna och visar de första 100 posterna för ditt segment så att du snabbt kan utvärdera den och granska dess definitioner om det behövs. Om du vill visa alla matchande poster väljer du **Se mer** som öppnar sidan [**Entiteter**](entities.md) eller [exportera segment](export-destinations.md).
 
 ## <a name="refresh-segments"></a>Uppdatera segment
 

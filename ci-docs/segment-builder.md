@@ -1,7 +1,7 @@
 ---
 title: Skapa komplexa segment med segmentverktyget
 description: Använd segmentbyggaren för att skapa komplexa segment av kunder genom att gruppera dem baserat på olika attribut.
-ms.date: 03/25/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
@@ -13,19 +13,19 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: cde373cd65e296675e1b3c92f3024e1093853842
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 7f691fd0b2ea76a2960d5adf766a4b166f02ebb4
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170657"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304771"
 ---
 # <a name="create-complex-segments-with-segment-builder"></a>Skapa komplexa segment med segmentverktyget
 
-Definiera komplexa filter runt den enhetliga kundentiteten och det är relaterade entiteter. Varje segment skapar en uppsättning kundposter efter bearbetning som du kan exportera och utföra åtgärder på.
+Definiera komplexa filter runt den enhetliga kund eller enhetliga kontakt och det är relaterade entiteter. Varje segment skapar en uppsättning kundentitetsposter eller kontaktpost som du kan exportera och utföra åtgärder på efter bearbetning.
 
 > [!TIP]
-> Segment som är baserade på **enskilda kunder** innehåller automatiskt tillgänglig kontaktinformation för segmentmedlemmar. I miljöer för **affärskonton** baseras segmenten på konton (företag eller dotterbolag). Om du vill ta med kontaktinformation i ett segment använder du funktionerna för **projektattribut** i segmentverktyget. Se till att kontaktdatakällorna är [semantiskt mappade till entiteten ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
+> Segment som är baserade på **enskilda kunder** innehåller automatiskt tillgänglig kontaktinformation för segmentmedlemmar. I **affärskonton**, om du [förena](data-unification.md) både konton och kontakter, välj om segmentet är baserat på konton eller affärskontakter. Om du vill exportera kontaktinformation till en destination använder du ett kontaktsegment. Om du vill exportera kontaktinformation till en destination använder du ett kontosegment.
 
 ## <a name="segment-builder"></a>Segmentverktyg
 
@@ -57,6 +57,11 @@ Exemplet ovan illustrerar segmenteringsfunktionerna. Vi har definierat ett segme
 
 1. Välj **Ny** > **Skapa din egen**. På sidan för segmentverktyget definierar eller skapar du regler. En regel består av ett eller flera villkor som definierar en uppsättning kunder.
 
+   > [!NOTE]
+   > För miljöer som bygger på affärskonton väljer **Nytt** > **Segment med konton** eller **Segment av kontakter (förhandsgranskning)** baserat på vilken typ av segment du vill skapa. Om en [kontohierarki](relationships.md#set-up-account-hierarchies) har definierats och du vill skapa regler för att filtrera bort data baserat på underordnad- och överordnad relation, välj **Använd hierarki? (förhandsvisning)**, välj hierarkin och sedan **Tillämpa**.
+   >
+   > :::image type="content" source="media/segment_acct_hierarchy.png" alt-text="Välj segment rutan för kontohierarki.":::
+
 1. Välj **Redigera information** bredvid Namnlöst segment. Ange ett namn för ditt segment och uppdatera det föreslagna **Namnet på utdataentiteten** för segmentet. Alternativt kan du lägga till en beskrivning och [taggar](work-with-tags-columns.md#manage-tags) i segmentet.
 
    :::image type="content" source="media/segments_edit_details.png" alt-text="Dialogrutan Redigera information.":::
@@ -65,11 +70,11 @@ Exemplet ovan illustrerar segmenteringsfunktionerna. Vi har definierat ett segme
    - Granska listan med tillgängliga entiteter och attribut i rutan **Lägg till regel** och välj ikonn **+** bredvid det alltribut du vill lägga till. Välj om du vill lägga till attributet i en befintlig regel eller använda det för att skapa en ny regel.
    - Ange namnet på attributet i regelavsnittet om du vill se förslag som matchar.
 
-1. Välj operatorer om du vill ange matchningsvärdena för villkoret. Attribut kan ha någon av fyra datatyper som värde: numerisk, sträng, datum eller boolesk. Beroende på attributets datatyp kan olika operatorer ange villkoret. I segment med företagskonton är två särskilda operatorer tillgängliga för att inkludera potentiella hierarkier mellan de hämtade kontona. Använd *underordnade* och *överordnade* operatorer för att inkludera relaterade konton.
+1. Välj operatorer om du vill ange matchningsvärdena för villkoret. Attribut kan ha någon av fyra datatyper som värde: numerisk, sträng, datum eller boolesk. Beroende på attributets datatyp kan olika operatorer ange villkoret.
 
 1. Välj **Lägg till villkor** om du vill lägga till fler villkor i en regel. Om du vill skapa en regel under den aktuella regeln väljer du **Lägg till underregel**.
 
-1. Om en regel använder andra entiteter än entiteten *Kund* väljer du **Ange relationssökväg** för att mappa den valda entiteten till entiteten för en enhetlig kund. Om det bara finns en möjlig relationssökväg markeras denna automatiskt av systemet. Olika [relationssökvägar](relationships.md#relationship-paths) kan ge olika resultat. Alla regler kan ha sin egen relationssökväg.
+1. Om en regel använder andra entiteter än *Kund* (eller entiteten *ContactProfile* för B2B), välj **Ange relationssökväg** för att mappa den valda enheten till den förenade kundenheten. Om det bara finns en möjlig relationssökväg markeras denna automatiskt av systemet. Olika [relationssökvägar](relationships.md#relationship-paths) kan ge olika resultat. Alla regler kan ha sin egen relationssökväg.
 
    :::image type="content" source="media/relationship-path.png" alt-text="Möjlig relationssökväg när en regel skapas utifrån en entitet som är mappad till entiteten för enhetlig kundprofil.":::
 
@@ -92,24 +97,22 @@ Exemplet ovan illustrerar segmenteringsfunktionerna. Vi har definierat ett segme
       - **Överlappande** överlappar de två grupperna. Endast data som *är gemensamma* för båda grupperna finns kvar i den enhetliga gruppen.
       - **Förutom** kombinerar de två grupperna. Endast data i grupp A som *inte är gemensamma* med data i grupp B bevaras.
 
-1. Som standard innehåller utdataentitet automatiskt alla attribut för kundprofiler som matchar de definierade filtren. Om ett segment bygger på andra entiteter än entiteten *Kund*, välj **Projektattribut** för att lägga till fler attribut från dessa enheter till utdataenheten.
-
-   > [!IMPORTANT]
-   > För segment som bygger på affärskonton måste information om en eller flera kontakter för varje konto från entiteten *ContactProfile* inkluderas i avsnittet så att det kan aktiveras eller exporteras till mål där det krävs kontaktinformation. Mer information om entiteten *ContactProfile* finns i [Semantiska mappningar](semantic-mappings.md).
-   > Ett exempel på utdata för ett segment som bygger på affärskonton med projekterade attribut för kontakter kan se ut så här:
-   >
-   > |ID  |Kontonamn  |Intäkter  |Kontaktnamn  | Kontaktens roll|
-   > |---------|---------|---------|---------|---|
-   > |10021     | Contoso | 100K | [Abbie Moss, Ruth Soto]  | [CEO, inköpschef]
-
-   :::image type="content" source="media/segments-project-attributes.png" alt-text="Exempel på projicerade attribut som markerats i den sidoruta som ska läggas till i utdataentiteten.":::
-  
+1. Som standard innehåller utdataentitet automatiskt alla attribut för kundprofiler som matchar de definierade filtren. När du använder entiteten *ContactProfile* inkluderas konto-ID automatiskt i B2B. Om ett segment är baserat på andra entiteter än *Kund* eller för att inkludera fler attribut från *ContactProfile*, välj **Projektattribut** för att lägga till fler attribut från dessa enheter till utdataenheten.
+ 
    Ett segment baseras till exempel på en entitet som innehåller köpdata, som är relaterad till entiteten *Kund*. I detta segment söker man efter alla kunder från Spanien som har köpt varor det aktuella året. Du kan välja att lägga till attribut som varornas pris eller köpdatumet i alla matchande kundposter i utdataentiteten. Denna information kan vara användbar om du vill analysera säsongsrelaterade korrelationer till de totala utgifterna.
 
+   :::image type="content" source="media/segments-project-attributes.png" alt-text="Exempel på projicerade attribut som markerats i den sidoruta som ska läggas till i utdataentiteten.":::
+ 
+   Ett exempel på utdata för ett segment som bygger på affärskonton med projekterade attribut för kontakter kan se ut så här:
+
+   |ID  |Kontonamn  |Intäkter  |Kontaktnamn  | Kontaktens roll|
+   |---------|---------|---------|---------|---|
+   |10021     | Contoso | 100K | [Abbie Moss, Ruth Soto]  | [CEO, inköpschef]
+
    > [!NOTE]
-   > - **Projektattribut** fungerar endast för entiteter som har en 1:N-relationer-relation med kundentiteten. En kund kan till exempel ha flera prenumerationer.
-   > - Om attributet du vill projektera är mer än en hop från entiteten *Kund*, enligt relationens definition, ska attributet användas i alla regler i segmentfrågan som du skapar.
-   > - Om attributet du vill projektera är bara ett hopp från entiteten *Kund*, det attributet behöver inte vara närvarande i alla regler i segmentfrågan som du skapar.
+   > - **Projektattribut** fungerar endast för entiteter som har en 1:N-relationer-relation med entiteten *kund* eller *ContactProfile*. En kund kan till exempel ha flera prenumerationer.
+   > - Om attributet du vill projektera är mer än en hop från entiteten *Kund* eller *ContactProfile*, enligt relationens definition, ska attributet användas i alla regler i segmentfrågan som du skapar.
+   > - Om attributet du vill projektera är bara ett hopp från entiteten *Kund* eller *ContactProfile*, det attributet behöver inte vara närvarande i alla regler i segmentfrågan som du skapar.
    > - **Projekterade attribut** räknas in när du använder uppsättningsoperatorer.
 
 1. Välj **Kör** för att skapa segmentet. Välj **Spara** om du vill behålla den aktuella konfigurationen och köra segment senare. Sidan **Segment** visas.

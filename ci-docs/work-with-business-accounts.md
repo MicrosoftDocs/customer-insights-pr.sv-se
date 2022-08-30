@@ -4,21 +4,21 @@ description: Lär dig om affärskonton som primär målgrupp i Dynamics 365 Cust
 ms.date: 10/19/2021
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
+author: v-wendysmith
 ms.custom: intro-internal
 ms.author: wimohabb
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 9bf91671b744198b2f37391edc7abf58eca3c820
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: abb77a720ab737520a905b0c93b65573e669109f
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053135"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303938"
 ---
 # <a name="work-with-business-accounts"></a>Arbeta med affärskonton
 
@@ -30,7 +30,7 @@ Administratörer kan [skapa en miljö i en befintlig organisation](create-enviro
 
 Därefter kan du [hämta data](data-sources.md) för affärskonton och relaterade kontakter som datakällor från alla källor som stöds.
 
-När data har enats [anger du kontohierarkier](relationships.md#set-up-account-hierarchies) som en del av relationskonfigurationen. Du kan också [konfigurera semantiska mappningar](semantic-mappings.md) för att ansluta entiteter för kontakter och konton. 
+ [Förena](data-unification.md) dina kontodata följt av kontaktdata genom att koppla kontakt- och kontoentiteter.
 
 ## <a name="switch-between-primary-target-audience"></a>Växla mellan primär målgrupp
 
@@ -43,11 +43,12 @@ Om organisationen har miljöer för enskilda kunder och affärskonton kan du anv
 - [Aktiviteter](activities.md): Stöd för konton och relaterade kontakter för att skapa aktiviteter och visa dem i en tidslinje.
 - [Relationer](relationships.md): Med aktivitetsguiden kan du skapa relationer mellan entiteterna så att alla aktiviteter från kontakter kan visas i kontovyn. Kontaktpersoner kan öka detaljvyn för att visa kontaktvyn och hierarkier kan användas för sammansättning av kontoaktivitet.
 - [Mått](measures.md): Stöd för mått som skapats från måttverktyget med en beräkning. En valfri inställning tillåter sammanslagning för underkonton när åtgärder skapas.
-- [Segment](segments.md): Stöd för segment som skapas från grunden med segmentverktyget. Nya operatorer kan införliva kontohierarki när segment byggs.
+- [Segment](segments.md): Stöd för segment som skapas från grunden med segmentverktyget. Segment kan grundas på konton eller kontakter.
 - [Datainmatning](data-sources.md): Alla funktioner i det här området är samma för affärskonton och enskilda kunder.
-- [Samordning av data](data-unification.md): Alla funktioner i det här området är samma för affärskonton och enskilda kunder.
+- B2B-data är mycket lika med B2C-data, men har ytterligare ett steg för att ena kontakterna efter kontot. Se [Företagskonton (B2B)](data-unification.md).
 - [Berikning](enrichment-hub.md): Vissa berikningstyper är endast tillgängliga för enskilda kundscenarier medan andra är endast tillgängliga för affärskonton.
 - [Prediktioner och färdiga modeller](predictions-overview.md): Prediktion innehåller ytterligare steg för affärskonton. Andra prognoser är endast tillgängliga för enskilda kunder.
 - [Aktivering och export](export-destinations.md): Export är tillgängliga för företagskonton och enskilda kunder. För vissa exporter krävs extra konfigurations- och kontaktinformation som projiceras i de underliggande segmenten för att kunna användas för affärskonton.
 - [Systeminställningar](system.md) och [användarhantering](permissions.md): Alla funktioner i det här området är samma för affärskonton och enskilda kunder.
 
+[!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,19 +1,19 @@
 ---
 title: Exportera segment till LinkedIn Ads (förhandsversion)
 description: Lär dig hur du konfigurerar anslutningen och exporterar till LinkedIn Ads.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d1a9ae985043398f4bc38163be26ecf0c3c8e2ba
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 4c3928e05db0ebda262b4ad3e928ce85f70035b9
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196830"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304725"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Exportera segment till LinkedIn Ads (förhandsversion)
 
@@ -24,7 +24,7 @@ Exportera segment med enhetliga kundprofiler till LinkedIn Ads för att skapa ma
 - Ett [LinkedIn Campaign Manager konto](https://business.linkedin.com/marketing-solutions/ads) och motsvarande administratörsbehörigheter.
 - Ett [LinkedIn Campaign Manager konto-ID](https://www.linkedin.com/help/lms/answer/a424270).
 - [Konfigurerade segments](segments.md) i Customer Insights.
-- Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress.
+- De exporterade segmenten behöver minst ett specifikt fält beroende på om du väljer [kontaktinriktning](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) eller [företagsinriktning](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) på LinkedIn. De möjliga fälten listas i steget **Datamatchning** när [konfigurerar exporten](#configure-an-export).
 
 ## <a name="known-limitations"></a>Kända begränsningar
 

@@ -1,7 +1,7 @@
 ---
-title: Gör så här_ Hantera miljöer
+title: Hantera miljöer
 description: Lär dig hur du hanterar befintliga Customer Insights-miljöer som administratör.
-ms.date: 05/31/2022
+ms.date: 08/15/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 ms.reviewer: mhart
@@ -11,20 +11,20 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: fc3b3f404cf0ac84c782778414494289c803babe
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8b4a88bdb75c6e638a76c39d18647681ad4556d7
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081973"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304311"
 ---
-# <a name="how-to-manage-environments"></a>Gör så här_ Hantera miljöer
+# <a name="manage-environments"></a>Hantera miljöer
 
-Administratörer [skapar](create-environment.md) och hanterar miljöer. De kan ändra vissa inställningar i befintliga miljöer. Inställningar för företag, typ, region, lagringsalternativ och Dataverse åtgärdas när miljön har skapats. Om du vill ändra inställningarna återställer du miljön eller skapar en ny miljö.
+Administratörer [skapar](create-environment.md) och hanterar miljöer. De kan ändra vissa inställningar i befintliga miljöer. Inställningar för företag, typ, region, lagringsalternativ och Dataverse åtgärdas när miljön har skapats. Om du vill ändra inställningarna [återställer du miljön](#reset-an-existing-environment-preview) eller [skapa en ny miljö](create-environment.md).
 
 ## <a name="edit-an-existing-environment"></a>Redigera en befintlig miljö
 
-Du kan redigera vissa av detaljerna i befintliga miljöer.
+Redigera information om en befintlig miljö, t.ex. namnet eller inställningen av standardmiljön.
 
 1. Välj **Miljö**-väljaren i apphuvudet.
 
@@ -34,7 +34,7 @@ Du kan redigera vissa av detaljerna i befintliga miljöer.
 
 1. I rutan **Redigera miljö** kan du uppdatera miljöinställningarna.
 
-För att komma igång med en ny miljö, se [Skapa en ny miljö](create-environment.md).
+1. Välj **Granska och slutför**, sedan **Uppdatera** för att tillämpa ändringarna.
 
 ## <a name="change-the-owner-of-an-environment"></a>Byt ägare till miljön
 
@@ -52,7 +52,7 @@ Flera användare kan ha administratörsbehörigheter, men bara en användare är
 
 ## <a name="claim-ownership-of-an-environment"></a>Begära ägarskap för en miljö
 
-Om ägarens användarkonto tas bort eller stängs av, har miljön ingen ägare. Alla administratörsanvändare kan begära ägarskap och bli den nya ägaren. De kan fortsätta äga miljön eller [ändra ägarskapet till en annan administratör](#change-the-owner-of-an-environment).
+Om ägarens användarkonto tas bort eller stängs av, har miljön ingen ägare. Alla administratörsanvändare kan begära ägarskap och bli den nya ägaren. Ägaradministratören kan fortsätta äga miljön eller [ändra ägarskapet till en annan administratör](#change-the-owner-of-an-environment).
 
 Om du vill begära ägarskap väljer du knappen **Ta ägarskap** som visas överst på varje sida i Customer Insights när den ursprungliga ägaren lämnar organisationen.
 
@@ -64,7 +64,7 @@ Som ägare av en miljö kan du återställa en miljö till ett tomt tillstånd o
 
 1. Markera den miljö du vill återställa och välj den stående ellipsen (&vellip;).
 
-1. Välj alternativet **Återställ**.
+1. Välj **Återställa (förhandsgranska)**.
 
    :::image type="content" source="media/reset-environment.png" alt-text="Kontroll för att återställa en miljö.":::
 
@@ -74,19 +74,19 @@ Som ägare av en miljö kan du återställa en miljö till ett tomt tillstånd o
 
 ## <a name="delete-an-existing-environment"></a>Ta bort en befintlig miljö
 
-Som ägare av en miljö kan du ta bort en miljö som du administrerar.
+Du kan ta bort den som ägare av en miljö.
+
+> [!IMPORTANT]
+> Om du tar bort en miljö tas inte anslutningen till en Dataverse-miljö bort. Om du planerar att ansluta samma Dataverse-miljö till en ny Customer Insights-miljö i framtiden måste du ta bort den anslutningen. Lär dig [ta bort en anslutning till en Dataverse-miljö](customer-insights-dataverse.md#remove-an-existing-connection-to-a-dataverse-environment).
 
 1. Välj **Miljö**-väljaren i apphuvudet.
 
-1. Markera den miljö du vill återställa och välj den stående ellipsen (&vellip;). 
+1. Markera den miljö du vill radera och välj den stående ellipsen (&vellip;). 
 
-1. Välj alternativet **Ta bort**.
+1. Välj **Ta bort**.
 
    :::image type="content" source="media/delete-environment.png" alt-text="Styr för att radera miljön.":::
 
 1. Bekräfta borttagningen genom att ange miljö namnet och välja **ta bort**.
-
-> [!IMPORTANT]
-> Om du tar bort en miljö tas inte anslutningen till en Dataverse-miljö bort. Om du planerar att ansluta samma Dataverse-miljö till en ny Customer Insights-miljö i framtiden måste du ta bort den anslutningen. Lär dig [ta bort en befintlig anslutning till en Dataverse-miljö](customer-insights-dataverse.md#remove-an-existing-connection-to-a-dataverse-environment).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

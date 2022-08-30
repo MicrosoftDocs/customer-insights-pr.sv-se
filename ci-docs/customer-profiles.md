@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 6cdf47e6997f230811dcb0f2cf5542f3a6db2367
-ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
+ms.openlocfilehash: 0c8edfd8f45ce7770d568811df2b38be1b04e73a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9188115"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303805"
 ---
 # <a name="view-customer-profiles"></a>Visa kundprofiler
 
@@ -78,7 +78,7 @@ Kundinformation innefattar:
 **Panelen kundprofil**: visar de olika värdena från entiteten enhetlig *kund*. Om ett fält inte har något värde för den valda kundprofilen visas inte det förutom adressfältet. Panelen är strukturerad i avsnitt:
 
 - I det första avsnittet visas en fördefinierad uppsättning fält som följs av alla fält som ingår i sök- och filterindex. Alla adressrelaterade fält kombineras till en enda rad, som visar även om profilen inte innehåller någon adressinformation.
-- **Kontaktpersoner för den här kunden** visas i miljöer för affärskonton. Varje kontakt visas med sina fält. Tomma fält är dolda.
+- **Kontaktpersoner för den här kunden** visas i miljöer för företagskonton (B2B). Varje kontakt visas med sina fält. Tomma fält är dolda.
 - **Ytterligare fält** visar återstående fält för den valda kunden, förutom ID.
 - **ID** anger alla ID under deras motsvarande entitetsnamn. Fält identifieras som ID med hjälp av sina uppsättningar med fält.
 

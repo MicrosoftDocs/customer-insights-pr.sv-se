@@ -6,19 +6,19 @@ ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
-ms.author: mukeshpo
+ms.author: sstabbert
 ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 3f84c1c149f0befcbe489ccdd8a666ce6d5d798a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213649"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304495"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Ta bort dubbletter innan data samordnas
 
@@ -47,7 +47,7 @@ Om du har förädlat entiteter på datakälla nivå för att förbättra resulta
 
 1. På sidan **Dubblettposter** markerar du en entitet och väljer **Lägg till regel** för att definiera dubblettreglerna.
 
-   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Skärmbild på sidor med dubblettposter med Visa fler uppgifter":::
+   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Skärmdump av sidan Duplicera poster med entitet markerad och Lägg till regel visas"  lightbox="media/m3_duplicates_showmore.png":::
 
    1. I fönstret **Lägg till regel**, ange följande information:
       - **Välj fält**: Välj i listan över tillgängliga fält från den entitet som du vill söka efter dubbletter i. Välj fält som troligen är unika för varje enskild kund. Till exempel en e-postadress eller kombinationen av namn, ort och telefonnummer.
@@ -80,9 +80,9 @@ Om du har förädlat entiteter på datakälla nivå för att förbättra resulta
       - **Mest ifylld**: Identifierar posten med flest ifyllda attributfält som vinnarpost. Det här är standardalternativet för sammanfogning.
       - **Senaste**: Identifierar vinnarpost baserat på aktualitet. Kräver ett datum eller ett numeriskt fält för att definiera aktualitet.
       - **Minst aktuell**: Identifierar vinnarpost baserat på lägsta aktualitet. Kräver ett datum eller ett numeriskt fält för att definiera aktualitet.
-      
+
       Vid händelse av en händelse är posten den med MAX(PK) eller det större primärnyckelns värde.
-      
+
    1. Om du vill definiera kopplingsinställningar för enskilda attribut för en entitet väljer du **Avancerat** längst ned i fönstret. Du kan till exempel välja att behålla den senaste e-postadressen OCH den mest fullständiga adressen från olika poster. Expandera entiteten om du vill visa alla attribut och definiera vilket alternativ som ska användas för enskilda attribut. Om du väljer ett recency-baserat alternativ måste du också ange ett datum- och tidsfält som definierar recency.
 
       :::image type="content" source="media/m3_adv_merge.png" alt-text="Fönstret Avancerade sammanslagningsinställningar som visar senaste e-post och fullständig adress":::
@@ -96,18 +96,5 @@ Om du har förädlat entiteter på datakälla nivå för att förbättra resulta
 
 > [!div class="nextstepaction"]
 > [Nästa steg för flera entiteter: Matchande villkor](match-entities.md)
-
-## <a name="deduplication-output-as-an-entity"></a>Dedupliceringsutdata som en entitet
-
-Med dubbleringsprocessen skapas en ny deduplicerad entitet för alla källentiteter. Dessa entiteter finns tillsammans med **ConflationMatchPairs:CustomerInsights** i avsnittet **System** på sidan **Entiteter**, med namnet **Deduplication_DataSource_Entity**.
-
-En utdataenhet för deduplicering innehåller följande information:
-
-- ID/Nycklar
-  - Primärnyckel och Alternativt ID-fält. Fältet Alternativt ID består av alla alternativa ID:n som identifieras för en post.
-  - Deduplication_GroupId visar gruppen eller klustret som identifieras i en entitet som grupperar alla liknande poster utifrån de angivna dedupliceringsfälten. Det används för systembearbetning. Om det inte finns några manuella dedupliceringsregler som anges och systemdefinierade dedupliceringsregler gäller kanske inte det här fältet finns i entiteten för dedupliceringsutdata.
-  - Deduplication_WinnerId: Det här fältet innehåller vinnande ID från de identifierade grupperna eller klustren. Om Deduplication_WinnerId är samma värde som primärnyckeln för en post innebär det att posten är vinnarposten.
-- Fält som används för att definiera dedupliceringsreglerna.
-- Regel- och poängfält som anger vilka av dedupliceringsregler som tillämpats och poängen som returneras av den matchande algoritmen.
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

@@ -1,9 +1,9 @@
 ---
 title: Semantiska mappningar (förhandsgranskning)
 description: Översikt över semantiska mappningar och hur man använder dem.
-ms.date: 12/01/2021
+ms.date: 08/12/2022
 ms.subservice: audience-insights
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
@@ -11,18 +11,19 @@ manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - customerInsights
-ms.openlocfilehash: 7c9588ac7a132ca6f43cf26ea3a744109a0dd2b8
-ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
+ms.openlocfilehash: 8780c11c8b091717349f0fd75a36b99c3a63ab49
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2022
-ms.locfileid: "9183653"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303899"
 ---
 # <a name="semantic-mappings-preview"></a>Semantiska mappningar (förhandsgranskning)
 
-Med hjälp av en semantisk mappning kan du mappa icke-aktivitetsdata till fördefinierade scheman. Med de här schemana kan Customer Insights för att få en bättre bild av dina dataattribut. En bildningsmappning och medföljande data möjliggör nya insikter och funktioner Customer Insights. Om du vill mappa dina aktivitetsdata till scheman kan du läsa [dokumentationen](activities.md) för aktiviteter.
+> [!NOTE]
+> Sidan **Semantiska mappningar** är endast tillgänglig för företagsmiljöer (B2B) där kontaktprofiler redan har skapats med den här sidan. Du kan fortsätta att skapa och hantera de enskilda kontaktprofilerna med hjälp av sidan **Semantiska mappningar**. Eller [förena dina kontaktdata](data-unification-contacts.md) för att ta bort dubbletter, identifiera matchningar mellan enheter och skapa en enhetlig kontaktprofil. Du kan sedan använda den enhetliga kontaktprofilen för att skapa aktiviteter på kontaktnivå.
 
-**Semantiska mappningar är för närvarande aktiverade för miljöer baserade på företagskonton**. *ContactProfile* är den enda typen av semantisk kartläggning som för närvarande finns tillgänglig i Customer Insights.
+Med hjälp av en semantisk mappning kan du mappa icke-aktivitetsdata till fördefinierade scheman. Med de här schemana kan Customer Insights för att få en bättre bild av dina dataattribut. En bildningsmappning och medföljande data möjliggör nya insikter och funktioner Customer Insights. Om du vill mappa dina aktivitetsdata till scheman kan du läsa [dokumentationen](activities.md) för aktiviteter.
 
 ## <a name="define-a-contactprofile-semantic-entity-mapping"></a>Definiera mappning av en ContactProfile-entitet
 
@@ -87,41 +88,5 @@ Välj den semantiska mappningen om du vill visa tillgängliga åtgärder.
 - **Uppdatera** den semantiska mappningen så att det omfattar senaste data. Om du uppdaterar en viss semantisk mappning uppdateras alla semantiska mappningar av samma typ.
 - **Byt namn** på den semantiska mappningen. Välj **Spara**.
 - **Ta bort** den semantiska mappningen. Du kan ta bort fler än en semantisk mappning på samma gång genom att välja de olika semantiska mappningarna och borttagningsikonen. Välj **Ta bort** för att borttagningen.
-
-## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Skapa aktiviteter på kontaktnivå med hjälp av en ContactProfile-mappning för entitetsbildning
-
-När du har skapat en *ContactProfile*-mappning för entiteter kan du samla in kontakters aktiviteter. Det gör att du kan se i aktivitetstidslinjen för ett konto vilken kontakt som ansvarade för varje aktivitet. De flesta steg följer den typiska aktivitetsmappningskonfigurationen.
-
-   > [!NOTE]
-   > För att kontaktnivåaktiviteter ska fungera måste du ha både **AccountID**- och **ContactID**-attribut för varje post i dina aktivitetsdata.
-
-1. [Definiera en *ContactProfile* semantisk enhetsmappning](#define-a-contactprofile-semantic-entity-mapping) och kör den semantiska mappningen.
-
-1. Gå till **Data** > **Aktiviteter**.
-
-1. Välj **Lägg till aktivitet** för att skapa en ny aktivitet.
-
-1. Ge aktiviteten ett namn, välj entiteten för källaktiviteten och välj den primära nyckeln för aktivitetsentiteten.
-
-1. I steget **Relationer**, skapa en indirekt relation mellan din aktivitetskällas data till konton, genom att använda din kontaktdata som en mellanliggande enhet. Mer information finns i [direkta och indirekta relationssökvägar](relationships.md#relationship-paths). 
-   - Exempelrelation för en aktivitet med namnet *Inköp*:
-      - **Aktivitetsdata för inköpskälla** > **Kontaktdata** på attributet **ContactID**
-      - **Kontaktdata** > **Kontodata** i attributet **AccountID**
-
-   :::image type="content" source="media/Contact_Activities1.png" alt-text="Inställning av exempelrelation.":::
-
-1. När du har Relationer väljer du **Nästa** och slutför konfiguration av aktivitetsmappning. Detaljerade steg när du skapar en aktivitet finns i [definiera en aktivitet](activities.md).
-
-1. Kör dina aktivitetsmappningar.
-
-1. När en aktivitetsmappning på kontaktnivå har körts väljer du **Kunder**. Dina aktiviteter på kontaktnivå visas nu på din kundtidslinje.
-
-   :::image type="content" source="media/Contact_Activities2.png" alt-text="Slutresultat efter konfigurering av kontaktaktiviteter":::
-
-### <a name="contact-level-activity-timeline-filtering"></a>Tidslinjefiltrering på kontaktnivå
-
-Aktivitetens tidslinje för dina kunder inkluderar deras ID eller namn, beroende på ditt *ContactProfile* konfiguration, för de aktiviteter de agerat på. Filtrera aktiviteter efter kontakter i tidslinjen om du vill se specifika kontakter som du är intresserad av. För att visa alla aktiviteter som inte har tilldelats en viss kontakt väljer du **Aktiviteter som inte är mappade till en kontakt**.
-
-:::image type="content" source="media/Contact_Activities3.png" alt-text="Tillgängliga filtreringsalternativ för aktiviteter på kontaktnivå.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
