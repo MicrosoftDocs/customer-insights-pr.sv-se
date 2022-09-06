@@ -1,27 +1,27 @@
 ---
 title: OData-frågeexempel för API:er för Customer Insights
 description: Vanliga exempel på öppna dataprotokoll (OData) för att fråga API:erna för Customer Insights för att granska data.
-ms.date: 05/25/2022
+ms.date: 08/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
-ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
+ms.openlocfilehash: 26e56a3bab01ba55284a52e72efbcbfbaadaad6f
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "9121584"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387224"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>OData-frågeexempel för API:er för Customer Insights
 
 Open Data Protocol (OData) är ett protokoll för dataåtkomst som bygger på kärnprotokoll som HTTP. För den används vanliga metoder som REST för webben. Det finns olika typer av bibliotek och verktyg som kan användas för att använda OData-tjänster.
 
-Den här artikeln innehåller några exempelfrågor som efterfrågas ofta för att hjälpa dig att skapa egna implementeringar utifrån [API:er för Customer Insights](apis.md).
+För att hjälpa dig bygga dina egna implementeringar baserat på [Customer Insights API:er](apis.md), granska några ofta efterfrågade exempelfrågor.
 
-Du måste ändra frågeexempel så att de fungerar i målmiljöerna: 
+Ändra frågeexempel så att de fungerar i målmiljöerna:
 
 - {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` var {instanceId} är GUID för den Customer Insights-miljö du vill fråga. Med [åtgärden ListAllInstances](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) kan du hitta de {InstanceId} du har åtkomst till.
 - {CID}: GUID för en enhetlig kundpost. Exempel: `ce759201f786d590bf2134bff576c369`.
@@ -31,7 +31,7 @@ Du måste ändra frågeexempel så att de fungerar i målmiljöerna:
 
 ## <a name="customer"></a>Kunder
 
-Följande tabell innehåller en uppsättning exempelfrågor för entiteten *Kund*.
+Exempelfrågor för entiteten *kund*.
 
 |Frågetyp |Exempel  | Kommentar  |
 |---------|---------|---------|
@@ -46,7 +46,7 @@ Följande tabell innehåller en uppsättning exempelfrågor för entiteten *Kund
 
 ## <a name="unified-activity"></a>Enhetlig aktivitet
 
-Följande tabell innehåller en uppsättning exempelfrågor för entiteten *UnifiedActivity*.
+Exempelfrågor för entiteten *UnifiedActivity*.
 
 |Frågetyp |Exempel  | Kommentar  |
 |---------|---------|---------|
@@ -59,7 +59,7 @@ Följande tabell innehåller en uppsättning exempelfrågor för entiteten *Unif
 
 ## <a name="other-examples"></a>Andra exempel
 
-Följande tabell innehåller en uppsättning exempelfrågor för andra entiteter.
+Exempelfrågor för andra entiteter.
 
 |Frågetyp |Exempel  | Kommentar  |
 |---------|---------|---------|

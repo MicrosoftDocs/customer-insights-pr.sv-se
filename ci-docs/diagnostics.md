@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c573c46fda895d36d29712e75fe28b261c9b399a
+ms.sourcegitcommit: 0b5bfe0145dbd325fa518df4561d6a0a9a352264
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245947"
+ms.lasthandoff: 08/25/2022
+ms.locfileid: "9352823"
 ---
 # <a name="export-diagnostic-logs-preview"></a>Exportera diagnostikloggar (förhandsversion)
 
@@ -36,8 +36,8 @@ Customer Insights skickar följande händelseloggar:
 
 - En aktiv [Azure-prenumeration](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - [Administratör](permissions.md#admin)-behörighet i Customer Insights..
+- En giltig resurs på Azure som uppfyller [destinationskraven](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) för Azure Storage, Azure händelsehubb eller Azure Log Analytics.
 - [Rollen Deltagare och Administratör för användaråtkomst](/azure/role-based-access-control/role-assignments-portal) på destinationsresursen på Azure. Resursen kan vara ett Azure Data Lake Storage-konto, en händelsehubb för Azure eller en Azure Log Analytics-arbetsyta. Denna behörighet är nödvändig när du konfigurerar diagnostikinställningarna i Customer Insights, men den kan ändras efter installation.
-- [Destinationskraven](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) för Azure Storage, Azure Event eller Azure Hub eller Azure Log Analytics är uppfyllda.
 - Minst rollen **Läsare** i den resursgrupp resursen tillhör.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Konfigurera diagnostik med Azure Monitor

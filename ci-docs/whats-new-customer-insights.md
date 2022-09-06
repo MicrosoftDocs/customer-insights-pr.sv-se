@@ -1,19 +1,19 @@
 ---
 title: Nyheter i Dynamics 365 Customer Insights
 description: Information om nya funktioner, förbättringar och felkorrigeringar.
-ms.date: 08/03/2022
+ms.date: 08/31/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: a9bb254736ae70589afb267bf0a60206a18a3385
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246033"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387316"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheter i Dynamics 365 Customer Insights
 
@@ -23,6 +23,24 @@ Vi lanserar uppdateringar en region i taget. Vissa regioner kan se funktioner f�
 
 > [!TIP]
 > Skicka in och rösta på funktioner som efterfrågas och produktförslag går du till [Dynamics 365-programmets idéportal](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="august-2022-updates"></a>Uppdatering augusti 2022
+
+Uppdateringarna i augusti 2022 innehåller nya funktioner, prestandauppgraderingar och felkorrigeringar.
+
+### <a name="contact-unification-in-b-to-b-environments"></a>Kontakt i B2B-miljöer
+
+B2B-miljöer i Customer Insights har nu stöd för en förbättrad datamiljö.
+
+Nu kan du ena kontakter och konton om du vill få en fullständig vy över dina affärskontakter. Enade kontakter är associerade med enhetliga konton och listas nu på kundkorten. 
+
+Mer information finns i [Skapa en enhetlig kontaktprofil](data-unification-contacts.md).
+
+### <a name="create-and-export-of-segments-based-on-unified-contacts"></a>Skapa och exportera segment utifrån enhetliga kontakter
+
+Tack vare den nya kontakten kan du skapa kontaktsegment med villkor från antingen kontakter, konton eller både och. Dessa segment kan exporteras för aktivering i andra tjänster.
+
+Mer information finns i [Översikt över exporter](export-destinations.md).
 
 ## <a name="july-2022-updates"></a>Uppdatering i juli 2022
 
