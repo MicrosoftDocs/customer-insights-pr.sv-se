@@ -1,7 +1,7 @@
 ---
 title: Uppdatera inställningar för kund-, konto- eller kontaktförening
 description: Uppdatera dubblettregler, matchningsregler eller förenade fält i inställningarna för kund- eller kontoförening.
-ms.date: 08/12/2022
+ms.date: 08/26/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: Scott-Stabbert
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: f2c14c169f5973b5f400989b9eeea593eba09182
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: e893e66fd7691b9703d51ed8f87cfad63880cc3b
+ms.sourcegitcommit: 560c4ee16376a9c6fdd7860988ce2d2440194fa5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304357"
+ms.lasthandoff: 09/01/2022
+ms.locfileid: "9392493"
 ---
 # <a name="update-unification-settings"></a>Uppdatera föreningsinställningarna
 
@@ -38,7 +38,7 @@ Granska eller ändra eventuella inställningar när en förenad profil har skapa
    > Panelen **Matchande villkor** visas endast om flera entiteter har markerats.
 
 1. Välj vad du vill uppdatera:
-   - [Källfält](#edit-source-fields) för att lägga till entiteter eller attribut eller ändra attributtyper.
+   - [Källfält](#edit-source-fields) för att lägga till attribut eller entiteter eller ändra attributtyper. Information om hur du tar bort ett attribut finns i [Ta bort ett enhetligt fält](#remove-a-unified-field). Information om hur du tar bort en entitet finns i [Ta bort en enhetlig entitet](#remove-a-unified-entity).
    - [Dubblettposter](#manage-deduplication-rules) för att hantera dubblettregler eller kopplingsinställningar.
    - [Matchande villkor](#manage-match-rules) för att uppdatera matchande regler för två eller flera entiteter.
    - [Förenade kundfält](#manage-unified-fields) för att kombinera eller utesluta fält. Du kan också gruppera relaterade profiler i kluster.
@@ -53,8 +53,6 @@ Granska eller ändra eventuella inställningar när en förenad profil har skapa
 
 ## <a name="edit-source-fields"></a>Redigera källfält
 
-Du kan inte ta bort ett attribut eller en entitet om de redan är förenade.
-
 1. Välj **Redigera** på panelen **Källfält**.
 
    :::image type="content" source="media/m3_source_edit.png" alt-text="Skärmbild på sidan Källfält som visar antalet primära nycklar, mappade och omappade fält":::
@@ -66,6 +64,80 @@ Du kan inte ta bort ett attribut eller en entitet om de redan är förenade.
 1. Alternativt kan du ändra primärnyckeln för en entitet, attributtyperna och växla **intelligent mappning** av och på. Mer information finns i [Välj fler källfält](map-entities.md).
 
 1. Välj **Nästa** om du vill ändra dubblettreglerna eller välj **Spara och stäng** och återgå till [Uppdatera sammanslagningsinställningarna](#update-unification-settings).
+
+### <a name="remove-a-unified-field"></a>Ta bort ett enhetligt fält
+
+Om du vill ta bort ett enhetligt fält måste fältet tas bort från alla beroenden, till exempel segment, mått, berikningar eller relationer.
+
+1. När alla beroenden för fältet har tagits bort går du till **Data** > **Förena**.
+
+1. Välj **Redigera** på panelen **förenade kundfält**.
+
+1. Välj alla förekomster av fältet och välj sedan **Utelämna**.
+
+   :::image type="content" source="media/m3_remove_attribute1.png" alt-text="Skärmbild på sidan Förenade fält med valda fält och knappen Utelämna":::
+
+1. Välj **Klart** för att bekräfta och välj sedan **Spara och stäng**.
+
+   > [!TIP]
+   > Om du ser meddelandet "Kunde inte spara förening. Den angivna resursen kan inte ändras eller tas bort på grund av beroenden nedströms." används fältet fortfarande i ett beroende nedströms.
+
+1. Om fältet används i en regel för dubblettposter eller matchande villkor gör du följande. Annars går du till nästa steg.
+   1. Välj **Redigera** på panelen **Dubblettposter**.
+   1. Ta bort fältet från alla regler som det används i, om det finns några, och välj sedan **Nästa**.
+   1. På sidan **Matchande villkor** tar du bort fältet från alla regler som det används i, om det finns några, och väljer sedan **Spara och stäng**.
+   1. Välj **Förena** > **Förena kundprofiler och beroenden**. Vänta tills föreningen är klar innan du går vidare till nästa steg.
+
+1. Välj **Redigera** på panelen **Källfält**.
+
+1. Välj **Välj entiteter och fält** och avmarkera kryssrutan bredvid varje förekomst av fältet.
+
+   :::image type="content" source="media/m3_remove_attribute2.png" alt-text="Skärmbild av dialogrutan Välj entiteter och fält med avmarkerade kryssrutor":::
+
+1. Välj **Verkställ**.
+
+1. Välj **Spara och stäng**.
+
+1. Välj **Förena** > **Förena kundprofiler och beroenden** för att uppdatera den enhetliga profilen.
+
+### <a name="remove-a-unified-entity"></a>Ta bort en enhetlig entitet
+
+Om du vill ta bort en entitet som har förenats måste entiteten tas bort från alla beroenden, till exempel segment, mått, berikningar eller relationer.
+
+1. När alla beroenden för entiteten har tagits bort går du till **Data** > **Förena**.
+
+1. Välj **Redigera** på panelen **förenade kundfält**.
+
+1. Välj alla fält för entiteten och välj sedan **Utelämna**.
+
+   :::image type="content" source="media/m3_remove_entity1.png" alt-text="Skärmbild på Förenade fält med alla fält för en entitet valda och knappen Utelämna":::
+
+1. Välj **Klart** för att bekräfta och välj sedan **Spara och stäng**.
+
+   > [!TIP]
+   > Om du ser meddelandet "Kunde inte spara förening. Den angivna resursen kan inte ändras eller tas bort på grund av beroenden nedströms." används entiteten fortfarande i ett beroende nedströms.
+
+1. Välj **Redigera** på panelen **Dubblettposter**.
+
+1. Ta bort alla regler från entiteten, om några, och välj sedan **Nästa**.
+
+1. På sidan **Matchande villkor** väljer du entiteten och sedan **Ta bort**.
+
+   :::image type="content" source="media/m3_remove_entity2.png" alt-text="Skärmbild av Matchande villkor med entitet vald och knappen Ta bort":::
+
+1. Välj **Spara och stäng**.
+
+1. Välj **Redigera** på panelen **Källfält**.
+
+1. Välj **Välj entiteter och fält** och avmarkera kryssrutan bredvid entiteten.
+
+   :::image type="content" source="media/m3_remove_entity3.png" alt-text="Skärmbild av dialogrutan Välj entiteter och fält med entitetskryssrutan avmarkerad":::
+
+1. Välj **Verkställ**.
+
+1. Välj **Spara och stäng**.
+
+1. Välj **Förena** > **Förena kundprofiler och beroenden** för att uppdatera den enhetliga profilen.
 
 ## <a name="manage-deduplication-rules"></a>Hantera regler för deduplicering
 

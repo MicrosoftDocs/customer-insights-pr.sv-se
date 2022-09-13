@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-schedule
 - customerInsights
-ms.openlocfilehash: ce10fcfe9906d33209270f8f6930a51b045b13e2
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 949ea071ca41127b0c45488d5d7af3f6aa4e1c35
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246350"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9395978"
 ---
 # <a name="schedule-system-refresh"></a>Uppdatera schemasystem
 
@@ -36,7 +36,7 @@ Schemalägg automatiska uppdateringar av alla dina [inmatade datakällor](data-s
 
 1. Välj mellan **veckovis** (standard) och **daglig** uppdatering. Om du vill schemalägga en ny veckovis uppdatering väljer du en eller flera dagar då du vill att uppdateringen ska utföras.
 
-1. Ange din **Tidszon** och använd sedan listrutan **Tid** för att ange uppdateringstiden. Om du vill schemalägga flera uppdateringar under en och samma dag väljer du **Lägg till en annan tid**.
+1. Ange din **Tidszon** och använd sedan listrutan **Tid** för att ange uppdateringstiden. Om du vill schemalägga flera uppdateringar under en och samma dag väljer du **Lägg till en annan tid**. Du kan lägga till upp till fyra uppdateringar.
 
 1. Välj **Spara** för att införa ändringarna.
 

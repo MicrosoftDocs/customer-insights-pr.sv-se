@@ -8,12 +8,12 @@ ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: a87af80fa713a1ac70493345c0c920e416692b0f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 32240c8c43751d8514d38b392f23ef4138d50ee2
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081983"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411853"
 ---
 # <a name="predictions-overview"></a>Preditionsöversikt
 
@@ -39,14 +39,11 @@ Det enklaste sättet att börja med att förutsäga data är fördefinierade mod
 
 > [!TIP]
 > Vi rekommenderar att du regelbundet uppdaterar färdiga modeller med uppdaterade data i syfte att se till att de informerar ditt affärsanvändningsfall på ett korrekt sätt. Data uppdateras ad hoc när systemet matar in nya eller uppdaterade datakällor. I det här fallet kommer modeller emellertid endast att omutvärdera och fortsätta använda befintliga utbildningsdata.
-> 
+>
 > Du kan konfigurera ett **uppdateringsschema** genom att ange modellschema för omprogrammering i konfigurationsupplevelsen. Modellen omprogrammeras och omutvärderas i detta schema, som du kan ändra när som helst.
-
 
 ## <a name="azure-machine-learning-integration"></a>Integration av Azure Machine Learning
 
 Om en organisation redan använder maskininlärningsscenarier baserade på Azure Machine Learning-experiment hjälper funktionen anpassade modeller i Customer Insights till att ansluta punkterna. Skapa arbetsflöden som hjälper dig att välja de data du vill generera insikter från och mappa resultaten till dina enhetliga kundprofiler. Mer information finns i [anpassade maskininlärningsmodeller](custom-models.md).
 
-## <a name="ai-builder-prediction"></a>AI Builder-förutsägelse
-
-Ibland är datauppsättningarna ofullständiga och vissa värden saknas. Customer Insights kan hjälpa till att förutsäga saknade värden för kundenhet och segment. Mer information finns i [Slutföra dina partiella data med förutsägelser](predictions.md).
+[!INCLUDE [footer-include](includes/footer-banner.md)]

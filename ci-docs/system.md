@@ -14,12 +14,12 @@ searchScope:
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 6e60bf7c18939a29f660e06989e262deeb59a39b
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246269"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396023"
 ---
 # <a name="view-system-configuration"></a>Visa systemkonfiguration
 
@@ -38,12 +38,6 @@ Visa information om API-användningen i realtid och se vilka händelser som har 
    - **API-anrop** – ett diagram som visualiserar det sammanlagda antalet anrop till API:et inom den valda tidsramen.
    - **Dataöverföring** – ett diagram som visar mängden data som överfördes via API:et i den valda tidsramen.
    - **Åtgärder** – en tabell med rader för varje tillgänglig API-åtgärd och information om hur åtgärderna används. Välj ett åtgärdsnamn för att gå till [API-referensen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
-
-   Åtgärder som använder [datainmatning i realtid](real-time-data-ingestion.md) innehåller en kikarsymbol för att visa API-användning i realtid.
-
-   1. Välj kikaren för att öppna rutan **API-användning i realtid** som innehåller användningsdetaljer för åtgärden.
-   1. **Välj en tidsram** för att visa.
-   1. Använd rutan **Gruppera efter** för att välja hur realtidsinteraktioner bäst ska presenteras. Gruppera data efter API **Metod**, **Kvalificerade namn för entiteter** (upptagen entitet), **Skapad av** (händelsens källa), **Resultat** (lyckade eller misslyckade) eller **Felkoder**. Informationen är tillgänglig som ett historikdiagram och som en tabell.
 
 ## <a name="view-system-information"></a>Visa systeminformation
 

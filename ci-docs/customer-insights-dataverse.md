@@ -1,7 +1,7 @@
 ---
 title: Arbeta med Customer Insights-data i Microsoft Dataverse
 description: Lär dig hur du ansluter Customer Insights och Microsoft Dataverse och förstå utdataentiteterna som exporteras till Dataverse.
-ms.date: 08/15/2022
+ms.date: 08/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 0d536259f310b41fe12922baeebdc4569937db08
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: dfa63110fc5291f2b63aebf588d6fdd20ed4ab67
+ms.sourcegitcommit: 134aac66e3e0b77b2e96a595d6acbb91bf9afda2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9303851"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9424331"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeta med Customer Insights-data i Microsoft Dataverse
 
@@ -136,6 +136,7 @@ Om borttagningen av anslutningen misslyckas på grund av beroenden måste du äv
 Vissa utdataentiteter från Customer Insights är tillgängliga som tabeller i Dataverse. Avsnitten nedan beskriver det förväntade schemat för dessa tabeller.
 
 - [CustomerProfile](#customerprofile)
+- [Kontaktprofil](#contactprofile)
 - [AlternateKey](#alternatekey)
 - [UnifiedActivity](#unifiedactivity)
 - [CustomerMeasure](#customermeasure)
@@ -145,21 +146,46 @@ Vissa utdataentiteter från Customer Insights är tillgängliga som tabeller i D
 
 ### <a name="customerprofile"></a>CustomerProfile
 
-Den här tabellen innehåller den enhetliga kundprofilen från Customer Insights. Schemat för Unified customer profile beror på entiteterna och attributen som används i föreningsprocessen för data. Ett kundprofilschema innehåller vanligtvis en delmängd av attributen från [definitionen av Common Data Model för CustomerProfile](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile).
+Den här tabellen innehåller den enhetliga kundprofilen från Customer Insights. Schemat för Unified customer profile beror på entiteterna och attributen som används i föreningsprocessen för data. Ett kundprofilschema innehåller vanligtvis en delmängd av attributen från [definitionen av Common Data Model för CustomerProfile](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile). Kundprofilen för scenariot B till B innehåller enhetliga konton och schemat innehåller vanligtvis en deluppsättning av attributen från [definitionen i Common Data Model för Konto](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/account).
+
+### <a name="contactprofile"></a>Kontaktprofil
+
+En ContactProfile innehåller enhetlig information om en kontakt. Kontaktpersoner är [individer som är mappade till ett konto](data-unification-contacts.md) i ett B till B-scenario.
+
+| Column                       | Type                | Description     |
+| ---------------------------- | ------------------- | --------------- |
+|  BirthDate            | Datum/tid       |  Kontaktens födelsedatum               |
+|  City                 | Text |  Orten i kontaktens adress               |
+|  ContactId            | Text |  ID för kontaktprofilen               |
+|  ContactProfileId     | Unik identifierare   |  GUID för kontakten               |
+|  CountryOrRegion      | Text |  Kontaktens land/region               |
+|  CustomerId           | Text |  ID för kontaktpersonens konto mappas till               |
+|  EntityName           | Text |  Entitet som data kommer från                |
+|  FirstName            | Text |  Kontaktens förnamn               |
+|  Kön               | Text |  Kontaktens kön               |
+|  Id                   | Text |  Deterministiskt GUID baserat på `Identifier`               |
+|  Identifierare           | Text |  Internt ID för kontaktprofilen: `ContactProfile|CustomerId|ContactId`               |
+|  JobTitle             | Text |  Kontaktens jobbtitel               |
+|  LastName             | Text |  Kontaktens efternamn               |
+|  PostalCode           | Text |  Kontaktens postnummer               |
+|  PrimaryEmail         | Text |  Kontaktens e-postadress               |
+|  PrimaryPhone         | Text |  Kontaktens telefonnummer               |
+|  Region      | Text |  Kontaktens delstat eller provins               |
+|  StreetAddress        | Text |  Kontaktens gatuadress               |
 
 ### <a name="alternatekey"></a>AlternateKey
 
 Tabellen AlternateKey innehåller nycklar för entiteterna, som deltog i sammanslagningsprocessen.
 
-|Column  |Type  |Beskrivning  |
+|Column  |Type  |Description  |
 |---------|---------|---------|
-|DataSourceName    |String         | Datakällans namn. Till exempel: `datasource5`        |
-|EntityName        | String        | Namnet på entiteten i Customer Insights. Till exempel: `contact1`        |
-|AlternateValue    |String         |Alternativt ID som mappas till kund-ID. Exempel: `cntid_1078`         |
-|KeyRing           | Flerradig text        | JSON-värde  </br> Exempel: [{"dataSourceName":" datasource5 ",</br>"entityName":" kontakt1",</br>"preferredKey":" cntid_1078",</br>"keys":[" cntid_1078"]}]       |
-|CustomerId         | String        | ID för den enhetliga kundprofilen.         |
-|AlternateKeyId     | GUID         |  AlternateKey deterministiskt GUID baserat på msdynci_identifier       |
-|msdynci_identifier |   String      |   `DataSourceName|EntityName|AlternateValue`  </br> Exempel: `testdatasource|contact1|cntid_1078`    |
+|DataSourceName    |Text         | Datakällans namn. Till exempel: `datasource5`        |
+|EntityName        | Text        | Namnet på entiteten i Customer Insights. Till exempel: `contact1`        |
+|AlternateValue    |Text         |Alternativt ID som mappas till kund-ID. Exempel: `cntid_1078`         |
+|KeyRing           | Text        | JSON-värde  </br> Exempel: [{"dataSourceName":" datasource5 ",</br>"entityName":" kontakt1",</br>"preferredKey":" cntid_1078",</br>"keys":[" cntid_1078"]}]       |
+|CustomerId         | Text        | ID för den enhetliga kundprofilen.         |
+|AlternateKeyId     | Unik identifierare        |  AlternateKey deterministiskt GUID baserat på `Identifier`      |
+|Identifierare |   Text      |   `DataSourceName|EntityName|AlternateValue`  </br> Exempel: `testdatasource|contact1|cntid_1078`    |
 
 ### <a name="unifiedactivity"></a>UnifiedActivity
 
@@ -167,56 +193,55 @@ Den här tabellen innehåller aktiviteter som görs av användare som är tillg�
 
 | Column            | Type        | Description                                                                              |
 |-------------------|-------------|------------------------------------------------------------------------------------------|
-| CustomerId        | String      | Kundprofil-ID                                                                      |
-| ActivityId        | String      | Internt ID för kundaktiviteten (primärnyckel)                                       |
-| SourceEntityName  | String      | Källentitetens namn                                                                |
-| SourceActivityId  | String      | Primärnyckel från källentiteten                                                       |
-| ActivityType      | String      | Semantisk aktivitetstyp eller namn på anpassad aktivitet                                        |
-| ActivityTimeStamp | DATETIME    | Tidsstämpel för aktivitet                                                                      |
-| Title             | String      | Rubrik eller namn för aktiviteten                                                               |
-| Description       | String      | Aktivitetsbeskrivning                                                                     |
-| URL               | String      | Länk till en extern URL som är specifik för aktiviteten                                         |
-| SemanticData      | JSON-sträng | Innehåller en lista över nyckelvärdespar för semantiska mappningsfält som är specifika för typen av aktivitet |
-| RangeIndex        | String      | Unix tidsstämpel som används för sortering av aktivitetstidslinje och effektiva intervallfrågor |
-| mydynci_unifiedactivityid   | GUID | Internt ID för kundaktiviteten (ActivityId) |
+| CustomerId        | Text      | Kundprofil-ID                                                                      |
+| ActivityId        | Text      | Internt ID för kundaktiviteten (primärnyckel)                                       |
+| SourceEntityName  | Text      | Källentitetens namn                                                                |
+| SourceActivityId  | Text      | Primärnyckel från källentiteten                                                       |
+| ActivityType      | Text      | Semantisk aktivitetstyp eller namn på anpassad aktivitet                                        |
+| ActivityTimeStamp | Datum/tid    | Tidsstämpel för aktivitet                                                                      |
+| Title             | Text      | Rubrik eller namn för aktiviteten                                                               |
+| Description       | Text      | Aktivitetsbeskrivning                                                                     |
+| webbadress               | Text      | Länk till en extern URL som är specifik för aktiviteten                                         |
+| SemanticData      | Text | Innehåller en lista över nyckelvärdespar för semantiska mappningsfält som är specifika för typen av aktivitet |
+| RangeIndex        | Text      | Unix tidsstämpel som används för sortering av aktivitetstidslinje och effektiva intervallfrågor |
+| UnifiedActivityId   | Unik identifierare | Internt ID för kundaktiviteten (ActivityId) |
 
 ### <a name="customermeasure"></a>CustomerMeasure
 
 Den här tabellen innehåller utdata för kundattributbaserade mått.
 
-| Column             | Type             | Beskrivning                 |
+| Column             | Type             | Description                 |
 |--------------------|------------------|-----------------------------|
-| CustomerId         | String           | Kundprofil-ID        |
-| Mått           | JSON-sträng      | Innehåller en lista över nyckelvärdespar för måttnamn och värden för den angivna kunden | 
-| msdynci_identifier | String           | `Customer_Measure|CustomerId` |
-| msdynci_customermeasureid | GUID      | Kundprofil-ID |
-
+| CustomerId         | Text           | Kundprofil-ID        |
+| Mått           | Text      | Innehåller en lista över nyckelvärdespar för måttnamn och värden för den angivna kunden |
+| Identifierare | Text           | `Customer_Measure|CustomerId` |
+| CustomerMeasureId | Unik identifierare     | Kundprofil-ID |
 
 ### <a name="enrichment"></a>Berikning
 
 Den här tabellen innehåller utdata från anrikningsprocessen.
 
-| Column               | Type             |  Beskrivning                                          |
+| Column               | Type             |  Description                                          |
 |----------------------|------------------|------------------------------------------------------|
-| CustomerId           | String           | Kundprofil-ID                                 |
-| EnrichmentProvider   | String           | Namn för leverantören av anrikningen                                  |
-| EnrichmentType       | String           | Typ av anrikning                                      |
-| Värden               | JSON-sträng      | Lista över attribut som produceras av anrikningsprocessen |
-| msdynci_enrichmentid | GUID             | Deterministiskt GUID genererat från msdynci_identifier |
-| msdynci_identifier   | String           | `EnrichmentProvider|EnrichmentType|CustomerId`         |
+| CustomerId           | Text           | Kundprofil-ID                                 |
+| EnrichmentProvider   | Text           | Namn för leverantören av anrikningen                                  |
+| EnrichmentType       | Text           | Typ av anrikning                                      |
+| Värden               | Text      | Lista över attribut som produceras av anrikningsprocessen |
+| EnrichmentId | Unik identifierare            | Deterministiskt GUID genererat från `Identifier` |
+| Identifierare   | Text           | `EnrichmentProvider|EnrichmentType|CustomerId`         |
 
-### <a name="prediction"></a>Prediktion
+### <a name="prediction"></a>Förutsägelse
 
 Den här tabellen innehåller utdata från modellförutsägelser.
 
 | Column               | Type        | Description                                          |
 |----------------------|-------------|------------------------------------------------------|
-| CustomerId           | String      | Kundprofil-ID                                  |
-| ModelProvider        | String      | Namn för leverantören av modellen                                      |
-| Modell                | String      | Modellnamn                                                |
-| Värden               | JSON-sträng | Lista över attribut som produceras av modellen |
-| msdynci_predictionid | GUID        | Deterministiskt GUID genererat från msdynci_identifier | 
-| msdynci_identifier   | String      |  `Model|ModelProvider|CustomerId`                      |
+| CustomerId           | Text      | Kundprofil-ID                                  |
+| ModelProvider        | Text      | Namn för leverantören av modellen                                      |
+| Modell                | Text      | Modellnamn                                                |
+| Värden               | Text | Lista över attribut som produceras av modellen |
+| PredictionId | Unik identifierare       | Deterministiskt GUID genererat från `Identifier` |
+| Identifierare   | Text      |  `Model|ModelProvider|CustomerId`                      |
 
 ### <a name="segment-membership"></a>Segmentmedlemskap
 
@@ -224,12 +249,11 @@ Den här tabellen innehåller kundprofilernas information om segmentmedlemskap.
 
 | Column        | Type | Description                        |
 |--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Kundprofil-ID        |
-| SegmentProvider      | String       | App som publicerar segmenten.      |
-| SegmentMembershipType | String       | Kundtyp som det här segmentmedlemskapet registrerar. Stöder flera typer, såsom kund, kontakt eller konto. Standard: kund  |
-| Segment       | JSON-sträng  | Lista med unika segment där kundprofilen är medlem      |
-| msdynci_identifier  | String   | Unik identifierare för det här segmentmedlemskapets post. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID      | Deterministiskt GUID genererat från `msdynci_identifier`          |
-
+| CustomerId        | Text       | Kundprofil-ID        |
+| SegmentProvider      | Text       | App som publicerar segmenten.      |
+| SegmentMembershipType | Text       | Kundtyp som det här segmentmedlemskapet registrerar. Stöder flera typer, såsom kund, kontakt eller konto. Standard: kund  |
+| Segment       | Text  | Lista med unika segment där kundprofilen är medlem      |
+| Identifierare  | Text   | Unik identifierare för det här segmentmedlemskapets post. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| SegmentMembershipId | Unik identifierare      | Deterministiskt GUID genererat från `Identifier`          |
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

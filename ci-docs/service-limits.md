@@ -8,12 +8,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 421e1aa41a54a4b8c34ac27fc7c02e510d2bb588
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: 7f38b7d9985368fc38107f1f360f0603a7fcc8e6
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387178"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411807"
 ---
 # <a name="service-limits-in-customer-insights"></a>Tjänstbegränsningar i Customer Insights
 
@@ -23,7 +23,7 @@ ms.locfileid: "9387178"
 
 | Ytdiagram  | Gränser  | OBS! |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segment, mått och förutsägelser | 300  | Totalt antal [segment](segments.md), [mått](measures.md) och [prognoser](predictions.md) får tillsammans inte överstiga 300.  |
+| Segment, mått och förutsägelser | 300  | Totalt antal [segment](segments.md), [mått](measures.md) och [prognoser](predictions-overview.md) får tillsammans inte överstiga 300.  |
 | Relationer | 20 djupnivåer för relationer i entitetssökvägar. | När du skapar [segment](segments.md) eller [mått](measures.md) med hjälp av verktygsgränssnittet kan entitetssökvägar ha upp till 20 relationshopp mellan start- och målentiteterna.  |
 
 ## <a name="fair-scheduling-of-jobs"></a>Rättvis schemaläggning av jobb

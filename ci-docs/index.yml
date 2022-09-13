@@ -6,12 +6,12 @@ metadata:
   ms.author: mhart
   ms.date: 05/18/2022
   ms.topic: landing-page
-  ms.openlocfilehash: e8134fa66ce47cdf8aeab144b8405104fb257f6c
-  ms.sourcegitcommit: 6108152b3d28a2ec140eae32a61dbf4317baa37b
+  ms.openlocfilehash: 209d635f8b548559ba035a5803c360d26dea8bab
+  ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/19/2022
-  ms.locfileid: "8781386"
+  ms.lasthandoff: 09/07/2022
+  ms.locfileid: "9411800"
 title: Dynamics 365 Customer Insights-dokumentation
 summary: Hitta användbara resurser som hjälper dig att komma igång och lär dig mer om funktioner och funktioner i Customer Insights.
 landingContent:
@@ -79,8 +79,8 @@ landingContent:
       url: enrichment-hub.md
     - text: Konfigurera relationer
       url: relationships.md
-    - text: Fullständiga data med förutsägelser
-      url: predictions.md
+    - text: Förutse data
+      url: predictions-overview.md
   - linkListType: learn
     links:
     - text: Berika och förutspå data

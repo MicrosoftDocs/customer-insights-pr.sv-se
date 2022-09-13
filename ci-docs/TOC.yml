@@ -160,8 +160,6 @@
           href: sentiment-analysis.md
         - name: Använd anpassade modeller från Azure Machine Learning
           href: custom-models.md
-        - name: Fullständiga data som delvis saknas
-          href: predictions.md
     - name: Exempelguider
       items:
         - name: Exempelguide för CLV-prediktion

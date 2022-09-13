@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: acba06cba5fb5cbf0bca5aeb30b603003555fc32
+ms.sourcegitcommit: 3ab8f1c0ba5874095a19f0b6367b9a4432f72ed1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387316"
+ms.lasthandoff: 09/06/2022
+ms.locfileid: "9409379"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheter i Dynamics 365 Customer Insights
 
@@ -41,6 +41,14 @@ Mer information finns i [Skapa en enhetlig kontaktprofil](data-unification-conta
 Tack vare den nya kontakten kan du skapa kontaktsegment med villkor från antingen kontakter, konton eller både och. Dessa segment kan exporteras för aktivering i andra tjänster.
 
 Mer information finns i [Översikt över exporter](export-destinations.md).
+
+### <a name="deployment-regions-aligned-with-microsoft-dataverse"></a>Distributionsområdena som är anpassade efter Microsoft Dataverse
+
+När du skapar en ny Customer Insights-miljö kan du välja i vilken region du vill att tjänsten ska distribueras och drivas. Vi har uppdaterat regionurvalet så att det går att anpassa efter Microsoft Dataverse och Power Platform.
+
+Nu kan du enkelt välja samma region som din befintliga Microsoft Dataverse-miljö eller ditt Azure Data Lake Storage-konto (om du väljer det alternativet), beroende på tillgängligheten av Customer Insights i den regionen.
+
+Mer information finns i [Skapa en ny miljö](create-environment.md) och [Produkttillgänglighet efter geografisk plats](https://dynamics.microsoft.com/availability-reports/).
 
 ## <a name="july-2022-updates"></a>Uppdatering i juli 2022
 
