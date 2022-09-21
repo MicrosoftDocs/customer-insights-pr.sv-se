@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: 44f58d694b9bd35a8d8c04d487d40743291e0566
+ms.sourcegitcommit: ef3e17134d44d2731605381ea0385dbc5aef6120
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304081"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9460212"
 ---
 # <a name="exports-preview-overview"></a>Exporter (förhandsversion) översikt
 
@@ -81,6 +81,11 @@ Välj export om du vill visa tillgängliga åtgärder.
 ## <a name="schedule-and-run-exports"></a>Schemalägg och kör exporter
 
 Varje export som du konfigurerar har ett uppdateringsschema. Vid en uppdatering söker systemet efter nya eller uppdaterade data som ska ingå i en export. Som standard körs exporter som en del av alla [schemalagda systemuppdateringar](schedule-refresh.md). Du kan anpassa uppdateringsschemat eller inaktivera det om du vill köra exporten manuellt.
+
+> [!TIP]
+> Minimera bearbetningstiden för segmentexporten med hjälp av följande metodtips:
+> - Distribuera segmententiteter över flera exporter.
+> - Undvik att schemalägga alla exporter samtidigt. Låt det ta 30 minuter eller en timme mellan den schemalagda tiden för varje export.
 
 Exportscheman beror på tillståndet för miljön. Om det pågår uppdateringar för [beroenden](system.md#refresh-processes) när en schemalagd export ska starta, slutför systemet först uppdateringarna och kör sedan exporten. Kolumnen **Uppdaterad** visar när en export senast uppdaterades.
 

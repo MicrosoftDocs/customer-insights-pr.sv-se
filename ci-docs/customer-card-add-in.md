@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 65fd80cc563b8b3b8c8874b66f179f8b0c7a19f0
+ms.sourcegitcommit: fe33cc76d015232ff8737f77193f44f2b884bb6b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9194945"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "9473664"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Tillägget för kundkort för Dynamics 365-appar (förhandsversion)
 
@@ -32,7 +32,8 @@ Få en 360-graders vy över dina kunder direkt i Dynamics 365-appar. Med tilläg
 - För att dina Dynamics 365-data ska mappas till Customer Insights kundprofiler rekommenderar vi att de [tas in i appen Dynamics 365 med hjälp av kopplingen Microsoft Dataverse](connect-power-query.md). Om du använder en annan metod för att mata in Dynamics 365-kontakter (eller konton), måste du se till att fält `contactid` (eller `accountid`) anges som [primärnyckeln för den datakällan i datasammanslutningsprocessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Alla Dynamics 365-användare av tillägget kundkort måste [läggas till som användare](permissions.md) i Customer Insights för att kunna se dessa data.
 - [Konfigurerade sök- och filterfunktioner](search-filter-index.md) i Customer Insights.
-- För varje tilläggskontroll används specifika data i Customer Insights. Vissa data och kontroller är endast tillgängliga i miljöer av specifika typer. Tilläggets konfiguration meddelar dig om en kontroll inte är tillgänglig på grund av den valda miljötypen. Läs mer om [miljöanvändningsfall](work-with-business-accounts.md).
+- Vissa data och kontroller är endast tillgängliga i miljöer av specifika typer. Tilläggets konfiguration meddelar dig om en kontroll inte är tillgänglig på grund av den valda miljötypen. Felet visas i kontrollen när den renderas. Läs mer om [miljöanvändningsfall](work-with-business-accounts.md).
+- För varje tilläggskontroll används specifika data i Customer Insights.
   - **Måttkontroll** kräver [konfigurerade kundattributmått](measures.md).
   - **Intelligent kontroll** kräver data som genereras med hjälp av [prediktioner eller anpassade modeller](predictions-overview.md).
   - **Kontroll för kundinformation** visar alla fält från profilen är tillgängliga i den enhetliga kundprofilen.

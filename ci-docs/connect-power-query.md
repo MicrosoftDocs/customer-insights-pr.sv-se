@@ -5,19 +5,19 @@ ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
-author: adkuppa
-ms.author: matgos
+author: mukeshpo
+ms.author: mukeshpo
 manager: shellyha
 searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 7af51ed04fbd28149ea501c58e6fe71b5fa6d4b6
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 6a25e332bafab414c9def4e1e6b461139dd24ea6
+ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207067"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9463287"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Anslut till en Power Query-datakälla
 
@@ -63,7 +63,9 @@ Att lägga till datakällor baserade på Power Query-kopplingar följer vanligtv
 Det kan ta lång tid att läsa in data. Efter en lyckad uppdatering kan hämtade data granskas från sidan [**Entiteter**](entities.md).
 
 > [!CAUTION]
-> En datakälla baserad på Power Query skapa en [datakälla i Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Ändra inte namnet på ett dataflöde i administrationscentret Power Platform som används i Customer Insights. Om du byter namn på ett dataflöde orsakar det problem med referenserna mellan Customer Insights datakälla och Dataverse dataflödet.
+>
+> - En datakälla baserad på Power Query skapa en [datakälla i Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Ändra inte namnet på ett dataflöde i administrationscentret Power Platform som används i Customer Insights. Om du byter namn på ett dataflöde orsakar det problem med referenserna mellan Customer Insights datakälla och Dataverse dataflödet.
+> - Samtidiga utvärderingar för Power Query-datakällor i Customer Insights har samma [uppdateringsbegränsningar som dataflöden i PowerBI.com](/power-query/power-query-online-limits#refresh-limits). Om det inte går att uppdatera data eftersom de uppnått utvärderingsgränsen rekommenderar vi att du ändrar uppdateringsschemat för varje dataflöde så att datakällorna inte bearbetas samtidigt.
 
 ### <a name="available-power-query-data-sources"></a>Tillgängliga Power Query-datakällor
 
@@ -77,7 +79,7 @@ Det finns stöd för lokal datakällor som bygger på Microsoft Power Platform d
 
 Datakällor som skapas efter att en Dataverse miljö associerats med Customer Insights använder du [Power Platform dataflöden](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflöden stöder lokal anslutning med datagateway. Du kan ta bort och återskapa datakällor som fanns innan en Dataverse miljö associerades med [använda lokala datagateway](/data-integration/gateway/service-gateway-app).
 
-Datagateways från en befintlig Power BI eller Power Apps-miljö kommer att synas och du kan återanvända i Customer Insights. På sidan för datakällor visas länkar som går till den Microsoft Power Platform-miljö där du kan visa och konfigurera lokal data-gateways.
+Data-gateways från en befintlig Power BI- eller Power Apps-miljö visas och du kan återanvända dem i Customer Insights om data-gatewayen och Customer Insights-miljön finns i samma Azure-region. På sidan för datakällor visas länkar som går till den Microsoft Power Platform-miljö där du kan visa och konfigurera lokal data-gateways.
 
 > [!IMPORTANT]
 > Kontrollera att dina gateways är uppdaterade till den senaste versionen. Du kan installera en uppdatering och konfigurera om en gateway från en fråga som visas på skärmen gateway direkt, eller också [hämta den senaste versionen](https://powerapps.microsoft.com/downloads/). Om du inte använder den senaste gateway-versionen misslyckas uppdateringen av dataflödet med felmeddelanden som **Nyckelordet stödsinte: konfigurationsegenskaper. Parameternamn: nyckelord**.
