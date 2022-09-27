@@ -6,12 +6,12 @@ metadata:
   ms.author: mhart
   ms.date: 05/18/2022
   ms.topic: landing-page
-  ms.openlocfilehash: 209d635f8b548559ba035a5803c360d26dea8bab
-  ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
+  ms.openlocfilehash: c3781830dbb1ab1bf5d6395e1398c2c3b297abfd
+  ms.sourcegitcommit: e02a0bf51b5440fcf3284d410f24ea652fe90723
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 09/07/2022
-  ms.locfileid: "9411800"
+  ms.lasthandoff: 09/20/2022
+  ms.locfileid: "9544377"
 title: Dynamics 365 Customer Insights-dokumentation
 summary: Hitta användbara resurser som hjälper dig att komma igång och lär dig mer om funktioner och funktioner i Customer Insights.
 landingContent:
@@ -28,7 +28,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Utbildningsväg för Customer Insights
-      url: /learn/paths/build-customer-insights/
+      url: /training/paths/build-customer-insights/
 - title: Komma igång med Customer Insights
   linkLists:
   - linkListType: get-started
@@ -42,7 +42,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Kom i gång
-      url: /learn/modules/get-started-customer-data-platform/
+      url: /training/modules/get-started-customer-data-platform/
 - title: Mata in data
   linkLists:
   - linkListType: how-to-guide
@@ -56,7 +56,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Mata in data i Customer Insights
-      url: /learn/modules/ingest-data-customer-insights/
+      url: /training/modules/ingest-data-customer-insights/
 - title: Förena data
   linkLists:
   - linkListType: how-to-guide
@@ -70,7 +70,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Skapa en enhetlig profil
-      url: /learn/modules/unified-customer-profile/
+      url: /training/modules/unified-customer-profile/
 - title: Skaffa insikter
   linkLists:
   - linkListType: how-to-guide
@@ -84,7 +84,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Berika och förutspå data
-      url: /learn/modules/enrich-data/
+      url: /training/modules/enrich-data/
 - title: Bygg på dina data
   linkLists:
   - linkListType: how-to-guide
@@ -98,7 +98,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Arbeta med appar
-      url: /learn/modules/working-with-customer-insights/
+      url: /training/modules/working-with-customer-insights/
 - title: Exportera data
   linkLists:
   - linkListType: how-to-guide
@@ -112,7 +112,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Hantera externa anslutningar
-      url: /learn/modules/configure-third-party-connections/
+      url: /training/modules/configure-third-party-connections/
 - title: Administrera Customer Insights
   linkLists:
   - linkListType: how-to-guide
@@ -126,7 +126,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Administrera Customer Insights
-      url: /learn/modules/administer-customer-data-platform/
+      url: /training/modules/administer-customer-data-platform/
 - title: Ta kontakt
   linkLists:
   - linkListType: overview
