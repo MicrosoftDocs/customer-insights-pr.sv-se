@@ -1,7 +1,7 @@
 ---
 title: Översikt över datakällor
 description: Lär dig hur du importerar eller importerar data från olika källor.
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: f89da3cf5b56e367bd673740f80cd82ec0907b28
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245671"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610074"
 ---
 # <a name="data-sources-overview"></a>Översikt över datakällor
 
@@ -65,7 +65,9 @@ Välj en datakälla om du vill visa tillgängliga åtgärder.
 
 ## <a name="refresh-data-sources"></a>Uppdatera datakällor
 
-Datakällor kan uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran. [Lokala datakällor](connect-power-query.md#add-data-from-on-premises-data-sources) uppdateras enligt sina egna scheman som konfigureras vid datainmatning. För bifogade datakällor används senaste data från den aktuella datakälla.
+Datakällor kan uppdateras på ett automatiskt schema eller uppdateras manuellt på begäran. [Lokala datakällor](connect-power-query.md#add-data-from-on-premises-data-sources) uppdateras enligt sina egna scheman som konfigureras vid datainmatning. Om du vill ha felsökningstips går du till [Felsöka PPDF Power Query-baserad datakälla uppdatera problem](connect-power-query.md#troubleshoot-ppdf-power-query-based-data-source-refresh-issues).
+
+För bifogade datakällor används senaste data från den aktuella datakälla.
 
 Gå till **Admin** > **System** > [**Schema**](schedule-refresh.md) om du vill konfigurera system schemalagda uppdateringar för de inmatade datakällorna.
 
@@ -76,5 +78,37 @@ Så här uppdaterar du en datakälla på begäran:
 1. Markera datakälla du vill uppdatera och välj **Uppdatera**. Datakällan aktiveras nu för en manuell uppdatering. Om du uppdaterar datakälla uppdateras både entitetsschemat och data för alla entiteter som anges i datakälla.
 
 1. Välj status för att öppna rutan **Förloppsinformation** och se framstegen. Om du vill avbryta jobbet väljer du **Avbryt jobbet** längst ned i fönstret.
+
+## <a name="corrupt-data-sources"></a>Skadade datakällor
+
+Data som inmatas kan ha skadade poster som kan leda till att datainmatningsprocessen slutförs med fel eller varningar.
+
+> [!NOTE]
+> Om datainmatningen slutförs med fel, kommer efterföljande bearbetning (t.ex. skapande av data eller aktivitetsgenerering) som använder datakälla att hoppas över. Om meddelandet har slutförts med varningar fortsätter efterföljande bearbetning men en del av posterna kanske inte ingår.
+
+Felen visas i uppgiftsinformationen.
+
+:::image type="content" source="media/corrupt-task-error.png" alt-text="Uppgiftsdetalj som visar skadade datafel.":::
+
+Skadade poster visas i systemskapade enheter.
+
+### <a name="fix-corrupt-data"></a>Åtgärda skadade data
+
+1. För att visa skadade data, gå till **Data** > **Entiteter** och leta efter skadade entiteter i avsnittet **System**. Namnschema för skadade entiteter: &quot;DataSourceName_EntityName_corrupt&quot;.
+
+1. Välj en korrupt enhet och sedan **Data**.
+
+1. Identifiera de skadade fälten i en post och orsaken.
+
+   :::image type="content" source="media/corruption-reason.png" alt-text="Orsak till fel." lightbox="media/corruption-reason.png":::
+
+   > [!NOTE]
+   > **Data** > **Entiteter** visar endast en del av de skadade posterna. Om du vill visa alla skadade poster exporterar du filerna till en behållare i lagringskontot med hjälp av [exportprocessen Customer Insights](export-destinations.md). Om du använde ditt eget lagringskonto kan du också titta på mappen Customer Insights i ditt lagringskonto.
+
+1. Korigera skadad data. Exempelvis för Azure Data Lake datakällor, [åtgärdar du data i Data Lake Storage eller uppdaterar datatyperna i filen manifest/model.json](connect-common-data-model.md#common-reasons-for-ingestion-errors-or-corrupt-data). För Power Query datakällor åtgärdar du data i källfilen och [korrigerar datatypen som omvandlingssteget](connect-power-query.md#data-type-does-not-match-data) på sidan **Power Query – Redigera frågor**.
+
+Efter nästa uppdatering av datakällan skickas de korrigerade posterna till Customer Insights och sedan vidare till processer nedströms.
+
+Exempelvis har datatypen &quot;datum&quot; angetts för kolumnen &quot;födelsedag&quot;. En kundpost har födelsedagen angiven som &quot;1977-01-01&quot;. Systemet flaggar då denna post som skadad. Ändra födelsedagen i källsystemet till 1977. Efter en automatisk uppdatering av datakällor har fältet nu ett giltigt format och posten tas bort från den skadade entiteten.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Anslut till en Power Query datakälla (innehåller video)
 description: Indata via en Power Query-koppling (innehåller video).
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6a25e332bafab414c9def4e1e6b461139dd24ea6
-ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
+ms.openlocfilehash: 4cc7e57dfb0f8d050e91adc441c24e849882f5d8
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "9463287"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609918"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Anslut till en Power Query-datakälla
 
@@ -43,16 +43,17 @@ Att lägga till datakällor baserade på Power Query-kopplingar följer vanligtv
 
 1. Välj **Transformera data**.
 
-1. I dialogrutan **Power Query - Redigera frågor** kan du granska och förfina data. De entiteter som identifieras i den valda datakälla visas i den vänstra rutan.
+1. Granska och förfina dina data på sidan **Power Query – Redigera frågor**. De entiteter som identifieras i den valda datakälla visas i den vänstra rutan.
 
    :::image type="content" source="media/data-manager-configure-edit-queries.png" alt-text="Dialogrutan Redigera frågor":::
 
-1. Du kan även omvandla dina data. Välj en entitet att redigera eller omvandla. Använd alternativen i Power Query-fönstret för att tillämpa omvandlingar. Varje omvandling visas under **Tillämpade steg**. Power Query innehåller många [förbyggda omvandlingsalternativ](/power-query/power-query-what-is-power-query#transformations).
+1. Omvandla dina data. Välj en entitet att redigera eller omvandla. Använd alternativen i Power Query-fönstret för att tillämpa omvandlingar. Varje omvandling visas under **Tillämpade steg**. Power Query innehåller många [förbyggda omvandlingsalternativ](/power-query/power-query-what-is-power-query#transformations).
 
-   Vi rekommenderar att du använder följande omvandlingar:
-
-   - Om du samlar in data från en CSV-fil innehåller den första raden ofta rubriker. Gå till **Omvandla** och välj **Använd första raden som rubriker**.
-   - Kontrollera att datatypen har definierats korrekt. För datumfält väljer du till exempel en datumtyp.
+   > [!IMPORTANT]
+   > Vi rekommenderar att du använder följande omvandlingar:
+   >
+   > - Om du samlar in data från en CSV-fil innehåller den första raden ofta rubriker. Gå till **Omvandla** och välj **Använd första raden som rubriker**.
+   > - Kontrollera att datatypen har definierats korrekt och matchar data. För datumfält väljer du till exempel en datumtyp.
 
 1. Om du vill lägga till ytterligare entiteter i datakällan i dialogrutan **Redigera frågor**, går du till **Hem** och väljer **Hämta data**. Upprepa steg 5-10 tills du har lagt till alla entiteter för datakälla. Om du har en databas som innehåller flera datauppsättningar är varje datauppsättning en egen entitet.
 
@@ -102,5 +103,51 @@ Data-gateways från en befintlig Power BI- eller Power Apps-miljö visas och du 
 1. Klicka på **Spara** om du vill tillämpa ändringarna och återgå till sidan **Datakällor**.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupt-data"></a>Vanliga orsaker till inkökningsfel eller skadade data
+
+### <a name="data-type-does-not-match-data"></a>Datatyp matchar inte data
+
+Den vanligaste matchningen för datatyper inträffar när ett datumfält inte är inställt på rätt datumformat.
+
+Data kan åtgärdas vid källan och göras om. Eller åtgärda omvandlingen i Customer Insights. Så här åtgärdar du transformationen:
+
+1. Gå till **Data** > **Datakällor**.
+
+1. Välj bredvid datakällan med skadad data **redigera**.
+
+1. Välj **Nästa**.
+
+1. Markera varje fråga och sök efter omvandlingar som gjorts i "Tillämpad steg" som är felaktiga eller datumkolumner som inte har använts i datumformat.
+
+   :::image type="content" source="media/PQ_corruped_date.png" alt-text="Power Query – Redigera med felaktigt datumformat":::
+
+1. Ändra datatypen så att den matchar data korrekt.
+
+1. Välj **Spara**. Den datakällan uppdateras.
+
+## <a name="troubleshoot-ppdf-power-query-based-data-source-refresh-issues"></a>Felsöka PPDF Power Query-baserad datakälla uppdatera problem
+
+Om data är inaktuella eller om det uppstår fel datakälla en uppdatering utför du följande steg:
+
+1. Navigera till [Power Platform](https://make.powerapps.com).
+
+1. Välj **miljö** för instansen Customer Insights.
+
+1. Navigera till **Dataflöden**.
+
+1. För det dataflöde som motsvarar datakälla i Customer Insights, säljer du den stående ellipsen (&vellip;) och väljer sedan **Visa uppdateringshistorik**.
+
+1. Om **Status** för dataflödet är **Framgång**, kan ägarskapet för den Power Query-baserade datakällan ha ändrats:
+
+   1. Granska uppdateringsschemat från uppdateringshistoriken.
+   1. Ange den nya ägarens schema och spara inställningarna.
+
+1. Om **Status** för dataflödet **misslyckat**:
+
+   1. Hämta uppdateringshistorikfilen.
+   1. Kontrollera orsaken till felet i den hämtade filen.
+   1. Välj om felet inte kan åtgärdas **.** för att öppna ett supportärende. Inkludera den nedladdade uppdateringshistorikfilen.
+
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Entiteter i Customer Insights
 description: Visa data på sidan Entiteter.
-ms.date: 12/06/2021
+ms.date: 08/04/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-entities
 - customerInsight
-ms.openlocfilehash: 0beaa46d47545ac195ced876b509dfc57821bfaf
-ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
+ms.openlocfilehash: e365945b27e7c985ca5371c6b72619610b6f3af1
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2022
-ms.locfileid: "9183607"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610120"
 ---
 # <a name="entities-in-customer-insights"></a>Entiteter i Customer Insights
 
@@ -61,27 +61,5 @@ Gå till **Data** > **Entiteter** om du vill visa en lista med entiteter. Följa
   - **Skapad**: datum och tid då entiteten skapades.
   - **Redigerades den**: Namnet på den person som ändrade entiteten.
   - **Redigerad**: datum och tid då entiteten ändrades.
-
-## <a name="entity-specific-information"></a>Entitetsspecifik information
-
-I följande avsnitt finns information om vissa systemskapade entiteter.
-
-### <a name="corrupted-data-sources"></a>Skadade datakällor
-
-Fält från en inmatad datakälla kan innehålla skadade data. Poster med skadade fält visas i entiteter som skapats av systemet. Om du känner till skadade poster kan du identifiera vilka data som ska granskas och uppdateras i källsystemet. Efter nästa uppdatering av datakällan skickas de korrigerade posterna till Customer Insights och sedan vidare till processer nedströms. 
-
-Exempelvis har datatypen &quot;datum&quot; angetts för kolumnen &quot;födelsedag&quot;. En kundpost har födelsedagen angiven som &quot;1977-01-01&quot;. Systemet flaggar då denna post som skadad. Någon kan nu ändra födelsedagen i källsystemet till &quot;1977&quot;. Efter en automatisk uppdatering av datakällor har fältet nu ett giltigt format och posten tas bort från den skadade entiteten.
-
-Gå till **Data** > **Entiteter** och leta efter skadade entiteter i avsnittet **System**. Namnschema för skadade entiteter: &quot;DataSourceName_EntityName_corrupt&quot;. Välj en skadad entitet om du vill identifiera skadade fält och orsaken på individuell postnivå.
-
-   :::image type="content" source="media/corruption-reason.png" alt-text="Orsak till fel.":::
-
-Customer Insights behandlar fortfarande skadade poster. Däremot kan de orsaka problem när du arbetar med enhetliga data.
-
-Följande kontroller körs på inmatade data för att visa skadade poster:
-
-- Värdet för ett fält stämmer inte överens med datatypen för kolumnen.
-- Fält innehåller tecken som gör att kolumnerna inte matchar det förväntade schemat. Till exempel: felaktigt formaterade offerter, icke-förfallna offerter eller nyradstecken.
-- Om det finns kolumner med datetime/date/datetimeoffset måste formatet anges i modellen om det inte följer standard ISO-formatet.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
