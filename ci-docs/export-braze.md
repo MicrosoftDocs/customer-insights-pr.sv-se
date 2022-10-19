@@ -1,19 +1,19 @@
 ---
 title: Exportera segment till Braze (förhandsgranskning)
 description: Lär dig att konfigurera anslutningen och exporten till Braze.
-ms.date: 07/25/2022
+ms.date: 10/06/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 84dc7f13f30e0334d431fe5b5866c7f87e82ab27
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2f52eb8196e057f934c8d2b5ac0518ce121606b6
+ms.sourcegitcommit: 003c1929f730d7d505c108aba84f6269f4c98978
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195129"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "9655284"
 ---
 # <a name="export-segments-to-braze-preview"></a>Exportera segment till Braze (förhandsgranskning)
 
@@ -23,6 +23,7 @@ Exportera segment med enhetliga kundprofiler till Braze och använd dem för mar
 
 - Ett [Braze-konto](https://www.braze.com/) och motsvarande administratörsbehörigheter.
 - En [Braze API-nyckel](https://www.braze.com/docs/api/basics/)
+- Din [Braze REST slutpunkt](https://www.braze.com/docs/api/basics/#api-definitions) 
 - [Konfigurerade segments](segments.md) i Customer Insights.
 - Enhetliga kundprofiler i de exporterade segmenten innehåller ett fält som representerar en e-postadress och ett Braze-kund-ID.
 
@@ -30,6 +31,7 @@ Exportera segment med enhetliga kundprofiler till Braze och använd dem för mar
 
 - Det kan ta upp till 40 minuter att exportera upp till 1 miljon kundprofiler till Braze. Hur många kundprofiler du kan exportera till Braze är beroende av ditt kontrakt med Braze.
 - Endast segment.
+- Azure Private Link stöds inte för Braze-export.
 
 ## <a name="set-up-connection-to-braze"></a>Upprätta anslutningen till Braze
 
@@ -62,6 +64,8 @@ Exportera segment med enhetliga kundprofiler till Braze och använd dem för mar
 1. Välj **Lägg till export**.
 
 1. I fältet **Anslutning för export** väljer du en anslutning från Braze-avsnittet. Kontakta en administratör om det inte finns någon anslutning.
+
+1. Ange REST Endpoint i fältet **värdnamn** i följande format: `rest.iad-03.braze.com`.
 
 1. Ange ett namn för exporten.
 
