@@ -2,7 +2,7 @@
 title: Matchningsvillkor för dataförening
 description: Matcha entiteter för att skapa enhetliga kundprofiler.
 recommendations: false
-ms.date: 07/27/2022
+ms.date: 10/07/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: bbd2c5f441b85460250c11f02358ea67260278d6
+ms.sourcegitcommit: 52ea58c872b10f1e6f9d120be93df93cca1a12dd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304679"
+ms.lasthandoff: 10/26/2022
+ms.locfileid: "9721543"
 ---
 # <a name="match-conditions-for-data-unification"></a>Matchningsvillkor för dataförening
 
@@ -130,12 +130,12 @@ Till exempel, om din matchningsregel kombinerar efternamn, stad och födelsedatu
 
 ### <a name="specify-custom-match-conditions"></a>Ange anpassade matchningsvillkor
 
-Det går att ange villkor som åsidosätter standardinställd matchningslogik. Det finns fyra alternativ:
+Ange villkor som åsidosätter standardinställd matchningslogik. Det finns fyra alternativ:
 
 |Option  |Description |Exempel  |
 |---------|---------|---------|
-|Matcha alltid     | Definiera värden som alltid matchas.         |  Matcha alltid *Mike* och *MikeR*.       |
-|Matcha aldrig     | Definiera värden som aldrig matchas.        | Matcha aldrig *John* och *Jonathan*.        |
+|Matcha alltid     | Definierar värden för primärnycklarna som alltid matchas.         |  Matcha alltid raden med primärnyckel *12345* till raden med primärnyckel *54321*.       |
+|Matcha aldrig     | Definierar värden för primärnycklarna som aldrig matchas.        | Matcha aldrig raden med primärnyckel *12345* till raden med primärnyckel *54321*.        |
 |Åsidosätt            | Definierar värden som systemet alltid måste ignorera i matchningsfasen. |  Ignorera värdena *11111* och *Okänt* under matchning.        |
 |Aliasmappning    | Definierar värden som systemet måste anse vara samma värde.         | Anse att *Joe* är lika med *Joseph*.        |
 
@@ -143,17 +143,18 @@ Det går att ange villkor som åsidosätter standardinställd matchningslogik. D
 
    :::image type="content" source="media/m3_match_custom.png" alt-text="Knappen Anpassa":::
 
-1. Välj **Anpassad typ** och välj **Hämta mall**. Du måste ha en separat mall för varje matchningsalternativ.
+1. Välj **Anpassad typ** och välj **Hämta mall**. Byt namn på mallen utan att använda blanksteg. Använd en separat mall för varje matchningsalternativ.
 
-1. Öppna den hämtade mallfilen och fyll i informationen. Mallen innehåller fält som används för att ange entiteten och de primär nyckelvärden som ska användas i den anpassade matchningen. Om du till exempel vill att primärnyckeln *12345* från entiteten *Försäljning* alltid matchar primärnyckeln *34567* från entiteten *Kontakt*, fyller du i mallen:
-    - Entitet1: Försäljning
-    - Enhetsnyckel1: 12345
-    - Entitet2: Kontakt
-    - Enhetsnyckel2: 34567
+1. Öppna den hämtade mallfilen och fyll i informationen. Mallen innehåller fält som används för att ange entiteten och de primär nyckelvärden som ska användas i den anpassade matchningen. Entitetsnamn är skiftlägeskänsliga. Om du till exempel vill att primärnyckeln *12345* från entiteten *Försäljning* alltid matchar primärnyckeln *34567* från entiteten *Kontakt*, fyller du i mallen:
+   - Entitet1: Försäljning
+   - Enhetsnyckel1: 12345
+   - Entitet2: Kontakt
+   - Enhetsnyckel2: 34567
 
    Samma mallfil kan ange anpassade matchningsposter från flera entiteter.
 
-   Om du vill ange anpassad matchning för deduplicering för en entitet anger du samma entitet som både Entitet 1 och Entitet 2 och anger de olika primärnyckelvärdena.
+   > [!NOTE]
+   > Om du vill ange anpassad matchning för deduplicering för en entitet anger du samma entitet som både Entitet 1 och Entitet 2 och anger de olika primärnyckelvärdena. Du måste definiera minst en dedupliceringsregel för entiteten om du vill använda anpassad matchning.
 
 1. Spara mallfilen när du har lagt till alla åsidosättningar.
 
@@ -169,6 +170,8 @@ Det går att ange villkor som åsidosätter standardinställd matchningslogik. D
    - För **Hoppa över** eller **Aliasmappning**, välj **Redigera** på en befintlig matchningsregel eller skapa en ny regel. Välj alternativet **Anpassad åsidosättning** eller **Aliasmappning** i listrutan Normaliseringar och välj **Klart**.
 
 1. Välj **Klar** i den **anpassade** rutan om du vill använda den anpassade matchningskonfigurationen.
+
+   Varje mallfil som skapas är en egen datakälla. Om poster upptäcks som behöver speciell matchningsbehandling, uppdatera lämplig datakälla. Uppdateringen kommer att användas under nästa process. Du identifierar till exempel användare med nästan samma namn som bor på samma adress som en person. Uppdatera datakälla identifiera rna som separata, unika poster.
 
 > [!div class="nextstepaction"]
 > [Nästa steg: Förena fält](merge-entities.md)
