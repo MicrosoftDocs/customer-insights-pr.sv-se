@@ -8,12 +8,12 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 816a3b242fadaa5a75db878adf0a76baf638e41c
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: fc4ac34c1de096e25ba6c374fe17b1da6b2f745f
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196968"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724916"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Exportera segment till Sendinblue (förhandsversion)
 
@@ -29,6 +29,7 @@ Exportera segment från enhetliga kundprofiler i syfte att generera kampanjer, s
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
+- Privat länk i kombination med Ta med egen lagring (BYOS) stöds inte.
 - Upp till 1 miljon kundprofiler per export till Sendinblue, vilket kan ta upp till 90 minuter att slutföra. Hur många kundprofiler du kan exportera till Sendinblue är beroende av ditt kontrakt med Sendinblue.
 - Endast segment.
 

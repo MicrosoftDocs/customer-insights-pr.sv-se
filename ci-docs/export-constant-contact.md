@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 4d2ec29c194dc481ee40048b8ecbed813291b4d2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c0affd3ed45f462696850813bd50331061dde780
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196508"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724523"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Exportera segment till Constant Contact (förhandsversion)
 
@@ -28,6 +28,7 @@ Exportera segment med enhetliga kundprofiler till Constant Contact och använd d
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
+- Privat länk i kombination med Ta med egen lagring (BYOS) stöds inte.
 - Det kan ta upp till 1 timme innan du exporterar upp till 1 miljon kundprofiler till Constant Contact. Hur många kundprofiler du kan exportera till Constant Contact är beroende av ditt kontrakt med Constant Contact.
 - Endast segment.
 

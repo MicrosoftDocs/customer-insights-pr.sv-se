@@ -1,12 +1,12 @@
 ---
 title: Kund- eller affärskontaktaktiviteter
 description: Definiera kund- eller affärskontakt aktiviteter och visa dessa på en tidslinje för kundprofiler.
-ms.date: 08/12/2022
+ms.date: 10/26/2022
 ms.subservice: audience-insights
 ms.reviewer: v-wendysmith
 ms.topic: conceptual
-author: CadeSanthaMSFT
-ms.author: cadesantha
+author: srivas15
+ms.author: shsri
 manager: shellyha
 searchScope:
 - ci-entities
@@ -17,12 +17,12 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: bbb8bc30d079273bc935181c628915bb3c02d982
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: d8caa477278f04c3a0a95ced15f4bea2a22aa8cd
+ms.sourcegitcommit: da6a2d189edacc8f2c0f2abedcb28245f26fe74c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304127"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9723803"
 ---
 # <a name="customer-or-business-contact-activities"></a>Kund- eller affärskontaktaktiviteter
 
@@ -41,6 +41,9 @@ En entitet måste ha minst ett attribut av typen **Datum** för att kunna tas me
    - **Aktivitetsnamn**: Välj ett namn för aktiviteten.
    - **Aktivitetsentitet**: Välj en entitet som innehåller transaktions- eller aktivitetsdata.
    - **Primärnyckeln**: Välj fältet som används för unik identifiering av en post. Den ska inte innehålla några dubblettvärden, tomma värden eller värden som saknas.
+
+     > [!NOTE]
+     > Den primära nyckeln för varje rad måste vara konsekvent datakälla uppdateras. Om primärnyckeln för en rad uppdateras i en datakälla skapas dubbletter i utdataaktivitetsentiteten. 
 
    :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="Konfigurera aktivitetsdata med namn, entitet och primärnyckel.":::
 
@@ -132,7 +135,15 @@ För affärskonton (B2B) använder du entitet *ContactProfile* för att samla in
 
 1. Välj **Lägg till aktivitet**.
 
-1. Ge aktiviteten ett namn, välj entiteten för källaktiviteten och välj den primära nyckeln för aktivitetsentiteten.
+1. I steget **aktivitetsdata** anger du följande information:
+
+   - **Aktivitetsnamn**: Välj ett namn för aktiviteten.
+   - **Aktivitetsentitet**: Välj en entitet som innehåller transaktions- eller aktivitetsdata.
+   - **Primärnyckeln**: Välj fältet som används för unik identifiering av en post. Den ska inte innehålla några dubblettvärden, tomma värden eller värden som saknas.
+
+     > [!NOTE]
+     > Den primära nyckeln för varje rad måste vara konsekvent datakälla uppdateras. Om primärnyckeln för en rad uppdateras i en datakälla skapas dubbletter i utdataaktivitetsentiteten. 
+
 
 1. I steget **Relationer**, skapa en indirekt relation mellan din aktivitetskällas data till konton, genom att använda din kontaktdata som en mellanliggande enhet. Mer information finns i [direkta och indirekta relationssökvägar](relationships.md#relationship-paths). 
    - Exempelrelation för en aktivitet med namnet *Inköp*:

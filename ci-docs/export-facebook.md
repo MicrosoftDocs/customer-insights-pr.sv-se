@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 01be1a075db0da05dc5536aea8a33093f9a2ea13
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c7a4b1be1c959d70fad929b56452169b40e5b592
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195036"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724638"
 ---
 # <a name="export-segments-to-facebook-ads-manager-preview"></a>Exportera segment till Facebook Ads Manager (förhandsgranskning)
 
@@ -25,11 +25,13 @@ Exportera segment med enhetliga kundprofiler till Facebook Ads Manager för att 
 
 - En [Facebook Ads-konto](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) som omfattar ett [Facebook Business-konto](https://business.facebook.com/).
 - Administratör privilegier på [Facebook Ads-konto](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
+- Anpassade publikvillkor måste godkännas av användaren som upprättar anslutningen i Customer Insights.
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
 - Upp till 10 miljoner kundprofiler per export till Facebook Ads Manager, vilket kan ta upp till 90 minuter.
 - Endast segment.
+- Facebook annonsintegreringen stöder inte användare med fler än 25 annonskonton.
 - Facebook *kundlistan* typ i endast [målgrupp](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
   > [!NOTE]
   > I vissa fall visas anpassade målgrupper av olika typer i listrutan. Om du väljer en annan typ än *kundlistan*, misslyckas exporten.

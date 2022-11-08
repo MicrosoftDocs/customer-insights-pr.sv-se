@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 2f52eb8196e057f934c8d2b5ac0518ce121606b6
-ms.sourcegitcommit: 003c1929f730d7d505c108aba84f6269f4c98978
+ms.openlocfilehash: a3967008ec166cb6f099659b0791f1318126c0da
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "9655284"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725238"
 ---
 # <a name="export-segments-to-braze-preview"></a>Exportera segment till Braze (förhandsgranskning)
 
@@ -29,6 +29,7 @@ Exportera segment med enhetliga kundprofiler till Braze och använd dem för mar
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
+- Privat länk i kombination med Ta med egen lagring (BYOS) stöds inte.
 - Det kan ta upp till 40 minuter att exportera upp till 1 miljon kundprofiler till Braze. Hur många kundprofiler du kan exportera till Braze är beroende av ditt kontrakt med Braze.
 - Endast segment.
 - Azure Private Link stöds inte för Braze-export.

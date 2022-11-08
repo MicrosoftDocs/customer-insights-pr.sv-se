@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3c04fc26dc690cf32b45913257e82b9a0f617185
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 82303c7bcb269ee68419c9639ee743e13451f273
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196324"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724706"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Exportera segment till Campaign Monitor (förhandsversion)
 
@@ -29,6 +29,7 @@ Exportera segment med enhetliga kundprofiler till Campaign Monitor och använd d
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
+- Privat länk i kombination med Ta med egen lagring (BYOS) stöds inte.
 - Det kan ta upp till 20 minuter innan du exporterar upp till 1 miljon kundprofiler till Campaign Monitor. Hur många kundprofiler du kan exportera till Campaign Monitor är beroende av ditt kontrakt med Campaign Monitor.
 - Endast segment.
 

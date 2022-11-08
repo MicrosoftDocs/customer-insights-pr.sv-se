@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d7c8d6f0121fe18a6c886ba3776109a1a592ef33
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 61435030254638965fbeb7980312e73695416aa2
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195358"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724811"
 ---
 # <a name="export-segments-to-criteo-preview"></a>Exportera segment till Criteo (förhandsgranskning)
 
@@ -27,6 +27,7 @@ Exportera segment för enhetliga kundprofiler för att generera kampanjer, tillh
 
 ## <a name="known-limitations"></a>Kända begränsningar
 
+- Privat länk i kombination med Ta med egen lagring (BYOS) stöds inte.
 - Upp till 1 miljon kundprofiler per export till Criteo, vilket kan ta upp till 30 minuter att slutföra. Hur många kundprofiler du kan exportera till Criteo är beroende av ditt kontrakt med Criteo.
 - Endast segment.
 
@@ -65,8 +66,6 @@ Exportera segment för enhetliga kundprofiler för att generera kampanjer, tillh
 1. Ange ett namn för exporten.
 
 1. I avsnittet **Datamatchning** går du till fältet **E-post** och markerar fältet som representerar en kunds e-postadress.
-
-1. Alternativt kan du exportera **Annonsörs-ID** och **Namn**.
 
 1. Välj de segment som du vill exportera.
 
